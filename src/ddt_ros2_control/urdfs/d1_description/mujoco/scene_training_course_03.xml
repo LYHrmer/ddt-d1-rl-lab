@@ -1,0 +1,122 @@
+<mujoco model="D1 training course 03">
+  <!--Generated terrain; original robot and contact parameters are unchanged.-->
+  <include file="robot.xml" />
+  <statistic center="8 0 0.2" extent="18" />
+  <visual>
+    <headlight diffuse="0.7 0.7 0.7" ambient="0.35 0.35 0.35" specular="0 0 0" />
+    <rgba haze="0.12 0.18 0.26 1" />
+    <global azimuth="-125" elevation="-50" fovy="45" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0.02 0.04 0.08" width="512" height="3072" />
+    <texture type="2d" name="course03_grid" builtin="checker" mark="edge" rgb1="0.13 0.19 0.25" rgb2="0.17 0.24 0.30" markrgb="0.28 0.37 0.44" width="256" height="256" />
+    <material name="course03_ground" texture="course03_grid" texuniform="true" texrepeat="25 25" reflectance="0.12" />
+    <hfield name="rough_10mm" file="../mujoco/training_course_03_assets/rough_10mm.png" size="1.15 1.1 0.01 0.005" />
+    <hfield name="rough_25mm" file="../mujoco/training_course_03_assets/rough_25mm.png" size="1.15 1.1 0.025 0.005" />
+    <hfield name="rough_50mm" file="../mujoco/training_course_03_assets/rough_50mm.png" size="1.15 1.1 0.05 0.005" />
+  </asset>
+  <worldbody>
+    <light pos="6 -5 12" dir="0 0 -1" directional="true" />
+    <light pos="12 8 10" dir="0 0 -1" directional="true" diffuse="0.35 0.38 0.45" />
+    <geom name="course03_floor" type="plane" size="0 0 0.05" material="course03_ground" />
+    <geom name="lane_south_edge" type="box" pos="8 -1.2 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="10 0.02 0.001" />
+    <geom name="lane_north_edge" type="box" pos="8 1.2 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="10 0.02 0.001" />
+    <geom name="lane_tick_-1" type="box" pos="-1 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_1" type="box" pos="1 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_3" type="box" pos="3 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_5" type="box" pos="5 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_7" type="box" pos="7 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_9" type="box" pos="9 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_11" type="box" pos="11 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_13" type="box" pos="13 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_15" type="box" pos="15 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_tick_17" type="box" pos="17 0 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="0.16 0.025 0.001" />
+    <geom name="lane_start" type="box" pos="-1.65 0 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.025 0.45 0.001" />
+    <geom name="lane_finish" type="box" pos="17.65 0 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.025 0.45 0.001" />
+    <geom name="step_05mm" type="box" pos="2.8 -3.5 0.0025" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.15 0.75 0.0025" />
+    <geom name="step_entry_1" type="box" pos="2.15 -3.5 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.012 0.75 0.001" />
+    <geom name="step_15mm" type="box" pos="5.4 -3.5 0.0075" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.15 0.75 0.0075" />
+    <geom name="step_entry_2" type="box" pos="4.75 -3.5 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.012 0.75 0.001" />
+    <geom name="step_30mm" type="box" pos="8 -3.5 0.015" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.15 0.75 0.015" />
+    <geom name="step_entry_3" type="box" pos="7.35 -3.5 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.012 0.75 0.001" />
+    <geom name="step_50mm" type="box" pos="10.6 -3.5 0.025" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.15 0.75 0.025" />
+    <geom name="step_entry_4" type="box" pos="9.95 -3.5 0.002" rgba="0.22 0.75 0.51 1" contype="0" conaffinity="0" size="0.012 0.75 0.001" />
+    <geom name="ramp_3deg_up" type="box" pos="2.7760467 3.55 0.020643438" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.77606357 0.8 0.02" quat="0.99965732 0 -0.026176948 0" />
+    <geom name="ramp_3deg_deck" type="box" pos="3.875 3.55 0.061232058" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.325 0.8 0.02" />
+    <geom name="ramp_3deg_down" type="box" pos="4.9739533 3.55 0.020643438" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.77606357 0.8 0.02" quat="0.99965732 0 0.026176948 0" />
+    <geom name="ramp_6deg_up" type="box" pos="7.9770906 3.55 0.061565344" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.77926892 0.8 0.02" quat="0.99862953 0 -0.052335956 0" />
+    <geom name="ramp_6deg_deck" type="box" pos="9.075 3.55 0.14291156" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.325 0.8 0.02" />
+    <geom name="ramp_6deg_down" type="box" pos="10.172909 3.55 0.061565344" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.77926892 0.8 0.02" quat="0.99862953 0 0.052335956 0" />
+    <geom name="ramp_10deg_up" type="box" pos="13.178473 3.55 0.11695725" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.78695562 0.8 0.02" quat="0.9961947 0 -0.087155743 0" />
+    <geom name="ramp_10deg_deck" type="box" pos="14.275 3.55 0.25330682" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.325 0.8 0.02" />
+    <geom name="ramp_10deg_down" type="box" pos="15.371527 3.55 0.11695725" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.78695562 0.8 0.02" quat="0.9961947 0 0.087155743 0" />
+    <geom name="stairs_15mm_tread_1" type="box" pos="2.19 -6.4 0.0075" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.0075" />
+    <geom name="stairs_15mm_tread_2" type="box" pos="2.57 -6.4 0.015" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.015" />
+    <geom name="stairs_15mm_tread_3" type="box" pos="2.95 -6.4 0.0225" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.0225" />
+    <geom name="stairs_15mm_tread_4" type="box" pos="3.33 -6.4 0.0225" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.0225" />
+    <geom name="stairs_15mm_tread_5" type="box" pos="3.71 -6.4 0.015" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.015" />
+    <geom name="stairs_15mm_tread_6" type="box" pos="4.09 -6.4 0.0075" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.19 0.775 0.0075" />
+    <geom name="stairs_30mm_tread_1" type="box" pos="7.39 -6.4 0.015" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.015" />
+    <geom name="stairs_30mm_tread_2" type="box" pos="7.77 -6.4 0.03" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.03" />
+    <geom name="stairs_30mm_tread_3" type="box" pos="8.15 -6.4 0.045" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.045" />
+    <geom name="stairs_30mm_tread_4" type="box" pos="8.53 -6.4 0.045" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.045" />
+    <geom name="stairs_30mm_tread_5" type="box" pos="8.91 -6.4 0.03" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.03" />
+    <geom name="stairs_30mm_tread_6" type="box" pos="9.29 -6.4 0.015" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19 0.775 0.015" />
+    <geom name="stairs_60mm_tread_1" type="box" pos="12.59 -6.4 0.03" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.03" />
+    <geom name="stairs_60mm_tread_2" type="box" pos="12.97 -6.4 0.06" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.06" />
+    <geom name="stairs_60mm_tread_3" type="box" pos="13.35 -6.4 0.09" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.09" />
+    <geom name="stairs_60mm_tread_4" type="box" pos="13.73 -6.4 0.09" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.09" />
+    <geom name="stairs_60mm_tread_5" type="box" pos="14.11 -6.4 0.06" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.06" />
+    <geom name="stairs_60mm_tread_6" type="box" pos="14.49 -6.4 0.03" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.19 0.775 0.03" />
+    <geom name="rough_10mm_surface" type="hfield" pos="2.8 6.7 0" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" hfield="rough_10mm" />
+    <geom name="rough_25mm_surface" type="hfield" pos="7.7 6.7 0" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" hfield="rough_25mm" />
+    <geom name="rough_50mm_surface" type="hfield" pos="12.6 6.7 0" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" hfield="rough_50mm" />
+    <geom name="fixed_plate_01" type="box" pos="2.3736922 -10.107331 0.011955511" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.23926939 0.083146448 0.011955511" quat="0.99468572 0 0 0.10295786" />
+    <geom name="fixed_plate_02" type="box" pos="3.0233205 -10.125808 0.0045556788" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.15090447 0.087913077 0.0045556788" quat="0.99998117 0 0 -0.0061363846" />
+    <geom name="fixed_plate_03" type="box" pos="3.5933147 -10.124637 0.0098529204" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.21845883 0.082262806 0.0098529204" quat="0.99428999 0 0 0.10671179" />
+    <geom name="fixed_plate_04" type="box" pos="4.176355 -10.169724 0.0066347269" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.13771894 0.093836713 0.0066347269" quat="0.9999651 0 0 0.0083548128" />
+    <geom name="fixed_plate_05" type="box" pos="4.6274825 -10.143107 0.010563398" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.167791 0.080259169 0.010563398" quat="0.99814947 0 0 0.060808128" />
+    <geom name="fixed_plate_06" type="box" pos="5.1971138 -10.211099 0.0074067404" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.19528349 0.066956985 0.0074067404" quat="0.99850305 0 0 0.054696054" />
+    <geom name="fixed_plate_07" type="box" pos="5.8756019 -10.206372 0.0075887156" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.13750877 0.060354072 0.0075887156" quat="0.99110237 0 0 0.13310181" />
+    <geom name="fixed_plate_08" type="box" pos="6.3610159 -10.141255 0.0099564526" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.23156635 0.082236631 0.0099564526" quat="0.99999967 0 0 0.00080713491" />
+    <geom name="fixed_plate_09" type="box" pos="2.4434839 -9.0258209 0.0092723934" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.2136517 0.065305335 0.0092723934" quat="0.99631947 0 0 0.085717685" />
+    <geom name="fixed_plate_10" type="box" pos="2.9204751 -8.9962021 0.013164767" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.20230897 0.10023914 0.013164767" quat="0.99428594 0 0 0.10674957" />
+    <geom name="fixed_plate_11" type="box" pos="3.5083227 -8.9497269 0.011377562" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.20023283 0.10231921 0.011377562" quat="0.99865584 0 0 0.051831593" />
+    <geom name="fixed_plate_12" type="box" pos="4.1473006 -9.0891113 0.011681778" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.18828513 0.10607381 0.011681778" quat="0.9865914 0 0 0.16320969" />
+    <geom name="fixed_plate_13" type="box" pos="4.6378048 -9.0620083 0.0083291579" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.22921833 0.082167194 0.0083291579" quat="0.99985705 0 0 0.016908031" />
+    <geom name="fixed_plate_14" type="box" pos="5.2068484 -9.1532992 0.013300735" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11243579 0.093523042 0.013300735" quat="0.99813161 0 0 0.061100648" />
+    <geom name="fixed_plate_15" type="box" pos="5.8252964 -9.0495733 0.011841739" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.17974941 0.080877589 0.011841739" quat="0.98865666 0 0 0.15019322" />
+    <geom name="slalom_post_01" type="cylinder" pos="8.8 -9.07 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_02" type="cylinder" pos="9.75 -10.03 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_03" type="cylinder" pos="10.7 -9.07 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_04" type="cylinder" pos="11.65 -10.03 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_05" type="cylinder" pos="12.6 -9.07 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_06" type="cylinder" pos="13.55 -10.03 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_07" type="cylinder" pos="14.5 -9.07 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="slalom_post_08" type="cylinder" pos="15.45 -10.03 0.21" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.11 0.21" />
+    <geom name="gate_1_south" type="cylinder" pos="3.3 8.61 0.24" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="gate_1_north" type="cylinder" pos="3.3 10.29 0.24" rgba="0.22 0.75 0.51 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="gate_2_south" type="cylinder" pos="7.7 8.81 0.24" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="gate_2_north" type="cylinder" pos="7.7 10.09 0.24" rgba="0.96 0.68 0.18 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="gate_3_south" type="cylinder" pos="12.1 8.985 0.24" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="gate_3_north" type="cylinder" pos="12.1 9.915 0.24" rgba="0.94 0.33 0.28 1" contype="1" conaffinity="1" size="0.09 0.24" />
+    <geom name="zone_guide_north_inner_1" type="box" pos="3 2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_inner_2" type="box" pos="8.5 2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_inner_3" type="box" pos="14 2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_inner_1" type="box" pos="3 -2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_inner_2" type="box" pos="8.5 -2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_inner_3" type="box" pos="14 -2.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_outer_1" type="box" pos="3 5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_outer_2" type="box" pos="8.5 5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_outer_3" type="box" pos="14 5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_outer_1" type="box" pos="3 -5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_outer_2" type="box" pos="8.5 -5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_outer_3" type="box" pos="14 -5.05 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_far_1" type="box" pos="3 8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_far_2" type="box" pos="8.5 8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_north_far_3" type="box" pos="14 8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_far_1" type="box" pos="3 -8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_far_2" type="box" pos="8.5 -8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+    <geom name="zone_guide_south_far_3" type="box" pos="14 -8.15 0.002" rgba="0.75 0.83 0.92 1" contype="0" conaffinity="0" size="1.7 0.015 0.001" />
+  </worldbody>
+</mujoco>

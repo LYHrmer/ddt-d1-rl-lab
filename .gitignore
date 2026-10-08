@@ -1,0 +1,21 @@
+# Third-party assets/dependencies are restored from the user's original archive.
+/src/
+/mujoco/
+/.python-deps/
+/build/
+/install/
+/downloads/
+/log/
+/logs/
+# Full experiment artifacts stay on disk outside source history.
+/evidence/
+/runtime03/build/
+/runtime03/*_01/
+/runtime03/*_02/
+/runtime03/fresh_initial_state*.json
+/dist/
+**/__pycache__/
+*.pyc
+*.onnx
+*.zip
+*.mp4

@@ -1,0 +1,1946 @@
+{
+  "description": "Deterministic D1 partitioned terrain training course",
+  "config": {
+    "seed": 20261009,
+    "scene_name": "scene_training_course_03.xml",
+    "asset_directory": "training_course_03_assets",
+    "spawn_clear_radius_m": 1.2,
+    "straight_lane": {
+      "bounds_xy_m": [
+        -2.0,
+        -1.2,
+        18.0,
+        1.2
+      ],
+      "length_m": 20.0
+    },
+    "single_steps": {
+      "centers_x_m": [
+        2.8,
+        5.4,
+        8.0,
+        10.6
+      ],
+      "center_y_m": -3.5,
+      "heights_m": [
+        0.005,
+        0.015,
+        0.03,
+        0.05
+      ],
+      "length_m": 0.3,
+      "width_m": 1.5
+    },
+    "ramps": {
+      "start_x_m": [
+        2.0,
+        7.2,
+        12.4
+      ],
+      "center_y_m": 3.55,
+      "angles_deg": [
+        3,
+        6,
+        10
+      ],
+      "run_m": 1.55,
+      "platform_length_m": 0.65,
+      "width_m": 1.6,
+      "thickness_m": 0.04
+    },
+    "staircases": {
+      "start_x_m": [
+        2.0,
+        7.2,
+        12.4
+      ],
+      "center_y_m": -6.4,
+      "riser_m": [
+        0.015,
+        0.03,
+        0.06
+      ],
+      "tread_m": 0.38,
+      "width_m": 1.55,
+      "up_treads": 3
+    },
+    "rough_tiles": {
+      "center_x_m": [
+        2.8,
+        7.7,
+        12.6
+      ],
+      "center_y_m": 6.7,
+      "size_xy_m": [
+        2.3,
+        2.2
+      ],
+      "max_height_m": [
+        0.01,
+        0.025,
+        0.05
+      ],
+      "resolution_px": 129,
+      "edge_fade_fraction": 0.18
+    },
+    "broken_plates": {
+      "bounds_xy_m": [
+        2.0,
+        -10.6,
+        7.0,
+        -8.5
+      ],
+      "count": 15,
+      "length_range_m": [
+        0.22,
+        0.48
+      ],
+      "width_range_m": [
+        0.12,
+        0.24
+      ],
+      "height_range_m": [
+        0.008,
+        0.028
+      ]
+    },
+    "slalom": {
+      "center_y_m": -9.55,
+      "start_x_m": 8.8,
+      "spacing_x_m": 0.95,
+      "count": 8,
+      "offset_y_m": 0.48,
+      "post_radius_m": 0.11,
+      "post_height_m": 0.42
+    },
+    "gates": {
+      "center_y_m": 9.45,
+      "center_x_m": [
+        3.3,
+        7.7,
+        12.1
+      ],
+      "clear_width_m": [
+        1.5,
+        1.1,
+        0.75
+      ],
+      "post_radius_m": 0.09,
+      "post_height_m": 0.48
+    }
+  },
+  "source_asset_sha256_before_and_after": {
+    "meshes/L_calf.STL": "e3389a611c0869b002c9ad6c92e5967367e585f31ce67887b47d95f85210599b",
+    "meshes/L_foot.STL": "afc74ac83c9286f9d201d43dfc682195895a678464e5f8564763b071368d9eeb",
+    "meshes/L_hip.STL": "6bd4d237b585fce86dc97d0d6f52b10811588f9b9fe2b2de8a74763c33f41d90",
+    "meshes/L_thigh.STL": "c804473b99df48fe293a7d37e89096313c5421ffbeb1b0141130bfb0ceb4b2ee",
+    "meshes/R_calf.STL": "71c9d33c49b3fcf0ce6aecee4f8407dc9872a1d6f8340705ac43df7154f7966b",
+    "meshes/R_foot.STL": "11f49126b3fec371ce1277556828a1517309347d777907b57567a50e807dba1f",
+    "meshes/R_hip.STL": "91751fa14272761ce4176cfb50cefde6397e43cd639ed5a5dc94d64d3b6f69d1",
+    "meshes/R_thigh.STL": "8d5e6772757f64cb691e8f595f914c5b3acf36295d59e3c1c72543f86302ce4b",
+    "meshes/base_link.STL": "d13fd7d3a7924e988b957008617744c44de73fbb39b43f3483fbcda989efd92a",
+    "meshes/docking_Link.STL": "afe9cfe3f8896ff3d53c8bb3b61e12727973705b21751b94c2e5148743072f2c",
+    "meshes/funtion_Link.STL": "ff81ab5dda97f86c083e0410b0a836cfe438df045d25177cc7ac0215fe76fc9b",
+    "mujoco/robot.xml": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+    "mujoco/scene.xml": "6393022ef80837b603ff59a30f5b06e7a7dc9dbd93209a3a2fab46dbee6784a5"
+  },
+  "spawn_from_original_robot_xml_m": [
+    0,
+    0,
+    0.8
+  ],
+  "spawn_clear_radius_m": 1.2,
+  "control_capability": "not verified; geometry only, no traversal or policy claim",
+  "size_convention": "MuJoCo half extents for boxes, radius and half height for cylinders, half xy/elevation/base depth for hfields",
+  "zones": [
+    {
+      "name": "straight_acceleration_braking",
+      "bounds_xy_m": [
+        -2.0,
+        -1.2,
+        18.0,
+        1.2
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x",
+      "notes": "Level ground; 20 m acceleration and braking lane with non-colliding marks.",
+      "parameters": {
+        "length_m": 20.0,
+        "width_m": 2.4
+      }
+    },
+    {
+      "name": "single_step_5mm",
+      "bounds_xy_m": [
+        1.975,
+        -4.55,
+        3.625,
+        -2.45
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x; approach each bay separately from level ground",
+      "notes": "Discrete solid box step; exit is level ground.",
+      "parameters": {
+        "height_m": 0.005
+      }
+    },
+    {
+      "name": "single_step_15mm",
+      "bounds_xy_m": [
+        4.575,
+        -4.55,
+        6.225,
+        -2.45
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x; approach each bay separately from level ground",
+      "notes": "Discrete solid box step; exit is level ground.",
+      "parameters": {
+        "height_m": 0.015
+      }
+    },
+    {
+      "name": "single_step_30mm",
+      "bounds_xy_m": [
+        7.175,
+        -4.55,
+        8.825,
+        -2.45
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x; approach each bay separately from level ground",
+      "notes": "Discrete solid box step; exit is level ground.",
+      "parameters": {
+        "height_m": 0.03
+      }
+    },
+    {
+      "name": "single_step_50mm",
+      "bounds_xy_m": [
+        9.775,
+        -4.55,
+        11.425,
+        -2.45
+      ],
+      "difficulty": "hard",
+      "recommended_approach": "+x; approach each bay separately from level ground",
+      "notes": "Discrete solid box step; exit is level ground.",
+      "parameters": {
+        "height_m": 0.05
+      }
+    },
+    {
+      "name": "ramp_3deg",
+      "bounds_xy_m": [
+        1.8,
+        2.35,
+        5.95,
+        4.75
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x",
+      "notes": "Continuous top surfaces at entrance, deck joins and exit.",
+      "parameters": {
+        "angle_deg": 3,
+        "rise_m": 0.08123,
+        "run_m": 1.55,
+        "deck_length_m": 0.65
+      }
+    },
+    {
+      "name": "ramp_6deg",
+      "bounds_xy_m": [
+        7.0,
+        2.35,
+        11.15,
+        4.75
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x",
+      "notes": "Continuous top surfaces at entrance, deck joins and exit.",
+      "parameters": {
+        "angle_deg": 6,
+        "rise_m": 0.16291,
+        "run_m": 1.55,
+        "deck_length_m": 0.65
+      }
+    },
+    {
+      "name": "ramp_10deg",
+      "bounds_xy_m": [
+        12.2,
+        2.35,
+        16.35,
+        4.75
+      ],
+      "difficulty": "hard",
+      "recommended_approach": "+x",
+      "notes": "Continuous top surfaces at entrance, deck joins and exit.",
+      "parameters": {
+        "angle_deg": 10,
+        "rise_m": 0.27331,
+        "run_m": 1.55,
+        "deck_length_m": 0.65
+      }
+    },
+    {
+      "name": "stairs_15mm_riser",
+      "bounds_xy_m": [
+        1.8,
+        -7.575,
+        4.48,
+        -5.225
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x",
+      "notes": "Three rising and three descending treads; first and final risers match the named height.",
+      "parameters": {
+        "riser_m": 0.015,
+        "tread_m": 0.38,
+        "peak_height_m": 0.045
+      }
+    },
+    {
+      "name": "stairs_30mm_riser",
+      "bounds_xy_m": [
+        7.0,
+        -7.575,
+        9.68,
+        -5.225
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x",
+      "notes": "Three rising and three descending treads; first and final risers match the named height.",
+      "parameters": {
+        "riser_m": 0.03,
+        "tread_m": 0.38,
+        "peak_height_m": 0.09
+      }
+    },
+    {
+      "name": "stairs_60mm_riser",
+      "bounds_xy_m": [
+        12.2,
+        -7.575,
+        14.88,
+        -5.225
+      ],
+      "difficulty": "hard",
+      "recommended_approach": "+x",
+      "notes": "Three rising and three descending treads; first and final risers match the named height.",
+      "parameters": {
+        "riser_m": 0.06,
+        "tread_m": 0.38,
+        "peak_height_m": 0.18
+      }
+    },
+    {
+      "name": "rough_10mm",
+      "bounds_xy_m": [
+        1.4,
+        5.35,
+        4.2,
+        8.05
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x",
+      "notes": "Colliding PNG heightfield with a zero-height border; maximum height is nominal.",
+      "parameters": {
+        "max_height_m": 0.01,
+        "resolution_px": 129,
+        "image": "rough_10mm.png"
+      }
+    },
+    {
+      "name": "rough_25mm",
+      "bounds_xy_m": [
+        6.3,
+        5.35,
+        9.1,
+        8.05
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x",
+      "notes": "Colliding PNG heightfield with a zero-height border; maximum height is nominal.",
+      "parameters": {
+        "max_height_m": 0.025,
+        "resolution_px": 129,
+        "image": "rough_25mm.png"
+      }
+    },
+    {
+      "name": "rough_50mm",
+      "bounds_xy_m": [
+        11.2,
+        5.35,
+        14.0,
+        8.05
+      ],
+      "difficulty": "hard",
+      "recommended_approach": "+x",
+      "notes": "Colliding PNG heightfield with a zero-height border; maximum height is nominal.",
+      "parameters": {
+        "max_height_m": 0.05,
+        "resolution_px": 129,
+        "image": "rough_50mm.png"
+      }
+    },
+    {
+      "name": "fixed_broken_plates",
+      "bounds_xy_m": [
+        2.0,
+        -10.6,
+        7.0,
+        -8.5
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x or -x",
+      "notes": "Sparse, fixed, individually colliding low boxes with flat gaps; deterministic from seed.",
+      "parameters": {
+        "count": 15,
+        "height_range_m": [
+          0.008,
+          0.028
+        ]
+      }
+    },
+    {
+      "name": "slalom",
+      "bounds_xy_m": [
+        7.975,
+        -10.7,
+        16.275,
+        -8.4
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x or -x",
+      "notes": "Alternating fixed round posts with open bypass on both sides.",
+      "parameters": {
+        "count": 8,
+        "post_spacing_m": 0.95
+      }
+    },
+    {
+      "name": "gate_1500mm_clear",
+      "bounds_xy_m": [
+        2.4,
+        8.3,
+        4.2,
+        10.6
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "+x or -x",
+      "notes": "Clear width is the free space between post surfaces; no overhead bar.",
+      "parameters": {
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "name": "gate_1100mm_clear",
+      "bounds_xy_m": [
+        6.8,
+        8.5,
+        8.6,
+        10.4
+      ],
+      "difficulty": "moderate",
+      "recommended_approach": "+x or -x",
+      "notes": "Clear width is the free space between post surfaces; no overhead bar.",
+      "parameters": {
+        "clear_width_m": 1.1
+      }
+    },
+    {
+      "name": "gate_750mm_clear",
+      "bounds_xy_m": [
+        11.2,
+        8.675,
+        13.0,
+        10.225
+      ],
+      "difficulty": "hard",
+      "recommended_approach": "+x or -x",
+      "notes": "Clear width is the free space between post surfaces; no overhead bar.",
+      "parameters": {
+        "clear_width_m": 0.75
+      }
+    },
+    {
+      "name": "flat_connectors",
+      "bounds_xy_m": [
+        -2.0,
+        -11.0,
+        18.0,
+        10.8
+      ],
+      "difficulty": "easy",
+      "recommended_approach": "from central lane via open side corridors",
+      "notes": "The plane remains open between all zones; painted guides have no contact.",
+      "parameters": {}
+    }
+  ],
+  "geometries": [
+    {
+      "name": "lane_south_edge",
+      "type": "box",
+      "pos_m": [
+        8.0,
+        -1.2,
+        0.002
+      ],
+      "size_m": [
+        10.0,
+        0.02,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_north_edge",
+      "type": "box",
+      "pos_m": [
+        8.0,
+        1.2,
+        0.002
+      ],
+      "size_m": [
+        10.0,
+        0.02,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_-1",
+      "type": "box",
+      "pos_m": [
+        -1,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_1",
+      "type": "box",
+      "pos_m": [
+        1,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_3",
+      "type": "box",
+      "pos_m": [
+        3,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_5",
+      "type": "box",
+      "pos_m": [
+        5,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_7",
+      "type": "box",
+      "pos_m": [
+        7,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_9",
+      "type": "box",
+      "pos_m": [
+        9,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_11",
+      "type": "box",
+      "pos_m": [
+        11,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_13",
+      "type": "box",
+      "pos_m": [
+        13,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_15",
+      "type": "box",
+      "pos_m": [
+        15,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_tick_17",
+      "type": "box",
+      "pos_m": [
+        17,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.16,
+        0.025,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_start",
+      "type": "box",
+      "pos_m": [
+        -1.65,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.025,
+        0.45,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "lane_finish",
+      "type": "box",
+      "pos_m": [
+        17.65,
+        0,
+        0.002
+      ],
+      "size_m": [
+        0.025,
+        0.45,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "step_05mm",
+      "type": "box",
+      "pos_m": [
+        2.8,
+        -3.5,
+        0.0025
+      ],
+      "size_m": [
+        0.15,
+        0.75,
+        0.0025
+      ],
+      "collision": true
+    },
+    {
+      "name": "step_entry_1",
+      "type": "box",
+      "pos_m": [
+        2.15,
+        -3.5,
+        0.002
+      ],
+      "size_m": [
+        0.012,
+        0.75,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "step_15mm",
+      "type": "box",
+      "pos_m": [
+        5.4,
+        -3.5,
+        0.0075
+      ],
+      "size_m": [
+        0.15,
+        0.75,
+        0.0075
+      ],
+      "collision": true
+    },
+    {
+      "name": "step_entry_2",
+      "type": "box",
+      "pos_m": [
+        4.75,
+        -3.5,
+        0.002
+      ],
+      "size_m": [
+        0.012,
+        0.75,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "step_30mm",
+      "type": "box",
+      "pos_m": [
+        8.0,
+        -3.5,
+        0.015
+      ],
+      "size_m": [
+        0.15,
+        0.75,
+        0.015
+      ],
+      "collision": true
+    },
+    {
+      "name": "step_entry_3",
+      "type": "box",
+      "pos_m": [
+        7.35,
+        -3.5,
+        0.002
+      ],
+      "size_m": [
+        0.012,
+        0.75,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "step_50mm",
+      "type": "box",
+      "pos_m": [
+        10.6,
+        -3.5,
+        0.025
+      ],
+      "size_m": [
+        0.15,
+        0.75,
+        0.025
+      ],
+      "collision": true
+    },
+    {
+      "name": "step_entry_4",
+      "type": "box",
+      "pos_m": [
+        9.95,
+        -3.5,
+        0.002
+      ],
+      "size_m": [
+        0.012,
+        0.75,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "ramp_3deg_up",
+      "type": "box",
+      "pos_m": [
+        2.776046719124859,
+        3.55,
+        0.020643438249265463
+      ],
+      "size_m": [
+        0.7760635681483886,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_3deg_deck",
+      "type": "box",
+      "pos_m": [
+        3.875,
+        3.55,
+        0.06123205788871387
+      ],
+      "size_m": [
+        0.325,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_3deg_down",
+      "type": "box",
+      "pos_m": [
+        4.973953280875141,
+        3.55,
+        0.020643438249265463
+      ],
+      "size_m": [
+        0.7760635681483886,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_6deg_up",
+      "type": "box",
+      "pos_m": [
+        7.977090569265353,
+        3.55,
+        0.0615653444235338
+      ],
+      "size_m": [
+        0.7792689166617252,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_6deg_deck",
+      "type": "box",
+      "pos_m": [
+        9.075,
+        3.55,
+        0.14291156466179855
+      ],
+      "size_m": [
+        0.325,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_6deg_down",
+      "type": "box",
+      "pos_m": [
+        10.172909430734647,
+        3.55,
+        0.0615653444235338
+      ],
+      "size_m": [
+        0.7792689166617256,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_10deg_up",
+      "type": "box",
+      "pos_m": [
+        13.17847296355334,
+        3.55,
+        0.1169572549888162
+      ],
+      "size_m": [
+        0.7869556242114527,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_10deg_deck",
+      "type": "box",
+      "pos_m": [
+        14.275,
+        3.55,
+        0.2533068200981207
+      ],
+      "size_m": [
+        0.325,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "ramp_10deg_down",
+      "type": "box",
+      "pos_m": [
+        15.371527036446661,
+        3.55,
+        0.1169572549888162
+      ],
+      "size_m": [
+        0.7869556242114509,
+        0.8,
+        0.02
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_1",
+      "type": "box",
+      "pos_m": [
+        2.19,
+        -6.4,
+        0.0075
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.0075
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_2",
+      "type": "box",
+      "pos_m": [
+        2.5700000000000003,
+        -6.4,
+        0.015
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.015
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_3",
+      "type": "box",
+      "pos_m": [
+        2.95,
+        -6.4,
+        0.0225
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.0225
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_4",
+      "type": "box",
+      "pos_m": [
+        3.33,
+        -6.4,
+        0.0225
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.0225
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_5",
+      "type": "box",
+      "pos_m": [
+        3.71,
+        -6.4,
+        0.015
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.015
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_15mm_tread_6",
+      "type": "box",
+      "pos_m": [
+        4.09,
+        -6.4,
+        0.0075
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.0075
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_1",
+      "type": "box",
+      "pos_m": [
+        7.390000000000001,
+        -6.4,
+        0.015
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.015
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_2",
+      "type": "box",
+      "pos_m": [
+        7.7700000000000005,
+        -6.4,
+        0.03
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.03
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_3",
+      "type": "box",
+      "pos_m": [
+        8.15,
+        -6.4,
+        0.045
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.045
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_4",
+      "type": "box",
+      "pos_m": [
+        8.530000000000001,
+        -6.4,
+        0.045
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.045
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_5",
+      "type": "box",
+      "pos_m": [
+        8.91,
+        -6.4,
+        0.03
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.03
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_30mm_tread_6",
+      "type": "box",
+      "pos_m": [
+        9.29,
+        -6.4,
+        0.015
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.015
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_1",
+      "type": "box",
+      "pos_m": [
+        12.59,
+        -6.4,
+        0.03
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.03
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_2",
+      "type": "box",
+      "pos_m": [
+        12.97,
+        -6.4,
+        0.06
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.06
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_3",
+      "type": "box",
+      "pos_m": [
+        13.35,
+        -6.4,
+        0.09
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.09
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_4",
+      "type": "box",
+      "pos_m": [
+        13.73,
+        -6.4,
+        0.09
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.09
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_5",
+      "type": "box",
+      "pos_m": [
+        14.11,
+        -6.4,
+        0.06
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.06
+      ],
+      "collision": true
+    },
+    {
+      "name": "stairs_60mm_tread_6",
+      "type": "box",
+      "pos_m": [
+        14.49,
+        -6.4,
+        0.03
+      ],
+      "size_m": [
+        0.19,
+        0.775,
+        0.03
+      ],
+      "collision": true
+    },
+    {
+      "name": "rough_10mm_surface",
+      "type": "hfield",
+      "pos_m": [
+        2.8,
+        6.7,
+        0
+      ],
+      "size_m": null,
+      "collision": true
+    },
+    {
+      "name": "rough_25mm_surface",
+      "type": "hfield",
+      "pos_m": [
+        7.7,
+        6.7,
+        0
+      ],
+      "size_m": null,
+      "collision": true
+    },
+    {
+      "name": "rough_50mm_surface",
+      "type": "hfield",
+      "pos_m": [
+        12.6,
+        6.7,
+        0
+      ],
+      "size_m": null,
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_01",
+      "type": "box",
+      "pos_m": [
+        2.373692235714096,
+        -10.107330842698866,
+        0.011955511073941823
+      ],
+      "size_m": [
+        0.23926938891948046,
+        0.0831464483787712,
+        0.011955511073941823
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_02",
+      "type": "box",
+      "pos_m": [
+        3.0233204598003454,
+        -10.125807614824131,
+        0.004555678841262437
+      ],
+      "size_m": [
+        0.15090447331121234,
+        0.08791307718149419,
+        0.004555678841262437
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_03",
+      "type": "box",
+      "pos_m": [
+        3.5933146688892195,
+        -10.124637384245725,
+        0.009852920377495819
+      ],
+      "size_m": [
+        0.2184588341316741,
+        0.08226280641332198,
+        0.009852920377495819
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_04",
+      "type": "box",
+      "pos_m": [
+        4.176355002501375,
+        -10.169723948288333,
+        0.006634726898635097
+      ],
+      "size_m": [
+        0.13771894452993416,
+        0.09383671294779217,
+        0.006634726898635097
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_05",
+      "type": "box",
+      "pos_m": [
+        4.627482521576007,
+        -10.143107136786062,
+        0.010563398025716764
+      ],
+      "size_m": [
+        0.16779099780988166,
+        0.0802591693781829,
+        0.010563398025716764
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_06",
+      "type": "box",
+      "pos_m": [
+        5.197113826211102,
+        -10.211099327396282,
+        0.007406740386185474
+      ],
+      "size_m": [
+        0.1952834878163488,
+        0.06695698506847882,
+        0.007406740386185474
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_07",
+      "type": "box",
+      "pos_m": [
+        5.875601879723696,
+        -10.206371919699677,
+        0.007588715645151843
+      ],
+      "size_m": [
+        0.13750877010576762,
+        0.06035407164992822,
+        0.007588715645151843
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_08",
+      "type": "box",
+      "pos_m": [
+        6.361015894705573,
+        -10.141255030844846,
+        0.009956452604730822
+      ],
+      "size_m": [
+        0.23156635434971318,
+        0.08223663074844137,
+        0.009956452604730822
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_09",
+      "type": "box",
+      "pos_m": [
+        2.443483886731264,
+        -9.025820870278478,
+        0.009272393421517141
+      ],
+      "size_m": [
+        0.2136516994351938,
+        0.06530533537543243,
+        0.009272393421517141
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_10",
+      "type": "box",
+      "pos_m": [
+        2.9204750781293076,
+        -8.996202099054049,
+        0.013164767384634374
+      ],
+      "size_m": [
+        0.20230896939650264,
+        0.10023914058068797,
+        0.013164767384634374
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_11",
+      "type": "box",
+      "pos_m": [
+        3.5083226770746707,
+        -8.94972692517853,
+        0.011377561652500166
+      ],
+      "size_m": [
+        0.20023283068758602,
+        0.10231921178580786,
+        0.011377561652500166
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_12",
+      "type": "box",
+      "pos_m": [
+        4.147300612623823,
+        -9.089111289642055,
+        0.011681777703000537
+      ],
+      "size_m": [
+        0.18828512715810597,
+        0.10607380795319146,
+        0.011681777703000537
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_13",
+      "type": "box",
+      "pos_m": [
+        4.637804795130274,
+        -9.062008319582647,
+        0.008329157872835884
+      ],
+      "size_m": [
+        0.22921833064636327,
+        0.08216719422579982,
+        0.008329157872835884
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_14",
+      "type": "box",
+      "pos_m": [
+        5.206848405564196,
+        -9.15329923425184,
+        0.013300735432244528
+      ],
+      "size_m": [
+        0.11243578995412423,
+        0.09352304237528514,
+        0.013300735432244528
+      ],
+      "collision": true
+    },
+    {
+      "name": "fixed_plate_15",
+      "type": "box",
+      "pos_m": [
+        5.825296355186549,
+        -9.049573283323966,
+        0.01184173891994577
+      ],
+      "size_m": [
+        0.17974940945361806,
+        0.08087758860655006,
+        0.01184173891994577
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_01",
+      "type": "cylinder",
+      "pos_m": [
+        8.8,
+        -9.07,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_02",
+      "type": "cylinder",
+      "pos_m": [
+        9.75,
+        -10.030000000000001,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_03",
+      "type": "cylinder",
+      "pos_m": [
+        10.700000000000001,
+        -9.07,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_04",
+      "type": "cylinder",
+      "pos_m": [
+        11.65,
+        -10.030000000000001,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_05",
+      "type": "cylinder",
+      "pos_m": [
+        12.600000000000001,
+        -9.07,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_06",
+      "type": "cylinder",
+      "pos_m": [
+        13.55,
+        -10.030000000000001,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_07",
+      "type": "cylinder",
+      "pos_m": [
+        14.5,
+        -9.07,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "slalom_post_08",
+      "type": "cylinder",
+      "pos_m": [
+        15.45,
+        -10.030000000000001,
+        0.21
+      ],
+      "size_m": [
+        0.11,
+        0.21
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_1_south",
+      "type": "cylinder",
+      "pos_m": [
+        3.3,
+        8.61,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_1_north",
+      "type": "cylinder",
+      "pos_m": [
+        3.3,
+        10.29,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_2_south",
+      "type": "cylinder",
+      "pos_m": [
+        7.7,
+        8.809999999999999,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_2_north",
+      "type": "cylinder",
+      "pos_m": [
+        7.7,
+        10.09,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_3_south",
+      "type": "cylinder",
+      "pos_m": [
+        12.1,
+        8.985,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "gate_3_north",
+      "type": "cylinder",
+      "pos_m": [
+        12.1,
+        9.915,
+        0.24
+      ],
+      "size_m": [
+        0.09,
+        0.24
+      ],
+      "collision": true
+    },
+    {
+      "name": "zone_guide_north_inner_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_inner_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_inner_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_inner_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        -2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_inner_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        -2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_inner_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        -2.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_outer_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_outer_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_outer_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_outer_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        -5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_outer_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        -5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_outer_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        -5.05,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_far_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_far_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_north_far_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_far_1",
+      "type": "box",
+      "pos_m": [
+        3.0,
+        -8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_far_2",
+      "type": "box",
+      "pos_m": [
+        8.5,
+        -8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    },
+    {
+      "name": "zone_guide_south_far_3",
+      "type": "box",
+      "pos_m": [
+        14.0,
+        -8.15,
+        0.002
+      ],
+      "size_m": [
+        1.7,
+        0.015,
+        0.001
+      ],
+      "collision": false
+    }
+  ],
+  "colliding_course_geom_count": 63,
+  "noncolliding_marking_geom_count": 36,
+  "ground_geom_count": 1
+}

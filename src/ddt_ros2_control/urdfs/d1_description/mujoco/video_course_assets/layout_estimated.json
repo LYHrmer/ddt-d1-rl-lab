@@ -1,0 +1,1311 @@
+{
+  "description": "Estimated visual/geometric reconstruction, not original colleague assets",
+  "all_course_dimensions_estimated": true,
+  "units": "metres",
+  "seed": 20261008,
+  "source_recording": "/home/lyh/下载/录屏.webm",
+  "reference_frames": "ddt_ros2_ws/evidence/reference/reference_01.png through reference_04.png",
+  "robot_include": "robot.xml",
+  "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+  "robot_spawn_m_from_original_xml": [
+    0,
+    0,
+    0.8
+  ],
+  "suggested_gentle_entry_xy_m": [
+    [
+      0,
+      0
+    ],
+    [
+      0.8,
+      0
+    ],
+    [
+      1.3,
+      0.2
+    ],
+    [
+      2.0,
+      0.4
+    ]
+  ],
+  "entry_note": "Geometric suggestion only; no control command or traversal validation.",
+  "heightfield_resolution_px": [
+    129,
+    129
+  ],
+  "camera_estimated": {
+    "center": [
+      4.1,
+      1.0,
+      0.4
+    ],
+    "extent": 9.2,
+    "azimuth_deg": -130,
+    "elevation_deg": -48,
+    "fovy_deg": 42
+  },
+  "size_convention": "MuJoCo half-extents for boxes; radius and half-height for cylinders; hfield half-x, half-y, elevation range, base depth.",
+  "geometry": [
+    {
+      "name": "video_block_orange",
+      "type": "box",
+      "position_m": [
+        0.8,
+        -3.0,
+        0.1
+      ],
+      "mujoco_size_m": [
+        0.5,
+        0.5,
+        0.1
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "rgba": [
+        1.0,
+        0.38,
+        0.08,
+        1
+      ]
+    },
+    {
+      "name": "video_block_purple",
+      "type": "box",
+      "position_m": [
+        2.6,
+        -3.0,
+        0.14
+      ],
+      "mujoco_size_m": [
+        0.5,
+        0.5,
+        0.14
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "rgba": [
+        0.64,
+        0.18,
+        0.88,
+        1
+      ]
+    },
+    {
+      "name": "video_block_green",
+      "type": "box",
+      "position_m": [
+        4.4,
+        -3.0,
+        0.18
+      ],
+      "mujoco_size_m": [
+        0.5,
+        0.5,
+        0.18
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "rgba": [
+        0.12,
+        0.83,
+        0.35,
+        1
+      ]
+    },
+    {
+      "name": "video_block_yellow",
+      "type": "box",
+      "position_m": [
+        6.2,
+        -3.0,
+        0.22
+      ],
+      "mujoco_size_m": [
+        0.5,
+        0.5,
+        0.22
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "rgba": [
+        0.95,
+        0.96,
+        0.06,
+        1
+      ]
+    },
+    {
+      "name": "video_block_cyan",
+      "type": "box",
+      "position_m": [
+        8.0,
+        -3.0,
+        0.26
+      ],
+      "mujoco_size_m": [
+        0.5,
+        0.5,
+        0.26
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "rgba": [
+        0.06,
+        0.86,
+        0.81,
+        1
+      ]
+    },
+    {
+      "name": "video_main_stair_1",
+      "type": "box",
+      "position_m": [
+        4.5,
+        4.0,
+        0.06
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.06
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_2",
+      "type": "box",
+      "position_m": [
+        4.8,
+        4.0,
+        0.12
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.12
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_3",
+      "type": "box",
+      "position_m": [
+        5.1,
+        4.0,
+        0.18
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.18
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_4",
+      "type": "box",
+      "position_m": [
+        5.4,
+        4.0,
+        0.24
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.24
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_5",
+      "type": "box",
+      "position_m": [
+        5.7,
+        4.0,
+        0.3
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.3
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_6",
+      "type": "box",
+      "position_m": [
+        6.0,
+        4.0,
+        0.36
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.36
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_stair_7",
+      "type": "box",
+      "position_m": [
+        6.3,
+        4.0,
+        0.42
+      ],
+      "mujoco_size_m": [
+        0.15,
+        1.0,
+        0.42
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_main_platform",
+      "type": "box",
+      "position_m": [
+        6.95,
+        4.0,
+        0.42
+      ],
+      "mujoco_size_m": [
+        0.5,
+        1.0,
+        0.42
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_long_ramp",
+      "type": "box",
+      "position_m": [
+        8.76760986501815,
+        4.0,
+        0.4061172467049958
+      ],
+      "mujoco_size_m": [
+        1.3869841383375656,
+        0.625,
+        0.025
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9887644137508607,
+        0.0,
+        0.14948222001267206,
+        0.0
+      ]
+    },
+    {
+      "name": "video_cross_ramp",
+      "type": "box",
+      "position_m": [
+        8.55,
+        0.8051639587221854,
+        0.37553914289491136
+      ],
+      "mujoco_size_m": [
+        1.8396738841436002,
+        0.4,
+        0.025
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7032841325174958,
+        0.07342635050929314,
+        -0.07342635050929314,
+        0.7032841325174957
+      ]
+    },
+    {
+      "name": "video_cross_deck",
+      "type": "box",
+      "position_m": [
+        8.55,
+        2.9,
+        0.755
+      ],
+      "mujoco_size_m": [
+        0.4,
+        0.3,
+        0.025
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_secondary_stair_1",
+      "type": "box",
+      "position_m": [
+        6.3,
+        1.6,
+        0.05
+      ],
+      "mujoco_size_m": [
+        0.14,
+        0.8,
+        0.05
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_secondary_stair_2",
+      "type": "box",
+      "position_m": [
+        6.58,
+        1.6,
+        0.1
+      ],
+      "mujoco_size_m": [
+        0.14,
+        0.8,
+        0.1
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_secondary_stair_3",
+      "type": "box",
+      "position_m": [
+        6.859999999999999,
+        1.6,
+        0.15000000000000002
+      ],
+      "mujoco_size_m": [
+        0.14,
+        0.8,
+        0.15000000000000002
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_secondary_stair_4",
+      "type": "box",
+      "position_m": [
+        7.14,
+        1.6,
+        0.2
+      ],
+      "mujoco_size_m": [
+        0.14,
+        0.8,
+        0.2
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_secondary_stair_5",
+      "type": "box",
+      "position_m": [
+        7.42,
+        1.6,
+        0.25
+      ],
+      "mujoco_size_m": [
+        0.14,
+        0.8,
+        0.25
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_cylinder_base",
+      "type": "box",
+      "position_m": [
+        6.6,
+        0.1,
+        0.06
+      ],
+      "mujoco_size_m": [
+        0.85,
+        0.72,
+        0.06
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_round_platform",
+      "type": "cylinder",
+      "position_m": [
+        6.6,
+        0.1,
+        0.3
+      ],
+      "mujoco_size_m": [
+        0.53,
+        0.18
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_wide_access_panel",
+      "type": "box",
+      "position_m": [
+        5.606445232274023,
+        3.395703178483984,
+        0.3437303490603378
+      ],
+      "mujoco_size_m": [
+        1.1376538357514556,
+        0.65,
+        0.025
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9452431081936651,
+        -0.04545731652280414,
+        -0.15013531756818957,
+        -0.28619658489510974
+      ]
+    },
+    {
+      "name": "video_rough_surface",
+      "type": "hfield",
+      "position_m": [
+        2.35,
+        0.65,
+        0
+      ],
+      "mujoco_size_m": [],
+      "estimated": true,
+      "collision_enabled": true,
+      "hfield": "video_rough",
+      "hfield_size_m": [
+        1.1,
+        1.1,
+        0.025,
+        0.015
+      ],
+      "height_png": "video_course_assets/rough_height.png",
+      "max_surface_height_m": 0.025
+    },
+    {
+      "name": "video_pattern_surface",
+      "type": "hfield",
+      "position_m": [
+        4.3,
+        2.05,
+        0
+      ],
+      "mujoco_size_m": [],
+      "estimated": true,
+      "collision_enabled": true,
+      "hfield": "video_pattern",
+      "hfield_size_m": [
+        1.05,
+        1.05,
+        0.035,
+        0.015
+      ],
+      "height_png": "video_course_assets/pattern_height.png",
+      "max_surface_height_m": 0.035
+    },
+    {
+      "name": "video_debris_base",
+      "type": "box",
+      "position_m": [
+        0.15,
+        3.3,
+        0.012
+      ],
+      "mujoco_size_m": [
+        1.1,
+        1.1,
+        0.012
+      ],
+      "estimated": true,
+      "collision_enabled": true
+    },
+    {
+      "name": "video_debris_plate_01",
+      "type": "box",
+      "position_m": [
+        0.10772819200713765,
+        3.1662069967905833,
+        0.10938886761501833
+      ],
+      "mujoco_size_m": [
+        0.25858324297420054,
+        0.19378374394399367,
+        0.012064353910784458
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.481020771436668,
+        0.010423805319908146,
+        -0.05845636272679108,
+        -0.8746960702929214
+      ]
+    },
+    {
+      "name": "video_debris_plate_02",
+      "type": "box",
+      "position_m": [
+        0.8640719441891124,
+        3.6080814287316656,
+        0.134485510728877
+      ],
+      "mujoco_size_m": [
+        0.3922397467791253,
+        0.14466386660808173,
+        0.011336303862447742
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.5904778774187825,
+        0.040055127209279,
+        0.021211341284145608,
+        -0.8057800829408636
+      ]
+    },
+    {
+      "name": "video_debris_plate_03",
+      "type": "box",
+      "position_m": [
+        0.31419927273955073,
+        3.033130181587305,
+        0.11528231471169556
+      ],
+      "mujoco_size_m": [
+        0.4745831264377589,
+        0.19431654368948675,
+        0.008922452835434044
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.8688119934584497,
+        -0.03444305019022734,
+        -0.030830463095880424,
+        -0.49297959274359615
+      ]
+    },
+    {
+      "name": "video_debris_plate_04",
+      "type": "box",
+      "position_m": [
+        0.9113196896597563,
+        3.6810320670639403,
+        0.09153396691887102
+      ],
+      "mujoco_size_m": [
+        0.43432740379744916,
+        0.08763528955806792,
+        0.014314212560440501
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.33149928796530703,
+        0.05770115269144262,
+        -0.02856500064053908,
+        0.941255990575879
+      ]
+    },
+    {
+      "name": "video_debris_plate_05",
+      "type": "box",
+      "position_m": [
+        0.04803227877250768,
+        3.1181331717920937,
+        0.10282921518345654
+      ],
+      "mujoco_size_m": [
+        0.28351986032287047,
+        0.14403668586959567,
+        0.01680608039826617
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.8984165141640971,
+        -0.024122200851094823,
+        -0.0031189568187988664,
+        0.4384702482628607
+      ]
+    },
+    {
+      "name": "video_debris_plate_06",
+      "type": "box",
+      "position_m": [
+        -0.5162444719516783,
+        3.9451251730234156,
+        0.12051401053518299
+      ],
+      "mujoco_size_m": [
+        0.20360812892340088,
+        0.08375699857591516,
+        0.008759293897761996
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.626128580643053,
+        0.002215520271579466,
+        -0.03361585475087743,
+        0.7789916984674549
+      ]
+    },
+    {
+      "name": "video_debris_plate_07",
+      "type": "box",
+      "position_m": [
+        -0.37545794538279276,
+        3.743081135488363,
+        0.10386507214210844
+      ],
+      "mujoco_size_m": [
+        0.3563227538215585,
+        0.09899812144487663,
+        0.017449477631312986
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9989384794454628,
+        0.031522812757262986,
+        0.0010929558354089326,
+        0.03357129736246918
+      ]
+    },
+    {
+      "name": "video_debris_plate_08",
+      "type": "box",
+      "position_m": [
+        0.5054049583479444,
+        3.3093900220628862,
+        0.10271539475796537
+      ],
+      "mujoco_size_m": [
+        0.4749022030700202,
+        0.07738145836918213,
+        0.008770704525938457
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.5507316389393652,
+        -0.031329324514891746,
+        0.029399821354634224,
+        0.8335759028432363
+      ]
+    },
+    {
+      "name": "video_debris_plate_09",
+      "type": "box",
+      "position_m": [
+        -0.2048097529961372,
+        3.4455542259263354,
+        0.1336346657354246
+      ],
+      "mujoco_size_m": [
+        0.40890448203934926,
+        0.14952822482594724,
+        0.015140247412371403
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.38405501224376515,
+        0.06244120366843425,
+        0.02144295915964364,
+        0.9209468188540293
+      ]
+    },
+    {
+      "name": "video_debris_plate_10",
+      "type": "box",
+      "position_m": [
+        0.7839828987742122,
+        3.8338008258879164,
+        0.08728461270833628
+      ],
+      "mujoco_size_m": [
+        0.3693731459460521,
+        0.08350829903332281,
+        0.0122362884722232
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.6829189049485886,
+        0.019004014844865275,
+        0.005812972338153833,
+        0.7302238191377987
+      ]
+    },
+    {
+      "name": "video_debris_plate_11",
+      "type": "box",
+      "position_m": [
+        0.5402315719681511,
+        2.8993471086104843,
+        0.10035204152826907
+      ],
+      "mujoco_size_m": [
+        0.23519989565637106,
+        0.1686272061841141,
+        0.015082732256225164
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.028973773350821783,
+        0.04661687329261694,
+        0.030327472432424396,
+        -0.9980318792494035
+      ]
+    },
+    {
+      "name": "video_debris_plate_12",
+      "type": "box",
+      "position_m": [
+        0.43733807115090106,
+        2.531972244052424,
+        0.06616769873148906
+      ],
+      "mujoco_size_m": [
+        0.21081923566494343,
+        0.10813794574730917,
+        0.015385962611868097
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.08560569803482,
+        -0.05794511012799154,
+        -0.051079798913442824,
+        0.9933301982821162
+      ]
+    },
+    {
+      "name": "video_debris_plate_13",
+      "type": "box",
+      "position_m": [
+        0.3717842035880611,
+        2.9848163770039853,
+        0.13721138445864905
+      ],
+      "mujoco_size_m": [
+        0.43436121235987313,
+        0.08208724117828314,
+        0.011737283755706528
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.6176803221914894,
+        -0.01982441243927496,
+        0.06347285268840673,
+        0.7836129205292952
+      ]
+    },
+    {
+      "name": "video_debris_plate_14",
+      "type": "box",
+      "position_m": [
+        0.2766786314727052,
+        2.962111048304769,
+        0.12986183743681595
+      ],
+      "mujoco_size_m": [
+        0.40007050709460457,
+        0.09398967788586196,
+        0.017629700630565973
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9613968377019181,
+        -0.017842377221887064,
+        0.011046801864222876,
+        0.2743642436623192
+      ]
+    },
+    {
+      "name": "video_debris_plate_15",
+      "type": "box",
+      "position_m": [
+        0.3069686709643822,
+        3.7515239062707657,
+        0.08393680550560362
+      ],
+      "mujoco_size_m": [
+        0.22348239884070797,
+        0.1870986863053544,
+        0.017978643020872265
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9995162480564714,
+        -0.013072586007505898,
+        -0.024205253823392805,
+        -0.014508034103060192
+      ]
+    },
+    {
+      "name": "video_debris_plate_16",
+      "type": "box",
+      "position_m": [
+        0.8740039737474424,
+        3.238715768680264,
+        0.06689737555670133
+      ],
+      "mujoco_size_m": [
+        0.4035232890501117,
+        0.09436074425138255,
+        0.015528720103718311
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9964012966726442,
+        -0.007388867629042749,
+        -0.0576082626008425,
+        -0.06173450173400792
+      ]
+    },
+    {
+      "name": "video_debris_plate_17",
+      "type": "box",
+      "position_m": [
+        -0.3089807676831249,
+        2.59431974071715,
+        0.10107713502402998
+      ],
+      "mujoco_size_m": [
+        0.4257773541244073,
+        0.14118196229229726,
+        0.010626426341000157
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.1875649409237954,
+        -0.0466950420326427,
+        -0.0568362612390377,
+        -0.9794940558238171
+      ]
+    },
+    {
+      "name": "video_debris_plate_18",
+      "type": "box",
+      "position_m": [
+        0.22743546229916886,
+        4.035347194580291,
+        0.061314606839340126
+      ],
+      "mujoco_size_m": [
+        0.2848398451938368,
+        0.07305497119062951,
+        0.014186112927642556
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.5494208291466934,
+        0.009875061595452138,
+        0.012088849772917435,
+        0.8353999613175795
+      ]
+    },
+    {
+      "name": "video_debris_plate_19",
+      "type": "box",
+      "position_m": [
+        0.5616892726901944,
+        3.169332083829294,
+        0.09591232352515662
+      ],
+      "mujoco_size_m": [
+        0.28675481638441996,
+        0.15243784315465878,
+        0.016117777956772814
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.6048904618144358,
+        -0.0018489634399744808,
+        -0.019942853632425164,
+        -0.7960567775787804
+      ]
+    },
+    {
+      "name": "video_debris_plate_20",
+      "type": "box",
+      "position_m": [
+        0.842882871929333,
+        2.7262500523703688,
+        0.08048096271130024
+      ],
+      "mujoco_size_m": [
+        0.2230657104987486,
+        0.153137823125985,
+        0.015867660309516474
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9431141376968021,
+        -0.027775815670297792,
+        0.006550469326505699,
+        -0.3312420847233477
+      ]
+    },
+    {
+      "name": "video_debris_plate_21",
+      "type": "box",
+      "position_m": [
+        0.5224018529389688,
+        3.4969290583711135,
+        0.12283945242656219
+      ],
+      "mujoco_size_m": [
+        0.43339836729176445,
+        0.12237650074186117,
+        0.01384195471565405
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7865024264326127,
+        0.05897080204807067,
+        -0.009618832407640755,
+        0.6146900485484806
+      ]
+    },
+    {
+      "name": "video_debris_plate_22",
+      "type": "box",
+      "position_m": [
+        0.5200475890760253,
+        2.7865392507388598,
+        0.061793650369550215
+      ],
+      "mujoco_size_m": [
+        0.3856597450156717,
+        0.1540612300475523,
+        0.00828173252266163
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.49060632605924925,
+        0.043346611245512964,
+        -0.025094410278779455,
+        -0.869940673090376
+      ]
+    },
+    {
+      "name": "video_debris_plate_23",
+      "type": "box",
+      "position_m": [
+        0.5865458211467091,
+        2.6448879771486196,
+        0.10835565222087679
+      ],
+      "mujoco_size_m": [
+        0.46186435977173174,
+        0.1545592266674484,
+        0.012416752317988236
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.8072654391434573,
+        -0.016236265226867917,
+        -0.0647626245725594,
+        0.5863997756773767
+      ]
+    },
+    {
+      "name": "video_debris_plate_24",
+      "type": "box",
+      "position_m": [
+        0.9079897717208446,
+        3.870759588125585,
+        0.12327025865423448
+      ],
+      "mujoco_size_m": [
+        0.2127833992170975,
+        0.10668562407568802,
+        0.011124805895844013
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7484671783179537,
+        -0.02063023238489352,
+        -0.03005063138649206,
+        -0.6621693409134698
+      ]
+    },
+    {
+      "name": "video_debris_plate_25",
+      "type": "box",
+      "position_m": [
+        -0.1064260256460419,
+        2.553668947242561,
+        0.06672624570219463
+      ],
+      "mujoco_size_m": [
+        0.21312241870262658,
+        0.1659583573283713,
+        0.009992774752211267
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9688034003593641,
+        0.013335853919460301,
+        0.0024358881897744147,
+        -0.24745947729092813
+      ]
+    },
+    {
+      "name": "video_debris_plate_26",
+      "type": "box",
+      "position_m": [
+        0.5740715939720199,
+        2.5473082483415506,
+        0.11952519688095248
+      ],
+      "mujoco_size_m": [
+        0.22862464786199227,
+        0.15458876001635652,
+        0.013750951030270915
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7534841317248554,
+        0.008717564263951115,
+        -0.004794361485700465,
+        0.6573908132991281
+      ]
+    },
+    {
+      "name": "video_debris_plate_27",
+      "type": "box",
+      "position_m": [
+        0.13934004224093652,
+        3.528138256365507,
+        0.12868301256349113
+      ],
+      "mujoco_size_m": [
+        0.20492499029412278,
+        0.09460282734860155,
+        0.009523101644642993
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.5161069522407481,
+        0.001730241001393136,
+        -0.06589560543645095,
+        -0.8539838343311932
+      ]
+    },
+    {
+      "name": "video_debris_plate_28",
+      "type": "box",
+      "position_m": [
+        0.42855438908356447,
+        2.831996007200757,
+        0.11338536695534958
+      ],
+      "mujoco_size_m": [
+        0.20670205642277698,
+        0.11108020731960505,
+        0.01731812369874655
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.36851440308514866,
+        0.053485729514659394,
+        -0.04647753362405886,
+        -0.9269176070856059
+      ]
+    },
+    {
+      "name": "video_debris_plate_29",
+      "type": "box",
+      "position_m": [
+        0.3452730952920877,
+        3.877231796151589,
+        0.12523809242085673
+      ],
+      "mujoco_size_m": [
+        0.39283026912496444,
+        0.10942216850974722,
+        0.012076965955564165
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7020999440056911,
+        -0.0613365386931666,
+        -0.015658635042185398,
+        0.7092589828806984
+      ]
+    },
+    {
+      "name": "video_debris_plate_30",
+      "type": "box",
+      "position_m": [
+        0.7339912983216009,
+        3.287648000107037,
+        0.0817934501734201
+      ],
+      "mujoco_size_m": [
+        0.37790814017457786,
+        0.1937978788032642,
+        0.008066547387595312
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9928085994327688,
+        -0.04406579808610773,
+        0.004958720908143078,
+        0.111196678989678
+      ]
+    },
+    {
+      "name": "video_debris_plate_31",
+      "type": "box",
+      "position_m": [
+        0.0920369896153452,
+        3.4063709086193157,
+        0.0622063931479053
+      ],
+      "mujoco_size_m": [
+        0.29411020309556474,
+        0.16695230165096286,
+        0.01724795386034864
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9594746236920823,
+        -0.05022916487261295,
+        -0.03377057097231875,
+        -0.27521814261298344
+      ]
+    },
+    {
+      "name": "video_debris_plate_32",
+      "type": "box",
+      "position_m": [
+        0.6383654797788344,
+        3.0952038707039637,
+        0.10262500584200543
+      ],
+      "mujoco_size_m": [
+        0.3732635058114596,
+        0.12242877175353689,
+        0.012568999028222002
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7825160914893466,
+        -0.05099297931998704,
+        0.034969464727671366,
+        -0.6195525959569274
+      ]
+    },
+    {
+      "name": "video_debris_plate_33",
+      "type": "box",
+      "position_m": [
+        0.42936618768934653,
+        3.229577106265091,
+        0.11204832764250694
+      ],
+      "mujoco_size_m": [
+        0.3401902157556098,
+        0.10880013576287488,
+        0.016270965332857382
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.9983672323050258,
+        -0.03599639366357382,
+        -0.0307609632491727,
+        0.03195140439484539
+      ]
+    },
+    {
+      "name": "video_debris_plate_34",
+      "type": "box",
+      "position_m": [
+        -0.40842779251926076,
+        3.0694398132979557,
+        0.0674134675304601
+      ],
+      "mujoco_size_m": [
+        0.4140567879962532,
+        0.07178620049822637,
+        0.008547270315033538
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.31132035884403914,
+        -0.010536370557495631,
+        0.031032885270039546,
+        -0.94973974282248
+      ]
+    },
+    {
+      "name": "video_debris_plate_35",
+      "type": "box",
+      "position_m": [
+        0.4628498756790588,
+        3.5055875808320245,
+        0.11369827113205269
+      ],
+      "mujoco_size_m": [
+        0.33154921681419464,
+        0.08084122581317889,
+        0.015533426367622578
+      ],
+      "estimated": true,
+      "collision_enabled": true,
+      "quaternion_wxyz": [
+        0.7754518747462696,
+        0.03172981551682281,
+        -0.04974725608682241,
+        0.628643634559037
+      ]
+    }
+  ]
+}

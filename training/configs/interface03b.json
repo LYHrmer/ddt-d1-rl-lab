@@ -1,0 +1,59 @@
+{
+  "interface_id": "d1-selftrained-pilot03b-v2",
+  "schema_version": 2,
+  "audited_observation_schema": {
+    "path": "evidence/interface_audit_03/golden_run_01/schema.json",
+    "sha256": "bb45f7332a59ca2cb61552c2033f5e02149268c3ab3b828817914c6ebf16f52c"
+  },
+  "robot_xml": "src/ddt_ros2_control/urdfs/d1_description/mujoco/robot.xml",
+  "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+  "joint_order": [
+    "FL_hip_joint", "FL_thigh_joint", "FL_calf_joint", "FL_foot_joint",
+    "FR_hip_joint", "FR_thigh_joint", "FR_calf_joint", "FR_foot_joint",
+    "RL_hip_joint", "RL_thigh_joint", "RL_calf_joint", "RL_foot_joint",
+    "RR_hip_joint", "RR_thigh_joint", "RR_calf_joint", "RR_foot_joint"
+  ],
+  "wheel_indices": [3, 7, 11, 15],
+  "default_joint_angles": [
+    0.0, 0.8, -1.5, 0.0,
+    0.0, 0.8, -1.5, 0.0,
+    0.0, 0.8, -1.5, 0.0,
+    0.0, 0.8, -1.5, 0.0
+  ],
+  "joint_kp": [60, 60, 60, 0, 60, 60, 60, 0, 60, 60, 60, 0, 60, 60, 60, 0],
+  "joint_kd": [1.5, 1.5, 1.5, 0.5, 1.5, 1.5, 1.5, 0.5,
+               1.5, 1.5, 1.5, 0.5, 1.5, 1.5, 1.5, 0.5],
+  "action_scales": [0.5, 0.5, 0.5, 5.0, 0.5, 0.5, 0.5, 5.0,
+                    0.5, 0.5, 0.5, 5.0, 0.5, 0.5, 0.5, 5.0],
+  "torque_limits": [80, 80, 80, 12, 80, 80, 80, 12, 80, 80, 80, 12, 80, 80, 80, 12],
+  "action_clip": [-1.0, 1.0],
+  "control_type": "P_V",
+  "force_application": "qfrc_applied; ctrl zero; free-base applied force zero",
+  "observation": {
+    "current_dim": 57,
+    "history_frames": 10,
+    "actor_dim": 627,
+    "slices": {
+      "body_gyro_filtered_scaled": [0, 3],
+      "projected_gravity_body": [3, 6],
+      "command_scaled": [6, 9],
+      "joint_position_offset_wheels_zero": [9, 25],
+      "joint_velocity_scaled": [25, 41],
+      "last_clipped_issued_action": [41, 57]
+    },
+    "scales": {"body_gyro": 0.25, "commands_vx_vy_wz": [2.0, 2.0, 0.25],
+               "joint_position": 1.0, "joint_velocity": 0.05},
+    "quaternion_order": "wxyz_body_to_world",
+    "gyro_filter_new": 0.97,
+    "gyro_filter_previous": 0.03,
+    "history_order": "oldest_to_newest_previous_only",
+    "last_action_semantics": "clipped issued policy action before execution delay",
+    "sensor_refresh": "mj_forward once at each policy observation boundary"
+  },
+  "timing": {"native_dt_s": 0.002, "pd_native_steps": 2, "policy_native_steps": 10,
+             "pd_zero_order_hold": true},
+  "delay": {"FIFO_contents": "whole clipped 16D actions",
+            "reset_value": "zero actions", "training_B_ticks": 0,
+            "training_R_ticks": [0, 1, 2], "training_M_ticks": 1,
+            "evaluation_ticks": [0, 1, 2, 3]}
+}

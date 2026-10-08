@@ -1,0 +1,163 @@
+{
+  "interface_id": "d1-selftrained-pilot03-v1",
+  "robot_xml": "/home/lyh/ddt_ros2_ws/src/ddt_ros2_control/urdfs/d1_description/mujoco/robot.xml",
+  "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+  "joint_order": [
+    "FL_hip_joint",
+    "FL_thigh_joint",
+    "FL_calf_joint",
+    "FL_foot_joint",
+    "FR_hip_joint",
+    "FR_thigh_joint",
+    "FR_calf_joint",
+    "FR_foot_joint",
+    "RL_hip_joint",
+    "RL_thigh_joint",
+    "RL_calf_joint",
+    "RL_foot_joint",
+    "RR_hip_joint",
+    "RR_thigh_joint",
+    "RR_calf_joint",
+    "RR_foot_joint"
+  ],
+  "default_joint_angles": [
+    0.0,
+    0.8,
+    -1.5,
+    0.0,
+    0.0,
+    0.8,
+    -1.5,
+    0.0,
+    0.0,
+    0.8,
+    -1.5,
+    0.0,
+    0.0,
+    0.8,
+    -1.5,
+    0.0
+  ],
+  "kp": [
+    60.0,
+    60.0,
+    60.0,
+    0.0,
+    60.0,
+    60.0,
+    60.0,
+    0.0,
+    60.0,
+    60.0,
+    60.0,
+    0.0,
+    60.0,
+    60.0,
+    60.0,
+    0.0
+  ],
+  "kd": [
+    1.5,
+    1.5,
+    1.5,
+    0.5,
+    1.5,
+    1.5,
+    1.5,
+    0.5,
+    1.5,
+    1.5,
+    1.5,
+    0.5,
+    1.5,
+    1.5,
+    1.5,
+    0.5
+  ],
+  "action_scales": [
+    0.25,
+    0.25,
+    0.25,
+    5.0,
+    0.25,
+    0.25,
+    0.25,
+    5.0,
+    0.25,
+    0.25,
+    0.25,
+    5.0,
+    0.25,
+    0.25,
+    0.25,
+    5.0
+  ],
+  "torque_limits": [
+    80.0,
+    80.0,
+    80.0,
+    12.0,
+    80.0,
+    80.0,
+    80.0,
+    12.0,
+    80.0,
+    80.0,
+    80.0,
+    12.0,
+    80.0,
+    80.0,
+    80.0,
+    12.0
+  ],
+  "native_dt": 0.002,
+  "pd_decimation": 2,
+  "policy_decimation": 10,
+  "watchdog_seconds": 0.5,
+  "action_clip": [
+    -1.0,
+    1.0
+  ],
+  "last_action": "issued clipped action before delay FIFO",
+  "history_order": "oldest_to_newest,previous_observations_only",
+  "onnx_inputs": {
+    "obs": [
+      1,
+      57
+    ],
+    "history": [
+      1,
+      10,
+      57
+    ]
+  },
+  "onnx_outputs": {
+    "actions": [
+      1,
+      16
+    ]
+  },
+  "reset": {
+    "leg_joint_noise": [
+      -0.02,
+      0.02
+    ],
+    "yaw_noise": [
+      -0.05,
+      0.05
+    ],
+    "wheel_position": 0.0,
+    "qvel": 0.0,
+    "wheel_bottom_clearance": 0.002
+  },
+  "low_speed_scope_mps": [
+    -0.3,
+    0.3
+  ],
+  "wheel_scale_speed_note": "wheel radius .087m * 5rad/s = .435m/s target upper scale; not a 1.5m/s policy",
+  "interface_semantics_source": "docs/career_execution_contract_03.md and training/d1_rl/interface.py",
+  "audited_interface_schema": "/home/lyh/ddt_ros2_ws/evidence/interface_audit_03/golden_run_01/schema.json",
+  "audited_interface_schema_sha256": "bb45f7332a59ca2cb61552c2033f5e02149268c3ab3b828817914c6ebf16f52c",
+  "training_config": "/home/lyh/ddt_ros2_ws/training/configs/pilot03.json",
+  "training_config_sha256": "0fdcade1483bf6bd135c522c744e8570bcb189c6346a54c43c94cffa841d9ef1"
+}

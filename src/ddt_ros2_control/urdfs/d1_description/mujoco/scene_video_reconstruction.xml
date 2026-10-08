@@ -1,0 +1,84 @@
+<mujoco model="D1 estimated video course">
+  <!-- Visual/geometric approximation of the supplied recording. All course dimensions are estimated; see video_course_assets/README.md. -->
+  <include file="robot.xml" />
+  <statistic center="4.1 1.0 0.4" extent="9.2" />
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+    <rgba haze="0.15 0.25 0.35 1" />
+    <global azimuth="-130" elevation="-48" fovy="42" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="video_ground_texture" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.55 0.65 0.75" width="300" height="300" />
+    <material name="video_ground" texture="video_ground_texture" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+    <material name="video_concrete" rgba="0.67 0.67 0.64 1" specular="0.08" shininess="0.12" />
+    <hfield name="video_rough" file="../mujoco/video_course_assets/rough_height.png" size="1.1 1.1 0.025 0.015" />
+    <hfield name="video_pattern" file="../mujoco/video_course_assets/pattern_height.png" size="1.05 1.05 0.035 0.015" />
+  </asset>
+  <worldbody>
+    <light pos="2 -3 9" dir="0 0 -1" directional="true" />
+    <geom name="video_floor" type="plane" size="0 0 0.05" material="video_ground" />
+    <geom name="video_block_orange" type="box" pos="0.8 -3 0.1" size="0.5 0.5 0.1" contype="1" conaffinity="1" rgba="1 0.38 0.08 1" />
+    <geom name="video_block_purple" type="box" pos="2.6 -3 0.14" size="0.5 0.5 0.14" contype="1" conaffinity="1" rgba="0.64 0.18 0.88 1" />
+    <geom name="video_block_green" type="box" pos="4.4 -3 0.18" size="0.5 0.5 0.18" contype="1" conaffinity="1" rgba="0.12 0.83 0.35 1" />
+    <geom name="video_block_yellow" type="box" pos="6.2 -3 0.22" size="0.5 0.5 0.22" contype="1" conaffinity="1" rgba="0.95 0.96 0.06 1" />
+    <geom name="video_block_cyan" type="box" pos="8 -3 0.26" size="0.5 0.5 0.26" contype="1" conaffinity="1" rgba="0.06 0.86 0.81 1" />
+    <geom name="video_main_stair_1" type="box" pos="4.5 4 0.06" size="0.15 1 0.06" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_2" type="box" pos="4.8 4 0.12" size="0.15 1 0.12" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_3" type="box" pos="5.1 4 0.18" size="0.15 1 0.18" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_4" type="box" pos="5.4 4 0.24" size="0.15 1 0.24" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_5" type="box" pos="5.7 4 0.3" size="0.15 1 0.3" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_6" type="box" pos="6 4 0.36" size="0.15 1 0.36" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_stair_7" type="box" pos="6.3 4 0.42" size="0.15 1 0.42" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_main_platform" type="box" pos="6.95 4 0.42" size="0.5 1 0.42" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_long_ramp" type="box" pos="8.76761 4 0.4061172" size="1.386984 0.625 0.025" contype="1" conaffinity="1" material="video_concrete" quat="0.9887644 0 0.1494822 0" />
+    <geom name="video_cross_ramp" type="box" pos="8.55 0.805164 0.3755391" size="1.839674 0.4 0.025" contype="1" conaffinity="1" material="video_concrete" quat="0.7032841 0.07342635 -0.07342635 0.7032841" />
+    <geom name="video_cross_deck" type="box" pos="8.55 2.9 0.755" size="0.4 0.3 0.025" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_secondary_stair_1" type="box" pos="6.3 1.6 0.05" size="0.14 0.8 0.05" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_secondary_stair_2" type="box" pos="6.58 1.6 0.1" size="0.14 0.8 0.1" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_secondary_stair_3" type="box" pos="6.86 1.6 0.15" size="0.14 0.8 0.15" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_secondary_stair_4" type="box" pos="7.14 1.6 0.2" size="0.14 0.8 0.2" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_secondary_stair_5" type="box" pos="7.42 1.6 0.25" size="0.14 0.8 0.25" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_cylinder_base" type="box" pos="6.6 0.1 0.06" size="0.85 0.72 0.06" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_round_platform" type="cylinder" pos="6.6 0.1 0.3" size="0.53 0.18" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_wide_access_panel" type="box" pos="5.606445 3.395703 0.3437303" size="1.137654 0.65 0.025" contype="1" conaffinity="1" material="video_concrete" quat="0.9452431 -0.04545732 -0.1501353 -0.2861966" />
+    <geom name="video_rough_surface" type="hfield" pos="2.35 0.65 0" contype="1" conaffinity="1" material="video_concrete" hfield="video_rough" />
+    <geom name="video_pattern_surface" type="hfield" pos="4.3 2.05 0" contype="1" conaffinity="1" material="video_concrete" hfield="video_pattern" />
+    <geom name="video_debris_base" type="box" pos="0.15 3.3 0.012" size="1.1 1.1 0.012" contype="1" conaffinity="1" material="video_concrete" />
+    <geom name="video_debris_plate_01" type="box" pos="0.1077282 3.166207 0.1093889" size="0.2585832 0.1937837 0.01206435" contype="1" conaffinity="1" material="video_concrete" quat="0.4810208 0.01042381 -0.05845636 -0.8746961" />
+    <geom name="video_debris_plate_02" type="box" pos="0.8640719 3.608081 0.1344855" size="0.3922397 0.1446639 0.0113363" contype="1" conaffinity="1" material="video_concrete" quat="0.5904779 0.04005513 0.02121134 -0.8057801" />
+    <geom name="video_debris_plate_03" type="box" pos="0.3141993 3.03313 0.1152823" size="0.4745831 0.1943165 0.008922453" contype="1" conaffinity="1" material="video_concrete" quat="0.868812 -0.03444305 -0.03083046 -0.4929796" />
+    <geom name="video_debris_plate_04" type="box" pos="0.9113197 3.681032 0.09153397" size="0.4343274 0.08763529 0.01431421" contype="1" conaffinity="1" material="video_concrete" quat="0.3314993 0.05770115 -0.028565 0.941256" />
+    <geom name="video_debris_plate_05" type="box" pos="0.04803228 3.118133 0.1028292" size="0.2835199 0.1440367 0.01680608" contype="1" conaffinity="1" material="video_concrete" quat="0.8984165 -0.0241222 -0.003118957 0.4384702" />
+    <geom name="video_debris_plate_06" type="box" pos="-0.5162445 3.945125 0.120514" size="0.2036081 0.083757 0.008759294" contype="1" conaffinity="1" material="video_concrete" quat="0.6261286 0.00221552 -0.03361585 0.7789917" />
+    <geom name="video_debris_plate_07" type="box" pos="-0.3754579 3.743081 0.1038651" size="0.3563228 0.09899812 0.01744948" contype="1" conaffinity="1" material="video_concrete" quat="0.9989385 0.03152281 0.001092956 0.0335713" />
+    <geom name="video_debris_plate_08" type="box" pos="0.505405 3.30939 0.1027154" size="0.4749022 0.07738146 0.008770705" contype="1" conaffinity="1" material="video_concrete" quat="0.5507316 -0.03132932 0.02939982 0.8335759" />
+    <geom name="video_debris_plate_09" type="box" pos="-0.2048098 3.445554 0.1336347" size="0.4089045 0.1495282 0.01514025" contype="1" conaffinity="1" material="video_concrete" quat="0.384055 0.0624412 0.02144296 0.9209468" />
+    <geom name="video_debris_plate_10" type="box" pos="0.7839829 3.833801 0.08728461" size="0.3693731 0.0835083 0.01223629" contype="1" conaffinity="1" material="video_concrete" quat="0.6829189 0.01900401 0.005812972 0.7302238" />
+    <geom name="video_debris_plate_11" type="box" pos="0.5402316 2.899347 0.100352" size="0.2351999 0.1686272 0.01508273" contype="1" conaffinity="1" material="video_concrete" quat="0.02897377 0.04661687 0.03032747 -0.9980319" />
+    <geom name="video_debris_plate_12" type="box" pos="0.4373381 2.531972 0.0661677" size="0.2108192 0.1081379 0.01538596" contype="1" conaffinity="1" material="video_concrete" quat="0.0856057 -0.05794511 -0.0510798 0.9933302" />
+    <geom name="video_debris_plate_13" type="box" pos="0.3717842 2.984816 0.1372114" size="0.4343612 0.08208724 0.01173728" contype="1" conaffinity="1" material="video_concrete" quat="0.6176803 -0.01982441 0.06347285 0.7836129" />
+    <geom name="video_debris_plate_14" type="box" pos="0.2766786 2.962111 0.1298618" size="0.4000705 0.09398968 0.0176297" contype="1" conaffinity="1" material="video_concrete" quat="0.9613968 -0.01784238 0.0110468 0.2743642" />
+    <geom name="video_debris_plate_15" type="box" pos="0.3069687 3.751524 0.08393681" size="0.2234824 0.1870987 0.01797864" contype="1" conaffinity="1" material="video_concrete" quat="0.9995162 -0.01307259 -0.02420525 -0.01450803" />
+    <geom name="video_debris_plate_16" type="box" pos="0.874004 3.238716 0.06689738" size="0.4035233 0.09436074 0.01552872" contype="1" conaffinity="1" material="video_concrete" quat="0.9964013 -0.007388868 -0.05760826 -0.0617345" />
+    <geom name="video_debris_plate_17" type="box" pos="-0.3089808 2.59432 0.1010771" size="0.4257774 0.141182 0.01062643" contype="1" conaffinity="1" material="video_concrete" quat="0.1875649 -0.04669504 -0.05683626 -0.9794941" />
+    <geom name="video_debris_plate_18" type="box" pos="0.2274355 4.035347 0.06131461" size="0.2848398 0.07305497 0.01418611" contype="1" conaffinity="1" material="video_concrete" quat="0.5494208 0.009875062 0.01208885 0.8354" />
+    <geom name="video_debris_plate_19" type="box" pos="0.5616893 3.169332 0.09591232" size="0.2867548 0.1524378 0.01611778" contype="1" conaffinity="1" material="video_concrete" quat="0.6048905 -0.001848963 -0.01994285 -0.7960568" />
+    <geom name="video_debris_plate_20" type="box" pos="0.8428829 2.72625 0.08048096" size="0.2230657 0.1531378 0.01586766" contype="1" conaffinity="1" material="video_concrete" quat="0.9431141 -0.02777582 0.006550469 -0.3312421" />
+    <geom name="video_debris_plate_21" type="box" pos="0.5224019 3.496929 0.1228395" size="0.4333984 0.1223765 0.01384195" contype="1" conaffinity="1" material="video_concrete" quat="0.7865024 0.0589708 -0.009618832 0.61469" />
+    <geom name="video_debris_plate_22" type="box" pos="0.5200476 2.786539 0.06179365" size="0.3856597 0.1540612 0.008281733" contype="1" conaffinity="1" material="video_concrete" quat="0.4906063 0.04334661 -0.02509441 -0.8699407" />
+    <geom name="video_debris_plate_23" type="box" pos="0.5865458 2.644888 0.1083557" size="0.4618644 0.1545592 0.01241675" contype="1" conaffinity="1" material="video_concrete" quat="0.8072654 -0.01623627 -0.06476262 0.5863998" />
+    <geom name="video_debris_plate_24" type="box" pos="0.9079898 3.87076 0.1232703" size="0.2127834 0.1066856 0.01112481" contype="1" conaffinity="1" material="video_concrete" quat="0.7484672 -0.02063023 -0.03005063 -0.6621693" />
+    <geom name="video_debris_plate_25" type="box" pos="-0.106426 2.553669 0.06672625" size="0.2131224 0.1659584 0.009992775" contype="1" conaffinity="1" material="video_concrete" quat="0.9688034 0.01333585 0.002435888 -0.2474595" />
+    <geom name="video_debris_plate_26" type="box" pos="0.5740716 2.547308 0.1195252" size="0.2286246 0.1545888 0.01375095" contype="1" conaffinity="1" material="video_concrete" quat="0.7534841 0.008717564 -0.004794361 0.6573908" />
+    <geom name="video_debris_plate_27" type="box" pos="0.13934 3.528138 0.128683" size="0.204925 0.09460283 0.009523102" contype="1" conaffinity="1" material="video_concrete" quat="0.516107 0.001730241 -0.06589561 -0.8539838" />
+    <geom name="video_debris_plate_28" type="box" pos="0.4285544 2.831996 0.1133854" size="0.2067021 0.1110802 0.01731812" contype="1" conaffinity="1" material="video_concrete" quat="0.3685144 0.05348573 -0.04647753 -0.9269176" />
+    <geom name="video_debris_plate_29" type="box" pos="0.3452731 3.877232 0.1252381" size="0.3928303 0.1094222 0.01207697" contype="1" conaffinity="1" material="video_concrete" quat="0.7020999 -0.06133654 -0.01565864 0.709259" />
+    <geom name="video_debris_plate_30" type="box" pos="0.7339913 3.287648 0.08179345" size="0.3779081 0.1937979 0.008066547" contype="1" conaffinity="1" material="video_concrete" quat="0.9928086 -0.0440658 0.004958721 0.1111967" />
+    <geom name="video_debris_plate_31" type="box" pos="0.09203699 3.406371 0.06220639" size="0.2941102 0.1669523 0.01724795" contype="1" conaffinity="1" material="video_concrete" quat="0.9594746 -0.05022916 -0.03377057 -0.2752181" />
+    <geom name="video_debris_plate_32" type="box" pos="0.6383655 3.095204 0.102625" size="0.3732635 0.1224288 0.012569" contype="1" conaffinity="1" material="video_concrete" quat="0.7825161 -0.05099298 0.03496946 -0.6195526" />
+    <geom name="video_debris_plate_33" type="box" pos="0.4293662 3.229577 0.1120483" size="0.3401902 0.1088001 0.01627097" contype="1" conaffinity="1" material="video_concrete" quat="0.9983672 -0.03599639 -0.03076096 0.0319514" />
+    <geom name="video_debris_plate_34" type="box" pos="-0.4084278 3.06944 0.06741347" size="0.4140568 0.0717862 0.00854727" contype="1" conaffinity="1" material="video_concrete" quat="0.3113204 -0.01053637 0.03103289 -0.9497397" />
+    <geom name="video_debris_plate_35" type="box" pos="0.4628499 3.505588 0.1136983" size="0.3315492 0.08084123 0.01553343" contype="1" conaffinity="1" material="video_concrete" quat="0.7754519 0.03172982 -0.04974726 0.6286436" />
+  </worldbody>
+</mujoco>

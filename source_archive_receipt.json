@@ -1,0 +1,1062 @@
+{
+  "archive": "/home/lyh/下载/workspace2.zip",
+  "archive_sha256": "fd0bb8b361a4b63efbe758242d9d6a00d290c52e0dd6e3eed961595c7eacf6a4",
+  "destination": "/home/lyh/ddt_ros2_ws/src/ddt_ros2_control",
+  "files": [
+    {
+      "path": "docker/bug1.png",
+      "bytes": 190586,
+      "sha256": "16c50c4f30b3336c0eb433d61bb6c2160b6ad140e4b061289caffee7bd8d90c3"
+    },
+    {
+      "path": "docker/start.bash",
+      "bytes": 101,
+      "sha256": "0a2bca4a146f9127ad558b50ca745826cc93ee920f3bb9538521555ea94f97b3"
+    },
+    {
+      "path": "docker/README.md",
+      "bytes": 2293,
+      "sha256": "8cf391e6e45889c9a0997209bb3d8d6febe09105fccf27711c4f1261c77308de"
+    },
+    {
+      "path": "interaction/teleop_command/launch/teleop_command.launch.py",
+      "bytes": 983,
+      "sha256": "c7787863eb091d759e5d418a897d083b06649e5ad4d19bf83de0acae3fba1be8"
+    },
+    {
+      "path": "interaction/teleop_command/CMakeLists.txt",
+      "bytes": 901,
+      "sha256": "2c881cbda3a9a4da7ad15e9ffc3d3753b46c8bcea59990909cda79283f0de65c"
+    },
+    {
+      "path": "interaction/teleop_command/config/param.yaml",
+      "bytes": 293,
+      "sha256": "1012922131c2be57f92fcfd6db52cd89781ee6d86a6683225726db17d1c548b7"
+    },
+    {
+      "path": "interaction/teleop_command/src/elrs_emwave_device.cpp",
+      "bytes": 11560,
+      "sha256": "a12117979b4616e23f0ff07c1551a2ad818b18e92f7c9eedd766e61741250db2"
+    },
+    {
+      "path": "interaction/teleop_command/src/main.cpp",
+      "bytes": 1098,
+      "sha256": "5ea97e4135ae2a8bc93f6356fde080a890ee5a70f0bc1c9e3ba4f5bc8abf7b13"
+    },
+    {
+      "path": "interaction/teleop_command/src/teleop_command_parameters.yaml",
+      "bytes": 2001,
+      "sha256": "beda43156e1984c44774b6e0862207153e68e6390d3a6ab7dd628080a54e7e3e"
+    },
+    {
+      "path": "interaction/teleop_command/src/teleop_command_node.cpp",
+      "bytes": 9815,
+      "sha256": "ba5c739b02d6f65f242cfe1f6a2c02df55b571b72e94316fed8b93e2b52e2d77"
+    },
+    {
+      "path": "interaction/teleop_command/include/teleop_command/teleop_command_node.hpp",
+      "bytes": 3343,
+      "sha256": "56bafb6a59542a120e54c6951ef845cbbee31e2c3febefda28b1221d77085e9a"
+    },
+    {
+      "path": "interaction/teleop_command/include/teleop_command/elrs_emwave_device.hpp",
+      "bytes": 5111,
+      "sha256": "8bdbeee16c19e98d24bc5c6757cdad7889b8af54f31c4d96e244f29364f98649"
+    },
+    {
+      "path": "interaction/teleop_command/package.xml",
+      "bytes": 1261,
+      "sha256": "0494dac080c3aa8c86c7f59217288d8f41b362385a1157bf8f12769d89827d9a"
+    },
+    {
+      "path": "interaction/keyboard_controller/CMakeLists.txt",
+      "bytes": 604,
+      "sha256": "c7c7e90ab890cc5bc8ca1ad10ee059ab6eb50495ce6be385b8cebf6e2a06e416"
+    },
+    {
+      "path": "interaction/keyboard_controller/src/main.cpp",
+      "bytes": 250,
+      "sha256": "5d51c3b186e481c795cd6b61afe105cfbb00d6f91a90cc8d1433fd48b750a344"
+    },
+    {
+      "path": "interaction/keyboard_controller/src/keyboard_controller.cpp",
+      "bytes": 9142,
+      "sha256": "e51a641fc37ec3543985abebf84969ed8d50405a3777249707580067f5844cdd"
+    },
+    {
+      "path": "interaction/keyboard_controller/include/keyboard_controller/keyboard_controller.hpp",
+      "bytes": 2271,
+      "sha256": "4340e6b27bab1cead02788f82f4a2301577eb6524859a18a97552c08d84c3225"
+    },
+    {
+      "path": "interaction/keyboard_controller/package.xml",
+      "bytes": 1118,
+      "sha256": "37a83405e6172c62366d5249b15c35fda80a16e6ec5de0c6dec08bb84eb20c0d"
+    },
+    {
+      "path": "controller/rl_controller/launch/sim_mujoco.launch.py",
+      "bytes": 6196,
+      "sha256": "2dbc6cb1183afd8ac06972b3df0eadd372fe3774d13e04a1034c29f66efa1a13"
+    },
+    {
+      "path": "controller/rl_controller/launch/sim_gazebo.launch.py",
+      "bytes": 4503,
+      "sha256": "a35ffe9ff923e3b1d5376d0bcc7c7b2109e994db5319ab0f5e010d4698d722f9"
+    },
+    {
+      "path": "controller/rl_controller/launch/hw.launch.py",
+      "bytes": 3074,
+      "sha256": "e4585a8cef2b11e1e6c22fa9fd14234059692d761393b544dd4682cd178b5641"
+    },
+    {
+      "path": "controller/rl_controller/launch/sim_webots.launch.py",
+      "bytes": 5436,
+      "sha256": "d46a5cbcc182d470a33110584bfcfdb189ce3813beb76a63877fcaec1a3e3b20"
+    },
+    {
+      "path": "controller/rl_controller/rl_controller_plugin.xml",
+      "bytes": 277,
+      "sha256": "954bd644c9eaeb713a2a40203373934d6bf20418affa9370317bd63f0309bc85"
+    },
+    {
+      "path": "controller/rl_controller/CMakeLists.txt",
+      "bytes": 2079,
+      "sha256": "3980ebabb9059b8a552a8b86ea003b51eb86b051086a645ef96bf05fec29c324"
+    },
+    {
+      "path": "controller/rl_controller/config/d1h/squatdown.onnx",
+      "bytes": 2142502,
+      "sha256": "78bbd737d90fb5b9c89535bd2b7dbdccd28a2cc98b61ae46ed3a052a382c973a"
+    },
+    {
+      "path": "controller/rl_controller/config/d1h/controllers.yaml",
+      "bytes": 4509,
+      "sha256": "514e491aeb1e028c560781c4c0e68e7892a015ef70cfd0d22d5e48837ca510c1"
+    },
+    {
+      "path": "controller/rl_controller/config/d1h/flat.onnx",
+      "bytes": 2142502,
+      "sha256": "1c04f07418e01e7653b6800cbc2c762f0d5c48b28221387e04d53beb3684cb01"
+    },
+    {
+      "path": "controller/rl_controller/config/d1/controllers.yaml",
+      "bytes": 5478,
+      "sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe"
+    },
+    {
+      "path": "controller/rl_controller/config/d1/flat.onnx",
+      "bytes": 1024378,
+      "sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850"
+    },
+    {
+      "path": "controller/rl_controller/config/d1/flat_lab.onnx",
+      "bytes": 1024945,
+      "sha256": "f8a721d4f7f05777db91a70608992ad2a86fc373982758937ba2fb3d9919d21b"
+    },
+    {
+      "path": "controller/rl_controller/config/titatit/controllers.yaml",
+      "bytes": 4385,
+      "sha256": "e33499c7b89607cda5ceb15fc742914c573b03605eb79ca857c5b9c5c61c08b0"
+    },
+    {
+      "path": "controller/rl_controller/config/titatit/test_cylinder_1027_open_source.onnx",
+      "bytes": 2091679,
+      "sha256": "46aaf830da26d678e8d9b1d48113a065b8f8addfc21a9548ea6a5166bfb3beb9"
+    },
+    {
+      "path": "controller/rl_controller/config/tita/controllers.yaml",
+      "bytes": 3337,
+      "sha256": "9298b8d030b22b405490c1e14bb9b78ae0151366ffb46d1ddc3463c514644d91"
+    },
+    {
+      "path": "controller/rl_controller/config/tita/flat.onnx",
+      "bytes": 2246321,
+      "sha256": "d5544c14df8030995e0ab554bfa98b4373a0da2bb76a812ab481925d90a016fd"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState.cpp",
+      "bytes": 702,
+      "sha256": "0638e420274129edee6d8421eedaa6dc363d168c1003feced5e7c9259b250a60"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_RL.cpp",
+      "bytes": 11637,
+      "sha256": "115157976e3d8de3db85abdbab20ec568abae5f435c23b6b0792923a93d05412"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_TransformDown.cpp",
+      "bytes": 3561,
+      "sha256": "4bc01f2a096c32576bc908c88717a6a73080085fe6ef09af27fadad92d858a6a"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_RLPPO.cpp",
+      "bytes": 2105,
+      "sha256": "a1cae7c190a0f6121c58397374bcbcbdc24180ee58f95cf4392f3865f40ccd79"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_Passive.cpp",
+      "bytes": 2007,
+      "sha256": "64b954dfd39ec06b1532c33b2dee000fac97e1c34b2e836b741bd7799d83074d"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_JointPD.cpp",
+      "bytes": 2929,
+      "sha256": "f30bab81a77d0abb239bca2fb91c57996164f4d2c29128d044ceb38638d4c1ac"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSM.cpp",
+      "bytes": 4082,
+      "sha256": "a5bf3c5738af3248802c95c538ab70d25d2cded4701f114b4e28ba2c8d1d03c3"
+    },
+    {
+      "path": "controller/rl_controller/src/fsm/FSMState_TransformUp.cpp",
+      "bytes": 9992,
+      "sha256": "26918087e90af2415a440b886f1bfbda75f6d54771539cbecceb234f61fbbc6f"
+    },
+    {
+      "path": "controller/rl_controller/src/rl_controller_parameters.yaml",
+      "bytes": 335,
+      "sha256": "8703b62c42e0f187ac7661005e4b8878feb563c3ae21a2df3c6299006c500b02"
+    },
+    {
+      "path": "controller/rl_controller/src/rl_controller_node.cpp",
+      "bytes": 21209,
+      "sha256": "fb8835cd9e99a9251f79d122dece43791c0bee19fd35a4f6de760c0c78cdd250"
+    },
+    {
+      "path": "controller/rl_controller/src/inferrer/engine_inferrer.cpp",
+      "bytes": 9054,
+      "sha256": "618fd66dab8d265f2b4bb2abca510fc82922f7162eccfb6ec7a8484f7a94e96c"
+    },
+    {
+      "path": "controller/rl_controller/src/inferrer/onnx_inferrer.cpp",
+      "bytes": 6728,
+      "sha256": "411dca0accff86572cef9be4b2714bbcfa44928151f54c2fffc690ca2ee5bc5e"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_RLPPO.h",
+      "bytes": 1175,
+      "sha256": "d58c7affd638c40683cdce947952f5db9aaa2b382e9cb31c180b9dd6ec36d478"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_RL.h",
+      "bytes": 3477,
+      "sha256": "d79fafbc22ab5ce99e791d58a7e4685b186213997cbec8ab69ed354a40838d58"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_JointPD.h",
+      "bytes": 1153,
+      "sha256": "8e3ef4cbaa0d1e6e431fc6b8e0aa8e49d39649e1b0c7df61f7b0daa8997a31ed"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSM.h",
+      "bytes": 2063,
+      "sha256": "258cffda57ab69db22b6f8fe5cadf8f00cdd591235c537ed6c779769e06634da"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_TransformUp.h",
+      "bytes": 2126,
+      "sha256": "4bd446dc8bb2a890f809aee45ef86bbb96d05101444bc4b52af78c6722799570"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState.h",
+      "bytes": 1385,
+      "sha256": "d2bd5725020c850c8c479b37c7717af37d4162f45938af3ae698acbef0bd8fde"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_Passive.h",
+      "bytes": 1068,
+      "sha256": "d5c51b5545289ed01b0c4f2d0ea9a5f899fca8a54a28505452709b8edda5c51d"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/ControlFSMData.h",
+      "bytes": 1500,
+      "sha256": "8402b9b8e96cecfe669be55fa751dd6f81aa3ccb1da43f7d74912450b314c5b1"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/fsm/FSMState_TransformDown.h",
+      "bytes": 1532,
+      "sha256": "60f9fd5fa69434236e260a2612ac9b2b530598816e90039aa4d0e540ff7905b2"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/rl_controller_node.hpp",
+      "bytes": 4830,
+      "sha256": "08e1b32cd5b6f43847dbdef81beaeea3fd418918b62629cec28080c5b5e0e8bb"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/timeMarker.h",
+      "bytes": 1665,
+      "sha256": "3b948adc699e099f1b821f4ea7f0a3af42e1be7f1c7515633ef71420e2688647"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/cppTypes.h",
+      "bytes": 1620,
+      "sha256": "56f8784e5ca99826a586497ad654cfc6e70778f5f374dab054c6ccf2283685f1"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/Math/orientation_tools.h",
+      "bytes": 11891,
+      "sha256": "9a83751e2a9afa6880cc64c47267f537b477a37714272c51be273d11863b5416"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/Math/MathUtilities.h",
+      "bytes": 2348,
+      "sha256": "118f9322bb90d6def85d42f3052a764c39ce7d44676021eff04a42a28739a69f"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/RobotParameters.h",
+      "bytes": 4274,
+      "sha256": "0461f4b466b9a42f647889308a9d70184ce882d862bd48775cbfc7bef1bb7293"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/common/enumClass.h",
+      "bytes": 2262,
+      "sha256": "a4a3c7f6cdbbf55e6b41a4117321d651c4c6aff5a6c2d5d27ff5ffa62befa2f7"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/inferrer/inferrer_base.hpp",
+      "bytes": 2450,
+      "sha256": "0bfefb49220c22debc4519e376578b71e3615345919c3914600786b7fa40d478"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/inferrer/engine_inferrer.hpp",
+      "bytes": 1699,
+      "sha256": "f5445152eb2bfedfab8dcff480cd8f100129671011f8c04046263bc0fe9e1968"
+    },
+    {
+      "path": "controller/rl_controller/include/rl_controller/inferrer/onnx_inferrer.hpp",
+      "bytes": 576,
+      "sha256": "da84643f76f94f77eb81758e9f7c1770021528e746d98ceca858d84a273da6e4"
+    },
+    {
+      "path": "controller/rl_controller/package.xml",
+      "bytes": 1307,
+      "sha256": "031e0874e1baa7eb4aa9a914bb341d8d5544aa0a21c6a585a9b990ee011b8220"
+    },
+    {
+      "path": "hardware/hardware_bridge/launch/hardware_bridge.launch.py",
+      "bytes": 3154,
+      "sha256": "c911591c64a1dddadaddbb6190117a5d74c190571050db4dad35844c68a55822"
+    },
+    {
+      "path": "hardware/hardware_bridge/CMakeLists.txt",
+      "bytes": 796,
+      "sha256": "31a4af66de589f21eade8009b4af97e116f5c09cdf9069a94ab87668501c1adc"
+    },
+    {
+      "path": "hardware/hardware_bridge/config/controllers.yaml",
+      "bytes": 429,
+      "sha256": "72331a44b2a65a3be2c62c53f9d59404d88cd308c5fb42f00472641a48dec539"
+    },
+    {
+      "path": "hardware/hardware_bridge/src/hardware_bridge_node.cpp",
+      "bytes": 8357,
+      "sha256": "97e753cccc5cefd37b540ffc260b5b48362eed3a26e9e00893dd1b6079e7a12d"
+    },
+    {
+      "path": "hardware/hardware_bridge/include/hardware_bridge/hardware_bridge_node.hpp",
+      "bytes": 3090,
+      "sha256": "29b86aa8d811ac46c1ad4ccabd98e5f8345fedb582c143ec0d94fc05bf9793db"
+    },
+    {
+      "path": "hardware/hardware_bridge/hardware_bridge_plugin.xml",
+      "bytes": 245,
+      "sha256": "bfbef13bf844b2a35cb9556905a587c60a4cbdbb21d317a9bf499703a3195689"
+    },
+    {
+      "path": "hardware/hardware_bridge/package.xml",
+      "bytes": 1445,
+      "sha256": "1cffe1f0760fd3e86e75907cde9b933fdf05387d17865be134916d602417004e"
+    },
+    {
+      "path": "hardware/tita_robot/test/read_write_example.cpp",
+      "bytes": 2237,
+      "sha256": "b1c01a0ab30a6c9d77a2518a325260f044c5056cfe550b399e4141c2d93d17b8"
+    },
+    {
+      "path": "hardware/tita_robot/CMakeLists.txt",
+      "bytes": 1094,
+      "sha256": "fa2733db305595b57e535231e39e686ca1c6d95c4eaf86a0c9122efa8fca1b3e"
+    },
+    {
+      "path": "hardware/tita_robot/.gitignore",
+      "bytes": 13,
+      "sha256": "b57ecbb2de79d85471f152df5342647284021c6b3c2693f257dd501e4d541835"
+    },
+    {
+      "path": "hardware/tita_robot/lib/amd64/libtita_robot.so",
+      "bytes": 95256,
+      "sha256": "16aadb50ebb51e5f9aad96c96048e2fa654b1176c203dc274763b4684c4e8ef5"
+    },
+    {
+      "path": "hardware/tita_robot/lib/arm64/libtita_robot.so",
+      "bytes": 89712,
+      "sha256": "22460f0b59fd10265b100ab725828c34a62654f858468f1afaa28359c050ae7d"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/canfd_api.hpp",
+      "bytes": 7388,
+      "sha256": "69058650752291a07cff4767a5b7a7cc962cc01e7cd7bec8ed28a0fe06e8aacd"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/socket_can_id.hpp",
+      "bytes": 4782,
+      "sha256": "f419f551248cb157abda6b59670dbdb06f9d455b2296c6c697bddfdceee3cdf6"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/can_utils.hpp",
+      "bytes": 13940,
+      "sha256": "cbcb3346559f50e5e00ee39ebbd5a29f91db8051d635d320d62e3c7dbe50bb1d"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/socket_can_receiver.hpp",
+      "bytes": 4342,
+      "sha256": "e0bc4b37b8c223456ecaa0819f1d74e82c966e09fef412e8de6ab2168fad0002"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/socket_can_common.hpp",
+      "bytes": 3651,
+      "sha256": "a916922f3498d29a7231f7fcb17218fda4facd11bd1cb5c26b174858f11ab354"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/visibility_control.hpp",
+      "bytes": 1735,
+      "sha256": "fc9326afb0932bfd2bbbbc61c623ce152adc26c2f9992cd854206a3f062317df"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/protocol/socket_can_sender.hpp",
+      "bytes": 5049,
+      "sha256": "9fd7ba2b85686586806c9ac5371cc8dc8a251df9c0de2698ba148a2fe7e000db"
+    },
+    {
+      "path": "hardware/tita_robot/include/tita_robot/tita_robot.hpp",
+      "bytes": 7689,
+      "sha256": "05a044ce22bb69f4abf29c457904f84abbc1ead40a595e981b47725c685e4b31"
+    },
+    {
+      "path": "hardware/tita_robot/package.xml",
+      "bytes": 417,
+      "sha256": "835ba7f4a81598ee41f20d1309cb9a0143f95bd173ee47ad60fd36d5d3a65e1c"
+    },
+    {
+      "path": "simulation/webots_bridge/launch/webots_bridge.launch.py",
+      "bytes": 4585,
+      "sha256": "a4ba7e61e148891bc33ad41843ef8962aa609b78447871d528ac92e0e10bf426"
+    },
+    {
+      "path": "simulation/webots_bridge/worlds/stairs.wbt",
+      "bytes": 2428,
+      "sha256": "72d168ac41905dec477c7c0fd4777f3bcfa057fa9719f28477e9a22736a8a531"
+    },
+    {
+      "path": "simulation/webots_bridge/worlds/uneven.wbt",
+      "bytes": 42319,
+      "sha256": "a11ce27e6e34e6729568ca1b9a6b4762d0c3367061628b6c5c46fd379136d388"
+    },
+    {
+      "path": "simulation/webots_bridge/worlds/terrain.wbt",
+      "bytes": 6904,
+      "sha256": "30eb2600bdb0dd9574333c50eeae75b9cf5dd7b590dbbcda9c91f9895612b5cc"
+    },
+    {
+      "path": "simulation/webots_bridge/worlds/empty_world.wbt",
+      "bytes": 797,
+      "sha256": "55fa3cf69912a0ba5904413b3a0b21b9071dba6e0c8a746aa388673688912f22"
+    },
+    {
+      "path": "simulation/webots_bridge/CMakeLists.txt",
+      "bytes": 823,
+      "sha256": "d0d86a0e016f26e84b6d2ed98b2dbdc32077a800a78138d0bbd6b5ee80f95f0a"
+    },
+    {
+      "path": "simulation/webots_bridge/.gitignore",
+      "bytes": 10,
+      "sha256": "a457d3065e8017eb93afdf4248a56eb60012e51c66b0b3d48a508dffca72aa4b"
+    },
+    {
+      "path": "simulation/webots_bridge/config/controllers.yaml",
+      "bytes": 436,
+      "sha256": "f0f3238200276982e4522aff8c977ea5a2fcf922b0049ad8e556f3b07d040de9"
+    },
+    {
+      "path": "simulation/webots_bridge/src/webots_bridge_node.cpp",
+      "bytes": 9409,
+      "sha256": "cf80929011b8b4fdf7f85a420a6a9dccdad516618bf24b045bcc855c1dfa611b"
+    },
+    {
+      "path": "simulation/webots_bridge/include/webots_bridge/webots_bridge_node.hpp",
+      "bytes": 3280,
+      "sha256": "9039747a0083622d53f15dbd70c5b98134daf09e11dcbc3eb0c42705a20c5b93"
+    },
+    {
+      "path": "simulation/webots_bridge/package.xml",
+      "bytes": 1189,
+      "sha256": "52a7a0dfc04b3da3205b01105fbef3ca02ad4a97c2c99d7e0c02b0d480298730"
+    },
+    {
+      "path": "simulation/webots_bridge/webots_bridge_plugin.xml",
+      "bytes": 265,
+      "sha256": "c28d65533cc28ada8e9f6e90758697672e242996a8820269f79e8169bf174925"
+    },
+    {
+      "path": "simulation/gazebo_bridge/gazebo_bridge_plugin.xml",
+      "bytes": 347,
+      "sha256": "97ef8e3a53e25d3b4928a1eccab294376c89c73dabb239283ffbdd55b91100bc"
+    },
+    {
+      "path": "simulation/gazebo_bridge/launch/gazebo_bridge.launch.py",
+      "bytes": 4108,
+      "sha256": "0605144647fed39b655a44de28665d775ce732c3d55666dc8844c3c52982b765"
+    },
+    {
+      "path": "simulation/gazebo_bridge/worlds/empty_world.world",
+      "bytes": 350,
+      "sha256": "6ffbd72592437be1cefd894c25199e29c5eeb9085189f446f2892b52680f136a"
+    },
+    {
+      "path": "simulation/gazebo_bridge/CMakeLists.txt",
+      "bytes": 731,
+      "sha256": "2cb1ed0aac166fc71d917ace547eae60b277ca944005ef050d95038c1ddfb52d"
+    },
+    {
+      "path": "simulation/gazebo_bridge/config/controllers.yaml",
+      "bytes": 393,
+      "sha256": "efc076fb0644f3e960c97625bb4b6958301e089f780c7dcbae8974175f4eab21"
+    },
+    {
+      "path": "simulation/gazebo_bridge/src/gazebo_bridge.cpp",
+      "bytes": 27064,
+      "sha256": "f1da303717dbb268e11cc240436730032b09d995fbc781f5f8d447500063785c"
+    },
+    {
+      "path": "simulation/gazebo_bridge/include/gazebo_bridge/gazebo_bridge.h",
+      "bytes": 3021,
+      "sha256": "4a5993e93575319e9a5f9a94cf55a25c4b06f298c96220b5af6ed5c938c87c32"
+    },
+    {
+      "path": "simulation/gazebo_bridge/package.xml",
+      "bytes": 1085,
+      "sha256": "26c8ce8cf7559f5f53a8ddea6ab343ff2f15cfd1d2f7b229a5ceb6b8b2282e31"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/mujoco_ros2_control_plugins.xml",
+      "bytes": 259,
+      "sha256": "7c275c7476a1b09d046afb64e31ff83d324b7bd99b6e8902b0d62bf357ab4972"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/CMakeLists.txt",
+      "bytes": 3729,
+      "sha256": "5366cf754e0f08eb907447b88ea0dc990f104a625646685d2e1798e54e3167a9"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/mujoco_system_plugins.xml",
+      "bytes": 264,
+      "sha256": "960daa9198d9be028f5714a8f52e6ad24014b539c234a875a25b84120b22dd3c"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_ros2_control_plugin.cpp",
+      "bytes": 1654,
+      "sha256": "d1a832603340ee21963c1fbc4686ee5279e7a463377027384733e9d48bcaaa34"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_ros2_control_node.cpp",
+      "bytes": 4759,
+      "sha256": "1661d39a02eca13dd44b489dc67a88e4d86902bc24bcd87b4b2b83ea0d7b7ccf"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_rendering.cpp",
+      "bytes": 6620,
+      "sha256": "fb7ec66db68628f73de649c3bc7b5528e8ad0d75f5770501297b379b1c94ee21"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_cameras.cpp",
+      "bytes": 7268,
+      "sha256": "243c064c9ba399ecc6fa1421d471f6d4d4a3548b9280e0a1830399e87a12c8d3"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_system.cpp",
+      "bytes": 22402,
+      "sha256": "e0aae01833d7211ae5c149117b5f90e94f0c147031b9628b2989e58fc58e210c"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/src/mujoco_ros2_control.cpp",
+      "bytes": 8165,
+      "sha256": "42ae2eb2c6e873c61187b7948b5aa54509f1027cb37bcc2fbb371a382d9b4bee"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_cameras.hpp",
+      "bytes": 2580,
+      "sha256": "ea3b1eb26f5cf10122f659a79db3d8cbdc3a7f12d607be2e654b113deaed6fe6"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_ros2_control.hpp",
+      "bytes": 2620,
+      "sha256": "ce6b452335d69c0d1ee7dca230b2d4a5a17bc5893202fdb4dec48dfe5c411e78"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_ros2_control_plugin.hpp",
+      "bytes": 1072,
+      "sha256": "d4066193ae08b5b1f796b2d5411253a4b6c35afd7a6d9e3eb393a1e4fce6002e"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_system.hpp",
+      "bytes": 4734,
+      "sha256": "d75c26247e46c797bc4637798ceab4322fce471161ca173c688d52319a65bf8f"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_rendering.hpp",
+      "bytes": 2954,
+      "sha256": "9d4141ae95e16e4f82844e90153e1b99d542ec371ed35fcbd1b09b543361c19e"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/include/mujoco_ros2_control/mujoco_system_interface.hpp",
+      "bytes": 1855,
+      "sha256": "33f3bffd7634cf87a8d94888473c9cce92305b09094ce6f2d743f499bfbc0350"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_ros2_control/package.xml",
+      "bytes": 1269,
+      "sha256": "bf0acf0e2d409c666fa6381adf508ed8b6f353036b7fd4d8d30e450bf6cdcd50"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/CMakeLists.txt",
+      "bytes": 3116,
+      "sha256": "ae1e306faf699c2258108aac2c348390493251f883db6212c11af12c4c9bea68"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/platform_ui_adapter.h",
+      "bytes": 3378,
+      "sha256": "995bcedda7769ca8e0083cc39b2ed671b98624e9b7588718c77f28b8c9255294"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_adapter.h",
+      "bytes": 2489,
+      "sha256": "cfddb35d909d19dbd7a7871b2065f92321003352a07e6d59f008e6a7709938b3"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/array_safety.h",
+      "bytes": 3337,
+      "sha256": "048e5543d556a1db33230f0b6b1a33b71a952b0c8581c9600cd190315f7fd620"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_corevideo.h",
+      "bytes": 1487,
+      "sha256": "7b834e24e32e8c0dcbf17e6ff1651b358b7d70c5460e88b2b3b30fdb40fc3ab9"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_dispatch.h",
+      "bytes": 2884,
+      "sha256": "be9af6f598f39de760cd6e82e913521a8bfb1be310fcd99355af968ad1b945a7"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/simulate.h",
+      "bytes": 10378,
+      "sha256": "b4e264d721bc9225f8abb4995c6519f13c7a5217b39eda224831606280ab06b3"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/simulate.cc",
+      "bytes": 93316,
+      "sha256": "4012d01256ad48cafb2a7408da19eb0fe0c19492d171e5a4ad66e4349da7ae7b"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_adapter.cc",
+      "bytes": 7745,
+      "sha256": "a315043dd702fd80e1c8f890e8aff9e9f394f4dc3c5889be64cf01f57375e9db"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/main.cc",
+      "bytes": 19624,
+      "sha256": "d600b94bf8d64afbb0bdce51c72cdaa442e2fbef393c0c819ea857ca4078b80f"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_corevideo.mm",
+      "bytes": 2530,
+      "sha256": "609fd62b00b7cb0d4ac923bed8a03a8aefa687b6ec07f7dd78f42247b40a5a1b"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/README.md",
+      "bytes": 610,
+      "sha256": "160844f521c7abe4d09b8d62d94a49c84eb023bcab052993bff6978e05d2b7ab"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/macos_gui.mm",
+      "bytes": 1656,
+      "sha256": "f1ca80a2c9c703d060f5cbf5836b7b8c0f78979d13f6cabd44344e8d152b3bf8"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/platform_ui_adapter.cc",
+      "bytes": 6119,
+      "sha256": "69c707e6626d53b18785664846412c4036b0dbff30c20a802cd3b81957925542"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/src/glfw_dispatch.cc",
+      "bytes": 4395,
+      "sha256": "29b20f75cf6ab5538e0af0bded91a46a40d80b8b28e2902d6e942506f057d7bf"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/README.md",
+      "bytes": 2932,
+      "sha256": "8cd12823a336f4c60ca3b74ea6978b9b325b32d327835466556b68c17a0d4203"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/include/mujoco_sim_ros2/mujoco_physics_plugin.hpp",
+      "bytes": 885,
+      "sha256": "7798f2a348cb8d2256f95375774e5acf9d9f23932b1d49b745f9b94009f9e2d3"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_sim_ros2/package.xml",
+      "bytes": 783,
+      "sha256": "f3ad4c0f2206a56df76210fd16e6b4a7530089b6a0606719c9bcc5aada7e66ec"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_bridge/launch/mujoco_bridge.launch.py",
+      "bytes": 3650,
+      "sha256": "c9ebd8e645c43a891b31fecf3f40545e710ed72362f464ed91f0e5dcf4779d02"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_bridge/CMakeLists.txt",
+      "bytes": 460,
+      "sha256": "b2ce67d175571634aa8eea413e0db9cf732cc9bd86321c194a2e786a90d3ed73"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_bridge/config/controllers.yaml",
+      "bytes": 436,
+      "sha256": "f0f3238200276982e4522aff8c977ea5a2fcf922b0049ad8e556f3b07d040de9"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_bridge/README.md",
+      "bytes": 736,
+      "sha256": "c978ce849289e029bfe006eb259749c2ae4a25ccf6e54022a568da0ed6c5cdc4"
+    },
+    {
+      "path": "simulation/mujoco_bridge/mujoco_bridge/package.xml",
+      "bytes": 1002,
+      "sha256": "f2c6b8eb99aaab0e5ee78d88e2490557df2527b298f087a5600fce6c355dee63"
+    },
+    {
+      "path": "start.bash",
+      "bytes": 101,
+      "sha256": "0a2bca4a146f9127ad558b50ca745826cc93ee920f3bb9538521555ea94f97b3"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 19,
+      "sha256": "bf92caf68107ad5a6343da9cadb0854e7258e2af19d196502ca637a5b669a6b5"
+    },
+    {
+      "path": "urdfs/d1h_description/mujoco/robot.xml",
+      "bytes": 9168,
+      "sha256": "1392b58078e688b3b7491da77378c8666aa3870dca14ad681567e6bbbb5e515f"
+    },
+    {
+      "path": "urdfs/d1h_description/mujoco/scene.xml",
+      "bytes": 1474,
+      "sha256": "6393022ef80837b603ff59a30f5b06e7a7dc9dbd93209a3a2fab46dbee6784a5"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/L_foot.STL",
+      "bytes": 1512884,
+      "sha256": "afc74ac83c9286f9d201d43dfc682195895a678464e5f8564763b071368d9eeb"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/R_hip.STL",
+      "bytes": 2073184,
+      "sha256": "91751fa14272761ce4176cfb50cefde6397e43cd639ed5a5dc94d64d3b6f69d1"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/L_thigh.STL",
+      "bytes": 2605884,
+      "sha256": "c804473b99df48fe293a7d37e89096313c5421ffbeb1b0141130bfb0ceb4b2ee"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/L_hip.STL",
+      "bytes": 2066984,
+      "sha256": "6bd4d237b585fce86dc97d0d6f52b10811588f9b9fe2b2de8a74763c33f41d90"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/funtion_Link.STL",
+      "bytes": 278684,
+      "sha256": "ff81ab5dda97f86c083e0410b0a836cfe438df045d25177cc7ac0215fe76fc9b"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/R_foot.STL",
+      "bytes": 1545084,
+      "sha256": "11f49126b3fec371ce1277556828a1517309347d777907b57567a50e807dba1f"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/base_link.STL",
+      "bytes": 4928784,
+      "sha256": "d13fd7d3a7924e988b957008617744c44de73fbb39b43f3483fbcda989efd92a"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/robot.urdf",
+      "bytes": 23577,
+      "sha256": "8acfeb766a056ea849459eb1e00daf7f84199b91f06fb5be8bcbc7c1a9541435"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/L_calf.STL",
+      "bytes": 731084,
+      "sha256": "e3389a611c0869b002c9ad6c92e5967367e585f31ce67887b47d95f85210599b"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/R_thigh.STL",
+      "bytes": 2612484,
+      "sha256": "8d5e6772757f64cb691e8f595f914c5b3acf36295d59e3c1c72543f86302ce4b"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/R_calf.STL",
+      "bytes": 731184,
+      "sha256": "71c9d33c49b3fcf0ce6aecee4f8407dc9872a1d6f8340705ac43df7154f7966b"
+    },
+    {
+      "path": "urdfs/d1h_description/meshes/docking_Link.STL",
+      "bytes": 1834184,
+      "sha256": "afe9cfe3f8896ff3d53c8bb3b61e12727973705b21751b94c2e5148743072f2c"
+    },
+    {
+      "path": "urdfs/d1h_description/CMakeLists.txt",
+      "bytes": 635,
+      "sha256": "5fb61a2eccefa741caf6c83f228aba390b7297206e9032887238e2ece429af71"
+    },
+    {
+      "path": "urdfs/d1h_description/urdf/robot.urdf",
+      "bytes": 12526,
+      "sha256": "ce7a6894513677f3cf947735652c4cb4d6016f70bc4cc41d25a19abf520415ec"
+    },
+    {
+      "path": "urdfs/d1h_description/package.xml",
+      "bytes": 1190,
+      "sha256": "d087ebc9e0aee70bb60beae37f38d8bb96b2869a110e40f0f9eafd52dd1d8951"
+    },
+    {
+      "path": "urdfs/d1h_description/xacro/single_robot.xacro",
+      "bytes": 14910,
+      "sha256": "657f292960b860eb7986feb50e42e44dcaba8b88ae68fa214c8a052ee4b66619"
+    },
+    {
+      "path": "urdfs/d1h_description/xacro/ros2control.xacro",
+      "bytes": 7403,
+      "sha256": "567fd9889ee99ae42acccd163f7156ab8199dabd0a5bd4a6caa6b3c655ddbae4"
+    },
+    {
+      "path": "urdfs/d1h_description/xacro/materials.xacro",
+      "bytes": 819,
+      "sha256": "748fb61422c47e14a68de83a6fe5eb24b6bb4158141bb8488ae2346a3517b632"
+    },
+    {
+      "path": "urdfs/d1h_description/xacro/robot.xacro",
+      "bytes": 1716,
+      "sha256": "0d5d191f9a2fe1df186a29300142ea6dd971e80ea43a301487f6e6b093d8ab25"
+    },
+    {
+      "path": "urdfs/titatit_description/CMakeLists.txt",
+      "bytes": 722,
+      "sha256": "30b5cefbce1328c42574a1cc2e76775af34d682a45e248740d8bbf57ed876a69"
+    },
+    {
+      "path": "urdfs/titatit_description/package.xml",
+      "bytes": 1196,
+      "sha256": "0089371b75feb76188c36eaf63abaa2000528d5a4e39afdc6faaa9a2d9e31043"
+    },
+    {
+      "path": "urdfs/titatit_description/xacro/single_robot.xacro",
+      "bytes": 9987,
+      "sha256": "eed87e3520657cd9ab68306c3e709fc0a2fdb15ed34b3c43e009203f18bb7faf"
+    },
+    {
+      "path": "urdfs/titatit_description/xacro/ros2control.xacro",
+      "bytes": 11977,
+      "sha256": "37c138b59e465349af8a10fb7da7bc1c8d532d392f7fffbe38e2495fce449b2f"
+    },
+    {
+      "path": "urdfs/titatit_description/xacro/materials.xacro",
+      "bytes": 819,
+      "sha256": "748fb61422c47e14a68de83a6fe5eb24b6bb4158141bb8488ae2346a3517b632"
+    },
+    {
+      "path": "urdfs/titatit_description/xacro/robot.xacro",
+      "bytes": 1733,
+      "sha256": "106a2a8d8263d902c127c88576ae125e3c46d582d1058375cac23c103c20cf24"
+    },
+    {
+      "path": "urdfs/tita_description/mujoco/robot.xml",
+      "bytes": 8814,
+      "sha256": "b85b38c1495553d4289f84129bb5dec9290806b414935306a975a65f16638a0d"
+    },
+    {
+      "path": "urdfs/tita_description/mujoco/scene.xml",
+      "bytes": 1475,
+      "sha256": "d38b6e7b5c156233f1950e4e3dfb29fb779319400a2c5225c2f871313e27f8fe"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/right_leg_1.STL",
+      "bytes": 289284,
+      "sha256": "582ebfd532d2c22eb52a9f54bae410d22e19427f421df0b6dde95a29c072ab54"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/right_leg_4.STL",
+      "bytes": 174684,
+      "sha256": "6cfe87353a8dc865732e0f89703bad00de8b4b7b25c767555eeb9d49ee9fe2ee"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/right_leg_2.STL",
+      "bytes": 791384,
+      "sha256": "7cd576ae6fa7acf208daa9ad0bf0c99c2f79bd06df128e1e4e5e61773e4108cf"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/right_leg_3.STL",
+      "bytes": 271284,
+      "sha256": "de652fda5a6494bbff17e8dad0e37861a5cc1de33be43b9435188d80d7cf53c1"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/left_leg_3.STL",
+      "bytes": 271284,
+      "sha256": "63385672ae563dd177f8e200d0ae8fbceac05e8db38fefbc64ee48c59d27093b"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/left_leg_4.STL",
+      "bytes": 174684,
+      "sha256": "a1e7af6d3807e1e8db3ae49183c702e49015266d6ef95bd1b98d08ed99bb9934"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/base_link.STL",
+      "bytes": 2835884,
+      "sha256": "355a0cf91d6db9b1c4aceeed175ca8eaf10fcf5689771599a1c291bae2336a26"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/left_leg_1.STL",
+      "bytes": 289284,
+      "sha256": "5b8951d034a55ef0c3bc93a97c69be57e5af648e6a1fdd1d71651c6d62014e42"
+    },
+    {
+      "path": "urdfs/tita_description/meshes/left_leg_2.STL",
+      "bytes": 787784,
+      "sha256": "b3a158cb5148aec9f6ea84cc8a6d53f1c65d33cb210d4934314d4822e495ac41"
+    },
+    {
+      "path": "urdfs/tita_description/CMakeLists.txt",
+      "bytes": 744,
+      "sha256": "11774ce69da4d19e03908f66dbade752e666c8594c9cd2e197d7f158f3d56300"
+    },
+    {
+      "path": "urdfs/tita_description/urdf/robot.urdf",
+      "bytes": 10516,
+      "sha256": "0941b83136cd5c8c89bbb33165bff515a3a988d33319b67c8b06bfb9c71350ce"
+    },
+    {
+      "path": "urdfs/tita_description/package.xml",
+      "bytes": 1191,
+      "sha256": "c46cbc9b7291913c6787592e85bf3b2bc0b967304906838dd3e5f713d9278d7c"
+    },
+    {
+      "path": "urdfs/tita_description/xacro/ros2control.xacro",
+      "bytes": 7319,
+      "sha256": "805a7af8e5e6be4385ee7b58dfcb4bd0853cc6ad7eac12120dee6fcaa3f14a5c"
+    },
+    {
+      "path": "urdfs/tita_description/xacro/materials.xacro",
+      "bytes": 819,
+      "sha256": "748fb61422c47e14a68de83a6fe5eb24b6bb4158141bb8488ae2346a3517b632"
+    },
+    {
+      "path": "urdfs/tita_description/xacro/robot.xacro",
+      "bytes": 10256,
+      "sha256": "f283515c4c4f8fe3842007ef71f895d8fffda7d17a0f952b57c794db0ce358fd"
+    },
+    {
+      "path": "urdfs/d1_description/mujoco/robot.xml",
+      "bytes": 16718,
+      "sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757"
+    },
+    {
+      "path": "urdfs/d1_description/mujoco/scene.xml",
+      "bytes": 1474,
+      "sha256": "6393022ef80837b603ff59a30f5b06e7a7dc9dbd93209a3a2fab46dbee6784a5"
+    },
+    {
+      "path": "urdfs/d1_description/usd/d1_with_g2_combined.usda",
+      "bytes": 1785,
+      "sha256": "9c0a6bd04216ed0eb5097e7d2fd0048c7a9c275275e55be275e3d8825e88015a"
+    },
+    {
+      "path": "urdfs/d1_description/usd/configuration/d1_base.usd",
+      "bytes": 30139119,
+      "sha256": "9536f33f2c7235c1222edf90c2a76391ea47029064615d82efa4b02457e3fdee"
+    },
+    {
+      "path": "urdfs/d1_description/usd/configuration/d1_robot.usd",
+      "bytes": 2321,
+      "sha256": "d49e8589b64b0d6ff9941cf8db7beb89a555ee1ce800ca222d75c057ece8fe59"
+    },
+    {
+      "path": "urdfs/d1_description/usd/configuration/d1_sensor.usd",
+      "bytes": 654,
+      "sha256": "6279b1bc88820eeb9cd770e5da51bb3e49283f98699ee91ee8d5b14ee19d6fea"
+    },
+    {
+      "path": "urdfs/d1_description/usd/configuration/d1_physics.usd",
+      "bytes": 7095,
+      "sha256": "7f9ab722a728f5fa81b5c18735b184e4b2a89434a0a135d09953c0b81ae868af"
+    },
+    {
+      "path": "urdfs/d1_description/usd/d1.usd",
+      "bytes": 1459,
+      "sha256": "2806f69b1f032e23ad4cc09ae8303a1536dcc143c4c016f00a1df727c711b01f"
+    },
+    {
+      "path": "urdfs/d1_description/usd/config.yaml",
+      "bytes": 638,
+      "sha256": "e41327250c1a62bdea711ab8da2a6139d3a79c799f5a49ebda21ba4d11dbbcb7"
+    },
+    {
+      "path": "urdfs/d1_description/usd/.asset_hash",
+      "bytes": 32,
+      "sha256": "e75f3323f76ff61c2ded086e3c4b84630cd59c34a4eba27ddbd851a1b4341c97"
+    },
+    {
+      "path": "urdfs/d1_description/CMakeLists.txt",
+      "bytes": 634,
+      "sha256": "997be8fd441a6022d5633b57b5bb950a40a25956085fc754b899ed8d86e1575e"
+    },
+    {
+      "path": "urdfs/d1_description/urdf/robot.urdf",
+      "bytes": 23577,
+      "sha256": "8acfeb766a056ea849459eb1e00daf7f84199b91f06fb5be8bcbc7c1a9541435"
+    },
+    {
+      "path": "urdfs/d1_description/package.xml",
+      "bytes": 1189,
+      "sha256": "ad284b9e380707a5d943b1b7f30695cc3a58536027d72d4c2070662d997ab767"
+    },
+    {
+      "path": "urdfs/d1_description/xacro/ros2control.xacro",
+      "bytes": 11939,
+      "sha256": "632b16572e33e3d1dcafdbbbc09d3fe02f7d83484daf8977f80ec23e0a027a50"
+    },
+    {
+      "path": "urdfs/d1_description/xacro/robot.xacro",
+      "bytes": 1775,
+      "sha256": "778e5562048b4a072e5c030c8961e905a3194ff85d16afa36dc23c585149306a"
+    },
+    {
+      "path": "ros_utils/CMakeLists.txt",
+      "bytes": 461,
+      "sha256": "aa02c30ff1da629ce947f4fac12766a4e32d040747ff506fc81a91d701d728e4"
+    },
+    {
+      "path": "ros_utils/include/ros_utils/topic_names.hpp",
+      "bytes": 1207,
+      "sha256": "d55359b230f388d7360a7c7326812d4a6f3d0897dcca8629852e08e21bf15954"
+    },
+    {
+      "path": "ros_utils/package.xml",
+      "bytes": 954,
+      "sha256": "d61a0c62efba592ee19f2fb9f70e617fd42f46ef7a6ed39712060610cf6e032b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6897,
+      "sha256": "1927e5147eeaa95ec5767919296089860ecf26c2717d7da2c5f74360b1ebd1ac"
+    }
+  ]
+}
