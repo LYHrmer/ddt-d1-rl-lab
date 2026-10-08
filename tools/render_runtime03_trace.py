@@ -199,8 +199,11 @@ def render(source_run: Path, model_path: Path, output_dir: Path, source: dict,
                       f"wz {row['body_wz']:+.3f} rad/s   "
                       f"cmd vx {command_vx:+.2f}, wz {command_wz:+.2f}")
             draw.text((24, 48), values, font=small, fill=(214, 229, 237))
-            status = f"SOURCE {source['source_status']}  |  {source['source_terminal_reason']}"
-            status_color = (255, 168, 155) if source["source_status"] == "FAILED" else (184, 220, 244)
+            qualification = source.get("qualification_status", "NOT_SCORED")
+            status = (f"RUN {source['source_status']}  |  QUALIFICATION {qualification}  |  "
+                      f"{source['source_terminal_reason']}")
+            status_color = ((255, 168, 155) if source["source_status"] == "FAILED" or
+                            qualification == "FAIL" else (184, 220, 244))
             draw.text((24, 80), status[:110], font=small, fill=status_color)
             draw.rectangle((0, height - 42, width, height), fill=(12, 20, 29))
             draw.text((24, height - 33), "Recorded states + mj_forward only  |  No new physics validation",
@@ -254,6 +257,8 @@ def main() -> int:
                         help="new directory for runtime_trace.mp4 and render_report.json")
     parser.add_argument("--check-only", action="store_true",
                         help="validate report/trace/model hashes without GL, ffmpeg or output files")
+    parser.add_argument("--evaluation-report", type=Path,
+                        help="optional offline score receipt; verify its source identities and label qualification")
     parser.add_argument("--fps", type=int, default=30)
     parser.add_argument("--width", type=int, default=1280)
     parser.add_argument("--height", type=int, default=720)
@@ -275,6 +280,16 @@ def main() -> int:
     source_run = args.source_run.resolve()
     model_path = args.model.resolve()
     source = inspect_source(source_run, model_path)
+    if args.evaluation_report is not None:
+        score_path = args.evaluation_report.resolve()
+        score = json.loads(score_path.read_text(encoding="utf-8"))
+        identities = score.get("input_sha256", {})
+        if (score.get("status") not in ("PASS", "FAIL") or score.get("evidence_valid") is not True or
+                identities.get(str(source_run / "report.json")) != source["source_report_sha256"] or
+                identities.get(str(source_run / "trace.jsonl")) != source["source_trace_sha256"]):
+            raise ValueError("Evaluation receipt does not validly score this exact runtime trace")
+        source["qualification_status"] = score["status"]
+        source["qualification_report_sha256"] = sha256(score_path)
     if args.check_only:
         print(json_text({"status": "STATIC_TRACE_VALIDATED", **source,
                          "planned_source_frames": len(frame_indices(

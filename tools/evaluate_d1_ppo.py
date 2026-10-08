@@ -24,7 +24,7 @@ from stable_baselines3 import PPO
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "training"))
-from d1_rl.env import D1Env  # noqa: E402
+from d1_rl.factory03 import environment_class, environment_sources  # noqa: E402
 from d1_rl.interface import ACTION_DIM, ACTION_SCALE, ACTOR_DIM, OBS_DIM  # noqa: E402
 from export_d1_ppo import check_checkpoint  # noqa: E402
 
@@ -334,6 +334,8 @@ def main():
         "format": "d1-fixed-evaluation-03-v1", "phase": args.phase,
         "scope": "pure D1 flat-ground policy; no terrain traversal claim",
         "provenance": provenance,
+        "environment_class": environment_class(config).__name__,
+        "environment_sources_sha256": {str(path): sha256(path) for path in environment_sources(config)},
         "source_sha256": {"config": sha256(config_path), "scene": sha256(scene),
                           "robot": sha256(robot), "interface_schema": sha256(schema),
                           "evaluation_script": sha256(Path(__file__).resolve())},
@@ -365,7 +367,7 @@ def main():
             members = [(n, d, s) for n, d, s in scenarios if n == name]
             if not members:
                 continue
-            environment = D1Env(config=config_path, arm="B", seed=members[0][2], rank=0,
+            environment = environment_class(config)(config=config_path, arm="B", seed=members[0][2], rank=0,
                                 max_transitions=EPISODE_TICKS * len(members),
                                 eval_delay_ticks=members[0][1],
                                 eval_command_sequence=SEQUENCES[name])

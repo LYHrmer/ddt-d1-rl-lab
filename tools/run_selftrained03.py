@@ -6,8 +6,11 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import sys
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/"runtime03"))
+from deployment_variants import select_deployment
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -26,11 +29,11 @@ def main():
     export=a.export.resolve(); meta=json.loads((export/"metadata.json").read_text())
     if (meta.get("interface_id")!="d1-selftrained-pilot03b-v2" or
             meta.get("random_initialization") is not True or meta.get("teacher_policy_used") is not False):
-        p.error("Expected self-trained 03b metadata; this launcher does not accept colleague policies")
-    config_path=ROOT/"training/configs/pilot03b.json"
-    config=json.loads(config_path.read_text())
-    schema_path=ROOT/"runtime03/schema_pilot03b.json"
-    schema=json.loads(schema_path.read_text())
+        p.error("Expected self-trained 03b/03c metadata; this launcher does not accept colleague policies")
+    try:
+        config_path,schema_path,config,schema=select_deployment(meta)
+    except ValueError as error:
+        p.error(str(error))
     scene=ROOT/config["scene"]
     paths={"policy_onnx":export/"policy.onnx","config":config_path,"scene_xml":scene,
            "robot_xml":scene.parent/"robot.xml","interface_schema":ROOT/config["interface_schema"],
@@ -53,6 +56,8 @@ def main():
     if a.validate_only:cmd.append("--validate-only")
     print(json.dumps({"training_kind":meta["training_kind"],"training_seed":meta["training_seed"],
           "trained_transitions":meta["trained_transitions"],"interface":meta["interface_id"],
+          "config_version":meta["config_version"],"config":str(config_path),"runtime_schema":str(schema_path),
+          "reset_seed":a.seed,
           "native_cap":0 if a.validate_only or a.print_command else 6000,
           "qualification":"Run completion alone does not mean control thresholds passed"},indent=2),flush=True)
     if a.print_command:

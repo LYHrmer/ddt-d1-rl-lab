@@ -1,0 +1,117 @@
+{
+  "version": "d1-pure-ppo-pilot-03c",
+  "reward_contract": "astra-reviewed-03c-before-second-pilot",
+  "scene": "src/ddt_ros2_control/urdfs/d1_description/mujoco/scene_contract_plane_02.xml",
+  "scene_sha256": "e224f7ee008bb0afe49db88ed496b9186626126e515be4035183bd9f1f225cff",
+  "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+  "interface_schema": "training/configs/interface03b.json",
+  "interface_schema_sha256": "dee7aaaea980fbfbfb438c85be9e97fc605bb5a375f62f366fccc7edbaa7bff8",
+  "native_dt_s": 0.002,
+  "pd_native_steps": 2,
+  "policy_native_steps": 10,
+  "episode_seconds": 20.0,
+  "max_transitions": null,
+  "action_clip": [
+    -1.0,
+    1.0
+  ],
+  "actor_observation": {
+    "current_dim": 57,
+    "history_frames": 10,
+    "total_dim": 627
+  },
+  "reset": {
+    "leg_joint_perturbation_uniform_rad": [
+      -0.02,
+      0.02
+    ],
+    "yaw_perturbation_uniform_rad": [
+      -0.05,
+      0.05
+    ],
+    "wheel_ground_clearance_m": 0.002
+  },
+  "commands": {
+    "first_zero_seconds": 1.0,
+    "resample_seconds": 4.0,
+    "zero_probability": 0.2,
+    "vx_uniform_m_s": [
+      -0.3,
+      0.3
+    ],
+    "vy_m_s": 0.0,
+    "wz_uniform_rad_s": [
+      -0.3,
+      0.3
+    ],
+    "category_probabilities": {
+      "stop": 0.2,
+      "pure_vx": 0.3,
+      "pure_wz": 0.3,
+      "mixed": 0.2
+    }
+  },
+  "delay": {
+    "B_fixed_ticks": 0,
+    "R_uniform_ticks": [
+      0,
+      1,
+      2
+    ],
+    "M_fixed_ticks": 1,
+    "eval_allowed_fixed_ticks": [
+      0,
+      1,
+      2,
+      3
+    ]
+  },
+  "termination": {
+    "base_height_below_nominal_by_m": 0.18,
+    "tilt_above_rad": 0.6,
+    "illegal_support_contact_normal_force_above_n": 1.0
+  },
+  "reward": {
+    "vx_tracking_weight": 2.0,
+    "vx_tracking_error_scale_m2_s2": 0.04,
+    "wz_tracking_weight": 2.0,
+    "wz_tracking_error_scale_rad2_s2": 0.04,
+    "alive_weight": 0.25,
+    "body_vy_squared_weight": -2.0,
+    "gravity_xy_squared_weight": -6.0,
+    "height_error_squared_weight": -20.0,
+    "action_rate_mean_squared_weight": -0.1,
+    "torque_sum_squared_weight": -1e-05,
+    "illegal_body_contact_weight": -1.0,
+    "height_target": "static_default_pose_wheels_touching_ground",
+    "sample_period": "one_policy_tick_20ms",
+    "multiply_total_by_policy_dt_s": 0.02,
+    "torque_term": "mean_over_ten_native_steps_of_sum_of_squared_clipped_applied_torques",
+    "leg_pose_deviation_sum_squared_weight": -0.5,
+    "standstill_tracking_weight": 1.0,
+    "standstill_linear_error_scale_m2_s2": 0.0004,
+    "standstill_yaw_error_scale_rad2_s2": 0.0025
+  },
+  "interface_id": "d1-selftrained-pilot03b-v2",
+  "audited_interface_schema": "evidence/interface_audit_03/golden_run_01/schema.json",
+  "audited_interface_schema_sha256": "bb45f7332a59ca2cb61552c2033f5e02149268c3ab3b828817914c6ebf16f52c",
+  "action_scales": [
+    0.5,
+    0.5,
+    0.5,
+    5.0,
+    0.5,
+    0.5,
+    0.5,
+    5.0,
+    0.5,
+    0.5,
+    0.5,
+    5.0,
+    0.5,
+    0.5,
+    0.5,
+    5.0
+  ],
+  "change_from_pilot03b": "Only command-category sampling and the explicitly frozen 03c reward terms/weights change; interface, action scales, timing, reset, and termination remain pilot03b."
+}

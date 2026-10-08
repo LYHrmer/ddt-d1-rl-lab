@@ -6,9 +6,10 @@ import json
 from pathlib import Path
 import shlex
 
+from deployment_variants import select_deployment
+
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED_BINARY = '62134e7c94fafaefcdee9f8325191b8f621cb3eb51f9ed2a167d68198469975d'
-EXPECTED_SCHEMA = 'a9eba4202468ef0eb2aa52dfde838b8efcb23d8ac25c3067064adc3aed941b55'
 
 
 def sha(path):
@@ -27,16 +28,16 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     export, initial, output = args.export.resolve(), args.initial_state.resolve(), args.output.resolve()
-    policy, schema_path = export/'policy.onnx', ROOT/'runtime03/schema_pilot03b.json'
-    schema, metadata, golden = load(schema_path), load(export/'metadata.json'), load(args.onnx_golden_report)
+    policy = export/'policy.onnx'
+    metadata, golden = load(export/'metadata.json'), load(args.onnx_golden_report)
+    config_path, schema_path, config, schema = select_deployment(metadata)
     binary = ROOT/'runtime03/build/d1_runtime03'
-    config_path = Path(schema['training_config'])
-    config, state = load(config_path), load(initial)
+    state = load(initial)
     model = ROOT/config['scene']
-    if sha(binary) != EXPECTED_BINARY or sha(schema_path) != EXPECTED_SCHEMA:
-        raise ValueError('Frozen native runtime/schema changed; requalify before a new plan')
+    if sha(binary) != EXPECTED_BINARY:
+        raise ValueError('Frozen native runtime changed; requalify before a new plan')
     if metadata['interface_id'] != 'd1-selftrained-pilot03b-v2' or metadata['training_kind'] != 'pilot':
-        raise ValueError('Plan requires the new self-trained pilot03b export')
+        raise ValueError('Plan requires a self-trained pilot03b or pilot03c export')
     if (metadata['teacher_policy_used'] is not False or metadata['random_initialization'] is not True or
             metadata['action_scales'] != schema['action_scales']):
         raise ValueError('Expected random-initialized, no-teacher PPO with the frozen 03b action scales')
@@ -90,6 +91,8 @@ def main():
         commands.extend([{'kind': name+'_native_trial', 'argv': native, 'shell': shlex.join(native)},
                          {'kind': name+'_offline_scoring', 'argv': scorer, 'shell': shlex.join(scorer)}])
     manifest = {'status': 'PLANNED_NOT_EXECUTED', 'physics_steps_executed_by_planner': 0,
+                'config_version': metadata['config_version'], 'training_config': str(config_path),
+                'runtime_schema': str(schema_path),
                 'max_trials': 3, 'aggregate_max_native_steps': 18000, 'trials': trials,
                 'policy_metadata_sha256': sha(export/'metadata.json'),
                 'cxx_ort_golden_receipt_sha256': sha(args.onnx_golden_report),

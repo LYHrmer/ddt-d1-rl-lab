@@ -7,7 +7,7 @@ import time
 import traceback
 
 import mujoco
-from d1_rl.env import D1Env
+from d1_rl.factory03 import environment_class, environment_sources
 from evaluate_d1_ppo import make_predictor, sha256
 from run_d1_fixed_probe import dump, json_numpy
 
@@ -24,7 +24,7 @@ def main():
         p.error("Allowed native cap is a multiple of 10 within [10,500]")
     a.output.mkdir(parents=True,exist_ok=False)
     sources=[Path(__file__).resolve(),ROOT/"tools/evaluate_d1_ppo.py",ROOT/"tools/run_d1_fixed_probe.py",
-             ROOT/"training/d1_rl/env.py",ROOT/"training/d1_rl/interface.py",a.config.resolve(),
+             *environment_sources(a.config),a.config.resolve(),
              a.onnx.resolve(),a.onnx.resolve().parent/"metadata.json"]
     identities={str(path):sha256(path) for path in sources}
     dump(a.output/"protocol.json",{"mode":"learned_onnx_dynamic_parity", "max_native":a.max_native,
@@ -51,7 +51,7 @@ def main():
     try:
         predictor,provenance=make_predictor(None,a.onnx.resolve(),a.config.resolve())
         dump(a.output/"policy_provenance.json",provenance)
-        env=D1Env(config=a.config,seed=7001,eval_delay_ticks=0,max_transitions=a.max_native//10)
+        env=environment_class(a.config)(config=a.config,seed=7001,eval_delay_ticks=0,max_transitions=a.max_native//10)
         obs,_=env.reset(); env.set_command(0.,0.);obs=env.current_observation()
         dump(a.output/"initial_state.json",env.get_initial_state())
         mujoco.mj_step=record_step

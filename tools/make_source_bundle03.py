@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Plan or create a small, explicit-allowlist source bundle for D1 contract 03.
 
-No Git repository is initialized, no upstream ZIP is copied, and no patch is
+No Git operation is performed, no upstream ZIP is copied, and no patch is
 generated. With no --output this command is read-only. --audit-upstream lists
 changed extracted files from source_archive_receipt.json for later review.
 """
@@ -42,8 +42,11 @@ ALLOWLIST = {
         "training/d1_rl/interface.py",
         "training/d1_rl/forkserver_bootstrap.py",
         "training/d1_rl/fast_checks.py",
+        "training/d1_rl/task03c.py",
+        "training/d1_rl/factory03.py",
         "training/configs/pilot03.json",
         "training/configs/pilot03b.json",
+        "training/configs/pilot03c.json",
         "training/configs/interface03b.json",
         "training/configs/diagnostic03b_zero.json",
         "training/configs/diagnostic03b_static_support.json",
@@ -60,6 +63,10 @@ ALLOWLIST = {
         "runtime03/src/main.cpp",
         "runtime03/schema_pilot03.json",
         "runtime03/schema_pilot03b.json",
+        "runtime03/schema03c.json",
+        "runtime03/deployment_variants.py",
+        "runtime03/check_deployment_variants03.py",
+        "runtime03/deployment03c_notes.md",
         "runtime03/compare_python_interface.py",
         "runtime03/compare_dynamic_traces.py",
         "runtime03/check_cli_zero_physics.py",
@@ -95,6 +102,7 @@ ALLOWLIST = {
         "tools/validate_fast_checks03.py",
         "tools/benchmark_fast_checks03.py",
         "tools/check_fast_checks03_static.py",
+        "tools/check_task03c_static.py",
         "tools/generate_upstream_patch03.py",
         "tools/upstream_reproduction03.patch",
         "tools/upstream_reproduction03.md",
@@ -103,11 +111,13 @@ ALLOWLIST = {
     "contracts_and_tutorial": (
         "docs/career_execution_contract_03.md",
         "docs/career_execution_contract_03b_addendum.md",
+        "docs/career_execution_contract_03c_addendum.md",
         "docs/d1_interface_audit_03.md",
         "docs/tutorial/00_复现教程.md",
         "docs/tutorial/01_地形与操作.md",
         "docs/tutorial/02_观测动作与时基.md",
         "docs/tutorial/03_训练导出与评测.md",
+        "docs/tutorial/04_证据审计与结果表述.md",
     ),
     "generated_terrain_source": (
         "tools/course03_layout.json",
@@ -157,6 +167,11 @@ def digest_file(path: Path) -> str:
     return hasher.hexdigest()
 
 
+def normalized_mode(path: Path) -> int:
+    """Retain executable intent without archiving host group/umask choices."""
+    return 0o755 if stat.S_IMODE(path.lstat().st_mode) & 0o111 else 0o644
+
+
 def safe_member(root: Path, member: str) -> Path:
     pure = PurePosixPath(member)
     if (pure.is_absolute() or ".." in pure.parts or "." in pure.parts or
@@ -187,7 +202,8 @@ def inventory(root: Path) -> list[dict]:
             if total > MAX_TOTAL_BYTES:
                 raise ValueError("Source bundle exceeds 20 MiB uncompressed")
             rows.append({"path": member, "category": category,
-                         "bytes": size, "sha256": digest_file(path)})
+                         "bytes": size, "sha256": digest_file(path),
+                         "mode": f"{normalized_mode(path):04o}"})
     return sorted(rows, key=lambda item: item["path"])
 
 
@@ -254,11 +270,12 @@ def bundle_readme(upstream: dict) -> str:
             f"Obtain the original {upstream['archive_name']} separately from its owner and verify SHA256 "
             f"`{upstream['archive_sha256_from_receipt']}` against `source_archive_receipt.json`. "
             "Follow `README_LOCAL.md` for the original workspace setup, then the included `docs/tutorial/` "
-            "and contract 03b for the new training/runtime path. "
+            "and contracts 03b/03c for the new training/runtime path. "
             "`tools/upstream_reproduction03.patch` is a separately identified text delta for 12 original files; "
             "read `tools/upstream_reproduction03.md` before applying it to a clean extraction. "
             "The original source files themselves are not included.\n\n"
-            "`manifest.json` records every included file's byte size and SHA256. It does not certify that a "
+            "`manifest.json` records every included file's byte size, normalized Unix mode and SHA256. "
+            "It does not certify that a "
             "policy trained successfully or traversed terrain.\n")
 
 
@@ -291,22 +308,38 @@ def write_bundle(root: Path, output: Path, rows: list[dict], upstream: dict) -> 
         for name, data in (("BUNDLE_README.md", readme_bytes),
                            ("manifest.json", manifest_bytes)):
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o644 << 16
+            info.external_attr = (stat.S_IFREG | 0o644) << 16
             bundle.writestr(info, data, compress_type=zipfile.ZIP_DEFLATED,
                             compresslevel=9)
         for row in rows:
             name = row["path"]
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
             info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o644 << 16
+            info.external_attr = (stat.S_IFREG | int(row["mode"], 8)) << 16
             # Source files are capped at 2 MiB. Recheck after read to catch a
             # concurrent edit during bundling instead of making a stale manifest.
-            data = safe_member(root, name).read_bytes()
-            if len(data) != row["bytes"] or hashlib.sha256(data).hexdigest() != row["sha256"]:
+            source = safe_member(root, name)
+            data = source.read_bytes()
+            if (len(data) != row["bytes"] or
+                    hashlib.sha256(data).hexdigest() != row["sha256"] or
+                    normalized_mode(source) != int(row["mode"], 8)):
                 raise RuntimeError(f"Source changed while bundling: {name}")
             bundle.writestr(info, data, compress_type=zipfile.ZIP_DEFLATED,
                             compresslevel=9)
+    with zipfile.ZipFile(output, "r") as bundle:
+        if (bundle.read("manifest.json") != manifest_bytes or
+                bundle.read("BUNDLE_README.md") != readme_bytes):
+            raise RuntimeError("Archive metadata failed read-back verification")
+        for row in rows:
+            info = bundle.getinfo(row["path"])
+            if (info.create_system != 3 or
+                    stat.S_IFMT(info.external_attr >> 16) != stat.S_IFREG or
+                    stat.S_IMODE(info.external_attr >> 16) != int(row["mode"], 8) or
+                    hashlib.sha256(bundle.read(info)).hexdigest() != row["sha256"]):
+                raise RuntimeError(f"Archive payload or mode failed read-back: {row['path']}")
     receipt = {"status": "ARCHIVED", "archive": str(output),
                "archive_bytes": output.stat().st_size,
                "archive_sha256": digest_file(output),

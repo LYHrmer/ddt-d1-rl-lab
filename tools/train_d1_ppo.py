@@ -24,7 +24,7 @@ from stable_baselines3.common.logger import configure
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.vec_env import SubprocVecEnv
 import torch
-from d1_rl.env import D1Env
+from d1_rl.factory03 import environment_class, environment_sources
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -60,7 +60,7 @@ class CountedMonitor(Monitor):
 
 def make_env(config,arm,seed,rank,limit,monitor_path):
     def factory():
-        return CountedMonitor(D1Env(config=config,arm=arm,seed=seed,rank=rank,max_transitions=limit),filename=str(monitor_path))
+        return CountedMonitor(environment_class(config)(config=config,arm=arm,seed=seed,rank=rank,max_transitions=limit),filename=str(monitor_path))
     return factory
 
 class Ledger(BaseCallback):
@@ -137,8 +137,9 @@ def main():
     a.output.mkdir(parents=True,exist_ok=False)
     config=json.loads(a.config.read_text())
     snapshot=a.output/"source_snapshot"; snapshot.mkdir()
-    sources=[Path(__file__).resolve(),ROOT/"training/d1_rl/env.py",ROOT/"training/d1_rl/interface.py",
-             ROOT/"training/d1_rl/forkserver_bootstrap.py",a.config]
+    sources=[Path(__file__).resolve(), *environment_sources(config),
+             ROOT/"training/d1_rl/forkserver_bootstrap.py",a.config,
+             ROOT/"tools/export_d1_ppo.py", ROOT/"tools/evaluate_d1_ppo.py"]
     identities={str(path):sha(path) for path in sources}
     for path in sources: shutil.copy2(path,snapshot/path.name)
     scene=ROOT/config["scene"]
@@ -153,6 +154,7 @@ def main():
     protocol={"started_utc":datetime.now(timezone.utc).isoformat(),"kind":a.kind,"arm":a.arm,
               "seed":a.seed,"envs":a.envs,"planned_transitions":a.steps,"planned_native_steps":a.steps*10,
               "wall_limit_training_s":a.max_wall,"inputs_sha256":identities,"hyperparameters":hyper,
+              "environment_class":environment_class(config).__name__,
               "versions":{"mujoco":mujoco.__version__,"gymnasium":gymnasium.__version__,
                           "sb3":stable_baselines3.__version__,"torch":torch.__version__},"config":config}
     (a.output/"protocol.json").write_text(json.dumps(protocol,indent=2)+"\n")
