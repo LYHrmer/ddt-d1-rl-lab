@@ -1,6 +1,8 @@
 # 原项目本机改动的独立补丁
 
-`upstream_reproduction03.patch` 是从用户提供的原始 `workspace2.zip` 与本机提取树逐文件比较生成的 **unified text diff**。原 ZIP SHA256 为 `fd0bb8b361a4b63efbe758242d9d6a00d290c52e0dd6e3eed961595c7eacf6a4`，身份来自 `source_archive_receipt.json`，生成时已重新计算 ZIP 整体 SHA，并核对其中 211 个原始文件的逐项 SHA。原项目代码和模型仍归原提供方；这个补丁只表达本机改动，不把原源码、机器人、网格或 ONNX 权重作为新作品重新发布。本文件和补丁目前仅在本地，**未发布，也未应用到当前源码**。
+`upstream_reproduction03.patch` 是从用户提供的原始 `workspace2.zip` 与本机提取树逐文件比较生成的 **unified text diff**。原 ZIP SHA256 为 `fd0bb8b361a4b63efbe758242d9d6a00d290c52e0dd6e3eed961595c7eacf6a4`，身份来自 `source_archive_receipt.json`，生成时已重新计算 ZIP 整体 SHA，并核对其中 211 个原始文件的逐项 SHA。原项目代码和模型仍归原提供方；这个补丁只表达本机改动，不把原源码、机器人、网格或 ONNX 权重作为新作品重新发布。生成时本文件和补丁仅在本地，未发布；没有将补丁再次应用到当前源码。
+
+2026-10-09发布补充：该文本差异随自写源码上传至独立私有仓库 [ddt-d1-rl-lab](https://github.com/LYHrmer/ddt-d1-rl-lab)。原同事模型、mesh、权重和完整原文件仍未包含。生成回执与原补丁SHA保持不变。
 
 补丁 SHA256：`366572b3f2fdcccee5da6a2ca826143abe2ad3bb00c3781df554a84ab350e85a`。它改变 12 个原项目文本文件，约 196 行增加、13 行删除；没有二进制 diff。清单如下：
 

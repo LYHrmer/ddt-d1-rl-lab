@@ -18,7 +18,7 @@ rtk proxy /home/lyh/ddt_ros2_ws/run_d1_training_course.sh
 
 本轮已清理48.34MiB可再生编译对象与Python缓存，保留模型、权重、运行库和全部证据；历史清理回收量另列，见[清理说明](docs/storage_cleanup_03.md)。
 
-本目录已建立独立本地Git，尚无remote；同事源码、模型/权重、依赖与大轨迹不进入源码历史。小型自写源码包依赖原 `workspace2.zip`，路径与依赖限制见 [DEPENDENCIES03](training/DEPENDENCIES03.md)。旧 `wheel-legged-control-lab` 仓库保持独立。
+本目录使用独立GitHub私有仓库 [LYHrmer/ddt-d1-rl-lab](https://github.com/LYHrmer/ddt-d1-rl-lab)，`origin`通过SSH443连接；模型/权重、依赖与大轨迹不进入源码历史，第三方原文件的必要文本改动以单独补丁提供。小型自写源码包依赖原 `workspace2.zip`，路径与依赖限制见 [DEPENDENCIES03](training/DEPENDENCIES03.md)。旧 `wheel-legged-control-lab` 仓库保持独立。
 
 ## 启动
 

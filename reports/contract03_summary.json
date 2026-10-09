@@ -1,0 +1,305 @@
+{
+  "format": "d1-contract03-publication-summary-v1",
+  "prepared_utc": "2026-10-09T01:08:28.680933+00:00",
+  "simulation_only": true,
+  "overall_control_qualification": "FAIL",
+  "interpretation": "Same development training seed across three task revisions; not a formal three-seed comparison. Full traces, weights and original model remain on the local workstation.",
+  "versions": [
+    {
+      "version": "03b",
+      "training_seed": 101,
+      "evaluation_seed": 7001,
+      "training_status": "COMPLETE",
+      "training_transitions": 1048576,
+      "training_native_steps": 10485760,
+      "training_seconds": 1326.2504114699987,
+      "inputs_unchanged": true,
+      "python_tasks_passed": 0,
+      "python_tasks_total": 3,
+      "python_evaluation_native_steps": 14980,
+      "episodes": [
+        {
+          "sequence": "forward_stop",
+          "native_steps": 2980,
+          "done_reason": "TERMINATED",
+          "stable_vx_mae_m_s": 0.029019358715367836,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": null,
+          "stop_last_second_abs_wz_rad_s": null,
+          "stop_displacement_m": null,
+          "peak_abs_roll_or_pitch_rad": 0.593619999376569,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": false,
+            "no_fall_or_illegal_support": false,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": false,
+            "stop_displacement": false,
+            "peak_roll_pitch": false
+          },
+          "trace_sha256": "9864d0fff291bee4ba39e2b1ad8b11cfb78d6ef6ec8d996483fd3d3efa71a07c"
+        },
+        {
+          "sequence": "reverse_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.010498482629644652,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.012183779925709827,
+          "stop_last_second_abs_wz_rad_s": 0.0025573314962192184,
+          "stop_displacement_m": 0.08700751616891624,
+          "peak_abs_roll_or_pitch_rad": 0.1366221624808443,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "9d3e3f50782924a813dafcdad2c706c853fbf94eef699c562a53a98206c4164f"
+        },
+        {
+          "sequence": "turn_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": null,
+          "stable_wz_mae_rad_s": 0.19638278855678465,
+          "stop_last_second_horizontal_speed_m_s": 0.01314300806866718,
+          "stop_last_second_abs_wz_rad_s": 0.005545506633562861,
+          "stop_displacement_m": 0.03706621642921837,
+          "peak_abs_roll_or_pitch_rad": 0.1468894218284742,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": null,
+            "stable_wz": false,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": true,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "e06846e7501130a009426c6dc5d79a05d11d291bb4baccf8e48d27c74a9be23a"
+        }
+      ],
+      "local_source_receipt_sha256": {
+        "evidence/career_contract_03/pilot03b_01/result.json": "45ac5185afab5f10a1cfe1cd804baeb8a01afed83a895bf8812b41f55955b9fb",
+        "evidence/career_contract_03/pilot03b_python_eval_01/summary.json": "c37654245724a70f83e2b5ddc6edd291e78216dafdbc182b204b913c9dfe3f50",
+        "evidence/career_contract_03/pilot03b_python_eval_01/episodes.jsonl": "1bd36dc087840924630826f63c7da8b52b9949921313b335e72158ed3644a6bb"
+      }
+    },
+    {
+      "version": "03c",
+      "training_seed": 101,
+      "evaluation_seed": 7001,
+      "training_status": "COMPLETE",
+      "training_transitions": 1048576,
+      "training_native_steps": 10485760,
+      "training_seconds": 801.5835687709914,
+      "inputs_unchanged": true,
+      "python_tasks_passed": 0,
+      "python_tasks_total": 3,
+      "python_evaluation_native_steps": 18000,
+      "episodes": [
+        {
+          "sequence": "forward_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.004121048567725584,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.021871571172067648,
+          "stop_last_second_abs_wz_rad_s": 0.0017014788610656593,
+          "stop_displacement_m": 0.09651681331655118,
+          "peak_abs_roll_or_pitch_rad": 0.05286083772323201,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "f41c1f0aceca56ecc4dbf53b6eee4c49a39ca250251c348946c3e1d10899a6bd"
+        },
+        {
+          "sequence": "reverse_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.027979046175622798,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.026709527535966778,
+          "stop_last_second_abs_wz_rad_s": 0.015762635622432245,
+          "stop_displacement_m": 0.06876016762004794,
+          "peak_abs_roll_or_pitch_rad": 0.09940369329456629,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "8f87dc11622ffba00a800690b4d835038589fbb7b2cb4735172c7cb8477c8304"
+        },
+        {
+          "sequence": "turn_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": null,
+          "stable_wz_mae_rad_s": 0.116664397905961,
+          "stop_last_second_horizontal_speed_m_s": 0.05997856680095725,
+          "stop_last_second_abs_wz_rad_s": 0.01661979670247871,
+          "stop_displacement_m": 0.14664329892055397,
+          "peak_abs_roll_or_pitch_rad": 0.04993903972270778,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": null,
+            "stable_wz": false,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "89e22de5d32be1c36647fa62cc7e9e8a877328f23ae369fdc4ba71dbec3d0dd9"
+        }
+      ],
+      "local_source_receipt_sha256": {
+        "evidence/career_contract_03/pilot03c_01/result.json": "61afc332cffc37c03cd8ab43fd2614695cba058708c4277f69a844bd73b301e7",
+        "evidence/career_contract_03/pilot03c_python_eval_01/summary.json": "7fe94c7bc2b8badd800f64e1b24f2f9cf8f7391ec319d97f7d91e3ff07ef88db",
+        "evidence/career_contract_03/pilot03c_python_eval_01/episodes.jsonl": "dc77e78316d16ab170afd12503267c1ef0f9ed67638d15b0aa840a34eff516c2"
+      }
+    },
+    {
+      "version": "03d",
+      "training_seed": 101,
+      "evaluation_seed": 7001,
+      "training_status": "COMPLETE",
+      "training_transitions": 1048576,
+      "training_native_steps": 10485760,
+      "training_seconds": 794.6726756090065,
+      "inputs_unchanged": true,
+      "python_tasks_passed": 1,
+      "python_tasks_total": 3,
+      "python_evaluation_native_steps": 18000,
+      "episodes": [
+        {
+          "sequence": "forward_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.003171848697478512,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.004506835195906424,
+          "stop_last_second_abs_wz_rad_s": 0.0006428590377381112,
+          "stop_displacement_m": 0.08058364437166654,
+          "peak_abs_roll_or_pitch_rad": 0.05298346570280336,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "df3f7b8cb6cf1af3f0b7320054bd58ebe404a866fb8b9702fd5f79ed39390f78"
+        },
+        {
+          "sequence": "reverse_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.03991730390807766,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.0022494247419045303,
+          "stop_last_second_abs_wz_rad_s": 0.002509582462663143,
+          "stop_displacement_m": 0.0163405234561888,
+          "peak_abs_roll_or_pitch_rad": 0.05878058948792943,
+          "nominal_zero_delay_pass": true,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": true,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "229e7fa0a6a0e9a4b82ce61ae79d4efebee5ab76766c554fbed1afbd319e74fb"
+        },
+        {
+          "sequence": "turn_stop",
+          "native_steps": 6000,
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": null,
+          "stable_wz_mae_rad_s": 0.10288167407668944,
+          "stop_last_second_horizontal_speed_m_s": 0.014942524091398669,
+          "stop_last_second_abs_wz_rad_s": 0.011012745610780514,
+          "stop_displacement_m": 0.060764291619086246,
+          "peak_abs_roll_or_pitch_rad": 0.03872473693912896,
+          "nominal_zero_delay_pass": false,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": null,
+            "stable_wz": false,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "trace_sha256": "f2d66478227bb6d51b12db7598684732d65ed5d77793a8e59398424e68a605bb"
+        }
+      ],
+      "local_source_receipt_sha256": {
+        "evidence/career_contract_03/pilot03d_01/result.json": "d509c156e1f702ea91bd9fc08381248ad971b37f3eab8771d041800a00d0fad1",
+        "evidence/career_contract_03/pilot03d_python_eval_01/summary.json": "5413af8aa06fc0261365d865e2becb8b042b5fc7455e859dc53134d6fe72bc2f",
+        "evidence/career_contract_03/pilot03d_python_eval_01/episodes.jsonl": "f2f59b73f0f37a8d105ca9a0e7b02fee2d7b8e97ae8aa7fe26b6a307c46e8f42"
+      }
+    }
+  ],
+  "independent_cpp_03d": {
+    "reverse_stop": {
+      "status": "PASS",
+      "native_steps": 6000,
+      "stop_displacement_m": 0.016340523040642
+    },
+    "forward_stop": {
+      "status": "FAIL",
+      "native_steps": 6000,
+      "stop_displacement_m": 0.08058364641701
+    },
+    "watchdog": {
+      "status": "NOT_VALIDATED_STARTUP_ERROR",
+      "native_steps": 0,
+      "reason": "Publisher could not import rpyutils; native process was never started."
+    }
+  },
+  "native_step_ledger": {
+    "preflight_and_engineering": 362110,
+    "training": 31457280,
+    "python_development": 50980,
+    "independent_cpp_deployment": 20980,
+    "total": 31891350
+  },
+  "formal_training_runs": 0,
+  "terrain_policy_trials": 0,
+  "speed_1_5_m_s_verified": false,
+  "contract03_closed": true,
+  "next_experiment_requires_new_bounded_contract": true
+}
