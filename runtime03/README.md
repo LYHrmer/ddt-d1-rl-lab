@@ -1,14 +1,35 @@
 # D1 自训策略运行器 03
 
-该目录独立于原 ROS2 bridge/FSM。它只面向合同03的纯 D1 自训策略；不加载旧 `flat_lab` 作为改过 action clip 的对照。轮速度倍率5、动作夹到±1，任务范围仅限±.3 m/s；这不是已验证的跟踪能力，不能声称1.5 m/s。倍率、PD参数与80/12 Nm限制从显式schema读取。旧 `schema_pilot03.json` 保留腿倍率.25的预检身份；03b使用独立schema、腿倍率.5，不复写旧文件。
+该目录独立于原 ROS2 bridge/FSM。它只面向合同03的纯 D1 自训策略；不加载旧 `flat_lab` 作为改过 action clip 的对照。轮速度倍率5、动作夹到±1，任务范围仅限±.3 m/s；这不是已验证的跟踪能力，不能声称1.5 m/s。倍率、PD参数与80/12 Nm限制从显式schema读取。旧 `schema_pilot03.json` 保留腿倍率.25的预检身份；03b/03c/03d均使用腿倍率.5及同一 `d1-selftrained-pilot03b-v2` 控制接口，各自保留独立训练配置和runtime schema。
 
-构建不安装或覆盖旧二进制：
+本次文档更新时（2026-10-09），03b/03c/03d均已完成训练，固定控制评测分别为 **0/3、0/3、1/3通过**。03d只有reverse_stop全门通过，forward_stop停车位移0.080584m、turn_stop的yaw MAE 0.102882rad/s与停车位移0.060764m仍超门槛，整体不合格。三次pilot开发结束，不追加第四次或启动正式九次训练。03d独立C++已完成倒退PASS和前进FAIL两次12s部署，各6,000 native，停车位移分别0.016340523m与0.080583646m。最后一次live尝试在publisher导入阶段退出，原生程序未启动、新增0 native；状态为 **WATCHDOG NOT_VALIDATED_STARTUP_ERROR**，不补跑。实际结果见[执行结果](../docs/career_execution_results_03.md)。
+
+现有 `runtime03/build/d1_runtime03` 已冻结，启动前无需重建。以下命令只用于另行登记的重建；冻结实验期间不要执行。清理过的152个编译对象会在下次构建重新生成，耗时未测，详见[存储清理说明](../docs/storage_cleanup_03.md)。构建不安装或覆盖原 ROS2 bridge/FSM 二进制：
 
 ```bash
 rtk proxy bash /home/lyh/ddt_ros2_ws/tools/build_runtime03.sh
 ```
 
 可执行文件在 `runtime03/build/d1_runtime03`。运行时需 `LD_LIBRARY_PATH=/opt/ros/humble/lib:/home/lyh/ddt_ros2_ws/install/mujoco/lib`，也可在已加载原 ROS 环境的终端启动。
+
+建议从 `tools/run_selftrained03.py` 进入。它读取导出目录的 `metadata.json`，按显式 `config_version` 选择下表中的配置，核验模型/接口/config/ONNX/fixture SHA，并自动设置原生程序的库路径。缺失版本、未知版本、配置交叉哈希会被拒绝，不按导出目录名猜测，也不自动把旧策略切换到03d。
+
+| metadata `config_version` | 训练配置 | runtime schema |
+| --- | --- | --- |
+| `d1-pure-ppo-pilot-03b` | `training/configs/pilot03b.json` | `runtime03/schema_pilot03b.json` |
+| `d1-pure-ppo-pilot-03c` | `training/configs/pilot03c.json` | `runtime03/schema03c.json` |
+| `d1-pure-ppo-pilot-03d` | `training/configs/pilot03d.json` | `runtime03/schema03d.json` |
+
+下面用已存在的03d导出演示零积分检查。输出路径须**事先不存在**，即使它是空目录也会拒绝；重做时换新编号，保留旧记录，不删除旧目录以绕过保护。`--print-command`不会创建输出目录或启动运行器，`--validate-only`会创建独占检查目录、加载模型并调用静态 `mj_forward`，不调用 `mj_step`。
+
+```bash
+rtk proxy python3 -B /home/lyh/ddt_ros2_ws/tools/run_selftrained03.py --export /home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_export_01 --output /home/lyh/ddt_ros2_ws/results/inspect03d_new_01 --sequence forward_stop --print-command
+rtk proxy python3 -B /home/lyh/ddt_ros2_ws/tools/run_selftrained03.py --export /home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_export_01 --output /home/lyh/ddt_ros2_ws/results/validate03d_new_01 --sequence forward_stop --validate-only
+```
+
+03d导出目录的metadata会选中 `schema03d.json`；最终ONNX SHA为 `cf62bb43a53019d85b0dec00258dd261f217516f4a157a7e3826d21deffad48e`。上例不能证明策略已满足控制门槛；此处也未替用户执行这些命令。去掉检查参数会实际运行12s、最多6000 native，必须先由主代理放行并计入合同预算。准备工具 `prepare_pilot_deployment03.py` 只生成命令清单，也不代替放行。
+
+资格评测使用 `runtime03/sequences03b/forward_stop.json`、`reverse_stop.json`、`turn_stop.json`，三者与Python固定评测共用12s窗口，03c/03d继续使用这些文件。目录名中的03b不表示切换策略版本。启动器的 `--sequence forward_stop|reverse_stop|turn_stop` 自动展开为这些JSON的绝对路径：前/倒进均为0–2s零、2–8s ±.2m/s、8–12s零；转向为0–2s零、2–5s +.2rad/s、5–8s −.2rad/s、8–12s零。直接调用原生二进制时应显式传入JSON路径。下表列出的原生内置同名短序列有不同时间窗口，只用于兼容/调试，不能当作这三条资格评测。
 
 零物理检查入口如下，每个输出目录必须不存在：
 
@@ -25,15 +46,15 @@ rtk proxy python3 -B /home/lyh/ddt_ros2_ws/runtime03/compare_python_interface.py
 
 v1预检checkpoint已实际通过这个C++入口：`evidence/career_contract_03/cxx_preflight_export_golden_02/report.json`，64/64通过、最大绝对差6.70552e-08、物理步0。第一次 `_01` 在读取ONNX dtype时失败，原因是ORT1.10临时TypeInfo生命周期；原失败回执保留，代码改为持有owner后才重试。该结果仅证明这份checkpoint的导出数值一致，不证明站立或行驶通过。
 
-实际仿真入口需要 `--model XML --policy ONNX --expected-model-sha256 SHA --expected-policy-sha256 SHA --expected-schema-sha256 SHA --output 新目录`。`--schema` 默认为本目录的schema。运行时同时核验schema引用的原机器人XML、独立接口审计schema、训练config，记录所用身份。主代理统一放行试次、冻结expected SHA并计入预算；本目录的编译或单测结果不代表物理试次获放行或已通过。
+直接调用原生仿真入口时需要 `--schema 对应版本JSON --model XML --policy ONNX --expected-model-sha256 SHA --expected-policy-sha256 SHA --expected-schema-sha256 SHA --sequence 固定评测JSON --output 新目录`。原生程序不会依据metadata自动选版本，03b/03c/03d试次均应显式传schema；推荐使用上述启动器完成选择。运行时同时核验schema引用的原机器人XML、独立接口审计schema、训练config，记录所用身份。主代理统一放行试次、冻结expected SHA并计入预算；本目录的编译或单测结果不代表物理试次获放行或已通过。
 
 | 参数 | 行为 |
 | --- | --- |
 | `--mode replay` | 默认，按仿真tick内部发令，不启动ROS节点，不受墙钟回调改变 |
 | `--mode live` | 实时限速，订阅 `/d1_selftrained/cmd_vel`，vx/wz限制±.3、vy=0；超过.5s单调时间未收令自动请求零速 |
-| `--sequence forward_stop` | 默认：0–2s零，2–6s vx=.2，6s起零 |
-| `--sequence reverse_stop` | 同上，移动段vx=−.2 |
-| `--sequence turn_stop` | 0–2s零，2–5s wz=.2，5–6s零，6–9s wz=−.2，9s起零 |
+| 原生 `--sequence forward_stop` | 内置默认短序列：0–2s零，2–6s vx=.2，6s起零；非固定资格JSON |
+| 原生 `--sequence reverse_stop` | 内置短序列：同上，移动段vx=−.2；非固定资格JSON |
+| 原生 `--sequence turn_stop` | 内置短序列：0–2s零，2–5s wz=.2，5–6s零，6–9s wz=−.2，9s起零；非固定资格JSON |
 | `--sequence JSON` | `{"segments":[{"start":0,"end":2,"command":[0,0,0]},...]}`，连续覆盖试次，限定低速合同 |
 | `--seconds` | >0、≤30，默认12；按2ms整数步向下取整 |
 | `--max-native` | 1–15000；与seconds对应上限取小者；任何失败步仍记录尝试次数 |
@@ -55,4 +76,8 @@ v1预检checkpoint已实际通过这个C++入口：`evidence/career_contract_03/
 
 live发布 `/d1_selftrained/odometry`（nav_msgs/Odometry，world pose、body twist）及 `/d1_selftrained/truth`（JSON String）。没有启动旧 `/command/cmd_key`，没有改原viewer或添加自救动作。独立GUI/回放由主工程入口提供。
 
-已验证与尚待验证要分开：编译、组件故障注入、Python/C++纯接口、静态reset和v1预检ONNX数值均已有0物理步回执；跨语言轨迹、03b自训checkpoint、watchdog停稳及实时性能，必须由对应实际运行回执支持，不能根据以上单测提前宣称完成。
+`live_watchdog03.py` 的 `--drive-vx` 默认为+.2m/s，03d最后一个已批准工程槽登记使用 `--drive-vx -0.1`：0–2s零令、2–8s倒退、8s后不再发送任何命令（包括零令），由原生0.5s watchdog触发。`evaluate_watchdog03.py` 从publisher protocol读取速度，拒绝发送记录或原生指令方向不匹配。停车位移从原生实际非零→零指令边界计算，8s停发到实际回零之间的时间与路程另报；外部发送/接收时间戳不冒充内部精确回调年龄。评分限定 `scope=live_watchdog_engineering_only`、`qualifies_overall_pilot=false`。本次publisher因 `ModuleNotFoundError: rpyutils` 在导入 `rclpy` 时退出，没有创建ROS节点、发布消息或启动原生程序，故没有真实停发或停车评分。`live_execution_01.json` 原始状态为 `INTERRUPTED_OR_FAILED`，工程结论记为 **WATCHDOG NOT_VALIDATED_STARTUP_ERROR**，不能记作物理FAIL，也不能用静态或synthetic测试替代。
+
+启动失败来自不完整的Python路径：原命令只设 `local/lib/python3.10/dist-packages`，但已安装的 `rpyutils` 位于 `/opt/ros/humble/lib/python3.10/site-packages`。零物理诊断中，完整加载 `/opt/ros/humble/setup.bash` 后 `rpyutils`、`rclpy`、`geometry_msgs.msg`、`std_msgs.msg` 四项导入通过，没有创建节点或发布消息。下一合同应从完整ROS环境开始、先做导入预检；本轮不修改冻结命令或补跑live。三轮独立C++部署最终累计20,980 native。
+
+验证结论须对应具体产物和试次。03d训练完成1,048,576 transitions/10,485,760 native、794.6727s，输入身份保持；64例C++ ORT1.10黄金核验最大误差4.7684e-7，Python500+C++500 native闭环配对通过，后者计入预检池（累计362,110）。三条Python资格消耗18,000 native、无跌倒，但仅1/3通过。数值一致不能替代控制资格；独立C++部署和ROS watchdog停车也不能用静态或配对结果代替。所有证据入口见[续接状态](../docs/codex_handoff_20261009.md)。

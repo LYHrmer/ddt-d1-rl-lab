@@ -21,9 +21,17 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def protocol_drive_vx(protocol):
+    value = float(protocol['vx_m_s_until_stop'])
+    if not np.isfinite(value) or not 0. < abs(value) <= .3:
+        raise ValueError('Publisher drive vx must be finite, nonzero, and within [-0.3, 0.3]')
+    return value
+
+
 def evaluate(args):
     report, initial = load(args.run/'report.json'), load(args.run/'initial_state.json')
     sender, protocol = load(args.publisher_run/'report.json'), load(args.publisher_run/'protocol.json')
+    drive_vx = protocol_drive_vx(protocol)
     schema = load(args.schema)
     native = read_rows(args.run/'trace.jsonl')
     events = read_rows(args.publisher_run/'publisher_events.jsonl')
@@ -53,6 +61,7 @@ def evaluate(args):
         'pd_policy_counts': report['pd_updates'] == (len(native)+1)//2 and report['policy_updates'] == (len(native)+9)//10,
         'domain_and_topics': protocol['domain'] == 84 and protocol['cmd_topic'] == '/d1_selftrained/cmd_vel' and protocol['truth_topic'] == '/d1_selftrained/truth',
         'real_publisher_protocol': protocol['format'] == 'd1-real-ros-watchdog-probe-v1' and protocol['stop_after_8s_sends_no_zero_message'] is True,
+        'unchanged_2_8_12s_windows': protocol['zero_command_until_sim_s'] == 2. and protocol['stop_publishing_at_sim_s'] == 8. and protocol['native_runtime_horizon_sim_s'] == 12.,
         'frozen_sender_script': protocol['script_sha256'] == sha(Path(__file__).parent/'live_watchdog03.py'),
     }
     publications = [e for e in events if e['event'] == 'publish']
@@ -62,7 +71,10 @@ def evaluate(args):
                    all(e['latest_truth_sim_time_s'] < 8. for e in publications))
     identity['no_publications_after_recorded_stop'] = silence
     identity['sender_commands_follow_schedule'] = all(
-        e['command'] == ([0., 0., 0.] if e['latest_truth_sim_time_s'] < 2. else [.2, 0., 0.]) for e in publications)
+        e['command'] == ([0., 0., 0.] if e['latest_truth_sim_time_s'] < 2. else [drive_vx, 0., 0.]) for e in publications)
+    identity['native_commands_match_requested_drive_or_zero'] = all(
+        np.allclose(r['command'], [0., 0., 0.], rtol=0., atol=1e-9) or
+        np.allclose(r['command'], [drive_vx, 0., 0.], rtol=0., atol=1e-9) for r in native)
     motion = False
     zero_index = None
     for i, row in enumerate(native):
@@ -116,6 +128,9 @@ def evaluate(args):
     valid = all(identity.values())
     return {'status': 'INVALID' if not valid else ('PASS' if all(flags.values()) else 'FAIL'),
             'physics_steps_executed_by_evaluator': 0, 'actual_native_steps': report['native_steps_completed'],
+            'drive_vx_m_s_from_publisher_protocol': drive_vx,
+            'scope': 'live_watchdog_engineering_only',
+            'qualifies_overall_pilot': False,
             'identities_and_counts': identity, 'physical_and_watchdog_flags': flags,
             'metrics': values, 'thresholds': thresholds,
             'runtime_terminal_reason': report['terminal_reason'], 'publisher_terminal_reason': sender['terminal_reason'],

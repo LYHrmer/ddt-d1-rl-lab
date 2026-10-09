@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create reviewable command manifests for three trials; execute none of them."""
+"""Prepare three 03b/03c/03d pilot deployment commands; execute no trial."""
 import argparse
 import hashlib
 import json
@@ -37,7 +37,7 @@ def main():
     if sha(binary) != EXPECTED_BINARY:
         raise ValueError('Frozen native runtime changed; requalify before a new plan')
     if metadata['interface_id'] != 'd1-selftrained-pilot03b-v2' or metadata['training_kind'] != 'pilot':
-        raise ValueError('Plan requires a self-trained pilot03b or pilot03c export')
+        raise ValueError('Plan requires a self-trained pilot03b, pilot03c or pilot03d export')
     if (metadata['teacher_policy_used'] is not False or metadata['random_initialization'] is not True or
             metadata['action_scales'] != schema['action_scales']):
         raise ValueError('Expected random-initialized, no-teacher PPO with the frozen 03b action scales')

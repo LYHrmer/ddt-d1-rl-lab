@@ -7,9 +7,24 @@ separately running native simulator. Root must release and count that trial.
 import argparse
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import time
+
+
+def bounded_drive_vx(value):
+    value = float(value)
+    if not math.isfinite(value) or not 0. < abs(value) <= .3:
+        raise ValueError('drive-vx must be finite, nonzero, and within [-0.3, 0.3] m/s')
+    return value
+
+
+def command_at_sim_time(sim_time, drive_vx):
+    """Fixed 0..2 zero, 2..8 drive, then no publication (not a zero message)."""
+    if sim_time >= 8.:
+        return None
+    return [0. if sim_time < 2. else drive_vx, 0., 0.]
 
 
 def main():
@@ -17,6 +32,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--execute-live-publisher', action='store_true', required=True)
     parser.add_argument('--max-wall-seconds', type=float, default=25.)
+    parser.add_argument('--drive-vx', type=bounded_drive_vx, default=.2,
+                        help='2..8s vx command in m/s, nonzero within +/-0.3; default +0.2, reverse probe -0.1')
     args = parser.parse_args()
     if not 12 <= args.max_wall_seconds <= 30:
         parser.error('Wall cap must be between 12 and 30 seconds')
@@ -34,10 +51,11 @@ def main():
     requested = {'format': 'd1-real-ros-watchdog-probe-v1', 'domain': 84,
                  'cmd_topic': '/d1_selftrained/cmd_vel', 'truth_topic': '/d1_selftrained/truth',
                  'publication_period_wall_s': .05, 'schedule_basis': 'last received native truth sim_time',
-                 'zero_command_until_sim_s': 2., 'vx_m_s_until_stop': .2,
+                 'zero_command_until_sim_s': 2., 'vx_m_s_until_stop': args.drive_vx,
                  'stop_publishing_at_sim_s': 8., 'native_runtime_horizon_sim_s': 12.,
                  'max_wall_seconds': args.max_wall_seconds,
                  'stop_after_8s_sends_no_zero_message': True,
+                 'scope': 'live_watchdog_engineering_only_not_overall_pilot_qualification',
                  'no_physics_steps_in_publisher': True,
                  'script_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
     (args.output/'protocol.json').write_text(json.dumps(requested, indent=2)+'\n')
@@ -103,12 +121,15 @@ def main():
             if now < next_publication:
                 continue
             next_publication = now+.05
-            vx = 0. if sim_time < 2. else .2
+            command = command_at_sim_time(sim_time, args.drive_vx)
+            if command is None:
+                continue
+            vx = command[0]
             message = Twist()
             message.linear.x = vx
             node.sender.publish(message)
             event = {'event': 'publish', 'monotonic_s': now,
-                     'latest_truth_sim_time_s': sim_time, 'command': [vx, 0., 0.]}
+                     'latest_truth_sim_time_s': sim_time, 'command': command}
             events.write(json.dumps(event)+'\n')
             events.flush()
             state['tx_count'] += 1
@@ -129,6 +150,8 @@ def main():
     result = {'status': 'CAPTURE_COMPLETE' if terminal == 'TRUTH_REACHED_12S' else 'INCOMPLETE',
               'terminal_reason': terminal, 'error': state['error'],
               'physics_steps_executed_by_publisher': 0,
+              'drive_vx_m_s': args.drive_vx,
+              'scope': 'live_watchdog_engineering_only_not_overall_pilot_qualification',
               'commands_sent': state['tx_count'], 'motion_commands_sent': state['motion_count'],
               'truth_messages_received': state['truth_count'],
               'last_motion_publication': state['last_motion'], 'stop_publications': state['stop_at'],

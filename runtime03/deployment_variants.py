@@ -1,6 +1,6 @@
 """Frozen training-variant identities used by deployment entry points.
 
-03b and 03c share the actor/control interface but have different task configs.
+03b, 03c and 03d share the actor/control interface but differ in task configs.
 Selection is by the export's explicit config_version, never its directory name.
 """
 import hashlib
@@ -21,13 +21,19 @@ VARIANTS = {
         'schema': 'runtime03/schema03c.json',
         'schema_sha256': 'c3019b6737a358ebbdcd8c5cdb43bdd6b5a9783f36deeb31c30c87f8f820a538',
     },
+    'd1-pure-ppo-pilot-03d': {
+        'config': 'training/configs/pilot03d.json',
+        'config_sha256': '9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea',
+        'schema': 'runtime03/schema03d.json',
+        'schema_sha256': '64473031cbf027c950469a3db5a6e39b868f244da2b3f244fa174ab503f64c1c',
+    },
 }
 
 
 def select_deployment(metadata):
     version = metadata.get('config_version')
     if version not in VARIANTS:
-        raise ValueError(f'Unsupported exported config_version: {version!r}; expected explicit 03b or 03c')
+        raise ValueError(f'Unsupported exported config_version: {version!r}; expected explicit 03b, 03c or 03d')
     variant = VARIANTS[version]
     config_path, schema_path = ROOT/variant['config'], ROOT/variant['schema']
     digest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()

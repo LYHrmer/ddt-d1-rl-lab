@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Short, identity-checked entry point for the independent D1 C++ runtime."""
+"""Identity-checked D1 C++ entry point for self-trained 03b, 03c and 03d exports."""
 import argparse
 import hashlib
 import json
@@ -29,7 +29,7 @@ def main():
     export=a.export.resolve(); meta=json.loads((export/"metadata.json").read_text())
     if (meta.get("interface_id")!="d1-selftrained-pilot03b-v2" or
             meta.get("random_initialization") is not True or meta.get("teacher_policy_used") is not False):
-        p.error("Expected self-trained 03b/03c metadata; this launcher does not accept colleague policies")
+        p.error("Expected self-trained 03b/03c/03d metadata; this launcher does not accept colleague policies")
     try:
         config_path,schema_path,config,schema=select_deployment(meta)
     except ValueError as error:

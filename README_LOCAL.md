@@ -12,7 +12,11 @@
 rtk proxy /home/lyh/ddt_ros2_ws/run_d1_training_course.sh
 ```
 
-自己的训练路径为 `training/d1_rl` → `tools/train_d1_ppo.py` → `tools/export_d1_ppo.py` → `runtime03`。新03b接口的静态支撑检查及三组Python/C++逐物理步对照已通过；第一轮seed101、1,048,576步pilot已完成训练与新ONNX核验，但固定能力评测0/3通过：前进5.96秒侧倒，后退停车距离超限，转向跟踪不足；正依据失败轨迹修订下一轮开发配置。低速范围±0.3m/s，不能据此宣布1.5m/s、侧移、跳跃或越障成功。
+自己的训练路径为 `training/d1_rl` → `tools/train_d1_ppo.py` → `tools/export_d1_ppo.py` → `runtime03`。03b、03c、03d三次有界pilot均完成seed101、1,048,576条经验的随机初始化训练和ONNX/C++一致性核验。最终03d三条任务无跌倒，后退停车通过全部门槛；前进跟踪误差约0.003m/s但停车位移8.1cm超限，转向仍未达标，因此整体仅1/3通过。三轮额度已用完，正式九次训练未放行。[实际结果与证据](docs/career_execution_results_03.md)分别记录训练完成、数值一致性与控制门槛。低速范围±0.3m/s，1.5m/s、侧移、跳跃和地形通关均未验证。
+
+独立C++也复现了[倒退停车通过的回放](evidence/career_contract_03/pilot03d_reverse_video_01/runtime_trace.mp4)与[前进停车超限的回放](evidence/career_contract_03/pilot03d_forward_video_02/runtime_trace.mp4)。两段均由已有实测状态离线渲染，未增加物理试次；视频显示单任务资格，不能代表整套策略通过。ROS2命令超时检查因发布器环境导入错误未启动仿真，仍未验证。
+
+本轮已清理48.34MiB可再生编译对象与Python缓存，保留模型、权重、运行库和全部证据；历史清理回收量另列，见[清理说明](docs/storage_cleanup_03.md)。
 
 本目录已建立独立本地Git，尚无remote；同事源码、模型/权重、依赖与大轨迹不进入源码历史。小型自写源码包依赖原 `workspace2.zip`，路径与依赖限制见 [DEPENDENCIES03](training/DEPENDENCIES03.md)。旧 `wheel-legged-control-lab` 仓库保持独立。
 

@@ -41,7 +41,7 @@ def main():
     assert differences == {'training_config', 'training_config_sha256'}
     failures = []
     for label, change in [('missing_version', {'config_version': None}),
-                          ('unknown_version', {'config_version': 'd1-pure-ppo-pilot-03d'}),
+                          ('unknown_version', {'config_version': 'unqualified-deployment-version'}),
                           ('wrong_config_hash', {'sha256': {'config': '0'*64}}),
                           ('wrong_interface', {'interface_id': 'wrong'})]:
         changed = copy.deepcopy(synthetic)

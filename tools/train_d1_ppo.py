@@ -140,6 +140,8 @@ def main():
     sources=[Path(__file__).resolve(), *environment_sources(config),
              ROOT/"training/d1_rl/forkserver_bootstrap.py",a.config,
              ROOT/"tools/export_d1_ppo.py", ROOT/"tools/evaluate_d1_ppo.py"]
+    if "audited_interface_schema" in config:
+        sources.append(ROOT/config["audited_interface_schema"])
     identities={str(path):sha(path) for path in sources}
     for path in sources: shutil.copy2(path,snapshot/path.name)
     scene=ROOT/config["scene"]

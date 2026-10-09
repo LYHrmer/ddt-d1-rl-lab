@@ -67,3 +67,27 @@ Astra ultra 复核03c复合任务修订。factory已接线，零积分构造/res
 ## 03c 完整训练及固定验收
 
 训练 COMPLETE：1,048,576 transitions / 10,485,760 native，801.58秒，输入SHA全保持；补录身份结束复核PASS。Torch/PythonORT/C++ORT1.10 64例最大误差5.3644e-7；500+500闭环PASS，预检池累计361,110/655,360。Python三条各6000native，无跌倒但资格0/3：前进vxMAE0.004121，停车0.096517m；倒车vxMAE0.027979，停车0.068760m；转向wzMAE0.116664，停车0.146643m。03c独立C++slot1用于turn12秒诊断，6000native，复现相同FAIL，P99推理0.020438ms。未追加Python评测、未开正式九次训练；Astra正在依据全状态审阅仅剩最后1次pilot。
+
+## 构建中间文件与缓存清理完成
+
+03c训练、评测和回放进程全部退出后，宿主只读ps确认无本项目训练/编译/仿真进程（cleanup_regenerable03_host_idle_01.json）。按精确白名单删除1057个再生文件，实际回收50,688,000 B（48.34MiB）；1642保护文件及228软链接均保持，旧77份冻结文件、旧Git状态及用户my_course_drive结果复核一致。见cleanup_regenerable03_execution_01.json。磁盘回收与训练进程退出释放RAM分开，未删除模型/权重/证据/库/可执行文件。后续构建需重编152个翻译单元，耗时未测。源码已提交0a1bb9e（本地Git，无remote）。
+
+## 03d 最后pilot放行
+
+实际Astra ultra最终审阅通过后，登记pilot03d_release_01.json；命令课程为唯一修改，奖励/接口/物理/PPO保持03c。11项静态与64seed调度检查、root入口整合、C++静态初态全PASS/0积分。第三次且最后一次，seed101/B/8env/1,048,576 transitions/90min，从随机初始化开始。预检当前361,110，另预留学习策略配对1000 native；Python18,000、C++45,000独立预算。
+
+## 03d 最终训练、验收与部署关闭
+
+03d COMPLETE：1,048,576 transitions / 10,485,760 native，794.67秒，冻结输入全保持；最后100 episode均长19.53秒不作为控制资格。64例Torch/PythonORT/实际C++ORT1.10最大误差4.7684e-7；500+500配对动作差0、qpos最大1.55e-15，预检累计362,110/655,360 native。
+
+Python三条各6000native，1/3通过：前进vxMAE0.003172、停车0.080584m>0.05m；倒退vxMAE0.039917、停车0.016341m，全部门槛PASS；转向较差方向wzMAE0.102882>0.08rad/s、停车0.060764m>0.05m。无跌倒。独立C++各6000native/12秒，复现倒退PASS与前进FAIL，推理P99分别0.023405/0.030430ms。
+
+最后live槽只启动发布器，import rclpy时因缺rpyutils搜索路径退出；native未启动，0新native/0ROS发布。完整ROS setup后的四项依赖import通过（0节点/0发布/0积分）；本合同不重试，不改冻结命令。watchdog停稳NOT_VALIDATED_STARTUP_ERROR；3个槽为两次物理运行及一次启动失败，不是三次完成。
+
+合同03最终总账 final_delivery_01.json：预检/工程362,110；三次训练31,457,280；Python开发50,980；独立C++部署20,980 native，互斥合计31,891,350。三轮pilot已用完，整体资格FAIL；正式九次训练、地形策略评测和1.5m/s均未运行。实际Astra ultra审阅原始轨迹与数值结论。旧77冻结哈希、旧Git及用户结果最后保护复核不变（protected_guard_final03_01.json）。
+
+## 交付回放与资源关闭
+
+reverse_video_01与forward_video_02（跟随镜头）各391帧，使用已有C++状态+mj_forward，新增0native；root检查末段画面及PASS/FAIL标注。原forward_video_01固定镜头版本保留。media_delivery_01.json绑定视频、评分和预览身份。实际Astra最终审阅17项SHA和31,891,350总步一致，回执astra_final_review_01.json。宿主ps确认无项目训练/仿真/渲染进程（host_resource_final03_01.json），全系统可用RAM8,609,165,312B只作当时状态，不等同本项目释放量；本轮磁盘清理48.34MiB另记。
+
+源码包 dist/d1_contract03_sources_20261009.zip 已生成，111个显式清单文件，359,236B，SHA256 109452dac0d5602928bb95f428833033d07a22014ecb593b50b8d1aa69ab20f7；逐成员hash、长度、Unix可执行权限、CRC与资产排除检查通过。包需另取原workspace2.zip，不含权重/模型/大型证据。本地源码提交不等于GitHub上传，当前remote为空。

@@ -43,10 +43,12 @@ ALLOWLIST = {
         "training/d1_rl/forkserver_bootstrap.py",
         "training/d1_rl/fast_checks.py",
         "training/d1_rl/task03c.py",
+        "training/d1_rl/task03d.py",
         "training/d1_rl/factory03.py",
         "training/configs/pilot03.json",
         "training/configs/pilot03b.json",
         "training/configs/pilot03c.json",
+        "training/configs/pilot03d.json",
         "training/configs/interface03b.json",
         "training/configs/diagnostic03b_zero.json",
         "training/configs/diagnostic03b_static_support.json",
@@ -64,9 +66,14 @@ ALLOWLIST = {
         "runtime03/schema_pilot03.json",
         "runtime03/schema_pilot03b.json",
         "runtime03/schema03c.json",
+        "runtime03/schema03d.json",
         "runtime03/deployment_variants.py",
         "runtime03/check_deployment_variants03.py",
+        "runtime03/check_deployment_variants03d.py",
         "runtime03/deployment03c_notes.md",
+        "runtime03/audit_build_intermediates03.py",
+        "runtime03/audit_storage_readonly.py",
+        "runtime03/cleanup_regenerable03.py",
         "runtime03/compare_python_interface.py",
         "runtime03/compare_dynamic_traces.py",
         "runtime03/check_cli_zero_physics.py",
@@ -103,6 +110,7 @@ ALLOWLIST = {
         "tools/benchmark_fast_checks03.py",
         "tools/check_fast_checks03_static.py",
         "tools/check_task03c_static.py",
+        "tools/check_task03d_static.py",
         "tools/generate_upstream_patch03.py",
         "tools/upstream_reproduction03.patch",
         "tools/upstream_reproduction03.md",
@@ -112,6 +120,10 @@ ALLOWLIST = {
         "docs/career_execution_contract_03.md",
         "docs/career_execution_contract_03b_addendum.md",
         "docs/career_execution_contract_03c_addendum.md",
+        "docs/career_execution_contract_03d_addendum.md",
+        "docs/career_execution_results_03.md",
+        "docs/storage_cleanup_03.md",
+        "docs/codex_handoff_20261009.md",
         "docs/d1_interface_audit_03.md",
         "docs/tutorial/00_复现教程.md",
         "docs/tutorial/01_地形与操作.md",
@@ -270,7 +282,7 @@ def bundle_readme(upstream: dict) -> str:
             f"Obtain the original {upstream['archive_name']} separately from its owner and verify SHA256 "
             f"`{upstream['archive_sha256_from_receipt']}` against `source_archive_receipt.json`. "
             "Follow `README_LOCAL.md` for the original workspace setup, then the included `docs/tutorial/` "
-            "and contracts 03b/03c for the new training/runtime path. "
+            "and contracts 03b/03c/03d for the new training/runtime path. "
             "`tools/upstream_reproduction03.patch` is a separately identified text delta for 12 original files; "
             "read `tools/upstream_reproduction03.md` before applying it to a clean extraction. "
             "The original source files themselves are not included.\n\n"
