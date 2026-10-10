@@ -1,0 +1,63 @@
+name: static-checks
+
+# Asset-free subset of the bounded-experiment static checks. It verifies that
+# each published contract config is exactly the declared single-term derivation
+# of the frozen pilot03d base, and that the added reward terms have the shape,
+# gradient range and bounded worst case their contracts claim. It loads no
+# MuJoCo model and runs zero physics steps, so it works from a clean clone
+# without the D1 robot model, which this repository does not redistribute.
+#
+# The full checks in tools04/check_task04{a,b}_static.py do construct the
+# environment and therefore need the robot model; they run on the workstation.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'training/**'
+      - 'tools04/**'
+      - '.github/workflows/static-checks.yml'
+  pull_request:
+    paths:
+      - 'training/**'
+      - 'tools04/**'
+      - '.github/workflows/static-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contract-static-checks:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install the import-chain dependencies
+        # Pinned to the versions the receipts record. No robot model, no
+        # weights and no colleague assets are needed or fetched.
+        run: python -m pip install --quiet 'mujoco==3.3.0' 'gymnasium==1.2.0' 'numpy<3'
+
+      - name: Contract 04 static checks, no physics
+        run: PYTHONPATH="$PWD/training" python -B tools04/check_contract_static_ci.py --output ci_static_report
+
+      - name: Confirm the receipt reports zero integration
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          r = json.loads(pathlib.Path('ci_static_report/report.json').read_text())
+          assert r['status'] == 'PASS', r['failed_checks']
+          assert r['native_integration_steps_executed'] == 0
+          assert r['robot_model_required'] is False
+          print(f"{r['checks_total']} checks passed, 0 physics steps")
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: contract04-ci-static-report
+          path: ci_static_report/report.json

@@ -32,3 +32,68 @@ rtk proxy patch -p1 -i tools/upstream_reproduction03.patch
 ```
 
 这些命令需在目标工作区根目录运行，不能在当前已改动的树上重复应用。此补丁已在临时目录对从原 ZIP 提取的 12 个原件试应用，结果逐文件 SHA 与当前工作区对应文件一致；这个检查不等于编译、物理或策略能力验证。补丁生成器是 `tools/generate_upstream_patch03.py`：不加 `--output` 只读列清单和计划 SHA；显式 `--output` 才写一个全新 patch 路径，并拒绝任何二进制变更。
+
+## 2026-10-11 公开边界核对与手工施加说明
+
+公开前逐项核对了完整补丁里逐字上下文行的来源（unified diff 必须携带原文上下文才能可靠应用）：
+
+| 上游 | 许可证 | 逐字上下文 | 可否再分发 |
+|---|---|---:|---|
+| `mujoco_ros2_control`（6 文件） | **MIT**, Copyright (c) 2025 Sangtaek Lee | 100 行 | 可，须保留版权与许可声明 |
+| MuJoCo `simulate` 示例（3 文件） | **Apache-2.0**, Copyright 2021 DeepMind Technologies Limited | 84 行 | 可，须保留声明 |
+| `rl_controller` + `d1_description`（3 文件） | **未声明**（`package.xml` 为 `TODO: License declaration`） | 35 行 | 与合作者共同开发，知情使用 |
+
+前两类的版权与许可声明已补入 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)（这是其许可证的再分发要求）。第三类连同 D1 机器人模型属于本仓库作者与合作者共同开发的工作。
+
+发布物仍是**一份**完整补丁 `tools/upstream_reproduction03.patch`，SHA256 `366572b3f2fdcccee5da6a2ca826143abe2ad3bb00c3781df554a84ab350e85a` 与本文上方记录一致，未重新生成、未改写。无论如何，**机器人模型、mesh、URDF/xacro、原 ONNX 策略与训练权重都不在仓库内**。
+
+### 那 3 个文件：改动的散文描述（可不依赖 diff 手工施加）
+
+下面只给出**本项目自己新增的行**与定位锚点，不含上游原文上下文。在取得原 `workspace2.zip` 后按此手工施加，效果与补丁中对应 hunk 等价；需要核对改动意图而不想读 diff 时也更直观。
+
+**`controller/rl_controller/launch/sim_mujoco.launch.py`** —— 让场景与证据参数可由命令行指定，替换原先硬编码的场景路径。
+
+1. 在 `launch_setup(context, ...)` 内、与 `robot_name` / `ns` 等同一组局部变量之后，新增三行读取：
+
+   ```python
+   scene = LaunchConfiguration("scene").perform(context)
+   evidence_path = LaunchConfiguration("evidence_path").perform(context)
+   evidence_max_native_steps = int(LaunchConfiguration("evidence_max_native_steps").perform(context))
+   ```
+
+2. 在 `mujoco_sim` 节点的 `parameters=[...]` 列表里，把原来的 `{"model_file": "mujoco/scene.xml"}` 一行**替换**为三行：
+
+   ```python
+   {"model_file": "mujoco/" + scene},
+   {"evidence_path": evidence_path},
+   {"evidence_max_native_steps": evidence_max_native_steps},
+   ```
+
+3. 在声明 launch 参数的 `declared_arguments` 段落里追加三个参数（`scene` 沿用该文件既有的 `declared_arguments.append(launch.actions.DeclareLaunchArgument(...))` 多行写法，另两个用紧凑写法）：
+
+   ```python
+   declared_arguments.append(
+       launch.actions.DeclareLaunchArgument(
+           "scene",
+           default_value="scene.xml",
+           description="MuJoCo scene filename inside the robot package's mujoco directory",
+       )
+   )
+   declared_arguments.append(launch.actions.DeclareLaunchArgument(
+       "evidence_path", default_value="",
+       description="Optional exclusive native-step JSONL evidence path"))
+   declared_arguments.append(launch.actions.DeclareLaunchArgument(
+       "evidence_max_native_steps", default_value="0",
+       description="Optional physical-step limit; zero preserves interactive playback"))
+   ```
+
+**`urdfs/d1_description/CMakeLists.txt`** —— 在 `install(DIRECTORY ...)` 的目录列表里，把被注释掉的 `# meshes` 一行改为生效的 `meshes`，使自建场景引用的资源随包安装。
+
+**`urdfs/d1_description/package.xml`** —— 在依赖段落末尾追加两行，声明共享材质/宏所在的描述包：
+
+```xml
+<!-- robot.xacro includes the shared D1H materials and robot macros. -->
+<exec_depend         condition="$ROS_VERSION == 2">d1h_description</exec_depend>
+```
+
+本次核对不改变补丁内容、任何已记录的 SHA、回执或实验结果；施加命令仍是上文那两条 `--dry-run` 后再应用。

@@ -19,3 +19,6 @@
 *.onnx
 *.zip
 *.mp4
+
+# Working notes stay local; see docs/notes/ for what is published.
+/CAREER_ROADMAP.md

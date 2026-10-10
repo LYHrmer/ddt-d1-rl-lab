@@ -1,5 +1,8 @@
 # DDT D1 强化学习控制实验
 
+[![static-checks](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml/badge.svg)](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 面向 D1 轮足机器人的纯 PPO 训练、ONNX 导出、ROS2/C++/MuJoCo 部署和有界评测。目标是稳定直行、可靠越障，再提高速度。当前仅有仿真结果，**没有实机验证**。
 
 ## 当前结果
@@ -28,6 +31,7 @@
 - **ROS 启动环境缺陷已修复**：03 的启动器手写 `PYTHONPATH` 丢掉了 `rpyutils` 实际所在的路径。新入口只做 source、不覆盖 `PYTHONPATH`，导入预检 **11/11 PASS**；回执显式记录 `watchdog_validated: false` —— **导入通过不等于 watchdog 通过**，真实停发后的物理停稳仍未验收。
 - **不改冻结文件也能换实现**：`tools/train_d1_ppo.py` 等冻结脚本全程零改动，改用"校验 SHA → 注入 factory → `runpy` 作 `__main__`"的通用入口；任务工厂用委托链扩展而不是修改上游（上游 SHA 已写入冻结回执）。
 - **零积分静态检查两次在训练前拦下真实缺陷**：04a 启动器的无限递归（0 积分、未扣额度）、04b 第一版饱和点把实测区间放进梯度平区。
+- **其中 32 项不依赖机器人模型，已接入 CI**（上方徽章）：校验每个发布配置都恰好是冻结 pilot03d 基线加**唯一一项**声明过的改动、奖励项的形状/连续性/梯度覆盖范围/最坏代价上界，以及 04b 没有继承 04a 的项。`robot_model_required: false`、0 物理步，clean clone 即可跑。需要构造环境的完整检查（04a 25 项、04b 30 项）仍在本机跑。
 - **跨语言一致性**：64 例真实 C++ ORT 1.10.0 黄金比对最大误差 4.77e-7（容差 1e-5，0 物理步）；12 s 独立 C++ 回放与 Python 复现到 5e-9（04a）与 8 位小数（04b），结构检查各 24/24。
 - **预算如实记账**：合同 04 新增 2,097,152 transitions / 21,022,770 native，全项目累计 **52,914,120 native**。总账由脚本从回执重算，不抄文档。含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
 
@@ -38,12 +42,14 @@
 - [独立复现教程](docs/tutorial/00_复现教程.md)，其中[第 5 章](docs/tutorial/05_合同04诊断与奖励设计.md)是完整的"诊断 → 单一假设 → 预注册 → 实验 → 判定（含被推翻）"闭环
 - 有界合同：[04a](docs/career_execution_contract_04a.md) / [04b](docs/career_execution_contract_04b.md) / [04b 附录 A](docs/career_execution_contract_04b_addendum_a.md) / [03](docs/career_execution_contract_03.md)
 - [后续优化交接](docs/claude_handoff_20261011.md)；已关闭的历史交接：[03](docs/codex_handoff_20261009.md) / [04 之前](docs/claude_handoff_20261009.md)
+- [第三方资产与上游许可证声明](THIRD_PARTY_NOTICES.md)：逐项说明哪些是自写、哪些只被引用而未再分发、哪些以最小 diff 上下文摘录及其上游许可证
+- [工作笔记](docs/notes/README.md)：实施过程的随手记录，其中结论可能已被后续实验推翻，以结果文档为准
 
 ## 复现与来源
 
 开发工作区是 `/home/lyh/ddt_ros2_ws`。Ubuntu 22.04 / ROS2 Humble、MuJoCo 3.3.0、C++ ONNX Runtime 1.10.0；训练依赖和操作命令见 [本机说明](README_LOCAL.md) 及 [依赖清单](training/DEPENDENCIES03.md)。所有 shell 示例使用 `rtk`，需要原始输出时使用 `rtk proxy`。
 
-机器人模型、mesh 和原配策略来自同事的 `workspace2.zip`，应另行取得原文件。此仓库包含自写训练/部署/评测代码、教程、小型配置、生成的场地及必要文本补丁；**不包含**原始第三方资产、训练权重、依赖安装目录或大型逐步轨迹。新机器不能仅凭 clone 直接运行，应先按教程恢复源包，再应用 [复现补丁](tools/upstream_reproduction03.md)。文档中的 `evidence/` 与录像链接多数指向本机保留的完整证据，GitHub 可直接阅读上方紧凑结果。
+本仓库自写代码与文档按 [MIT](LICENSE) 发布；机器人模型、mesh 和原配策略来自与合作者共同开发的 `workspace2.zip`，**不随本仓库分发**，应另行取得原文件。上游许可证与摘录范围见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。此仓库包含自写训练/部署/评测代码、教程、小型配置、生成的场地及必要文本补丁；**不包含**原始第三方资产、训练权重、依赖安装目录或大型逐步轨迹。新机器不能仅凭 clone 直接运行，应先按教程恢复源包，再应用 [复现补丁](tools/upstream_reproduction03.md)。文档中的 `evidence/` 与录像链接多数指向本机保留的完整证据，GitHub 可直接阅读上方紧凑结果。
 
 原版 GUI 入口使用同事策略；本项目自训策略的独立 C++ 验证与原版演示分开记录，**不能混算成绩**。该工作区与旧 `wheel-legged-control-lab` 独立（后者的 77 份冻结文件与用户结果本轮已逐一校验、保持只读），不能拼接两套模型的成绩。
 
