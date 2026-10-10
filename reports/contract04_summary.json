@@ -1,0 +1,310 @@
+{
+  "format": "d1-contract04-publication-summary-v1",
+  "prepared_utc": "2026-10-10T16:27:47.180282+00:00",
+  "simulation_only": true,
+  "real_robot_validation": false,
+  "overall_control_qualification": "FAIL",
+  "interpretation": "Two bounded development runs on one development seed, each adding exactly one reward term to the same frozen 03d base. Not a formal three-seed comparison. Full traces, weights and the original colleague model remain on the local workstation.",
+  "versions": [
+    {
+      "version": "04a",
+      "single_change": "Huber penalty on net XY displacement from the pose where each zero-command segment began (weight -20, knee 0.05 m, cap 0.10 m)",
+      "base": "frozen pilot03d; 04a and 04b are siblings on the same base",
+      "training_seed": 101,
+      "evaluation_seed": 7001,
+      "training_status": "COMPLETE",
+      "training_transitions": 1048576,
+      "training_native_steps": 10485760,
+      "training_seconds": 809.7874568310071,
+      "inputs_unchanged": true,
+      "min_available_ram_bytes": 5049384960,
+      "python_tasks_passed": 0,
+      "python_tasks_total": 3,
+      "python_evaluation_native_steps": 18000,
+      "python_early_failures": 0,
+      "hypothesis_verdict": "SUPPORTED",
+      "preregistered_predictions": {
+        "P1": "MET",
+        "P2": "NOT_MET",
+        "P3": "NOT_MET",
+        "P4": "NOT_MET",
+        "P5": "NOT_A_PREDICTION"
+      },
+      "episodes": [
+        {
+          "sequence": "forward_stop",
+          "native_steps": 6000,
+          "status": "COMPLETE",
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.022974886064810036,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.025418807106348834,
+          "stop_last_second_abs_wz_rad_s": 0.024069304432224912,
+          "stop_displacement_m": 0.07554680757173562,
+          "peak_abs_roll_or_pitch_rad": 0.09571288835681044,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "nominal_zero_delay_pass": false
+        },
+        {
+          "sequence": "reverse_stop",
+          "native_steps": 6000,
+          "status": "COMPLETE",
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.017649350459907277,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.029175460325284036,
+          "stop_last_second_abs_wz_rad_s": 0.02638546615103876,
+          "stop_displacement_m": 0.07780804756842043,
+          "peak_abs_roll_or_pitch_rad": 0.11314235947027422,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": true,
+            "stable_wz": null,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "nominal_zero_delay_pass": false
+        },
+        {
+          "sequence": "turn_stop",
+          "native_steps": 6000,
+          "status": "COMPLETE",
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": null,
+          "stable_wz_mae_rad_s": 0.11178619301510442,
+          "stop_last_second_horizontal_speed_m_s": 0.02262097115460064,
+          "stop_last_second_abs_wz_rad_s": 0.03060590846239121,
+          "stop_displacement_m": 0.03485247975297962,
+          "peak_abs_roll_or_pitch_rad": 0.07896355517065079,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": null,
+            "stable_wz": false,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": false,
+            "stop_displacement": true,
+            "peak_roll_pitch": true
+          },
+          "nominal_zero_delay_pass": false
+        }
+      ]
+    },
+    {
+      "version": "04b",
+      "single_change": "bounded penalty on the mean square of the four wheel actions while the commanded vx and wz are both zero (weight -10, saturation 0.25)",
+      "base": "frozen pilot03d; 04a and 04b are siblings on the same base",
+      "training_seed": 101,
+      "evaluation_seed": 7001,
+      "training_status": "COMPLETE",
+      "training_transitions": 1048576,
+      "training_native_steps": 10485760,
+      "training_seconds": 840.0792857089982,
+      "inputs_unchanged": true,
+      "min_available_ram_bytes": 3531759616,
+      "python_tasks_passed": 0,
+      "python_tasks_total": 3,
+      "python_evaluation_native_steps": 17580,
+      "python_early_failures": 1,
+      "hypothesis_verdict": "REJECTED",
+      "preregistered_predictions": {
+        "P1": "NOT_MET",
+        "P2": "NOT_MET",
+        "P3": "NOT_MET",
+        "P4": "NOT_MET",
+        "P5": "NOT_A_PREDICTION"
+      },
+      "episodes": [
+        {
+          "sequence": "forward_stop",
+          "native_steps": 6000,
+          "status": "COMPLETE",
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.06801717324759465,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.001378195993984566,
+          "stop_last_second_abs_wz_rad_s": 0.000541630969803368,
+          "stop_displacement_m": 0.07529712639980628,
+          "peak_abs_roll_or_pitch_rad": 0.15792845148884077,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": false,
+            "stable_wz": null,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": false,
+            "peak_roll_pitch": true
+          },
+          "nominal_zero_delay_pass": false
+        },
+        {
+          "sequence": "reverse_stop",
+          "native_steps": 6000,
+          "status": "COMPLETE",
+          "done_reason": "HORIZON_12S",
+          "stable_vx_mae_m_s": 0.06949646570572364,
+          "stable_wz_mae_rad_s": null,
+          "stop_last_second_horizontal_speed_m_s": 0.00256302498280433,
+          "stop_last_second_abs_wz_rad_s": 0.0007924805795900171,
+          "stop_displacement_m": 0.02776368058051722,
+          "peak_abs_roll_or_pitch_rad": 0.08413793895635564,
+          "threshold_flags": {
+            "completed_12s": true,
+            "no_fall_or_illegal_support": true,
+            "stable_vx": false,
+            "stable_wz": null,
+            "stop_horizontal_speed": true,
+            "stop_abs_wz": true,
+            "stop_displacement": true,
+            "peak_roll_pitch": true
+          },
+          "nominal_zero_delay_pass": false
+        },
+        {
+          "sequence": "turn_stop",
+          "native_steps": 5580,
+          "status": "FAIL",
+          "done_reason": "TERMINATED",
+          "stable_vx_mae_m_s": null,
+          "stable_wz_mae_rad_s": 0.1820335613306734,
+          "stop_last_second_horizontal_speed_m_s": 0.3644925795073927,
+          "stop_last_second_abs_wz_rad_s": 0.16634370894566125,
+          "stop_displacement_m": null,
+          "peak_abs_roll_or_pitch_rad": 0.5515686595308381,
+          "threshold_flags": {
+            "completed_12s": false,
+            "no_fall_or_illegal_support": false,
+            "stable_vx": null,
+            "stable_wz": false,
+            "stop_horizontal_speed": false,
+            "stop_abs_wz": false,
+            "stop_displacement": false,
+            "peak_roll_pitch": false
+          },
+          "nominal_zero_delay_pass": false
+        }
+      ]
+    }
+  ],
+  "best_single_task": {
+    "version": "04b",
+    "task": "reverse_stop",
+    "gates_passed": 7,
+    "gates_applicable": 8,
+    "blocking_gate": "stable_vx_mae_m_s 0.06950 > 0.06",
+    "note": "single-task result verified independently in C++; not an overall qualification pass"
+  },
+  "cross_language": {
+    "onnx_cxx_golden": {
+      "04a": {
+        "status": "PASS",
+        "max_absolute_error": 5.364418029785156e-07,
+        "tolerance": 1e-05,
+        "onnxruntime_version": "1.10.0",
+        "physics_steps": 0
+      },
+      "04b": {
+        "status": "PASS",
+        "max_absolute_error": 4.76837158203125e-07,
+        "tolerance": 1e-05,
+        "onnxruntime_version": "1.10.0",
+        "physics_steps": 0
+      }
+    },
+    "independent_cpp_replay": {
+      "04a": {
+        "task": "turn_stop",
+        "status": "FAIL",
+        "native": 6000,
+        "structural_checks": "24/24",
+        "gates_passed": "4/7",
+        "inference_p99_ms": 0.0252
+      },
+      "04b": {
+        "task": "reverse_stop",
+        "status": "FAIL",
+        "native": 6000,
+        "structural_checks": "24/24",
+        "gates_passed": "6/7",
+        "inference_p99_ms": 0.024769
+      }
+    },
+    "note": "deployment consistency is not control qualification"
+  },
+  "mechanism_findings": {
+    "zero_command_dither_introduced_by_04a": {
+      "vx_dominant_hz": 12.0,
+      "net_wheel_target_std_rad_s_04a": 0.9756481341931214,
+      "net_wheel_target_std_rad_s_03d": 0.060030512813960296,
+      "cause": "the actor observes neither base position nor base linear velocity, so minimising displacement from a 4 s old anchor is not observable and PPO found the only memoryless proxy, a 12 Hz limit cycle"
+    },
+    "passive_wheel_braking_measurement": {
+      "question": "does a zero wheel action brake inside the 0.05 m displacement gate",
+      "answer": true,
+      "release_speed_m_s": 0.08825599292624499,
+      "distance_until_under_0p02_m": 0.007333890351781261,
+      "arithmetic_predicted_distance_m": 0.01720124746931277,
+      "gate_m": 0.05,
+      "limitations": [
+        "release speed is 45 percent of the 0.1965 m/s the gate implies; the extrapolated 0.016 m at gate speed is an extrapolation, not a measurement",
+        "after braking the speed rebounded to 0.0296 m/s because forcing the wheels to zero while the legs follow a policy that expected nonzero wheel commands is an inconsistent action pair; the fitted 0.322 s is contaminated by that segment and is not a damping time constant",
+        "an earlier offline estimate of 0.84 to 1.63 s was wrong for the same reason and is superseded"
+      ],
+      "receipts": [
+        "evidence/career_contract_04/passive_braking_probe_01/report.json",
+        "evidence/career_contract_04/zero_wheel_braking_probe_02/report.json"
+      ]
+    },
+    "why_04b_failed": "zero wheel action brakes inside the gate, but the policy only zeroes its wheels after it has already stopped: forward 8-9 s mean(a^2) 0.02208 and net wheel target +0.4596 rad/s against 0.00099 at 11-12 s, and that window produced 70 percent of the displacement",
+    "probe_receipt_sha256": "b829333e3fcfc06db8d6fc70f98f1edb8f04a13ba06c0d1c0ed1e83d857b1d8d",
+    "probe_release_speed_m_s": 0.08825599292624499
+  },
+  "ros_environment": {
+    "import_preflight_status": "PASS",
+    "checks": 11,
+    "physics_steps_executed": 0,
+    "ros_nodes_created": 0,
+    "watchdog_validated": false,
+    "receipt": "evidence/career_contract_04/ros_import_preflight_01/report.json",
+    "receipt_sha256": "378fbf2d85d8c42497c09bb64c4b73181c8f72bfaed318d211abc158dd678813",
+    "note": "import success is not watchdog validation"
+  },
+  "budget": {
+    "contract04_transitions": 2097152,
+    "contract04_native": 21022770,
+    "project_cumulative": {
+      "transitions": 5242880,
+      "native": 52914120
+    },
+    "engineering_budget_loss_recorded": true,
+    "formal_three_arms_three_seeds": "NOT_RELEASED"
+  },
+  "unfinished": [
+    "overall flat low speed qualification, three tasks",
+    "turn gain asymmetry, unmet across 03c/03d/04a/04b",
+    "drive phase vx tracking and turn stability, the two 04b regressions",
+    "watchdog physical stop after real ROS command timeout",
+    "own policy terrain crossing",
+    "real 15mm step crossing",
+    "continuous lateral motion",
+    "1.5 m per s",
+    "formal three arms three seeds",
+    "physical self recovery, a reset is not self recovery",
+    "real robot validation"
+  ],
+  "preflight_checks": 11,
+  "ledger_sha256": "faeb08846af0e21cc4ed1d8b29919d806c8cc8638298874e8f97547c547b3d54"
+}
