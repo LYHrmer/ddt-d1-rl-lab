@@ -146,6 +146,9 @@ def main():
                     + engineering['04a_pool_used'] + engineering['04b_pool_used']
                     + engineering['addendum_a_used'])
     transitions_total = sum(e['transitions'] for e in training)
+    best = next(e for e in cpp if e['version'] == '04b' and e['task'] == 'reverse_stop')
+    best_report = json.loads((ROOT/best['score']).read_text())
+    best_flags = best_report['metrics']['threshold_flags']
 
     ledger = {
         'format': 'd1-contract04-final-delivery-v1',
@@ -208,9 +211,18 @@ def main():
                                             'early_failures': entry['early_failures'],
                                             'overall': 'FAIL'} for entry in evaluation},
             'best_single_task': {'version': '04b', 'task': 'reverse_stop',
-                                 'gates_passed': 7, 'gates_applicable': 8,
+                                 'gates_passed': best['gates_passed'],
+                                 'gates_applicable': best['gates_applicable'],
+                                 'gates_total': len(best_flags),
+                                 'not_applicable': [k for k, v in best_flags.items()
+                                                    if v is None],
+                                 'failed_gates': [k for k, v in best_flags.items()
+                                                  if v is False],
+                                 'score': best['score'],
+                                 'score_sha256': best['score_sha256'],
                                  'blocking_gate': 'stable_vx_mae_m_s 0.06950 > 0.06',
                                  'note': ('single-task result verified independently in C++; '
+                                          'null flags are not applicable, not passes; '
                                           'not an overall qualification pass')},
             'overall': 'FAIL'},
         'formal_training_runs': 0,

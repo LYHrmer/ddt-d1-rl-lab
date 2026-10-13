@@ -15,11 +15,13 @@ on:
     branches: [main]
     paths:
       - 'training/**'
+      - 'tests/**'
       - 'tools04/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
       - 'training/**'
+      - 'tests/**'
       - 'tools04/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -40,7 +42,10 @@ jobs:
       - name: Install the import-chain dependencies
         # Pinned to the versions the receipts record. No robot model, no
         # weights and no colleague assets are needed or fetched.
-        run: python -m pip install --quiet 'mujoco==3.3.0' 'gymnasium==1.2.0' 'numpy<3'
+        run: python -m pip install --quiet 'mujoco==3.3.0' 'gymnasium==1.2.0' 'numpy<3' pytest
+
+      - name: Interface and reward-term unit tests, no physics
+        run: PYTHONPATH="$PWD/training" python -m pytest tests -q
 
       - name: Contract 04 static checks, no physics
         run: PYTHONPATH="$PWD/training" python -B tools04/check_contract_static_ci.py --output ci_static_report
