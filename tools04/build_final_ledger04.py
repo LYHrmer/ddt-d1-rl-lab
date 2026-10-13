@@ -9,12 +9,132 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EV = ROOT/'evidence/career_contract_04'
 # docs/career_execution_results_03.md and evidence/.../final_delivery_01.json
 CONTRACT03 = {'transitions': 3145728, 'native': 31891350}
+NUMERIC_GATES = {
+    'stable_vx': ('stable_vx_mae_m_s', 'stable_vx_mae_m_s'),
+    'stable_wz': ('stable_wz_mae_rad_s', 'stable_wz_mae_rad_s_each_sign'),
+    'stop_horizontal_speed': ('stop_last_second_horizontal_speed_m_s',
+                              'stop_last_second_horizontal_speed_m_s'),
+    'stop_abs_wz': ('stop_last_second_abs_wz_rad_s', 'stop_last_second_abs_wz_rad_s'),
+    'stop_displacement': ('stop_displacement_m', 'stop_displacement_m'),
+    'peak_roll_pitch': ('peak_abs_roll_or_pitch_rad', 'peak_abs_roll_or_pitch_rad'),
+}
+BOOLEAN_GATES = ('completed_12s', 'no_fall_or_illegal_support')
+
+
+def gate_summary(flags):
+    """Count the eight receipt fields without treating null or 1 as true.
+
+    What this layer can and cannot see. It knows nothing about the task, so it
+    cannot tell which numeric gate is legitimately null for it; a stable_wz of
+    null turned into true still sums to 7/8 here. That check belongs to
+    task_gate_summary, which knows forward and reverse have no stable_wz and
+    turn has no stable_vx. This layer rejects only what is wrong for every task:
+    a wrong key set, a non-boolean value, and a null on either of the two
+    completion gates. The last rule also guarantees at least two applicable gates,
+    so an all-null record can never be summarised as 0/0; no separate check for
+    that is needed, and an earlier one was removed as unreachable (exhaustively
+    verified over the 2,916 shapes that pass the completion-gate rule).
+    """
+    if not isinstance(flags, dict) or set(flags) != set(NUMERIC_GATES) | set(BOOLEAN_GATES):
+        raise ValueError('threshold_flags must contain exactly the eight qualification gates')
+    if any(value is not None and type(value) is not bool for value in flags.values()):
+        raise ValueError('threshold_flags values must be true, false or null')
+    if any(flags[gate] is None for gate in BOOLEAN_GATES):
+        raise ValueError('completion gates apply to every task and cannot be null')
+    return {'gates_passed': sum(value is True for value in flags.values()),
+            'gates_applicable': sum(value is not None for value in flags.values()),
+            'gates_total': len(flags),
+            'not_applicable': [key for key, value in flags.items() if value is None],
+            'failed_gates': [key for key, value in flags.items() if value is False]}
+
+
+def task_gate_summary(metrics, qualification_gates):
+    """Explain one task using raw metrics and the release's frozen thresholds.
+
+    This describes gates only: it cannot award overall control qualification.
+    Reject incomplete or inconsistent evidence instead of inventing a result.
+    """
+    if not isinstance(metrics, dict) or not isinstance(qualification_gates, dict):
+        raise ValueError('metrics and qualification_gates must be objects')
+    summary = gate_summary(metrics.get('threshold_flags'))
+    flags = metrics['threshold_flags']
+    sequence = metrics.get('sequence')
+    if sequence not in ('forward_stop', 'reverse_stop', 'turn_stop'):
+        raise ValueError('unknown or missing qualification sequence')
+    expected_na = 'stable_vx' if sequence == 'turn_stop' else 'stable_wz'
+    if summary['not_applicable'] != [expected_na]:
+        raise ValueError(f'{sequence} requires exactly one inapplicable gate: {expected_na}')
+
+    details = []
+    for gate, (metric, threshold_key) in NUMERIC_GATES.items():
+        threshold = qualification_gates.get(threshold_key)
+        if type(threshold) not in (int, float) or not math.isfinite(threshold) or threshold < 0:
+            raise ValueError(f'missing or invalid frozen threshold: {threshold_key}')
+        if metric not in metrics:
+            raise ValueError(f'missing metric: {metric}')
+        value = metrics[metric]
+        if gate == expected_na:
+            if value is not None:
+                raise ValueError(f'inapplicable metric must be null: {metric}')
+            continue
+        if type(value) not in (int, float) or not math.isfinite(value) or value < 0:
+            raise ValueError(f'invalid numeric metric: {metric}')
+        if flags[gate] is not (value <= threshold):
+            raise ValueError(f'flag disagrees with raw metric and frozen threshold: {gate}')
+        if flags[gate] is False:
+            details.append({'gate': gate, 'metric': metric, 'value': value,
+                            'operator': '<=', 'threshold_key': threshold_key,
+                            'threshold': threshold,
+                            'explanation': f'{metric} {value:.8g} > {threshold:.8g}'})
+
+    transitions, reason, failure = (metrics.get('policy_transitions'),
+                                     metrics.get('done_reason'), metrics.get('failure'))
+    if (type(transitions) is not int or not 0 <= transitions <= 600
+            or not isinstance(reason, str) or not reason or type(failure) is not bool):
+        raise ValueError('missing or invalid completion/failure metrics')
+    boolean_values = {'completed_12s': transitions == 600 and reason == 'HORIZON_12S',
+                      'no_fall_or_illegal_support': not failure}
+    for gate, value in boolean_values.items():
+        if qualification_gates.get(gate) is not True:
+            raise ValueError(f'missing or invalid frozen boolean requirement: {gate}')
+        if flags[gate] is not value:
+            raise ValueError(f'flag disagrees with completion/failure metrics: {gate}')
+        if value is False:
+            details.append({'gate': gate, 'value': value, 'operator': '==',
+                            'threshold_key': gate, 'threshold': True,
+                            'explanation': f'{gate} false != true'})
+    summary['failed_gate_details'] = details
+    summary['blocking_gate'] = '; '.join(item['explanation'] for item in details) or None
+    return summary
+
+
+def qualification_verdict(tasks_passed, tasks_total, early_failures, tasks_required):
+    """Derive one version's overall verdict from counts instead of writing it down.
+
+    PASS needs all three: every required task passed, every required task was
+    actually evaluated, and nothing ended early. A partial result such as 2/3, or
+    3/3 over a truncated evaluation, is FAIL. This function can only report a
+    verdict; it never upgrades a task-level improvement into a qualification.
+    """
+    values = {'tasks_passed': tasks_passed, 'tasks_total': tasks_total,
+              'early_failures': early_failures, 'tasks_required': tasks_required}
+    for name, value in values.items():
+        if type(value) is not int or value < 0:
+            raise ValueError(f'{name} must be a nonnegative integer, got {value!r}')
+    if tasks_required == 0:
+        raise ValueError('tasks_required must be positive')
+    if tasks_passed > tasks_total:
+        raise ValueError('tasks_passed cannot exceed tasks_total')
+    passed = (tasks_passed == tasks_required and tasks_total == tasks_required
+              and early_failures == 0)
+    return 'PASS' if passed else 'FAIL'
 
 
 def sha(path):
@@ -73,16 +193,15 @@ def main():
     for version, score in (('04a', 'pilot04a_deployment_plan_01/score03_turn_stop'),
                            ('04b', 'pilot04b_deployment_plan_01/score02_reverse_stop')):
         report, path, digest = load(f'{score}/report.json')
+        gates = gate_summary(report['metrics']['threshold_flags'])
         cpp.append({'version': version, 'task': report['metrics']['sequence'],
                     'status': report['status'],
                     'native': report['actual_native_steps'],
                     'structural_checks_passed': sum(report['checks'].values()),
                     'structural_checks_total': len(report['checks']),
                     'all_structural_checks_passed': all(report['checks'].values()),
-                    'gates_passed': sum(1 for v in report['metrics']['threshold_flags'].values()
-                                        if v is True),
-                    'gates_applicable': sum(1 for v in report['metrics']['threshold_flags'].values()
-                                            if v is not None),
+                    'gates_passed': gates['gates_passed'],
+                    'gates_applicable': gates['gates_applicable'],
                     'inference_p99_ms': report['inference_latency']['p99'],
                     'trials_used': 1, 'trials_allowed': 3,
                     'native_cap': 18000, 'native_unused': 18000-report['actual_native_steps'],
@@ -148,7 +267,12 @@ def main():
     transitions_total = sum(e['transitions'] for e in training)
     best = next(e for e in cpp if e['version'] == '04b' and e['task'] == 'reverse_stop')
     best_report = json.loads((ROOT/best['score']).read_text())
-    best_flags = best_report['metrics']['threshold_flags']
+    release, release_path, release_sha = load('pilot04b_release_01.json')
+    best_gates = task_gate_summary(best_report['metrics'], release['qualification_gates_unchanged'])
+    tasks_required = release['qualification_gates_unchanged']['tasks_required_to_pass']
+    versions_passing = [e['version'] for e in evaluation
+                        if qualification_verdict(e['pass_count'], e['tasks'],
+                                                 e['early_failures'], tasks_required) == 'PASS']
 
     ledger = {
         'format': 'd1-contract04-final-delivery-v1',
@@ -209,22 +333,22 @@ def main():
             'versions': {entry['version']: {'tasks_passed': entry['pass_count'],
                                             'tasks_total': entry['tasks'],
                                             'early_failures': entry['early_failures'],
-                                            'overall': 'FAIL'} for entry in evaluation},
+                                            'tasks_required': tasks_required,
+                                            'overall': qualification_verdict(
+                                                entry['pass_count'], entry['tasks'],
+                                                entry['early_failures'], tasks_required)}
+                         for entry in evaluation},
             'best_single_task': {'version': '04b', 'task': 'reverse_stop',
-                                 'gates_passed': best['gates_passed'],
-                                 'gates_applicable': best['gates_applicable'],
-                                 'gates_total': len(best_flags),
-                                 'not_applicable': [k for k, v in best_flags.items()
-                                                    if v is None],
-                                 'failed_gates': [k for k, v in best_flags.items()
-                                                  if v is False],
+                                 **best_gates,
                                  'score': best['score'],
                                  'score_sha256': best['score_sha256'],
-                                 'blocking_gate': 'stable_vx_mae_m_s 0.06950 > 0.06',
+                                 'qualification_release': release_path,
+                                 'qualification_release_sha256': release_sha,
                                  'note': ('single-task result verified independently in C++; '
                                           'null flags are not applicable, not passes; '
                                           'not an overall qualification pass')},
-            'overall': 'FAIL'},
+            'versions_passing': versions_passing,
+            'overall': 'PASS' if versions_passing else 'FAIL'},
         'formal_training_runs': 0,
         'formal_evaluation_runs': 0,
         'terrain_policy_trials': 0,
