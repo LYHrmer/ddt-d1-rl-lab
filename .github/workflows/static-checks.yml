@@ -17,12 +17,14 @@ on:
       - 'training/**'
       - 'tests/**'
       - 'tools04/**'
+      - 'tools05/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
       - 'training/**'
       - 'tests/**'
       - 'tools04/**'
+      - 'tools05/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 
