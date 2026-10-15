@@ -266,14 +266,15 @@ def _protected_fixture(tmp_path, *, tamper=None, extra_user_file=False,
 
 
 def _audit(tmp_path, monkeypatch, **kwargs):
-    ddt, old, guard_sha, n_frozen, n_user = _protected_fixture(tmp_path, **kwargs)
+    fixture_kwargs = {k: v for k, v in kwargs.items() if k != 'unfrozen'}
+    ddt, old, guard_sha, n_frozen, n_user = _protected_fixture(tmp_path, **fixture_kwargs)
     # The production tool pins 77 and 9; the fixture is smaller, so relax only counts.
     real = chk.verify_hash_manifest
     expected = {77: n_frozen, 9: n_user}
     monkeypatch.setattr(chk, 'verify_hash_manifest',
                         lambda root, manifest, count=None: real(root, manifest,
                                                                 expected.get(count, count)))
-    return chk.check_protected_files(ddt, old, guard_sha256=guard_sha)
+    return chk.check_protected_files(ddt, old, guard_sha256=guard_sha, unfrozen=kwargs.get('unfrozen', {}))
 
 
 def test_protected_files_pass_on_an_untouched_pair(tmp_path, monkeypatch):
@@ -509,3 +510,56 @@ def test_static_rejects_a_receipt_that_only_looks_green(tmp_path, monkeypatch, o
 def test_tool_does_not_depend_on_the_rtk_wrapper():
     source = (ROOT/'tools04/check_handoff_integrity.py').read_text()
     assert "'rtk'" not in source and '"rtk"' not in source
+
+
+
+# --- owner-unfrozen files --------------------------------------------------------
+def _sha(data):
+    import hashlib
+    return hashlib.sha256(data).hexdigest()
+
+
+def test_apply_unfrozen_substitutes_only_the_named_file():
+    manifest = {'a.py': _sha(b'a'), 'b.py': _sha(b'b')}
+    out = chk.apply_unfrozen(manifest, {'a.py': {'frozen_sha256': _sha(b'a'), 'current_sha256': _sha(b'A')}})
+    assert out == {'a.py': _sha(b'A'), 'b.py': _sha(b'b')} and manifest['a.py'] == _sha(b'a')
+
+
+def test_an_unfreeze_record_for_a_file_never_frozen_is_refused():
+    with pytest.raises(ValueError, match='never frozen'):
+        chk.apply_unfrozen({'a.py': _sha(b'a')}, {'new.py': {'frozen_sha256': _sha(b'a'), 'current_sha256': _sha(b'x')}})
+
+
+def test_an_unfreeze_record_with_the_wrong_frozen_digest_is_refused():
+    with pytest.raises(ValueError, match='does not match'):
+        chk.apply_unfrozen({'a.py': _sha(b'a')}, {'a.py': {'frozen_sha256': _sha(b'z'), 'current_sha256': _sha(b'A')}})
+
+
+def test_an_unfreeze_record_with_a_malformed_new_digest_is_refused():
+    with pytest.raises(ValueError, match='invalid current'):
+        chk.apply_unfrozen({'a.py': _sha(b'a')}, {'a.py': {'frozen_sha256': _sha(b'a'), 'current_sha256': 'xyz'}})
+
+
+def test_an_unfrozen_file_at_its_new_digest_passes(tmp_path, monkeypatch):
+    """The tampered fixture edits src/f0.py; recording exactly that edit makes it pass."""
+    ddt, old, *_ = _protected_fixture(tmp_path/'probe', tamper=True)
+    frozen = json.loads((ddt/chk.GUARD).read_text())['guard']['frozen_77_sha256']['src/f0.py']
+    record = {'src/f0.py': {'frozen_sha256': frozen, 'current_sha256': _sha(b'TAMPERED')}}
+    out = _audit(tmp_path/'run', monkeypatch, tamper=True, unfrozen=record)
+    assert out['status'] == 'PASS' and out['frozen_77']['unfrozen_by_owner'] == record
+
+
+def test_an_unfrozen_file_changed_again_after_unfreezing_still_fails(tmp_path, monkeypatch):
+    ddt, old, *_ = _protected_fixture(tmp_path/'probe', tamper=True)
+    frozen = json.loads((ddt/chk.GUARD).read_text())['guard']['frozen_77_sha256']['src/f0.py']
+    record = {'src/f0.py': {'frozen_sha256': frozen, 'current_sha256': _sha(b'SOMETHING ELSE')}}
+    out = _audit(tmp_path/'run', monkeypatch, tamper=True, unfrozen=record)
+    assert out['status'] == 'FAIL'
+    assert [r['path'] for r in out['frozen_77']['files'] if r['status'] == 'FAIL'] == ['src/f0.py']
+
+
+def test_the_production_unfreeze_record_names_one_file_with_its_recorded_frozen_digest():
+    assert list(chk.UNFROZEN) == ['src/wheel_legged_control/experiments.py']
+    entry = chk.UNFROZEN['src/wheel_legged_control/experiments.py']
+    assert entry['frozen_sha256'] == '5c8a7a273fd3219c549c005a7d6996de66600a4fcf54c409b88c4d3cd49a7ed4'
+    assert entry['authorised_by'] == 'repository owner' and entry['date'] == '2026-10-16'

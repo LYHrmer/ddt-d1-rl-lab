@@ -23,6 +23,40 @@ ROOT = Path(__file__).resolve().parents[1]
 OLD = ROOT.parent/'wheel-legged-control-lab'
 GUARD = 'evidence/career_contract_03/protected_guard_final03_01.json'
 GUARD_SHA256 = '08533c1d6741b67b781c2180ec75b6278a9752dc11b2d97d40897c3b944682aa'
+# Files the repository owner unfroze, each pinned to the digest it had when frozen and to
+# the digest it has now. The guard receipt is never edited; an entry here substitutes the
+# new digest for that one file, so any further change to it still fails the audit.
+UNFROZEN = {
+    'src/wheel_legged_control/experiments.py': {
+        'frozen_sha256': '5c8a7a273fd3219c549c005a7d6996de66600a4fcf54c409b88c4d3cd49a7ed4',
+        'current_sha256': '7b5f8d73fa61aff9cd59c3ec384d11f5dab8c2399b29aafb8c241aff774b1cc4',
+        'date': '2026-10-16', 'authorised_by': 'repository owner',
+        'old_repo_commit': '1d8177c',
+        'reason': ('make the residual row optional without the [rl] extra and record '
+                   'provenance for each benchmark run'),
+    },
+}
+
+
+def apply_unfrozen(manifest, unfrozen):
+    """The frozen manifest with each owner-unfrozen file pinned to its new digest.
+
+    An entry must name a file that is in the manifest with exactly its recorded frozen
+    digest, so an unfreeze record cannot be pointed at the wrong file or the wrong
+    version, and cannot be used to add a file the guard never froze.
+    """
+    result = dict(manifest)
+    for name, entry in unfrozen.items():
+        if name not in manifest:
+            raise ValueError(f'unfreeze record names a file that was never frozen: {name}')
+        if manifest[name] != entry['frozen_sha256']:
+            raise ValueError(f'unfreeze record does not match the frozen digest of {name}')
+        if not re.fullmatch('[0-9a-f]{64}', entry['current_sha256']):
+            raise ValueError(f'invalid current SHA256 for unfrozen {name}')
+        result[name] = entry['current_sha256']
+    return result
+
+
 BASE_RELEASES = (
     ('evidence/career_contract_03/pilot03d_release_01.json', 22,
      'e0162abec0975aac11154960161c110ca93079ec4d7ccea741ceab9ee0a150e1'),
@@ -88,7 +122,7 @@ def verify_hash_manifest(root, expected, expected_count=None):
             'count': len(rows), 'passed': passed, 'files': rows}
 
 
-def check_protected_files(ddt_root, old_root, *, guard_sha256=GUARD_SHA256):
+def check_protected_files(ddt_root, old_root, *, guard_sha256=GUARD_SHA256, unfrozen=None):
     """Audit the 77 frozen files, exact 9 untracked results and old tracked tree.
 
     The optional digest supports synthetic fixtures. Production callers should
@@ -98,7 +132,9 @@ def check_protected_files(ddt_root, old_root, *, guard_sha256=GUARD_SHA256):
     if sha256(guard_path) != guard_sha256:
         raise ValueError('protected guard receipt SHA256 changed')
     guard = json.loads(guard_path.read_text())['guard']
-    frozen = verify_hash_manifest(old_root, guard['frozen_77_sha256'], 77)
+    unfrozen = UNFROZEN if unfrozen is None else unfrozen
+    frozen = verify_hash_manifest(old_root, apply_unfrozen(guard['frozen_77_sha256'], unfrozen), 77)
+    frozen['unfrozen_by_owner'] = {name: dict(entry) for name, entry in sorted(unfrozen.items())}
     metadata = guard['my_course_drive_01']
     if not isinstance(metadata, dict):
         raise ValueError('user result manifest must be an object')

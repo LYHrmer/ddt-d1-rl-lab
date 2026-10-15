@@ -45,6 +45,8 @@
 
 旧仓库 `src/wheel_legged_control/experiments.py`（SHA `5c8a7a273fd3219c549c005a7d6996de66600a4fcf54c409b88c4d3cd49a7ed4`）仍冻结。无条件导入 `stable_baselines3` 导致 `[rl]` 实际不可选，以及基准表未调用 `capture_git_provenance`，均为**已查明、未修复**；解冻由仓库所有者决定。
 
+> **更新（2026-10-16）：仓库所有者已解冻这一份文件，两处缺陷已在旧仓库提交 `1d8177c` 修复**（无 `[rl]` 时降级为两行并说明原因；每次运行写 `provenance.json`；7 个新测试在旧文件上全失败、新文件上全通过；除 MPC 求解墙钟时间外数值逐位不变）。新 SHA `7b5f8d73fa61aff9cd59c3ec384d11f5dab8c2399b29aafb8c241aff774b1cc4`。保护工具没有改写原 77 份清单，而是在 `tools04/check_handoff_integrity.py` 的 `UNFROZEN` 里显式登记这次解冻（冻结时 SHA、新 SHA、日期、授权人），该文件仍钉在新 SHA 上，再改一字节照样报警。其余 76 份仍冻结。
+
 ## 2026-10-13 零物理步收尾
 
 本轮接手基线：ddt `4241f52`、旧仓库 `e831dba`。宿主核查看到 PID 1 为 `systemd`、进程输出 590 行，未发现目标训练、运行器、MuJoCo 或 ROS 进程；未重启训练。原指定 pytest 命令基线 **68 passed / 0.27 s**，修订后原命令 **68 passed / 0.38 s**；加强接口签名检查后，在禁止模型构造及物理 API 的护栏下 **68 passed / 0.10 s**，[回执](../evidence/career_contract_04/handoff_20261013_pytest_guard.json)确认未加载模型、0 native。独立 [CI 静态检查回执](../evidence/career_contract_04/handoff_20261013_static_01/report.json)为 **32/32、0 物理步**。
@@ -192,4 +194,4 @@ README 与教程第 0 章仍写着"8 项门槛通过 7 项"（把不适用的 `n
 
 ### 仍然不变
 
-五个版本全部未通过整体控制资格（0/3、0/3、1/3、0/3、0/3），正式三臂×三 seed 未放行；本轮工程优化不构成任何控制能力证据。旧仓库 77 份冻结文件（含 `experiments.py`，SHA `5c8a7a273fd3219c549c005a7d6996de66600a4fcf54c409b88c4d3cd49a7ed4`）和 `results/my_course_drive_01` 9 份用户结果（只存在本地）严格只读。
+五个版本全部未通过整体控制资格（0/3、0/3、1/3、0/3、0/3），正式三臂×三 seed 未放行；本轮工程优化不构成任何控制能力证据。旧仓库 77 份冻结文件中 76 份严格只读，`experiments.py` 已于 2026-10-16 由所有者解冻并钉在新 SHA `7b5f8d73…`（见上文更新）；`results/my_course_drive_01` 9 份用户结果（只存在本地，已加进旧仓库的本地 `.git/info/exclude`）严格只读。
