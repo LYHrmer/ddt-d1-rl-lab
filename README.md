@@ -61,11 +61,11 @@
 - **零积分静态检查两次在训练前拦下真实缺陷**：04a 启动器的无限递归（0 积分、未扣额度）、04b 第一版饱和点把实测区间放进梯度平区。
 - **其中 32 项不依赖机器人模型，已接入 CI**（上方徽章）：校验每个发布配置都恰好是冻结 pilot03d 基线加**唯一一项**声明过的改动、奖励项的形状/连续性/梯度覆盖范围/最坏代价上界，以及 04b 没有继承 04a 的项。`robot_model_required: false`、0 物理步，clean clone 即可跑。需要构造环境的完整检查（04a 25 项、04b 30 项）仍在本机跑。
 - **跨语言一致性**：64 例真实 C++ ORT 1.10.0 黄金比对最大误差 4.77e-7（容差 1e-5，0 物理步）；12 s 独立 C++ 回放与 Python 复现到 5e-9（04a）与 8 位小数（04b），结构检查各 24/24。
-- **预算如实记账**：合同 04 新增 2,097,152 transitions / 21,022,770 native，全项目累计 **52,914,120 native**。总账由脚本从回执重算，不抄文档。含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
+- **预算如实记账**：合同 04 新增 2,097,152 transitions / 21,022,770 native，截至合同 04 全项目累计 52,914,120 native；合同 05M 的物理测量另用 18,020 native、0 transitions，**全项目累计 52,932,140 native**（[05M 紧凑摘要](reports/contract05m_summary.json)由脚本从回执生成，并有测试核对它的预算加总）。总账由脚本从回执重算，不抄文档。含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
 
 ## 阅读入口
 
-- [合同 04 紧凑结果（可在 GitHub 直接读）](reports/contract04_summary.json) / [合同 03](reports/contract03_summary.json)
+- 紧凑结果（可在 GitHub 直接读）：[合同 05M 物理测量](reports/contract05m_summary.json) / [合同 04](reports/contract04_summary.json) / [合同 03](reports/contract03_summary.json)。**合同 04 的摘要是历史文件，未改写**，其中"策略在已经停住之后才归零"等机制结论已被推翻，更正清单在 05M 摘要的 `corrections_to_earlier_published_claims` 字段里。
 - [合同 04 结果解释与完整证据入口](docs/career_execution_results_04.md) / [合同 03](docs/career_execution_results_03.md)
 - [独立复现教程](docs/tutorial/00_复现教程.md)，其中[第 5 章](docs/tutorial/05_合同04诊断与奖励设计.md)是完整的"诊断 → 单一假设 → 预注册 → 实验 → 判定（含被推翻）"闭环
 - 有界合同：[04a](docs/career_execution_contract_04a.md) / [04b](docs/career_execution_contract_04b.md) / [04b 附录 A](docs/career_execution_contract_04b_addendum_a.md) / [05M 物理测量（已执行）](docs/career_execution_contract_05m.md) / [03](docs/career_execution_contract_03.md)
