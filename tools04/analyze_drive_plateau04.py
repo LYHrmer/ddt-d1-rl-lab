@@ -19,9 +19,12 @@ import hashlib
 import json
 from pathlib import Path
 
+import sys
+
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'tools04'))
 WHEEL_ACTION_INDEX = (3, 7, 11, 15)
 WHEEL_ACTION_SCALE = 5.
 WHEEL_RADIUS_M = .087
@@ -32,6 +35,14 @@ DRIVE_START_TICK = 100
 CUT_TICK = 400
 WINDOW_TICKS = 50
 COMMAND_M_S = .2
+REST_WINDOW = (20, 100)
+SETTLED_WINDOW = (550, 600)
+REWARD_CONFIG = ROOT/'training/configs/pilot04b.json'
+REWARD_TERMS = ('vx_tracking', 'wz_tracking', 'alive', 'body_vy_squared',
+                'gravity_xy_squared', 'action_rate_mean_squared')
+REWARD_UNAVAILABLE = ('leg_pose_deviation_sum_squared (weight -0.5; joint angles are not in the trace)',
+                      'torque_sum_squared (weight -1e-5; per-native torques are not in the trace)',
+                      'height_error_squared (weight -20; the nominal height is not in the trace)')
 
 
 def sha(path):
@@ -66,9 +77,32 @@ def wheel_push(issued_action, speed, direction, lo, hi):
             'fraction_of_torque_limit': abs(torque)/TORQUE_LIMIT_N_M}
 
 
-def analyse(path, direction, command=COMMAND_M_S, window=WINDOW_TICKS, cut=CUT_TICK):
+def posture(trace, rest=REST_WINDOW, plateau=(CUT_TICK-WINDOW_TICKS, CUT_TICK), settled=SETTLED_WINDOW):
+    """Median body pitch, roll and height at rest, on the drive plateau and after the stop."""
+    def med(key, window):
+        return float(np.median(np.asarray(trace[key], dtype=float)[window[0]:window[1]]))
+    out = {name: {'pitch_rad': med('base_pitch_rad', w), 'roll_rad': med('base_roll_rad', w),
+                  'height_m': med('base_height_m', w)}
+           for name, w in (('rest', rest), ('plateau', plateau), ('settled', settled))}
+    out['peak_abs_pitch_rad'] = float(np.abs(np.asarray(trace['base_pitch_rad'], dtype=float)).max())
+    return out
+
+
+def reward_accounting(trace, reward_config, lo=CUT_TICK-WINDOW_TICKS, hi=CUT_TICK):
+    """Mean per-second value of every reward term the trace can reproduce, over the plateau."""
+    import reward_signal_probe04 as probe
+    per_second = probe.terms_along_trace(trace, reward_config)[0]
+    means = {k: float(np.nanmean(np.asarray(per_second[k], dtype=float)[lo:hi])) for k in REWARD_TERMS}
+    weight = reward_config['vx_tracking_weight']
+    return {'terms_per_second': means, 'reproducible_sum_per_second': float(sum(means.values())),
+            'vx_tracking_shortfall_per_second': weight-means['vx_tracking'],
+            'not_reproducible_from_the_trace': list(REWARD_UNAVAILABLE)}
+
+
+def analyse(path, direction, command=COMMAND_M_S, window=WINDOW_TICKS, cut=CUT_TICK, reward_config=None):
     with np.load(path) as handle:
-        vx, action = handle['body_vx_m_s'], handle['issued_action']
+        trace = {k: handle[k] for k in handle.files}
+    vx, action = trace['body_vx_m_s'], trace['issued_action']
     speed = signed_speed(vx, direction)
     lo, hi = cut-window, cut
     seconds = {str(k): float(speed[DRIVE_START_TICK+50*(k-1):DRIVE_START_TICK+50*k].mean())
@@ -80,6 +114,8 @@ def analyse(path, direction, command=COMMAND_M_S, window=WINDOW_TICKS, cut=CUT_T
             'last_second_trend_m_s_per_s': speed_trend(speed, lo, hi),
             'seconds_to_90_percent_of_command': time_to_fraction(speed, command, .9),
             'wheel_push_last_second': wheel_push(action, speed, direction, lo, hi),
+            'posture': posture(trace),
+            'reward_last_second': reward_accounting(trace, reward_config) if reward_config else None,
             'trace_sha256': sha(path)}
 
 
@@ -89,11 +125,12 @@ def main():
     parser.add_argument('--eval', action='append', default=[], metavar='LABEL=DIR')
     parser.add_argument('--output', type=Path, required=True, help='must not already exist')
     args = parser.parse_args()
+    reward_config = json.loads(REWARD_CONFIG.read_text())['reward']
     versions = {}
     for item in args.eval:
         label, directory = item.split('=', 1)
         versions[label] = {task: analyse(Path(directory)/f'{task}_stop_delay0_seed7001.npz',
-                                         1. if task == 'forward' else -1.)
+                                         1. if task == 'forward' else -1., reward_config=reward_config)
                            for task in ('forward', 'reverse')}
     report = {'format': 'd1-contract04-drive-plateau-analysis-v1',
               'created_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
@@ -101,6 +138,7 @@ def main():
               'constants': {'wheel_action_scale': WHEEL_ACTION_SCALE, 'wheel_radius_m': WHEEL_RADIUS_M,
                             'wheel_kd': WHEEL_KD, 'torque_limit_n_m': TORQUE_LIMIT_N_M,
                             'drive_start_tick': DRIVE_START_TICK, 'cut_tick': CUT_TICK},
+              'reward_config': str(REWARD_CONFIG.relative_to(ROOT)), 'reward_config_sha256': sha(REWARD_CONFIG),
               'versions': versions, 'tool_sha256': sha(__file__)}
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output/'report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False)+'\n')

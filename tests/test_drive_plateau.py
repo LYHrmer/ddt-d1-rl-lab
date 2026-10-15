@@ -109,10 +109,20 @@ def test_only_the_requested_window_is_read():
 
 
 # --- the whole analysis on a synthetic trace -------------------------------------
+def full_trace(vx, action):
+    """Every key the tool reads, so a fixture cannot silently lack one the real traces always have."""
+    n = len(vx)
+    cmd = np.zeros((n, 3)); cmd[:, 0] = .2
+    return {'body_vx_m_s': vx, 'issued_action': action, 'body_vy_m_s': np.zeros(n),
+            'body_wz_rad_s': np.zeros(n), 'base_height_m': np.full(n, .45),
+            'command_during_interval': cmd, 'base_roll_rad': np.zeros(n),
+            'base_pitch_rad': np.zeros(n)}
+
+
 def write_trace(path, plateau_speed, direction=1., action=.45):
     vx = np.zeros(600); vx[100:] = direction*plateau_speed
     act = np.zeros((600, 16)); act[:, [3, 7, 11, 15]] = direction*action
-    np.savez_compressed(path, body_vx_m_s=vx, issued_action=act)
+    np.savez_compressed(path, **full_trace(vx, act))
 
 
 def test_a_forward_plateau_is_reported_as_a_fraction_of_the_command(tmp_path):
@@ -135,7 +145,7 @@ def test_the_six_drive_seconds_are_the_six_consecutive_windows(tmp_path):
     vx = np.zeros(600)
     for k in range(6):
         vx[100+50*k:150+50*k] = .01*(k+1)
-    np.savez_compressed(tmp_path/'t.npz', body_vx_m_s=vx, issued_action=np.zeros((600, 16)))
+    np.savez_compressed(tmp_path/'t.npz', **full_trace(vx, np.zeros((600, 16))))
     out = plateau.analyse(tmp_path/'t.npz', 1.)
     assert [round(out['speed_by_second_after_drive_start_m_s'][str(k)], 6) for k in range(1, 7)] == [
         .01, .02, .03, .04, .05, .06]
@@ -144,7 +154,7 @@ def test_the_six_drive_seconds_are_the_six_consecutive_windows(tmp_path):
 def test_the_last_second_is_exactly_the_last_fifty_ticks(tmp_path):
     """A plateau gives the same mean for any window length, so the speed must change inside it."""
     vx = np.zeros(600); vx[100:] = .10; vx[375:400] = .20      # last 25 ticks differ from the 25 before
-    np.savez_compressed(tmp_path/'t.npz', body_vx_m_s=vx, issued_action=np.zeros((600, 16)))
+    np.savez_compressed(tmp_path/'t.npz', **full_trace(vx, np.zeros((600, 16))))
     out = plateau.analyse(tmp_path/'t.npz', 1.)
     assert plateau.WINDOW_TICKS*plateau.TICK_S == pytest.approx(1.0)
     assert out['last_second_mean_speed_m_s'] == pytest.approx(.15)      # 25 ticks of .10 and 25 of .20
@@ -196,3 +206,108 @@ def test_numbers_quoted_in_contract_revision_1_agree_with_the_receipt():
     assert f'04b {mean_a:.2f}' in text
     assert all(r['wheel_push_last_second']['fraction_of_torque_limit'] < .05
                for v in receipt.values() for r in v.values())
+
+
+# --- posture and reward accounting ----------------------------------------------
+def posture_trace(rest=-.065, plateau=-.147, settled=-.114, n=600):
+    pitch = np.zeros(n); pitch[REST_SLICE] = rest; pitch[350:400] = plateau; pitch[550:600] = settled
+    return {'base_pitch_rad': pitch, 'base_roll_rad': np.zeros(n), 'base_height_m': np.full(n, .45)}
+
+
+REST_SLICE = slice(20, 100)
+
+
+def test_posture_reads_the_three_windows_it_names():
+    out = plateau.posture(posture_trace())
+    assert out['rest']['pitch_rad'] == pytest.approx(-.065)
+    assert out['plateau']['pitch_rad'] == pytest.approx(-.147)
+    assert out['settled']['pitch_rad'] == pytest.approx(-.114)
+
+
+def test_posture_peak_is_a_magnitude_over_the_whole_trace():
+    trace = posture_trace(); trace['base_pitch_rad'][200] = .3
+    assert plateau.posture(trace)['peak_abs_pitch_rad'] == pytest.approx(.3)
+    trace['base_pitch_rad'][200] = -.31
+    assert plateau.posture(trace)['peak_abs_pitch_rad'] == pytest.approx(.31)
+
+
+def test_posture_uses_the_median_so_one_spike_does_not_move_it():
+    trace = posture_trace(); trace['base_pitch_rad'][375] = 1.
+    assert plateau.posture(trace)['plateau']['pitch_rad'] == pytest.approx(-.147)
+
+
+def reward_trace(speed, command=.2, n=600):
+    cmd = np.zeros((n, 3)); cmd[:, 0] = command
+    return {'body_vx_m_s': np.full(n, speed), 'body_vy_m_s': np.zeros(n), 'body_wz_rad_s': np.zeros(n),
+            'base_height_m': np.full(n, .45), 'command_during_interval': cmd,
+            'base_roll_rad': np.zeros(n), 'base_pitch_rad': np.zeros(n), 'issued_action': np.zeros((n, 16))}
+
+
+CONFIG = json.loads((ROOT/'training/configs/pilot04b.json').read_text())['reward']
+
+
+def test_vx_tracking_matches_the_formula_and_the_shortfall_is_what_is_given_up():
+    out = plateau.reward_accounting(reward_trace(.13), CONFIG)
+    expected = 2.*np.exp(-(.13-.2)**2/.04)
+    assert out['terms_per_second']['vx_tracking'] == pytest.approx(expected)
+    assert out['vx_tracking_shortfall_per_second'] == pytest.approx(2.-expected)
+
+
+def test_tracking_the_command_exactly_leaves_no_shortfall():
+    assert plateau.reward_accounting(reward_trace(.2), CONFIG)['vx_tracking_shortfall_per_second'] == pytest.approx(0., abs=1e-12)
+
+
+def test_a_slower_plateau_has_a_larger_shortfall():
+    slow = plateau.reward_accounting(reward_trace(.10), CONFIG)['vx_tracking_shortfall_per_second']
+    fast = plateau.reward_accounting(reward_trace(.15), CONFIG)['vx_tracking_shortfall_per_second']
+    assert slow > fast > 0
+
+
+def test_lean_costs_reward_through_the_gravity_term():
+    level = reward_trace(.2); lean = reward_trace(.2); lean['base_pitch_rad'] = np.full(600, -.147)
+    a = plateau.reward_accounting(level, CONFIG)['terms_per_second']['gravity_xy_squared']
+    b = plateau.reward_accounting(lean, CONFIG)['terms_per_second']['gravity_xy_squared']
+    assert a == pytest.approx(0., abs=1e-12) and b == pytest.approx(-6.*np.sin(.147)**2)
+
+
+def test_the_accounting_lists_what_it_cannot_reproduce():
+    out = plateau.reward_accounting(reward_trace(.2), CONFIG)
+    text = ' '.join(out['not_reproducible_from_the_trace'])
+    assert 'leg_pose_deviation' in text and 'torque_sum_squared' in text and 'height_error_squared' in text
+
+
+def test_the_reproducible_sum_is_the_sum_of_the_listed_terms():
+    out = plateau.reward_accounting(reward_trace(.13), CONFIG)
+    assert out['reproducible_sum_per_second'] == pytest.approx(sum(out['terms_per_second'].values()))
+
+
+# --- gaps found by mutation: windows and wiring ---------------------------------
+def test_rest_window_is_ticks_20_to_100_not_the_start_of_the_trace():
+    """A ramp inside the window and a spike before it: only the right window gives the ramp's median."""
+    trace = posture_trace(); ramp = np.linspace(-.2, -.1, 80)
+    trace['base_pitch_rad'][20:100] = ramp; trace['base_pitch_rad'][:20] = 1.
+    assert plateau.posture(trace)['rest']['pitch_rad'] == pytest.approx(float(np.median(ramp)))
+
+
+def test_the_reward_window_is_the_last_second_before_the_cut():
+    """The plateau is slow inside the window and fast outside it; shifting the window changes the answer."""
+    trace = reward_trace(.2); vx = np.full(600, .2); vx[350:400] = .13; trace['body_vx_m_s'] = vx
+    out = plateau.reward_accounting(trace, CONFIG)['terms_per_second']['vx_tracking']
+    assert out == pytest.approx(2.*np.exp(-(.13-.2)**2/.04))
+
+
+def test_analyse_puts_posture_and_the_reward_accounting_into_the_receipt(tmp_path):
+    vx = np.zeros(600); vx[100:] = .13
+    trace = full_trace(vx, np.zeros((600, 16))); trace['base_pitch_rad'] = np.full(600, -.1)
+    path = tmp_path/'t.npz'; np.savez_compressed(path, **trace)
+    out = plateau.analyse(path, 1., reward_config=CONFIG)
+    assert out['posture'] is not None and out['posture']['plateau']['pitch_rad'] == pytest.approx(-.1)
+    assert out['reward_last_second'] is not None
+    assert out['reward_last_second']['terms_per_second']['vx_tracking'] == pytest.approx(
+        2.*np.exp(-(.13-.2)**2/.04), rel=1e-6)
+
+
+def test_analyse_without_a_reward_config_leaves_the_accounting_out_rather_than_guessing(tmp_path):
+    vx = np.zeros(600); vx[100:] = .13
+    path = tmp_path/'t.npz'; np.savez_compressed(path, **full_trace(vx, np.zeros((600, 16))))
+    assert plateau.analyse(path, 1.)['reward_last_second'] is None
