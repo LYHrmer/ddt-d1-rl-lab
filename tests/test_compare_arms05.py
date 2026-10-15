@@ -238,3 +238,18 @@ def test_the_full_verdict_in_the_results_document_agrees_with_its_receipt():
         assert f"{r['final_euclidean_displacement_m']:.4f}" in text
     assert sum(json.loads((ROOT/f'evidence/career_contract_05/probe05_run{n}_01/report.json').read_text())['actual_counts']['native_steps']
                for n in ('A', 'B', 'C')) == 18000
+
+
+@needs_workstation_evidence
+def test_the_readme_headline_numbers_agree_with_the_receipts():
+    verdict = ROOT/'evidence/career_contract_05/probe05_verdict_01/verdict.json'
+    if not verdict.is_file():
+        pytest.skip('05M receipts not on this machine')
+    v = json.loads(verdict.read_text())
+    a = json.loads((ROOT/'evidence/career_contract_05/probe05_runA_01/report.json').read_text())['analysis']
+    b = json.loads((ROOT/'evidence/career_contract_05/probe05_runB_01/report.json').read_text())['analysis']
+    text = (ROOT/'README.md').read_text()
+    assert f"{v['tau_s']['A_forced_zero_cmd0p2']:.3f}" in text
+    assert f"{a['final_euclidean_displacement_m']:.4f}" in text
+    assert f"{a['entry_speed_m_s']:.3f}" in text and f"{b['entry_speed_m_s']:.3f}" in text
+    assert '18,020' in text and '四次推翻' in text
