@@ -148,7 +148,12 @@ def test_the_receipt_declares_that_retries_and_seed_changes_are_not_allowed():
     assert probe.SEED == 7001
 
 
-def test_superseding_a_receipt_that_does_not_exist_is_refused(tmp_path):
+def test_superseding_a_receipt_that_does_not_exist_is_refused(tmp_path, monkeypatch):
+    """The frozen-input check runs first and needs evidence/, which a clean clone lacks.
+
+    It is switched off here so this test isolates the one thing it names, and runs anywhere.
+    """
+    monkeypatch.setattr(probe, 'check_frozen_inputs', lambda *args, **kwargs: None)
     with pytest.raises(SystemExit, match='does not exist'):
         release.build_receipt(static_report(tmp_path), supersedes=tmp_path/'absent.json')
 
