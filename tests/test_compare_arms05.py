@@ -252,4 +252,4 @@ def test_the_readme_headline_numbers_agree_with_the_receipts():
     assert f"{v['tau_s']['A_forced_zero_cmd0p2']:.3f}" in text
     assert f"{a['final_euclidean_displacement_m']:.4f}" in text
     assert f"{a['entry_speed_m_s']:.3f}" in text and f"{b['entry_speed_m_s']:.3f}" in text
-    assert '18,020' in text and '四次推翻' in text
+    assert '18,020' in text and '五次推翻' in text
