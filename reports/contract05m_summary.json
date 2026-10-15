@@ -1,0 +1,154 @@
+{
+  "format": "d1-contract05m-publication-summary-v1",
+  "prepared_utc": "2026-10-15T17:22:40.434592+00:00",
+  "simulation_only": true,
+  "real_robot_validation": false,
+  "contract": "docs/career_execution_contract_05m.md",
+  "kind": "measurement, not training; 0 transitions",
+  "question": "with the legs under policy control, does forcing only the four wheel actions to zero after the cut shorten the 04b decay time constant?",
+  "policy_measured": "04b exported ONNX, Python ORT, seed 7001, flat ground",
+  "release_receipt_sha256": "572903e753e8d197cda85f59e785f67b571d6d34e91ae306f79b8174ce676ba4",
+  "release_supersedes": {
+    "path": "evidence/career_contract_05/probe05_release_01.json",
+    "sha256": "692773c3c727a22716a31c0c78f7445c647ec53b89238e52fcd2a58c96d2ac9c",
+    "status_of_old_receipt": "SUPERSEDED_BEFORE_ANY_PHYSICS_RAN"
+  },
+  "pre_registered_verdict": {
+    "P1": "MET",
+    "P2": "REFUTED",
+    "P3": "NOT_MET",
+    "P4": "MET",
+    "P5": "NOT_MET"
+  },
+  "pre_registered_interpretation": "wheel action is not the main lever; look at leg and body dynamics",
+  "interpretation_limit": "a zero wheel action is a zero wheel speed target, i.e. passive damping braking; active reverse braking was never measured",
+  "p4_precondition": {
+    "entry_speed_ratio_B_over_A": 1.3293592946673483,
+    "valid": true,
+    "reason": null
+  },
+  "readings": {
+    "A": {
+      "entry_speed_m_s": 0.13224840670629323,
+      "tau_s_ticks_10_to_50": 0.6571055188387153,
+      "displacement_200_ticks_euclidean_m": 0.05324548878645064,
+      "path_200_ticks_m": 0.05404664320526223,
+      "first_order_predicted_over_path": 1.60789186433453,
+      "ticks_until_speed_below_0p02": 23
+    },
+    "B": {
+      "entry_speed_m_s": 0.17580564865995857,
+      "tau_s_ticks_10_to_50": 0.7561423875161435,
+      "displacement_200_ticks_euclidean_m": 0.0801239212096293,
+      "path_200_ticks_m": 0.08077945383068157,
+      "first_order_predicted_over_path": 1.645642507006831,
+      "ticks_until_speed_below_0p02": 69
+    },
+    "C": {
+      "entry_speed_m_s": 0.17580564865995857,
+      "tau_s_ticks_10_to_50": 0.5957748671262776,
+      "displacement_200_ticks_euclidean_m": 0.1077972969934363,
+      "path_200_ticks_m": 0.10869128758296295,
+      "first_order_predicted_over_path": 0.9636520948423619,
+      "ticks_until_speed_below_0p02": 73
+    }
+  },
+  "post_hoc_not_pre_registered": {
+    "share_of_displacement_explained_by_policy_wheel_action": {
+      "command_0p2": 0.29286160930322525,
+      "command_0p3": 0.25671678748579396
+    },
+    "lean": {
+      "rest_pitch_rad": -0.06649854838384726,
+      "lean_above_rest_per_m_s": {
+        "command_0p2": -0.6063677382848589,
+        "command_0p3": -0.8067403101388807
+      },
+      "line_through_plateaus": {
+        "slope_rad_per_m_s": -1.4151110927408943,
+        "intercept_at_zero_speed_rad": 0.040456471677266376
+      },
+      "line_passes_through_rest": false
+    },
+    "release_state_when_wheels_forced_to_zero": {
+      "appendix_a_probe": {
+        "tick": 99,
+        "speed_m_s": 0.0874541672396403,
+        "tilt_rad": 0.08434115305703505,
+        "height_m": 0.4415799999707286
+      },
+      "contract_05m_run_a": {
+        "tick": 399,
+        "speed_m_s": 0.13224202687490696,
+        "tilt_rad": 0.14911004220312085,
+        "height_m": 0.42087603193057904
+      }
+    }
+  },
+  "budget": {
+    "pool": "05M engineering",
+    "cap_native": 18020,
+    "used_native_by_run": {
+      "smoke": 20,
+      "A": 6000,
+      "B": 6000,
+      "C": 6000
+    },
+    "used_native_total": 18020,
+    "transitions": 0,
+    "unused_native": 0
+  },
+  "project_cumulative": {
+    "transitions": 5242880,
+    "native": 52932140,
+    "before_contract_05m": {
+      "transitions": 5242880,
+      "native": 52914120
+    },
+    "added_by_contract_05m": {
+      "transitions": 0,
+      "native": 18020
+    }
+  },
+  "corrections_to_earlier_published_claims": [
+    {
+      "claim_in_contract04_summary": "the policy zeroes its wheels only after it has already stopped",
+      "status": "overturned",
+      "by": "zero-physics reanalysis (results M9): wheel action mean(a^2) falls below 0.02 within 10 ticks of the cut"
+    },
+    {
+      "claim": "forward stop displacement is about entry speed times decay constant (as a mechanism)",
+      "status": "demoted to an empirical fit on the policy arm",
+      "by": "05M: with the wheels forced to zero the same formula over-predicts by about 1.6 times"
+    },
+    {
+      "claim": "04b's lean is about -1.1 to -1.2 rad per m/s of speed",
+      "status": "overturned",
+      "by": "lean_analysis_01: the ratio included the resting lean; above rest it is not constant"
+    }
+  ],
+  "not_authorised_by_this_result": [
+    "training",
+    "a new reward term",
+    "a qualification trial",
+    "watchdog acceptance",
+    "terrain or lateral claims"
+  ],
+  "limits": [
+    "single seed 7001",
+    "single policy 04b",
+    "flat ground only",
+    "Python ORT, not the C++ runner",
+    "forced-zero wheels is not a policy"
+  ],
+  "receipt_sha256": {
+    "probe05_smoke_01": "071a95196c44a5f8755fc09ec55868409b8e387f19c7c194d1c11b976d551b68",
+    "probe05_runA_01": "094961031180910126415f91861c231eae2808786c1fdaaa8b3d3d7a9cf45e69",
+    "probe05_runB_01": "cc41a798525132d90335e3e459ccd21dcdecb4c1498fffd93a5bc018645127a1",
+    "probe05_runC_01": "064fd184a41e23a6bb5c2288a21e8edeb1bee1a291cc25037c060746790a3a7b",
+    "probe05_verdict_01": "cf46722b31d8ac24c6b2f668ebdd7935d94d302355097d39cbb3ef0c8d69fc31",
+    "lean_analysis_01": "00177900c1ced8575782093fa7a405e58e60b87dc185ec569365f98c63e583cf",
+    "final_delivery_02": "a0507a07e4c7501294647729ada2ef0b0336fe96b9acc7253410116a886822c4"
+  },
+  "tool_sha256": "03f72d365950ec69345bed383557220c1b4ce8e9fa0cd6693e7476da898a1410"
+}
