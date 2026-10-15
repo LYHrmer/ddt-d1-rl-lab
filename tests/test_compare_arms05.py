@@ -20,7 +20,7 @@ sys.path.insert(0, str(ROOT/'tools05'))
 
 import compare_arms05 as arms  # noqa: E402
 
-RECEIPT = ROOT/'evidence/career_contract_05/probe05_arms_01/report.json'
+RECEIPT = ROOT/'evidence/career_contract_05/probe05_arms_03/report.json'
 
 
 def decay(tau, v0=.15, n=600, cut=400):
@@ -160,6 +160,47 @@ def test_main_writes_a_receipt_with_both_arms_the_share_and_the_post_hoc_label(t
         arms.main()
 
 
+def test_pitch_on_the_drive_plateau_is_the_median_of_the_last_fifty_ticks_before_the_cut():
+    tr = trace_with(decay(.25)); pitch = np.full(600, -.30); pitch[350:400] = -.15; pitch[375] = 1.
+    tr['base_pitch_rad'] = pitch
+    assert arms.describe(tr)['pitch_on_drive_plateau_rad'] == pytest.approx(-.15)
+
+
+def test_peak_pitch_is_a_magnitude_and_is_split_at_the_cut():
+    tr = trace_with(decay(.25)); pitch = np.zeros(600); pitch[100] = -.2; pitch[450] = .3
+    tr['base_pitch_rad'] = pitch
+    peak = arms.describe(tr)['peak_abs_pitch_rad']
+    assert peak['before_cut'] == pytest.approx(.2) and peak['after_cut'] == pytest.approx(.3)
+
+
+def test_a_negative_peak_after_the_cut_counts_by_its_magnitude():
+    """Forward lean is negative pitch, so the larger lean has the more negative value."""
+    tr = trace_with(decay(.25)); pitch = np.zeros(600); pitch[100] = .1; pitch[450] = -.3
+    tr['base_pitch_rad'] = pitch
+    peak = arms.describe(tr)['peak_abs_pitch_rad']
+    assert peak['after_cut'] == pytest.approx(.3) and peak['before_cut'] == pytest.approx(.1)
+
+
+def test_a_peak_just_after_the_cut_belongs_to_after_and_just_before_to_before():
+    tr = trace_with(decay(.25)); pitch = np.zeros(600); pitch[399] = -.2; pitch[400] = -.3
+    tr['base_pitch_rad'] = pitch
+    peak = arms.describe(tr)['peak_abs_pitch_rad']
+    assert peak['before_cut'] == pytest.approx(.2) and peak['after_cut'] == pytest.approx(.3)
+
+
+def test_the_cut_tick_itself_is_in_after_and_a_larger_value_just_before_is_not():
+    """The tick before the cut holds the biggest value overall, so including it in `after` would show."""
+    tr = trace_with(decay(.25)); pitch = np.zeros(600); pitch[399] = -.4; pitch[400] = -.3
+    tr['base_pitch_rad'] = pitch
+    peak = arms.describe(tr)['peak_abs_pitch_rad']
+    assert peak['before_cut'] == pytest.approx(.4) and peak['after_cut'] == pytest.approx(.3)
+
+
+def test_pitch_per_unit_speed_is_the_plateau_pitch_over_the_entry_speed():
+    tr = trace_with(decay(.25, v0=.2)); tr['base_pitch_rad'] = np.full(600, -.22)
+    assert arms.describe(tr)['pitch_per_unit_entry_speed_rad_per_m_s'] == pytest.approx(-1.1)
+
+
 def test_the_tool_imports_no_simulator():
     source = Path(arms.__file__).read_text()
     assert 'import mujoco' not in source and 'onnxruntime' not in source
@@ -178,3 +219,22 @@ def test_numbers_in_the_results_document_agree_with_the_receipt():
     assert f"{100*r['share_of_euclidean_displacement_explained_by_policy_wheel_action']:.0f}%" in text
     for window in ('0-10', '5-25', '10-50'):
         assert f"{forced['tau_s_by_fit_window_ticks'][window]:.2f}" in text
+
+
+@needs_workstation_evidence
+def test_the_full_verdict_in_the_results_document_agrees_with_its_receipt():
+    verdict = ROOT/'evidence/career_contract_05/probe05_verdict_01/verdict.json'
+    if not verdict.is_file():
+        pytest.skip('verdict receipt not on this machine')
+    v = json.loads(verdict.read_text())
+    text = (ROOT/'docs/career_execution_results_04.md').read_text()
+    assert v['predictions'] == {'P1': 'MET', 'P2': 'REFUTED', 'P3': 'NOT_MET', 'P4': 'MET', 'P5': 'NOT_MET'}
+    for key in ('A_forced_zero_cmd0p2', 'B_forced_zero_cmd0p3'):
+        assert f"{v['tau_s'][key]:.3f}" in text
+    assert f"{v['p4_precondition']['entry_speed_ratio_B_over_A']:.2f}" in text
+    for name in 'ABC':
+        r = json.loads((ROOT/f'evidence/career_contract_05/probe05_run{name}_01/report.json').read_text())['analysis']
+        assert f"{r['entry_speed_m_s']:.4f}" in text
+        assert f"{r['final_euclidean_displacement_m']:.4f}" in text
+    assert sum(json.loads((ROOT/f'evidence/career_contract_05/probe05_run{n}_01/report.json').read_text())['actual_counts']['native_steps']
+               for n in ('A', 'B', 'C')) == 18000

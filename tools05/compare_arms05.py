@@ -74,6 +74,10 @@ def describe(trace, cut=CUT_TICK):
             'tau_s_by_fit_window_ticks': window_taus(speed, cut),
             'displacement_200_ticks': displacement(trace['boundary_xy_m'], cut),
             'ticks_until_speed_below_0p02': analyser.ticks_until_speed_below(speed[:len(trace['boundary_xy_m'])-1], cut),
+            'pitch_on_drive_plateau_rad': float(np.median(np.asarray(trace['base_pitch_rad'], dtype=float)[cut-50:cut])),
+            'peak_abs_pitch_rad': {'before_cut': float(np.abs(np.asarray(trace['base_pitch_rad'], dtype=float)[:cut]).max()),
+                                   'after_cut': float(np.abs(np.asarray(trace['base_pitch_rad'], dtype=float)[cut:]).max())},
+            'pitch_per_unit_entry_speed_rad_per_m_s': float(np.median(np.asarray(trace['base_pitch_rad'], dtype=float)[cut-50:cut]))/entry,
             'posture_ticks_20_to_50': posture_after(trace, cut, 20, 50),
             'posture_ticks_150_to_200': posture_after(trace, cut, 150, 200)}
 
