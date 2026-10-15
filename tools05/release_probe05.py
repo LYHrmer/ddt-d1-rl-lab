@@ -37,13 +37,15 @@ def predictions():
         {'id': 'P3', 'kind': 'secondary', 'metric': 'run A Euclidean displacement over 200 ticks after the cut',
          'threshold_m': probe.P3_DISPLACEMENT_BELOW_M, 'direction': 'below'},
         {'id': 'P4', 'kind': 'linearity', 'metric': 'tau(B) / tau(A)',
-         'range': list(probe.P4_RATIO_RANGE)},
+         'range': list(probe.P4_RATIO_RANGE),
+         'valid_only_if_entry_speed_ratio_B_over_A_is_outside': list(probe.P4_ENTRY_RATIO_EXCLUDED),
+         'otherwise': 'NOT_EVALUABLE'},
         {'id': 'P5', 'kind': 'formula', 'metric': 'predicted / measured path length, runs A and B',
          'range': list(probe.P5_RATIO_RANGE)},
     ]
 
 
-def build_receipt(static_report_path, contract=CONTRACT, root=ROOT):
+def build_receipt(static_report_path, contract=CONTRACT, root=ROOT, supersedes=None):
     static_report_path = Path(static_report_path)
     static = json.loads(static_report_path.read_text())
     if static.get('status') != 'PASS':
@@ -53,6 +55,13 @@ def build_receipt(static_report_path, contract=CONTRACT, root=ROOT):
     if static.get('probe_sha256') != probe.sha(probe.__file__):
         raise SystemExit('the static checks were run against a different probe than the current one')
     probe.check_frozen_inputs(probe.FROZEN_INPUTS, root)
+    superseded = None
+    if supersedes is not None:
+        old = Path(supersedes)
+        if not old.is_file():
+            raise SystemExit(f'the receipt to supersede does not exist: {old}')
+        superseded = {'path': str(old.resolve().relative_to(root)), 'sha256': probe.sha(old),
+                      'status_of_old_receipt': 'SUPERSEDED_BEFORE_ANY_PHYSICS_RAN'}
     own = Path(__file__).resolve()
     tests = root/'tests/test_probe05.py'
     checker = root/'tools05/check_probe05_static.py'
@@ -62,6 +71,7 @@ def build_receipt(static_report_path, contract=CONTRACT, root=ROOT):
         'created_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
         'contract': str(Path(contract).resolve().relative_to(root)),
         'contract_sha256': probe.sha(contract),
+        'supersedes': superseded,
         'kind': 'measurement, not training; 0 transitions',
         'single_question': ('with the legs under policy control, does forcing only the four wheel '
                             'actions to zero after the cut shorten the 04b decay time constant?'),
@@ -100,11 +110,12 @@ def build_receipt(static_report_path, contract=CONTRACT, root=ROOT):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--static-report', type=Path, required=True)
+    parser.add_argument('--supersedes', type=Path, help='an earlier release receipt this one replaces')
     parser.add_argument('--output', type=Path, required=True, help='must not already exist')
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit(f'Refusing to overwrite an existing release receipt: {args.output}')
-    receipt = build_receipt(args.static_report)
+    receipt = build_receipt(args.static_report, supersedes=args.supersedes)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open('x') as stream:
         stream.write(json.dumps(receipt, indent=2, ensure_ascii=False)+'\n')

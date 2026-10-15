@@ -40,6 +40,7 @@ P2_REFUTED_AT_OR_ABOVE_S = .41
 P3_DISPLACEMENT_BELOW_M = .05
 P4_RATIO_RANGE = (.75, 1.25)
 P5_RATIO_RANGE = (.8, 1.2)
+P4_ENTRY_RATIO_EXCLUDED = (.8, 1.25)     # B/A entry speeds this close cannot test linearity
 TAU_POLICY_ARM_S = .5804338711860841     # analysis receipt, 04b forward, policy wheel actions
 POOL_CAP_NATIVE = 18020
 
@@ -171,6 +172,23 @@ def _in(value, bounds):
     return value is not None and bounds[0] <= value <= bounds[1]
 
 
+def entry_speed_ratio(a, b):
+    """Entry speed of run B over run A, or None when either is missing."""
+    va, vb = (a or {}).get('entry_speed_m_s'), (b or {}).get('entry_speed_m_s')
+    return vb/va if va and vb is not None else None
+
+
+def p4_precondition(a, b):
+    """P4 asks whether tau depends on speed, so it needs two clearly different entry speeds."""
+    ratio = entry_speed_ratio(a, b)
+    if ratio is None:
+        return {'entry_speed_ratio_B_over_A': None, 'valid': False, 'reason': 'entry speed missing'}
+    low, high = P4_ENTRY_RATIO_EXCLUDED
+    return {'entry_speed_ratio_B_over_A': ratio, 'valid': not (low <= ratio <= high),
+            'reason': None if not (low <= ratio <= high) else
+            f'entry speeds differ by less than the frozen margin [{low}, {high}]'}
+
+
 def judge(a, b=None, c=None, fidelity_passed=True):
     """Verdicts for P1..P5 from the per-run analyses. Missing inputs are NOT_EVALUABLE."""
     out = {'P1': 'MET' if fidelity_passed else 'NOT_MET'}
@@ -184,7 +202,7 @@ def judge(a, b=None, c=None, fidelity_passed=True):
         out['P3'] = ('MET' if a['final_euclidean_displacement_m'] < P3_DISPLACEMENT_BELOW_M
                      else 'NOT_MET')
     tau_a, tau_b = _tau(a), _tau(b)
-    if tau_a and tau_b:
+    if tau_a and tau_b and p4_precondition(a, b)['valid']:
         out['P4'] = 'MET' if _in(tau_b/tau_a, P4_RATIO_RANGE) else 'NOT_MET'
     else:
         out['P4'] = 'NOT_EVALUABLE'
@@ -399,6 +417,8 @@ def main():
                'created_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
                'predictions': verdicts,
                'interpretation': interpretation(verdicts['P2'], verdicts['P3']),
+               'p4_precondition': p4_precondition(analyses['a'], analyses.get('b')),
+               'entry_speed_m_s': {k: (analyses.get(k) or {}).get('entry_speed_m_s') for k in ('a', 'b', 'c')},
                'tau_s': {'A_forced_zero_cmd0p2': _tau(analyses['a']), 'policy_arm_cmd0p2': TAU_POLICY_ARM_S,
                          'B_forced_zero_cmd0p3': _tau(analyses.get('b')),
                          'C_policy_arm_cmd0p3': tau_c},

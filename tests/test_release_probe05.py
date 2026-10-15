@@ -73,6 +73,14 @@ def test_predictions_are_taken_from_the_probe_constants_not_retyped():
     assert list(by_id) == ['P1', 'P2', 'P3', 'P4', 'P5']
 
 
+def test_the_p4_precondition_is_frozen_into_the_predictions():
+    """Revision 1 exists to freeze this; a receipt that dropped it would freeze nothing."""
+    p4 = {p['id']: p for p in release.predictions()}['P4']
+    assert tuple(p4['valid_only_if_entry_speed_ratio_B_over_A_is_outside']) == probe.P4_ENTRY_RATIO_EXCLUDED
+    assert p4['otherwise'] == 'NOT_EVALUABLE'
+    assert tuple(p4['range']) == probe.P4_RATIO_RANGE
+
+
 def test_release_refuses_to_overwrite_an_existing_receipt(tmp_path, monkeypatch, capsys):
     target = tmp_path/'release.json'; target.write_text('{}')
     monkeypatch.setattr(sys, 'argv', ['release', '--static-report', str(tmp_path/'s.json'),
@@ -84,9 +92,10 @@ def test_release_refuses_to_overwrite_an_existing_receipt(tmp_path, monkeypatch,
 
 @needs_workstation_evidence
 def test_the_full_receipt_freezes_every_input_the_probe_will_demand(tmp_path):
-    path = ROOT/'evidence/career_contract_05/probe05_static_02/report.json'
-    if not path.is_file():
+    reports = sorted((ROOT/'evidence/career_contract_05').glob('probe05_static_*/report.json'))
+    if not reports:
         pytest.skip('static report not on this machine')
+    path = reports[-1]      # the newest; a stale one must fail here, as the release itself would refuse it
     receipt = release.build_receipt(path)
     assert receipt['status'] == 'FROZEN_BEFORE_MEASUREMENT'
     assert receipt['frozen_inputs'] == probe.FROZEN_INPUTS
@@ -137,3 +146,29 @@ def test_the_receipt_declares_that_retries_and_seed_changes_are_not_allowed():
     assert "'retries_allowed': False" in source and "'seed_change_allowed': False" in source
     assert "'seed': probe.SEED" in source
     assert probe.SEED == 7001
+
+
+def test_superseding_a_receipt_that_does_not_exist_is_refused(tmp_path):
+    with pytest.raises(SystemExit, match='does not exist'):
+        release.build_receipt(static_report(tmp_path), supersedes=tmp_path/'absent.json')
+
+
+def test_superseding_records_the_old_receipt_and_its_digest(tmp_path):
+    """Uses an empty root so the build stops at the frozen-input check, after nothing is written."""
+    old = tmp_path/'old.json'; old.write_text('{}')
+    contract = tmp_path/'contract.md'; contract.write_text('x')
+    with pytest.raises(ValueError, match='missing'):
+        release.build_receipt(static_report(tmp_path), contract=contract, root=tmp_path, supersedes=old)
+
+
+@needs_workstation_evidence
+def test_the_real_receipt_names_what_it_supersedes(tmp_path):
+    reports = sorted((ROOT/'evidence/career_contract_05').glob('probe05_static_*/report.json'))
+    old = ROOT/'evidence/career_contract_05/probe05_release_01.json'
+    if not reports or not old.is_file():
+        pytest.skip('receipts not on this machine')
+    receipt = release.build_receipt(reports[-1], supersedes=old)
+    assert receipt['supersedes']['path'].endswith('probe05_release_01.json')
+    assert receipt['supersedes']['sha256'] == probe.sha(old)
+    assert receipt['supersedes']['status_of_old_receipt'] == 'SUPERSEDED_BEFORE_ANY_PHYSICS_RAN'
+    assert release.build_receipt(reports[-1])['supersedes'] is None

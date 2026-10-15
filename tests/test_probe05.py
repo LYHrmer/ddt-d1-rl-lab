@@ -183,8 +183,8 @@ def test_baseline_tau_equals_the_analysis_receipt():
 
 
 # --- judge --------------------------------------------------------------------
-def analysis(tau=.2, euclid=.03, ratio=1., available=200):
-    return {'decay_time_constant_s': {'ticks_10_to_50': tau}, 'ticks_after_cut_available': available,
+def analysis(tau=.2, euclid=.03, ratio=1., available=200, entry=.15):
+    return {'entry_speed_m_s': entry, 'decay_time_constant_s': {'ticks_10_to_50': tau}, 'ticks_after_cut_available': available,
             'final_euclidean_displacement_m': euclid,
             'first_order_stop': {'predicted_over_path': ratio}}
 
@@ -206,7 +206,7 @@ def test_p3_is_not_met_when_the_run_ended_before_200_ticks_after_the_cut():
 
 def test_p4_ratio_boundaries():
     for ratio, expected in ((.75, 'MET'), (1.25, 'MET'), (.7499, 'NOT_MET'), (1.2501, 'NOT_MET')):
-        out = probe.judge(analysis(tau=.2), analysis(tau=.2*ratio))
+        out = probe.judge(analysis(tau=.2), analysis(tau=.2*ratio, entry=.3))
         assert out['P4'] == expected, ratio
 
 
@@ -467,3 +467,32 @@ def test_the_probe_is_not_in_the_static_scan_because_it_does_step_physics():
     from test_static_guard import SCANNED
     assert 'probe_stop_factorisation05.py' not in {p.name for p in SCANNED}
     assert 'env.step(' in Path(probe.__file__).read_text()
+
+
+# --- P4 is only meaningful if the two entry speeds really differ --------------
+@pytest.mark.parametrize('ratio, valid', [(1.0, False), (.8, False), (1.25, False), (1.1, False),
+                                          (.7999, True), (1.2501, True), (1.5, True), (.5, True)])
+def test_p4_precondition_boundaries(ratio, valid):
+    out = probe.p4_precondition(analysis(entry=.1), analysis(entry=.1*ratio))
+    assert out['valid'] is valid, ratio
+
+
+def test_p4_is_not_evaluable_when_the_entry_speeds_are_too_close_even_if_tau_agrees():
+    assert probe.judge(analysis(tau=.2), analysis(tau=.2, entry=.15*1.1))['P4'] == 'NOT_EVALUABLE'
+    assert probe.judge(analysis(tau=.2), analysis(tau=.2, entry=.15*1.5))['P4'] == 'MET'
+
+
+def test_p4_precondition_with_missing_entry_speed_is_invalid_rather_than_an_error():
+    assert probe.p4_precondition(analysis(), {})['valid'] is False
+    assert probe.p4_precondition(None, analysis())['valid'] is False
+    assert probe.p4_precondition({'entry_speed_m_s': 0.}, analysis())['valid'] is False
+
+
+def test_the_entry_speed_ratio_is_b_over_a():
+    assert probe.entry_speed_ratio(analysis(entry=.1), analysis(entry=.2)) == pytest.approx(2.)
+
+
+def test_contract_text_states_the_p4_precondition_with_the_tool_constants():
+    text = (ROOT/'docs/career_execution_contract_05m.md').read_text()
+    assert probe.P4_ENTRY_RATIO_EXCLUDED == (.8, 1.25)
+    assert '[0.8, 1.25]' in text and 'NOT_EVALUABLE' in text
