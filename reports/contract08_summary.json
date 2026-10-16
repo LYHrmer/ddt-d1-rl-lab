@@ -1,0 +1,222 @@
+{
+  "format": "d1-contract08-publication-summary-v1",
+  "prepared_utc": "2026-10-16T04:33:34.123645+00:00",
+  "simulation_only": true,
+  "real_robot_validation": false,
+  "contract": "docs/career_execution_contract_08.md",
+  "addendum": "docs/career_execution_contract_08_addendum_a.md",
+  "single_change": "training steps 1,048,576 -> 8,388,608 on the frozen 03d configuration",
+  "equivalence": {
+    "preflight_rollouts": 8,
+    "scale_rollouts": 256,
+    "status": "PASS"
+  },
+  "training": {
+    "status": "COMPLETE",
+    "transitions": 8388608,
+    "wall_minutes": 108.07396616051665,
+    "late_return_change": {
+      "iterations": 2048,
+      "first_mean": 75.61163681500001,
+      "last_mean": 75.055087093,
+      "relative_change": -0.007360635815380263
+    }
+  },
+  "export_gate": {
+    "status": "FAIL",
+    "error": "ValueError: ONNX parity failed: Torch/ORT=1.3113021850585938e-06, SB3/Torch=1.2814998626708984e-06",
+    "diagnosis": {
+      "03d_1x": {
+        "max_abs_difference": 3.5762786865234375e-07,
+        "max_abs_unclipped_action": 1.5660377740859985,
+        "difference_over_eps_times_peak": 1.9156626038289009,
+        "max_abs_weight": 1.3868556022644043
+      },
+      "scale_8x": {
+        "max_abs_difference": 1.2814998626708984e-06,
+        "max_abs_unclipped_action": 6.793035984039307,
+        "difference_over_eps_times_peak": 1.5825030259309454,
+        "max_abs_weight": 3.309643268585205
+      }
+    },
+    "deployment_chain": "not verified: the C++ golden comparison needs the exporter metadata"
+  },
+  "pre_registered_verdict": {
+    "E1": "MET",
+    "P1": "NOT_MET",
+    "P2": "NOT_MET",
+    "P3": "MET",
+    "P4": "REPORTED",
+    "P5": "NOT_MET"
+  },
+  "qualification": {
+    "tasks_passed": 1,
+    "tasks_total": 3,
+    "early_failures": 1,
+    "overall": "FAIL"
+  },
+  "tasks": {
+    "forward_stop": {
+      "8x_passed": false,
+      "8x_blocking": "ended early: TERMINATED at policy tick 485 of 600, fall=True",
+      "1x_passed": false,
+      "1x_blocking": "stop_displacement_m 0.080583644 > 0.05"
+    },
+    "reverse_stop": {
+      "8x_passed": false,
+      "8x_blocking": "stable_vx_mae_m_s 0.080432294 > 0.06; stop_last_second_horizontal_speed_m_s 0.035798058 > 0.02; stop_displacement_m 0.058565436 > 0.05",
+      "1x_passed": true,
+      "1x_blocking": null
+    },
+    "turn_stop": {
+      "8x_passed": true,
+      "8x_blocking": null,
+      "1x_passed": false,
+      "1x_blocking": "stable_wz_mae_rad_s 0.10288167 > 0.08; stop_displacement_m 0.060764292 > 0.05"
+    }
+  },
+  "post_hoc_not_pre_registered": {
+    "what_each_task_did": {
+      "scale_8x": {
+        "forward_stop": {
+          "ticks": 485,
+          "ended_early": true,
+          "drive_last_second_speed_along_command_m_s": 0.062182744594684855,
+          "drive_last_second_pitch_rad": -0.1618223471204548,
+          "pitch_at_end_rad": -0.46626088258409254,
+          "peak_abs_pitch_after_cut_rad": 0.46626088258409254,
+          "after_cut": {
+            "euclidean_m": 0.41419357214060765,
+            "path_m": 0.4179661332877584,
+            "path_over_euclidean": 1.0091082078547324,
+            "x_direction_reversals": 1
+          }
+        },
+        "reverse_stop": {
+          "ticks": 600,
+          "ended_early": false,
+          "drive_last_second_speed_along_command_m_s": 0.28149239697833317,
+          "drive_last_second_pitch_rad": -0.027523178651202143,
+          "pitch_at_end_rad": -0.0726051360075539,
+          "peak_abs_pitch_after_cut_rad": 0.09865749186838231,
+          "after_cut": {
+            "euclidean_m": 0.05856543629102557,
+            "path_m": 0.16007665177250333,
+            "path_over_euclidean": 2.7332956417680285,
+            "x_direction_reversals": 4
+          }
+        },
+        "turn_stop": {
+          "ticks": 600,
+          "ended_early": false,
+          "drive_last_second_speed_along_command_m_s": null,
+          "drive_last_second_pitch_rad": -0.05956084301189994,
+          "pitch_at_end_rad": -0.05527394604255367,
+          "peak_abs_pitch_after_cut_rad": 0.0722554661274234,
+          "after_cut": {
+            "euclidean_m": 0.016677870554297654,
+            "path_m": 0.06524420903396799,
+            "path_over_euclidean": 3.9120227502398666,
+            "x_direction_reversals": 23
+          }
+        }
+      },
+      "03d_1x": {
+        "forward_stop": {
+          "ticks": 600,
+          "ended_early": false,
+          "drive_last_second_speed_along_command_m_s": 0.20140736681372357,
+          "drive_last_second_pitch_rad": 0.008875567464609869,
+          "pitch_at_end_rad": -0.02116695526856097,
+          "peak_abs_pitch_after_cut_rad": 0.02116695526856097,
+          "after_cut": {
+            "euclidean_m": 0.08058364437166654,
+            "path_m": 0.09664718851457807,
+            "path_over_euclidean": 1.1993400058803934,
+            "x_direction_reversals": 0
+          }
+        },
+        "reverse_stop": {
+          "ticks": 600,
+          "ended_early": false,
+          "drive_last_second_speed_along_command_m_s": 0.15988624527488987,
+          "drive_last_second_pitch_rad": -0.0501015505108595,
+          "pitch_at_end_rad": -0.025771278222895513,
+          "peak_abs_pitch_after_cut_rad": 0.05360979574773809,
+          "after_cut": {
+            "euclidean_m": 0.0163405234561888,
+            "path_m": 0.06940700274178035,
+            "path_over_euclidean": 4.2475385153890635,
+            "x_direction_reversals": 1
+          }
+        },
+        "turn_stop": {
+          "ticks": 600,
+          "ended_early": false,
+          "drive_last_second_speed_along_command_m_s": null,
+          "drive_last_second_pitch_rad": -0.009235318702752585,
+          "pitch_at_end_rad": 0.0008438600113787262,
+          "peak_abs_pitch_after_cut_rad": 0.00446732975308972,
+          "after_cut": {
+            "euclidean_m": 0.060764291619086246,
+            "path_m": 0.06266331843105763,
+            "path_over_euclidean": 1.0312523484002056,
+            "x_direction_reversals": 0
+          }
+        }
+      }
+    }
+  },
+  "budget": {
+    "used_native": 84230610,
+    "used_transitions": 8421376,
+    "cap": {
+      "transitions": 8454144,
+      "native": 84559440
+    },
+    "by_step": {
+      "preflight_native": 327680,
+      "training_native": 83886080,
+      "python_qualification_native": 16850,
+      "preflight_diagnosis_native": 0,
+      "onnx_golden_native": 0
+    }
+  },
+  "project_cumulative": {
+    "transitions": 13664256,
+    "native": 137162750,
+    "before_contract_08": {
+      "transitions": 5242880,
+      "native": 52932140,
+      "before_contract_05m": {
+        "transitions": 5242880,
+        "native": 52914120
+      },
+      "added_by_contract_05m": {
+        "transitions": 0,
+        "native": 18020
+      }
+    },
+    "added_by_contract_08": {
+      "transitions": 8421376,
+      "native": 84230610
+    }
+  },
+  "limits": [
+    "single seed 101",
+    "single configuration 03d",
+    "flat ground only",
+    "Python evaluator decides",
+    "deployment chain not verified"
+  ],
+  "receipt_sha256": {
+    "scale08_release_01.json": "a7859d45ccaf9d8bf2a4ff990da3a369a233cd738762ca3fdfa400899ab74178",
+    "scale08_preflight_01_launcher/report.json": "2b5263f2d5076ff96df1d5974893f6a932ba5b3303743a6f430af595d97aef8d",
+    "scale08_train_01_launcher/report.json": "afaec243d1924df0f5f9d757da4e0b297b6ebcef9d2b9c7335de023b7b3f1d26",
+    "scale08_python_eval_01/summary.json": "1329d96f337baa9d939338a039f15ebdeda8a0f12811ae0ba2bd0e8a6ffa0609",
+    "scale08_verdict_01/verdict.json": "ea154bad1540a87f90bd6b3b94b8428c4918d04defd9146d058fc0b0eee29fcf",
+    "scale08_export_diagnosis_01/report.json": "7f23520abec8c763be65b7797d13340a7b255c059fe04ef18e44c7fde44abd31",
+    "scale08_eval_description_01/report.json": "0178a11c78b572afee6af3a294111ec2fd18f7549b66250451b6eec2edf2df34"
+  },
+  "tool_sha256": "321ae8ba4a62804d137c300796791c0432acbd887ecb695383ef2860ef922a73"
+}

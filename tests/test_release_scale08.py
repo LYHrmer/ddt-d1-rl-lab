@@ -27,7 +27,9 @@ def static(tmp_path, **overrides):
     ('status', 'FAIL', 'not PASS'), ('native_integration_steps_executed', 10, 'ran physics'),
     ('training_started', True, 'ran physics'), ('new_entry_sha256', '0'*64, 'different new entry'),
     ('launcher_sha256', '0'*64, 'different launcher')])
-def test_each_refusal(tmp_path, field, value, message):
+def test_each_refusal(tmp_path, monkeypatch, field, value, message):
+    """Freeze only files that ship with the repository, so each refusal is reached in a clean clone too."""
+    monkeypatch.setattr(release, 'FROZEN_INPUTS', tuple(p for p in release.FROZEN_INPUTS if not p.startswith('evidence/')))
     with pytest.raises(SystemExit, match=message):
         release.build(static(tmp_path, **{field: value}))
 

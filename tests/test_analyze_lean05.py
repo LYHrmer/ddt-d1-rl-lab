@@ -139,8 +139,8 @@ def test_numbers_quoted_in_the_documents_agree_with_the_receipt():
     probe, run_a = r['wheels_forced_to_zero_release_state']['appendix_a_probe'], r['wheels_forced_to_zero_release_state']['contract_05m_run_a']
     assert f"{probe['tilt_rad']:.3f}" in results and f"{run_a['tilt_rad']:.3f}" in results
     summary = readme.split('## 当前结果')[0]
-    item4 = next(line for line in summary.splitlines() if line.startswith('4. '))
-    assert '形状未知' in item4
-    for sentence in item4.split('。'):                 # the old ratio may appear only as the thing corrected
+    lean_item = next(line for line in summary.splitlines() if '驱动相稳定在偏低的平台上' in line)
+    assert '形状未知' in lean_item
+    for sentence in lean_item.split('。'):                 # the old ratio may appear only as the thing corrected
         if '-1.11 到 -1.18' in sentence or '−1.11 到 −1.18' in sentence:
             assert '已更正' in sentence or '读过头' in sentence, sentence
