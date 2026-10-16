@@ -1,0 +1,42 @@
+{
+  "format": "d1-export-engineering10-summary-v1",
+  "status": "PASS",
+  "scope": "batch-one numerical deployment check; no new qualification",
+  "checkpoint_sha256": "e550f3fbe76770b5dd0857e1c6d384b16f1b5b8d5747deae769c6625db1a4abf",
+  "onnx_sha256": "d74b897e2d005a36985b9b70571a220d8e4f58189ec108f4e304a529d7eec290",
+  "entry_sha256": "6c17dbcf60b239e5bf211ad1bd03ec684cafe18da267d92a89fdfc9452c6a252",
+  "upstream_exporter_sha256": "1563d6a96dbd044d844b14a54ab273c754eb8272c0d8ec6ccda774182c6cb27a",
+  "cpp_binary_sha256": "62134e7c94fafaefcdee9f8325191b8f621cb3eb51f9ed2a167d68198469975d",
+  "fixtures": 64,
+  "sb3_single_vs_torch_max_abs_error": 0.0,
+  "torch_vs_python_ort_max_abs_error": 1.3113021850585938e-06,
+  "torch_vs_cpp_ort_max_abs_error": 1.3113021850585938e-06,
+  "python_ort_version": "1.23.2",
+  "cpp_ort_version": "1.10.0",
+  "batch_diagnostic": {
+    "batch_size_used_for_gate": 1,
+    "batch_size_diagnostic": 64,
+    "batch_vs_single_max_abs_error": 1.2814998626708984e-06,
+    "batch_diagnostic_used_for_gate": false
+  },
+  "absolute_limits": {
+    "sb3_vs_torch": 1e-06,
+    "torch_vs_ort": 1e-05
+  },
+  "historical_contract08_export_gate": "FAIL",
+  "historical_contract08_qualification": {
+    "tasks_passed": 1,
+    "tasks_total": 3,
+    "early_failures": 1,
+    "overall": "FAIL"
+  },
+  "new_training_transitions": 0,
+  "new_native_steps": 0,
+  "receipt_sha256": {
+    "metadata": "5a93301d889b9f0216de4e3719e64607a56ab398405a8177a4f935b894866190",
+    "new_entry_sidecar": "c0c9cd439f449a65e0b160a02dfabebca34d6d467d494b09b060af359a934f92",
+    "cpp_report": "6ace4bf14b6f9a0d7a572522945ab6025f66acbc78a4ef153105d6e4460fd61c",
+    "contract08_summary": "aced84380c69e8538f12fb2957e70da7d5ac160f48e239023a5108b6eeed5a7a"
+  },
+  "tool_sha256": "235d7d4ac0b078ee645287a906b63ce824bff9ef77733fbe6a895ccd85f02d55"
+}

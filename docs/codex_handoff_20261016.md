@@ -1,5 +1,7 @@
 # 2026-10-16 续接：合同 09 已按未完成关闭
 
+> 同日后续已完成[导出与监督工程优化](engineering_optimization_10.md)：新单样本导出入口让合同 08 完整最终权重通过 Python/C++ ORT 数值门，0 新训练或物理步；旧 08 FAIL 与 09 未完成结论不改。下一训练为[合同 10 草案](career_execution_contract_10.md)，尚未冻结、未启动。
+
 先读[合同 09 结果](career_execution_results_09.md)和[紧凑摘要](../reports/contract09_summary.json)。最新项目总账为 **18,504,192 transitions / 185,562,110 native**。以前的[交接文档](claude_handoff_20261011.md)保留历史过程，本页记录当前状态。
 
 ## 两个仓库

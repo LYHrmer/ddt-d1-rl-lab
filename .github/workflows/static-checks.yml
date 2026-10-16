@@ -20,6 +20,7 @@ on:
       - 'tools05/**'
       - 'tools08/**'
       - 'tools09/**'
+      - 'tools10/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
@@ -29,6 +30,7 @@ on:
       - 'tools05/**'
       - 'tools08/**'
       - 'tools09/**'
+      - 'tools10/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 
