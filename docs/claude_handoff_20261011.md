@@ -1,5 +1,7 @@
 # 2026-10-11 续接：DDT D1 自训与部署（合同 04 收尾）
 
+> **当前状态见 [2026-10-16 交接](codex_handoff_20261016.md)**：合同 09 在训练 57.3% 时触发内存停止门，已按未完成关闭；不得重跑、续训或用中间权重补资格评测。当前累计 18,504,192 transitions / 185,562,110 native。下文为历史过程，旧预算与“下一步”不代表当前授权。
+
 独立私有仓库：[LYHrmer/ddt-d1-rl-lab](https://github.com/LYHrmer/ddt-d1-rl-lab)，默认分支 `main`，传输沿用已验证的 SSH 443。
 
 合同 04 的两次有界训练（04a、04b）均已完成，**控制资格均为 0/3，整体不合格**，04b 另有 1 次跌倒。正式三臂×三 seed 未放行、未执行。先读本文、[合同 04 结果](career_execution_results_04.md)、[合同 04a](career_execution_contract_04a.md)、[合同 04b](career_execution_contract_04b.md)、[04b 附录 A](career_execution_contract_04b_addendum_a.md)，以及 [合同 04 当前总账](../evidence/career_contract_04/final_delivery_02.json)；[历史总账 01](../evidence/career_contract_04/final_delivery_01.json)原样保留。合同 03 的记录见[合同 03 结果](career_execution_results_03.md)与[其总账](../evidence/career_contract_03/final_delivery_01.json)，保持只读。**不要因为换窗口就重新启动训练。**

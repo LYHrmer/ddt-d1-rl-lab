@@ -1,6 +1,10 @@
-"""Tests for tools09/verify_scale09.py, written before any contract 09 result. No physics."""
+"""Contract 09 rules tested before results; completion regressions added after the RAM stop.
+
+No physics. The added cases cannot turn an incomplete training into a scientific result.
+"""
 from __future__ import annotations
 
+import copy
 import json
 from pathlib import Path
 import sys
@@ -15,7 +19,12 @@ for sub in ('tools08', 'tools09'):
 
 import verify_scale09 as verify  # noqa: E402
 
-PASS = {'equivalence': 'PASS'}
+STEPS = 8388608
+PASS = {'equivalence': 'PASS', 'kind': 'scale', 'trainer_returncode': 0,
+        'interrupted_by_launcher': False,
+        'trainer_result': {'status': 'COMPLETE', 'inputs_unchanged': True,
+                           'trained_transitions': STEPS,
+                           'actual_counts': {'policy_transitions': STEPS, 'native_steps': STEPS*10}}}
 REPLAY08 = ROOT/'evidence/career_contract_08/scale08_training_replay_01/report.json'
 EVAL08 = ROOT/'evidence/career_contract_08/scale08_python_eval_01'
 LAUNCH08 = ROOT/'evidence/career_contract_08/scale08_train_01_launcher/report.json'
@@ -73,6 +82,70 @@ def test_q3_needs_two_tasks_and_q4_needs_forward_to_finish():
 def test_a_failed_equivalence_gate_makes_every_prediction_not_evaluable():
     out = verify.judge(.3, 0, tasks(3), {'equivalence': 'FAIL'})
     assert out['E1'] == 'NOT_MET' and all(out[q] == 'NOT_EVALUABLE' for q in ('Q1', 'Q2', 'Q3', 'Q4', 'Q5'))
+
+
+@pytest.mark.parametrize('field, value', [
+    ('status', 'RAM_RESERVE_BELOW_3_GIB'), ('status', 'WALL_LIMIT'),
+    ('trained_transitions', 4807168), ('inputs_unchanged', False),
+])
+def test_incomplete_training_cannot_receive_predictions_even_if_every_task_passes(field, value):
+    report = copy.deepcopy(PASS)
+    report['trainer_result'][field] = value
+    out = verify.judge(.3, 0, tasks(3), report)
+    assert out['E1'] == 'MET' and out['TRAINING'] == 'NOT_MET'
+    assert all(out[q] == 'NOT_EVALUABLE' for q in ('Q1', 'Q2', 'Q3', 'Q4', 'Q5'))
+    assert 'training did not complete' in verify.interpretation(out)
+
+
+@pytest.mark.parametrize('field, value', [
+    ('trainer_returncode', 1), ('kind', 'preflight'), ('interrupted_by_launcher', True),
+    ('trainer_result', None),
+])
+def test_launcher_failures_and_preflight_are_not_complete_training(field, value):
+    report = copy.deepcopy(PASS)
+    report[field] = value
+    assert not verify.training_complete(report)
+
+
+def test_complete_label_with_partial_native_counts_is_rejected():
+    report = copy.deepcopy(PASS)
+    report['trainer_result']['actual_counts']['native_steps'] -= 10
+    assert not verify.training_complete(report)
+
+
+def test_equivalence_only_receipt_cannot_qualify():
+    assert verify.judge(None, None, {}, {'equivalence': 'PASS'})['Q1'] == 'NOT_EVALUABLE'
+
+
+def test_incomplete_cli_needs_no_replay_or_evaluation_and_refuses_overwrite(tmp_path, monkeypatch):
+    report = copy.deepcopy(PASS)
+    report['trainer_result']['status'] = 'RAM_RESERVE_BELOW_3_GIB'
+    launcher = tmp_path/'launcher.json'
+    launcher.write_text(json.dumps(report))
+    output = tmp_path/'verdict'
+    monkeypatch.setattr(sys, 'argv', ['verify_scale09.py', '--launcher-report', str(launcher),
+                                    '--output', str(output)])
+    assert verify.main() == 0
+    saved = (output/'verdict.json').read_bytes()
+    out = json.loads(saved)
+    assert out['qualification']['overall'] == 'NOT_EVALUATED'
+    assert out['qualification']['tasks_passed'] is None
+    assert out['readings']['last_quarter_mean_std'] is None
+    assert out['physics_steps_executed'] == 0
+    with pytest.raises(FileExistsError):
+        verify.main()
+    assert (output/'verdict.json').read_bytes() == saved
+
+
+def test_completed_cli_still_requires_replay_and_evaluation(tmp_path, monkeypatch):
+    launcher = tmp_path/'launcher.json'
+    launcher.write_text(json.dumps(PASS))
+    output = tmp_path/'verdict'
+    monkeypatch.setattr(sys, 'argv', ['verify_scale09.py', '--launcher-report', str(launcher),
+                                    '--output', str(output)])
+    with pytest.raises(SystemExit) as error:
+        verify.main()
+    assert error.value.code == 2 and not output.exists()
 
 
 def test_the_interpretation_follows_the_frozen_table():

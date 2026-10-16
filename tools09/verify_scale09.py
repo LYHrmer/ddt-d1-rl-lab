@@ -54,12 +54,30 @@ def drive_speeds(eval_dir):
     return out
 
 
+def training_complete(report):
+    """E1 alone does not establish completion of the frozen 8x budget."""
+    result = report.get('trainer_result') or {}
+    steps = release.launcher.PLANS['scale']['steps']
+    counts = result.get('actual_counts') or {}
+    return (report.get('kind') == 'scale'
+            and report.get('trainer_returncode') == 0
+            and report.get('interrupted_by_launcher') is False
+            and result.get('status') == 'COMPLETE'
+            and result.get('inputs_unchanged') is True
+            and result.get('trained_transitions') == steps
+            and counts.get('policy_transitions') == steps
+            and counts.get('native_steps') == steps*10)
+
+
 def judge(std, forward_ends, tasks, launcher_report, predictions=release.PREDICTIONS):
     by_id = {p['id']: p for p in predictions}
+    training = 'MET' if training_complete(launcher_report) else 'NOT_MET'
     if launcher_report.get('equivalence') != 'PASS':
-        return {'E1': 'NOT_MET'} | {p: 'NOT_EVALUABLE' for p in by_id}
+        return {'E1': 'NOT_MET', 'TRAINING': training} | {p: 'NOT_EVALUABLE' for p in by_id}
+    if training != 'MET':
+        return {'E1': 'MET', 'TRAINING': training} | {p: 'NOT_EVALUABLE' for p in by_id}
     passed = sum(t['passed'] for t in tasks.values())
-    return {'E1': 'MET',
+    return {'E1': 'MET', 'TRAINING': training,
             'Q1': 'MET' if std < by_id['Q1']['threshold'] else 'NOT_MET',
             'Q2': 'MET' if forward_ends <= by_id['Q2']['threshold'] else 'NOT_MET',
             'Q3': 'MET' if passed >= by_id['Q3']['threshold'] else 'NOT_MET',
@@ -68,6 +86,8 @@ def judge(std, forward_ends, tasks, launcher_report, predictions=release.PREDICT
 
 
 def interpretation(verdicts, table=release.INTERPRETATION):
+    if verdicts.get('TRAINING') == 'NOT_MET':
+        return 'not evaluable: training did not complete the frozen budget; no final-policy qualification'
     if verdicts.get('Q1') == 'NOT_MET':
         return table['Q1 not met']
     if verdicts.get('Q1') == 'MET':
@@ -78,27 +98,36 @@ def interpretation(verdicts, table=release.INTERPRETATION):
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--replay', type=Path, required=True, help='training replay report.json')
-    parser.add_argument('--eval-dir', type=Path, required=True)
+    parser.add_argument('--replay', type=Path, help='required for completed training: replay report.json')
+    parser.add_argument('--eval-dir', type=Path, help='required for completed training')
     parser.add_argument('--launcher-report', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True, help='must not already exist')
     args = parser.parse_args()
-    replay = json.loads(args.replay.read_text())
-    tasks = gates.task_results(gates.read_episodes(args.eval_dir))
     launcher_report = json.loads(args.launcher_report.read_text())
-    std, forward_ends = last_quarter_std(replay), last_quarter_forward_ends(replay)
+    inputs = {'launcher_report_sha256': sha(args.launcher_report)}
+    tasks, std, forward_ends, speeds = {}, None, None, None
+    qualification = {'tasks_passed': None, 'tasks_total': 3, 'early_failures': None,
+                     'overall': 'NOT_EVALUATED'}
+    if training_complete(launcher_report) and launcher_report.get('equivalence') == 'PASS':
+        if args.replay is None or args.eval_dir is None:
+            parser.error('completed training requires --replay and --eval-dir')
+        replay = json.loads(args.replay.read_text())
+        tasks = gates.task_results(gates.read_episodes(args.eval_dir))
+        std, forward_ends = last_quarter_std(replay), last_quarter_forward_ends(replay)
+        speeds = drive_speeds(args.eval_dir)
+        passed, early = sum(t['passed'] for t in tasks.values()), sum(t['early_failure'] for t in tasks.values())
+        qualification = {'tasks_passed': passed, 'tasks_total': 3, 'early_failures': early,
+                         'overall': gates.qualification_verdict(passed, 3, early, 3)}
+        inputs.update(replay_sha256=sha(args.replay), episodes_sha256=sha(args.eval_dir/'episodes.jsonl'))
     verdicts = judge(std, forward_ends, tasks, launcher_report)
-    passed = sum(t['passed'] for t in tasks.values())
-    early = sum(t['early_failure'] for t in tasks.values())
     report = {'format': 'd1-contract09-verdict-v1', 'created_utc': dt.datetime.now(dt.timezone.utc).isoformat(),
               'physics_steps_executed': 0, 'predictions': verdicts, 'interpretation': interpretation(verdicts),
               'readings': {'last_quarter_mean_std': std, 'last_quarter_forward_drive_early_ends': forward_ends,
-                           'drive_last_second_speed_m_s': drive_speeds(args.eval_dir)},
-              'qualification': {'tasks_passed': passed, 'tasks_total': 3, 'early_failures': early,
-                                'overall': gates.qualification_verdict(passed, 3, early, 3)},
+                           'drive_last_second_speed_m_s': speeds},
+              'training_status': (launcher_report.get('trainer_result') or {}).get('status'),
+              'qualification': qualification,
               'tasks': tasks, 'baseline_08': release.BASELINE_08,
-              'inputs': {'replay_sha256': sha(args.replay), 'episodes_sha256': sha(args.eval_dir/'episodes.jsonl'),
-                         'launcher_report_sha256': sha(args.launcher_report)},
+              'inputs': inputs,
               'tool_sha256': sha(__file__)}
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output/'verdict.json').write_text(json.dumps(report, indent=2, ensure_ascii=False)+'\n')

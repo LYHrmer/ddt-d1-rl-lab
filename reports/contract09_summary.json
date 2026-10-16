@@ -1,0 +1,104 @@
+{
+  "format": "d1-contract09-publication-summary-v1",
+  "prepared_utc": "2026-10-16T06:26:11.784544+00:00",
+  "status": "INCOMPLETE",
+  "simulation_only": true,
+  "real_robot_validation": false,
+  "contract": "docs/career_execution_contract_09.md",
+  "single_change": "PPO entropy coefficient 0.005 -> 0, everything else as contract 08",
+  "equivalence": {
+    "E0": "PASS",
+    "E1": "PASS",
+    "scale_rollouts_compared": 1
+  },
+  "training": {
+    "status": "RAM_RESERVE_BELOW_3_GIB",
+    "transitions": 4807168,
+    "planned_transitions": 8388608,
+    "fraction_completed": 0.57305908203125,
+    "finished_utc": "2026-10-16T06:16:09.591540+00:00",
+    "wall_minutes": 61.327491328399994,
+    "trainer_returncode": 1,
+    "inputs_unchanged": true,
+    "min_available_ram_bytes_rollout_samples": 3307237376,
+    "ram_sample_limit": "The step callback checks RAM every 64 calls but records the minimum only at rollout ends; the triggering sample is not retained."
+  },
+  "partial_checkpoint": {
+    "path": "scale09_train_01/partial_policy.zip",
+    "sha256": "d21969dad082c4e90576913738eaf57c07a81ea642d9050e2e93652b46aa2439",
+    "used_for_export_or_evaluation": false
+  },
+  "pre_registered_verdict": {
+    "E1": "MET",
+    "TRAINING": "NOT_MET",
+    "Q1": "NOT_EVALUABLE",
+    "Q2": "NOT_EVALUABLE",
+    "Q3": "NOT_EVALUABLE",
+    "Q4": "NOT_EVALUABLE",
+    "Q5": "NOT_EVALUABLE"
+  },
+  "qualification": {
+    "tasks_passed": null,
+    "tasks_total": 3,
+    "early_failures": null,
+    "overall": "NOT_EVALUATED"
+  },
+  "interpretation": "not evaluable: training did not complete the frozen budget; no final-policy qualification",
+  "subsequent_steps": {
+    "export": "NOT_EXECUTED_INCOMPLETE_TRAINING",
+    "cpp_golden": "NOT_EXECUTED_INCOMPLETE_TRAINING",
+    "python_qualification": "NOT_EXECUTED_INCOMPLETE_TRAINING",
+    "training_episode_replay": "NOT_EXECUTED_INCOMPLETE_TRAINING"
+  },
+  "budget": {
+    "used_transitions": 4839936,
+    "used_native": 48399360,
+    "cap": {
+      "transitions": 8421376,
+      "native": 84231760
+    },
+    "by_step": {
+      "preflight": {
+        "transitions": 32768,
+        "native": 327680
+      },
+      "scale_training": {
+        "transitions": 4807168,
+        "native": 48071680
+      },
+      "python_qualification_native": 0,
+      "closeout_native": 0
+    }
+  },
+  "project_cumulative": {
+    "transitions": 18504192,
+    "native": 185562110,
+    "before_contract_09": {
+      "transitions": 13664256,
+      "native": 137162750
+    },
+    "added_by_contract_09": {
+      "transitions": 4839936,
+      "native": 48399360
+    }
+  },
+  "frozen_inputs_checked": 15,
+  "protocol_inputs_checked": 18,
+  "receipt_sha256": {
+    "scale09_release_01.json": "b328d960be5b130600a0f9f7b84bc553f535565d1f8e6d84d14479ce2c75a422",
+    "scale09_preflight_01_launcher/report.json": "19fa351c5025184655048d969c870b0b57d4bea3e86231c0d2cc6505e86d2b7b",
+    "scale09_preflight_01/result.json": "f195692383bc297e8145a7613b58e47c280ef4a81e2de96d76f1560863451e75",
+    "scale09_train_01_launcher/report.json": "bfb9e9d20cba8222624386bb905a13b22c5145a4e1e3ad14a7e9e7a10a53d0cf",
+    "scale09_train_01/result.json": "06b2080f0dde95b1e2654902e78485f577567b7f94a78c0d9b4b561765159fd0",
+    "scale09_train_01/protocol.json": "8e2b6daf384ada6d0bbd5766b45750f07ecc5a44150a597be0fe97da6b30b71a",
+    "scale09_verdict_01/verdict.json": "284ab341b56c232a5ddac52891a45f4ebdfcc6a7354cc25901d098b680cbd295"
+  },
+  "physics_steps_executed_by_this_tool": 0,
+  "limits": [
+    "no retry or resume",
+    "partial policy is not the final policy",
+    "Q1-Q5 not evaluable; no conclusion about the entropy hypothesis",
+    "unused budget expires with this contract"
+  ],
+  "tool_sha256": "5915cd427a3e639aab9362be2aec3a44a14b07a4081d4486298f081e24bd5153"
+}
