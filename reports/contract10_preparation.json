@@ -1,0 +1,41 @@
+{
+  "format": "d1-contract10-preparation-v1",
+  "status": "FROZEN_BEFORE_TRAINING",
+  "created_utc": "2026-10-16T08:46:21.222498+00:00",
+  "frozen_inputs_count": 62,
+  "approved_budget": {
+    "transitions": 8421376,
+    "native": 84231760,
+    "qualification_native": 18000,
+    "authorised": true
+  },
+  "start_min_available_ram_bytes": 7516192768,
+  "single_attempt": true,
+  "resume_allowed": false,
+  "retries_allowed": false,
+  "local_tests_passed": 962,
+  "physics_steps_executed_by_preparation": 0,
+  "training_started_at_preparation": false,
+  "evidence": {
+    "release": {
+      "path": "evidence/career_contract_10/scale10_release_01.json",
+      "sha256": "fe5061395b6147ae55316d7eb030625576031316ae2f6912888fbbb3afac928f"
+    },
+    "static": {
+      "path": "evidence/career_contract_10/scale10_static_01/report.json",
+      "sha256": "c08c8840f8f9e90e3c23b827c9353c76a5b5f9ccfff1f982085eb114083ba8da"
+    },
+    "authorisation": {
+      "path": "evidence/career_contract_10/budget_authorisation_02.json",
+      "sha256": "16a2c30ad5bdac61f2c151add45ab52a58e2eb29c2f66246b1fc100594c366f9"
+    },
+    "historical_schema": {
+      "path": "evidence/engineering12/historical_schema_compatibility_01.json",
+      "sha256": "5c62ba18d684addd920dc0db06b9c3d4bfb45a60de968410bac242a96748086d"
+    },
+    "protected_integrity": {
+      "path": "evidence/engineering12/handoff_integrity_01/report.json",
+      "sha256": "c0c5a3bac6dd15ebbfd50abde801316915c5657ef837676beb89ee4521b05297"
+    }
+  }
+}

@@ -9,7 +9,7 @@
 
 **2026-10-16 最新：合同 09（熵系数设为 0）训练因 RAM 门停止，完成 57.3%，按未完成关闭。Q1–Q5 不可判定，资格未评测，不重跑或续训。** 见[结果](docs/career_execution_results_09.md)与[紧凑摘要](reports/contract09_summary.json)。
 
-同日的[工程优化](docs/engineering_optimization_10.md)已打通合同 08 完整最终权重的单样本 ONNX 数值链：原容差不变，SB3/Torch 差值 0，Python/C++ ORT 的 64 例最大差均约 `1.31e-6`。这使用新增导出入口，旧合同的 FAIL 与控制资格不变；下一轮训练的[合同 10](docs/career_execution_contract_10.md)仍是未冻结草案。
+同日的[工程优化](docs/engineering_optimization_10.md)已打通合同 08 完整最终权重的单样本 ONNX 数值链：原容差不变，SB3/Torch 差值 0，Python/C++ ORT 的 64 例最大差均约 `1.31e-6`。这使用新增导出入口，旧合同的 FAIL 与控制资格不变；下一轮训练的[合同 10](docs/career_execution_contract_10.md)已获新预算批准，执行前须通过冻结和 7 GiB 资源准入。
 
 1. **六次自训都没有通过平地低速资格**（03b–04b 依次 0/3、0/3、1/3、0/3、0/3，外加 03d 的 8 倍训练 1/3），正式三臂×三 seed 未放行。仅有仿真结果，没有实机验证。
 2. **训练量不是瓶颈（合同 08，8 倍训练）**：同配置、同种子、同超参，只把 03d 的训练放大到 8,388,608 步。新入口的前 1M 步与原训练逐位相同（256 个 rollout 全部一致），所以这是干净的单变量对照。训练回报在约 2 倍时就已走平（末 25 % 变化 -0.7 %），资格仍是 1/3，只是通过的任务换了，forward 还在停车窗口内跌倒。turn_stop 的"首次通过"主要靠来回抵消（路径/欧氏 3.91），不算停住的能力。回报更高、评测更差。离线重放全部 9,163 个训练回合（逐回合与真实环境核对一致）后发现：训练最后 1/4 里，向前行驶段内的跌倒从 13 次升到 43 次，转向同期变好；同时动作噪声 std 从 1× 附近的 0.36 一路涨到 0.76。两者在时间上相关，因果没有验证。
@@ -81,7 +81,7 @@
 - [独立复现教程](docs/tutorial/00_复现教程.md)，其中[第 5 章](docs/tutorial/05_合同04诊断与奖励设计.md)是完整的"诊断 → 单一假设 → 预注册 → 实验 → 判定（含被推翻）"闭环
 - [合同 08 结果：8 倍训练没有让 03d 通过资格](docs/career_execution_results_08.md)
 - [合同 09 结果：去掉熵奖励的训练因 RAM 门停止，未完成](docs/career_execution_results_09.md) / [事前冻结合同](docs/career_execution_contract_09.md)
-- [导出与监督工程修复](docs/engineering_optimization_10.md) / [下一训练合同 10 草案](docs/career_execution_contract_10.md)
+- [导出与监督工程修复](docs/engineering_optimization_10.md) / [下一训练合同 10](docs/career_execution_contract_10.md)
 - 有界合同：[08 规模训练](docs/career_execution_contract_08.md) 及其[附录 A](docs/career_execution_contract_08_addendum_a.md) / [04a](docs/career_execution_contract_04a.md) / [04b](docs/career_execution_contract_04b.md) / [04b 附录 A](docs/career_execution_contract_04b_addendum_a.md) / [05M 物理测量（已执行）](docs/career_execution_contract_05m.md) / [03](docs/career_execution_contract_03.md)
 - 草案与放弃的合同（保留作为"为什么没做"的记录）：[06 训练不足 vs 新项外溢（已放弃）](docs/career_execution_contract_06_draft.md) / [07M 前倾是不是速度的控制通道（草案，未冻结）](docs/career_execution_contract_07m_draft.md)
 - [当前交接：合同 09 已关闭](docs/codex_handoff_20261016.md)；历史交接：[04 及后续过程](docs/claude_handoff_20261011.md) / [03](docs/codex_handoff_20261009.md) / [04 之前](docs/claude_handoff_20261009.md)
@@ -112,4 +112,4 @@
 
 **没有确立的**：前倾与驱动平台为什么会出现（它们在 04b 1× 和 03d 8× 两个独立训练里都出现了，是否同一机制没有验证）；为什么 8× 出现强烈的方向偏置（forward 驱动 0.062 m/s，reverse 0.281 m/s，指令都是 0.2）。
 
-**熵奖励与前进退化之间的因果仍未验证**：合同 09 已实际尝试熵系数设 0，但只跑到 57.3%，没有到达预注册的最后 1/4 窗口，不能用已完成部分替代预测。[合同 10 草案](docs/career_execution_contract_10.md)准备了独立新预算与资源监督，尚未冻结或执行。[合同 07M 草案](docs/career_execution_contract_07m_draft.md)（测量前倾是不是速度的控制通道）仍未冻结。任何后续训练都先过零积分静态检查并产出事前冻结回执。导出方面已用独立新入口修复 batch 比较口径并通过数值检查；冻结旧导出器与合同 08 的原始 FAIL 保留。
+**熵奖励与前进退化之间的因果仍未验证**：合同 09 已实际尝试熵系数设 0，但只跑到 57.3%，没有到达预注册的最后 1/4 窗口，不能用已完成部分替代预测。[合同 10](docs/career_execution_contract_10.md)已获独立新预算批准，新增[完整执行链](docs/contract10_execution_pipeline.md)；实际执行仍须事前冻结和资源准入。[合同 07M 草案](docs/career_execution_contract_07m_draft.md)（测量前倾是不是速度的控制通道）仍未冻结。任何后续训练都先过零积分静态检查并产出事前冻结回执。导出方面已用独立新入口修复 batch 比较口径并通过数值检查；冻结旧导出器与合同 08 的原始 FAIL 保留。

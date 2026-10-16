@@ -1,4 +1,4 @@
-"""The proposed next budget is concrete, but a draft cannot start training."""
+"""An authorised plan still cannot start training before its separate freeze."""
 import json
 from pathlib import Path
 import sys
@@ -14,8 +14,8 @@ DRAFT = ROOT/'training/configs/contract10_supervisor_draft.json'
 
 def test_draft_budget_and_equivalence_are_the_declared_new_experiment():
     plan = json.loads(DRAFT.read_text())
-    assert plan['status'] == 'DRAFT_NOT_AUTHORISED'
-    assert plan['proposed_budget']['authorised'] is False
+    assert plan['status'] == 'AUTHORISED_PENDING_FREEZE'
+    assert plan['proposed_budget']['authorised'] is True
     assert plan['seed'] == 101 and plan['envs'] == 8
     assert plan['entry'] == 'tools09/train_d1_ppo09.py'
     assert plan['plans']['scale']['steps'] == 8388608
