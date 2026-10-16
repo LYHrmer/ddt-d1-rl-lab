@@ -126,3 +126,30 @@ def test_only_the_zero_delay_seed_7001_episode_of_each_task_is_read(tmp_path):
     (tmp_path/'episodes.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
     out = verify.read_episodes(tmp_path)
     assert {r['tag'] for r in out.values()} == {'the one'}
+
+
+# --- a task that ended early (added after the contract 08 result; conservative only) --
+def fallen(sequence='forward_stop', tick=485):
+    return {'sequence': sequence, 'delay_ticks': 0, 'reset_seed': 7001, 'failure': True, 'done_reason': 'TERMINATED',
+            'policy_transitions': tick, 'reference_thresholds_met': False, 'stop_displacement_m': None,
+            'stable_wz_mae_rad_s': None, 'peak_abs_roll_or_pitch_rad': .47, 'threshold_flags': {}}
+
+
+@needs_workstation_evidence
+def test_a_fallen_task_fails_and_counts_as_an_early_failure_without_reaching_the_gate_layer():
+    episodes = copy.deepcopy(verify.read_episodes(BASE_03D)); episodes['forward_stop'] = fallen()
+    out = verify.task_results(episodes)['forward_stop']
+    assert out['passed'] is False and out['early_failure'] is True and 'tick 485 of 600' in out['blocking_gate']
+
+
+@needs_workstation_evidence
+def test_an_early_task_the_evaluator_marked_as_passing_is_refused():
+    episodes = copy.deepcopy(verify.read_episodes(BASE_03D)); episodes['forward_stop'] = fallen()
+    episodes['forward_stop']['reference_thresholds_met'] = True
+    with pytest.raises(ValueError, match='ended early'):
+        verify.task_results(episodes)
+
+
+def test_p2_is_not_met_when_the_stop_window_was_never_reached():
+    new = tasks(); new['forward_stop']['stop_displacement_m'] = None
+    assert verify.judge(new, tasks(), {'relative_change': 0.}, PASS)['P2'] == 'NOT_MET'

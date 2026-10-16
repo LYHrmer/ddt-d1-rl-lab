@@ -45,7 +45,20 @@ def read_episodes(eval_dir):
 def task_results(episodes, gates=QUALIFICATION_GATES):
     out = {}
     for task in TASKS:
-        summary = task_gate_summary(episodes[task], gates)
+        episode = episodes[task]
+        if episode['failure'] or episode['done_reason'] != 'HORIZON_12S':
+            # The gate summary is for completed tasks, as in the contract 04 ledger: a task that
+            # ended early fails, and its stop metrics were never measured.
+            if episode['reference_thresholds_met']:
+                raise ValueError(f'{task}: ended early yet the evaluator marked it as passing')
+            out[task] = {'passed': False, 'gates_passed': None, 'gates_applicable': None,
+                         'blocking_gate': (f"ended early: {episode['done_reason']} at policy tick "
+                                           f"{episode['policy_transitions']} of 600, fall={episode['failure']}"),
+                         'stop_displacement_m': episode['stop_displacement_m'],
+                         'stable_wz_mae_rad_s': episode['stable_wz_mae_rad_s'], 'early_failure': True,
+                         'peak_abs_roll_or_pitch_rad': episode['peak_abs_roll_or_pitch_rad']}
+            continue
+        summary = task_gate_summary(episode, gates)
         passed = not summary['failed_gates']
         if passed is not bool(episodes[task]['reference_thresholds_met']):
             raise ValueError(f'{task}: gate summary disagrees with the evaluator flag')
@@ -79,7 +92,9 @@ def judge(new, base, late, launcher_report, predictions=release.PREDICTIONS):
     passed = sum(new[t]['passed'] for t in TASKS)
     out = {'E1': 'MET'}
     out['P1'] = 'MET' if passed >= by_id['P1']['threshold'] else 'NOT_MET'
-    out['P2'] = 'MET' if new['forward_stop']['stop_displacement_m'] < by_id['P2']['threshold'] else 'NOT_MET'
+    displacement = new['forward_stop']['stop_displacement_m']
+    # A task that ended before its stop window never stopped; that cannot count in its favour.
+    out['P2'] = 'NOT_MET' if displacement is None else ('MET' if displacement < by_id['P2']['threshold'] else 'NOT_MET')
     wz = new['turn_stop']['stable_wz_mae_rad_s']
     out['P3'] = 'NOT_EVALUABLE' if wz is None else ('MET' if wz < by_id['P3']['threshold'] else 'NOT_MET')
     out['P4'] = 'REPORTED' if late else 'NOT_EVALUABLE'
