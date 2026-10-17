@@ -1,0 +1,163 @@
+{
+  "format": "d1-comparison16-execution-summary-v1",
+  "created_utc": "2026-10-17T12:19:05.359529+00:00",
+  "status": "COMPLETE",
+  "verdict": "NO_DEMONSTRATED_BENEFIT",
+  "source_git_commit": "46da16047e50d9903c50e25988730462fc584797",
+  "source_files_bound": 86,
+  "experiment_code_or_settings_changed": false,
+  "owner_instructions": [
+    "授权继续",
+    "检查问题然后继续"
+  ],
+  "original_attempt": {
+    "root": "/home/lyh/ddt_ros2_ws",
+    "status": "FAIL",
+    "failed_stage": "preflight_control",
+    "reason": "Sandbox denied forkserver AF_UNIX listener.bind before the first worker started.",
+    "trained_transitions": 0,
+    "actual_counts": null,
+    "counts_note": "No counter receipt was returned. Unknown physical counts are not converted to zero or refunded.",
+    "retained_closed_unchanged": true,
+    "report_sha256": "944a6ede315b9af46b777082011ea4f71559cdf2685c46ca42e86b0baac8e70f",
+    "error_sha256": "3d74ac57ea93a1ea6aa08a7d980c02c5f4ae91e220c7f26e03fc9fb210d5f803"
+  },
+  "replacement": {
+    "root": "/home/lyh/ddt_comparison16_replacement_20261017",
+    "release_sha256": "48d8e4edb9303c01124b38441a4c6033c41bdbea0a7129a3507d4fe837f7d7f5",
+    "execution_outside_sandbox": true,
+    "socket_and_stdlib_forkserver_probes": "PASS; no model loaded or physics attempted in these probes",
+    "envs": 4,
+    "cpu_threads": 1,
+    "seed": 101,
+    "warm_start": false,
+    "teacher_policy": false,
+    "budget_max": {
+      "policy_transitions": 2166288,
+      "native_steps": 21662880,
+      "pd_updates": 10831440
+    },
+    "actual_counts": {
+      "policy_transitions": 2166288,
+      "native_steps": 21662880,
+      "pd_updates": 10831440
+    },
+    "actual_counts_scope": "Replacement only. The original failed attempt retains actual_counts=null.",
+    "wall_s": 2079.871116888011,
+    "minimum_observed_effective_bytes": 5298982912,
+    "stage_status": {
+      "preflight_control": "COMPLETE",
+      "preflight_velocity": "COMPLETE",
+      "train_control": "COMPLETE",
+      "train_velocity": "COMPLETE",
+      "eval_control": "COMPLETE",
+      "eval_velocity": "COMPLETE",
+      "compare": "COMPLETE"
+    },
+    "checkpoints_sha256": {
+      "control": "428ff0ce9e8e88e10dabf94801a57b88de7e76d07b42800553b69c7f590e4eff",
+      "velocity": "dbdb2f2b55c97ab76b1f6bc1973269a5f67e3a52792acae4eaede4cca42425ab"
+    },
+    "training_wall_s": {
+      "control": 982.621115869988,
+      "velocity": 982.2331818079983
+    },
+    "prefix_rollouts_compared": {
+      "control": 8,
+      "velocity": 8
+    },
+    "runtime_versions": {
+      "python": "3.10.12",
+      "torch": "2.12.1+cu130",
+      "sb3": "2.7.0",
+      "numpy": "2.2.6",
+      "gymnasium": "1.2.0",
+      "mujoco": "3.3.0"
+    },
+    "retry_or_resume_allowed": false
+  },
+  "comparison": {
+    "verdict": "NO_DEMONSTRATED_BENEFIT",
+    "scores": {
+      "control": {
+        "tracking": 0.18792910698773457,
+        "parking": 0.10179540113430537
+      },
+      "velocity": {
+        "tracking": 0.6156444521080257,
+        "parking": 0.13972889042007275
+      }
+    },
+    "relative_reductions": {
+      "tracking": -2.2759398582583934,
+      "parking": -0.3726444305251004
+    },
+    "score_deltas": {
+      "tracking": 0.4277153451202911,
+      "parking": 0.03793348928576738
+    },
+    "qualification_counts": {
+      "control": 3,
+      "velocity": 3
+    },
+    "gates": {
+      "all_six_full_horizons": true,
+      "no_fall_or_illegal_support": true,
+      "velocity_qualification_count_not_lower": true,
+      "tracking_relative_reduction_at_least_5pct": false,
+      "parking_relative_reduction_at_least_5pct": false
+    },
+    "scope": "one training seed101; three zero-delay reset7001 cases per arm; exploratory only"
+  },
+  "selection": "Keep aux_coef=0 control as the better candidate for this fixed pilot; do not adopt aux_coef=1.",
+  "qualification_scope": "Three Python SB3 deterministic zero-delay tasks, training seed101/reset7001 only.",
+  "full_release_qualification_claimed": false,
+  "onnx_cpp_ros_or_hardware_validation_performed": false,
+  "statistical_significance_or_generalization_claimed": false,
+  "additional_training_started": false,
+  "detailed_comparison": "local_comparison16_comparison.json",
+  "local_artifacts_base": "/home/lyh/ddt_comparison16_replacement_20261017/evidence/local_comparison16",
+  "local_artifacts_sha256": {
+    "prepared_01.json": "d555374fbc3a48aa98ffca37065aae6a57481c0038a917c605bcc66afd751706",
+    "static_01.json": "49205932947f2244494accb7a8e483f39bd90a061bc0178cd3abe72847c8ab1b",
+    "authorization_01.json": "635ea073c946e57a67764b383cec295b5214d363446270b14fd1b9b412a26047",
+    "release_01.json": "48d8e4edb9303c01124b38441a4c6033c41bdbea0a7129a3507d4fe837f7d7f5",
+    "replacement_provenance_01.json": "f02577a7296a1351013570b1a0581af57dbc3be2237316be0817c0aa31b99711",
+    "recovery_mesh_inputs.json": "78159dfe2ca2c8b92b4705e36fcf2074f95eaf23e059ccd1c12793fc8100ab8e",
+    "execution_01/report.json": "70f14bbfe31df5d04782fe5f670bab04dd713e2f5fc5beaf5caef9b4834dd940",
+    "execution_01/comparison.json": "1cab19b26ebd3810d6da9cb6f7de6d45f3c7fcf1d3491712e671e6198795728b",
+    "execution_01/preflight_control/protocol.json": "898121470996111ea97d1db1d882bb7b7b231543abffa12a45f3f236d0fc28cf",
+    "execution_01/preflight_control/result.json": "068c35d8d9ce99e1758e42f2fd47e479eb0b42c4c05f1c1671d3d3919f8cb0f0",
+    "execution_01/preflight_control/policy.zip": "823032c918e85a45fb0648b5f11581c6f263af26d151fc200b2ddc6594a2e29c",
+    "execution_01/preflight_control/ledger.jsonl": "4d35bc815d9842f5f6947402e097665685d6e1d75be4a80b32394cb895634540",
+    "execution_01/train_control/protocol.json": "98cca009da96990c2f4e208967b54b094088b650b205c70a34bef0f727d16f4b",
+    "execution_01/train_control/result.json": "b10e683a0aea1904ae4787f9b1e097924850da67bd9b7242cc87be5ada8a80ed",
+    "execution_01/train_control/policy.zip": "428ff0ce9e8e88e10dabf94801a57b88de7e76d07b42800553b69c7f590e4eff",
+    "execution_01/train_control/ledger.jsonl": "aab44a89a7fa5f77c0e4d8ebba6101bbf8ad6b3679b332f2381840443fa03446",
+    "execution_01/eval_control/protocol.json": "081f7bb7a9254fa9fe6d1c94cd1d2f0a76600e2400a90ff91c087d3ded6e49fa",
+    "execution_01/eval_control/report.json": "85c34d4c6bcf7490d7914ac44ce0a40309273e283ee0ce9a4b63ee625079450f",
+    "execution_01/eval_control/forward_stop.npz": "9d27da379f77337bcf601edb9f1968676af774e27dfcb87f4c53d7ec90579f56",
+    "execution_01/eval_control/reverse_stop.npz": "6b7639ead0d7d46eaf6afe6d4adf262a25529aab820de37789e2dec8b355e4ec",
+    "execution_01/eval_control/turn_stop.npz": "b27f468d69dec250fd9f59e1e82c5e5b6688fb01f47e8b1e10aa5d3ae8793a36",
+    "execution_01/preflight_velocity/protocol.json": "78229e325b7f0b89c43c9ffb20b3f23e61f3e4c77ef49fd186219d1d19fa4bf3",
+    "execution_01/preflight_velocity/result.json": "ac9dc196642cfccf3e9b2aaa86d5b8e470893d36175efd391a0bc0db79ed4337",
+    "execution_01/preflight_velocity/policy.zip": "1e8187d500ea076b1d7f0d85b109cc1d405e47fbc0ea1daae30bdb2ed2cf41f9",
+    "execution_01/preflight_velocity/ledger.jsonl": "2d8c0a5b0515842cb938554673a0f9bd8adb51165af314896a10e3d14470ac5a",
+    "execution_01/train_velocity/protocol.json": "561cc558eeeac7eae3bc244910b923e19c3f834d3b63d72a062802bfaaab3d46",
+    "execution_01/train_velocity/result.json": "1a8eb7674fdcb91a99bfe0c2d07a92dfd050bfadafda8099cd21653b5f71a827",
+    "execution_01/train_velocity/policy.zip": "dbdb2f2b55c97ab76b1f6bc1973269a5f67e3a52792acae4eaede4cca42425ab",
+    "execution_01/train_velocity/ledger.jsonl": "2535807f1bad111cfc64c2ad4d81fb690b45e4a1e24544d4994eb8c34946313e",
+    "execution_01/eval_velocity/protocol.json": "04f24c1a15a3439d3a989e7a6d32ce9f458ee7d04a17a096e1a9ed9ee8d953aa",
+    "execution_01/eval_velocity/report.json": "a861facbc6ef9bb3d002f9c475c7a54406f1a8e90e387aefb18ba4ca6d0284da",
+    "execution_01/eval_velocity/forward_stop.npz": "1393506c417b0c8fa77799c6a08d6c6a91bffe268b5e7edf398905c790df79e7",
+    "execution_01/eval_velocity/reverse_stop.npz": "c055d212837a34cc38722487004d3e30b275809727265b73c6c2dbcd96ff9b14",
+    "execution_01/eval_velocity/turn_stop.npz": "43773327e9f0dc8ecdcce66dc79c3ec4fb2c2c965ef5fb6a17c0a60f853ee84f"
+  },
+  "independent_postrun_review": {
+    "status": "PASS",
+    "counter_provenance_and_integrity": "86 frozen source identities; 21 registered stage artifacts; 16 worker closed snapshots; both formal 8-rollout prefixes; 7 completed stages; old failed attempt unchanged",
+    "metrics": "All six existing NPZ traces re-scored with original SHA-bound evaluator; individual metrics, scores, verdict and 3/3 nominal flags exactly match",
+    "extra_models_loaded": 0,
+    "extra_physics_steps": 0
+  }
+}
