@@ -1,6 +1,6 @@
 {
   "format": "d1-phase-learning-diagnostic14-v1",
-  "created_utc": "2026-10-17T10:00:19.877321+00:00",
+  "created_utc": "2026-10-17T10:06:51.286794+00:00",
   "physics_steps_executed": 0,
   "models_loaded": 0,
   "policy_weight_files_read": false,
@@ -477,7 +477,7 @@
                   "peak_abs_pitch_rad": 0.036799574137289154,
                   "reward_sum": 9.085646992330837,
                   "mean_reward_per_policy_tick": 0.09085646992330837,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -501,7 +501,7 @@
                   "peak_abs_pitch_rad": 0.02226577180726569,
                   "reward_sum": 24.355070229642884,
                   "mean_reward_per_policy_tick": 0.08118356743214294,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -525,7 +525,7 @@
                   "peak_abs_pitch_rad": 0.012674657813711791,
                   "reward_sum": 1.8427740971925053,
                   "mean_reward_per_policy_tick": 0.07371096388770021,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -549,7 +549,7 @@
                   "peak_abs_pitch_rad": 0.02116695526856097,
                   "reward_sum": 16.988833211408632,
                   "mean_reward_per_policy_tick": 0.09707904692233504,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               }
             ],
@@ -593,7 +593,7 @@
                   "peak_abs_pitch_rad": 0.036799574137289154,
                   "reward_sum": 9.085646992330837,
                   "mean_reward_per_policy_tick": 0.09085646992330837,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -617,7 +617,7 @@
                   "peak_abs_pitch_rad": 0.05878058948792943,
                   "reward_sum": 24.417034133516296,
                   "mean_reward_per_policy_tick": 0.08139011377838766,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -641,7 +641,7 @@
                   "peak_abs_pitch_rad": 0.05360979574773809,
                   "reward_sum": 2.1036013690734734,
                   "mean_reward_per_policy_tick": 0.08414405476293893,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -665,7 +665,7 @@
                   "peak_abs_pitch_rad": 0.03647614467383604,
                   "reward_sum": 17.245936682142833,
                   "mean_reward_per_policy_tick": 0.09854820961224477,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               }
             ],
@@ -709,7 +709,7 @@
                   "peak_abs_pitch_rad": 0.036799574137289154,
                   "reward_sum": 9.085646992330837,
                   "mean_reward_per_policy_tick": 0.09085646992330837,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -733,7 +733,7 @@
                   "peak_abs_pitch_rad": 0.025170988428945648,
                   "reward_sum": 11.056382058334115,
                   "mean_reward_per_policy_tick": 0.07370921372222744,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -757,7 +757,7 @@
                   "peak_abs_pitch_rad": 0.03872473693912896,
                   "reward_sum": 11.922243623887324,
                   "mean_reward_per_policy_tick": 0.07948162415924882,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -781,7 +781,7 @@
                   "peak_abs_pitch_rad": 0.00446732975308972,
                   "reward_sum": 2.0621881415922654,
                   "mean_reward_per_policy_tick": 0.08248752566369061,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -805,7 +805,7 @@
                   "peak_abs_pitch_rad": 0.00335262327367899,
                   "reward_sum": 16.413734501708184,
                   "mean_reward_per_policy_tick": 0.09379276858118962,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               }
             ],
@@ -1282,7 +1282,7 @@
                   "peak_abs_pitch_rad": 0.08520173025206462,
                   "reward_sum": 8.922770213874346,
                   "mean_reward_per_policy_tick": 0.08922770213874345,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1306,7 +1306,7 @@
                   "peak_abs_pitch_rad": 0.18173145236488644,
                   "reward_sum": 21.261162734901326,
                   "mean_reward_per_policy_tick": 0.07087054244967109,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1330,7 +1330,7 @@
                   "peak_abs_pitch_rad": 0.18645004524286882,
                   "reward_sum": 1.7462418072576125,
                   "mean_reward_per_policy_tick": 0.0698496722903045,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1389,7 +1389,7 @@
                   "peak_abs_pitch_rad": 0.08520173025206462,
                   "reward_sum": 8.922770213874346,
                   "mean_reward_per_policy_tick": 0.08922770213874345,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1413,7 +1413,7 @@
                   "peak_abs_pitch_rad": 0.11480382688489976,
                   "reward_sum": 23.03585855515131,
                   "mean_reward_per_policy_tick": 0.0767861951838377,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1437,7 +1437,7 @@
                   "peak_abs_pitch_rad": 0.023710753345831743,
                   "reward_sum": 1.7584046795354178,
                   "mean_reward_per_policy_tick": 0.07033618718141671,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1461,7 +1461,7 @@
                   "peak_abs_pitch_rad": 0.09865749186838231,
                   "reward_sum": 14.501594144325132,
                   "mean_reward_per_policy_tick": 0.08286625225328646,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               }
             ],
@@ -1505,7 +1505,7 @@
                   "peak_abs_pitch_rad": 0.08520173025206462,
                   "reward_sum": 8.922770213874346,
                   "mean_reward_per_policy_tick": 0.08922770213874345,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1529,7 +1529,7 @@
                   "peak_abs_pitch_rad": 0.1117085007514004,
                   "reward_sum": 11.381044710118445,
                   "mean_reward_per_policy_tick": 0.07587363140078963,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1553,7 +1553,7 @@
                   "peak_abs_pitch_rad": 0.06848630703128662,
                   "reward_sum": 11.802678008043685,
                   "mean_reward_per_policy_tick": 0.07868452005362457,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1577,7 +1577,7 @@
                   "peak_abs_pitch_rad": 0.062102811449143015,
                   "reward_sum": 1.9761586846612538,
                   "mean_reward_per_policy_tick": 0.07904634738645015,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               },
               {
@@ -1601,7 +1601,7 @@
                   "peak_abs_pitch_rad": 0.0722554661274234,
                   "reward_sum": 15.687869245555644,
                   "mean_reward_per_policy_tick": 0.08964496711746082,
-                  "saturation_events_per_policy_tick": 0.0
+                  "mean_saturated_joint_count_per_policy_tick": 0.0
                 }
               }
             ],
@@ -1624,7 +1624,7 @@
     "/home/lyh/ddt_ros2_ws/tools08/run_scale08.py": "e15e7cb8a874022071180d4335124a48cd62923602b0e3a1585fa5b9bfa0627b",
     "/home/lyh/ddt_ros2_ws/tools08/verify_scale08.py": "02061eac2ed28633c1c3c3d1bb573b6e39e7525f591e47c7c90a9b1b69e98277",
     "/home/lyh/ddt_ros2_ws/tools10/supervise_scale10.py": "f82e3d0255ad8ff7931ad8ddcfe3a6c235b5f50295b6c42e346b1a2a4a599a0b",
-    "/home/lyh/ddt_ros2_ws/tools14/analyze_phase_learning14.py": "2aaee6f0542cfb2768add2c3a642b403ebd6573324af97704ad7102aae78c392",
+    "/home/lyh/ddt_ros2_ws/tools14/analyze_phase_learning14.py": "0083537cfb1c3c05b572c3646f2bca0eeef57265365577a821f99e1748dd4b7e",
     "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_00.monitor.csv": "f1e0b3dbc777f57395dd367882cf3b0eea5e8b6c92d4ff7cab81e482c10d0c4c",
     "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_01.monitor.csv": "aa786d5d4a657cdb5968ce18f6b5680112106722689ac3a8b9022cabc4710807",
     "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_02.monitor.csv": "24e9ca1bc648a0a46e179da6257342235b3692418490b72a0b64ddc07ea8215c",

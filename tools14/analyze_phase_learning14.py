@@ -132,7 +132,7 @@ def window_result(trace, window):
                          'mean_abs_lateral_speed_m_s': float(np.abs(vy).mean()),
                          'peak_abs_pitch_rad': float(np.abs(np.asarray(trace['base_pitch_rad'])[sl]).max()),
                          'reward_sum': float(reward.sum()), 'mean_reward_per_policy_tick': float(reward.mean()),
-                         'saturation_events_per_policy_tick': float(np.asarray(trace['tau_saturation_count'])[sl].sum()/expected)}
+                         'mean_saturated_joint_count_per_policy_tick': float(np.asarray(trace['tau_saturation_count'])[sl].sum()/expected)}
     return result
 
 

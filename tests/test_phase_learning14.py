@@ -56,9 +56,9 @@ def test_turn_reversal_is_two_driving_directions_not_a_zero_command():
         'cut_zero_after_turn_right', 'stationary_after_turn_right']
 
 
-def test_saturation_is_events_per_tick_not_a_fraction_of_ticks():
+def test_saturation_is_mean_joint_count_not_a_fraction_of_ticks():
     result = analyzer.window_result(trace(), analyzer.phase_windows(SEQUENCE)[1])
-    assert result['metrics']['saturation_events_per_policy_tick'] == 2.
+    assert result['metrics']['mean_saturated_joint_count_per_policy_tick'] == 2.
     assert result['metrics']['mean_abs_vx_error_m_s'] == pytest.approx(.2)
     assert result['metrics']['reward_sum'] == 300.
 
