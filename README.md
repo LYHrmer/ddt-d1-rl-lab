@@ -68,7 +68,7 @@
 
 本轮两个仓库的三轮功能与验证汇总见[优化交付记录](docs/optimization_iterations_20261016.md)。
 
-用户提供的四个开源仓库与 RoboMaster 文章已完成[对照阅读](docs/upstream_reference_review_20261017.md)：记录源码依据、当前已具备的能力及值得验证的增量，未启动新训练。
+用户提供的六个开源仓库与 RoboMaster 文章已完成[对照阅读](docs/upstream_reference_review_20261017.md)：补充历史编码器的速度监督、非对称观测和有效配置审计等候选，记录源码依据及迁移边界，未启动新训练。
 
 后续已新增[完整历史日志的阶段诊断](docs/phase_learning14.md)与[发布器启动/故障回执修复](docs/watchdog_publisher14.md)，本轮只做离线核验，不产生新策略成绩。下一训练按用户选择先使用本机、接受更慢，见[低并行度准备草案](docs/local_training_plan14_draft.md)；[服务器估算](docs/training_server_plan_20261017.md)保留为备选，暂不租用。
 
