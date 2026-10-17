@@ -1,6 +1,6 @@
 # 两仓三轮优化交付
 
-本轮针对两个仓库交付三轮功能改动。工程通过与控制资格分开记录：D1 新策略尚未完成训练，合同 10 首次 E0 因沙箱 IPC 权限失败停止，不能宣称策略变好或资格通过。
+本轮针对两个仓库交付三轮功能改动，两仓各轮源提交的 CI 均通过。D1 的获准训练尝试已按未完成规则闭账：首次 E0 为零步骤 IPC 失败，明确批准环境例外后，`_02` 在完成 46.25% 时因 RAM 门停止。工程交付已完成；新策略的控制资格仍未评测，不能宣称策略变好。
 
 | 轮次 | D1 | wheel-legged-control-lab | 实际验证 |
 |---|---|---|---|
@@ -15,4 +15,6 @@
 - [D1 导出与监督修复](engineering_optimization_10.md)、[部署预检](deployment_preflight_11.md)、[冻结执行链](contract10_execution_pipeline.md)、[合同 10 失败结果](career_results_10.md)。
 - wheel [源码和日志完整性](https://github.com/LYHrmer/wheel-legged-control-lab/blob/main/docs/source_and_metrics_integrity_20261016.md)、[v27 环境与完成门](https://github.com/LYHrmer/wheel-legged-control-lab/blob/main/docs/b22_runtime_v27_20261016.md)、[v28 比较规则](https://github.com/LYHrmer/wheel-legged-control-lab/blob/main/docs/continuous_comparison_v28_20261016.md)。
 
-历史冻结代码、失败回执和用户结果保留。后续若对零步骤环境失败给予一次例外，须按[环境修订草案](career_execution_contract_10_environment_amendment.md)另行明确批准；原预算批准和 socket 探针批准不代替该决定。
+环境修订代码另见 `0784d45`，CI [39017796910](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/runs/39017796910) 通过；本机 999 tests 通过，干净源码归档 970 通过、29 项因未分发历史资产而跳过，新增 36 项均通过。修订经所有者对具体执行命令明确批准后冻结 72 项输入。E0 `_02` 完整通过；正式训练完成 3,879,424 transitions，947 个完整 rollout 无比较差异但不足 E1 要求，Q1–Q5 不可评估。清理及最终计数完整，没有执行导出、资格评测或重放。
+
+历史冻结代码、失败回执和用户结果保留；72 项冻结输入和 journal 81 项产物复核一致。合同 10 新消耗 3,912,192 transitions / 39,121,920 native，详见[最终摘要](../reports/contract10_amended_summary.json)。三轮功能及其验证已交付；后续训练需新的实验方案与预算，不沿用本次未消耗余额。

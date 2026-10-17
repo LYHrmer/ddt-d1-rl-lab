@@ -1,54 +1,44 @@
 {
   "format": "d1-contract10-execution-status-v1",
-  "observed_utc": "2026-10-17T08:51:38.603413+00:00",
-  "status": "RUNNING",
-  "active_stage": "scale",
+  "observed_utc": "2026-10-17T09:36:06.695369+00:00",
+  "status": "TRAINING_STOPPED",
+  "active_stage": null,
   "stages": {
     "preflight": "FINISHED",
-    "scale": "STARTED"
+    "scale": "FINISHED",
+    "verdict": "FINISHED"
   },
   "release_sha256": "d3a0ae0a2ba986ec4e9b5f3a2fa2dc58f159c601312885575d0543afe9e56e9c",
   "original_ipc_failure_preserved": true,
   "environment_exception_authorised": true,
   "preflight_passed": true,
   "formal_training_started": true,
+  "formal_training_complete": false,
+  "training_status": "RAM_RESERVE_BELOW_3_GIB",
   "planned_rollouts": 2048,
-  "live_training": {
-    "rollout": 240,
-    "transitions": 983040,
-    "elapsed_training_s": 817.6522951290244,
-    "transitions_per_s": 1202.2714372065423,
-    "actual_counts": {
-      "native_steps": 9830400,
-      "pd_updates": 4915200,
-      "policy_transitions": 983040,
-      "resets": 1640,
-      "forward_calls": 986328
-    },
-    "process_tree_rss_bytes": 6846345216,
-    "process_tree_uss_bytes": 3016650752,
-    "available_ram_bytes": 5212663808,
-    "reward_contribution_mean_per_tick": {
-      "vx_tracking": 0.03874546110092242,
-      "wz_tracking": 0.03318520519646341,
-      "alive": 0.005000000000000051,
-      "body_vy_squared": -6.320843097551607e-05,
-      "gravity_xy_squared": -0.00027498553724006423,
-      "height_error_squared": -0.000122925470882275,
-      "action_rate_mean_squared": -0.0004510641115230089,
-      "torque_sum_squared": -0.00047387216599524036,
-      "illegal_body_contact": 0.0,
-      "leg_pose_deviation_sum_squared": -0.0015375203604264635,
-      "standstill_tracking": 0.0006939911852372172
-    }
+  "complete_rollouts": 947,
+  "trained_transitions": 3879424,
+  "planned_transitions": 8388608,
+  "actual_counts": {
+    "native_steps": 38794240,
+    "pd_updates": 19397120,
+    "policy_transitions": 3879424,
+    "resets": 4701,
+    "forward_calls": 3888834
   },
-  "latest_resource_sample": {
-    "available_ram_bytes": 5185396736,
-    "cgroup_remaining_bytes": null,
-    "phase": "running",
-    "elapsed_s": 823.9007872949878,
-    "effective_available_bytes": 5185396736
+  "actual_counts_complete": true,
+  "qualification": "NOT_EVALUATED",
+  "predictions": {
+    "E1": "NOT_MET",
+    "TRAINING": "NOT_MET",
+    "Q1": "NOT_EVALUABLE",
+    "Q2": "NOT_EVALUABLE",
+    "Q3": "NOT_EVALUABLE",
+    "Q4": "NOT_EVALUABLE",
+    "Q5": "NOT_EVALUABLE"
   },
-  "qualification": "NOT_EVALUATED_WHILE_TRAINING",
-  "automatic_retries_allowed": false
+  "cleanup_complete": true,
+  "automatic_retries_allowed": false,
+  "terminal_summary": "reports/contract10_amended_summary.json",
+  "terminal_summary_sha256": "5183b5f2fff2ff608e47796ce0c50c5c947d12e24f0867715f2d4309a0559103"
 }

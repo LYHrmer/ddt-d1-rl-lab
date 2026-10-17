@@ -7,7 +7,7 @@
 
 ## 一页结论
 
-**2026-10-17 最新：合同 10 的环境例外已获明确批准，E0 `_02` 完整通过，新的 8 倍训练正在运行，尚无最终资格结果。** 首次 `_01` 的沙箱 IPC 失败与原始 null 计数完整保留。见[结果及当前状态](docs/career_results_10.md)、[首次失败摘要](reports/contract10_summary.json)和[带时间戳的运行快照](reports/contract10_execution_status.json)。
+**2026-10-17 最新：合同 10 的环境例外获批后，E0 `_02` 完整通过；正式训练在 3,879,424 / 8,388,608 transitions（46.25%）时因 RAM 保护停止，已按未完成关闭。** 最终计数和清理完整；Q1–Q5 不可评估，资格未评测，不重跑或续训。首次 `_01` 的沙箱 IPC 失败与原始 null 计数完整保留。见[结果](docs/career_results_10.md)、[最终摘要](reports/contract10_amended_summary.json)、[首次失败摘要](reports/contract10_summary.json)和[终态快照](reports/contract10_execution_status.json)。
 
 **2026-10-16 最新：合同 09（熵系数设为 0）训练因 RAM 门停止，完成 57.3%，按未完成关闭。Q1–Q5 不可判定，资格未评测，不重跑或续训。** 见[结果](docs/career_execution_results_09.md)与[紧凑摘要](reports/contract09_summary.json)。
 
@@ -76,7 +76,7 @@
 - **其中 32 项不依赖机器人模型，已接入 CI**（上方徽章）：校验每个发布配置都恰好是冻结 pilot03d 基线加**唯一一项**声明过的改动、奖励项的形状/连续性/梯度覆盖范围/最坏代价上界，以及 04b 没有继承 04a 的项。`robot_model_required: false`、0 物理步，clean clone 即可跑。需要构造环境的完整检查（04a 25 项、04b 30 项）仍在本机跑。
 - **跨语言一致性**：64 例真实 C++ ORT 1.10.0 黄金比对最大误差 4.77e-7（容差 1e-5，0 物理步）；12 s 独立 C++ 回放与 Python 复现到 5e-9（04a）与 8 位小数（04b），结构检查各 24/24。
 - **修复导出比较口径与训练监督入口**：新增单样本导出入口匹配实际 batch 1 部署，保留原阈值并记录 batch 64 数值差异；合同 08 权重已通过 Python/C++ ORT 的 64 例检查。新监督器严格核对预检、退出码、完整账本与进程组收尾，资源采样单独留存。见[工程结果](reports/export_engineering10_summary.json)与[说明](docs/engineering_optimization_10.md)。
-- **预算如实记账**：合同 08 结束时累计 13,664,256 transitions / 137,162,750 native；合同 09 加上预检与未完成训练的 4,839,936 / 48,399,360 后，**全项目累计 18,504,192 transitions / 185,562,110 native**（[05M](reports/contract05m_summary.json)、[08](reports/contract08_summary.json) 与 [09](reports/contract09_summary.json) 紧凑摘要由脚本从回执生成，并有测试核对预算加总）。失败步同样计入；总账由最终回执重算，不采用较早的 live_status。历史中含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
+- **预算如实记账**：合同 08 结束时累计 13,664,256 transitions / 137,162,750 native；合同 09 后为 18,504,192 / 185,562,110；合同 10 再加入 E0 与未完成训练的 3,912,192 / 39,121,920 后，**全项目累计 22,416,384 transitions / 224,684,030 native**（[05M](reports/contract05m_summary.json)、[08](reports/contract08_summary.json)、[09](reports/contract09_summary.json)、[10](reports/contract10_amended_summary.json)）。失败步同样计入；总账由最终回执重算，不采用较早的 live_status。历史中含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
 
 ## 阅读入口
 
@@ -116,4 +116,4 @@
 
 **没有确立的**：前倾与驱动平台为什么会出现（它们在 04b 1× 和 03d 8× 两个独立训练里都出现了，是否同一机制没有验证）；为什么 8× 出现强烈的方向偏置（forward 驱动 0.062 m/s，reverse 0.281 m/s，指令都是 0.2）。
 
-**熵奖励与前进退化之间的因果仍未验证**：合同 09 已实际尝试熵系数设 0，但只跑到 57.3%，没有到达预注册的最后 1/4 窗口，不能用已完成部分替代预测。[合同 10](docs/career_execution_contract_10.md)已获独立新预算批准，新增[完整执行链](docs/contract10_execution_pipeline.md)；实际执行仍须事前冻结和资源准入。[合同 07M 草案](docs/career_execution_contract_07m_draft.md)（测量前倾是不是速度的控制通道）仍未冻结。任何后续训练都先过零积分静态检查并产出事前冻结回执。导出方面已用独立新入口修复 batch 比较口径并通过数值检查；冻结旧导出器与合同 08 的原始 FAIL 保留。
+**熵奖励与前进退化之间的因果仍未验证**：合同 09 只跑到 57.3%，合同 10 `_02` 只跑到 46.25%，均未完成冻结预算，不能用已完成部分替代预注册预测。[完整执行链](docs/contract10_execution_pipeline.md)已按未完成分支关闭合同 10，剩余额度不授权重试。[合同 07M 草案](docs/career_execution_contract_07m_draft.md)（测量前倾是不是速度的控制通道）仍未冻结。任何后续训练都需要新的方案、预算、零积分静态检查和事前冻结回执。导出方面已用独立新入口修复 batch 比较口径并通过数值检查；冻结旧导出器与合同 08 的原始 FAIL 保留。

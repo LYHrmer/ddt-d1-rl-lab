@@ -1,0 +1,198 @@
+{
+  "format": "d1-contract10-amended-summary-v1",
+  "generated_utc": "2026-10-17T09:36:06.695369+00:00",
+  "status": "INCOMPLETE_CLOSED",
+  "training_complete": false,
+  "actual_counts_complete": true,
+  "release_sha256": "d3a0ae0a2ba986ec4e9b5f3a2fa2dc58f159c601312885575d0543afe9e56e9c",
+  "frozen_inputs_verified": 72,
+  "original_ipc_failure_preserved": true,
+  "environment_exception_authorised": true,
+  "preflight": {
+    "status": "COMPLETE",
+    "actual_counts": {
+      "native_steps": 327680,
+      "pd_updates": 163840,
+      "policy_transitions": 32768,
+      "resets": 523,
+      "forward_calls": 33822
+    },
+    "equivalence": "PASS",
+    "rollouts_compared": 8
+  },
+  "formal_training": {
+    "status": "RAM_RESERVE_BELOW_3_GIB",
+    "planned_transitions": 8388608,
+    "trained_transitions": 3879424,
+    "completion_percent": 46.246337890625,
+    "complete_rollouts": 947,
+    "partial_rollout_transitions": 512,
+    "actual_counts": {
+      "native_steps": 38794240,
+      "pd_updates": 19397120,
+      "policy_transitions": 3879424,
+      "resets": 4701,
+      "forward_calls": 3888834
+    },
+    "per_worker_counts": [
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 582,
+        "forward_calls": 486093
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 584,
+        "forward_calls": 486097
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 588,
+        "forward_calls": 486105
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 592,
+        "forward_calls": 486113
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 588,
+        "forward_calls": 486105
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 585,
+        "forward_calls": 486099
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 595,
+        "forward_calls": 486119
+      },
+      {
+        "native_steps": 4849280,
+        "pd_updates": 2424640,
+        "policy_transitions": 484928,
+        "resets": 587,
+        "forward_calls": 486103
+      }
+    ],
+    "elapsed_training_s": 3087.8945953040093,
+    "transitions_per_s": 1256.333038666452,
+    "finished_utc": "2026-10-17T09:29:28.759404+00:00",
+    "final_policy_available": false,
+    "partial_policy_only": true,
+    "partial_policy_sha256": "f2232c2980e18a8879d7b70cf56e786da9aaa59c92f23c2ea9564773d7101bee"
+  },
+  "supervision": {
+    "status": "FAIL",
+    "trainer_returncode": 1,
+    "stop_reason": "RESIDUAL_PROCESS_GROUP",
+    "equivalence": "INCOMPLETE",
+    "rollouts_compared": 947,
+    "rollouts_required": 1173,
+    "first_mismatch": null,
+    "cleanup_signals": [
+      "SIGINT"
+    ],
+    "cleanup_complete": true,
+    "inputs_unchanged": true
+  },
+  "stop_reason_interpretation": "Frozen trainer RAM guard stopped training. RESIDUAL_PROCESS_GROUP describes the subsequent successful SIGINT cleanup of its remaining process group, not a different primary training failure.",
+  "resources": {
+    "sample_count": 6172,
+    "supervisor_minimum_available_bytes": 3226914816,
+    "trainer_rollout_end_minimum_available_bytes": 3289874432,
+    "below_reserve_samples_observed": 0,
+    "exact_ram_guard_trigger_sample_persisted": false,
+    "peak_process_tree_rss_bytes": 6854590464,
+    "peak_process_tree_uss_bytes": 3025121280,
+    "limitations": "Trainer on-step RAM checks do not save their triggering sample. Rollout-end trainer and 0.5-second supervisor samples did not capture a value below 3 GiB. RSS includes shared pages counted in multiple processes; it does not establish a leak or identify external memory consumers."
+  },
+  "predictions": {
+    "E1": "NOT_MET",
+    "TRAINING": "NOT_MET",
+    "Q1": "NOT_EVALUABLE",
+    "Q2": "NOT_EVALUABLE",
+    "Q3": "NOT_EVALUABLE",
+    "Q4": "NOT_EVALUABLE",
+    "Q5": "NOT_EVALUABLE"
+  },
+  "qualification": {
+    "tasks_passed": null,
+    "tasks_total": 3,
+    "early_failures": null,
+    "overall": "NOT_EVALUATED"
+  },
+  "post_training_stages_executed": [],
+  "accounting": {
+    "format": "d1-contract10-accounting-v1",
+    "approved_cap": {
+      "transitions": 8421376,
+      "native": 84231760,
+      "qualification_native": 18000,
+      "authorised": true
+    },
+    "known_actual": {
+      "transitions": 3912192,
+      "native": 39121920
+    },
+    "pools": {
+      "preflight": {
+        "native": 327680,
+        "transitions": 32768,
+        "receipt_sha256": "c1851814a906b169bca7c98501712f794ff471bd0723cf50ec13eb2e93c49de2"
+      },
+      "scale": {
+        "native": 38794240,
+        "transitions": 3879424,
+        "receipt_sha256": "eed7bd182f883a6fce1b51ba403cd156103910bf95af374a2a08fdbdee81ce22"
+      }
+    },
+    "unknown_actual_pools": [],
+    "actual_complete": true,
+    "project_cumulative_before": {
+      "transitions": 18504192,
+      "native": 185562110
+    },
+    "project_known_at_least": {
+      "transitions": 22416384,
+      "native": 224684030
+    },
+    "unspent_budget_is_not_retry_authorisation": true
+  },
+  "total_actual_pd_updates": 19560960,
+  "unused_cap": {
+    "transitions": 4509184,
+    "native": 45109840
+  },
+  "automatic_retries_allowed": false,
+  "resume_allowed": false,
+  "unused_budget_is_not_retry_authorisation": true,
+  "source_sha256": {
+    "evidence/career_contract_10/scale10_release_02.json": "d3a0ae0a2ba986ec4e9b5f3a2fa2dc58f159c601312885575d0543afe9e56e9c",
+    "evidence/career_contract_10/environment_amendment_owner_01.json": "42fc474e39078f3c6d75053fcc97584a304d025da31128bf27218273fae0df39",
+    "evidence/career_contract_10/execution_02/journal.json": "163823cc39be738c46034c192362ddd31e574ed978a08d583345540d6ea1face",
+    "evidence/career_contract_10/scale10_preflight_02/result.json": "c1851814a906b169bca7c98501712f794ff471bd0723cf50ec13eb2e93c49de2",
+    "evidence/career_contract_10/scale10_train_02/result.json": "eed7bd182f883a6fce1b51ba403cd156103910bf95af374a2a08fdbdee81ce22",
+    "evidence/career_contract_10/scale10_train_02_supervisor/report.json": "a64c5713a774bc58cbb344a5dc1097fbca05a17506322917b25f9677033284e8",
+    "evidence/career_contract_10/scale10_train_02_supervisor/resources.jsonl": "a9851e708c5ed8b394886d9838ee284216d7af983b842194e58eed89710bda4a",
+    "evidence/career_contract_10/scale10_verdict_02/verdict.json": "eaf48bbd3ce1d670e8c6de299d6e5b7305c331c9adfaeb4105d1a4055e006b94"
+  },
+  "journal_artifacts_verified": 81
+}
