@@ -2,6 +2,7 @@
 from pathlib import Path
 from types import SimpleNamespace
 import copy
+import json
 import signal
 import sys
 
@@ -158,6 +159,36 @@ def test_frozen_source_requires_commit_and_unchanged_bytes(tmp_path, monkeypatch
 def test_total_budget_includes_preflights_probe_and_holdout():
     assert common.budget() == common.expected_counts(2228088)
     assert sum(item['transitions'] for name, item in common.STAGES.items() if name.startswith(('preflight_', 'train_'))) == 2162688
+
+
+def test_prior_artifacts_resolve_from_the_recorded_evidence_base(tmp_path, monkeypatch):
+    monkeypatch.setattr(common, 'ROOT', tmp_path)
+    monkeypatch.setattr(common, 'check_sources', lambda proof: None)
+    monkeypatch.setattr(common.provenance17, 'check_sources', lambda proof: None)
+    checkpoint = tmp_path/'previous/policy.zip'
+    checkpoint.parent.mkdir()
+    checkpoint.write_bytes(b'completed checkpoint')
+    protocol = checkpoint.parent/'protocol.json'
+    protocol.write_text('{}')
+    monkeypatch.setattr(common.provenance17, 'load_completed_control',
+                        lambda _: ({}, {}, {'trained_transitions': 1048576}, checkpoint))
+    base = tmp_path/'evidence/closeout17'
+    base.mkdir(parents=True)
+    original = base/'owner_authorization_01.json'
+    original.write_text('real prior receipt')
+    manifest = {original.name: common.sha(original)}
+    (base/'release_01.json').write_text(json.dumps({'source_identity': {}}))
+    summary = tmp_path/'reports/closeout17_20261018.json'
+    summary.parent.mkdir()
+    summary.write_text(json.dumps({'local_artifacts_base': str(base), 'local_artifacts_sha256': manifest}))
+    original_sha = common.sha
+    monkeypatch.setattr(common, 'sha', lambda path: '0321b79882cdb784d03703dbb748223b3a027dda726cbe957e489cfe6414c935'
+                        if Path(path) == summary else original_sha(path))
+    plan = {'source_identity': {}, 'training_root': str(checkpoint.parent),
+            'base_checkpoint': {'path': str(checkpoint), 'sha256': common.sha(checkpoint), 'trained_transitions': 1048576},
+            'base_protocol': {'path': str(protocol), 'sha256': common.sha(protocol)},
+            'old_closeout_artifacts_sha256': manifest}
+    common.verify_inputs(plan)
 
 
 @pytest.mark.parametrize('signum', [signal.SIGINT, signal.SIGTERM])

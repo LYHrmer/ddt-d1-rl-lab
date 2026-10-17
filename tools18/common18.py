@@ -97,10 +97,15 @@ def verify_inputs(plan):
     summary_path = ROOT/'reports/closeout17_20261018.json'
     require(sha(summary_path) == '0321b79882cdb784d03703dbb748223b3a027dda726cbe957e489cfe6414c935',
             'closed closeout17 summary changed')
-    require(plan['old_closeout_artifacts_sha256'] == read_json(summary_path)['local_artifacts_sha256'],
+    summary = read_json(summary_path)
+    require(plan['old_closeout_artifacts_sha256'] == summary['local_artifacts_sha256'],
             'closed artifact proof differs')
+    base = Path(summary['local_artifacts_base']).resolve()
+    require(base == ROOT/'evidence/closeout17', 'closed artifact base differs')
     for name, digest in plan['old_closeout_artifacts_sha256'].items():
-        require(sha(ROOT/name) == digest, 'closed closeout17 artifact changed: ' + name)
+        path = base/name
+        require(not Path(name).is_absolute() and path.resolve().is_relative_to(base), 'unsafe closed artifact path')
+        require(sha(path) == digest, 'closed closeout17 artifact changed: ' + name)
     provenance17.check_sources(read_json(ROOT/'evidence/closeout17/release_01.json')['source_identity'])
     return old_release, protocol, result, checkpoint
 
