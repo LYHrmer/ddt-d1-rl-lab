@@ -25,6 +25,7 @@ on:
       - 'tools12/**'
       - 'tools13/**'
       - 'tools14/**'
+      - 'tools15/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
@@ -39,6 +40,7 @@ on:
       - 'tools12/**'
       - 'tools13/**'
       - 'tools14/**'
+      - 'tools15/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 
@@ -82,3 +84,37 @@ jobs:
         with:
           name: contract04-ci-static-report
           path: ci_static_report/report.json
+
+  cpu-velocity-candidate:
+    runs-on: ubuntu-22.04
+    env:
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      PYTHONPATH: training
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install CPU numerical dependencies
+        run: |
+          python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
+          python -m pip install --quiet 'stable-baselines3==2.7.0' 'gymnasium==1.2.0' 'mujoco==3.3.0' 'onnx==1.18.0' 'onnxruntime==1.23.2' 'numpy<3' pytest
+
+      - name: Verify labels, PPO auxiliary update and complete export graph
+        # Export configures inter-op threads before any numerical work in its
+        # process; do not depend on resetting Torch global state after PPO tests.
+        run: |
+          python -m pytest tests/test_velocity_labels15.py tests/test_velocity_policy15.py -q
+          python -m pytest tests/test_export_velocity15.py -q
+
+      - name: Export a random numerical fixture, no robot or training
+        run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: velocity15-numerical-fixture
+          path: ci_velocity15_fixture/

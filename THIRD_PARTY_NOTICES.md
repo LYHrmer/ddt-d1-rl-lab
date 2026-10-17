@@ -1,6 +1,6 @@
 # 第三方资产与上游许可证声明
 
-本仓库只发布**自写代码与文档**（MIT，见 [LICENSE](LICENSE)）。D1 机器人模型、mesh、URDF/xacro、原配 ONNX 策略、训练权重、依赖安装目录与大型逐步轨迹**均不在本仓库内**，必须另行从提供方取得。仅凭 clone 无法启动机器人。
+本仓库发布**自写代码与文档**（MIT，见 [LICENSE](LICENSE)），以及第 7 节注明来源和许可的少量改编代码。D1 机器人模型、mesh、URDF/xacro、原配 ONNX 策略、训练权重、依赖安装目录与大型逐步轨迹**均不在本仓库内**，必须另行从提供方取得。仅凭 clone 无法启动机器人。
 
 下表是本仓库每一类文件的来源与许可状态，逐项核对过（155 个受跟踪文件）。
 
@@ -8,7 +8,7 @@
 
 | 路径 | 内容 |
 |---|---|
-| `training/d1_rl/` | 环境、接口、任务 03c/03d/04a/04b、工厂与委托链 |
+| `training/d1_rl/`（除第 7 节的改编方法） | 环境、接口、任务 03c/03d/04a/04b、工厂与委托链，以及本地候选模块 |
 | `training/configs/` | pilot03b/03c/03d/04a/04b 配置与接口 schema |
 | `tools/`、`tools04/` | 训练/导出/评测/静态检查/离线诊断/探针/总账工具 |
 | `runtime03/`（除下述上游外）、`runtime04/` | 独立 C++ 运行器、ROS 启动入口、部署计划、运行期 schema |
@@ -48,7 +48,7 @@
 
 ## 5. 运行期依赖（不随仓库分发）
 
-Ubuntu 22.04 / ROS 2 Humble、MuJoCo 3.3.0（Apache-2.0）、C++ ONNX Runtime 1.10.0（MIT）、PyTorch、Stable-Baselines3、Gymnasium、NumPy、ONNX、onnxruntime、psutil。各自许可证以其分发为准；本仓库不包含其二进制或源码。清单见 `training/DEPENDENCIES03.md`。
+Ubuntu 22.04 / ROS 2 Humble、MuJoCo 3.3.0（Apache-2.0）、C++ ONNX Runtime 1.10.0（MIT）、PyTorch、Stable-Baselines3、Gymnasium、NumPy、ONNX、onnxruntime、psutil。各自许可证以其分发为准；除第 7 节的方法改编外，本仓库不分发这些依赖的源码或二进制。清单见 `training/DEPENDENCIES03.md`。
 
 ## 6. 成绩归属边界
 
@@ -56,3 +56,7 @@ Ubuntu 22.04 / ROS 2 Humble、MuJoCo 3.3.0（Apache-2.0）、C++ ONNX Runtime 1.
 - 旧仓库 [wheel-legged-control-lab](https://github.com/LYHrmer/wheel-legged-control-lab) 是**独立的另一条 git 历史**（根提交不同、无共同祖先）。两套模型的成绩不可拼接。该仓库中 77 份冻结文件与用户结果在本项目中仅作**只读哈希校验**对象，本项目从未修改它们。
 
 发现任何归属或许可问题，请提 issue；本仓库会立即移除相应内容。
+
+## 7. Stable-Baselines3 PPO 更新方法的改编
+
+`training/d1_rl/velocity_policy15.py` 的 `AuxiliaryVelocityPPO.train()` 改编自 [Stable-Baselines3 v2.7.0 的 PPO.train](https://github.com/DLR-RM/stable-baselines3/blob/v2.7.0/stable_baselines3/ppo/ppo.py)，Copyright (c) 2019 Antonin Raffin，MIT 许可。本地仅支持声明的 CPU/连续动作/字典观测合同，并在 PPO 总损失加入速度监督 MSE；并非完全自写算法实现。完整版权与许可条文保存在 [licenses/stable-baselines3-MIT.txt](licenses/stable-baselines3-MIT.txt)。

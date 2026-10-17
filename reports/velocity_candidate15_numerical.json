@@ -1,0 +1,94 @@
+{
+  "format": "d1-velocity-actor-numerical-fixture-v15",
+  "status": "PASS",
+  "artifact_role": "numerical_fixture",
+  "release_ready": false,
+  "qualification_eligible": false,
+  "completed_checkpoint_provenance_checked": false,
+  "checkpoint_loaded_by_exporter": false,
+  "training_started": false,
+  "physics_steps_executed": 0,
+  "robot_models_constructed": 0,
+  "entry_sha256": "5fae5776fe3a4207acb61ffd098dd3d88f62880f19b0f23b66f3b27ee277f48e",
+  "error": null,
+  "history_order": "oldest_to_newest_previous_only",
+  "full_actor_path": "obs+history -> encoder -> current57+estimated_velocity3 -> actor -> action_head -> clip",
+  "absolute_limits": {
+    "sb3_vs_torch": 1e-06,
+    "torch_vs_ort": 1e-05
+  },
+  "cxx_ort_1_10_status": "NOT_TESTED",
+  "finite_inputs_required_by_runtime": true,
+  "policy_state_sha256": "9f639c9ba189cfeb8ba581553fdbf0f2485ad32b12af378e49b9df23a3d79597",
+  "policy_type": "d1_rl.velocity_policy15.VelocityActorCriticPolicy",
+  "policy_source_sha256": "02a0618d82799c5bcaa5249bf922536501ddf479262891c15d8f83049902c15c",
+  "declared_random_fixture_seed": 20261017,
+  "onnx_ir_version": 7,
+  "onnx_opset": 11,
+  "onnx_node_counts": {
+    "Clip": 1,
+    "Concat": 2,
+    "Constant": 8,
+    "Gemm": 6,
+    "Identity": 2,
+    "Reshape": 2,
+    "Slice": 1,
+    "Tanh": 4
+  },
+  "onnx_signature": {
+    "inputs": [
+      {
+        "name": "obs",
+        "elem_type": 1,
+        "shape": [
+          1,
+          57
+        ]
+      },
+      {
+        "name": "history",
+        "elem_type": 1,
+        "shape": [
+          1,
+          10,
+          57
+        ]
+      }
+    ],
+    "outputs": [
+      {
+        "name": "actions",
+        "elem_type": 1,
+        "shape": [
+          1,
+          16
+        ]
+      }
+    ]
+  },
+  "parity": {
+    "sb3_predict_vs_torch_max_abs_error": 0.0,
+    "torch_vs_python_ort_max_abs_error": 6.51925802230835e-09,
+    "target_actor_max_abs_change": 0.0,
+    "target_critic_max_abs_change": 0.0,
+    "history_only_pair_max_action_change": 0.0058156875893473625,
+    "prediction_batch_size": 1,
+    "fixtures": 64
+  },
+  "artifact_sha256": {
+    "candidate_actor.onnx": "c37ef0b9702ea9ec1c0b9ca40ada63621eacdf5530e2fc95b7e395d9b6a5f3d4",
+    "golden_fixtures.json": "ac2d4bf1eb3a6b253fc1ba464664cc0118340b957b1f5d6877dd20c75e54f970"
+  },
+  "versions": {
+    "torch": "2.12.1+cu130",
+    "sb3": "2.7.0",
+    "onnx": "1.18.0",
+    "python_ort": "1.23.2"
+  },
+  "cpu_threads": {
+    "torch_intra": 1,
+    "torch_inter": 1,
+    "ort_intra": 1,
+    "ort_inter": 1
+  }
+}

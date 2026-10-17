@@ -32,7 +32,10 @@ SCANNED = sorted(
                 ROOT/'training/d1_rl/interface.py',
                 ROOT/'training/d1_rl/task04a.py',
                 ROOT/'training/d1_rl/task04b.py',
-                ROOT/'tools05/release_probe05.py']
+                ROOT/'tools05/release_probe05.py',
+                ROOT/'training/d1_rl/velocity_labels15.py',
+                ROOT/'training/d1_rl/velocity_policy15.py',
+                ROOT/'tools15/export_velocity15.py']
     if p.name not in {'conftest.py', '_forbidden.py', 'test_static_guard.py',
                       'test_runtime_guard.py'})
 
@@ -75,7 +78,8 @@ def test_the_scan_covers_the_files_it_claims_to():
     names = {p.name for p in SCANNED}
     assert {'test_interface.py', 'test_contract04_terms.py', 'test_handoff_integrity.py',
             'test_cleanup_receipts.py', 'interface.py', 'task04a.py', 'task04b.py',
-            'release_probe05.py'} <= names
+            'release_probe05.py', 'velocity_labels15.py', 'velocity_policy15.py',
+            'export_velocity15.py'} <= names
 
 
 # --- the scanner must catch each evasion, or its silence means nothing --------
