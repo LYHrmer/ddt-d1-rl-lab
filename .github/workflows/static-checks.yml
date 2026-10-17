@@ -28,6 +28,7 @@ on:
       - 'tools15/**'
       - 'tools16/**'
       - 'tools17/**'
+      - 'tools18/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
@@ -45,6 +46,7 @@ on:
       - 'tools15/**'
       - 'tools16/**'
       - 'tools17/**'
+      - 'tools18/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 
@@ -120,6 +122,9 @@ jobs:
 
       - name: Verify completed-checkpoint export and bounded closeout without robot physics
         run: python -m pytest tests/test_export_completed17.py tests/test_verify_cpp17.py tests/test_provenance17.py tests/test_formal17.py tests/test_run_closeout17.py -q
+
+      - name: Verify independent delay optimization without robot physics
+        run: python -m pytest --noconftest tests/test_delay_env18.py tests/test_train_delay18.py tests/test_common18.py tests/test_evaluate_delay18.py tests/test_export_delay18.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
