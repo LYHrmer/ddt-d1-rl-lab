@@ -20,7 +20,7 @@ rtk proxy python3 -B tools19/run_cpp_closedloop19.py --execute
 
 每例保存原正式 NPZ、原指标和独立推理 NPZ，后者含实际 627 维输入、C++/Python ORT 16 维输出及误差。worker 与父进程都从文件重核数值记录，要求 C++ 输出与原轨迹 `issued_action` 逐元素相等，并重新计算原指标。完整矩阵采齐表示工程完成；策略早倒仍按原指标记失败并收齐其余场，不补拍。数值分歧、资源、来源或工程异常立即停止后续工作。资格要求继续使用原门槛，不能由 `COMPLETE` 或单纯 exit 0 推导。
 
-CPU/BLAS/ORT 均单线程；启动有效 RAM 至少 6 GiB，运行保留 3 GiB，1 秒采样，不宣称内存独占。整体 wall 上限 900 秒，worker 840 秒、外层 880 秒停止并保留有界清理时间。外层只清理自己启动的 worker 及其后代，结合 Linux birth tick 和 subreaper 处理独立 session 的 C++ 子进程。C++ 必须真实返回 `CLOSED`、Run 计数闭合且清理完成。
+CPU/BLAS/ORT 均单线程；启动有效 RAM 至少 6 GiB，运行保留 4 GiB，1 秒采样，不宣称内存独占。停止线按用户追加授权提高，18 原冻结源码和计划不因此改写。整体 wall 上限 900 秒，worker 840 秒、外层 880 秒停止并保留有界清理时间。外层只清理自己启动的 worker 及其后代，结合 Linux birth tick 和 subreaper 处理独立 session 的 C++ 子进程。C++ 必须真实返回 `CLOSED`、Run 计数闭合且清理完成。
 
 墙钟与资源轮询不能抢占正在阻塞的单个原生调用；外层监督可终止自己启动的进程。迟到的正常退出、清理后超时、没有拿到子进程句柄的启动异常同样记为未完成。已有完整或中途 native/PD 计数保留；构造期间失去计数则写未知，不补成零。
 

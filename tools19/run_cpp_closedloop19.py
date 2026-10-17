@@ -26,7 +26,7 @@ from tools16.run_comparison16 import termination_guard  # noqa: E402
 OUTPUT = 'evidence/cpp_closedloop19/execution_01'
 PLAN18 = 'evidence/local_optimization18/plan_01.json'
 BUDGET = {'policy_transitions': 21600, 'native_steps': 216000, 'pd_updates': 108000}
-LIMITS = {'start_effective_bytes': 6 << 30, 'reserve_bytes': 3 << 30,
+LIMITS = {'start_effective_bytes': 6 << 30, 'reserve_bytes': 4 << 30,
           'total_wall_s': 900, 'worker_wall_s': 840, 'supervisor_stop_s': 880,
           'poll_s': 1., 'golden_inferences': 64, 'max_cpp_inferences': 21664, 'absolute_tolerance': 1e-5}
 SOURCES = ('runtime19/actor_server19.cpp', 'runtime19/.gitignore', 'tools19/cpp_actor19.py', 'tests/test_cpp_actor19.py',
@@ -534,7 +534,7 @@ def execute(output=None, *, bundle_loader=load_eligible, source_loader=source_id
         value = row.get('effective_available_bytes')
         require(type(value) is int and value >= 0, 'resource sample unknown')
         report['minimum_effective_bytes'] = min(report['minimum_effective_bytes'], value)
-        require(value >= LIMITS['reserve_bytes'], 'effective RAM below 3 GiB')
+        require(value >= LIMITS['reserve_bytes'], 'effective RAM below 4 GiB')
 
     command = [sys.executable, '-B', str(root/'tools19/run_cpp_closedloop19.py'), '--worker',
                '--release', str(output/'release.json'), '--output', str(output/'worker')]

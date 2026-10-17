@@ -169,7 +169,7 @@ def test_worker_memory_guard_stops_before_any_environment_creation(worker_case, 
     calls = [0]
     def memory():
         calls[0] += 1
-        return {'effective_available_bytes': (8 if calls[0] <= 2 else 2) << 30}
+        return {'effective_available_bytes': (8 << 30) if calls[0] <= 2 else (7 << 29)}
     report, facts, _ = run_fake_worker(worker_case, np, memory=memory)
     assert report['status'] == 'INCOMPLETE' and not facts['environments']
     assert facts['cpp_calls'] == 64 and report['actual_counts'] == dict.fromkeys(runner.BUDGET, 0)
@@ -191,12 +191,25 @@ def test_default_plan_never_checks_eligibility_or_spawns(capsys, monkeypatch):
     report = json.loads(capsys.readouterr().out)
     assert report['status'] == 'PLAN_ONLY' and report['physics_steps_executed'] == 0
     assert report['budget'] == runner.BUDGET and report['limits']['max_cpp_inferences'] == 21664
+    assert report['limits']['start_effective_bytes'] == 6 << 30
+    assert report['limits']['reserve_bytes'] == 4 << 30
 
 
 def test_outer_low_ram_does_not_claim_attempt(tmp_path):
     result = runner.execute(root=tmp_path, bundle_loader=lambda: {'identity': {}}, source_loader=lambda: {},
                             memory_reader=lambda: {'effective_available_bytes': 5 << 30})
     assert result['status'] == 'NOT_READY' and not (tmp_path/runner.OUTPUT).exists()
+
+
+def test_outer_reserve_rejects_3_point_5_gib_after_admission(tmp_path):
+    samples = iter((6 << 30, 7 << 29))
+    cleanups = []
+    report = runner.execute(root=tmp_path, bundle_loader=lambda: {'identity': {}}, source_loader=lambda: {},
+        memory_reader=lambda: {'effective_available_bytes': next(samples)},
+        process_factory=lambda *args, **kwargs: pytest.fail('spawned below 4 GiB reserve'),
+        adopter=lambda: None, cleanup=lambda process: cleanups.append(process) or {'remaining': {}})
+    assert report['status'] == 'INCOMPLETE' and 'below 4 GiB' in report['error']
+    assert report['minimum_effective_bytes'] == 7 << 29 and cleanups == [None]
 
 
 def test_existing_attempt_refuses_without_loading_or_spawning(tmp_path):
