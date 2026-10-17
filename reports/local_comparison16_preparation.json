@@ -1,0 +1,109 @@
+{
+  "format": "d1-local-comparison16-preparation-summary-v1",
+  "status": "PREPARED_NOT_AUTHORIZED",
+  "source_commit": "a73a5baccc6f5f7267caa0dc81b4bc50c9f286e5",
+  "selected_envs": 4,
+  "n_steps_per_env": 1024,
+  "seed": 101,
+  "arms": {
+    "control": {
+      "aux_coef": 0.0
+    },
+    "velocity": {
+      "aux_coef": 1.0
+    }
+  },
+  "budget_max": {
+    "policy_transitions": 2166288,
+    "native_steps": 21662880,
+    "pd_updates": 10831440
+  },
+  "stages": {
+    "preflight": {
+      "transitions": 32768,
+      "max_wall_s": 900
+    },
+    "train": {
+      "transitions": 1048576,
+      "max_wall_s": 5400
+    },
+    "eval": {
+      "transitions": 1800,
+      "max_wall_s": 300
+    },
+    "compare": {
+      "transitions": 0,
+      "max_wall_s": 60
+    }
+  },
+  "resources": {
+    "start_min_effective_bytes": 6442450944,
+    "reserve_bytes": 3221225472,
+    "poll_s": 1.0,
+    "interrupt_grace_s": 10,
+    "terminate_grace_s": 5,
+    "kill_grace_s": 2,
+    "process_wall_grace_s": 30
+  },
+  "source_inputs_bound": 86,
+  "old72_frozen_inputs_unchanged": true,
+  "static_preparation": "PASS",
+  "default_plan": "PLAN_ONLY",
+  "child_processes_started": 0,
+  "owner_approval_recorded": false,
+  "training_started": false,
+  "evaluation_started": false,
+  "d1_policy_transitions_executed": 0,
+  "d1_native_steps_executed": 0,
+  "verification": {
+    "new_cases": 180,
+    "shared": 43,
+    "trainer": 24,
+    "evaluation_comparison": 36,
+    "supervisor": 77,
+    "with_static_guard": 246,
+    "status": "PASS",
+    "critical_ruff": "PASS",
+    "independent_review": "PASS"
+  },
+  "local_legacy_guard_check": {
+    "toy_models_constructed": 1,
+    "toy_integration_steps": 1,
+    "included_in_246_targeted_checks": false,
+    "d1_robot_used": false,
+    "note": "An additional pre-existing runtime-guard blind-spot demonstration ran once; this is not D1 training or preflight."
+  },
+  "artifacts": {
+    "prepared": {
+      "path": "evidence/local_comparison16/prepared_01.json",
+      "sha256": "4e057b7d30c6325471088b6330efd8246dbbb9709a57e3b40c312710a5db03f6"
+    },
+    "static": {
+      "path": "evidence/local_comparison16/static_01.json",
+      "sha256": "bc69b8a294eb664d186c931e841f4134e23c0c39b973d8f69c07e8709728f0d8"
+    },
+    "plan": {
+      "path": "evidence/local_comparison16/plan_01.json",
+      "sha256": "5c90ce5c9c714b0222dd756e50ed1ef2fccba9c4c284da7247d6402eae5ff664"
+    },
+    "unsigned_authorization_template": {
+      "path": "evidence/local_comparison16/authorization_template_01.json",
+      "sha256": "51d62cf6b284643e5c3c6e86e5d8682c00a6766b71af1a5e737d787f4954e88e"
+    }
+  },
+  "memory_snapshot": {
+    "observed_utc": "2026-10-17T11:35:26.346830+00:00",
+    "available_ram_bytes": 6763565056,
+    "cgroup_remaining_bytes": null,
+    "effective_available_bytes": 6763565056,
+    "resource_reservation_guaranteed": false,
+    "physical_preflight_completed": false
+  },
+  "ci": {
+    "source_commit": "a73a5baccc6f5f7267caa0dc81b4bc50c9f286e5",
+    "run_id": 39028987694,
+    "status": "success",
+    "url": "https://github.com/LYHrmer/ddt-d1-rl-lab/actions/runs/39028987694"
+  },
+  "interpretation": "Preparation only. No tracking, parking, qualification or deployment improvement has been measured."
+}

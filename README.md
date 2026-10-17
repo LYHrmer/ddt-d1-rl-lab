@@ -76,6 +76,8 @@
 
 [本机有界对照准备方案 16](docs/local_comparison16.md)提供同架构 aux=0/1 两组、4/2 环境事前选择、独立来源与单次顺序执行门，以及原阈值的固定跟踪/停车比较。准备包不授权执行；新预算上限包含预检与评测，共 2,166,288 transitions / 21,662,880 native。
 
+[准备回执](reports/local_comparison16_preparation.json)绑定 86 项来源、源码提交与 4 环境方案；246 项定向检查及源码 CI 已通过。当前只生成静态准备和顺序清单，没有启动 D1 预检、训练或评测。
+
 - **部署预检与失败回执**：新增入口核验工程工件身份，兼容 scale 导出，执行纯 ROS imports 并生成待用命令；实际 11 项导入检查通过，0 节点、0 物理步。见[第二轮说明](docs/deployment_preflight_11.md)。
 
 - **ROS 启动环境缺陷已修复**：03 的启动器手写 `PYTHONPATH` 丢掉了 `rpyutils` 实际所在的路径。新入口只做 source、不覆盖 `PYTHONPATH`，导入预检 **11/11 PASS**；回执显式记录 `watchdog_validated: false` —— **导入通过不等于 watchdog 通过**，真实停发后的物理停稳仍未验收。
