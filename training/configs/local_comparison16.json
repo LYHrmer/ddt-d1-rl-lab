@@ -1,0 +1,33 @@
+{
+  "format": "d1-local-comparison-v16",
+  "status": "PREPARED_NOT_AUTHORIZED",
+  "config": "training/configs/pilot03d.json",
+  "seed": 101,
+  "envs": 4,
+  "arms": {
+    "control": {"aux_coef": 0.0},
+    "velocity": {"aux_coef": 1.0}
+  },
+  "stages": {
+    "preflight": {"transitions": 32768, "max_wall_s": 900},
+    "train": {"transitions": 1048576, "max_wall_s": 5400},
+    "eval": {"transitions": 1800, "max_wall_s": 300},
+    "compare": {"transitions": 0, "max_wall_s": 60}
+  },
+  "resources": {
+    "start_min_effective_bytes": 6442450944,
+    "reserve_bytes": 3221225472,
+    "poll_s": 1.0,
+    "interrupt_grace_s": 10,
+    "terminate_grace_s": 5,
+    "kill_grace_s": 2,
+    "process_wall_grace_s": 30
+  },
+  "output_root": "evidence/local_comparison16/execution_01",
+  "comparison": {
+    "required_relative_reduction": 0.05,
+    "all_six_episodes_must_complete": true,
+    "qualification_count_must_not_decrease": true,
+    "interpretation": "single-seed, zero-delay exploratory comparison; no significance or deployment claim"
+  }
+}
