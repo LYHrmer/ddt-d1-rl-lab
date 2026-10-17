@@ -1,0 +1,30 @@
+{
+  "format": "d1-environment-amendment-preparation-v1",
+  "created_utc": "2026-10-17T08:33:08.927452+00:00",
+  "status": "REVIEWED_PENDING_OWNER_APPROVAL",
+  "authorised": false,
+  "original_frozen_inputs_unchanged": 62,
+  "local_tests": {
+    "passed": 999,
+    "skipped": 0
+  },
+  "clean_source_tests": {
+    "passed": 970,
+    "skipped_existing_asset_dependent": 29,
+    "new_core_tests_passed": 36
+  },
+  "independent_review": "PASS; own IPC process group cleanup verified on dummy subprocess",
+  "new_training_started": false,
+  "new_release_created": false,
+  "owner_record_created": false,
+  "cap_unchanged": {
+    "transitions": 8421376,
+    "native": 84231760
+  },
+  "source_sha256": {
+    "tools13/contract10_environment_amendment.py": "5a683303e374e7a889be3c3abd1876c076f3698ddba44b214e8b6d78578239bb",
+    "tests/test_contract10_environment_amendment.py": "c9d39d45d864655e6eb09b41f39a5a036878cb0475578492b4c3e5a39b112f6b",
+    "docs/career_execution_contract_10_environment_amendment.md": "8fb94b2e36c46725d8ebc8cd8ac0889ab6fd20e94f2465d56fb5f0502cde3a07"
+  },
+  "required_authorisation": "one proved-zero-worker IPC environment exception plus execution outside the sandbox; no change to scientific plan or cap"
+}

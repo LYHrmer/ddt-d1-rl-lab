@@ -66,6 +66,8 @@
 
 ## 工程交付
 
+本轮两个仓库的三轮功能与验证汇总见[优化交付记录](docs/optimization_iterations_20261016.md)。
+
 - **部署预检与失败回执**：新增入口核验工程工件身份，兼容 scale 导出，执行纯 ROS imports 并生成待用命令；实际 11 项导入检查通过，0 节点、0 物理步。见[第二轮说明](docs/deployment_preflight_11.md)。
 
 - **ROS 启动环境缺陷已修复**：03 的启动器手写 `PYTHONPATH` 丢掉了 `rpyutils` 实际所在的路径。新入口只做 source、不覆盖 `PYTHONPATH`，导入预检 **11/11 PASS**；回执显式记录 `watchdog_validated: false` —— **导入通过不等于 watchdog 通过**，真实停发后的物理停稳仍未验收。
