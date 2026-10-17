@@ -7,7 +7,7 @@
 
 ## 一页结论
 
-**2026-10-17 最新：合同 10 的 E0 在 forkserver socket 绑定时被沙箱权限拦截，尚未进入正式训练，按一次尝试规则停止。** 原始计数 null 与基于失败位置的零消耗推导分开保留；Q1–Q5 不可评估。见[结果](docs/career_results_10.md)和[摘要](reports/contract10_summary.json)。已准备环境修订草案，未自动重跑。
+**2026-10-17 最新：合同 10 的环境例外已获明确批准，E0 `_02` 完整通过，新的 8 倍训练正在运行，尚无最终资格结果。** 首次 `_01` 的沙箱 IPC 失败与原始 null 计数完整保留。见[结果及当前状态](docs/career_results_10.md)、[首次失败摘要](reports/contract10_summary.json)和[带时间戳的运行快照](reports/contract10_execution_status.json)。
 
 **2026-10-16 最新：合同 09（熵系数设为 0）训练因 RAM 门停止，完成 57.3%，按未完成关闭。Q1–Q5 不可判定，资格未评测，不重跑或续训。** 见[结果](docs/career_execution_results_09.md)与[紧凑摘要](reports/contract09_summary.json)。
 

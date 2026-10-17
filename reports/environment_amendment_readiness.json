@@ -1,0 +1,31 @@
+{
+  "format": "d1-contract10-environment-readiness-v1",
+  "status": "AUTHORISED_WAITING_RAM",
+  "exception_authorised": true,
+  "ipc_admission": "PASS",
+  "release_sha256": "d3a0ae0a2ba986ec4e9b5f3a2fa2dc58f159c601312885575d0543afe9e56e9c",
+  "frozen_inputs_count": 72,
+  "training_started": false,
+  "single_spawn_attempt_consumed": false,
+  "observed_execution_context_available_bytes": 5462814720,
+  "start_min_available_ram_bytes": 7516192768,
+  "observations": {
+    "ipc": {
+      "path": "evidence/career_contract_10/environment_readiness_checks/ipc_1792226086062071150_376522.json",
+      "sha256": "aa104f1d86a8d69b3eaaaa5af6f27feab76dc8094664597963dcd9b2fe5051b8"
+    },
+    "ram": {
+      "path": "evidence/career_contract_10/readiness_checks/preflight_1792226086216943331_376522.json",
+      "sha256": "03f64d981a88090528e9e4aa3235f8f433648937d768a56e05f70b3e63c45457"
+    },
+    "owner": {
+      "path": "evidence/career_contract_10/environment_amendment_owner_01.json",
+      "sha256": "42fc474e39078f3c6d75053fcc97584a304d025da31128bf27218273fae0df39"
+    }
+  },
+  "approved_total_cap_unchanged": {
+    "transitions": 8421376,
+    "native": 84231760
+  },
+  "runtime_only_condition": "start when actual training execution context reports at least 7 GiB; no further budget approval needed"
+}
