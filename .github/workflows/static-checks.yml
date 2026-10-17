@@ -27,6 +27,7 @@ on:
       - 'tools14/**'
       - 'tools15/**'
       - 'tools16/**'
+      - 'tools17/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
@@ -43,6 +44,7 @@ on:
       - 'tools14/**'
       - 'tools15/**'
       - 'tools16/**'
+      - 'tools17/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 
@@ -115,6 +117,9 @@ jobs:
 
       - name: Verify bounded comparison preparation with synthetic resources
         run: python -m pytest tests/test_contract16.py tests/test_train_comparison16.py tests/test_run_comparison16.py tests/test_comparison16.py -q
+
+      - name: Verify completed-checkpoint export and bounded closeout without robot physics
+        run: python -m pytest tests/test_export_completed17.py tests/test_verify_cpp17.py tests/test_provenance17.py tests/test_formal17.py tests/test_run_closeout17.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
