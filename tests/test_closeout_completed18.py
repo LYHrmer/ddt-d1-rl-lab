@@ -405,4 +405,3 @@ def test_parent_evaluation_readback_rejects_forged_summary(tmp_path,bad):
     child['protocol_sha256']=c.sha(output/'protocol.json')
     with pytest.raises(ValueError):
         c.verify_stage(output,'formal',child,release,release_path,helpers=helper,verifier=lambda *args:None)
-
