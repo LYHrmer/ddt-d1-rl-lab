@@ -1,0 +1,338 @@
+{
+  "format": "d1-optimization18-interruption-audit-v1",
+  "status": "ARCHIVED_STOPPED_INCOMPLETE",
+  "observed_at_utc": "2026-10-17T18:12:34.066114+00:00",
+  "scope": "Read-only closure of execution_01; no new training, model load, test, simulation, signal or old-artifact rewrite.",
+  "execution_root": "evidence/local_optimization18/execution_01",
+  "plan_path": "evidence/local_optimization18/plan_01.json",
+  "frozen18_source_identity": {
+    "git_commit": "df5af5cb5802ba2a281b544371a0570342ef8ccf",
+    "sources_sha256": {
+      "tools18/common18.py": "fde7499bcaaaa4c2c6402478fceaf7fe25e24d9c7199745adf215a93d213d77b",
+      "tools18/run_optimization18.py": "f991d4c27dbcecac4926fef1716a1d7b8e909985c660c48fdf25c991a9346f81",
+      "tools18/train_delay18.py": "63e3aa1e53071b93cf8dfb3947964d67aaea07a4dbd1e47539ba8c4331287a72",
+      "tools18/evaluate_delay18.py": "be8d58f64b14fdce38a6b54cf23bd8fed0a03d4b6e84fcc037439c79c398be60",
+      "tools18/export_delay18.py": "aaf11b59c7d03d96b855b649ec036bd2c63f05b38f668d0734cd79957188c572",
+      "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+      "tests/test_delay_env18.py": "f256bc5a3844342a1a8e09bbea2eb32c1f15d936fc719be47ecbf732abca948f",
+      "tests/test_train_delay18.py": "a8a00080fd1417e453b6f5e234213cab6ca0f798369e2ba3b17984e00650452f",
+      "tests/test_common18.py": "1e078c1dd25eb91179bd557b9299e752ac6caf516c5cb4d50bdaf4c9fa9d447b",
+      "tests/test_evaluate_delay18.py": "45760b73bb6cffedfd87c6aaf1d83bb3e2e76a70bda423fb26685f76a9176fe7",
+      "tests/test_export_delay18.py": "c531f7abbd500bf816bbf45768063a3b96dd3476b0738f1a5e114eb1d6a0283a",
+      "docs/local_optimization18.md": "f477dd0d213a44a0a6d852272848b044c481874b5f24496ed575bdb869fca81d"
+    }
+  },
+  "frozen18_sources_match": true,
+  "original_outer_receipt": {
+    "status": "STOPPED",
+    "error": "Interrupted: SIGTERM",
+    "supervisor_pid": 571948,
+    "elapsed_s": 1400.841452121007,
+    "actual_counts": null,
+    "known_actual_counts": {
+      "policy_transitions": 1114383,
+      "native_steps": 11143830,
+      "pd_updates": 5571915
+    },
+    "unknown_count_stages": [
+      "train_random"
+    ],
+    "new_training_transitions": 1114112,
+    "selected_arm": null,
+    "full_delay_qualification": false,
+    "cleanup_complete": true
+  },
+  "closed_training_stages": {
+    "preflight_zero": {
+      "status": "COMPLETE",
+      "new_trained_transitions": 32768,
+      "actual_counts": {
+        "forward_calls": 32844,
+        "native_steps": 327680,
+        "pd_updates": 163840,
+        "policy_transitions": 32768,
+        "resets": 36
+      },
+      "initial_num_timesteps": 1048576,
+      "final_num_timesteps": 1081344,
+      "checkpoint_sha256": "369040ae1e5a5d7fd30292e678bb068c8398abfb5e8707e2f145c291f3af653d"
+    },
+    "preflight_random": {
+      "status": "COMPLETE",
+      "new_trained_transitions": 32768,
+      "actual_counts": {
+        "forward_calls": 32858,
+        "native_steps": 327680,
+        "pd_updates": 163840,
+        "policy_transitions": 32768,
+        "resets": 43
+      },
+      "initial_num_timesteps": 1048576,
+      "final_num_timesteps": 1081344,
+      "checkpoint_sha256": "00b1afb547133c078d220e958d7ce756cb67e3600736ad2cdc8187827f90e0cd"
+    },
+    "train_zero": {
+      "status": "COMPLETE",
+      "new_trained_transitions": 1048576,
+      "actual_counts": {
+        "forward_calls": 1050760,
+        "native_steps": 10485760,
+        "pd_updates": 5242880,
+        "policy_transitions": 1048576,
+        "resets": 1090
+      },
+      "initial_num_timesteps": 1048576,
+      "final_num_timesteps": 2097152,
+      "checkpoint_sha256": "d79dbdffa71a23a5c8debb95a562aab810cb6a80e31d97afac8fbd492daddce8"
+    }
+  },
+  "random_training": {
+    "status": "INCOMPLETE",
+    "result_json_exists": false,
+    "final_actual_counts": null,
+    "completed_rollout_prefix": {
+      "rollouts": 62,
+      "last_rollout": 62,
+      "new_policy_transitions": 253952,
+      "actual_counts_at_completed_rollout": {
+        "forward_calls": 254494,
+        "native_steps": 2539520,
+        "pd_updates": 1269760,
+        "policy_transitions": 253952,
+        "resets": 269
+      },
+      "semantics": "Measured prefix at rollout_end; not final stage counts or a completed training checkpoint."
+    },
+    "worker_snapshots": [
+      {
+        "path": "evidence/local_optimization18/execution_01/train_random/env_00.monitor.csv.counts.json",
+        "status": "running",
+        "pid": 591111,
+        "counts": {
+          "native_steps": 641280,
+          "pd_updates": 320640,
+          "policy_transitions": 64128,
+          "resets": 66,
+          "forward_calls": 64261
+        }
+      },
+      {
+        "path": "evidence/local_optimization18/execution_01/train_random/env_01.monitor.csv.counts.json",
+        "status": "running",
+        "pid": 591113,
+        "counts": {
+          "native_steps": 641280,
+          "pd_updates": 320640,
+          "policy_transitions": 64128,
+          "resets": 67,
+          "forward_calls": 64263
+        }
+      },
+      {
+        "path": "evidence/local_optimization18/execution_01/train_random/env_02.monitor.csv.counts.json",
+        "status": "running",
+        "pid": 591116,
+        "counts": {
+          "native_steps": 641280,
+          "pd_updates": 320640,
+          "policy_transitions": 64128,
+          "resets": 69,
+          "forward_calls": 64267
+        }
+      },
+      {
+        "path": "evidence/local_optimization18/execution_01/train_random/env_03.monitor.csv.counts.json",
+        "status": "running",
+        "pid": 591119,
+        "counts": {
+          "native_steps": 641280,
+          "pd_updates": 320640,
+          "policy_transitions": 64128,
+          "resets": 70,
+          "forward_calls": 64269
+        }
+      }
+    ],
+    "worker_snapshot_lower_bound": {
+      "policy_transitions": 256512,
+      "native_steps": 2565120,
+      "pd_updates": 1282560
+    },
+    "snapshot_semantics": "Each running snapshot is published every 128 per-worker policy transitions; not a closed/final measurement.",
+    "partial_checkpoint_path": "evidence/local_optimization18/execution_01/train_random/partial_policy.zip",
+    "partial_checkpoint_eligible": false,
+    "resume_or_retry_permitted_by_this_audit": false
+  },
+  "stop_evidence": {
+    "trigger": "SUPERVISOR_RECEIVED_SIGTERM",
+    "signal_sender": "UNKNOWN",
+    "sender_not_recorded_by_signal_handler": true,
+    "tool_session": {
+      "session_id": 77576,
+      "exit_code": 143,
+      "basis": "Root agent recorded actual tool invocation/output.",
+      "explicit_timeout_argument_present": false,
+      "root_sent_terminate_or_control_c": false
+    },
+    "tool_timeout_or_user_cancellation_attribution": "NOT_ESTABLISHED",
+    "cleanup_signal_to_training_leader": [
+      "SIGINT"
+    ],
+    "training_exception": "tools16.train_comparison16.StopRequested: SIGINT",
+    "final_receipt_exception": "TypeError: Object of type ndarray is not JSON serializable",
+    "final_receipt_missing_due_to_serialization_failure": true
+  },
+  "resources": {
+    "original_reserve_bytes": 3221225472,
+    "later_requested_reserve_bytes": 4294967296,
+    "outer_minimum_sample": {
+      "available_ram_bytes": 3401994240,
+      "cgroup_remaining_bytes": null,
+      "effective_available_bytes": 3401994240,
+      "elapsed_s": 963.6677700029977,
+      "stage": "train_zero",
+      "phase": "running"
+    },
+    "outer_last_sample": {
+      "available_ram_bytes": 6141759488,
+      "cgroup_remaining_bytes": null,
+      "effective_available_bytes": 6141759488,
+      "elapsed_s": 1395.8518221160048,
+      "stage": "train_random",
+      "phase": "running"
+    },
+    "random_minimum_sample": {
+      "available_ram_bytes": 5549309952,
+      "cgroup_remaining_bytes": null,
+      "effective_available_bytes": 5549309952,
+      "elapsed_s": 10.89329146099044,
+      "phase": "training"
+    },
+    "random_last_sample": {
+      "available_ram_bytes": 6146445312,
+      "cgroup_remaining_bytes": null,
+      "effective_available_bytes": 6146445312,
+      "elapsed_s": 251.8943124380021,
+      "phase": "training"
+    },
+    "random_stop_sample_exists": false,
+    "ram_trigger_proven_by_receipts": false,
+    "interpretation": "Observed samples do not establish RAM-triggered termination; instantaneous unobserved RAM and SIGTERM sender remain unknown."
+  },
+  "resource_guard20": {
+    "actual_tool_status": "NO_RUNNING_EXPECTED_TARGET",
+    "actual_tool_target": null,
+    "tool_output_basis": "Root agent observed completed --execute tool output after approval.",
+    "override_output": "evidence/local_optimization18/resource_override_02",
+    "override_output_exists": false,
+    "stop_signal_sent": false,
+    "basis": "main returned before mkdir/monitor because there was no matching running target; source control flow and absent directory corroborate the tool output."
+  },
+  "failure_analysis": {
+    "observed": "SIGINT interrupted SubprocVecEnv.step_wait remote.recv deserialization; saving result later failed on ndarray.",
+    "source_supported_inference": "step_wait had not cleared waiting. Finalization reused the same unframed env_method RPC for counters/delay. Pending step responses can be returned as metadata; variables are assigned before schema checks and retained after validation fails.",
+    "exact_ndarray_field": "NOT_CAPTURED: result serialization aborted, so workers/per_worker_counts/delay_state cannot be distinguished from saved bytes.",
+    "code_locations": [
+      ".python-deps/stable_baselines3/common/vec_env/subproc_vec_env.py:136",
+      ".python-deps/stable_baselines3/common/vec_env/subproc_vec_env.py:198",
+      "tools16/train_comparison16.py:273",
+      "tools18/train_delay18.py:151",
+      "tools18/train_delay18.py:242",
+      "tools18/train_delay18.py:247",
+      "tools18/train_delay18.py:303"
+    ]
+  },
+  "cleanup_observation": {
+    "outer_cleanup_complete": true,
+    "expected_pid_absent": {
+      "571948": true,
+      "590894": true,
+      "591111": true,
+      "591113": true,
+      "591116": true,
+      "591119": true
+    },
+    "training_pgid": 590894,
+    "live_training_group_members": [],
+    "scope": "Point-in-time /proc observation; no signal sent by this audit."
+  },
+  "qualification": {
+    "complete_paired_training": false,
+    "winner_selected": false,
+    "original_36_complete": false,
+    "holdout_36_complete": false,
+    "cpp_closedloop19_eligible": false,
+    "zero_completed_checkpoint_may_only_be_assessed_under_a_separate_bounded_protocol": true
+  },
+  "next_version_minimum_principles": [
+    "Keep the old attempt, plan, checkpoint and missing final receipt unchanged; never infer exact final counts from snapshots.",
+    "Treat interrupted/in-flight SubprocVecEnv responses as unsynchronised. Do not issue further metadata RPC on that channel; report unknown final counts.",
+    "Assign counter and delay candidates only after strict schema and JSON-ready validation succeeds; failed candidates stay null.",
+    "Persist the failure receipt even when accounting, delay collection or checkpoint save fails, and preserve bounded owned-child cleanup.",
+    "A new explicit plan must carry independent output/budget/source identity and startup6GiB/runtime4GiB; no retry or resume is authorised by this audit.",
+    "Place any future long run under a bounded, owned user-systemd lifecycle and record unit identity; systemd does not retroactively identify the old sender."
+  ],
+  "required_fake_regressions_before_any_new_training": [
+    "Interrupt remote.recv while vec.waiting is true and leave queued step tuples containing array observations; no further metadata RPC, null final counts, valid failure JSON and cleanup.",
+    "Return invalid counter/delay candidates, including nested non-JSON array objects; validation failure cannot contaminate result fields.",
+    "Inject counter/delay timeout, worker-close failure, checkpoint-save failure and repeated termination; receipt remains writable, counts honest and cleanup bounded.",
+    "Drive the real new supervisor startup/termination/cgroup lifecycle with dummy processes; enforce wall/RAM/sample failure without foreign-process cleanup or retry."
+  ],
+  "artifacts_sha256": {
+    "evidence/local_optimization18/plan_01.json": "d1ecfb1026665b41e40da2b029724e6ee77b3b58dcb860eccc37bab712951411",
+    "evidence/local_optimization18/execution_01/report.json": "aee841b96acb3c1ed14e95af263ad3676e42c310d70e4ebd89a7caa852f74595",
+    "evidence/local_optimization18/execution_01/resources.jsonl": "fc6f511e0abcc6bd695e894c27ff9f46304fb2209c5d3a8a2f702859849c1190",
+    "evidence/local_optimization18/execution_01/probe_base/report.json": "a4ab12a8c2a0868b53024907354c13738420f72329dc500ed1a4801702d52dbe",
+    "evidence/local_optimization18/execution_01/preflight_zero/result.json": "f4bbccd56022ba315ca59c8a8360c9f236ffb84337f5b3650e86c86ef5a8b485",
+    "evidence/local_optimization18/execution_01/preflight_zero/protocol.json": "e438614a492beef28acd41241a92dfd161c50cd56c68fcde2cc8a46342e3cf46",
+    "evidence/local_optimization18/execution_01/preflight_zero/ledger.jsonl": "028e279b8ecb930348d62dd5c91ff720e5894158142578fc3d2ba60ee3fe5c00",
+    "evidence/local_optimization18/execution_01/preflight_zero/policy.zip": "369040ae1e5a5d7fd30292e678bb068c8398abfb5e8707e2f145c291f3af653d",
+    "evidence/local_optimization18/execution_01/preflight_random/result.json": "2523743a71e63496fa6fc73c2dc41e36922524086b4d231e0e057166326aa64c",
+    "evidence/local_optimization18/execution_01/preflight_random/protocol.json": "0e7c3fd1d7641fbc82dde05f709a1051b3117a55ef3d02257be4cf4d91785340",
+    "evidence/local_optimization18/execution_01/preflight_random/ledger.jsonl": "fa3cc427f21b4395340a68d66da9a2cb2f70881180e18944c5c0d21bfbde1eb9",
+    "evidence/local_optimization18/execution_01/preflight_random/policy.zip": "00b1afb547133c078d220e958d7ce756cb67e3600736ad2cdc8187827f90e0cd",
+    "evidence/local_optimization18/execution_01/train_zero/result.json": "8e255b2c31f9988cfcee95a249cb1935f504d683becd162d14acc347e361fe43",
+    "evidence/local_optimization18/execution_01/train_zero/protocol.json": "8c568c9b8ba280556ca809b0559ae23b96d569b5645374d90dfad30207d6f013",
+    "evidence/local_optimization18/execution_01/train_zero/ledger.jsonl": "152f367b46b16570d61350d9f48e21c60a4f157ed4570651a3a696b03c36eea9",
+    "evidence/local_optimization18/execution_01/train_zero/policy.zip": "d79dbdffa71a23a5c8debb95a562aab810cb6a80e31d97afac8fbd492daddce8",
+    "evidence/local_optimization18/execution_01/train_random.stdout.log": "11c32d3dadc9cf8c27d1324fd34bd77938488a0edaff04c183c1884858ab9d98",
+    "evidence/local_optimization18/execution_01/train_random/error.txt": "0c48da874ec9a3b5b39bfea776848adbf71973aa5faf056ed7ae23a2c8a6e80b",
+    "evidence/local_optimization18/execution_01/train_random/partial_policy.zip": "5b88af32673ef20445fca93e25856e6a761c122c984aa0b49f193c62858389cd",
+    "evidence/local_optimization18/execution_01/train_random/ledger.jsonl": "827d2be7d9240dd5420f3e3ac125ab9fb848cfdaa0daea4883bed83924bfc232",
+    "evidence/local_optimization18/execution_01/train_random/live_status.json": "3d8cc707218b6feda2326c9297cd3854367a0c780b9d216383ae1782d7064a7b",
+    "evidence/local_optimization18/execution_01/train_random/protocol.json": "88f10509ba915ca7840b1e09ff00429a64bcd2a1011c5318a290217e87846d43",
+    "evidence/local_optimization18/execution_01/train_random/resource_samples.jsonl": "111b7496f3eaf16ed21482800ed4bb330fb9418d13d31b61358ddebd03480266",
+    "evidence/local_optimization18/execution_01/train_random/env_00.monitor.csv.counts.json": "08a6cc038457029445b4d741f0096a117c74a58f78f52bbc6136fc02a4883f0c",
+    "evidence/local_optimization18/execution_01/train_random/env_01.monitor.csv.counts.json": "72b40e553e296991137bd1a209912179f1ae13814684b13be10db830d250c786",
+    "evidence/local_optimization18/execution_01/train_random/env_02.monitor.csv.counts.json": "cdd0ee750e49fd8ed2572d7829e9fa1567a00bdab3152e0dec24bfed5c910956",
+    "evidence/local_optimization18/execution_01/train_random/env_03.monitor.csv.counts.json": "7b2338d94ce25664dcb6ef6ed30460d788eb7d3ab97e9c8d1445ffe6c016151a",
+    "tools18/common18.py": "fde7499bcaaaa4c2c6402478fceaf7fe25e24d9c7199745adf215a93d213d77b",
+    "tools18/run_optimization18.py": "f991d4c27dbcecac4926fef1716a1d7b8e909985c660c48fdf25c991a9346f81",
+    "tools18/train_delay18.py": "63e3aa1e53071b93cf8dfb3947964d67aaea07a4dbd1e47539ba8c4331287a72",
+    "tools18/evaluate_delay18.py": "be8d58f64b14fdce38a6b54cf23bd8fed0a03d4b6e84fcc037439c79c398be60",
+    "tools18/export_delay18.py": "aaf11b59c7d03d96b855b649ec036bd2c63f05b38f668d0734cd79957188c572",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "tests/test_delay_env18.py": "f256bc5a3844342a1a8e09bbea2eb32c1f15d936fc719be47ecbf732abca948f",
+    "tests/test_train_delay18.py": "a8a00080fd1417e453b6f5e234213cab6ca0f798369e2ba3b17984e00650452f",
+    "tests/test_common18.py": "1e078c1dd25eb91179bd557b9299e752ac6caf516c5cb4d50bdaf4c9fa9d447b",
+    "tests/test_evaluate_delay18.py": "45760b73bb6cffedfd87c6aaf1d83bb3e2e76a70bda423fb26685f76a9176fe7",
+    "tests/test_export_delay18.py": "c531f7abbd500bf816bbf45768063a3b96dd3476b0738f1a5e114eb1d6a0283a",
+    "docs/local_optimization18.md": "f477dd0d213a44a0a6d852272848b044c481874b5f24496ed575bdb869fca81d",
+    "tools16/run_comparison16.py": "1c28aa6b834b01206f2124120b7bb42d32e80be7495d005ff15cf6efc6d53bf5",
+    "tools16/train_comparison16.py": "4eca64beb8a42e54ecce98114e5c42def56e58a73428845b03cacebd1881609a",
+    ".python-deps/stable_baselines3/common/vec_env/subproc_vec_env.py": "e3acbeb465d5ca1288a7b9fa812eeacb9b03e3c52e757a1130b5d57a04baf942",
+    "tools20/resource_guard20.py": "962f2b3b5884e4a7ece02dfe37a935d865462bbb8704a5b9bb096dd4f775871a"
+  },
+  "audit_actions": {
+    "repo_files_modified": [
+      "docs/local_optimization18_interruption_20261018.md",
+      "reports/local_optimization18_interruption_20261018.json"
+    ],
+    "old_attempt_files_modified": false,
+    "signals_sent": [],
+    "training_started": false,
+    "models_loaded": 0,
+    "physics_steps_executed": 0,
+    "tests_run": false
+  }
+}
