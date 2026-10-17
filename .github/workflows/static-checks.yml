@@ -31,6 +31,7 @@ on:
       - 'tools18/**'
       - 'tools19/**'
       - 'tools21/**'
+      - 'tools22/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -52,6 +53,7 @@ on:
       - 'tools18/**'
       - 'tools19/**'
       - 'tools21/**'
+      - 'tools22/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -137,6 +139,9 @@ jobs:
 
       - name: Verify independent completed-zero closeout without model or physics
         run: python -m pytest --noconftest tests/test_closeout_completed18.py -q
+
+      - name: Verify low-LR bounded candidate and dirty RPC recovery without physics
+        run: python -m pytest --noconftest tests/test_common22.py tests/test_checked_runtime22.py tests/test_train_low_lr22.py tests/test_run_low_lr22.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture

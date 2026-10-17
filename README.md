@@ -3,9 +3,11 @@
 [![static-checks](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml/badge.svg)](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-面向 D1 轮足机器人的纯 PPO 训练、ONNX 导出、ROS2/C++/MuJoCo 部署和有界评测。目标是稳定直行、可靠越障，再提高速度。当前仅有仿真结果，**没有实机验证**。
+面向 D1 轮足机器人的纯 PPO 训练、ONNX 导出、ROS2/C++/MuJoCo 部署和有界评测。目标是稳定直行、可靠越障，再提高速度。下述成绩是本仓库当前版本的仿真结果，未包含该版本实机验证；作者已有RM轮腿sim2real经历。
 
 ## 一页结论
+
+**2026-10-18后续优化：** 完整zero18续训权重经21导出、C++64数值核对及原36场评测后，仅15/36通过，低于原control的27/36，主要退化在倒退跟踪，未替换原模型。18另一训练臂收到来源未知的SIGTERM，保留未完成及未知最终计数。见[21实际结果](docs/completed_zero21_results_20261018.md)与[中断记录](docs/local_optimization18_interruption_20261018.md)。新[22有界低学习率候选](docs/low_lr22.md)已准备：从原完整control及Adam出发，学习率1e-4、新增262144步，修复中断时脏RPC收集/清理；启动6GiB、运行保留4GiB，重任务串行，最终权重仍须通过原36场，不能把训练奖励上涨视为改善。
 
 **2026-10-18 收尾：真实 control 权重导出与64例C++数值对齐通过，36场正式评测全部收齐。0/20ms各9/9达标，40ms为6/9、60ms为3/9，完整延迟资格未通过。** 本轮没有新增训练；实际导出图、来源与本机入口见[收尾交付](docs/closeout17_results.md)和[摘要](reports/closeout17_20261018.json)。保留 aux=0 control，aux=1 对照未展示联合收益；没有 C++闭环、ROS或实机资格声明。
 
