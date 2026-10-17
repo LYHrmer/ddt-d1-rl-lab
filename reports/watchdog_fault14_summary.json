@@ -1,0 +1,234 @@
+{
+  "format": "d1-watchdog-fault14-delivery-v1",
+  "status": "PASS_OFFLINE_ONLY",
+  "scope": "publisher lifecycle and fixed watchdog-capture semantics using injected ROS bindings",
+  "physics_steps_executed": 0,
+  "models_loaded": 0,
+  "real_ros_nodes_created": 0,
+  "real_ros_messages_published": 0,
+  "real_ros_messages_received": 0,
+  "live_trial_started": false,
+  "trial_authorised_by_tool": false,
+  "watchdog_physically_validated": false,
+  "qualifies_overall_pilot": false,
+  "legacy_sources_modified": false,
+  "source_sha256": {
+    "runtime03/live_watchdog03.py": "814b4101be302cff307c35c45a853209d2ea064583dbaf64eb7799cdc9f8c825",
+    "tools14/watchdog_publisher14.py": "c00bc417be076a125b58d3f8788c1d30ff9caeca8a52a1e9158c22fef477b3b3",
+    "tests/test_watchdog_publisher14.py": "0c3a00cfd1e9e57659052ac9c1ced4ad0ecfe48f2e3477d6b5ad57d4e2510a32",
+    "docs/watchdog_publisher14.md": "6b492478a6c0657a8bf091dc16850624b2ded39ea16b2feb02734233212200de"
+  },
+  "legacy_actual_main_reproduction": {
+    "method": "import unchanged legacy script, replace only ROS import modules with fakes, call its actual main with explicit execution argv and a fresh temporary output",
+    "injected_exception": "RuntimeError: injected ROS context startup failure",
+    "output_directory_claimed": true,
+    "files_present": [
+      "protocol.json",
+      "publisher_events.jsonl",
+      "received_truth.jsonl"
+    ],
+    "report_json_present": false,
+    "ros_init_calls": 1,
+    "real_ros_nodes_created": 0,
+    "real_ros_messages_published": 0,
+    "physics_steps_executed": 0,
+    "new_entry_same_failure": "ROS_INIT_FAILED receipt; dedicated context cleanup attempted; no command publication"
+  },
+  "other_legacy_actual_main_reproductions": [
+    {
+      "scenario": "fake ROS shuts down after motion",
+      "last_truth_sim_time_s": 3.0,
+      "elapsed_monotonic_s": 0.1,
+      "legacy_terminal_reason": "WALL_LIMIT",
+      "new_terminal_reason": "ROS_SHUTDOWN"
+    },
+    {
+      "scenario": "valid final truth received while native truth endpoint leaves",
+      "last_truth_sim_time_s": 12.0,
+      "legacy_terminal_reason": "ROS_ENDPOINT_COUNT_CHANGED",
+      "new_terminal_reason": "TRUTH_REACHED_12S",
+      "new_result_scope": "capture completion only; no physical success claim"
+    }
+  ],
+  "validation": {
+    "pytest_command": "rtk pytest tests/test_watchdog_publisher14.py -q",
+    "pytest_exit_code": 0,
+    "passed": 43,
+    "failed": 0,
+    "scenario_groups": [
+      {
+        "test": "test_every_startup_failure_has_a_receipt",
+        "cases": 8,
+        "result": "PASS",
+        "stages": [
+          "imports",
+          "context",
+          "init",
+          "node",
+          "publisher",
+          "subscription",
+          "executor",
+          "add_node"
+        ]
+      },
+      {
+        "test": "test_success_uses_exact_windows_and_never_sends_final_zero",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_stale_truth_skips_then_fresh_truth_resumes",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_invalid_duplicate_or_regressed_truth_stops_publications",
+        "cases": 10,
+        "result": "PASS",
+        "faults": [
+          "NaN time",
+          "infinite time",
+          "zero time",
+          "out-of-range time",
+          "duplicate time",
+          "regressed time",
+          "string time",
+          "boolean time",
+          "malformed JSON",
+          "nonfinite opaque field cannot be recorded"
+        ]
+      },
+      {
+        "test": "test_endpoint_change_after_motion_stops",
+        "cases": 3,
+        "result": "PASS"
+      },
+      {
+        "test": "test_ambiguous_endpoints_before_motion_can_settle",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_final_truth_is_complete_even_if_native_endpoint_has_left",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_ros_shutdown_is_distinct_and_does_not_publish_again",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_cleanup_failures_cannot_claim_capture_success_and_do_not_skip_other_cleanup",
+        "cases": 4,
+        "result": "PASS",
+        "faults": [
+          "executor raises",
+          "executor times out",
+          "node destroy raises",
+          "owned context shutdown raises"
+        ]
+      },
+      {
+        "test": "test_stream_close_failure_still_closes_other_stream_and_writes_receipt",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_stream_open_failure_has_a_receipt_before_ros_is_loaded",
+        "cases": 2,
+        "result": "PASS"
+      },
+      {
+        "test": "test_publish_exception_keeps_zero_successful_call_count_and_a_receipt",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_preexisting_context_is_never_shut_down",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_wall_limit_has_a_receipt_without_truth_or_publication",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_clock_faults_have_a_finite_receipt",
+        "cases": 2,
+        "result": "PASS"
+      },
+      {
+        "test": "test_interrupt_is_recorded_and_owned_resources_are_cleaned",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_wrong_domain_fails_before_loading_ros_with_receipt",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_existing_output_is_not_overwritten_or_loaded",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_help_does_not_import_ros_or_create_output",
+        "cases": 1,
+        "result": "PASS"
+      },
+      {
+        "test": "test_real_cli_default_loader_imports_only_fake_ros_and_records_init_failure",
+        "cases": 1,
+        "result": "PASS"
+      }
+    ],
+    "real_cli_seam": {
+      "test": "test_real_cli_default_loader_imports_only_fake_ros_and_records_init_failure",
+      "argv": [
+        "<sys.executable>",
+        "-B",
+        "tools14/watchdog_publisher14.py",
+        "--output",
+        "<pytest tmp>/cli_receipt",
+        "--execute-live-publisher"
+      ],
+      "environment": {
+        "ROS_DOMAIN_ID": "84",
+        "PYTHONPATH": "<pytest tmp>/stubs containing only fake ROS packages",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "loader": "actual default lazy load_ros",
+      "injected_failure": "RuntimeError: CLI fake init failure",
+      "exit_code": 1,
+      "receipt_terminal_reason": "ROS_INIT_FAILED",
+      "cleanup_complete": true,
+      "commands_sent": 0
+    },
+    "ruff_command": "rtk proxy /home/lyh/wheel-legged-control-lab/.local-deps/bin/ruff check --isolated --select E9,F63,F7,F82 tools14/watchdog_publisher14.py tests/test_watchdog_publisher14.py",
+    "ruff_exit_code": 0,
+    "ruff_result": "All checks passed",
+    "independent_readonly_review": "wheel_audit reviewed context ownership, independent cleanup, silence preservation and capture-only scope; no blocking lifecycle finding"
+  },
+  "compatibility": {
+    "protocol_format": "d1-real-ros-watchdog-probe-v14",
+    "receipt_format": "d1-watchdog-publisher-receipt-v14",
+    "legacy_evaluator_compatible": false,
+    "old_physical_allowance_reused": false,
+    "fixed_domain": 84,
+    "zero_until_sim_s": 2.0,
+    "stop_all_publications_at_sim_s": 8.0,
+    "capture_horizon_sim_s": 12.0,
+    "stale_truth_policy": "skip publication when age > 0.25 s; resume on new valid truth",
+    "cleanup_publishes_zero": false
+  },
+  "limitations": [
+    "Fake ROS tests exercise the actual new main, callback and CLI but do not validate real DDS discovery or ROS transport.",
+    "No model, native runtime, real publication, physical stopping or exact internal watchdog timeout was tested.",
+    "CAPTURE_COMPLETE does not assert that a motion command was applied or that a native physical trial passed.",
+    "The wall cap bounds the capture loop and does not preempt blocked imports or ROS native calls; forced process death or storage failure can prevent a final receipt.",
+    "Only the dedicated context is shut down. A cleanup failure is recorded and never converted into capture success."
+  ]
+}

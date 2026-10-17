@@ -70,6 +70,8 @@
 
 用户提供的四个开源仓库与 RoboMaster 文章已完成[对照阅读](docs/upstream_reference_review_20261017.md)：记录源码依据、当前已具备的能力及值得验证的增量，未启动新训练。
 
+后续已新增[完整历史日志的阶段诊断](docs/phase_learning14.md)与[发布器启动/故障回执修复](docs/watchdog_publisher14.md)，本轮只做离线核验，不产生新策略成绩。下一训练按用户选择先使用本机、接受更慢，见[低并行度准备草案](docs/local_training_plan14_draft.md)；[服务器估算](docs/training_server_plan_20261017.md)保留为备选，暂不租用。
+
 - **部署预检与失败回执**：新增入口核验工程工件身份，兼容 scale 导出，执行纯 ROS imports 并生成待用命令；实际 11 项导入检查通过，0 节点、0 物理步。见[第二轮说明](docs/deployment_preflight_11.md)。
 
 - **ROS 启动环境缺陷已修复**：03 的启动器手写 `PYTHONPATH` 丢掉了 `rpyutils` 实际所在的路径。新入口只做 source、不覆盖 `PYTHONPATH`，导入预检 **11/11 PASS**；回执显式记录 `watchdog_validated: false` —— **导入通过不等于 watchdog 通过**，真实停发后的物理停稳仍未验收。

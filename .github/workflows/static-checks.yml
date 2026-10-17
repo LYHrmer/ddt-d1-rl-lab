@@ -24,6 +24,7 @@ on:
       - 'tools11/**'
       - 'tools12/**'
       - 'tools13/**'
+      - 'tools14/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
     paths:
@@ -37,6 +38,7 @@ on:
       - 'tools11/**'
       - 'tools12/**'
       - 'tools13/**'
+      - 'tools14/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
 

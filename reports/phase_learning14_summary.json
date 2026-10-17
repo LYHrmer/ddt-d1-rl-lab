@@ -1,0 +1,1668 @@
+{
+  "format": "d1-phase-learning-diagnostic14-v1",
+  "created_utc": "2026-10-17T10:00:19.877321+00:00",
+  "physics_steps_executed": 0,
+  "models_loaded": 0,
+  "policy_weight_files_read": false,
+  "semantics": {
+    "policy_tick_s": 0.02,
+    "cut_zero_window_s": 0.5,
+    "stationary_window": "remaining zero-command interval after the first 0.5 s",
+    "stationary_does_not_imply_robot_stopped": true,
+    "missing_window_policy": "whole-window metrics are null unless every planned tick is observed",
+    "training_episode_denominator": "finished Monitor episodes by course and episode-start training quarter",
+    "causal_interpretation": "descriptive only; neither phase totals nor backend comparison identify a cause"
+  },
+  "runs": {
+    "03d": {
+      "training": {
+        "status": "COMPLETE",
+        "trained_transitions": 1048576,
+        "seed": 101,
+        "envs": 8,
+        "finished_episodes": 1674,
+        "quarters": [
+          {
+            "finished_episodes": 795,
+            "early_ended_episodes": 585,
+            "early_end_fraction": 0.7358490566037735,
+            "mean_finished_episode_return": 16.180049266666654,
+            "early_end_segment_counts": {
+              "initial_zero": 258,
+              "turn_left": 88,
+              "turn_right": 70,
+              "drive_forward": 62,
+              "drive_backward": 82,
+              "middle_zero": 19,
+              "final_zero": 6
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.0,
+            "to_fraction": 0.25,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 186,
+                "early_ended_episodes": 143,
+                "early_end_fraction": 0.7688172043010753,
+                "mean_finished_episode_return": 13.998014236559142,
+                "early_end_segment_counts": {
+                  "initial_zero": 72,
+                  "drive_forward": 58,
+                  "middle_zero": 5,
+                  "drive_backward": 5,
+                  "final_zero": 3
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 188,
+                "early_ended_episodes": 143,
+                "early_end_fraction": 0.7606382978723404,
+                "mean_finished_episode_return": 14.593873031914896,
+                "early_end_segment_counts": {
+                  "initial_zero": 54,
+                  "drive_backward": 77,
+                  "drive_forward": 4,
+                  "middle_zero": 6,
+                  "final_zero": 2
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 421,
+                "early_ended_episodes": 299,
+                "early_end_fraction": 0.7102137767220903,
+                "mean_finished_episode_return": 17.852399973871727,
+                "early_end_segment_counts": {
+                  "initial_zero": 132,
+                  "turn_left": 88,
+                  "turn_right": 70,
+                  "middle_zero": 8,
+                  "final_zero": 1
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.000581886776381552,
+              "alive": 0.005000000000000056,
+              "body_vy_squared": -0.0002552497817949758,
+              "gravity_xy_squared": -0.0021009792847543427,
+              "height_error_squared": -0.0011621806416348911,
+              "illegal_body_contact": -4.4403076171875e-05,
+              "leg_pose_deviation_sum_squared": -0.004615471148903526,
+              "standstill_tracking": 9.725482439192926e-05,
+              "torque_sum_squared": -0.0006363176607634192,
+              "vx_tracking": 0.031622572887174474,
+              "wz_tracking": 0.020973927474592383
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 64,
+              "policy_transitions": 262144,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.0,
+              "to": 0.25,
+              "train/approx_kl": 0.039154294079365076,
+              "train/clip_fraction": 0.3192041790674603,
+              "train/std": 0.3599995128692143,
+              "train/explained_variance": 0.7902438470295498,
+              "rollout/ep_rew_mean": 31.91706158999273
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 63,
+              "train/clip_fraction": 63,
+              "train/std": 63,
+              "train/explained_variance": 63,
+              "rollout/ep_rew_mean": 64
+            }
+          },
+          {
+            "finished_episodes": 309,
+            "early_ended_episodes": 94,
+            "early_end_fraction": 0.3042071197411003,
+            "mean_finished_episode_return": 51.3643681197411,
+            "early_end_segment_counts": {
+              "drive_forward": 21,
+              "turn_left": 5,
+              "turn_right": 13,
+              "final_zero": 20,
+              "middle_zero": 19,
+              "drive_backward": 16
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.25,
+            "to_fraction": 0.5,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 89,
+                "early_ended_episodes": 42,
+                "early_end_fraction": 0.47191011235955055,
+                "mean_finished_episode_return": 41.92713597752809,
+                "early_end_segment_counts": {
+                  "drive_forward": 13,
+                  "final_zero": 7,
+                  "middle_zero": 14,
+                  "drive_backward": 8
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 76,
+                "early_ended_episodes": 27,
+                "early_end_fraction": 0.35526315789473684,
+                "mean_finished_episode_return": 48.47789627631579,
+                "early_end_segment_counts": {
+                  "middle_zero": 2,
+                  "final_zero": 9,
+                  "drive_forward": 8,
+                  "drive_backward": 8
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 144,
+                "early_ended_episodes": 25,
+                "early_end_fraction": 0.1736111111111111,
+                "mean_finished_episode_return": 58.720517569444446,
+                "early_end_segment_counts": {
+                  "turn_left": 5,
+                  "turn_right": 13,
+                  "final_zero": 4,
+                  "middle_zero": 3
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0006788735124124515,
+              "alive": 0.005000000000000056,
+              "body_vy_squared": -0.00022475422710284266,
+              "gravity_xy_squared": -0.0008615849291799369,
+              "height_error_squared": -0.0003608506009204522,
+              "illegal_body_contact": -2.74658203125e-06,
+              "leg_pose_deviation_sum_squared": -0.002876636518163094,
+              "standstill_tracking": 0.00015189188046198788,
+              "torque_sum_squared": -0.0006139333678751367,
+              "vx_tracking": 0.03550016177921675,
+              "wz_tracking": 0.025591773418922693
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 64,
+              "policy_transitions": 262144,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.25,
+              "to": 0.5,
+              "train/approx_kl": 0.054355022546875,
+              "train/clip_fraction": 0.4008150100708008,
+              "train/std": 0.35123907634988427,
+              "train/explained_variance": 0.884114102460444,
+              "rollout/ep_rew_mean": 51.052870084375
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 64,
+              "train/clip_fraction": 64,
+              "train/std": 64,
+              "train/explained_variance": 64,
+              "rollout/ep_rew_mean": 64
+            }
+          },
+          {
+            "finished_episodes": 300,
+            "early_ended_episodes": 67,
+            "early_end_fraction": 0.22333333333333333,
+            "mean_finished_episode_return": 56.04749715333337,
+            "early_end_segment_counts": {
+              "final_zero": 9,
+              "middle_zero": 12,
+              "turn_left": 9,
+              "drive_forward": 19,
+              "turn_right": 9,
+              "drive_backward": 9
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.5,
+            "to_fraction": 0.75,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 86,
+                "early_ended_episodes": 23,
+                "early_end_fraction": 0.26744186046511625,
+                "mean_finished_episode_return": 51.928803011627934,
+                "early_end_segment_counts": {
+                  "middle_zero": 8,
+                  "drive_forward": 11,
+                  "drive_backward": 2,
+                  "final_zero": 2
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 79,
+                "early_ended_episodes": 23,
+                "early_end_fraction": 0.2911392405063291,
+                "mean_finished_episode_return": 53.38398311392406,
+                "early_end_segment_counts": {
+                  "final_zero": 5,
+                  "drive_forward": 8,
+                  "drive_backward": 7,
+                  "middle_zero": 3
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 135,
+                "early_ended_episodes": 21,
+                "early_end_fraction": 0.15555555555555556,
+                "mean_finished_episode_return": 60.22990682222221,
+                "early_end_segment_counts": {
+                  "turn_left": 9,
+                  "turn_right": 9,
+                  "final_zero": 2,
+                  "middle_zero": 1
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0007965186669330816,
+              "alive": 0.005000000000000056,
+              "body_vy_squared": -0.0002143137911207756,
+              "gravity_xy_squared": -0.000700331248061385,
+              "height_error_squared": -0.0001167021886602117,
+              "illegal_body_contact": -2.0599365234375e-06,
+              "leg_pose_deviation_sum_squared": -0.002153801368094539,
+              "standstill_tracking": 0.00016432387819505925,
+              "torque_sum_squared": -0.0006252106576448332,
+              "vx_tracking": 0.03645749611236691,
+              "wz_tracking": 0.027047266381248013
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 64,
+              "policy_transitions": 262144,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.5,
+              "to": 0.75,
+              "train/approx_kl": 0.0628289716875,
+              "train/clip_fraction": 0.4367332458496094,
+              "train/std": 0.35584247298538685,
+              "train/explained_variance": 0.879536647349596,
+              "rollout/ep_rew_mean": 54.67225171374999
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 64,
+              "train/clip_fraction": 64,
+              "train/std": 64,
+              "train/explained_variance": 64,
+              "rollout/ep_rew_mean": 64
+            }
+          },
+          {
+            "finished_episodes": 270,
+            "early_ended_episodes": 28,
+            "early_end_fraction": 0.1037037037037037,
+            "mean_finished_episode_return": 64.26267386296297,
+            "early_end_segment_counts": {
+              "final_zero": 8,
+              "drive_backward": 1,
+              "turn_left": 2,
+              "drive_forward": 10,
+              "turn_right": 5,
+              "middle_zero": 2
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.75,
+            "to_fraction": 1.0,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 65,
+                "early_ended_episodes": 7,
+                "early_end_fraction": 0.1076923076923077,
+                "mean_finished_episode_return": 62.21819063076923,
+                "early_end_segment_counts": {
+                  "final_zero": 1,
+                  "drive_forward": 5,
+                  "middle_zero": 1
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 69,
+                "early_ended_episodes": 13,
+                "early_end_fraction": 0.18840579710144928,
+                "mean_finished_episode_return": 61.736690884057985,
+                "early_end_segment_counts": {
+                  "final_zero": 6,
+                  "drive_backward": 1,
+                  "drive_forward": 5,
+                  "middle_zero": 1
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 136,
+                "early_ended_episodes": 8,
+                "early_end_fraction": 0.058823529411764705,
+                "mean_finished_episode_return": 66.52138147794115,
+                "early_end_segment_counts": {
+                  "turn_left": 2,
+                  "turn_right": 5,
+                  "final_zero": 1
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0008370153390631714,
+              "alive": 0.005000000000000056,
+              "body_vy_squared": -0.00017525790912226427,
+              "gravity_xy_squared": -0.0005369374090699066,
+              "height_error_squared": -6.56072324882401e-05,
+              "illegal_body_contact": -8.392333984374999e-07,
+              "leg_pose_deviation_sum_squared": -0.0018425721489089626,
+              "standstill_tracking": 0.00022124877469700778,
+              "torque_sum_squared": -0.0006244787988793372,
+              "vx_tracking": 0.037731690990627835,
+              "wz_tracking": 0.028802972015677157
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 64,
+              "policy_transitions": 262144,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.75,
+              "to": 1.0,
+              "train/approx_kl": 0.06460741445312501,
+              "train/clip_fraction": 0.4474945068359375,
+              "train/std": 0.3563724532723427,
+              "train/explained_variance": 0.8384130373597145,
+              "rollout/ep_rew_mean": 63.113857720468765
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 64,
+              "train/clip_fraction": 64,
+              "train/std": 64,
+              "train/explained_variance": 64,
+              "rollout/ep_rew_mean": 64
+            }
+          }
+        ],
+        "monitor_censoring": {
+          "finished_episode_ticks": 1045905,
+          "unlogged_tail_ticks": 2671,
+          "unlogged_tail_ticks_by_worker": {
+            "0": 96,
+            "1": 500,
+            "2": 917,
+            "3": 6,
+            "4": 473,
+            "5": 73,
+            "6": 28,
+            "7": 578
+          },
+          "tail_phase_and_return": "NOT_OBSERVED"
+        },
+        "phase_exposure_ticks": {
+          "status": "NOT_OBSERVED",
+          "reason": "existing replay rows record end labels, not all segment boundaries"
+        },
+        "phase_reward_components": {
+          "status": "NOT_OBSERVED",
+          "reason": "ledger terms mix all phases; Monitor has episode totals only"
+        },
+        "cut_zero_vs_stationary_training_split": {
+          "status": "NOT_OBSERVED",
+          "reason": "zero-segment end labels do not locate the end relative to the cut"
+        }
+      },
+      "qualification": {
+        "predictor_backend": "self_trained_onnx_python_ort",
+        "provenance": {
+          "kind": "self_trained_onnx_python_ort",
+          "onnx_sha256": "cf62bb43a53019d85b0dec00258dd261f217516f4a157a7e3826d21deffad48e",
+          "metadata_sha256": "292a535080918344a7faefccee63b49592042f91482aa19c88f0820691ad4f90",
+          "training_kind": "pilot",
+          "training_seed": 101,
+          "training_arm": "B",
+          "trained_transitions": 1048576,
+          "python_ort_version": "1.23.2",
+          "cxx_ort_1_10_status": "separate_runtime_gate",
+          "random_initialization": true,
+          "teacher_policy_used": false,
+          "vecnormalize_used": false
+        },
+        "tasks": {
+          "forward_stop": {
+            "observed_ticks": 600,
+            "planned_ticks": 600,
+            "ended_early": false,
+            "original_qualification": {
+              "passed": false,
+              "gates_passed": 6,
+              "gates_applicable": 7,
+              "blocking_gate": "stop_displacement_m 0.080583644 > 0.05",
+              "stop_displacement_m": 0.08058364437166654,
+              "stable_wz_mae_rad_s": null,
+              "early_failure": false
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.020667554941222174,
+                  "mean_abs_wz_error_rad_s": 0.002156287038539299,
+                  "mean_horizontal_speed_m_s": 0.0261161680550526,
+                  "mean_abs_lateral_speed_m_s": 0.012681880617630597,
+                  "peak_abs_pitch_rad": 0.036799574137289154,
+                  "reward_sum": 9.085646992330837,
+                  "mean_reward_per_policy_tick": 0.09085646992330837,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_forward",
+                "start_tick": 100,
+                "end_tick": 400,
+                "command": [
+                  0.2,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 300,
+                "observed_ticks": 300,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.0143172231485076,
+                  "mean_abs_wz_error_rad_s": 0.001771535116971771,
+                  "mean_horizontal_speed_m_s": 0.20422734274902035,
+                  "mean_abs_lateral_speed_m_s": 0.005577248306344339,
+                  "peak_abs_pitch_rad": 0.02226577180726569,
+                  "reward_sum": 24.355070229642884,
+                  "mean_reward_per_policy_tick": 0.08118356743214294,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_forward",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.08375561923328863,
+                  "mean_abs_wz_error_rad_s": 0.0042032202302068715,
+                  "mean_horizontal_speed_m_s": 0.09076338234874962,
+                  "mean_abs_lateral_speed_m_s": 0.01716778021584712,
+                  "peak_abs_pitch_rad": 0.012674657813711791,
+                  "reward_sum": 1.8427740971925053,
+                  "mean_reward_per_policy_tick": 0.07371096388770021,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_forward",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 175,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.009659800058362573,
+                  "mean_abs_wz_error_rad_s": 0.0012193025532048559,
+                  "mean_horizontal_speed_m_s": 0.014132756313775877,
+                  "mean_abs_lateral_speed_m_s": 0.006226260454909905,
+                  "peak_abs_pitch_rad": 0.02116695526856097,
+                  "reward_sum": 16.988833211408632,
+                  "mean_reward_per_policy_tick": 0.09707904692233504,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          },
+          "reverse_stop": {
+            "observed_ticks": 600,
+            "planned_ticks": 600,
+            "ended_early": false,
+            "original_qualification": {
+              "passed": true,
+              "gates_passed": 7,
+              "gates_applicable": 7,
+              "blocking_gate": null,
+              "stop_displacement_m": 0.0163405234561888,
+              "stable_wz_mae_rad_s": null,
+              "early_failure": false
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.020667554941222174,
+                  "mean_abs_wz_error_rad_s": 0.002156287038539299,
+                  "mean_horizontal_speed_m_s": 0.0261161680550526,
+                  "mean_abs_lateral_speed_m_s": 0.012681880617630597,
+                  "peak_abs_pitch_rad": 0.036799574137289154,
+                  "reward_sum": 9.085646992330837,
+                  "mean_reward_per_policy_tick": 0.09085646992330837,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_backward",
+                "start_tick": 100,
+                "end_tick": 400,
+                "command": [
+                  -0.2,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 300,
+                "observed_ticks": 300,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.039913905031511626,
+                  "mean_abs_wz_error_rad_s": 0.009718271434644144,
+                  "mean_horizontal_speed_m_s": 0.16030944649168935,
+                  "mean_abs_lateral_speed_m_s": 0.002377088175204564,
+                  "peak_abs_pitch_rad": 0.05878058948792943,
+                  "reward_sum": 24.417034133516296,
+                  "mean_reward_per_policy_tick": 0.08139011377838766,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_backward",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.054354456857211096,
+                  "mean_abs_wz_error_rad_s": 0.004940479200420313,
+                  "mean_horizontal_speed_m_s": 0.05520202475679329,
+                  "mean_abs_lateral_speed_m_s": 0.00454070600282827,
+                  "peak_abs_pitch_rad": 0.05360979574773809,
+                  "reward_sum": 2.1036013690734734,
+                  "mean_reward_per_policy_tick": 0.08414405476293893,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_backward",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 175,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.011371563131998531,
+                  "mean_abs_wz_error_rad_s": 0.0024715539731011626,
+                  "mean_horizontal_speed_m_s": 0.011472523283203471,
+                  "mean_abs_lateral_speed_m_s": 0.0009990074557036934,
+                  "peak_abs_pitch_rad": 0.03647614467383604,
+                  "reward_sum": 17.245936682142833,
+                  "mean_reward_per_policy_tick": 0.09854820961224477,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          },
+          "turn_stop": {
+            "observed_ticks": 600,
+            "planned_ticks": 600,
+            "ended_early": false,
+            "original_qualification": {
+              "passed": false,
+              "gates_passed": 5,
+              "gates_applicable": 7,
+              "blocking_gate": "stable_wz_mae_rad_s 0.10288167 > 0.08; stop_displacement_m 0.060764292 > 0.05",
+              "stop_displacement_m": 0.060764291619086246,
+              "stable_wz_mae_rad_s": 0.10288167407668944,
+              "early_failure": false
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.020667554941222174,
+                  "mean_abs_wz_error_rad_s": 0.002156287038539299,
+                  "mean_horizontal_speed_m_s": 0.0261161680550526,
+                  "mean_abs_lateral_speed_m_s": 0.012681880617630597,
+                  "peak_abs_pitch_rad": 0.036799574137289154,
+                  "reward_sum": 9.085646992330837,
+                  "mean_reward_per_policy_tick": 0.09085646992330837,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_turn_left",
+                "start_tick": 100,
+                "end_tick": 250,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.2
+                ],
+                "expected_ticks": 150,
+                "observed_ticks": 150,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.007988772854578965,
+                  "mean_abs_wz_error_rad_s": 0.10376354400241504,
+                  "mean_horizontal_speed_m_s": 0.010670262298014791,
+                  "mean_abs_lateral_speed_m_s": 0.005830001546459608,
+                  "peak_abs_pitch_rad": 0.025170988428945648,
+                  "reward_sum": 11.056382058334115,
+                  "mean_reward_per_policy_tick": 0.07370921372222744,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_turn_right",
+                "start_tick": 250,
+                "end_tick": 400,
+                "command": [
+                  0.0,
+                  0.0,
+                  -0.2
+                ],
+                "expected_ticks": 150,
+                "observed_ticks": 150,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.021127632819739187,
+                  "mean_abs_wz_error_rad_s": 0.04902426287752116,
+                  "mean_horizontal_speed_m_s": 0.025036670496842203,
+                  "mean_abs_lateral_speed_m_s": 0.009775238458876609,
+                  "peak_abs_pitch_rad": 0.03872473693912896,
+                  "reward_sum": 11.922243623887324,
+                  "mean_reward_per_policy_tick": 0.07948162415924882,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_turn_right",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.02208601543080096,
+                  "mean_abs_wz_error_rad_s": 0.03251228423655157,
+                  "mean_horizontal_speed_m_s": 0.02585274818287826,
+                  "mean_abs_lateral_speed_m_s": 0.012218604300132165,
+                  "peak_abs_pitch_rad": 0.00446732975308972,
+                  "reward_sum": 2.0621881415922654,
+                  "mean_reward_per_policy_tick": 0.08248752566369061,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_turn_right",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 175,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.014083224869242638,
+                  "mean_abs_wz_error_rad_s": 0.009170862829543838,
+                  "mean_horizontal_speed_m_s": 0.01452329066164648,
+                  "mean_abs_lateral_speed_m_s": 0.002978786332797456,
+                  "peak_abs_pitch_rad": 0.00335262327367899,
+                  "reward_sum": 16.413734501708184,
+                  "mean_reward_per_policy_tick": 0.09379276858118962,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          }
+        },
+        "original_tasks_passed": 1
+      }
+    },
+    "08": {
+      "training": {
+        "status": "COMPLETE",
+        "trained_transitions": 8388608,
+        "seed": 101,
+        "envs": 8,
+        "finished_episodes": 9163,
+        "quarters": [
+          {
+            "finished_episodes": 2742,
+            "early_ended_episodes": 800,
+            "early_end_fraction": 0.29175784099197666,
+            "mean_finished_episode_return": 51.388334962436225,
+            "early_end_segment_counts": {
+              "initial_zero": 258,
+              "turn_left": 105,
+              "turn_right": 99,
+              "drive_forward": 119,
+              "drive_backward": 114,
+              "middle_zero": 54,
+              "final_zero": 51
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.0,
+            "to_fraction": 0.25,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 684,
+                "early_ended_episodes": 228,
+                "early_end_fraction": 0.3333333333333333,
+                "mean_finished_episode_return": 49.06378555409351,
+                "early_end_segment_counts": {
+                  "initial_zero": 72,
+                  "drive_forward": 90,
+                  "middle_zero": 30,
+                  "final_zero": 18,
+                  "drive_backward": 18
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 705,
+                "early_ended_episodes": 215,
+                "early_end_fraction": 0.3049645390070922,
+                "mean_finished_episode_return": 51.35107240709221,
+                "early_end_segment_counts": {
+                  "initial_zero": 54,
+                  "drive_backward": 96,
+                  "drive_forward": 29,
+                  "middle_zero": 12,
+                  "final_zero": 24
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 1353,
+                "early_ended_episodes": 357,
+                "early_end_fraction": 0.2638580931263858,
+                "mean_finished_episode_return": 52.5829113828529,
+                "early_end_segment_counts": {
+                  "initial_zero": 132,
+                  "turn_left": 105,
+                  "turn_right": 99,
+                  "final_zero": 9,
+                  "middle_zero": 12
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0007601420766635063,
+              "alive": 0.005000000000000034,
+              "body_vy_squared": -0.00015899288078389045,
+              "gravity_xy_squared": -0.0006492602611379645,
+              "height_error_squared": -0.00024578851794608005,
+              "illegal_body_contact": -6.332397460937487e-06,
+              "leg_pose_deviation_sum_squared": -0.0020590755362110656,
+              "standstill_tracking": 0.0003350183632493762,
+              "torque_sum_squared": -0.0005866441089600855,
+              "vx_tracking": 0.03697613867392676,
+              "wz_tracking": 0.029197058126267286
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 512,
+              "policy_transitions": 2097152,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.0,
+              "to": 0.25,
+              "train/approx_kl": 0.06632275351467713,
+              "train/clip_fraction": 0.4448981537044398,
+              "train/std": 0.3451444164297585,
+              "train/explained_variance": 0.8195587081685225,
+              "rollout/ep_rew_mean": 61.43148488029207
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 511,
+              "train/clip_fraction": 511,
+              "train/std": 511,
+              "train/explained_variance": 511,
+              "rollout/ep_rew_mean": 512
+            }
+          },
+          {
+            "finished_episodes": 2155,
+            "early_ended_episodes": 131,
+            "early_end_fraction": 0.06078886310904873,
+            "mean_finished_episode_return": 74.08584871740135,
+            "early_end_segment_counts": {
+              "turn_left": 54,
+              "drive_backward": 20,
+              "turn_right": 14,
+              "drive_forward": 8,
+              "final_zero": 24,
+              "middle_zero": 11
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.25,
+            "to_fraction": 0.5,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 534,
+                "early_ended_episodes": 18,
+                "early_end_fraction": 0.033707865168539325,
+                "mean_finished_episode_return": 75.86995251685394,
+                "early_end_segment_counts": {
+                  "drive_backward": 11,
+                  "final_zero": 3,
+                  "middle_zero": 2,
+                  "drive_forward": 2
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 555,
+                "early_ended_episodes": 24,
+                "early_end_fraction": 0.043243243243243246,
+                "mean_finished_episode_return": 74.97805451351341,
+                "early_end_segment_counts": {
+                  "drive_forward": 6,
+                  "middle_zero": 4,
+                  "drive_backward": 9,
+                  "final_zero": 5
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 1066,
+                "early_ended_episodes": 89,
+                "early_end_fraction": 0.08348968105065666,
+                "mean_finished_episode_return": 72.7276070234522,
+                "early_end_segment_counts": {
+                  "turn_left": 54,
+                  "turn_right": 14,
+                  "final_zero": 16,
+                  "middle_zero": 5
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0007391308526201,
+              "alive": 0.005000000000000034,
+              "body_vy_squared": -7.11426042505493e-05,
+              "gravity_xy_squared": -0.000229178105801618,
+              "height_error_squared": -0.0002663257043688244,
+              "illegal_body_contact": -1.52587890625e-07,
+              "leg_pose_deviation_sum_squared": -0.002342348833149906,
+              "standstill_tracking": 0.0009434096398377807,
+              "torque_sum_squared": -0.00047907351089761664,
+              "vx_tracking": 0.03883967075162491,
+              "wz_tracking": 0.03553805797666193
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 512,
+              "policy_transitions": 2097152,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.25,
+              "to": 0.5,
+              "train/approx_kl": 0.08717238725195313,
+              "train/clip_fraction": 0.5251737833023071,
+              "train/std": 0.36738145881099626,
+              "train/explained_variance": 0.8581699113128707,
+              "rollout/ep_rew_mean": 74.31803293771492
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 512,
+              "train/clip_fraction": 512,
+              "train/std": 512,
+              "train/explained_variance": 512,
+              "rollout/ep_rew_mean": 512
+            }
+          },
+          {
+            "finished_episodes": 2127,
+            "early_ended_episodes": 70,
+            "early_end_fraction": 0.032910202162670425,
+            "mean_finished_episode_return": 75.67835629478148,
+            "early_end_segment_counts": {
+              "turn_left": 13,
+              "middle_zero": 10,
+              "final_zero": 26,
+              "turn_right": 9,
+              "drive_forward": 5,
+              "drive_backward": 7
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.5,
+            "to_fraction": 0.75,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 550,
+                "early_ended_episodes": 19,
+                "early_end_fraction": 0.034545454545454546,
+                "mean_finished_episode_return": 76.31956003272724,
+                "early_end_segment_counts": {
+                  "middle_zero": 2,
+                  "final_zero": 12,
+                  "drive_backward": 5
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 504,
+                "early_ended_episodes": 13,
+                "early_end_fraction": 0.025793650793650792,
+                "mean_finished_episode_return": 75.97594043650794,
+                "early_end_segment_counts": {
+                  "drive_forward": 5,
+                  "middle_zero": 5,
+                  "final_zero": 1,
+                  "drive_backward": 2
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 1073,
+                "early_ended_episodes": 38,
+                "early_end_fraction": 0.035414725069897485,
+                "mean_finished_episode_return": 75.20990851910535,
+                "early_end_segment_counts": {
+                  "turn_left": 13,
+                  "final_zero": 13,
+                  "middle_zero": 3,
+                  "turn_right": 9
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0008649596584505638,
+              "alive": 0.005000000000000034,
+              "body_vy_squared": -5.43266935879142e-05,
+              "gravity_xy_squared": -0.00021161823077339308,
+              "height_error_squared": -0.00041146336945289405,
+              "illegal_body_contact": -6.67572021484375e-08,
+              "leg_pose_deviation_sum_squared": -0.0027655514120376048,
+              "standstill_tracking": 0.0012510588351814767,
+              "torque_sum_squared": -0.0004679088480706569,
+              "vx_tracking": 0.038919761245161395,
+              "wz_tracking": 0.03627119946568518
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 512,
+              "policy_transitions": 2097152,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.5,
+              "to": 0.75,
+              "train/approx_kl": 0.0862645714511718,
+              "train/clip_fraction": 0.5231776237487793,
+              "train/std": 0.4900681569124572,
+              "train/explained_variance": 0.8564986133715138,
+              "rollout/ep_rew_mean": 75.45720831130862
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 512,
+              "train/clip_fraction": 512,
+              "train/std": 512,
+              "train/explained_variance": 512,
+              "rollout/ep_rew_mean": 512
+            }
+          },
+          {
+            "finished_episodes": 2139,
+            "early_ended_episodes": 101,
+            "early_end_fraction": 0.047218326320710616,
+            "mean_finished_episode_return": 75.22118637634404,
+            "early_end_segment_counts": {
+              "middle_zero": 16,
+              "final_zero": 21,
+              "drive_forward": 43,
+              "turn_right": 6,
+              "turn_left": 2,
+              "drive_backward": 13
+            },
+            "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks",
+            "from_fraction": 0.75,
+            "to_fraction": 1.0,
+            "assignment": "episode START fraction, recomputed using this run per-worker budget",
+            "by_course": {
+              "forward_first": {
+                "finished_episodes": 519,
+                "early_ended_episodes": 42,
+                "early_end_fraction": 0.08092485549132948,
+                "mean_finished_episode_return": 73.30240804238922,
+                "early_end_segment_counts": {
+                  "middle_zero": 11,
+                  "drive_forward": 20,
+                  "final_zero": 3,
+                  "drive_backward": 8
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "backward_first": {
+                "finished_episodes": 540,
+                "early_ended_episodes": 43,
+                "early_end_fraction": 0.07962962962962963,
+                "mean_finished_episode_return": 74.64393468148141,
+                "early_end_segment_counts": {
+                  "final_zero": 13,
+                  "middle_zero": 2,
+                  "drive_forward": 23,
+                  "drive_backward": 5
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              },
+              "turn": {
+                "finished_episodes": 1080,
+                "early_ended_episodes": 16,
+                "early_end_fraction": 0.014814814814814815,
+                "mean_finished_episode_return": 76.43189181203711,
+                "early_end_segment_counts": {
+                  "final_zero": 5,
+                  "middle_zero": 3,
+                  "turn_right": 6,
+                  "turn_left": 2
+                },
+                "denominator": "finished Monitor episodes in this group, NOT phase entries or phase ticks"
+              }
+            },
+            "rollout_mixed_phase_reward_mean_per_tick": {
+              "action_rate_mean_squared": -0.0008757353990229059,
+              "alive": 0.005000000000000034,
+              "body_vy_squared": -4.477479654831866e-05,
+              "gravity_xy_squared": -0.00021939568204677387,
+              "height_error_squared": -0.0003643073484813548,
+              "illegal_body_contact": -9.536743164062499e-08,
+              "leg_pose_deviation_sum_squared": -0.003032411898681863,
+              "standstill_tracking": 0.0014487131837688746,
+              "torque_sum_squared": -0.000489497214784522,
+              "vx_tracking": 0.03899983472982572,
+              "wz_tracking": 0.036601733954617494
+            },
+            "mixed_reward_denominator": {
+              "full_rollouts": 512,
+              "policy_transitions": 2097152,
+              "phases_separable": false
+            },
+            "ppo_diagnostics_mixed_phase": {
+              "from": 0.75,
+              "to": 1.0,
+              "train/approx_kl": 0.08872168537499987,
+              "train/clip_fraction": 0.5246367454528809,
+              "train/std": 0.6759415513370186,
+              "train/explained_variance": 0.865300445468165,
+              "rollout/ep_rew_mean": 75.28241626156249
+            },
+            "ppo_available_rows_by_metric": {
+              "train/approx_kl": 512,
+              "train/clip_fraction": 512,
+              "train/std": 512,
+              "train/explained_variance": 512,
+              "rollout/ep_rew_mean": 512
+            }
+          }
+        ],
+        "monitor_censoring": {
+          "finished_episode_ticks": 8385064,
+          "unlogged_tail_ticks": 3544,
+          "unlogged_tail_ticks_by_worker": {
+            "0": 216,
+            "1": 177,
+            "2": 397,
+            "3": 515,
+            "4": 500,
+            "5": 584,
+            "6": 970,
+            "7": 185
+          },
+          "tail_phase_and_return": "NOT_OBSERVED"
+        },
+        "phase_exposure_ticks": {
+          "status": "NOT_OBSERVED",
+          "reason": "existing replay rows record end labels, not all segment boundaries"
+        },
+        "phase_reward_components": {
+          "status": "NOT_OBSERVED",
+          "reason": "ledger terms mix all phases; Monitor has episode totals only"
+        },
+        "cut_zero_vs_stationary_training_split": {
+          "status": "NOT_OBSERVED",
+          "reason": "zero-segment end labels do not locate the end relative to the cut"
+        }
+      },
+      "qualification": {
+        "predictor_backend": "self_trained_sb3_checkpoint",
+        "provenance": {
+          "kind": "self_trained_sb3_checkpoint",
+          "checkpoint_sha256": "e550f3fbe76770b5dd0857e1c6d384b16f1b5b8d5747deae769c6625db1a4abf",
+          "training_protocol_sha256": "ea36ee6f89a2769d72373aacc3c6f9b84ba829834cf67c01e6b74cb0a5af00e7",
+          "training_result_sha256": "982eda6eb547cc8f7f8cffb15cba01dd0f1480284c70adca3743762e1c412e6f",
+          "training_kind": "scale",
+          "training_seed": 101,
+          "training_arm": "B",
+          "trained_transitions": 8388608,
+          "random_initialization": true,
+          "teacher_policy_used": false,
+          "vecnormalize_used": false
+        },
+        "tasks": {
+          "forward_stop": {
+            "observed_ticks": 485,
+            "planned_ticks": 600,
+            "ended_early": true,
+            "original_qualification": {
+              "passed": false,
+              "gates_passed": null,
+              "gates_applicable": null,
+              "blocking_gate": "ended early: TERMINATED at policy tick 485 of 600, fall=True",
+              "stop_displacement_m": null,
+              "stable_wz_mae_rad_s": null,
+              "early_failure": true,
+              "peak_abs_roll_or_pitch_rad": 0.46626088258409254
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.006497400546451635,
+                  "mean_abs_wz_error_rad_s": 0.024507835172024067,
+                  "mean_horizontal_speed_m_s": 0.015858999525375676,
+                  "mean_abs_lateral_speed_m_s": 0.013267060925491658,
+                  "peak_abs_pitch_rad": 0.08520173025206462,
+                  "reward_sum": 8.922770213874346,
+                  "mean_reward_per_policy_tick": 0.08922770213874345,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_forward",
+                "start_tick": 100,
+                "end_tick": 400,
+                "command": [
+                  0.2,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 300,
+                "observed_ticks": 300,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.09299550294190576,
+                  "mean_abs_wz_error_rad_s": 0.009382279182832283,
+                  "mean_horizontal_speed_m_s": 0.10748552106792343,
+                  "mean_abs_lateral_speed_m_s": 0.004420140782971918,
+                  "peak_abs_pitch_rad": 0.18173145236488644,
+                  "reward_sum": 21.261162734901326,
+                  "mean_reward_per_policy_tick": 0.07087054244967109,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_forward",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.07852858947878473,
+                  "mean_abs_wz_error_rad_s": 0.026192872364001193,
+                  "mean_horizontal_speed_m_s": 0.09042170186617375,
+                  "mean_abs_lateral_speed_m_s": 0.043693940839825134,
+                  "peak_abs_pitch_rad": 0.18645004524286882,
+                  "reward_sum": 1.7462418072576125,
+                  "mean_reward_per_policy_tick": 0.0698496722903045,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_forward",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 60,
+                "missing_ticks": 115,
+                "coverage": "PARTIAL",
+                "metrics": null
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          },
+          "reverse_stop": {
+            "observed_ticks": 600,
+            "planned_ticks": 600,
+            "ended_early": false,
+            "original_qualification": {
+              "passed": false,
+              "gates_passed": 4,
+              "gates_applicable": 7,
+              "blocking_gate": "stable_vx_mae_m_s 0.080432294 > 0.06; stop_last_second_horizontal_speed_m_s 0.035798058 > 0.02; stop_displacement_m 0.058565436 > 0.05",
+              "stop_displacement_m": 0.05856543629102557,
+              "stable_wz_mae_rad_s": null,
+              "early_failure": false
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.006497400546451635,
+                  "mean_abs_wz_error_rad_s": 0.024507835172024067,
+                  "mean_horizontal_speed_m_s": 0.015858999525375676,
+                  "mean_abs_lateral_speed_m_s": 0.013267060925491658,
+                  "peak_abs_pitch_rad": 0.08520173025206462,
+                  "reward_sum": 8.922770213874346,
+                  "mean_reward_per_policy_tick": 0.08922770213874345,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_backward",
+                "start_tick": 100,
+                "end_tick": 400,
+                "command": [
+                  -0.2,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 300,
+                "observed_ticks": 300,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.06917135768659757,
+                  "mean_abs_wz_error_rad_s": 0.023260047363554068,
+                  "mean_horizontal_speed_m_s": 0.26081534622433994,
+                  "mean_abs_lateral_speed_m_s": 0.008943598324522099,
+                  "peak_abs_pitch_rad": 0.11480382688489976,
+                  "reward_sum": 23.03585855515131,
+                  "mean_reward_per_policy_tick": 0.0767861951838377,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_backward",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.11761064681991389,
+                  "mean_abs_wz_error_rad_s": 0.0093452851544858,
+                  "mean_horizontal_speed_m_s": 0.12320250374708637,
+                  "mean_abs_lateral_speed_m_s": 0.025976056084742863,
+                  "peak_abs_pitch_rad": 0.023710753345831743,
+                  "reward_sum": 1.7584046795354178,
+                  "mean_reward_per_policy_tick": 0.07033618718141671,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_backward",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 175,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.022925488480569498,
+                  "mean_abs_wz_error_rad_s": 0.022014049628218915,
+                  "mean_horizontal_speed_m_s": 0.027647936345275473,
+                  "mean_abs_lateral_speed_m_s": 0.011035105948498061,
+                  "peak_abs_pitch_rad": 0.09865749186838231,
+                  "reward_sum": 14.501594144325132,
+                  "mean_reward_per_policy_tick": 0.08286625225328646,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          },
+          "turn_stop": {
+            "observed_ticks": 600,
+            "planned_ticks": 600,
+            "ended_early": false,
+            "original_qualification": {
+              "passed": true,
+              "gates_passed": 7,
+              "gates_applicable": 7,
+              "blocking_gate": null,
+              "stop_displacement_m": 0.016677870554297654,
+              "stable_wz_mae_rad_s": 0.06617952794245915,
+              "early_failure": false
+            },
+            "windows": [
+              {
+                "phase": "stationary_initial",
+                "start_tick": 0,
+                "end_tick": 100,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 100,
+                "observed_ticks": 100,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.006497400546451635,
+                  "mean_abs_wz_error_rad_s": 0.024507835172024067,
+                  "mean_horizontal_speed_m_s": 0.015858999525375676,
+                  "mean_abs_lateral_speed_m_s": 0.013267060925491658,
+                  "peak_abs_pitch_rad": 0.08520173025206462,
+                  "reward_sum": 8.922770213874346,
+                  "mean_reward_per_policy_tick": 0.08922770213874345,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_turn_left",
+                "start_tick": 100,
+                "end_tick": 250,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.2
+                ],
+                "expected_ticks": 150,
+                "observed_ticks": 150,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.028137348032735706,
+                  "mean_abs_wz_error_rad_s": 0.060182619364178125,
+                  "mean_horizontal_speed_m_s": 0.034217746971315355,
+                  "mean_abs_lateral_speed_m_s": 0.01516031471949461,
+                  "peak_abs_pitch_rad": 0.1117085007514004,
+                  "reward_sum": 11.381044710118445,
+                  "mean_reward_per_policy_tick": 0.07587363140078963,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "drive_turn_right",
+                "start_tick": 250,
+                "end_tick": 400,
+                "command": [
+                  0.0,
+                  0.0,
+                  -0.2
+                ],
+                "expected_ticks": 150,
+                "observed_ticks": 150,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.017752852659866543,
+                  "mean_abs_wz_error_rad_s": 0.028047259442120994,
+                  "mean_horizontal_speed_m_s": 0.026912945735336653,
+                  "mean_abs_lateral_speed_m_s": 0.017542257999187526,
+                  "peak_abs_pitch_rad": 0.06848630703128662,
+                  "reward_sum": 11.802678008043685,
+                  "mean_reward_per_policy_tick": 0.07868452005362457,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "cut_zero_after_turn_right",
+                "start_tick": 400,
+                "end_tick": 425,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 25,
+                "observed_ticks": 25,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.028277077745793074,
+                  "mean_abs_wz_error_rad_s": 0.03157168147506137,
+                  "mean_horizontal_speed_m_s": 0.030237906412707585,
+                  "mean_abs_lateral_speed_m_s": 0.0089283410295326,
+                  "peak_abs_pitch_rad": 0.062102811449143015,
+                  "reward_sum": 1.9761586846612538,
+                  "mean_reward_per_policy_tick": 0.07904634738645015,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              },
+              {
+                "phase": "stationary_after_turn_right",
+                "start_tick": 425,
+                "end_tick": 600,
+                "command": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "expected_ticks": 175,
+                "observed_ticks": 175,
+                "missing_ticks": 0,
+                "coverage": "OBSERVED",
+                "metrics": {
+                  "mean_abs_vx_error_m_s": 0.00995358832716386,
+                  "mean_abs_wz_error_rad_s": 0.018976370008460045,
+                  "mean_horizontal_speed_m_s": 0.015037412702918798,
+                  "mean_abs_lateral_speed_m_s": 0.009425052609525704,
+                  "peak_abs_pitch_rad": 0.0722554661274234,
+                  "reward_sum": 15.687869245555644,
+                  "mean_reward_per_policy_tick": 0.08964496711746082,
+                  "saturation_events_per_policy_tick": 0.0
+                }
+              }
+            ],
+            "phase_reward_components": {
+              "status": "NOT_OBSERVED",
+              "reason": "trace contains total scalar reward only"
+            }
+          }
+        },
+        "original_tasks_passed": 1
+      }
+    }
+  },
+  "inputs_sha256": {
+    "/home/lyh/ddt_ros2_ws/tools/evaluate_d1_ppo.py": "47e5b3dd2a806b958c1be5d24a46a54848e6a4981401a07f40b0be3a4107f121",
+    "/home/lyh/ddt_ros2_ws/tools04/build_final_ledger04.py": "93a8ed2a4b8d6127a9f5095f95cc4885260273a9e31be978dc1fac07c0bcd9af",
+    "/home/lyh/ddt_ros2_ws/tools04/release_pilot04b.py": "423af785cbe9f1f894c5d4f608c98ec1f39f057cea65eef8e7cdcb69e5d7771e",
+    "/home/lyh/ddt_ros2_ws/tools08/release_scale08.py": "52ec595916d7e58df153ec1459284543353fe03573f2c65564364ff69a759b1f",
+    "/home/lyh/ddt_ros2_ws/tools08/replay_training_episodes08.py": "1caeeddcc00816ae8c220f87e2c9e1e1f990920c2ee6e7cfc92e52e6118a8743",
+    "/home/lyh/ddt_ros2_ws/tools08/run_scale08.py": "e15e7cb8a874022071180d4335124a48cd62923602b0e3a1585fa5b9bfa0627b",
+    "/home/lyh/ddt_ros2_ws/tools08/verify_scale08.py": "02061eac2ed28633c1c3c3d1bb573b6e39e7525f591e47c7c90a9b1b69e98277",
+    "/home/lyh/ddt_ros2_ws/tools10/supervise_scale10.py": "f82e3d0255ad8ff7931ad8ddcfe3a6c235b5f50295b6c42e346b1a2a4a599a0b",
+    "/home/lyh/ddt_ros2_ws/tools14/analyze_phase_learning14.py": "2aaee6f0542cfb2768add2c3a642b403ebd6573324af97704ad7102aae78c392",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_00.monitor.csv": "f1e0b3dbc777f57395dd367882cf3b0eea5e8b6c92d4ff7cab81e482c10d0c4c",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_01.monitor.csv": "aa786d5d4a657cdb5968ce18f6b5680112106722689ac3a8b9022cabc4710807",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_02.monitor.csv": "24e9ca1bc648a0a46e179da6257342235b3692418490b72a0b64ddc07ea8215c",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_03.monitor.csv": "eb197a0f7415b2403e4d87be6f0ffa4c1d33e6d8c2244f73183117a9aca45140",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_04.monitor.csv": "a49ce46018829fb06372f69fe2606bc21b83a5759131a41cf6b0dd2175091b2b",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_05.monitor.csv": "54e33976147228f833a0f8bed8e499806e33023f3db487892aea0bda0e16df0b",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_06.monitor.csv": "6ba88fee95412734cdb56d7c858470feba8be133b93038f1d79e381fe32b6fa2",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/env_07.monitor.csv": "90e127777f1bc9d0e398ca2adfe0aacb9e35c136c215aec2a80e1b8013092400",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/ledger.jsonl": "63745a46621b0609034c8a57c3a7b07aa1a07299236b11b64925a87908c455fa",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/progress.csv": "2a077b237136cba1d475804df51d3da7197983a9a7b05c56b88a4ac1e12245b4",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/protocol.json": "fab789f5a80eeb94561869810102d4fddff8dcafd82052ff2bcebf9c740c0ae2",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_01/result.json": "d509c156e1f702ea91bd9fc08381248ad971b37f3eab8771d041800a00d0fad1",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_export_01/metadata.json": "292a535080918344a7faefccee63b49592042f91482aa19c88f0820691ad4f90",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/episodes.jsonl": "f2f59b73f0f37a8d105ca9a0e7b02fee2d7b8e97ae8aa7fe26b6a307c46e8f42",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/evaluation_contract.json": "38b37557976abeb2932f7985eaffb5684dc623fd0ddb713e56c6ed08d71f66d8",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/forward_stop_delay0_seed7001.npz": "df3f7b8cb6cf1af3f0b7320054bd58ebe404a866fb8b9702fd5f79ed39390f78",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/reverse_stop_delay0_seed7001.npz": "229e7fa0a6a0e9a4b82ce61ae79d4efebee5ab76766c554fbed1afbd319e74fb",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/summary.json": "5413af8aa06fc0261365d865e2becb8b042b5fc7455e859dc53134d6fe72bc2f",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_03/pilot03d_python_eval_01/turn_stop_delay0_seed7001.npz": "f2d66478227bb6d51b12db7598684732d65ed5d77793a8e59398424e68a605bb",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/episodes.jsonl": "a96b8e2e74ef934b17ea81b1f9052075bd06ebe437e350db3abaddc3cf84d367",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/evaluation_contract.json": "87713cd68cb5b3abff7cf92bf2056ca0f1fb1eb617378541432c23f9f03391c2",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/forward_stop_delay0_seed7001.npz": "527291ad519fc0eededb0810ebad45a6af353e71e460beb720a859099469ccec",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/reverse_stop_delay0_seed7001.npz": "703a4522435023df83add93d9a88ca1e7ac0835f578f780c63cf0de6087be099",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/summary.json": "1329d96f337baa9d939338a039f15ebdeda8a0f12811ae0ba2bd0e8a6ffa0609",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_python_eval_01/turn_stop_delay0_seed7001.npz": "13765f8415d36e5c8dcd5b0e23e197370d3c7714cc8c11793ff88e712a5348ff",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_00.monitor.csv": "3dbad55ab930a7c6141acb9bf83437cc607f8245a82a9b7f94b44bde53298e2d",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_01.monitor.csv": "7f48c1f3f96032e782bf6aaa91edbdef46229ea88c203a9f6214ed07b590232c",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_02.monitor.csv": "f41b01c64ae20540d237d44cd02ff73a6cf84a00553da27ede0a9281a8116549",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_03.monitor.csv": "ec64eada467f8ca1e97f1d2e1feede2b5c49e954a2404d74fc6938ab9fb7f3e0",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_04.monitor.csv": "e5fbf1a777644772c437ebe9f50b666de64d157f1e34578c0faa61c198d8e163",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_05.monitor.csv": "f5f21732efa51b9c4904abcbe5f036653a9a84e3a0b7b9fdbcfcfc3037c6fc54",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_06.monitor.csv": "4153498de55f1e5ede9a74ee4ddf37e54b1c430778b6d4c3f5e1729bbc48e816",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/env_07.monitor.csv": "569ffdd36a938478b748054b567f34957a705eaffa9575c3da3e27c270b40af2",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/ledger.jsonl": "253f596e65e9a4cf7c1fd9dd2d9d1c27de371db744be28957f8715e20b694b5d",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/progress.csv": "d6d81c83c75fb59bfc0a95a99f3221821f0ecc410ec2b78a7df86f5f68897e28",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/protocol.json": "ea36ee6f89a2769d72373aacc3c6f9b84ba829834cf67c01e6b74cb0a5af00e7",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_train_01/result.json": "982eda6eb547cc8f7f8cffb15cba01dd0f1480284c70adca3743762e1c412e6f",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_training_replay_01/episodes.jsonl": "5f97b4766ec77cb5fd1e387c370d71899e51465b7b68f04b48a6e223407a2b01",
+    "/home/lyh/ddt_ros2_ws/evidence/career_contract_08/scale08_training_replay_01/report.json": "a529aaa674567295ef45bee8f8fd537b01fb60e8ecc0c9a7ca56d4a161b9fb25"
+  }
+}
