@@ -1,0 +1,72 @@
+{
+  "format": "d1-contract10-summary-v1",
+  "created_utc": "2026-10-17T08:11:00.326843+00:00",
+  "status": "INCOMPLETE_ENVIRONMENT_IPC_DENIED",
+  "preflight_status": "ERROR",
+  "formal_training_started": false,
+  "observed_trained_transitions": 0,
+  "raw_actual_counts": null,
+  "raw_per_worker_counts": null,
+  "derived_consumption": {
+    "transitions": 0,
+    "native": 0,
+    "basis": "forkserver listener.bind failed before forkserver/first environment worker launch; no policy, monitor, ledger, callback or training"
+  },
+  "qualification": {
+    "overall": "NOT_EVALUATED",
+    "tasks_passed": null,
+    "tasks_total": 3
+  },
+  "predictions": {
+    "Q1": "NOT_EVALUABLE",
+    "Q2": "NOT_EVALUABLE",
+    "Q3": "NOT_EVALUABLE",
+    "Q4": "NOT_EVALUABLE",
+    "Q5": "NOT_EVALUABLE"
+  },
+  "automatic_retry_authorised": false,
+  "retry_permission_source": "none; original one-attempt rule retained",
+  "approved_cap": {
+    "transitions": 8421376,
+    "native": 84231760
+  },
+  "project_cumulative_derived": {
+    "transitions": 18504192,
+    "native": 185562110
+  },
+  "inputs": {
+    "release": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/career_contract_10/scale10_release_01.json",
+      "sha256": "fe5061395b6147ae55316d7eb030625576031316ae2f6912888fbbb3afac928f"
+    },
+    "preflight_result": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/career_contract_10/scale10_preflight_01/result.json",
+      "sha256": "39f26c41f9ee8fa5ca37ff4892e005a3ef832ce08cca7deab5bc9f8c9c54a081"
+    },
+    "supervisor": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/career_contract_10/scale10_preflight_01_supervisor/report.json",
+      "sha256": "c028ea8b9494c340438e46cc3564a4cdcb400e3321d1e86fe08b2156c0387cbb"
+    },
+    "traceback": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/career_contract_10/scale10_preflight_01/error.txt",
+      "sha256": "bcc3bf96af80b07e7e2d964bd8277ac54f05ba0c104e91da45fdca5acc64aaeb"
+    },
+    "journal": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/career_contract_10/execution_01/journal.json",
+      "sha256": "d693f4f1cbbed1730a2d26e3e1999182d0a764262990ad5d11f6b446f96611b7"
+    },
+    "cpython_forkserver": {
+      "path": "/usr/lib/python3.10/multiprocessing/forkserver.py",
+      "sha256": "578e1a3733c81c09c70a1f427b467adb20c7197069d773e85ecd6e9236150a72"
+    },
+    "sb3_subproc_vec": {
+      "path": "/home/lyh/ddt_ros2_ws/.python-deps/stable_baselines3/common/vec_env/subproc_vec_env.py",
+      "sha256": "e3acbeb465d5ca1288a7b9fa812eeacb9b03e3c52e757a1130b5d57a04baf942"
+    }
+  },
+  "ipc_probe": {
+    "sandbox": "bind EPERM",
+    "approved_outside_sandbox": "UNIX_SOCKET_BIND_PASS; models=0; physics=0",
+    "scope": "diagnostic only; no training authorisation"
+  }
+}
