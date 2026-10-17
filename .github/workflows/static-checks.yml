@@ -30,6 +30,7 @@ on:
       - 'tools17/**'
       - 'tools18/**'
       - 'tools19/**'
+      - 'tools21/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -50,6 +51,7 @@ on:
       - 'tools17/**'
       - 'tools18/**'
       - 'tools19/**'
+      - 'tools21/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -132,6 +134,9 @@ jobs:
 
       - name: Verify C++ actor protocol and bounded closed loop with synthetic inputs
         run: python -m pytest --noconftest tests/test_cpp_actor19.py tests/test_cpp_closedloop19.py -q
+
+      - name: Verify independent completed-zero closeout without model or physics
+        run: python -m pytest --noconftest tests/test_closeout_completed18.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
