@@ -191,15 +191,30 @@ def test_real_torch_synthetic_gradient_control_equivalence_and_save_load(tmp_pat
         buffer.advantages.fill(0.);buffer.full=True;buffer.pos=4096
         return observations
     control=model(AnchoredVelocityPPO29,0.);reference=model(AuxiliaryVelocityPPO,0.)
-    reference.policy.load_state_dict(control.policy.state_dict());reference.policy.optimizer.load_state_dict(control.policy.optimizer.state_dict())
+    reference.policy.load_state_dict(control.policy.state_dict())
+    # CPU optimizer.load_state_dict may return the original step tensor and
+    # dtype/device-preserving .to() may alias moment tensors. Isolate fixtures.
+    reference.policy.optimizer.load_state_dict(copy.deepcopy(control.policy.optimizer.state_dict()))
+    def optimizer_storages(value):
+        return {item.untyped_storage().data_ptr() for row in value.state.values()
+                for item in row.values() if isinstance(item,th.Tensor)}
+    assert optimizer_storages(control.policy.optimizer).isdisjoint(optimizer_storages(reference.policy.optimizer))
+    assert {p.untyped_storage().data_ptr() for p in control.policy.parameters()}.isdisjoint(
+        {p.untyped_storage().data_ptr() for p in reference.policy.parameters()})
     control.configure_anchor29();fill(control)
     control.vf_coef=reference.vf_coef=.5
     control.rollout_buffer.advantages[:,0]=np.sin(np.arange(4096,dtype=np.float32))
     control.rollout_buffer.returns+=.1
     reference.rollout_buffer=copy.deepcopy(control.rollout_buffer)
     initial_control={k:v.clone() for k,v in control.policy.state_dict().items()}
-    np.random.seed(2913);control.train();np.random.seed(2913);reference.train()
+    reference_adam_before=copy.deepcopy(reference.policy.optimizer.state_dict())
+    np.random.seed(2913);control.train()
+    for key,row in reference_adam_before['state'].items():
+        assert all(th.equal(value,reference.policy.optimizer.state_dict()['state'][key][name]) for name,value in row.items())
+    np.random.seed(2913);reference.train()
     assert all(th.equal(value,reference.policy.state_dict()[name]) for name,value in control.policy.state_dict().items())
+    for key,row in control.policy.optimizer.state_dict()['state'].items():
+        assert all(th.equal(value,reference.policy.optimizer.state_dict()['state'][key][name]) for name,value in row.items())
     assert any(not th.equal(value,initial_control[name]) for name,value in control.policy.state_dict().items())
     assert control.anchor_receipt29()['optimizer_updates']==16
     assert control.anchor_receipt29()['teacher']==a.zero_teacher_counts29()
