@@ -35,6 +35,7 @@ on:
       - 'tools23/**'
       - 'tools24/**'
       - 'tools25/**'
+      - 'tools26/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -60,6 +61,7 @@ on:
       - 'tools23/**'
       - 'tools24/**'
       - 'tools25/**'
+      - 'tools26/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -157,6 +159,9 @@ jobs:
 
       - name: Verify single-process warm start and bounded delay comparison without physics
         run: python -m pytest --noconftest tests/test_common25.py tests/test_low_memory_runtime25.py tests/test_train_delay25.py tests/test_run_delay_comparison25.py -q
+
+      - name: Verify paired yaw reward intervention and single-candidate holdout without physics
+        run: python -m pytest --noconftest tests/test_common26.py tests/test_runtime26.py tests/test_train_yaw_reward26.py tests/test_run_yaw_reward26.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
