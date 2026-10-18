@@ -1,0 +1,251 @@
+{
+  "format": "d1-delay-comparison24-interruption-review-v1",
+  "date": "2026-10-18",
+  "status": "VERIFIED_RAM_INTERRUPTION",
+  "scope": "Read-only receipts, source, CSV and ZIP JSON metadata; no model construction, deserialization of weights, training or physics.",
+  "review_physics_steps_executed": 0,
+  "review_models_constructed": 0,
+  "old_records_modified": false,
+  "old_attempt_retried": false,
+  "source_identity": {
+    "git_commit": "b7d138964752f3314e197cd6dbb08f1197bead2b",
+    "sources_sha256": {
+      "tools24/common24.py": "beb617f7644e8c9e99117826e1e1fbf76b08f1ef14f8f6c64ab8e6aeed78eb9b",
+      "tools24/train_delay24.py": "6d33a2e44c0dc75f99fb7876f71338c7546540b678303d8cae2f48e421ed8335",
+      "tools24/run_delay_comparison24.py": "1739050cc7070b4667df087db17ea2775dd5c2893b75fcb2c16c43a128477996",
+      "tests/test_common24.py": "f3de747550d1ade1746a23953d633bf80d62acf99137deb69c42f5c10c79c5b7",
+      "tests/test_train_delay24.py": "0b2bac41b6adc46c6c6951db1922f1dfdad5938c8a39eb17cfbcbd41874f183d",
+      "tests/test_run_delay_comparison24.py": "618053935d5a37a227afea4a86eb0f03b4655a38161329e526344c299a328486",
+      "docs/delay_comparison24.md": "19080c74e8b8701217c47465843864b0228faa47f3b371ecb234e4e854873bb4",
+      "tools22/common22.py": "32f7848ac80274c8a8904fc667a13955d8361dd35f5bf5e2e5afd293cd46a3a0",
+      "tools22/checked_runtime22.py": "6a7c41ce7301e0603c26f49dd5f34d77a5cc8eff462c6ff13fb3792cf52c8936",
+      "tools22/train_low_lr22.py": "d9753ce50b3071aa637b430e7179c6b46b475c1e623dc85dc70ec95ccc125973",
+      "tools21/closeout_completed18.py": "de23a501ecd1a21535c24da7f97e54ce92180e0b5f31977fcbf2ce874dac3bc1",
+      "tools19/run_cpp_closedloop19.py": "1f273c7734fa1a8a842de453f32540d9e26e0b55f590e280f87502f6f3a16079",
+      "tools19/cpp_actor19.py": "d061542149b9da698c0930a25bd07d0600cc96bbf3d0bb18a8c909bca9d6f427",
+      "tools17/export_completed17.py": "47e14c11058daa2bd47f06a04fb9c9cee360cc324ee1fafdcbd9c5c5a7ad267b",
+      "tools17/evaluate_formal17.py": "86af5214900a138b6efcc9a539ce4f410abb0ac3a513e6b65414e4295de23430",
+      "tools17/verify_cpp17.py": "c1ecba938be36ad58dc06dbafc85f374f0eb933a5719ca8aea6139c2fd02ecb8",
+      "tools16/evaluate_comparison16.py": "8325306f29aa904ffe6b1c905566ccfdc6cf33864bcc5979cc439c92a942b1dc",
+      "tools16/train_comparison16.py": "4eca64beb8a42e54ecce98114e5c42def56e58a73428845b03cacebd1881609a",
+      "tools16/contract16.py": "8bdca33c9906c99f63ca2bbb2bbefebc1bf066e636bde351635004218b95b60b",
+      "tools16/run_comparison16.py": "1c28aa6b834b01206f2124120b7bb42d32e80be7495d005ff15cf6efc6d53bf5"
+    }
+  },
+  "input_sha256": {
+    "evidence/delay_comparison24/plan_01.json": "5277f9e156a082f15e10e693b912d1884cb24135b53fe416f885528d042db4ac",
+    "evidence/delay_comparison24/execution_01/report.json": "518383b149bbe87838d63b71185c9ef7695b2ac0c3a4cbfe87ecab0e07b05946",
+    "evidence/delay_comparison24/execution_01/resources.jsonl": "b833e8aacd86a6b1494d4a80363aeb29e0a45d679508e217146ed02806af9a80",
+    "evidence/delay_comparison24/execution_01/train_zero.stdout.log": "063522acd4a847afd1826016cb3dc88112b9de6d96a800c8a1fa5ff640b842e4",
+    "evidence/delay_comparison24/execution_01/zero/train/env_00.monitor.csv": "a9de58a47cef5f6cda7122d6db9e0167e8848f7668c73831f9befdcd1dfb0d7c",
+    "evidence/delay_comparison24/execution_01/zero/train/env_00.monitor.csv.counts.json": "b473b0b518e15fd0a8e3f39dbdea62fc91768d7e02e8f0fb519bcb519d12a911",
+    "evidence/delay_comparison24/execution_01/zero/train/env_01.monitor.csv": "cdd5158ea042a3373119fc6b655b8c73015c9d47278e9bae2c3e50bd9a959a8a",
+    "evidence/delay_comparison24/execution_01/zero/train/env_01.monitor.csv.counts.json": "967f835b71a3942298b6982d62511d0d994853dbde4cd6da75f06dc4acb291c4",
+    "evidence/delay_comparison24/execution_01/zero/train/env_02.monitor.csv": "24093bf32c3385710b4f3cb3b38bd4db31ba8d425417a8d421c12122aaceabbc",
+    "evidence/delay_comparison24/execution_01/zero/train/env_02.monitor.csv.counts.json": "16fd113c0242efa86e5a359f050e9c682572aa2637de8d888a4ad10bbabdd503",
+    "evidence/delay_comparison24/execution_01/zero/train/env_03.monitor.csv": "02e67f76ddf727a7d0c875b4fa3db7e3daa569b3ea49adbfbccd795f1d8af05a",
+    "evidence/delay_comparison24/execution_01/zero/train/env_03.monitor.csv.counts.json": "b1021987563d792394a89056bc446f8a3117dc0f8fa50fa0c1bee77e48edca1a",
+    "evidence/delay_comparison24/execution_01/zero/train/ledger.jsonl": "9d04744e583d33b67d7a926aeeb892098f20b471ad600beb97f2d4ab75117dad",
+    "evidence/delay_comparison24/execution_01/zero/train/live_status.json": "2765a62a7544067248d624f0201c56a95e231f4fbf553412bf6aa2198fb04707",
+    "evidence/delay_comparison24/execution_01/zero/train/partial_policy.zip": "95fcb99b1538a76d97d9dac8d320709b1fdddbf377a3de810daf3287e437292d",
+    "evidence/delay_comparison24/execution_01/zero/train/progress.csv": "48b84c138927f2075fc53f98aebc257b382134956dc74da61c13d44e9391d176",
+    "evidence/delay_comparison24/execution_01/zero/train/protocol.json": "305052f9df535313a20d393397eab62fabae1f2ae3dcc8faaa6d2d445ed844cc",
+    "evidence/delay_comparison24/execution_01/zero/train/resource_samples.jsonl": "0dcaa3cbd1c22f8d4f29d4df3e2a49b2370837b7c75830e0b397d3bfd5e522ba",
+    "evidence/delay_comparison24/execution_01/zero/train/result.json": "f40484f115a9f612a8ef029ff44cacf003840089b640ab9aac0e534c420d4a83",
+    "evidence/delay_comparison24/execution_01/zero/train/stop_sample.json": "3b8c28301f8aa6c810be3f3fc47434f7e8e68d423bd6479576da333c384e3c0f"
+  },
+  "direct_stop": {
+    "trainer_status": "RAM_RESERVE_BELOW_4_GIB",
+    "trainer_error": null,
+    "parent_error": "ValueError: child24 failed/late",
+    "reason_classification": "runtime_memory_guard",
+    "reserve_bytes": 4294967296,
+    "minimum_effective_available_bytes": 4294717440,
+    "below_reserve_bytes": 249856,
+    "stop_sample": {
+      "available_ram_bytes": 4294717440,
+      "cgroup_remaining_bytes": null,
+      "effective_available_bytes": 4294717440,
+      "elapsed_s": 56.51017483297619,
+      "phase": "training",
+      "reason": "RAM_RESERVE_BELOW_4_GIB"
+    },
+    "trainer_elapsed_s": 57.877553911996074,
+    "parent_elapsed_s": 61.48857980800676,
+    "deadline_was_cause": false,
+    "signal_or_rpc_exception_was_cause": false,
+    "ram_consumer_attribution": "NOT_OBSERVED: host available RAM was recorded; per-process PSS/USS was not recorded."
+  },
+  "actual_counts": {
+    "native_steps": 473160,
+    "pd_updates": 236580,
+    "policy_transitions": 47316,
+    "resets": 50,
+    "forward_calls": 47420
+  },
+  "parent_core_counts": {
+    "policy_transitions": 47316,
+    "native_steps": 473160,
+    "pd_updates": 236580
+  },
+  "per_worker_closed_receipts": [
+    {
+      "status": "closed",
+      "pid": 715832,
+      "counts": {
+        "native_steps": 118290,
+        "pd_updates": 59145,
+        "policy_transitions": 11829,
+        "resets": 12,
+        "forward_calls": 11854
+      }
+    },
+    {
+      "status": "closed",
+      "pid": 715833,
+      "counts": {
+        "native_steps": 118290,
+        "pd_updates": 59145,
+        "policy_transitions": 11829,
+        "resets": 13,
+        "forward_calls": 11856
+      }
+    },
+    {
+      "status": "closed",
+      "pid": 715834,
+      "counts": {
+        "native_steps": 118290,
+        "pd_updates": 59145,
+        "policy_transitions": 11829,
+        "resets": 12,
+        "forward_calls": 11854
+      }
+    },
+    {
+      "status": "closed",
+      "pid": 715835,
+      "counts": {
+        "native_steps": 118290,
+        "pd_updates": 59145,
+        "policy_transitions": 11829,
+        "resets": 13,
+        "forward_calls": 11856
+      }
+    }
+  ],
+  "episode_denominators": [
+    {
+      "rank": 0,
+      "completed_episodes": 11,
+      "completed_episode_transitions": 11000,
+      "unfinished_episode_transitions": 829
+    },
+    {
+      "rank": 1,
+      "completed_episodes": 12,
+      "completed_episode_transitions": 11634,
+      "unfinished_episode_transitions": 195
+    },
+    {
+      "rank": 2,
+      "completed_episodes": 11,
+      "completed_episode_transitions": 11000,
+      "unfinished_episode_transitions": 829
+    },
+    {
+      "rank": 3,
+      "completed_episodes": 12,
+      "completed_episode_transitions": 11667,
+      "unfinished_episode_transitions": 162
+    }
+  ],
+  "rollout_accounting": {
+    "complete_rollouts": 11,
+    "transitions_per_rollout": 4096,
+    "completed_rollout_transitions": 45056,
+    "collected_partial_rollout_transitions": 2260,
+    "collected_total_transitions": 47316,
+    "partial_rollout_ppo_update_executed": false,
+    "initial_num_timesteps": 1048576,
+    "final_num_timesteps": 1095892,
+    "initial_entered_epochs": 1024,
+    "final_entered_epochs": 1035,
+    "entered_epochs_are_optimizer_step_count": false,
+    "progress_csv_last_row_precedes_last_rollout_update": true
+  },
+  "rpc_guard24": {
+    "dirty": false,
+    "closed": true,
+    "reason": null,
+    "inflight": null,
+    "waiting": false,
+    "rpc_attempts": 13,
+    "rpc_returns": 13,
+    "rpc_validated": 13,
+    "generation": 11830,
+    "cleanup": {
+      "cleanup_complete": true,
+      "remaining_pids": [],
+      "errors": [],
+      "signals": [],
+      "elapsed_s": 6.659698556177318e-05,
+      "rpc_used": true,
+      "method": "original_sb3_close_then_owned_pipe_cleanup"
+    }
+  },
+  "cleanup_complete": true,
+  "inputs_unchanged": true,
+  "source_checks": {
+    "frozen_sources": 20,
+    "current_sha_matches": true,
+    "commit_blob_sha_matches": true,
+    "plan_protocol_result_parent_same_proof": true,
+    "plan_protocol_partial_checkpoint_sha_matches": true,
+    "closed_sidecars_result_parent_counts_match": true,
+    "complete_rollout_prefix_matches": true
+  },
+  "checkpoint": {
+    "path": "evidence/delay_comparison24/execution_01/zero/train/partial_policy.zip",
+    "sha256": "95fcb99b1538a76d97d9dac8d320709b1fdddbf377a3de810daf3287e437292d",
+    "eligible_for_evaluation": false,
+    "base_checkpoint_sha256": "428ff0ce9e8e88e10dabf94801a57b88de7e76d07b42800553b69c7f590e4eff",
+    "no_complete_policy_zip": true
+  },
+  "not_started": [
+    "train_random",
+    "export_zero",
+    "cpp_zero",
+    "formal_zero",
+    "export_random",
+    "cpp_random",
+    "formal_random",
+    "holdout_zero",
+    "holdout_random"
+  ],
+  "scientific_conclusion": {
+    "delay_arm_effect": "NOT_EVALUATED",
+    "qualification": "NOT_EVALUATED",
+    "kl_guard_policy_quality_effect": "NOT_EVALUATED",
+    "baseline_replacement": false,
+    "note": "RAM interruption cannot establish success or failure of the target-KL hypothesis. Partial rollout steps are collected interactions, not an extra PPO update."
+  },
+  "low_memory_followup": {
+    "status": "DESIGN_ONLY_NEW_SCOPE",
+    "suggested_envs": 1,
+    "suggested_n_steps": 4096,
+    "aggregate_rollout_transitions": 4096,
+    "unchanged_observation_storage_bytes_per_rollout": 10321920,
+    "memory_saving_bytes": "NOT_ESTIMATED_WITHOUT_PSS_USS",
+    "mechanism": "DummyVecEnv removes forkserver/worker/IPC processes and three environment instances; forkserver already shares preloaded read-mostly pages.",
+    "loader_requirement": "Pass n_steps=4096 and the one-env VecEnv into SB3.load so _setup_model rebuilds the buffer before restoring policy and Adam.",
+    "comparability_limit": "One-env trajectories and vector sampling differ from 24 even at fixed 4096-transition rollouts; compare zero versus random within a new independent scope.",
+    "guard": "Independent source, budget, output and one attempt; no resume/retry of 24; startup >=6 GiB, running >=4 GiB, Nice 10."
+  },
+  "unit_observation": {
+    "active_state": "inactive",
+    "sub_state": "dead",
+    "main_pid": 0,
+    "historical_memory_peak_and_exit_status": "NOT_OBSERVED: post-exit transient-unit defaults cannot establish historical run settings or exit status."
+  }
+}
