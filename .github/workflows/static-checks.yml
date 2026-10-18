@@ -38,6 +38,7 @@ on:
       - 'tools26/**'
       - 'tools27/**'
       - 'tools28/**'
+      - 'tools29/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -66,6 +67,7 @@ on:
       - 'tools26/**'
       - 'tools27/**'
       - 'tools28/**'
+      - 'tools29/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -169,6 +171,11 @@ jobs:
 
       - name: Verify stable memory admission and independent yaw comparison scope without physics
         run: python -m pytest --noconftest tests/test_yaw_reward27.py -q
+
+      - name: Verify fixed-base KL gradients and bounded paired runner without physics
+        env:
+          D1_RUN_ANCHOR29_NUMERIC_TESTS: '1'
+        run: python -m pytest --noconftest tests/test_common29.py tests/test_anchor29.py tests/test_train_anchor29.py tests/test_policy_anchor29_parent.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
