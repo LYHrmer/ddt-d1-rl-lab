@@ -7,11 +7,20 @@
 
 ## 一页结论
 
-**最新25实际结果：** [单进程延迟对照](docs/low_memory_delay25_results_20261018.md)已完整完成，两组各训练262,144步，整轮约22.6分钟。zero通过30/36，random通过33/36（原基线27/36）；random在0/20/40ms各9/9，36例全部完成，剩余60ms转向三例仅角速度跟踪误差超线。两组训练最低可用内存约6.09/5.84GiB，无资源中止。抗延迟提高伴随部分原有场景综合误差变大；完整资格仍未通过，holdout按规则跳过，默认模型未替换。
+截至2026-10-18，最佳完整候选为25 random，原开发矩阵通过33/36；完整延迟资格仍未通过。默认模型继续保留16 control，其完整结果见17及23。
+
+| 模型或运行 | 已完成验证 | 当前结论 |
+|---|---|---|
+| 默认16 control / 17 / 23 | 原36例27通过；真实C++闭环与Python逐拍动作、物理轨迹一致 | 0/20ms各9/9，40/60ms仍有失败 |
+| 25 zero | 新增262,144步，导出、C++64数值与36例评测完整 | 30/36通过 |
+| 25 random | 同预算；0/20/40ms各9/9，全部36例跑满，停车均过门 | 33/36通过；60ms转向三例角速度误差超线，holdout跳过 |
+| 26偏航奖励对照 | 第一组1302步后触及4GiB运行停止线并清理；第二组未开始 | 无PPO更新、无配对结果，partial不可评测或续训 |
+
+[25实际结果及逐轨迹诊断](docs/low_memory_delay25_results_20261018.md)显示抗延迟提高伴随部分原有场景综合误差变大，不能概括为全面提高精度。25整轮约22.6分钟，两组训练最低可用内存约6.09/5.84GiB；26中止事实见[独立记录](docs/yaw_reward26_interruption_20261018.md)。
 
 **此前闭环与资源结果：** [23实际C++闭环](docs/cpp_diagnostic23_results_20261018.md)完成20,011策略拍，与Python ORT逐拍动作误差0，36份物理轨迹与17完全一致，原策略仍为27/36。随后[24双组KL保护对照](docs/delay_comparison24_interruption_20261018.md)首组在47,316步触及4GiB内存停止线，已清理且不续跑partial；第二组与评测未开始，不能判断KL设置效果。25使用新的独立预算，见[预先固定的对照定义](docs/low_memory_delay25.md)。
 
-**2026-10-18后续优化：** 完整zero18续训权重经21导出、C++64数值核对及原36场评测后，仅15/36通过，低于原control的27/36，主要退化在倒退跟踪，未替换原模型。18另一训练臂收到来源未知的SIGTERM，保留未完成及未知最终计数。见[21实际结果](docs/completed_zero21_results_20261018.md)与[中断记录](docs/local_optimization18_interruption_20261018.md)。新[22有界低学习率候选](docs/low_lr22.md)已准备：从原完整control及Adam出发，学习率1e-4、新增262144步，修复中断时脏RPC收集/清理；启动6GiB、运行保留4GiB，重任务串行，最终权重仍须通过原36场，不能把训练奖励上涨视为改善。
+**此前21与22：** 完整zero18续训权重经21导出、C++64数值核对及原36场评测后，仅15/36通过，主要退化在倒退跟踪，未替换原模型。18另一训练臂收到来源未知的SIGTERM，保留未完成及未知最终计数。见[21实际结果](docs/completed_zero21_results_20261018.md)与[中断记录](docs/local_optimization18_interruption_20261018.md)。22另从原完整control及Adam出发，以学习率1e-4完成新的262144步，并修复中断时的脏RPC收集和清理。
 
 **22已实际完成：** 262144步训练、导出、C++64数值核验及正式36场均完整，18/36通过（0/20/40/60ms为6/6/3/3）。12场倒车均跑满，但停车净位移超原门槛；不同于21的欠跟踪。原control仍保留。真实课程中倒车运动占49.97%，未发现“少训练倒车”的证据；详见[22结果与课程复核](docs/low_lr22_results_20261018.md)。
 
@@ -32,13 +41,13 @@
 
 ## 当前结果
 
-当前保留的是候选16的control：已完成本机有界对照，并在收尾17中导出实际权重、通过64例C++数值对齐，完成三任务×三reset seed×四延迟的正式矩阵。0/20ms各9/9通过，40/60ms存在失败，不能宣称完整延迟资格通过；详见[最新结果](docs/closeout17_results.md)。以下为03b–04b及早期合同的历史记录。
+当前默认是候选16的control，17正式矩阵为27/36，23补齐真实C++闭环验证；最新完整候选25 random为33/36，仍未通过完整资格，未替换默认模型。对应证据见本页开头。以下为03b–04b及早期合同的历史记录。
 
 五次从随机初始化开始的开发训练均已完成，每次 1,048,576 transitions。固定低速任务通过数依次为 **0/3、0/3、1/3、0/3、0/3**（03b / 03c / 03d / 04a / 04b）。**五个版本都没有通过整体控制资格**，正式三臂×三 seed 未放行、未执行。另有一次 03d 配置的 8 倍训练（合同 08，8,388,608 transitions），同样 1/3，见[合同 08 结果](docs/career_execution_results_08.md)。
 
 合同 09 只去掉熵奖励，计划同样训练 8,388,608 transitions，但在 4,807,168 步触发 `RAM_RESERVE_BELOW_3_GIB`。E0/E1 等价性通过；训练未完成，未导出、未做资格评测，不计作第七次完整训练，也没有关于熵假设的判定。
 
-最好的单条任务成绩是 **04b 的 reverse_stop：7 项适用门槛通过 6 项**（回执共 8 个字段：6 项通过、1 项失败、1 项不适用——`stable_wz` 在平移任务上为 `null`，不适用而非通过），含真正通过（路径/欧氏位移比 1.73，不依赖度量抵消）的停车位移门，并经独立 C++ 运行器复现到 8 位小数。唯一失败是驱动相 vx 跟踪 0.0695 > 0.06。**这是单条任务成绩，不是资格通过。**
+在03b–04b的历史任务中，**04b 的 reverse_stop：7 项适用门槛通过 6 项**（回执共 8 个字段：6 项通过、1 项失败、1 项不适用——`stable_wz` 在平移任务上为 `null`，不适用而非通过），含真正通过（路径/欧氏位移比 1.73，不依赖度量抵消）的停车位移门，并经独立 C++ 运行器复现到 8 位小数。唯一失败是驱动相 vx 跟踪 0.0695 > 0.06。**这是历史单条任务成绩，不是资格通过。**
 
 > 更正记录：本页与总账 `final_delivery_01.json` 曾写作"8 项通过 7 项"，把不适用项（`null`）当成了通过。原始 Python 与 C++ 回执一直是 6 true / 1 false / 1 null，已由勘误回执 `handoff_20261013_errata.json` 与新总账 `final_delivery_02.json` 纠正，历史总账原样保留。
 
@@ -52,7 +61,7 @@
 | 03c | 末秒速度 .022 + 位移 .097 | 末秒速度 .027 + 位移 .069 | wz MAE .117 + 末秒速度 .060 + 位移 .147 | 0/3 |
 | 03d | 位移 .081 | **全门通过** | wz MAE .103 + 位移 .061 | **1/3** |
 | 04a | 末秒速度 .025 + 位移 .076 | 末秒速度 .029 + 位移 .078 | wz MAE .112 + 末秒速度 .023 + 末秒\|wz\| .031 | 0/3 |
-| 04b | vx MAE .068 + 位移 .075 | **vx MAE .070**（8 项中唯一失败） | 11.16 s 跌倒 + 四项超限 | 0/3 |
+| 04b | vx MAE .068 + 位移 .075 | **vx MAE .070**（7项适用门中唯一失败） | 11.16 s 跌倒 + 四项超限 | 0/3 |
 | 03d 8× | 9.70 s 跌倒（停车窗口内） | vx MAE 0.080 + 末秒速度 0.036 + 位移 0.059 | **全门通过**（位移靠来回抵消） | 1/3 |
 
 读这张表的方式：**卡住的门在版本间迁移**。03b 还站不住；03c/03d 解决了姿态与完成度，剩下停车位移；04a 把 turn 的位移压进门槛却引入 12 Hz 抖振、末秒速度门三条全败；04b 消除抖振、让 reverse 的位移**真正**达标，代价是驱动相跟踪退化与 turn 跌倒。**turn_stop 的 wz MAE 四个版本一致未达标，而 04a/04b 的两项改动都事前声明过不针对它。**
@@ -78,7 +87,7 @@
 
 ## 工程交付
 
-当前统一入口为[两仓收尾结果与本机路径](docs/closeout17_results.md)：D1真实导出、C++数值对齐与正式36例已完成；[wheel新版GUI/固定演示复验](https://github.com/LYHrmer/wheel-legged-control-lab/blob/main/docs/b22_closeout30_result_20261018.md)也已完成。后续研究与实机能力不包含在本轮工程收尾中。
+默认模型的导出与本机入口见[17交付](docs/closeout17_results.md)，C++实际闭环见[23结果](docs/cpp_diagnostic23_results_20261018.md)，最新完整训练结果见[25对照](docs/low_memory_delay25_results_20261018.md)。[wheel GUI/固定演示复验](https://github.com/LYHrmer/wheel-legged-control-lab/blob/main/docs/b22_closeout30_result_20261018.md)已完成；两仓后续优化仍以各自当前结果为准，不能把17阶段交付当作所有能力收尾。
 
 本轮两个仓库的三轮功能与验证汇总见[优化交付记录](docs/optimization_iterations_20261016.md)。
 
@@ -114,7 +123,7 @@
 - [导出与监督工程修复](docs/engineering_optimization_10.md) / [下一训练合同 10](docs/career_execution_contract_10.md)
 - 有界合同：[08 规模训练](docs/career_execution_contract_08.md) 及其[附录 A](docs/career_execution_contract_08_addendum_a.md) / [04a](docs/career_execution_contract_04a.md) / [04b](docs/career_execution_contract_04b.md) / [04b 附录 A](docs/career_execution_contract_04b_addendum_a.md) / [05M 物理测量（已执行）](docs/career_execution_contract_05m.md) / [03](docs/career_execution_contract_03.md)
 - 草案与放弃的合同（保留作为"为什么没做"的记录）：[06 训练不足 vs 新项外溢（已放弃）](docs/career_execution_contract_06_draft.md) / [07M 前倾是不是速度的控制通道（草案，未冻结）](docs/career_execution_contract_07m_draft.md)
-- [当前交接：合同 09 已关闭](docs/codex_handoff_20261016.md)；历史交接：[04 及后续过程](docs/claude_handoff_20261011.md) / [03](docs/codex_handoff_20261009.md) / [04 之前](docs/claude_handoff_20261009.md)
+- 历史交接：[合同09关闭时点](docs/codex_handoff_20261016.md) / [04及后续过程](docs/claude_handoff_20261011.md) / [03](docs/codex_handoff_20261009.md) / [04之前](docs/claude_handoff_20261009.md)
 - [第三方资产与上游许可证声明](THIRD_PARTY_NOTICES.md)：逐项说明哪些是自写、哪些只被引用而未再分发、哪些以最小 diff 上下文摘录及其上游许可证
 - [工作笔记](docs/notes/README.md)：实施过程的随手记录，其中结论可能已被后续实验推翻，以结果文档为准
 
@@ -130,7 +139,7 @@
 
 [wheel-legged-control-lab](https://github.com/LYHrmer/wheel-legged-control-lab) 走的是**经典控制 + 有界残差 RL**：在 6 状态平面模型上，2 维残差叠在 LQR 上把高度 RMSE 从 99.3 降到 22.4 mm（20 个配对种子）；但同一结构换到 16 执行器全机、残差扩到 16 维后，**没能通过预注册贡献门**（保留集误差比零残差高 3.60%，`RL_contribution_passed=false`）。
 
-本仓库是那个负结果的后续：改走**纯自训 RL、不叠基控**的路线。五个版本的平地低速资格依次为 0/3、0/3、1/3、0/3、0/3，同样未通过，但已把失败机制定位到奖励形状与可观测性（见[合同 04 结果](docs/career_execution_results_04.md)）。
+本仓库是那个负结果的后续：改走**纯自训 RL、不叠基控**的路线。早期五个版本未通过平地低速资格；后续16/17已通过0/20ms的全部任务，25 random进一步达到原矩阵33/36。剩余60ms转向问题和原有精度取舍仍需解决。早期奖励形状与可观测性诊断保留于[合同04结果](docs/career_execution_results_04.md)。
 
 两条路线各自卡在哪、为什么，是这两个仓库合起来要回答的问题。**两者是独立的 git 历史、不同的模型来源**（那边的 D1 URDF/STL 来自 Apache-2.0 的 `Rangens/WMP-D1-loco`，这边来自与合作者共同开发的 `workspace2.zip`），**成绩不可拼接**。该工作区与旧仓库独立，后者的 77 份冻结文件与用户结果本轮已逐一校验、保持只读。
 
