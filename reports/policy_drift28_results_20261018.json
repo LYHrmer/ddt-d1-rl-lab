@@ -1,0 +1,316 @@
+{
+  "schema": "d1-policy-drift28-saved-analysis-v1",
+  "status": "SAVED_ANALYSIS_COMPLETE",
+  "source_commit": "75ee3e323c5328bc38763fac170c1a7f55ca3294",
+  "source_identity": {
+    "git_commit": "75ee3e323c5328bc38763fac170c1a7f55ca3294",
+    "files": {
+      "tools28/audit_policy_drift28.py": {
+        "bytes": 17116,
+        "sha256": "601b09b1876445938ec450ea58edba342402106cfc15f39f28b18d6e80cddadb"
+      },
+      "tests/test_policy_drift28.py": {
+        "bytes": 9543,
+        "sha256": "a77a93dc70c2f322689d972484fddc5064086dad6aa84dbd5efef7a44d1888ec"
+      },
+      "docs/policy_drift28.md": {
+        "bytes": 4610,
+        "sha256": "8e96274c2442c8013f5cdfe01c88f9446ea69a19684e41953f2986aa35ad2bf7"
+      },
+      "training/d1_rl/velocity_policy15.py": {
+        "bytes": 12525,
+        "sha256": "02a0618d82799c5bcaa5249bf922536501ddf479262891c15d8f83049902c15c"
+      },
+      "tools27/resource_guard27.py": {
+        "bytes": 9324,
+        "sha256": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2"
+      }
+    }
+  },
+  "evidence": {
+    "report": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/policy_drift28/execution_01/report.json",
+      "bytes": 67743,
+      "sha256": "fa9ad64ac9b2685d17eb62a276b9a0eb2347d2f5cf0d800fb75f4ac5871ede1a"
+    },
+    "distributions": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/policy_drift28/execution_01/distributions.npz",
+      "bytes": 627558,
+      "sha256": "1229d9e1d8b90a14af296acf4110b69ae16622a4217219baeb8a8fc44d0eb9e9"
+    },
+    "checkpoints": {
+      "evidence/low_memory_delay25/execution_01/random/train/policy.zip": {
+        "bytes": 2606842,
+        "sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22"
+      },
+      "evidence/yaw_reward27/execution_02/control/train/policy.zip": {
+        "bytes": 2606842,
+        "sha256": "be727124c05d67fc1d891a8a467818ab8620d32da11f84369e47fff3d4c733ba"
+      },
+      "evidence/yaw_reward27/execution_02/yaw3/train/policy.zip": {
+        "bytes": 2606842,
+        "sha256": "b42dec19c33ef3050c3e2577de72dfad59d931a6c80f880ab5e10c595c5cab57"
+      }
+    }
+  },
+  "execution": {
+    "status": "COMPLETE",
+    "elapsed_s": 1.1023156309965998,
+    "known_actual_counts": {
+      "checkpoint_load_attempts": 3,
+      "checkpoint_load_returns": 3,
+      "actor_batch_attempts": 3,
+      "actor_batch_returns": 3,
+      "sample_rows_attempted": 648,
+      "sample_rows_returned": 648,
+      "linear_attempts": 18,
+      "linear_returns": 18
+    },
+    "training_transitions": 0,
+    "physics_steps": 0,
+    "qualification_granted": false,
+    "default_model_changed": false
+  },
+  "input_scope": {
+    "rows": 216,
+    "cases": 18,
+    "tasks": 3,
+    "delays_ms": [
+      0,
+      20
+    ],
+    "reset_seeds": [
+      1001,
+      1002,
+      1003
+    ],
+    "ticks_per_case": [
+      125,
+      150,
+      175,
+      325,
+      350,
+      375,
+      425,
+      450,
+      475,
+      500,
+      525,
+      575
+    ],
+    "drive_rows": 108,
+    "stop_rows": 108,
+    "rows_per_task_window": 36,
+    "distribution": "old23 control trajectories; not on-policy25/27",
+    "on_policy25_or27": false
+  },
+  "decomposition": {
+    "formula": "KL(base||new)=sum((base_mu-new_mu)^2/(2*new_var))+sum(new_logstd-base_logstd+0.5*expm1(2*(base_logstd-new_logstd)))",
+    "kind": "unclipped diagonal Gaussian KL in float64; deterministic clipped means separate",
+    "results": {
+      "control27": {
+        "sample_rows": 216,
+        "action_elements": 3456,
+        "KL_base25_to_new_mean": 0.7624650674134226,
+        "mean_shift_KL_mean": 0.762248402727058,
+        "variance_KL": 0.00021666468636458424,
+        "mean_shift_share": 0.9997158365732091,
+        "raw_mean_abs_delta": 0.06481286787092594,
+        "clipped_mean_abs_delta": 0.0643947300084754,
+        "log_std_abs_delta": 0.0032865703105926514,
+        "raw_mean_endpoint_elements_base": 27,
+        "raw_mean_endpoint_elements_new": 53,
+        "mean_shift_KL_by_action_dimension_zero_based": [
+          0.00788040783863401,
+          0.02392480029644639,
+          0.17783361970591413,
+          0.020157072052178152,
+          0.005979055572617533,
+          0.057850645338870334,
+          0.019982684718680366,
+          0.0015806297834184944,
+          0.05859594594490577,
+          0.005418110503131242,
+          0.04948933972148174,
+          0.05878585661694552,
+          0.014780783150256046,
+          0.16616753463107553,
+          0.06923496628325371,
+          0.024586950569248842
+        ],
+        "by_task_window": {
+          "forward_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.9377485828517135,
+            "mean_shift_KL_mean": 0.9375319181653491,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.07331672846177956
+          },
+          "forward_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.7750486965101353,
+            "mean_shift_KL_mean": 0.7748320318237707,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.06672597264777222
+          },
+          "reverse_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.7304925917086877,
+            "mean_shift_KL_mean": 0.7302759270223231,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.05959150186208717
+          },
+          "reverse_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.7854506335033397,
+            "mean_shift_KL_mean": 0.785233968816975,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.06745505577742329
+          },
+          "turn_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.5810217189623347,
+            "mean_shift_KL_mean": 0.5808050542759702,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.05520056426030351
+          },
+          "turn_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.765028180944324,
+            "mean_shift_KL_mean": 0.7648115162579593,
+            "variance_KL": 0.00021666468636458424,
+            "raw_mean_abs_delta": 0.0665873842161899
+          }
+        }
+      },
+      "yaw3_27": {
+        "sample_rows": 216,
+        "action_elements": 3456,
+        "KL_base25_to_new_mean": 0.7176184031976812,
+        "mean_shift_KL_mean": 0.7174558165793412,
+        "variance_KL": 0.00016258661834019935,
+        "mean_shift_share": 0.9997734358293829,
+        "raw_mean_abs_delta": 0.057521228577166364,
+        "clipped_mean_abs_delta": 0.057192355982873845,
+        "log_std_abs_delta": 0.0027440786361694336,
+        "raw_mean_endpoint_elements_base": 27,
+        "raw_mean_endpoint_elements_new": 42,
+        "mean_shift_KL_by_action_dimension_zero_based": [
+          0.01021562169936493,
+          0.01687598459191943,
+          0.3048398738081771,
+          0.01059203690638285,
+          0.023508700097069915,
+          0.02412474075481025,
+          0.035014167834582464,
+          0.0022013814585676718,
+          0.015310689413766046,
+          0.03853968399842173,
+          0.0570406179096899,
+          0.015392471721409418,
+          0.03027359884769749,
+          0.06634569895748366,
+          0.05949597298810338,
+          0.007684575591894878
+        ],
+        "by_task_window": {
+          "forward_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.9174951130912452,
+            "mean_shift_KL_mean": 0.917332526472905,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.06217526414224671
+          },
+          "forward_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.55332000199642,
+            "mean_shift_KL_mean": 0.5531574153780799,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.04853084457459368
+          },
+          "reverse_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.9605510007670431,
+            "mean_shift_KL_mean": 0.9603884141487034,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.07370972185567047
+          },
+          "reverse_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.6358061074195259,
+            "mean_shift_KL_mean": 0.6356435208011859,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.05451731310434601
+          },
+          "turn_stop_drive": {
+            "sample_rows": 36,
+            "KL_mean": 0.6628793829796896,
+            "mean_shift_KL_mean": 0.6627167963613494,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.05565984547562645
+          },
+          "turn_stop_stop": {
+            "sample_rows": 36,
+            "KL_mean": 0.5756588129321637,
+            "mean_shift_KL_mean": 0.5754962263138235,
+            "variance_KL": 0.00016258661834019935,
+            "raw_mean_abs_delta": 0.05053438231051485
+          }
+        }
+      }
+    }
+  },
+  "qualification_context": {
+    "baseline25_passed": 33,
+    "control27_passed": 24,
+    "yaw3_27_passed": 18,
+    "original36_denominator": 36,
+    "eligible_arms27": [],
+    "selected_arm27": null,
+    "holdout27_executed": false,
+    "simulation_candidate_qualified27": false,
+    "cpp64_numeric_alignment27": true,
+    "cpp_closed_loop_new_candidate_executed": false
+  },
+  "interpretation": [
+    "Over 99.97% of finite-input base-to-final KL is the mean-shift component.",
+    "Small successive-update KL does not enforce small KL to the fixed base.",
+    "This does not prove the cause of task degradation or rank policies by performance.",
+    "yaw3 has lower aggregate KL but higher reverse-drive KL than control.",
+    "Endpoint clipping of deterministic means is not actuator torque saturation."
+  ],
+  "proposed_next_step": {
+    "status": "DESIGN_ONLY_NOT_IMPLEMENTED_NOT_STARTED",
+    "intervention": "fixed-base Gaussian-KL regularization, control beta0 vs beta1",
+    "base": "complete random25 final873cd14f...cdb4f22 including Adam",
+    "seed": 183,
+    "envs": 1,
+    "delay": "uniform0..3",
+    "rollout_transitions": 4096,
+    "train_transitions_per_arm": 32768,
+    "arms": 2,
+    "train_transitions_max": 65536,
+    "original36_transitions_max": 43200,
+    "total_physical_policy_max": 108736,
+    "total_native_max": 1087360,
+    "total_PD_max": 543680,
+    "holdout_in_initial_mechanism_scope": false,
+    "baseline_actor_extra_sample_rows_max": 32768,
+    "baseline_actor_extra_batch_calls_max": 8,
+    "formal_qualification_unchanged": true,
+    "physical_budget_is_proposal_only": true
+  },
+  "analysis": {
+    "additional_actor_forwards": 0,
+    "additional_training_transitions": 0,
+    "additional_physics_steps": 0,
+    "saved_payload_bytes": 626144,
+    "maximum_self_rss_bytes": 32669696,
+    "memory_ceiling_bytes": 134217728,
+    "script": {
+      "path": "/home/lyh/codex_workspace/local_optimization18_20261018/analyze_policy_drift28_saved.py",
+      "bytes": 8758,
+      "sha256": "caa11f5bb9df321ab8b20d52ad4f5d620ad4bf1902ef30270a56bf3a8e6512a0"
+    }
+  }
+}
