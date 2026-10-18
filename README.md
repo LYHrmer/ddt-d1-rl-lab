@@ -31,6 +31,8 @@
 
 [32 固定偏航命令预补偿的完整结果](docs/command_gain32_results_20261018.md)：formal从33/36升至**35/36**，全36满时域、停车全过，但完整时域平均J变差10.22%。前进/倒车24份完整轨迹逐位等同原25，实际命令与评分未改。剩60ms/seed1001转向未过，未运行holdout或替换默认。
 
+[33 因果参考整形](docs/reference_shape33_results_20261018.md)：**formal36/36 + 独立holdout36/36通过原阈值**，全部满时域且停车通过；formal平均J相对25仍差5.89%，相对32改善3.92%。有状态C++闭环待验证，默认未替换。
+
 **此前闭环与资源结果：** [23实际C++闭环](docs/cpp_diagnostic23_results_20261018.md)完成20,011策略拍，与Python ORT逐拍动作误差0，36份物理轨迹与17完全一致，原策略仍为27/36。随后[24双组KL保护对照](docs/delay_comparison24_interruption_20261018.md)首组在47,316步触及4GiB内存停止线，已清理且不续跑partial；第二组与评测未开始，不能判断KL设置效果。25使用新的独立预算，见[预先固定的对照定义](docs/low_memory_delay25.md)。
 
 **此前21与22：** 完整zero18续训权重经21导出、C++64数值核对及原36场评测后，仅15/36通过，主要退化在倒退跟踪，未替换原模型。18另一训练臂收到来源未知的SIGTERM，保留未完成及未知最终计数。见[21实际结果](docs/completed_zero21_results_20261018.md)与[中断记录](docs/local_optimization18_interruption_20261018.md)。22另从原完整control及Adam出发，以学习率1e-4完成新的262144步，并修复中断时的脏RPC收集和清理。
