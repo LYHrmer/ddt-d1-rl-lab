@@ -247,5 +247,12 @@
     "sub_state": "dead",
     "main_pid": 0,
     "historical_memory_peak_and_exit_status": "NOT_OBSERVED: post-exit transient-unit defaults cannot establish historical run settings or exit status."
+  },
+  "analysis_source_sha256": {
+    ".python-deps/stable_baselines3/common/on_policy_algorithm.py": "2c3dd8d54fa8f9965fd2637377e346216d386053bce1fd68a613707efe5d1ae6",
+    ".python-deps/stable_baselines3/common/base_class.py": "7a118cb9fb49c15548f1793ab4883653ac83e379ca354de79d8b1b309238688d",
+    ".python-deps/stable_baselines3/common/buffers.py": "344d56bbf6f68786b621c59357c5e143ea62bdd2c5de97dcfb15acd229d90477",
+    "training/d1_rl/velocity_policy15.py": "02a0618d82799c5bcaa5249bf922536501ddf479262891c15d8f83049902c15c",
+    "training/d1_rl/forkserver_bootstrap.py": "1095c1b96add81209ad5d56c478d7cc9c519a578b883876f4bc3bf9878f59461"
   }
 }

@@ -34,6 +34,7 @@ on:
       - 'tools22/**'
       - 'tools23/**'
       - 'tools24/**'
+      - 'tools25/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -58,6 +59,7 @@ on:
       - 'tools22/**'
       - 'tools23/**'
       - 'tools24/**'
+      - 'tools25/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -152,6 +154,9 @@ jobs:
 
       - name: Verify paired KL-protected delay comparison without model or physics
         run: python -m pytest --noconftest tests/test_common24.py tests/test_train_delay24.py tests/test_run_delay_comparison24.py -q
+
+      - name: Verify single-process warm start and bounded delay comparison without physics
+        run: python -m pytest --noconftest tests/test_common25.py tests/test_low_memory_runtime25.py tests/test_train_delay25.py tests/test_run_delay_comparison25.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
