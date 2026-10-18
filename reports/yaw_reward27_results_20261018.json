@@ -1,0 +1,735 @@
+{
+  "schema": "d1-yaw27-results-summary-v1",
+  "status": "ENGINEERING_COMPLETE_QUALIFICATION_NOT_PASSED",
+  "source_commit": "e4382a00744f6a24ac27682bfd6f90b457054e0e",
+  "execution": {
+    "status": "COMPLETE",
+    "actual_counts": {
+      "policy_transitions": 305344,
+      "native_steps": 3053440,
+      "pd_updates": 1526720
+    },
+    "known_actual_counts": {
+      "policy_transitions": 305344,
+      "native_steps": 3053440,
+      "pd_updates": 1526720
+    },
+    "cleanup_complete": true,
+    "error": null,
+    "elapsed_s": 851.5028611689922,
+    "selection": {
+      "eligible_arms": [],
+      "original36_mean_J": {
+        "control": 0.23259458922673323,
+        "yaw3": 0.2508639179031502
+      },
+      "selected_arm": null,
+      "selection_finalized": true,
+      "uses_holdout": false,
+      "automatic_model_replacement": false
+    },
+    "selected_arm": null,
+    "original_36_pass": {
+      "control": false,
+      "yaw3": false
+    },
+    "holdout_36_pass": false,
+    "simulation_candidate_qualified": false,
+    "cpp_closed_loop_qualified": false
+  },
+  "outer": {
+    "status": "COMPLETE",
+    "elapsed_s": 868.7925006249861,
+    "cleanup_complete": true,
+    "actual_counts": {
+      "policy_transitions": 305344,
+      "native_steps": 3053440,
+      "pd_updates": 1526720
+    },
+    "error": null
+  },
+  "qualification": {
+    "eligible_arms": [],
+    "selected_arm": null,
+    "holdout_passed": false,
+    "holdout_stages": {
+      "holdout_control": "SKIPPED_NO_QUALIFIED_CANDIDATE",
+      "holdout_yaw3": "SKIPPED_NO_QUALIFIED_CANDIDATE"
+    },
+    "cpp_followup_permitted": false,
+    "cpp64_is_closed_loop": false,
+    "default_model_changed": false
+  },
+  "pairing": {
+    "initial_state_exact_equal": true,
+    "first_rollout_exact_equal": true,
+    "first_rollout_sha256": "d9c7002dfc5e27190c5be962151928fd51a648e4fe87aee8238e3439f060ef1a",
+    "new_arm_seed": 182,
+    "baseline25_training_seed": 181,
+    "cross_round_same_rng_claimed": false
+  },
+  "models": {
+    "control": {
+      "formal": {
+        "pass_count": 24,
+        "full_horizons": 36,
+        "mean_J": 0.2325945892267332,
+        "by_delay": {
+          "0": {
+            "cases": 9,
+            "passed": 6
+          },
+          "1": {
+            "cases": 9,
+            "passed": 6
+          },
+          "2": {
+            "cases": 9,
+            "passed": 6
+          },
+          "3": {
+            "cases": 9,
+            "passed": 6
+          }
+        },
+        "turn_stable_wz_mae_by_delay": {
+          "0": {
+            "min": 0.11256648857390723,
+            "mean": 0.11973335008131687,
+            "max": 0.12522710805731052
+          },
+          "1": {
+            "min": 0.11881992743715082,
+            "mean": 0.12200081691324112,
+            "max": 0.12659461534865282
+          },
+          "2": {
+            "min": 0.11854778418153758,
+            "mean": 0.12321118993075837,
+            "max": 0.12598000114069685
+          },
+          "3": {
+            "min": 0.12064677404002687,
+            "mean": 0.12517174603592873,
+            "max": 0.1277699440851443
+          }
+        },
+        "forward_stop_displacement_by_delay": {
+          "0": {
+            "min": 0.015900017415400015,
+            "mean": 0.016448610093217592,
+            "max": 0.016843746260197714
+          },
+          "1": {
+            "min": 0.02034541385094312,
+            "mean": 0.02050334584532656,
+            "max": 0.020792572221160033
+          },
+          "2": {
+            "min": 0.02421152976174704,
+            "mean": 0.02449294487210556,
+            "max": 0.024873735696493912
+          },
+          "3": {
+            "min": 0.028165459022352214,
+            "mean": 0.028385827747812505,
+            "max": 0.02863255796981526
+          }
+        },
+        "failure_flag_counts": {
+          "stable_wz": 12
+        }
+      },
+      "actual_training_phase_groups": {
+        "cut_zero": {
+          "ticks": 6575,
+          "reward_sum": 449.1630515132565,
+          "wz_tracking_sum": 205.13134573249334,
+          "fraction": 0.05016326904296875
+        },
+        "drive_translation": {
+          "ticks": 38024,
+          "reward_sum": 2730.7294937298866,
+          "wz_tracking_sum": 1219.7540514709183,
+          "fraction": 0.29010009765625
+        },
+        "drive_turn": {
+          "ticks": 28446,
+          "reward_sum": 1962.1126229837537,
+          "wz_tracking_sum": 806.8546781810962,
+          "fraction": 0.2170257568359375
+        },
+        "stationary": {
+          "ticks": 58027,
+          "reward_sum": 4354.716523847426,
+          "wz_tracking_sum": 1893.678617715129,
+          "fraction": 0.44271087646484375
+        }
+      },
+      "training_phase_tick_denominator": 131072,
+      "action_and_torque_observation": {
+        "action_boundary_elements": 2439,
+        "action_near_boundary_elements": 2633,
+        "action_element_denominator": 345600,
+        "saturated_policy_ticks": 0,
+        "policy_tick_denominator": 21600,
+        "observation_clipping": "NOT_OBSERVED: no raw actor obs archive in these formal traces; first rollout is SHA only"
+      },
+      "ppo": {
+        "logged_update_rows": 31,
+        "approx_kl": {
+          "n": 31,
+          "min": 0.0027771096,
+          "mean": 0.0036005823193548388,
+          "median": 0.003588925,
+          "max": 0.0047950684
+        },
+        "clip_fraction": {
+          "n": 31,
+          "min": 0.0234375,
+          "mean": 0.03857568248004236,
+          "median": 0.03799715909090909,
+          "max": 0.0609375
+        },
+        "std": {
+          "n": 31,
+          "min": 0.2540658712387085,
+          "mean": 0.254484131451576,
+          "median": 0.2544492781162262,
+          "max": 0.25486594438552856
+        },
+        "limit": "SB3 writes before the next update; final update is not guaranteed in CSV. KL is per-update, not KL to frozen base."
+      },
+      "training": {
+        "status": "COMPLETE",
+        "seed": 182,
+        "base_checkpoint_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+        "checkpoint_sha256": "be727124c05d67fc1d891a8a467818ab8620d32da11f84369e47fff3d4c733ba",
+        "initial_num_timesteps": 1310720,
+        "new_trained_transitions": 131072,
+        "final_num_timesteps": 1441792,
+        "actual_counts": {
+          "forward_calls": 131337,
+          "native_steps": 1310720,
+          "pd_updates": 655360,
+          "policy_transitions": 131072,
+          "resets": 132
+        },
+        "cleanup_complete": true,
+        "inputs_unchanged": true,
+        "reward_state26": {
+          "yaw_tracking_weight": 2.0,
+          "steps": 131072,
+          "original_reward_sum": 9496.721693553724,
+          "training_reward_sum": 9496.721693553724,
+          "extra_reward_sum": 0.0,
+          "raw_wz_tracking_sum": 103135.46732749043
+        },
+        "delay_state18": [
+          {
+            "last_selection": {
+              "mode": "uniform_0_3",
+              "seed": 182,
+              "rank": 0,
+              "episode_index": 131,
+              "stream": 18018,
+              "selected_delay_ticks": 1,
+              "selection": "uniform_0_3"
+            },
+            "delay_counts": {
+              "0": 30,
+              "1": 31,
+              "2": 33,
+              "3": 38
+            }
+          }
+        ],
+        "elapsed_total_s": 316.0469225360139
+      },
+      "cpp64": {
+        "status": "COMPLETE",
+        "comparisons": 64,
+        "max_absolute_error": 5.364418029785156e-07,
+        "absolute_tolerance": 1e-05,
+        "cxx_ort_1_10_status": "PASS"
+      }
+    },
+    "yaw3": {
+      "formal": {
+        "pass_count": 18,
+        "full_horizons": 36,
+        "mean_J": 0.2508639179031502,
+        "by_delay": {
+          "0": {
+            "cases": 9,
+            "passed": 6
+          },
+          "1": {
+            "cases": 9,
+            "passed": 6
+          },
+          "2": {
+            "cases": 9,
+            "passed": 3
+          },
+          "3": {
+            "cases": 9,
+            "passed": 3
+          }
+        },
+        "turn_stable_wz_mae_by_delay": {
+          "0": {
+            "min": 0.09747171411167287,
+            "mean": 0.10378703148394611,
+            "max": 0.10794476620188455
+          },
+          "1": {
+            "min": 0.10299315007170762,
+            "mean": 0.10715652021134306,
+            "max": 0.11155856714592671
+          },
+          "2": {
+            "min": 0.10230936509143004,
+            "mean": 0.10891920543073243,
+            "max": 0.1134665885562706
+          },
+          "3": {
+            "min": 0.10560648273133104,
+            "mean": 0.11344728548918605,
+            "max": 0.11902366824396561
+          }
+        },
+        "forward_stop_displacement_by_delay": {
+          "0": {
+            "min": 0.04115099822885011,
+            "mean": 0.04250588941294832,
+            "max": 0.04347592655180949
+          },
+          "1": {
+            "min": 0.047417231146023364,
+            "mean": 0.04775691595216392,
+            "max": 0.048293490980621585
+          },
+          "2": {
+            "min": 0.05229422165030863,
+            "mean": 0.0527234463583973,
+            "max": 0.053139768005230355
+          },
+          "3": {
+            "min": 0.058025757718787305,
+            "mean": 0.05850893862206538,
+            "max": 0.058955157150906976
+          }
+        },
+        "failure_flag_counts": {
+          "stop_displacement": 6,
+          "stable_wz": 12
+        }
+      },
+      "actual_training_phase_groups": {
+        "cut_zero": {
+          "ticks": 6593,
+          "reward_sum": 554.5596055374481,
+          "wz_tracking_sum": 311.813751033798,
+          "fraction": 0.05030059814453125
+        },
+        "drive_translation": {
+          "ticks": 38068,
+          "reward_sum": 3363.044632734731,
+          "wz_tracking_sum": 1841.9186304121672,
+          "fraction": 0.290435791015625
+        },
+        "drive_turn": {
+          "ticks": 28446,
+          "reward_sum": 2365.136729164049,
+          "wz_tracking_sum": 1214.2528653363572,
+          "fraction": 0.2170257568359375
+        },
+        "stationary": {
+          "ticks": 57965,
+          "reward_sum": 5331.349801325006,
+          "wz_tracking_sum": 2860.8985221575235,
+          "fraction": 0.44223785400390625
+        }
+      },
+      "training_phase_tick_denominator": 131072,
+      "action_and_torque_observation": {
+        "action_boundary_elements": 4216,
+        "action_near_boundary_elements": 4686,
+        "action_element_denominator": 345600,
+        "saturated_policy_ticks": 0,
+        "policy_tick_denominator": 21600,
+        "observation_clipping": "NOT_OBSERVED: no raw actor obs archive in these formal traces; first rollout is SHA only"
+      },
+      "ppo": {
+        "logged_update_rows": 31,
+        "approx_kl": {
+          "n": 31,
+          "min": 0.0026499243,
+          "mean": 0.0034742127806451613,
+          "median": 0.0034609977,
+          "max": 0.004672809
+        },
+        "clip_fraction": {
+          "n": 31,
+          "min": 0.021701388888888888,
+          "mean": 0.03605444804411538,
+          "median": 0.03404017857142857,
+          "max": 0.0578125
+        },
+        "std": {
+          "n": 31,
+          "min": 0.25422313809394836,
+          "mean": 0.25450128124606225,
+          "median": 0.2544506788253784,
+          "max": 0.2548629641532898
+        },
+        "limit": "SB3 writes before the next update; final update is not guaranteed in CSV. KL is per-update, not KL to frozen base."
+      },
+      "training": {
+        "status": "COMPLETE",
+        "seed": 182,
+        "base_checkpoint_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+        "checkpoint_sha256": "b42dec19c33ef3050c3e2577de72dfad59d931a6c80f880ab5e10c595c5cab57",
+        "initial_num_timesteps": 1310720,
+        "new_trained_transitions": 131072,
+        "final_num_timesteps": 1441792,
+        "actual_counts": {
+          "forward_calls": 131339,
+          "native_steps": 1310720,
+          "pd_updates": 655360,
+          "policy_transitions": 131072,
+          "resets": 133
+        },
+        "cleanup_complete": true,
+        "inputs_unchanged": true,
+        "reward_state26": {
+          "yaw_tracking_weight": 3.0,
+          "steps": 131072,
+          "original_reward_sum": 9537.796179930918,
+          "training_reward_sum": 11614.090769577502,
+          "extra_reward_sum": 2076.2945896466244,
+          "raw_wz_tracking_sum": 103814.72948233086
+        },
+        "delay_state18": [
+          {
+            "last_selection": {
+              "mode": "uniform_0_3",
+              "seed": 182,
+              "rank": 0,
+              "episode_index": 132,
+              "stream": 18018,
+              "selected_delay_ticks": 2,
+              "selection": "uniform_0_3"
+            },
+            "delay_counts": {
+              "0": 30,
+              "1": 31,
+              "2": 34,
+              "3": 38
+            }
+          }
+        ],
+        "elapsed_total_s": 313.01551871100673
+      },
+      "cpp64": {
+        "status": "COMPLETE",
+        "comparisons": 64,
+        "max_absolute_error": 5.364418029785156e-07,
+        "absolute_tolerance": 1e-05,
+        "cxx_ort_1_10_status": "PASS"
+      }
+    },
+    "base25_random": {
+      "formal": {
+        "pass_count": 33,
+        "full_horizons": 36,
+        "mean_J": 0.2159389286576913,
+        "by_delay": {
+          "0": {
+            "cases": 9,
+            "passed": 9
+          },
+          "1": {
+            "cases": 9,
+            "passed": 9
+          },
+          "2": {
+            "cases": 9,
+            "passed": 9
+          },
+          "3": {
+            "cases": 9,
+            "passed": 6
+          }
+        },
+        "turn_stable_wz_mae_by_delay": {
+          "0": {
+            "min": 0.061930050124234234,
+            "mean": 0.0663147177214223,
+            "max": 0.06915853735198269
+          },
+          "1": {
+            "min": 0.06792329346483465,
+            "mean": 0.07212394445981875,
+            "max": 0.07487424481612685
+          },
+          "2": {
+            "min": 0.07542550672642344,
+            "mean": 0.07759816085658028,
+            "max": 0.07962138233838467
+          },
+          "3": {
+            "min": 0.08416291184399662,
+            "mean": 0.0894950222613334,
+            "max": 0.09818776491339515
+          }
+        },
+        "forward_stop_displacement_by_delay": {
+          "0": {
+            "min": 0.026287639234162722,
+            "mean": 0.026574171127477366,
+            "max": 0.026836755435387185
+          },
+          "1": {
+            "min": 0.03118004804685388,
+            "mean": 0.03131807372075514,
+            "max": 0.03158045618695601
+          },
+          "2": {
+            "min": 0.03563324137027149,
+            "mean": 0.03581822593092102,
+            "max": 0.036069256439886455
+          },
+          "3": {
+            "min": 0.03989602397048166,
+            "mean": 0.04009001028602009,
+            "max": 0.04029616663759434
+          }
+        },
+        "failure_flag_counts": {
+          "stable_wz": 3
+        }
+      },
+      "actual_training_phase_groups": {
+        "cut_zero": {
+          "ticks": 13034,
+          "reward_sum": 855.2323516231263,
+          "wz_tracking_sum": 373.3950164688357,
+          "fraction": 0.04972076416015625
+        },
+        "drive_translation": {
+          "ticks": 66607,
+          "reward_sum": 4618.687313927905,
+          "wz_tracking_sum": 1993.024419095353,
+          "fraction": 0.2540855407714844
+        },
+        "drive_turn": {
+          "ticks": 67851,
+          "reward_sum": 4434.295236337494,
+          "wz_tracking_sum": 1757.9664230323465,
+          "fraction": 0.2588310241699219
+        },
+        "stationary": {
+          "ticks": 114652,
+          "reward_sum": 8340.179581981567,
+          "wz_tracking_sum": 3531.8179372757822,
+          "fraction": 0.4373626708984375
+        }
+      },
+      "training_phase_tick_denominator": 262144,
+      "action_and_torque_observation": {
+        "action_boundary_elements": 1502,
+        "action_near_boundary_elements": 1553,
+        "action_element_denominator": 345600,
+        "saturated_policy_ticks": 0,
+        "policy_tick_denominator": 21600,
+        "observation_clipping": "NOT_OBSERVED: no raw actor obs archive in these formal traces; first rollout is SHA only"
+      },
+      "ppo": {
+        "logged_update_rows": 63,
+        "approx_kl": {
+          "n": 63,
+          "min": 0.0022406485,
+          "mean": 0.003347896919047619,
+          "median": 0.0033734357,
+          "max": 0.004390336
+        },
+        "clip_fraction": {
+          "n": 63,
+          "min": 0.020089285714285716,
+          "mean": 0.03538004645473023,
+          "median": 0.035481770833333336,
+          "max": 0.055588942307692304
+        },
+        "std": {
+          "n": 63,
+          "min": 0.25487205386161804,
+          "mean": 0.2552830136957623,
+          "median": 0.2553485035896301,
+          "max": 0.25546491146087646
+        },
+        "limit": "SB3 writes before the next update; final update is not guaranteed in CSV. KL is per-update, not KL to frozen base."
+      }
+    }
+  },
+  "resources": {
+    "samples": 2480,
+    "recorded_owned_peak_bytes": 1090940928,
+    "sampled_owned_current_max_bytes": 1090154496,
+    "minimum_effective_available_bytes": 4342136832,
+    "event_maxima": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "final_unit_peak_available": false,
+    "limit": "max of memory.peak values actually sampled before unit teardown; not an after-exit final complete unit peak"
+  },
+  "diagnosis_candidates": [
+    {
+      "candidate": "cumulative actor drift relative to frozen25 base",
+      "status": "SUPPORTED_HYPOTHESIS_NOT_CAUSAL_PROOF",
+      "evidence": "unchanged-reward continuation also loses all12 turn cases; per-update KL is not KL to base; no intermediate policies were evaluated"
+    },
+    {
+      "candidate": "training phase exposure and reward allocation",
+      "status": "DESCRIPTIVE_CONFOUND",
+      "evidence": "new arms have21.70% actual turn ticks versus25.88% in25; almost49.3% zero-command ticks; seed182 differs from25seed181"
+    },
+    {
+      "candidate": "action endpoint clipping",
+      "status": "OBSERVED_ASSOCIATION_NOT_TORQUE_SATURATION",
+      "evidence": "boundary issued-action counts rise, especially yaw3 forward; actual tau saturation is0/21600 observed ticks per model"
+    },
+    {
+      "candidate": "observation clipping or corrupted actual actor inputs",
+      "status": "NOT_OBSERVED",
+      "evidence": "formal files contain no actor observation arrays; first rollout SHA establishes pairing only, not full-run clipping rates"
+    }
+  ],
+  "recommended_next_step": {
+    "action": "one fixed-base same-input policy-distribution drift audit after wheel42 heavy window",
+    "models": [
+      "completed25_random",
+      "completed27_control_final",
+      "completed27_yaw3_final"
+    ],
+    "inputs": "predeclared216 actual627D float32 frames from closed23 zero/20ms cases,12 fixed drive/stop ticks per18 cases",
+    "maximum_actor_forwards": 648,
+    "new_training_transitions": 0,
+    "new_physics_steps": 0,
+    "metrics": [
+      "raw_mean_delta",
+      "clipped_mean_delta",
+      "log_std_delta",
+      "closed_form_diagonal_Gaussian_KL(base25||new)"
+    ],
+    "not_performed": true,
+    "limitation": "old23 reference observations are not an on-policy sample from25/27; diagnostic only, never qualification or checkpoint selection"
+  },
+  "analysis": {
+    "analysis_model_loads": 0,
+    "analysis_inference_calls": 0,
+    "analysis_physics_steps": 0,
+    "maximum_single_npz_uncompressed_bytes": 205248,
+    "conservative_live_array_payload_bound_bytes": 820992,
+    "analysis_self_peak_rss_bytes": 36925440,
+    "analysis_source_sha256": "585e44692722917202b73f0f932e454f35eb87794d734e561b55eff962d3deaa"
+  },
+  "complete_local_diagnostic": {
+    "path": "/home/lyh/codex_workspace/local_optimization18_20261018/d1_yaw27_results_and_diagnosis.json",
+    "bytes": 223272,
+    "sha256": "84ec0335c863e31407e64bb4d4a9efcedf4f0ff04e68854ab4b5907c5ac6d191",
+    "contains": "all108 trace SHA bindings, per-case windows, phase details, CSV summaries and source paths"
+  },
+  "evidence": {
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/report.json": {
+      "bytes": 50127,
+      "sha256": "89f6405b4fe4970a517e045eb36df2e9d7424e03dd95ddfb8879b72ab0aeea65"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/admissions_02/admission_787cde027aa8194ef01773ad/report.json": {
+      "bytes": 6032,
+      "sha256": "69ff491373288fa36a181387163b0c3acd17ab8be028107277df87ca4ff12909"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/train/result.json": {
+      "bytes": 13577,
+      "sha256": "cef595e439fcff46e8350c3326345330bbb42f8c8b708eef1d17124159932c13"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/train/protocol.json": {
+      "bytes": 10145,
+      "sha256": "1b012333c7acf528380828bdbb3d365e557b6a9a2cde01139382d6a480be083c"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/formal/report.json": {
+      "bytes": 70374,
+      "sha256": "ac64707b683d42021d18d2dec8e558772729a165cdc39e3fbab73700a83d6ba5"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/cpp/report.json": {
+      "bytes": 6525,
+      "sha256": "eab15d8ed5b4d9169be520aaf1ac48d977704b07973c88bcbad8b8771e203329"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/train/ledger.jsonl": {
+      "bytes": 925498,
+      "sha256": "a7fd338a182fa3f4b597b88ed5afc5d348b662eb2ca221c4ce102b5a22770589"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/control/train/progress.csv": {
+      "bytes": 7560,
+      "sha256": "5c1bde495cc716a77c00c6f669233d2aa55de6ecf26397abf27d19be42d53190"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/train/result.json": {
+      "bytes": 13588,
+      "sha256": "142ef923174321f59d286d8814b887b181f9f4ba73d760a98270f9edaa5fdfd2"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/train/protocol.json": {
+      "bytes": 10139,
+      "sha256": "be1176ced4e7775293d22716cf2518a6fa2bb214915157c220130831b45a0763"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/formal/report.json": {
+      "bytes": 70354,
+      "sha256": "279d210f11efb9b1cae503fc8cdd9dedfbd30f65a2e6856f21cc56462d8403d9"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/cpp/report.json": {
+      "bytes": 6513,
+      "sha256": "2ffb4d573fa58b0fba4f8a14a12a26505082d196e37abf2d14f9a216c28e733c"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/train/ledger.jsonl": {
+      "bytes": 912034,
+      "sha256": "d4e227fe01fe08c585c686707315b75a45679b4a3fbf08e5fecb995b88cd9a0b"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/yaw_reward27/execution_02/yaw3/train/progress.csv": {
+      "bytes": 7601,
+      "sha256": "ac46b26fc7d6d112aa1a42cf2d5188ea9aaa92cd4f311608ad31dfb8ab97118d"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/low_memory_delay25/execution_01/random/formal/report.json": {
+      "bytes": 68805,
+      "sha256": "692ec9d4ae778af487c340f76aaf8290242a4c049309b20a075ab843f1283562"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/low_memory_delay25/execution_01/random/train/ledger.jsonl": {
+      "bytes": 1784079,
+      "sha256": "2c4a4da62fe37e01d66eb9e975f506ce3401188e2f84f236cc764d2e15395d62"
+    },
+    "/home/lyh/ddt_ros2_ws/evidence/low_memory_delay25/execution_01/random/train/progress.csv": {
+      "bytes": 14925,
+      "sha256": "9fb24557cf44aeb56d53111b3c0b59815f84b0752308ab81f78d1c7cf0d9e06f"
+    },
+    "/home/lyh/ddt_ros2_ws/training/d1_rl/task03d.py": {
+      "bytes": 7114,
+      "sha256": "1780b223ed141eecced07f69d01a6ae5802868093258ff76b0b47383ac8a9e5d"
+    },
+    "/home/lyh/ddt_ros2_ws/training/d1_rl/env.py": {
+      "bytes": 34736,
+      "sha256": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b"
+    },
+    "/home/lyh/ddt_ros2_ws/training/d1_rl/velocity_policy15.py": {
+      "bytes": 12525,
+      "sha256": "02a0618d82799c5bcaa5249bf922536501ddf479262891c15d8f83049902c15c"
+    },
+    "/home/lyh/ddt_ros2_ws/tools16/train_comparison16.py": {
+      "bytes": 22286,
+      "sha256": "4eca64beb8a42e54ecce98114e5c42def56e58a73428845b03cacebd1881609a"
+    }
+  }
+}
