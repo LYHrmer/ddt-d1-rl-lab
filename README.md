@@ -25,6 +25,8 @@
 
 [29固定基线KL对照已完整执行](docs/policy_anchor29_results_20261018.md)：两组同完整25 random与Adam起步，各新增32768步；control为24/36、anchor为31/36，均未超过原25的33/36。两组停车与完整时域保持，KL约束减轻了退化，但anchor仍有40ms两例、60ms三例转向失败。总108736policy、约7.8分钟，无OOM；同窗口诊断显示振荡减弱却平均欠幅增加，下一步针对动作动态继续检验。
 
+[30 固定策略因果陷波已完成并淘汰](docs/causal_notch30_results_20261018.md)：36场全跑满，但通过率由33/36降至27/36，并新增60ms倒车停车退化。动作递推及FIFO回放一致，未运行holdout或替换默认；原25仍是当前最佳完整候选。
+
 **此前闭环与资源结果：** [23实际C++闭环](docs/cpp_diagnostic23_results_20261018.md)完成20,011策略拍，与Python ORT逐拍动作误差0，36份物理轨迹与17完全一致，原策略仍为27/36。随后[24双组KL保护对照](docs/delay_comparison24_interruption_20261018.md)首组在47,316步触及4GiB内存停止线，已清理且不续跑partial；第二组与评测未开始，不能判断KL设置效果。25使用新的独立预算，见[预先固定的对照定义](docs/low_memory_delay25.md)。
 
 **此前21与22：** 完整zero18续训权重经21导出、C++64数值核对及原36场评测后，仅15/36通过，主要退化在倒退跟踪，未替换原模型。18另一训练臂收到来源未知的SIGTERM，保留未完成及未知最终计数。见[21实际结果](docs/completed_zero21_results_20261018.md)与[中断记录](docs/local_optimization18_interruption_20261018.md)。22另从原完整control及Adam出发，以学习率1e-4完成新的262144步，并修复中断时的脏RPC收集和清理。

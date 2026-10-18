@@ -1,0 +1,3059 @@
+{
+  "source_commit": "8725b10f80afdcb5a8c33209349755deade91603",
+  "plan_sha256": "f6da30e02bae057ec1acd14e24da21b3aad625949bc2e4d9b7a5d3285f996c9c",
+  "execution_report_sha256": "75def9372e274e98c8d0681d96945f7cdb2cf354eafdf749794fede5e5011eed",
+  "source_ci_run": 39131787410,
+  "status": "COMPLETE",
+  "decision": "REJECT_CAUSAL_NOTCH_CANDIDATE",
+  "actual_counts": {
+    "policy_transitions": 21600,
+    "native_steps": 216000,
+    "pd_updates": 108000
+  },
+  "training_transitions": 0,
+  "elapsed_s_including_admission": 93.10957282199979,
+  "resources": {
+    "minimum_effective_bytes": 9432879104,
+    "maximum_observed_kernel_peak_bytes": 632930304,
+    "memory_events_last_sample": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "swap_current_bytes_last_sample": 0
+  },
+  "formal_pass_count": 27,
+  "full_horizons": 36,
+  "original25_pass_count": 33,
+  "all36_sidecar_fifo_readback": true,
+  "filter_clipped_components_total": 745,
+  "formal_cases": [
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.14451463483264598,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06410214613440164,
+        "full_horizon_wz_mae_over_0_2": 0.008151786874828875,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.07226070182341547,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.003790475460683459,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.00040721505037002065,
+      "stop_last_second_abs_wz_rad_s": 0.0006284501052537455,
+      "stop_displacement_m": 0.02911900989755274,
+      "peak_abs_roll_or_pitch_rad": 0.04234503143558462,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay0_seed1001.npz",
+      "trace_sha256": "4b40721950f715ac7c124db6aaf056105d696ad1e59e915deea831295da27383",
+      "filter": {
+        "sidecar": "forward_stop_delay0_seed1001_filter.npz",
+        "sha256": "1b6ac130d54ebde11110bf80158b02e82b1af370849ba80b78296422573d64cb",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.1389977501260946,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06307655970814213,
+        "full_horizon_wz_mae_over_0_2": 0.00393880241345826,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.07198238800449423,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0024136418368059798,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003867926621948588,
+      "stop_last_second_abs_wz_rad_s": 0.00037777920732631537,
+      "stop_displacement_m": 0.02860648741210733,
+      "peak_abs_roll_or_pitch_rad": 0.03795220831596145,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay0_seed1002.npz",
+      "trace_sha256": "84d9db1e5495c9ed764086a8b7d579a5e9b50e330a5ff62e98099953600ec0fe",
+      "filter": {
+        "sidecar": "forward_stop_delay0_seed1002_filter.npz",
+        "sha256": "93ef0390b150301522450166c63cb63f73b6e30777dc16a5ba39653a0421db27",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.1402346004611201,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06476990517824016,
+        "full_horizon_wz_mae_over_0_2": 0.00368238611227036,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.07178230917060958,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.002436872818433324,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003630239489024044,
+      "stop_last_second_abs_wz_rad_s": 0.00031633997192609414,
+      "stop_displacement_m": 0.02884210706890384,
+      "peak_abs_roll_or_pitch_rad": 0.04038673394323481,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay0_seed1003.npz",
+      "trace_sha256": "d6a89648beb7b6dea9f93c48e3be8b9542b913c2125000e1e1a02286d56dc7db",
+      "filter": {
+        "sidecar": "forward_stop_delay0_seed1003_filter.npz",
+        "sha256": "30baf48b04082a42885bb55439aca7ea0eb536f6c74c4b126528e0a6815e496c",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.15546998456392452,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0672352645955773,
+        "full_horizon_wz_mae_over_0_2": 0.007953851162540621,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.08028086880580662,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.003744120174434115,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.00040227283999388636,
+      "stop_last_second_abs_wz_rad_s": 0.0006302042801639408,
+      "stop_displacement_m": 0.03378825001117744,
+      "peak_abs_roll_or_pitch_rad": 0.043976305776146876,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay1_seed1001.npz",
+      "trace_sha256": "953963230836d175f631457c7c5334b05356be5d8d4c73f65de2fc7e8ea8dfbb",
+      "filter": {
+        "sidecar": "forward_stop_delay1_seed1001_filter.npz",
+        "sha256": "33bc63948419c285aa39b3841072608696e7a47a80f6ebce9b2e5c8f02c44e28",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.15244195372835864,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06706079783443752,
+        "full_horizon_wz_mae_over_0_2": 0.005765903863404077,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.07961525203051704,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0024659247457188287,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003529352743228444,
+      "stop_last_second_abs_wz_rad_s": 0.00023779056237187068,
+      "stop_displacement_m": 0.03341593110716104,
+      "peak_abs_roll_or_pitch_rad": 0.03977139804751038,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay1_seed1002.npz",
+      "trace_sha256": "cce8150aa07ce64e5c5709931d5f7960f936f023701cb726e3e000556728770d",
+      "filter": {
+        "sidecar": "forward_stop_delay1_seed1002_filter.npz",
+        "sha256": "919dc15cbfd7c4546908d1ac46d55ea39ede6d55dfeb469d76f59dcec3263a3e",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.1517271259068535,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06880905451776495,
+        "full_horizon_wz_mae_over_0_2": 0.002877727599817462,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.08004034378927109,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0024443313081809483,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.00039569389098119444,
+      "stop_last_second_abs_wz_rad_s": 0.0003458755519081581,
+      "stop_displacement_m": 0.03344654915544244,
+      "peak_abs_roll_or_pitch_rad": 0.042007505005482566,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay1_seed1003.npz",
+      "trace_sha256": "a89889cac93b56eafad8ff67c8bf0865808f3dbc6b2e1f5fddc20e351c947e10",
+      "filter": {
+        "sidecar": "forward_stop_delay1_seed1003_filter.npz",
+        "sha256": "8b1d36311bd043bc11a26dda1ef11ced6a283c6946932bc5a4ec3d7e4d9dd2ae",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.1682216045244627,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.07072031531281096,
+        "full_horizon_wz_mae_over_0_2": 0.007957899483660748,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.08954338972799097,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.003697333011606958,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.00039986542360064865,
+      "stop_last_second_abs_wz_rad_s": 0.0006783659659817555,
+      "stop_displacement_m": 0.03849525092998048,
+      "peak_abs_roll_or_pitch_rad": 0.04563742293883043,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay2_seed1001.npz",
+      "trace_sha256": "12ca42c9b0d59c3f15bed1e7ec577b386bdef33da1b04a78b4544d9fdea4d350",
+      "filter": {
+        "sidecar": "forward_stop_delay2_seed1001_filter.npz",
+        "sha256": "d07997e00fd63394616491ebfd993abdce42a9ee54392424422cc07e9da8197c",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.16660214687372837,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.07106262236157732,
+        "full_horizon_wz_mae_over_0_2": 0.006993523729653289,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.08854600078249779,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.002534175060872723,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003553004189958171,
+      "stop_last_second_abs_wz_rad_s": 0.00021684830620229592,
+      "stop_displacement_m": 0.03815181819049324,
+      "peak_abs_roll_or_pitch_rad": 0.04152040375769666,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay2_seed1002.npz",
+      "trace_sha256": "561a35fe720b4ee584eb0548d8c031cf523588591fd62526a3b9f61d07ba4263",
+      "filter": {
+        "sidecar": "forward_stop_delay2_seed1002_filter.npz",
+        "sha256": "428f2ce5dbd4271fb719fd67a92874945294e5cd140b106509dd47d2c9672c26",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.1656967192183741,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.07300290788172337,
+        "full_horizon_wz_mae_over_0_2": 0.0032948800554473065,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.08939893128120341,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0024193789718392872,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0004109947256960822,
+      "stop_last_second_abs_wz_rad_s": 0.00042320039133210446,
+      "stop_displacement_m": 0.038086190185840314,
+      "peak_abs_roll_or_pitch_rad": 0.0435006037296998,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay2_seed1003.npz",
+      "trace_sha256": "c6e877212b6f97dc0faec19f5d7924e1057a9959c6edc6e8aa95c123d26eae03",
+      "filter": {
+        "sidecar": "forward_stop_delay2_seed1003_filter.npz",
+        "sha256": "13ee671e8c41f189f97ea36dc436da4755a16550d0a89f5cb964cb3f64813326",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.19091998602015192,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.07963190583215579,
+        "full_horizon_wz_mae_over_0_2": 0.009192878268976936,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.10209520191901918,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0034993181192578804,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003990753336019144,
+      "stop_last_second_abs_wz_rad_s": 0.0006624896908196077,
+      "stop_displacement_m": 0.04235133421868446,
+      "peak_abs_roll_or_pitch_rad": 0.050505147327564115,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay3_seed1001.npz",
+      "trace_sha256": "d664b9b199683316f8f72cfa73fadb479e6a43aa8fb325dc5fb69a58df428207",
+      "filter": {
+        "sidecar": "forward_stop_delay3_seed1001_filter.npz",
+        "sha256": "792f657b2774814c3e46498a4d66531f61258b6fd5bf359cc57534248dfd1f95",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.18805812225116525,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0790480377674686,
+        "full_horizon_wz_mae_over_0_2": 0.007789439622668622,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.10122064486102801,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0024658741330305413,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0003576164664942318,
+      "stop_last_second_abs_wz_rad_s": 0.00022139067716532495,
+      "stop_displacement_m": 0.04218215815541313,
+      "peak_abs_roll_or_pitch_rad": 0.04570097712803335,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay3_seed1002.npz",
+      "trace_sha256": "a85092a2dec439fb0306bb0579e2769a4f4d292c78140fe5d882c079121bfc44",
+      "filter": {
+        "sidecar": "forward_stop_delay3_seed1002_filter.npz",
+        "sha256": "7bb7007b71de839e1328d9179ef53f2cbf4a9c666bb6184d0d9b2e349e6d3de1",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "forward_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.18647603972285076,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.08071399700494628,
+        "full_horizon_wz_mae_over_0_2": 0.003863242139691014,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.10189880057821347,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.002401413994258516,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0004118725720010176,
+      "stop_last_second_abs_wz_rad_s": 0.00042102473471094463,
+      "stop_displacement_m": 0.04203653596725051,
+      "peak_abs_roll_or_pitch_rad": 0.048092541279058015,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "forward_stop_delay3_seed1003.npz",
+      "trace_sha256": "3d8ca26d2d95d6c5a51a1e82fc15704b0c837d6be71d9f9d1fb7bd968a7ff956",
+      "filter": {
+        "sidecar": "forward_stop_delay3_seed1003_filter.npz",
+        "sha256": "498168919c8dabf93583a83571e8d6f7741ed7023ce68bf5dd6b70c67a039c25",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2509412775280768,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.08259763470074602,
+        "full_horizon_wz_mae_over_0_2": 0.05109229225762249,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.11725135056970831,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.006534344029322601,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0017802118770350091,
+      "stop_last_second_abs_wz_rad_s": 0.025863512984229297,
+      "stop_displacement_m": 0.02639064608325002,
+      "peak_abs_roll_or_pitch_rad": 0.0641288397088585,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay0_seed1001.npz",
+      "trace_sha256": "4c6cf93055976c5195e62523f96b7ffb85da0e690dff2e7775cce7040b224254",
+      "filter": {
+        "sidecar": "reverse_stop_delay0_seed1001_filter.npz",
+        "sha256": "51dd32f87724237db29706d1db590167caa1ec775a619556f501ee7e76483173",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2391055583044438,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.08171672908456011,
+        "full_horizon_wz_mae_over_0_2": 0.040125411770839635,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.11726341744904405,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.00575987407776051,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0012481230556703237,
+      "stop_last_second_abs_wz_rad_s": 0.009536325456872599,
+      "stop_displacement_m": 0.028289668344542333,
+      "peak_abs_roll_or_pitch_rad": 0.05662901163975603,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay0_seed1002.npz",
+      "trace_sha256": "b257b3975d9018329ff4001f3c795bbf8da25929ee5de6105606dcf048611c7f",
+      "filter": {
+        "sidecar": "reverse_stop_delay0_seed1002_filter.npz",
+        "sha256": "63e60de022595286dfe09dc5d8105cb798b4cf1e18f908888fd3591054f2bcf9",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.25269089882066986,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.08549718770009625,
+        "full_horizon_wz_mae_over_0_2": 0.0491159404935715,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.11807777062700213,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.006491564107017194,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0018359094551276432,
+      "stop_last_second_abs_wz_rad_s": 0.013886314960742965,
+      "stop_displacement_m": 0.027238674410181452,
+      "peak_abs_roll_or_pitch_rad": 0.06026447381637279,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay0_seed1003.npz",
+      "trace_sha256": "5975e9967841923a4580b22f56b174b019ba201c1fb764335b2a86c1478151b0",
+      "filter": {
+        "sidecar": "reverse_stop_delay0_seed1003_filter.npz",
+        "sha256": "5dbcd1c06a37ebbcb1031fd9bb70475bdd60408313dbb5eda60f7517a273a883",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2698794631892767,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.08791083297613017,
+        "full_horizon_wz_mae_over_0_2": 0.05014634725338447,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.13182228295976206,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.0066445301354266005,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.001680953592072891,
+      "stop_last_second_abs_wz_rad_s": 0.02442474123580944,
+      "stop_displacement_m": 0.029432415192633204,
+      "peak_abs_roll_or_pitch_rad": 0.06604588221140408,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay1_seed1001.npz",
+      "trace_sha256": "cd908c612cd31ae5d9b4a13ffe961f03cb3af81d54d858991ccb98f7dd03a7af",
+      "filter": {
+        "sidecar": "reverse_stop_delay1_seed1001_filter.npz",
+        "sha256": "7a645e77c822f416ce7a160c588007381cb4b82e496b6581040c202d252b7660",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.26489438010957156,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0884011478727401,
+        "full_horizon_wz_mae_over_0_2": 0.04364443489765359,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.13284879733917787,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.00594231325922986,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0016183344686617638,
+      "stop_last_second_abs_wz_rad_s": 0.012115199218662623,
+      "stop_displacement_m": 0.03062525347612796,
+      "peak_abs_roll_or_pitch_rad": 0.05902791790999765,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay1_seed1002.npz",
+      "trace_sha256": "204fd978681e6fafc3500ad030c3249bd4be30490894af4bd206fb3a8822b47d",
+      "filter": {
+        "sidecar": "reverse_stop_delay1_seed1002_filter.npz",
+        "sha256": "21251558aa19b2a63aec976db88b155016b48064fea0b6269705e68298a96e98",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.26823519048691585,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.09007847277043084,
+        "full_horizon_wz_mae_over_0_2": 0.045439525934649616,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.1327171917818354,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.00603034365124481,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0016128710599759438,
+      "stop_last_second_abs_wz_rad_s": 0.012111511701434945,
+      "stop_displacement_m": 0.030202535005602337,
+      "peak_abs_roll_or_pitch_rad": 0.06258980891606983,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay1_seed1003.npz",
+      "trace_sha256": "f05b7a37624dd5809101f482f779714ab6e3c81e8cbd02539a646191a402dbd3",
+      "filter": {
+        "sidecar": "reverse_stop_delay1_seed1003_filter.npz",
+        "sha256": "824df8594f027bf866666e4f840eabec526cc6734750ce9ccd8b674305790f81",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.29172455047190105,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.09215819488816303,
+        "full_horizon_wz_mae_over_0_2": 0.052150904421434253,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.14741545116230373,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.00645091687247607,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0016409746917623372,
+      "stop_last_second_abs_wz_rad_s": 0.024179985228105424,
+      "stop_displacement_m": 0.03315783919449645,
+      "peak_abs_roll_or_pitch_rad": 0.06852237797317583,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay2_seed1001.npz",
+      "trace_sha256": "4be5e15893dfa35a3b35ee90c08205ad51bda8c7ea8d3823361887e16fa87170",
+      "filter": {
+        "sidecar": "reverse_stop_delay2_seed1001_filter.npz",
+        "sha256": "468a65efd08444a87be86e7a06e9155fb4b194cdc43caf8c73aaca04a9b57106",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.29013149174793296,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.09464630974583212,
+        "full_horizon_wz_mae_over_0_2": 0.04640975287519621,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.1490754291269046,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.006318633133340237,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0018059281302246191,
+      "stop_last_second_abs_wz_rad_s": 0.013050109048916146,
+      "stop_displacement_m": 0.033545045221319424,
+      "peak_abs_roll_or_pitch_rad": 0.062147752613626234,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay2_seed1002.npz",
+      "trace_sha256": "e5559b71ba26da42564978a786b7a40c4d9624670599f413d075cb2cc4ebd440",
+      "filter": {
+        "sidecar": "reverse_stop_delay2_seed1002_filter.npz",
+        "sha256": "ad291f2d8833f7e4ef55a5b49fc384048b0a2207ea4149b4d57433cde4f730fb",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2859910337256616,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0949506932227908,
+        "full_horizon_wz_mae_over_0_2": 0.04285502466646333,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.14818531583640748,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.005838945445427084,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.0013681058483569588,
+      "stop_last_second_abs_wz_rad_s": 0.00965175737764816,
+      "stop_displacement_m": 0.03323103341886815,
+      "peak_abs_roll_or_pitch_rad": 0.0651239593063509,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay2_seed1003.npz",
+      "trace_sha256": "238739fbb2621b47e64b46577a8b55a65bcf61510193ef2949a50b9e63259d11",
+      "filter": {
+        "sidecar": "reverse_stop_delay2_seed1003_filter.npz",
+        "sha256": "c11d5d8fb277415aef11cd709d6abb2604fa24341131e352bed178774c96863b",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 0,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.8778804240114536,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.12600050953399064,
+        "full_horizon_wz_mae_over_0_2": 0.46435064570585866,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.28752926877160434,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.006385939664455458,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.045508150312791186,
+      "stop_last_second_abs_wz_rad_s": 0.21059618310613318,
+      "stop_displacement_m": 0.020870526610902898,
+      "peak_abs_roll_or_pitch_rad": 0.10508928369691564,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": false,
+        "stop_abs_wz": false,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay3_seed1001.npz",
+      "trace_sha256": "7400c0c4ca02158c705b44e280ee794845cb66d4c7381e51dc6d30ce42a86be0",
+      "filter": {
+        "sidecar": "reverse_stop_delay3_seed1001_filter.npz",
+        "sha256": "9890801056599d52c0e8614a32749617fe79a68ac3a45a1155a3d9f7e655155c",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 2,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.8678214083925512,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.12527561745370766,
+        "full_horizon_wz_mae_over_0_2": 0.4600287017659963,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.28251708917284724,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.00625753400979183,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.05055616697189154,
+      "stop_last_second_abs_wz_rad_s": 0.3445588123433916,
+      "stop_displacement_m": 0.02390920293348361,
+      "peak_abs_roll_or_pitch_rad": 0.10279213288110055,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": false,
+        "stop_abs_wz": false,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay3_seed1002.npz",
+      "trace_sha256": "2c9561e56f613153d784becb559acde05d95549fc114007bf6f51d549cd1ff35",
+      "filter": {
+        "sidecar": "reverse_stop_delay3_seed1002_filter.npz",
+        "sha256": "44e1752eb10405875be984aff0d0a22506966e51337fb700c54e7da620269555",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 3,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "reverse_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.875960363755192,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.12203785734377777,
+        "full_horizon_wz_mae_over_0_2": 0.47919218050183665,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.27473032590957763,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": 0.005785941652704465,
+      "stable_wz_mae_rad_s": null,
+      "stop_last_second_horizontal_speed_m_s": 0.05504838008725646,
+      "stop_last_second_abs_wz_rad_s": 0.5547939306851924,
+      "stop_displacement_m": 0.02167671614801075,
+      "peak_abs_roll_or_pitch_rad": 0.09875607319220046,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": true,
+        "stable_wz": null,
+        "stop_horizontal_speed": false,
+        "stop_abs_wz": false,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "reverse_stop_delay3_seed1003.npz",
+      "trace_sha256": "d76b246275d242ef92f5afccb678639aa928ca2798f4a6b9bddd731e33a7cc55",
+      "filter": {
+        "sidecar": "reverse_stop_delay3_seed1003_filter.npz",
+        "sha256": "7aca4630b402aebd602fd951d7f726f5240a679ad43db85064f978c95161d594",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 5,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.19934218818770255,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.03608618659703134,
+        "full_horizon_wz_mae_over_0_2": 0.1535711211640226,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.00968488042664862,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.07124976566517205,
+      "stop_last_second_horizontal_speed_m_s": 0.0007101231301329669,
+      "stop_last_second_abs_wz_rad_s": 0.003840229307741299,
+      "stop_displacement_m": 0.002486450925527465,
+      "peak_abs_roll_or_pitch_rad": 0.04798807999495299,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay0_seed1001.npz",
+      "trace_sha256": "2f2be09ff0f39ef8627d0241f1de87590e9c5ce05bdc06a2e1674914a7eaa35a",
+      "filter": {
+        "sidecar": "turn_stop_delay0_seed1001_filter.npz",
+        "sha256": "b562c3d566205b52ee651165c8a3fb45225861e2b9a645b06c4586007d833815",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 60,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.22355317333945884,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0415157480908458,
+        "full_horizon_wz_mae_over_0_2": 0.16500443160367312,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.017032993644939917,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.06337785053714838,
+      "stop_last_second_horizontal_speed_m_s": 0.0013925457100703062,
+      "stop_last_second_abs_wz_rad_s": 0.005688302193027355,
+      "stop_displacement_m": 0.005385074034624383,
+      "peak_abs_roll_or_pitch_rad": 0.043903162783904486,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay0_seed1002.npz",
+      "trace_sha256": "6e0f98fc600cce57e5f412dbd13bda18970c7bfd0bcdd0355bb2f575140cfccf",
+      "filter": {
+        "sidecar": "turn_stop_delay0_seed1002_filter.npz",
+        "sha256": "e80375d12e5e16c7b90c300996db76ab480459fcaa0c142a7fde67011e912ee7",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 64,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 0,
+      "delay_ms": 0,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.19976516816459286,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.040061877686004776,
+        "full_horizon_wz_mae_over_0_2": 0.15242108833081566,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.007282202147772433,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.0693771135568638,
+      "stop_last_second_horizontal_speed_m_s": 0.0005695177729288049,
+      "stop_last_second_abs_wz_rad_s": 0.002977547897431907,
+      "stop_displacement_m": 0.0019729988088560196,
+      "peak_abs_roll_or_pitch_rad": 0.045410300956550916,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": true,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 0,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay0_seed1003.npz",
+      "trace_sha256": "278983c35fc41837a450915b52481e979443970a3787b10de6c45a907f822383",
+      "filter": {
+        "sidecar": "turn_stop_delay0_seed1003_filter.npz",
+        "sha256": "ec6444e93170d7b4eaff3b9635e67005f2cde79294031834fba11ce98145447c",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 66,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.20958770603466664,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.033759327766293944,
+        "full_horizon_wz_mae_over_0_2": 0.16686209426641285,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.008966284001959833,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.07712267971878856,
+      "stop_last_second_horizontal_speed_m_s": 0.0005080502201515786,
+      "stop_last_second_abs_wz_rad_s": 0.002890576145335142,
+      "stop_displacement_m": 0.00282518363932981,
+      "peak_abs_roll_or_pitch_rad": 0.04896771493546967,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay1_seed1001.npz",
+      "trace_sha256": "157489be7273b4b2c212bc198984184bb9900bb62a0105beaba6b84f723ea9f4",
+      "filter": {
+        "sidecar": "turn_stop_delay1_seed1001_filter.npz",
+        "sha256": "653745df779c887c8638fe8e915717ee38c6a785d4125ca5ff6349c61f74f669",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 60,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2308562598935036,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.03900215776277343,
+        "full_horizon_wz_mae_over_0_2": 0.17676689278528682,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.015087209345443367,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.06955493470368936,
+      "stop_last_second_horizontal_speed_m_s": 0.0011945622009960975,
+      "stop_last_second_abs_wz_rad_s": 0.00503494678041972,
+      "stop_displacement_m": 0.003007723930567505,
+      "peak_abs_roll_or_pitch_rad": 0.04529583933140055,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay1_seed1002.npz",
+      "trace_sha256": "cd505962234cd508664a7cb47eec5683ed5853177d284e1512cf9b072652249f",
+      "filter": {
+        "sidecar": "turn_stop_delay1_seed1002_filter.npz",
+        "sha256": "5d9ae02d76a5f6ff3f12e6aa4fdfbd7221dd232ea3dccfe31171ac5c45278782",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 62,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 1,
+      "delay_ms": 20,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.21490767589811474,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.03857120227885787,
+        "full_horizon_wz_mae_over_0_2": 0.16856885566611018,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.007767617953146689,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.07496288477641473,
+      "stop_last_second_horizontal_speed_m_s": 0.0005350384817796241,
+      "stop_last_second_abs_wz_rad_s": 0.0027277962489533564,
+      "stop_displacement_m": 0.0016762918965277348,
+      "peak_abs_roll_or_pitch_rad": 0.04667973093717426,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": true,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": true,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 1,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay1_seed1003.npz",
+      "trace_sha256": "265fec1d1a61d8c273486da729363bea75eb980945e6d8d51be93b5e5244f9e4",
+      "filter": {
+        "sidecar": "turn_stop_delay1_seed1003_filter.npz",
+        "sha256": "4f379aa4b343f184e7ce28468c5e1547d92e193c536627c476002f2d12b19ca4",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 64,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.23777442301086096,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.03161427026899678,
+        "full_horizon_wz_mae_over_0_2": 0.19683647916813848,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.00932367357372569,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.08479085107460754,
+      "stop_last_second_horizontal_speed_m_s": 0.0004637137082089005,
+      "stop_last_second_abs_wz_rad_s": 0.0025307595804164047,
+      "stop_displacement_m": 0.002622318352385298,
+      "peak_abs_roll_or_pitch_rad": 0.04901009287248024,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay2_seed1001.npz",
+      "trace_sha256": "91e2e10b4002aef821aa5a5aea586a28acd665a1d49723d8aa561dbf83331a87",
+      "filter": {
+        "sidecar": "turn_stop_delay2_seed1001_filter.npz",
+        "sha256": "e67c3137bb8c60ad3d1693f901d8c2b2a1bf4730648215d702d2dfbe583c0582",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 58,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.257215810535566,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.03582888140443676,
+        "full_horizon_wz_mae_over_0_2": 0.20949247866922616,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.011894450461903124,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.0857880037866291,
+      "stop_last_second_horizontal_speed_m_s": 0.0007880148303503677,
+      "stop_last_second_abs_wz_rad_s": 0.0038214849956340487,
+      "stop_displacement_m": 0.0016950378062502902,
+      "peak_abs_roll_or_pitch_rad": 0.046672750753507096,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay2_seed1002.npz",
+      "trace_sha256": "168742ab254d771bfe4cf40a9e3cdd8448ece7a2ebea0cb910ff54dcd438a0ef",
+      "filter": {
+        "sidecar": "turn_stop_delay2_seed1002_filter.npz",
+        "sha256": "7406f353b8f633a8a08d19b1fcfd75a345343d72a92f85d589914cd98a016069",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 57,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 2,
+      "delay_ms": 40,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.2480417537702854,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.0371132165940458,
+        "full_horizon_wz_mae_over_0_2": 0.20257461230613916,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.008353924870100416,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.0878072358904303,
+      "stop_last_second_horizontal_speed_m_s": 0.000515946824460391,
+      "stop_last_second_abs_wz_rad_s": 0.0026281523181500206,
+      "stop_displacement_m": 0.0016048897731863903,
+      "peak_abs_roll_or_pitch_rad": 0.04691200842911406,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 2,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay2_seed1003.npz",
+      "trace_sha256": "ec8bc5451383cc889f539aa301ff6ae02443df1aa285b38934004c8d6004a3b6",
+      "filter": {
+        "sidecar": "turn_stop_delay2_seed1003_filter.npz",
+        "sha256": "2f6f7e2217d1905a0a5b70a167f7572268e23c4996c43b5fcc407b3e098b2128",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 61,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1001,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.9279663055133107,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.07360609152300235,
+        "full_horizon_wz_mae_over_0_2": 0.7045901403595003,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.14977007363080808,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.21665897695984865,
+      "stop_last_second_horizontal_speed_m_s": 0.009336675477904947,
+      "stop_last_second_abs_wz_rad_s": 0.029565801465535047,
+      "stop_displacement_m": 0.02781593534753857,
+      "peak_abs_roll_or_pitch_rad": 0.10363954213095791,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4561321689879906,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay3_seed1001.npz",
+      "trace_sha256": "f0b507c52f8e2b86b01245e0aab7dc1f6f6594bb91547035f597eadbc55bd7ff",
+      "filter": {
+        "sidecar": "turn_stop_delay3_seed1001_filter.npz",
+        "sha256": "490fecf6c46291df5215b5d2230d7697d9c1234803148c8e8b9c3800808babcd",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 60,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1002,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.7159397323798616,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06631896855104384,
+        "full_horizon_wz_mae_over_0_2": 0.5528383133402501,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.09678245048856768,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.3199139900354352,
+      "stop_last_second_horizontal_speed_m_s": 0.0003208168644169483,
+      "stop_last_second_abs_wz_rad_s": 0.001319359273658837,
+      "stop_displacement_m": 0.01915554901094642,
+      "peak_abs_roll_or_pitch_rad": 0.10738968900564548,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.45881019948149926,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay3_seed1002.npz",
+      "trace_sha256": "9830ab76b6f19e684592ec4f9fd6819395dbf8e0616b1edde4afeab3be2ff7a8",
+      "filter": {
+        "sidecar": "turn_stop_delay3_seed1002_filter.npz",
+        "sha256": "19d736a003252a3b5e38d10661e32d970adde18e99078c5c993dfcf1ed7c80a6",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 60,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    },
+    {
+      "sequence": "turn_stop",
+      "delay_ticks": 3,
+      "delay_ms": 60,
+      "reset_seed": 1003,
+      "policy_transitions": 600,
+      "native_steps": 6000,
+      "done_reason": "HORIZON_12S",
+      "status": "COMPLETE",
+      "failure": false,
+      "J": 0.7248266467279445,
+      "J_components": {
+        "full_horizon_vx_mae_over_0_2": 0.06976203273575005,
+        "full_horizon_wz_mae_over_0_2": 0.560817921192007,
+        "stop_8_to_12_horizontal_norm_mean_over_0_2": 0.09424669280018749,
+        "fixed_early_failure_penalty": 0.0
+      },
+      "stable_vx_mae_m_s": null,
+      "stable_wz_mae_rad_s": 0.3560467744976439,
+      "stop_last_second_horizontal_speed_m_s": 0.0002783406282598457,
+      "stop_last_second_abs_wz_rad_s": 0.0009040600370062085,
+      "stop_displacement_m": 0.01798360155358102,
+      "peak_abs_roll_or_pitch_rad": 0.11537167236668434,
+      "threshold_flags": {
+        "completed_12s": true,
+        "no_fall_or_illegal_support": true,
+        "stable_vx": null,
+        "stable_wz": false,
+        "stop_horizontal_speed": true,
+        "stop_abs_wz": true,
+        "stop_displacement": true,
+        "peak_roll_pitch": true
+      },
+      "reference_thresholds_met": false,
+      "nominal_zero_delay_pass": null,
+      "actual_counts": {
+        "native_steps": 6000,
+        "pd_updates": 3000,
+        "policy_transitions": 600,
+        "resets": 1,
+        "forward_calls": 602
+      },
+      "reset_info": {
+        "delay_ticks": 3,
+        "nominal_base_height_m": 0.45237399982329246,
+        "reset_height_m": 0.4582974199399779,
+        "episode_index": 0
+      },
+      "trace_file": "turn_stop_delay3_seed1003.npz",
+      "trace_sha256": "273d30ce0f3ba6df6a9d464926f0e9543aff227496b21e92e77784609d7f891c",
+      "filter": {
+        "sidecar": "turn_stop_delay3_seed1003_filter.npz",
+        "sha256": "c0d751e62758c5702fd0a7d1035afe1718f3a667a15e3284a1bb430af5967656",
+        "replay_exact": true,
+        "issued_matches_physical_trace": true,
+        "fifo_exact": true,
+        "sample_hz": 50.0,
+        "center_hz": 5.0,
+        "quality": 2.0,
+        "channels": 16,
+        "b": [
+          0.8718803910887585,
+          -1.4107321069061622,
+          0.8718803910887585
+        ],
+        "a": [
+          1.0,
+          -1.4107321069061622,
+          0.7437607821775168
+        ],
+        "calls": 600,
+        "clipped_components": 63,
+        "initialization": "constant_first_action_prehistory",
+        "state_uses": "unclipped_float64_filter_output",
+        "output": "clipped_to_original_action_bounds_before_float32_issue"
+      }
+    }
+  ],
+  "saved_turn_diagnostics": [
+    {
+      "delay_ms": 40,
+      "seed": 1001,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12037861766161534,
+        "bias": 0.07962138233838467,
+        "std": 0.03173699592722967,
+        "mae": 0.07962138233838467,
+        "overshoot_fraction": 0.0,
+        "overshoot_area_rad": 0.0,
+        "undershoot_area_rad": 0.15924276467676934,
+        "error_crossings": 0,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 1.0,
+        "peak_power_fraction": 0.3719288422569263,
+        "five_hz_power_fraction": 0.009160434339213746,
+        "five_hz_sinusoidal_amplitude": 0.004296742878042765
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.1176648547175222,
+        "bias": 0.08233514528247785,
+        "std": 0.052232800888588046,
+        "mae": 0.08479085107460754,
+        "overshoot_fraction": 0.07,
+        "overshoot_area_rad": 0.002455705792129686,
+        "undershoot_area_rad": 0.1671259963570854,
+        "error_crossings": 4,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 4.0,
+        "peak_power_fraction": 0.5013087765356148,
+        "five_hz_power_fraction": 0.020264769211971383,
+        "five_hz_sinusoidal_amplitude": 0.010515635817464761
+      }
+    },
+    {
+      "delay_ms": 40,
+      "seed": 1002,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12457449327357654,
+        "bias": 0.07542550672642344,
+        "std": 0.032667210842193976,
+        "mae": 0.07542550672642344,
+        "overshoot_fraction": 0.0,
+        "overshoot_area_rad": 0.0,
+        "undershoot_area_rad": 0.15085101345284688,
+        "error_crossings": 0,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 0.5,
+        "peak_power_fraction": 0.8090751518897203,
+        "five_hz_power_fraction": 0.002786853136067804,
+        "five_hz_sinusoidal_amplitude": 0.002438994591623685
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.12256745894991361,
+        "bias": 0.07743254105008637,
+        "std": 0.0625635073672496,
+        "mae": 0.0857880037866291,
+        "overshoot_fraction": 0.15,
+        "overshoot_area_rad": 0.008355462736542713,
+        "undershoot_area_rad": 0.16322054483671547,
+        "error_crossings": 10,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 4.0,
+        "peak_power_fraction": 0.4883849685329161,
+        "five_hz_power_fraction": 0.009797888861229672,
+        "five_hz_sinusoidal_amplitude": 0.008757966728890891
+      }
+    },
+    {
+      "delay_ms": 40,
+      "seed": 1003,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12225240649506729,
+        "bias": 0.07774759350493272,
+        "std": 0.04191375414464358,
+        "mae": 0.07774759350493272,
+        "overshoot_fraction": 0.0,
+        "overshoot_area_rad": 0.0,
+        "undershoot_area_rad": 0.15549518700986548,
+        "error_crossings": 0,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 0.5,
+        "peak_power_fraction": 0.7475458939334302,
+        "five_hz_power_fraction": 0.0026516911731851453,
+        "five_hz_sinusoidal_amplitude": 0.0030528575869581283
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.11947391342764266,
+        "bias": 0.08052608657235734,
+        "std": 0.06372311195706445,
+        "mae": 0.0878072358904303,
+        "overshoot_fraction": 0.18,
+        "overshoot_area_rad": 0.00728114931807294,
+        "undershoot_area_rad": 0.16833332246278765,
+        "error_crossings": 10,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 0.5,
+        "peak_power_fraction": 0.3631466503196962,
+        "five_hz_power_fraction": 0.007906502288356475,
+        "five_hz_sinusoidal_amplitude": 0.008013376272993795
+      }
+    },
+    {
+      "delay_ms": 60,
+      "seed": 1001,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12423324903772652,
+        "bias": 0.07576675096227348,
+        "std": 0.08603686770700661,
+        "mae": 0.09818776491339515,
+        "overshoot_fraction": 0.25,
+        "overshoot_area_rad": 0.02242101395112169,
+        "undershoot_area_rad": 0.1739545158756686,
+        "error_crossings": 13,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 5.0,
+        "peak_power_fraction": 0.6473218655642571,
+        "five_hz_power_fraction": 0.6473218655642571,
+        "five_hz_sinusoidal_amplitude": 0.09789965176270816
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.14361516019540457,
+        "bias": 0.05638483980459545,
+        "std": 0.23681938574628547,
+        "mae": 0.21665897695984865,
+        "overshoot_fraction": 0.43,
+        "overshoot_area_rad": 0.16027413715525324,
+        "undershoot_area_rad": 0.27304381676444417,
+        "error_crossings": 15,
+        "yaw_zero_crossings": 16,
+        "peak_hz": 4.0,
+        "peak_power_fraction": 0.7552137258555836,
+        "five_hz_power_fraction": 0.008725238886111207,
+        "five_hz_sinusoidal_amplitude": 0.03128473230469762
+      }
+    },
+    {
+      "delay_ms": 60,
+      "seed": 1002,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12644958384392496,
+        "bias": 0.07355041615607505,
+        "std": 0.06551097068293245,
+        "mae": 0.08416291184399662,
+        "overshoot_fraction": 0.2,
+        "overshoot_area_rad": 0.010612495687921567,
+        "undershoot_area_rad": 0.15771332800007165,
+        "error_crossings": 12,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 5.0,
+        "peak_power_fraction": 0.5976302544657148,
+        "five_hz_power_fraction": 0.5976302544657148,
+        "five_hz_sinusoidal_amplitude": 0.07162385226944709
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.1431743222860623,
+        "bias": 0.0568256777139377,
+        "std": 0.3704628659784788,
+        "mae": 0.3199139900354352,
+        "overshoot_fraction": 0.47,
+        "overshoot_area_rad": 0.2630883123214975,
+        "undershoot_area_rad": 0.37673966774937284,
+        "error_crossings": 15,
+        "yaw_zero_crossings": 15,
+        "peak_hz": 4.0,
+        "peak_power_fraction": 0.5863637224616891,
+        "five_hz_power_fraction": 0.02079085985237402,
+        "five_hz_sinusoidal_amplitude": 0.07554988366190962
+      }
+    },
+    {
+      "delay_ms": 60,
+      "seed": 1003,
+      "window_s": [
+        6,
+        8
+      ],
+      "original25": {
+        "n": 100,
+        "mean": -0.12148432301705495,
+        "bias": 0.07851567698294507,
+        "std": 0.06235666376301115,
+        "mae": 0.08613439002660846,
+        "overshoot_fraction": 0.18,
+        "overshoot_area_rad": 0.007618713043663397,
+        "undershoot_area_rad": 0.16465006700955354,
+        "error_crossings": 12,
+        "yaw_zero_crossings": 0,
+        "peak_hz": 5.0,
+        "peak_power_fraction": 0.42907701277005567,
+        "five_hz_power_fraction": 0.42907701277005567,
+        "five_hz_sinusoidal_amplitude": 0.05776853846996665
+      },
+      "notch30": {
+        "n": 100,
+        "mean": -0.14813089188859555,
+        "bias": 0.05186910811140448,
+        "std": 0.41214845841029624,
+        "mae": 0.3560467744976439,
+        "overshoot_fraction": 0.47,
+        "overshoot_area_rad": 0.30417766638623944,
+        "undershoot_area_rad": 0.4079158826090485,
+        "error_crossings": 15,
+        "yaw_zero_crossings": 15,
+        "peak_hz": 4.0,
+        "peak_power_fraction": 0.5757480407410235,
+        "five_hz_power_fraction": 0.019049767242634488,
+        "five_hz_sinusoidal_amplitude": 0.08045596058894039
+      }
+    }
+  ],
+  "holdout": {
+    "status": "SKIPPED_ORIGINAL36_FAILED",
+    "actual_counts": {
+      "policy_transitions": 0,
+      "native_steps": 0,
+      "pd_updates": 0
+    }
+  },
+  "automatic_model_replacement": false,
+  "new_cpp_closedloop_proven": false
+}
