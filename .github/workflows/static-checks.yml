@@ -39,6 +39,7 @@ on:
       - 'tools27/**'
       - 'tools28/**'
       - 'tools29/**'
+      - 'tools30/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -68,6 +69,7 @@ on:
       - 'tools27/**'
       - 'tools28/**'
       - 'tools29/**'
+      - 'tools30/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
