@@ -31,7 +31,7 @@
 
 [32 固定偏航命令预补偿的完整结果](docs/command_gain32_results_20261018.md)：formal从33/36升至**35/36**，全36满时域、停车全过，但完整时域平均J变差10.22%。前进/倒车24份完整轨迹逐位等同原25，实际命令与评分未改。剩60ms/seed1001转向未过，未运行holdout或替换默认。
 
-[33 因果参考整形](docs/reference_shape33_results_20261018.md)：**formal36/36 + 独立holdout36/36通过原阈值**，全部满时域且停车通过；formal平均J相对25仍差5.89%，相对32改善3.92%。有状态C++闭环待验证，默认未替换。
+[33 因果参考整形](docs/reference_shape33_results_20261018.md)：**formal36/36 + 独立holdout36/36通过原阈值**，全部满时域且停车通过；formal平均J相对25仍差5.89%，相对32改善3.92%。[34 C++有状态闭环](docs/cpp_reference34_results_20261018.md)随后也通过：formal与holdout共72场C++执行，轨迹SHA与Python33逐位相同，动作差0，43200次请求全部返回；5.89%的综合J取舍不变，默认未替换。
 
 **此前闭环与资源结果：** [23实际C++闭环](docs/cpp_diagnostic23_results_20261018.md)完成20,011策略拍，与Python ORT逐拍动作误差0，36份物理轨迹与17完全一致，原策略仍为27/36。随后[24双组KL保护对照](docs/delay_comparison24_interruption_20261018.md)首组在47,316步触及4GiB内存停止线，已清理且不续跑partial；第二组与评测未开始，不能判断KL设置效果。25使用新的独立预算，见[预先固定的对照定义](docs/low_memory_delay25.md)。
 

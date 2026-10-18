@@ -1,0 +1,77 @@
+{
+  "schema": "cpp34-small-saved-summary-v1",
+  "run": "evidence/cpp_reference34/execution_01",
+  "status": "COMPLETE",
+  "error": null,
+  "source_commit": "dd93918165dedb23171cace8dbebeb77265d1e4d",
+  "plan_sha256": "0453b65ccc07c2ada4a5b2b48ebd0706b59b15f2d72b67bfa867f9c4397b58c3",
+  "binary_sha256": "eb3e0dc8f1500e8c57a9001e3a9bd6a78153dc319d024d27aecd4b2c2df2c3aa",
+  "report_sha256": "c5a66490a4fbd92c3f4458792fcde28f65002acb7ee5aca519c79e366d50addb",
+  "cpp_original_and_holdout_qualified": true,
+  "new_cpp_closedloop_proven": true,
+  "automatic_model_replacement": false,
+  "inputs_unchanged": true,
+  "cleanup_complete": true,
+  "training_transitions": 0,
+  "actual_counts": {
+    "policy_transitions": 43200,
+    "native_steps": 432000,
+    "pd_updates": 216000
+  },
+  "cpp_request_attempts": 43200,
+  "cpp_request_returns": 43200,
+  "elapsed_s": 239.14455132799958,
+  "stages": {
+    "formal": {
+      "cases": 36,
+      "full_600_ticks": true,
+      "failures": 0,
+      "reference_thresholds_met": true,
+      "mean_J": 0.22866825729737517,
+      "max_last_second_horizontal_speed_m_s": 0.0018699553620836,
+      "max_stop_displacement_m": 0.04029616663759434,
+      "max_peak_abs_roll_or_pitch_rad": 0.1082440974193088,
+      "cpp_calls": 21600,
+      "python_oracle_calls": 21600,
+      "max_action_error": 0.0,
+      "all_effective_inputs_bitwise_equal": true
+    },
+    "holdout": {
+      "cases": 36,
+      "full_600_ticks": true,
+      "failures": 0,
+      "reference_thresholds_met": true,
+      "mean_J": 0.23027873486401176,
+      "max_last_second_horizontal_speed_m_s": 0.0021191942840472723,
+      "max_stop_displacement_m": 0.04128320605259284,
+      "max_peak_abs_roll_or_pitch_rad": 0.1089531117913841,
+      "cpp_calls": 21600,
+      "python_oracle_calls": 21600,
+      "max_action_error": 0.0,
+      "all_effective_inputs_bitwise_equal": true
+    }
+  },
+  "saved_files_rehashed": {
+    "checked": 216,
+    "mismatched": 0
+  },
+  "versus_python33": {
+    "episodes_compared": 72,
+    "trace_sha256_identical": 72,
+    "max_abs_J_difference": 0,
+    "python33_report": "reports/reference_shape33_results_20261018.json"
+  },
+  "resources": {
+    "samples": 228,
+    "min_effective_available_bytes": 6700240896,
+    "max_sampled_owned_current_bytes": 717213696,
+    "final_cgroup_events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    }
+  }
+}

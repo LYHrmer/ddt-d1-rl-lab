@@ -4452,5 +4452,14 @@
       "oom_group_kill": 0
     },
     "last_swap_bytes": 0
+  },
+  "default17_saved_comparison": {
+    "report_sha256": "4c5a0852de9f883c04f8707ed147e2cfc999b659360050838b3f7307c8435972",
+    "checkpoint_sha256": "428ff0ce9e8e88e10dabf94801a57b88de7e76d07b42800553b69c7f590e4eff",
+    "reference_pass_count": 27,
+    "full_600tick_horizons": 28,
+    "failure_count": 8,
+    "mean_J": 22.894171694211845,
+    "J_includes_original_failure_penalties": true
   }
 }
