@@ -1,4 +1,4 @@
-"""Independent27 resource admission around the unchanged26 scientific pipeline.
+"""Resource revision02 around the unchanged26 scientific pipeline.
 
 Cold imports are stdlib-only. Frozen sources are compiled into private modules;
 their __file__ honestly remains the original26 file. Only the enumerated receipt,
@@ -30,17 +30,42 @@ FROZEN26 = {
     'run_yaw_reward26': 'c7b72de25cb819d61ac9d3d006bc6ad0253823cbcda5c8eb58bb626e71f33215',
 }
 AUTHORED = ('tools27/run_yaw_reward27.py', 'tests/test_yaw_reward27.py', 'docs/yaw_reward27.md')
-PACKAGE = '_d1_resource_revision27'
-LABELS = {
-    'evidence/yaw_reward26/execution_01': 'evidence/yaw_reward27/execution_01',
-    'evidence/yaw_reward26/plan_01.json': 'evidence/yaw_reward27/plan_01.json',
-    'D1_STAGE26_NONCE': 'D1_STAGE27_NONCE',
-    'first_rollout26.json': 'first_rollout27.json',
-    **{'d1-yaw-reward26-'+suffix: 'd1-yaw-reward27-'+suffix for suffix in (
-        'plan-v1', 'execution-v1', 'stage-v1', 'training-result-v1',
-        'training-protocol-v1', 'first-rollout-v1')},
+GUARD_SOURCES = ('tools27/resource_guard27.py', 'tests/test_resource_guard27.py')
+PACKAGE = '_d1_owned_cgroup_revision27_02'
+REVISION = 'owned_cgroup_v2'
+PLAN = 'evidence/yaw_reward27/plan_02.json'
+OUTPUT = 'evidence/yaw_reward27/execution_02'
+ADMISSIONS = 'evidence/yaw_reward27/admissions_02'
+SUPERSESSION = 'evidence/yaw_reward27/superseded_01_by_02.json'
+OWNED_SCOPE = (f'/user.slice/user-{os.getuid()}.slice/user@{os.getuid()}.service/'
+               'app.slice/d1-yaw-reward27-owned02-20261018-01.service')
+OWNED_POLICY = {'scope': OWNED_SCOPE, 'memory_high_bytes': 2 << 30,
+                'memory_max_bytes': 3 << 30, 'memory_swap_max_bytes': 0,
+                'memory_oom_group': 1, 'oom_policy': 'kill'}
+LEGACY_PLAN = 'evidence/yaw_reward27/plan_01.json'
+LEGACY_PLAN_SHA = '3152b2dcd8fa47555a6096998a95dda3820fa2f9fe2cd8a37fbfcb706ff98419'
+LEGACY_COMMIT = '14934a40ee74baa3391aecf9faf3663f61ba0e15'
+LEGACY_ADMISSIONS = {
+    'admission_2edc241f42eaaa1474966ab8': (
+        'e33e6f61546cf342b97cf36e366880841e37eaa0b0865095ae6ac5e8139b3c2c',
+        'd3b5a9bda19da5d566b5ebe1014dbd6da0359d742ac077b63c26ae7da80ab50e'),
+    'admission_c685eeaf693d77fda61c0589': (
+        '341bf87dc1b798ed6c3616675dcb88a2fdb9f9a9e235eee6c03317ad1c7f8f72',
+        'c69e493cd2da55b9bcc94eb45368ed978390d2324860d9e8f2d193fdb5976951'),
+    'admission_fd563a88cc1715b1070e74a4': (
+        '55d3901dd56565b3de87efe666278feac201bbe7d02fea6e587077abf3a940b4',
+        '56de6a96db5233a98c7df79f631a3d1e881b8190b4d785356be6cb48e39ff101'),
 }
-ADMISSION = {'minimum_effective_bytes': 8 << 30, 'stable_s': 60, 'poll_s': 5,
+LABELS = {
+    'evidence/yaw_reward26/execution_01': OUTPUT,
+    'evidence/yaw_reward26/plan_01.json': PLAN,
+    'D1_STAGE26_NONCE': 'D1_STAGE27_REV02_NONCE',
+    'first_rollout26.json': 'first_rollout27_revision02.json',
+    **{'d1-yaw-reward26-'+suffix+'-v1': 'd1-yaw-reward27-'+suffix+'-v2' for suffix in (
+        'plan', 'execution', 'stage', 'training-result', 'training-protocol', 'first-rollout')},
+}
+ADMISSION = {'minimum_effective_bytes': 6 << 30, 'stable_s': 10, 'poll_s': 5,
+             'minimum_samples': 3,
              'maximum_wait_s': 300, 'reserve_bytes': 4 << 30, 'total_wall_s': 3900,
              'parent_wall_s': 3600, 'runtime_poll_s': 1}
 _BINDING = None
@@ -53,6 +78,90 @@ def require(condition, message):
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def legacy_proof02(root=ROOT):
+    """The old three observations spent no training budget; never edit them."""
+    root = Path(root)
+    old_execution = root/'evidence/yaw_reward27/execution_01'
+    require(not old_execution.exists() and not old_execution.is_symlink(), 'legacy27 execution exists; no replacement budget')
+    old_plan = root/LEGACY_PLAN
+    require(old_plan.is_file() and not old_plan.is_symlink() and sha(old_plan) == LEGACY_PLAN_SHA,
+            'legacy27 plan identity differs')
+    plan = json.loads(old_plan.read_text())
+    require(plan['source_identity']['git_commit'] == LEGACY_COMMIT
+            and plan['budget'] == {'policy_transitions': 326944, 'native_steps': 3269440, 'pd_updates': 1634720},
+            'legacy27 scientific budget differs')
+    directory = root/'evidence/yaw_reward27/admissions'
+    require(directory.is_dir() and not directory.is_symlink()
+            and {p.name for p in directory.iterdir()} == set(LEGACY_ADMISSIONS), 'legacy27 admission set differs')
+    evidence = {}
+    for name, (report_sha, samples_sha) in LEGACY_ADMISSIONS.items():
+        folder = directory/name
+        report, samples = folder/'report.json', folder/'admission_samples.jsonl'
+        require(folder.is_dir() and not folder.is_symlink() and not report.is_symlink() and not samples.is_symlink()
+                and sha(report) == report_sha and sha(samples) == samples_sha,
+                'legacy27 admission bytes differ: '+name)
+        value = json.loads(report.read_text())
+        known = value.get('known_actual_counts')
+        require(value.get('status') == 'NOT_READY' and value.get('execution_started') is False
+                and value.get('spawn_attempted') is False and value.get('cleanup_complete') is True
+                and value.get('actual_counts') is None and isinstance(known, dict)
+                and set(known) == set(plan['budget']) and all(type(v) is int and v == 0 for v in known.values())
+                and value.get('plan_sha256') == LEGACY_PLAN_SHA
+                and value.get('source_identity') == plan['source_identity']
+                and not (folder/'launch_ticket.json').exists(), 'legacy27 was spawned or not cleanly unstarted')
+        evidence[name] = {'report_sha256': report_sha, 'samples_sha256': samples_sha}
+    return {'legacy_plan_path': LEGACY_PLAN, 'legacy_plan_sha256': LEGACY_PLAN_SHA,
+            'legacy_source_commit': LEGACY_COMMIT, 'admissions': evidence,
+            'legacy_execution_absent': True, 'additional_scientific_budget': 0,
+            'scientific_cap': dict(plan['budget']), 'partial26_used': False}
+
+
+def read_memory02():
+    from tools27.resource_guard27 import read_memory
+    return read_memory(OWNED_SCOPE)
+
+
+def supersession02(common):
+    value = {'format': 'd1-yaw-reward27-supersession-v1', 'status': 'SUPERSEDED_WITHOUT_EXECUTION',
+             'resource_revision': REVISION, 'replacement_plan': PLAN,
+             'replacement_output': OUTPUT, 'budget_origin': legacy_proof02(ROOT)}
+    path = ROOT/SUPERSESSION
+    require(path.is_file() and not path.is_symlink() and common.read_json(path) == value,
+            'explicit27 revision02 supersession record required')
+    return {'path': SUPERSESSION, 'sha256': sha(path), 'budget_origin': value['budget_origin']}
+
+
+def prepare02(common, path):
+    path = Path(path).absolute()
+    require(path == ROOT/PLAN and not path.exists() and not path.is_symlink(), 'revision02 new fixed plan_02 required')
+    value = {'format': 'd1-yaw-reward27-supersession-v1', 'status': 'SUPERSEDED_WITHOUT_EXECUTION',
+             'resource_revision': REVISION, 'replacement_plan': PLAN,
+             'replacement_output': OUTPUT, 'budget_origin': legacy_proof02(ROOT)}
+    marker = ROOT/SUPERSESSION
+    if marker.exists():
+        require(not marker.is_symlink() and common.read_json(marker) == value, 'supersession record changed')
+    else:
+        with marker.open('x') as stream:
+            stream.write(json.dumps(value, allow_nan=False, indent=2)+'\n')
+    return common.prepare(path)
+
+
+def after_import_seam02(tree, *, reverse=False):
+    old_message, new_message = 'NOT_READY: RAM after imports', 'RAM_RESERVE_BELOW_4_GIB after imports'
+    message = new_message if reverse else old_message
+    candidates = [n for n in ast.walk(tree) if isinstance(n, ast.Call) and isinstance(n.func, ast.Name)
+                  and n.func.id == 'require' and len(n.args) == 2
+                  and isinstance(n.args[1], ast.Constant) and n.args[1].value == message]
+    require(len(candidates) == 1, 'revision02 exact after-import resource seam missing')
+    call = candidates[0]
+    key = 'reserve_bytes' if reverse else 'start_min_effective_bytes'
+    require(ast.unparse(call.args[0]) == f"memory_ok(memory_reader(), plan['resources']['{key}'])",
+            'revision02 after-import expression changed')
+    call.args[0].args[1].slice.value = 'start_min_effective_bytes' if reverse else 'reserve_bytes'
+    call.args[1].value = old_message if reverse else new_message
+    return tree
 
 
 def derived_tree(name, root=ROOT):
@@ -73,10 +182,13 @@ def derived_tree(name, root=ROOT):
 
         def visit_keyword(self, node):
             if node.arg == 'D1_STAGE26_NONCE':
-                node.arg = 'D1_STAGE27_NONCE'
+                node.arg = 'D1_STAGE27_REV02_NONCE'
             return self.generic_visit(node)
 
-    return ast.fix_missing_locations(Bind().visit(tree))
+    tree = Bind().visit(tree)
+    if name == 'train_yaw_reward26':
+        after_import_seam02(tree)
+    return ast.fix_missing_locations(tree)
 
 
 def bindings():
@@ -97,9 +209,12 @@ def bindings():
         sys.modules[module.__name__] = module
         setattr(package, name, module)
         exec(compile(tree, module.__file__, 'exec'), module.__dict__)  # noqa: S102 -- SHA-pinned source and finite AST binding
+        if name == 'common26':
+            # Set before downstream definitions capture read_memory defaults.
+            module.read_memory = read_memory02
         loaded[name] = module
     common = loaded['common26']
-    common.SOURCES = tuple(dict.fromkeys((*common.SOURCES, *AUTHORED)))
+    common.SOURCES = tuple(dict.fromkeys((*common.SOURCES, *AUTHORED, *GUARD_SOURCES)))
     original_fixed = common.fixed
     derivation = {
         'frozen26_sha256': {'tools26/'+name+'.py': digest for name, digest in FROZEN26.items()},
@@ -107,11 +222,16 @@ def bindings():
                                for name, tree in trees.items()},
         'literal_bindings': dict(LABELS), 'internal_import_package': PACKAGE,
         'original_file_identity_retained': True,
+        'resource_seams': {'private_common_read_memory': 'tools27.resource_guard27.read_memory(OWNED_SCOPE)',
+                           'trainer_after_import_gate': 'start6GiB becomes reserve4GiB only after imports',
+                           'cold_start_and_new_stage_gate_unchanged': True},
     }
 
     def fixed(base):
-        return {**original_fixed(base), 'resource_revision27': dict(ADMISSION), 'derivation27': derivation,
-                'scope': 'new independent resource revision of26 scientific pair, from complete25 random; no26 partial or budget reuse'}
+        return {**original_fixed(base), 'resource_revision': REVISION,
+                'resource_revision27': dict(ADMISSION), 'owned_cgroup': dict(OWNED_POLICY), 'derivation27': derivation,
+                'supersession27': supersession02(common),
+                'scope': 'revision02 replaces wholly unstarted27 plan01; same scientific cap, complete25 random, no26 partial'}
 
     def command(plan_path, stage, output):
         arm, kind = common.split_stage(stage)
@@ -134,7 +254,7 @@ def validate_admission_samples(rows, start):
     require(type(start) in (int, float) and rows[-1]['elapsed_s']-start >= ADMISSION['stable_s']
             and 0 <= rows[-1]['elapsed_s'] <= ADMISSION['maximum_wait_s'], 'stable27 interval missing')
     stable = [row for row in rows if row['elapsed_s'] >= start]
-    require(len(stable) >= 13 and all(type(row.get('effective_available_bytes')) is int
+    require(len(stable) >= ADMISSION['minimum_samples'] and all(type(row.get('effective_available_bytes')) is int
             and row['effective_available_bytes'] >= ADMISSION['minimum_effective_bytes'] for row in stable)
             and all(0 <= b['elapsed_s']-a['elapsed_s'] <= ADMISSION['poll_s']+.25 for a, b in zip(stable, stable[1:])),
             'continuous27 resource proof differs')
@@ -142,16 +262,16 @@ def validate_admission_samples(rows, start):
 
 def validate_parent_ticket(plan, plan_path, sidecar, api):
     sidecar = Path(sidecar).absolute()
-    admission_root = ROOT/'evidence/yaw_reward27/admissions'
+    admission_root = ROOT/ADMISSIONS
     require(sidecar.parent == admission_root and not sidecar.is_symlink(), 'fixed27 admission sidecar required')
     ticket, receipt = (api.read_json(sidecar/name) for name in ('launch_ticket.json', 'report.json'))
-    expected = {'format': 'd1-yaw-reward27-parent-ticket-v1', 'status': 'READY',
+    expected = {'format': 'd1-yaw-reward27-parent-ticket-v2', 'status': 'READY',
         'plan_sha256': api.sha(plan_path), 'source_identity': plan['source_identity'],
         'parent_command': parent_command(plan_path, sidecar), 'admission': ADMISSION}
     require(all(ticket.get(key) == value for key, value in expected.items())
             and type(ticket.get('outer_pid')) is int and ticket['outer_pid'] == os.getppid()
-            and ticket.get('nonce') and ticket['nonce'] == os.environ.get('D1_PARENT27_NONCE')
-            and api.sha(sidecar/'launch_ticket.json') == os.environ.get('D1_PARENT27_TICKET_SHA256')
+            and ticket.get('nonce') and ticket['nonce'] == os.environ.get('D1_PARENT27_REV02_NONCE')
+            and api.sha(sidecar/'launch_ticket.json') == os.environ.get('D1_PARENT27_REV02_TICKET_SHA256')
             and receipt.get('status') == 'RUNNING_PARENT' and receipt.get('ticket_sha256') == api.sha(sidecar/'launch_ticket.json')
             and receipt.get('nonce') == ticket['nonce']
             and ticket.get('samples_sha256') == api.sha(sidecar/'admission_samples.jsonl'), 'active27 admission ticket required')
@@ -168,11 +288,12 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
     loader, memory_reader = loader or api.load_plan, memory_reader or api.read_memory
     cleanup, adopter = cleanup or runner.cleanup_owned_tree, adopter or runner.subreaper
     plan_path = Path(plan_path or ROOT/api.PLAN).absolute()
+    require(plan_path == ROOT/PLAN, 'revision02 rejects old plan_01 path')
     started = clock()
     plan = loader(plan_path)
     require(not (ROOT/plan['output_root']).exists(), '27 training attempt already claimed; no retry')
     require(os.getpriority(os.PRIO_PROCESS, 0) >= 10, '27 requires external Nice10')
-    admission_root = ROOT/'evidence/yaw_reward27/admissions'
+    admission_root = ROOT/ADMISSIONS
     sidecar = Path(sidecar or admission_root/('admission_'+secrets.token_hex(12))).absolute()
     require(sidecar.parent == admission_root and not sidecar.exists(), 'exclusive27 admission directory required')
     cursor = sidecar
@@ -180,7 +301,8 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
         require(not cursor.is_symlink(), 'symlink27 sidecar forbidden')
         cursor = cursor.parent
     sidecar.mkdir(parents=True, exist_ok=False)
-    value = {'format': 'd1-yaw-reward27-admission-v1', 'status': 'WAITING', 'outer_pid': os.getpid(),
+    value = {'format': 'd1-yaw-reward27-admission-v2', 'resource_revision': REVISION,
+        'status': 'WAITING', 'outer_pid': os.getpid(),
         'plan_sha256': api.sha(plan_path), 'source_identity': plan['source_identity'], 'admission': dict(ADMISSION),
         'nonce': secrets.token_hex(24), 'execution_started': False, 'spawn_attempted': False, 'cleanup_complete': True,
         'actual_counts': None, 'known_actual_counts': dict(runner.ZERO), 'error': None,
@@ -188,7 +310,17 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
     process, stable_started, admitted_at, spawn_attempted = None, None, None, False
 
     def sample(phase, filename):
-        row = dict(memory_reader(), elapsed_s=clock()-started, phase=phase)
+        try:
+            data = memory_reader()
+        except Exception as exc:
+            snapshot = getattr(exc, 'snapshot', None)
+            if isinstance(snapshot, dict):
+                row = dict(snapshot, elapsed_s=clock()-started, phase=phase)
+                with (sidecar/filename).open('a') as stream:
+                    stream.write(json.dumps(row, allow_nan=False)+'\n')
+                value['stop_sample'] = row
+            raise
+        row = dict(data, elapsed_s=clock()-started, phase=phase)
         with (sidecar/filename).open('a') as stream:
             stream.write(json.dumps(row, allow_nan=False)+'\n')
         ram = row.get('effective_available_bytes')
@@ -225,7 +357,7 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
             validate_admission_samples(rows, stable_started)
             require(control['received'] is None, '27 admission interrupted')
             command = parent_command(plan_path, sidecar)
-            ticket = {'format': 'd1-yaw-reward27-parent-ticket-v1', 'status': 'READY',
+            ticket = {'format': 'd1-yaw-reward27-parent-ticket-v2', 'status': 'READY',
                 'outer_pid': os.getpid(), 'nonce': value['nonce'], 'plan_sha256': value['plan_sha256'],
                 'source_identity': plan['source_identity'], 'admission': dict(ADMISSION),
                 'stable_started_elapsed_s': stable_started, 'parent_command': command,
@@ -242,8 +374,8 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
                     admitted_at = clock()
                     value.update(spawn_attempted=True, execution_started=None)
                     process = factory(command, cwd=ROOT, stdin=subprocess.DEVNULL, stdout=stream, stderr=subprocess.STDOUT,
-                        start_new_session=True, env=dict(os.environ, D1_PARENT27_NONCE=value['nonce'],
-                            D1_PARENT27_TICKET_SHA256=value['ticket_sha256'], PYTHONDONTWRITEBYTECODE='1',
+                        start_new_session=True, env=dict(os.environ, D1_PARENT27_REV02_NONCE=value['nonce'],
+                            D1_PARENT27_REV02_TICKET_SHA256=value['ticket_sha256'], PYTHONDONTWRITEBYTECODE='1',
                             OMP_NUM_THREADS='1', MKL_NUM_THREADS='1', OPENBLAS_NUM_THREADS='1'))
                     value['execution_started'] = True
                 finally:
@@ -305,7 +437,7 @@ def execute(plan_path=None, *, bundle=None, loader=None, memory_reader=None, fac
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--plan', type=Path, default=ROOT/'evidence/yaw_reward27/plan_01.json')
+    parser.add_argument('--plan', type=Path, default=ROOT/PLAN)
     modes = parser.add_mutually_exclusive_group()
     modes.add_argument('--prepare', action='store_true')
     modes.add_argument('--execute', action='store_true')
@@ -315,6 +447,7 @@ def main(argv=None):
     parser.add_argument('--arm', choices=('control', 'yaw3'))
     parser.add_argument('--output', type=Path)
     args = parser.parse_args(argv)
+    require(args.plan.absolute() == ROOT/PLAN, 'revision02 rejects legacy plan_01; fixed plan_02 only')
     bound = bindings()
     if args.stage:
         require(not (args.execute or args.prepare or args.parent) and args.arm and args.output, '27 supervised stage only')
@@ -328,10 +461,11 @@ def main(argv=None):
     elif args.execute:
         value = execute(args.plan, bundle=bound)
     elif args.prepare:
-        value = bound.common.prepare(args.plan)
+        value = prepare02(bound.common, args.plan)
         value = {'status': 'PREPARED', 'plan': str(args.plan), 'budget': value['budget']}
     else:
-        value = {'status': 'PLAN_ONLY', 'budget': dict(bound.common.BUDGET), 'admission': dict(ADMISSION),
+        value = {'status': 'PLAN_ONLY', 'resource_revision': REVISION, 'budget': dict(bound.common.BUDGET),
+            'admission': dict(ADMISSION), 'owned_cgroup': dict(OWNED_POLICY),
             'plan': str(args.plan), 'output': str(ROOT/bound.common.OUTPUT),
             'training_started': False, 'physics_steps_executed': 0, 'cpp_closed_loop_qualified': False}
     print(json.dumps(value, ensure_ascii=False, allow_nan=False))
