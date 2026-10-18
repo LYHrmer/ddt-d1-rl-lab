@@ -33,6 +33,7 @@ on:
       - 'tools21/**'
       - 'tools22/**'
       - 'tools23/**'
+      - 'tools24/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -56,6 +57,7 @@ on:
       - 'tools21/**'
       - 'tools22/**'
       - 'tools23/**'
+      - 'tools24/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -147,6 +149,9 @@ jobs:
 
       - name: Verify independent baseline C++ diagnostic with synthetic processes
         run: python -m pytest --noconftest tests/test_cpp_diagnostic23.py -q
+
+      - name: Verify paired KL-protected delay comparison without model or physics
+        run: python -m pytest --noconftest tests/test_common24.py tests/test_train_delay24.py tests/test_run_delay_comparison24.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
