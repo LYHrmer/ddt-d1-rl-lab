@@ -36,6 +36,7 @@ on:
       - 'tools24/**'
       - 'tools25/**'
       - 'tools26/**'
+      - 'tools27/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   pull_request:
@@ -62,6 +63,7 @@ on:
       - 'tools24/**'
       - 'tools25/**'
       - 'tools26/**'
+      - 'tools27/**'
       - 'runtime19/**'
       - '.github/workflows/static-checks.yml'
   workflow_dispatch:
@@ -162,6 +164,9 @@ jobs:
 
       - name: Verify paired yaw reward intervention and single-candidate holdout without physics
         run: python -m pytest --noconftest tests/test_common26.py tests/test_runtime26.py tests/test_train_yaw_reward26.py tests/test_run_yaw_reward26.py -q
+
+      - name: Verify stable memory admission and independent yaw comparison scope without physics
+        run: python -m pytest --noconftest tests/test_yaw_reward27.py -q
 
       - name: Export a random numerical fixture, no robot or training
         run: python tools15/export_velocity15.py --self-check --output ci_velocity15_fixture
