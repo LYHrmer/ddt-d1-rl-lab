@@ -3,6 +3,8 @@
 [![static-checks](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml/badge.svg)](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+> **求职向概览：[PORTFOLIO.md](PORTFOLIO.md)** — 30 秒定位、可核验结果、三个面试故事、简历条目与边界。
+
 面向 D1 轮足机器人的纯 PPO 训练、ONNX 导出、ROS2/C++/MuJoCo 部署和有界评测。目标是稳定直行、可靠越障，再提高速度。下述成绩是本仓库当前版本的仿真结果，未包含该版本实机验证；作者已有RM轮腿sim2real经历。
 
 ## 一页结论
