@@ -6,6 +6,13 @@
 > **求职向概览（机器人控制 / 部署方向）：[PORTFOLIO.md](PORTFOLIO.md)** — 30 秒定位、时序与安全约束、可核验结果、面试故事、简历条目与边界。
 
 **30 秒版：** 纯 PPO → ONNX → C++/ONNX Runtime 实时闭环（决策 100 Hz、物理 500 Hz、单线程每拍 20 ms 截止）→ ROS2。33 候选在 formal 36/36 与独立 holdout 36/36 通过（综合 J 相对 25 基线变差 5.89%，如实保留）；C++ 路径的 72 场轨迹与 Python 逐位相同，零物理重放 43,200 次推理 59 秒完成。
+![D1 实时部署链](docs/assets/d1_deploy_chain.svg)
+
+**怎么读这个仓库**
+- 展示面：[PORTFOLIO.md](PORTFOLIO.md) → 本页 30 秒版 → 上面的部署链图 → 下方"一页结论"；
+- 实现入口：`runtime34/actor_server34.cpp`、`tools34/`、`training/`；
+- 实验记录：`docs/`；本页下方按时间排列的是历史流水，不必按顺序读。
+
 
 面向 D1 轮足机器人的纯 PPO 训练、ONNX 导出、ROS2/C++/MuJoCo 部署和有界评测。目标是稳定直行、可靠越障，再提高速度。下述成绩是本仓库当前版本的仿真结果，未包含该版本实机验证；作者已有RM轮腿sim2real经历。
 

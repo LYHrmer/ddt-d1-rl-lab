@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 500" width="1180" height="500" font-family="-apple-system, 'Segoe UI', 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .core { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; }
+      .rt { fill: #fff7ed; stroke: #f97316; stroke-width: 2; }
+      .t { fill: #0f172a; font-size: 16px; font-weight: 600; }
+      .s { fill: #475569; font-size: 13px; }
+      .m { fill: #64748b; font-size: 13px; }
+      .flow { stroke: #475569; stroke-width: 1.6; fill: none; marker-end: url(#a2); }
+      .band { fill: #f1f5f9; stroke: #e2e8f0; }
+      .note { fill: #7c2d12; font-size: 12px; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1180" height="500" fill="#ffffff"/>
+  <text x="40" y="44" class="t" font-size="22">D1 实时部署链</text>
+  <text x="40" y="70" class="s">训练与部署解耦；C++ 路径与 Python 参考逐拍核对，误差目标 1e-5，实测 0</text>
+
+  <rect x="40" y="96" width="200" height="96" rx="10" class="box"/>
+  <text x="64" y="126" class="t">训练</text>
+  <text x="58" y="150" class="s">Python / SB3 PPO</text>
+  <text x="58" y="171" class="s">单线程 CPU</text>
+
+  <path class="flow" d="M240 144 L288 144"/>
+
+  <rect x="292" y="96" width="200" height="96" rx="10" class="box"/>
+  <text x="316" y="126" class="t">ONNX 导出</text>
+  <text x="310" y="150" class="s">57 维当前 + 10×57 历史</text>
+  <text x="310" y="171" class="s">→ 16 维动作，裁剪 ±1</text>
+
+  <path class="flow" d="M492 144 L540 144"/>
+
+  <rect x="544" y="96" width="250" height="96" rx="10" class="rt"/>
+  <text x="568" y="126" class="t">C++ actor server</text>
+  <text x="562" y="150" class="s">ONNX Runtime 1.10 · 单线程</text>
+  <text x="562" y="171" class="s">每回合新进程，状态清零</text>
+
+  <path class="flow" d="M794 144 L842 144"/>
+
+  <rect x="846" y="96" width="290" height="96" rx="10" class="box"/>
+  <text x="870" y="126" class="t">控制与保护</text>
+  <text x="864" y="150" class="s">参考整形（gain 1.5 / τ 0.1 s）</text>
+  <text x="864" y="171" class="s">PD → 力矩限幅（12 / 80 N·m）</text>
+
+  <path class="flow" d="M991 192 L991 236"/>
+
+  <rect x="846" y="240" width="290" height="76" rx="10" class="core"/>
+  <text x="870" y="268" class="t">MuJoCo</text>
+  <text x="864" y="292" class="s">物理 500 Hz · 决策 100 Hz</text>
+
+  <path class="flow" d="M846 278 L798 278"/>
+
+  <rect x="544" y="240" width="250" height="76" rx="10" class="box"/>
+  <text x="568" y="268" class="t">ROS2 bridge / FSM</text>
+  <text x="562" y="292" class="s">部署链 · 看门狗 0.5 s</text>
+
+  <path class="flow" d="M544 278 L496 278"/>
+
+  <rect x="292" y="240" width="200" height="76" rx="10" class="box"/>
+  <text x="316" y="268" class="t">逐拍审计</text>
+  <text x="310" y="292" class="s">627 输入 SHA · 11 命令 · 16 动作</text>
+
+  <rect x="40" y="352" width="1096" height="110" rx="10" class="band"/>
+  <text x="64" y="380" class="t" font-size="15">时序与验证契约</text>
+  <text x="64" y="406" class="s">每拍 5 × 2 ms 物理子步；单拍推理 &gt; 20 ms 即拒绝该动作并终止，不静默继续。</text>
+  <text x="64" y="430" class="s">72 场评测轨迹与 Python 参考逐位相同；43,200 次 C++ 推理全部返回；零物理重放 43,200 次推理 59 秒。</text>
+  <text x="64" y="454" class="m">证据：docs/cpp_reference34_results_20261018.md · docs/cpp_reference34_usage.md · runtime34/actor_server34.cpp</text>
+</svg>
