@@ -1,0 +1,312 @@
+{
+  "format": "d1-showcase35-results-v1",
+  "date": "2026-10-22",
+  "status": "COMPLETE",
+  "purpose": "presentation_only",
+  "new_training_transitions": 0,
+  "new_qualification_claimed": false,
+  "new_performance_comparison_claimed": false,
+  "automatic_model_replacement": false,
+  "selection": "Two fixed complete C++34 cases, forward_stop and turn_stop; seed1001 and zero delay are display choices, not a ranking.",
+  "source": {
+    "qualification_report_sha256": "c5a66490a4fbd92c3f4458792fcde28f65002acb7ee5aca519c79e366d50addb",
+    "qualification_report": "evidence/cpp_reference34/execution_01/report.json",
+    "complete25_checkpoint": {
+      "path": "/home/lyh/ddt_ros2_ws/evidence/low_memory_delay25/execution_01/random/train/policy.zip",
+      "sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+      "trained_transitions": 1310720
+    },
+    "cpp_actor_identities": {
+      "binary_sha256": "eb3e0dc8f1500e8c57a9001e3a9bd6a78153dc319d024d27aecd4b2c2df2c3aa",
+      "model_sha256": "917dedb759859a9ac63a233dda03e6f5a8f1e40ddf68a30fcaf3864c0f5df9f8",
+      "source_sha256": "e83847db338126192d09e62361423ce7d2d1e60254546a58e0b8299186c653bc",
+      "ort_library_sha256": "0db7bb6201cc86370e54cb9ff0baf768a75660a872f4732822d325c84ac3d9d9",
+      "adapter_sha256": "d061542149b9da698c0930a25bd07d0600cc96bbf3d0bb18a8c909bca9d6f427"
+    },
+    "recorder_sha256": "d9f068475b00fc8bd39079189edb685df85517fb2ce38dbc30ff13c5c212245c",
+    "renderer_sha256": "001dc8bcdcbef0fa4650be0176c2cbd58aac61e8bca25414b5c252858ab42076",
+    "frozen_input_files_checked": 141,
+    "capture_report_sha256": "f4178131f5e32c0e801c8cacb2d2b928970e17c13636e7eda3dcca40e04a6282"
+  },
+  "replay": {
+    "cpp_requests": 1200,
+    "all_actions_bitwise_equal_to_saved": true,
+    "maximum_action_difference": 0.0,
+    "mismatched_ticks": 0,
+    "physics_steps": 0,
+    "robot_models_constructed": 0,
+    "report_sha256": "2222b873ae32499f5f3cc614d22ac771496028a2dbc49b019a89477eb41142dc"
+  },
+  "capture": {
+    "actual_counts": {
+      "policy_transitions": 1200,
+      "native_steps": 12000,
+      "pd_updates": 6000,
+      "forward_calls": 1206,
+      "resets": 2
+    },
+    "cpp_requests": 1200,
+    "inference_returns": 1200,
+    "cleanup_complete": true,
+    "inputs_unchanged": true,
+    "episodes": [
+      {
+        "task": "forward_stop",
+        "seed": 1001,
+        "delay_ticks": 0,
+        "status": "COMPLETE",
+        "actual_counts": {
+          "native_steps": 6000,
+          "pd_updates": 3000,
+          "policy_transitions": 600,
+          "resets": 1,
+          "forward_calls": 603
+        },
+        "construction_counts": {
+          "native_steps": 0,
+          "pd_updates": 0,
+          "policy_transitions": 0,
+          "resets": 0,
+          "forward_calls": 1
+        }
+      },
+      {
+        "task": "turn_stop",
+        "seed": 1001,
+        "delay_ticks": 0,
+        "status": "COMPLETE",
+        "actual_counts": {
+          "native_steps": 6000,
+          "pd_updates": 3000,
+          "policy_transitions": 600,
+          "resets": 1,
+          "forward_calls": 603
+        },
+        "construction_counts": {
+          "native_steps": 0,
+          "pd_updates": 0,
+          "policy_transitions": 0,
+          "resets": 0,
+          "forward_calls": 1
+        }
+      }
+    ]
+  },
+  "render": {
+    "png_frames_total": 482,
+    "forward_calls": 482,
+    "physics_steps": 0,
+    "policy_calls": 0
+  },
+  "work_totals": {
+    "cpp_requests": 2400,
+    "policy_transitions": 1200,
+    "native_integration_steps": 12000,
+    "pd_updates": 6000,
+    "mj_forward_calls": 1688,
+    "resets": 2,
+    "training_transitions": 0
+  },
+  "assets": [
+    {
+      "task": "forward_stop",
+      "path": "docs/assets/d1_cpp34_forward_stop_20261022.gif",
+      "bytes": 551003,
+      "sha256": "a32d74afe19135486c9cf8370b40f24a518edf3ca0704c5f4c848ea6a39e4ef1",
+      "png_frames": 241,
+      "gif_frames": 241,
+      "gif_duration_ms": 12050,
+      "source_duration_s": 12.000000000000677,
+      "recorded_states": 601,
+      "reset_seed": 1001,
+      "delay_ticks": 0,
+      "encoding": {
+        "width": 512,
+        "height": 288,
+        "fps": 20,
+        "global_palette_colors": 96,
+        "dither": "bayer4_amplitude8",
+        "sampling": "fixed_nearest_state",
+        "maximum_sampling_offset_s": 0.01
+      },
+      "render_only_changes": {
+        "floor": "light_gray_no_texture_no_reflection",
+        "world_grid_spacing_m": 0.5,
+        "grid_geometry": "mjvScene_only_no_contacts",
+        "backend": "EGL_surfaceless_LIBGL_ALWAYS_SOFTWARE=1"
+      },
+      "recording_manifest_sha256": "c05872f4b811ed987ea53286f62766033520b7649468e06f749dd291c218f3e9",
+      "model_mjb_sha256": "5945689235a6a1f03b469540ee876be6fe7efdc515687093f41723680faa0bdd",
+      "states_npz_sha256": "660e21e675e10d03ede043da950724aa3e5a6540d7a11c18660915024dc8d006",
+      "render_report_sha256": "6aa0908dd1272a91861d480322b8d5a3aca861e3956eb10f03e57d226bcfcc5c",
+      "local_recording_directory": "evidence/showcase35/capture_20261022_01/forward_stop",
+      "local_render_directory": "evidence/showcase35/render_forward_20261022_01",
+      "camera": {
+        "lookat": [
+          0.6106362885053465,
+          0.026920578441489453,
+          0.25
+        ],
+        "distance": 2.6640721051426564,
+        "azimuth": 135.0,
+        "elevation": -20.0
+      }
+    },
+    {
+      "task": "turn_stop",
+      "path": "docs/assets/d1_cpp34_turn_stop_20261022.gif",
+      "bytes": 1006299,
+      "sha256": "a2c3849352a568713beda4aacd039c4cb4a545c46371c94cfe68f3cffe24e4f5",
+      "png_frames": 241,
+      "gif_frames": 241,
+      "gif_duration_ms": 12050,
+      "source_duration_s": 12.000000000000677,
+      "recorded_states": 601,
+      "reset_seed": 1001,
+      "delay_ticks": 0,
+      "encoding": {
+        "width": 512,
+        "height": 288,
+        "fps": 20,
+        "global_palette_colors": 96,
+        "dither": "bayer4_amplitude8",
+        "sampling": "fixed_nearest_state",
+        "maximum_sampling_offset_s": 0.01
+      },
+      "render_only_changes": {
+        "floor": "light_gray_no_texture_no_reflection",
+        "world_grid_spacing_m": 0.5,
+        "grid_geometry": "mjvScene_only_no_contacts",
+        "backend": "EGL_surfaceless_LIBGL_ALWAYS_SOFTWARE=1"
+      },
+      "recording_manifest_sha256": "ee8166b9896ca0c93b6f0426ba50a68646b23f8748a8cbdadf270c6669de7c29",
+      "model_mjb_sha256": "5945689235a6a1f03b469540ee876be6fe7efdc515687093f41723680faa0bdd",
+      "states_npz_sha256": "32bb69c64077844d2cea68911baa2d920bade86e5256196ad56290480f5f0d32",
+      "render_report_sha256": "33318324f5530b87b375991790ee215940db5eeabae04fc01404df6dcd76dd9e",
+      "local_recording_directory": "evidence/showcase35/capture_20261022_01/turn_stop",
+      "local_render_directory": "evidence/showcase35/render_turn_20261022_01",
+      "camera": {
+        "lookat": [
+          -0.018635267181299993,
+          0.012151623468235256,
+          0.25
+        ],
+        "distance": 1.8,
+        "azimuth": 135.0,
+        "elevation": -20.0
+      }
+    }
+  ],
+  "resources": [
+    {
+      "phase": "replay_20261022_01",
+      "unit_scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/control49-d1-replay-20261022-01.service",
+      "supervisor_sha256": "9975e48224c830ada55986112c84f857b067c17b0a1b69013897eb734b4f680a",
+      "supervision_report_sha256": "efdc809bbbad999af16ca01f784f738d132dd14e3c3c912a779fbb3943f1df98",
+      "phase_report_sha256": "2222b873ae32499f5f3cc614d22ac771496028a2dbc49b019a89477eb41142dc",
+      "phase_elapsed_s": 1.3083996759960428,
+      "supervised_elapsed_s": 12.075712783029303,
+      "minimum_effective_bytes": 6094278656,
+      "peak_group_bytes": 53043200,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "owned_process_group_empty": true,
+      "child_reaped": true
+    },
+    {
+      "phase": "capture_20261022_01",
+      "unit_scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/control49-d1-capture-20261022-01.service",
+      "supervisor_sha256": "a24b107dec25aaf81120e0546b839f11b01b2665a34ab13fce5bcf7f3a89fad1",
+      "supervision_report_sha256": "48fda0a307e973eff7bbf18e38f3a142e4e622978f7d47eef1184c5e8f0f2762",
+      "phase_report_sha256": "f4178131f5e32c0e801c8cacb2d2b928970e17c13636e7eda3dcca40e04a6282",
+      "phase_elapsed_s": 7.759044167993125,
+      "supervised_elapsed_s": 18.1061438510078,
+      "minimum_effective_bytes": 5789929472,
+      "peak_group_bytes": 941764608,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "owned_process_group_empty": true,
+      "child_reaped": true
+    },
+    {
+      "phase": "render_forward_20261022_01",
+      "unit_scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/control49-d1-render-forward-20261022-01.service",
+      "supervisor_sha256": "a24b107dec25aaf81120e0546b839f11b01b2665a34ab13fce5bcf7f3a89fad1",
+      "supervision_report_sha256": "b321ad369485e1e9dbb775b2ad22aa1ade2edc78e15dd98b13033a7e16db1efc",
+      "phase_report_sha256": "6aa0908dd1272a91861d480322b8d5a3aca861e3956eb10f03e57d226bcfcc5c",
+      "phase_elapsed_s": 6.588712370023131,
+      "supervised_elapsed_s": 17.202757487946656,
+      "minimum_effective_bytes": 6056210432,
+      "peak_group_bytes": 336400384,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "owned_process_group_empty": true,
+      "child_reaped": true
+    },
+    {
+      "phase": "render_turn_20261022_01",
+      "unit_scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/control49-d1-render-turn-20261022-01.service",
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "supervision_report_sha256": "8f6e2e5c58111336a69d1beaaeed22cbcf3c8c45d330211ceb0619e8355d4c56",
+      "phase_report_sha256": "33318324f5530b87b375991790ee215940db5eeabae04fc01404df6dcd76dd9e",
+      "phase_elapsed_s": 6.497801615041681,
+      "supervised_elapsed_s": 17.1859443919966,
+      "minimum_effective_bytes": 6238470144,
+      "peak_group_bytes": 345133056,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "returncode": 0,
+      "owned_process_group_empty": true,
+      "child_reaped": true
+    }
+  ],
+  "minimum_effective_bytes": 5789929472,
+  "maximum_group_peak_bytes": 941764608,
+  "failed_showcase_phases": [],
+  "historical_failures_and_partial_attempts_preserved": true,
+  "boundaries": [
+    "The four listed execution phases are complete; historical experiment results are unchanged.",
+    "Each GIF displays the full 12-second record plus a 50 ms final hold, with no omitted failed segment.",
+    "The archived 33/34 qualification and its +5.89% aggregate J tradeoff remain the evidence for performance.",
+    "ROS2 controller integration and real-robot qualification are not demonstrated by these clips."
+  ]
+}

@@ -17,7 +17,7 @@
   </defs>
 
   <rect x="0" y="0" width="1180" height="500" fill="#ffffff"/>
-  <text x="40" y="44" class="t" font-size="22">D1 实时部署链</text>
+  <text x="40" y="44" class="t" font-size="22">D1 C++ 仿真闭环与部署边界</text>
   <text x="40" y="70" class="s">训练与部署解耦；C++ 路径与 Python 参考逐拍核对，误差目标 1e-5，实测 0</text>
 
   <rect x="40" y="96" width="200" height="96" rx="10" class="box"/>
@@ -50,23 +50,23 @@
 
   <rect x="846" y="240" width="290" height="76" rx="10" class="core"/>
   <text x="870" y="268" class="t">MuJoCo</text>
-  <text x="864" y="292" class="s">物理 500 Hz · 决策 100 Hz</text>
+  <text x="864" y="292" class="s">物理 500 Hz · PD 250 Hz · 策略 50 Hz</text>
 
   <path class="flow" d="M846 278 L798 278"/>
 
   <rect x="544" y="240" width="250" height="76" rx="10" class="box"/>
-  <text x="568" y="268" class="t">ROS2 bridge / FSM</text>
-  <text x="562" y="292" class="s">部署链 · 看门狗 0.5 s</text>
+  <text x="568" y="268" class="t">逐拍审计</text>
+  <text x="562" y="292" class="s">627 输入 SHA · 11 命令 · 16 动作</text>
 
-  <path class="flow" d="M544 278 L496 278"/>
+  <path class="flow" stroke-dasharray="5 4" d="M544 278 L496 278"/>
 
   <rect x="292" y="240" width="200" height="76" rx="10" class="box"/>
-  <text x="316" y="268" class="t">逐拍审计</text>
-  <text x="310" y="292" class="s">627 输入 SHA · 11 命令 · 16 动作</text>
+  <text x="310" y="268" class="t">ROS2 bridge / FSM</text>
+  <text x="310" y="292" class="s">后续控制器适配 · 未验证</text>
 
   <rect x="40" y="352" width="1096" height="110" rx="10" class="band"/>
   <text x="64" y="380" class="t" font-size="15">时序与验证契约</text>
-  <text x="64" y="406" class="s">每拍 5 × 2 ms 物理子步；单拍推理 &gt; 20 ms 即拒绝该动作并终止，不静默继续。</text>
+  <text x="64" y="406" class="s">策略周期 20 ms = 10 × 2 ms 物理子步；请求超时默认 2 s，20 ms 实时截止尚未验证。</text>
   <text x="64" y="430" class="s">72 场评测轨迹与 Python 参考逐位相同；43,200 次 C++ 推理全部返回；零物理重放 43,200 次推理 59 秒。</text>
   <text x="64" y="454" class="m">证据：docs/cpp_reference34_results_20261018.md · docs/cpp_reference34_usage.md · runtime34/actor_server34.cpp</text>
 </svg>
