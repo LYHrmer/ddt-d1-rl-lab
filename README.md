@@ -18,7 +18,9 @@
 
 两场新录制共 **1,200 次 C++ 推理、12,000 个物理步**；离屏渲染保留 482 张 PNG，GIF 各 12.05 秒，新增训练为 0。来源、计数和资源见[机器摘要](reports/showcase35_results_20261022.json)，录制方法见[35 说明](docs/showcase35_capture.md)。这些片段不增加资格或性能结论；性能仍以[33/34 原结果](docs/cpp_reference34_results_20261018.md)为准，默认模型未替换。
 
-[51：SuperMimic 方向的小验证与接口边界](docs/supermimic51_offline_scope.md)：关联 wheel 离线模型 3/3 完整、0/3 通过；八步预测误差平均恶化 21.09%，停止策略训练。本仓没有新增仿真、训练或模型替换。
+[51：离线单步拟合测试与接口边界](docs/supermimic51_offline_scope.md)：关联 wheel 模型 3/3 完整、0/3 通过，八步预测误差平均恶化 21.09%；该轮未启动策略训练。这不足以评价 SuperMimic 的多步闭环方法。
+
+[52：多步模型与闭环梯度的小规模验证](docs/model_gradient52_results_20261031.md)：接口准入通过，采集试验13/18完成、5个提前终止，正式执行停止在数据门；**模型和策略更新均为0，梯度效果尚未检验**。源码、失败轨迹读回图、6533策略步的资源计数均已记录，默认模型未替换。
 
 ![D1 C++ 仿真闭环与 ROS2 适配边界](docs/assets/d1_deploy_chain.svg)
 
