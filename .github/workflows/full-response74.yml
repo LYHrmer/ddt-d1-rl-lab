@@ -1,0 +1,24 @@
+name: full-response74
+on:
+  push:
+    branches: [main]
+    paths: ['tools74/**', 'tests/test_geometry74.py', 'tests/test_runtime74.py', 'docs/experiments74/**', '.github/workflows/full-response74.yml']
+  pull_request:
+    paths: ['tools74/**', 'tests/test_geometry74.py', 'tests/test_runtime74.py', 'docs/experiments74/**', '.github/workflows/full-response74.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-response-contract:
+    runs-on: ubuntu-22.04
+    env:
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONPATH: '.'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet pytest
+      - name: Verify endpoint geometry, scalar qualification and interrupted prefix retention
+        run: python -m pytest --noconftest tests/test_geometry74.py tests/test_runtime74.py -q
