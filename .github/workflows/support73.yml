@@ -1,0 +1,24 @@
+name: response-support73
+on:
+  push:
+    branches: [main]
+    paths: ['tools73/**', 'tests/test_support73.py', 'docs/experiments73/**', '.github/workflows/support73.yml']
+  pull_request:
+    paths: ['tools73/**', 'tests/test_support73.py', 'docs/experiments73/**', '.github/workflows/support73.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  support-metrics:
+    runs-on: ubuntu-22.04
+    env:
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONPATH: '.'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet pytest
+      - name: Verify geometry, coordinate transformations and descriptive ranks
+        run: python -m pytest --noconftest tests/test_support73.py -q
