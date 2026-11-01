@@ -1,0 +1,20 @@
+name: response-diagnostics76
+on:
+  push:
+    branches: [main]
+    paths: ['tools76/**', 'tests/test_*76.py', '.github/workflows/response-diagnostics76.yml']
+  pull_request:
+    paths: ['tools76/**', 'tests/test_*76.py', '.github/workflows/response-diagnostics76.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  archived-diagnostics:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Verify independent failure reasons and exact stored-endpoint arithmetic
+        run: python -B -m unittest discover -s tests -p 'test_*76.py' -v
