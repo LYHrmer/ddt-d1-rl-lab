@@ -1,0 +1,101 @@
+{
+  "schema": "d1-training-gradient71-independent-audit-v1",
+  "status": "COMPLETE",
+  "auditor": "body69_review",
+  "method": "Read-only stdlib JSON, SHA256 and saved NPY-byte scalar checks; no NumPy, model, actor, physics, training or formal rerun.",
+  "recorded_at_utc": "2026-11-01T11:57:58.369725+00:00",
+  "input_sha256": {
+    "/home/lyh/ddt_ros2_ws/evidence/training_gradient71/diagnostic_01/report.json": "7df37a25a525e2b0c975a2f3a91c455b832e84ab24eb19e262c4909449e627c3",
+    "/home/lyh/ddt_ros2_ws/docs/experiments71/training_gradient71_preregistered.json": "2d5f1cacffd48e36097ef55189662a75bfa093e110894330048f6a320dccbfc4",
+    "/home/lyh/ddt_ros2_ws/evidence/body_jvp69/execution_01/report.json": "955ca4f00a89bd4b0f96e08501fa87c183f1d4e81d2081dc6c47720e4495428c",
+    "/home/lyh/model_gradient71_work_20261101/execution01/report.json": "742cc48b20769145282b6e920f04238d1260b5f714deda1c0683f8c6474a7d69",
+    "/home/lyh/model_gradient71_work_20261101/execution01/resources.jsonl": "027843ae22ff128adf67d98bf92610a62d67a56d755d9bfb0ce171cb91ac8a99"
+  },
+  "bindings": {
+    "expected": 96,
+    "checked": 96,
+    "mismatches": [],
+    "plan_sha_matches_report": true
+  },
+  "counts": {
+    "complete_models": 6,
+    "forward_calls_per_model": 859,
+    "forward_rows_per_model": 54840,
+    "forward_calls_total": 5154,
+    "forward_rows_total": 329040,
+    "forward_work_total": {
+      "centers_calls": 6,
+      "centers_rows": 144,
+      "state_calls": 5136,
+      "state_rows": 327744,
+      "yaw_calls": 6,
+      "yaw_rows": 576,
+      "body_calls": 6,
+      "body_rows": 576
+    },
+    "windows_per_model": 6828,
+    "batches_per_model": 107,
+    "batch_sizes_per_model": "106 x 64 + 44",
+    "center_rows_per_model": 24,
+    "label_rows_per_model": 96,
+    "dropped_rows": 0,
+    "point_json": 6,
+    "point_npz": 6,
+    "model_start_events": 6,
+    "model_complete_events": 6
+  },
+  "parity": {
+    "all_model_mapping_hashes_match69": true,
+    "all_training_diagnostics_exact69": true,
+    "all_point_json_equals_report": true,
+    "all_progress_equals_diagnostic": true,
+    "all_state_prefix_gradients_equal_complete_state_gradients": true,
+    "all_state_prefix_losses_equal_complete_losses": true,
+    "all_source_groups_complete": {
+      "58": 12,
+      "62": 12
+    },
+    "all_value_summaries_have45_coordinates_and7_groups": true,
+    "all_unused_parameter_lists_empty": true,
+    "all_model_guards_unchanged": true,
+    "source69_qualification_changed": false,
+    "versions_match_plan_source69_and_after": true
+  },
+  "saved_gradient_scalar_audit": {
+    "models": 6,
+    "parameters_per_model": 46765,
+    "raw_gradient_coordinates_read": 1122360,
+    "unique_gram_dot_products": 60,
+    "maximum_absolute_gaps": {
+      "raw_gram": 1.734723475976807e-18,
+      "raw_gradient_norm": 1.0061396160665481e-16,
+      "weighted_gram": 2.710505431213761e-20,
+      "objective_projection": 2.710505431213761e-20,
+      "weighted_objective_coordinate": 0.0,
+      "weighted_objective_norm": 1.734723475976807e-18
+    },
+    "all_zero_weight_cosines_null": true,
+    "all_negative_objective_derivative_signs_correct": true
+  },
+  "resources": {
+    "cpu_seconds": 7.609617828999999,
+    "wall_seconds": 8.949324500998046,
+    "supervisor_elapsed_seconds": 19.77389249100088,
+    "admission_samples": 6,
+    "admission_duration_seconds": 10.051070376001007,
+    "admission_minimum_effective_bytes": 4423426048,
+    "runtime_minimum_effective_bytes": 4129087488,
+    "peak_owned_group_bytes": 446648320,
+    "all_memory_events_zero": true,
+    "all_resource_errors_empty": true,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0
+  },
+  "limits": [
+    "Gradients are F32 AD with F64 accumulation; not a new F64-model evaluation.",
+    "Geometry is local Euclidean at six fixed final checkpoints, not Adam updates, capacity proof or candidate validation.",
+    "Training-center/source coverage and existing failures are preserved; no heldout failure points are added as training targets.",
+    "Runtime minimum is below 4 GiB but above the 2 GiB running floor; admission samples meet the separate 4 GiB floor."
+  ]
+}
