@@ -1,0 +1,494 @@
+{
+  "status": "COMPLETE",
+  "input_sha256": {
+    "report66": "d873b07076bd823e1bfe5c38b70414d895580e2f9bac73ee9fe72b084beeeb1a",
+    "report67": "1840e696c5dcec923cab847ba257783c33a4917f768cd6d20e452a74aa3c4bf4",
+    "plot_source": "f0c323d36952e003a5220f04fb6e63c31c55a87680b683a9caa345f64893fe5e"
+  },
+  "models": 6,
+  "points": 9,
+  "horizons": [
+    1,
+    32
+  ],
+  "row_labels": [
+    "64001 control / free",
+    "64001 control / cost-rebased",
+    "64001 control / local",
+    "64001 active / free",
+    "64001 active / cost-rebased",
+    "64001 active / local",
+    "64002 control / free",
+    "64002 control / cost-rebased",
+    "64002 control / local",
+    "64002 active / free",
+    "64002 active / cost-rebased",
+    "64002 active / local",
+    "64003 control / free",
+    "64003 control / cost-rebased",
+    "64003 control / local",
+    "64003 active / free",
+    "64003 active / cost-rebased",
+    "64003 active / local"
+  ],
+  "point_order": [
+    [
+      64301,
+      110
+    ],
+    [
+      64301,
+      260
+    ],
+    [
+      64301,
+      410
+    ],
+    [
+      64302,
+      110
+    ],
+    [
+      64302,
+      260
+    ],
+    [
+      64302,
+      410
+    ],
+    [
+      64303,
+      110
+    ],
+    [
+      64303,
+      260
+    ],
+    [
+      64303,
+      410
+    ]
+  ],
+  "states": {
+    "1": [
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ]
+    ],
+    "32": [
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "direction_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "direction_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ],
+      [
+        "physical_unknown",
+        "match",
+        "match",
+        "match",
+        "match",
+        "match",
+        "mismatch",
+        "match",
+        "match"
+      ]
+    ]
+  },
+  "classification_priority_free_rebased": [
+    "numeric self-check",
+    "physical reference",
+    "model direction",
+    "match"
+  ],
+  "model_inferences": 0,
+  "model_updates": 0,
+  "new_physics_steps": 0,
+  "is_control_gain_claim": false,
+  "files": {
+    "joint_response67_all_models.png": {
+      "bytes": 233777,
+      "sha256": "395b7e7e6d5c5865d4629e25fdaa4e919723e2631bab37f531a918312d423d12"
+    },
+    "joint_response67_all_models.svg": {
+      "bytes": 211544,
+      "sha256": "9665a64bc0154e9489bfd15f094d4f71de93ecfa675c86bb1cbdbd7278673473"
+    }
+  }
+}
