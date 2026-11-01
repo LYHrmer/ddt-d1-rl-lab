@@ -1,0 +1,113 @@
+{
+  "status": "COMPLETE",
+  "source_report_sha256": "dc454cbaec0f0f85a4708d3fcbcd9e76e76e071259e2ae3e420a053ffd170bbe",
+  "plot_source_sha256": "1875d3fd04c2e1cb8448aeb55e24f2b7b9bf094dbe1f06c9085e8650a5325bde",
+  "model_seeds": [
+    64001,
+    64002,
+    64003
+  ],
+  "component_order": [
+    "vx",
+    "yaw",
+    "lateral",
+    "tilt",
+    "height",
+    "action_smoothness"
+  ],
+  "arms": [
+    "control",
+    "active"
+  ],
+  "colors": {
+    "control": "#2166ac",
+    "active": "#d6601a"
+  },
+  "fd_MAE": {
+    "64001": {
+      "control": [
+        0.00010474029668247786,
+        0.0006870769386643801,
+        8.76883222272529e-05,
+        2.6681635818366748e-05,
+        1.0760436932286706e-05,
+        5.189634920075895e-08
+      ],
+      "active": [
+        5.304844545635098e-05,
+        0.0006876567762603025,
+        2.9889686600773366e-05,
+        4.074484366165876e-05,
+        1.1910745563773438e-05,
+        5.189634920075895e-08
+      ]
+    },
+    "64002": {
+      "control": [
+        0.00024922126484990464,
+        0.0006745050868171782,
+        0.00026146709320757456,
+        4.895973027482149e-05,
+        1.1123027715021382e-05,
+        5.189634920075895e-08
+      ],
+      "active": [
+        5.546886646018482e-05,
+        0.000667365203016686,
+        2.7064819014186312e-05,
+        7.166895169068052e-05,
+        1.8528602906931464e-05,
+        5.189634920075895e-08
+      ]
+    },
+    "64003": {
+      "control": [
+        0.00011050778754940939,
+        0.0006491822872047499,
+        7.641916560437299e-05,
+        2.2829726374670862e-05,
+        1.5561615554926413e-05,
+        5.189634920075895e-08
+      ],
+      "active": [
+        5.1951849937591876e-05,
+        0.0006501853854698636,
+        3.1268888709318856e-05,
+        3.3562948320676904e-05,
+        1.874356886031313e-05,
+        5.189634920075895e-08
+      ]
+    }
+  },
+  "role": "all27",
+  "states_per_model": 27,
+  "true_epsilon_grid": [
+    3.125e-05,
+    6.25e-05,
+    0.000125,
+    0.00025
+  ],
+  "model_epsilon": 0.001,
+  "fd_intervals_differ": true,
+  "y_scale": "log",
+  "model_points": 162,
+  "intervals": 648,
+  "component_pairs": 3888,
+  "model_inferences": 0,
+  "physics_steps": 0,
+  "model_updates": 0,
+  "is_controller_performance": false,
+  "qualification_changed": false,
+  "gate_pass_claimed": false,
+  "selected_seed": null,
+  "files": {
+    "cost_decomposition70_all27.png": {
+      "bytes": 221936,
+      "sha256": "7c0e3a76a3f6199947babcd3272d35642a07c702ddedf15c93952213c87b9d51"
+    },
+    "cost_decomposition70_all27.svg": {
+      "bytes": 164630,
+      "sha256": "1cc6faeba911ddbcb3323dce108674b75422415e6d3246c00c5bb4c01d2f4cc5"
+    }
+  }
+}
