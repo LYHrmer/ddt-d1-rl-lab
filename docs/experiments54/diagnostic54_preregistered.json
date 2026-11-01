@@ -1,0 +1,38 @@
+{
+  "schema": "d1-model-gradient54-diagnostic-v1",
+  "source_sha256": {
+    "tools54/diagnose54.py": "7cd5f4f68d429add75ffbdeb8de0f24b299b11dda39aa53ba9adc7a3670379d5",
+    "tools54/numerics54.py": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9",
+    "tools54/reproduce54.py": "cda905b4b3bc1194a85838c08db270dabceb1f5a4a6e0694884676aa336a6814",
+    "tests/test_numerics54.py": "1ad790c12503558176ec0d949608acbe8ba1aa425728498ca921b99f5929fd57",
+    "docs/model_gradient54_plan_20261101.md": "a6fd6f58cc40e9cc67aefce9406396f7a9bbbf7c53b5f31f35f2525df4d6a511",
+    ".github/workflows/model-gradient54.yml": "7318616740fc67d8065e75d1bd82cbe20a1b7fb2d67d02e58edad564286304ee",
+    "reports/model_gradient53_results_20261101.json": "a8419794c8df0febc33aa4b9433dbfd3221547b5bb41845898e447fe89250547",
+    "docs/experiments53/model_gradient53_preregistered.json": "1c820dbe60bd5431d4b314a4b5275e4afd155f0e5441ef66b14e4f6f6ffcc157"
+  },
+  "model_seeds": [
+    53001,
+    53002,
+    53003
+  ],
+  "roles": [
+    "development",
+    "probe"
+  ],
+  "points_per_role": 9,
+  "epsilons": [
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01
+  ],
+  "response_epsilon": 0.005,
+  "selfcheck_epsilon": 0.001,
+  "threshold": "abs(autograd-FD)<=0.1*abs(FD)+1e-4 unchanged",
+  "max_cpu_seconds": 300,
+  "max_wall_seconds": 420,
+  "new_physics_cap": 0,
+  "training_updates_cap": 0,
+  "does_not_rejudge53": true
+}
