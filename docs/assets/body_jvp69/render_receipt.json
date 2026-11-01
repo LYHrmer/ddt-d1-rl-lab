@@ -1,0 +1,91 @@
+{
+  "status": "COMPLETE",
+  "source_report_sha256": "955ca4f00a89bd4b0f96e08501fa87c183f1d4e81d2081dc6c47720e4495428c",
+  "plot_source_sha256": "f5f3d8c667563feaccc41ffba82ce43efb19f8170510fead50523e03689fb322",
+  "model_seeds": [
+    64001,
+    64002,
+    64003
+  ],
+  "arms": [
+    "control",
+    "active"
+  ],
+  "colors": {
+    "control": "#2166ac",
+    "active": "#d6601a"
+  },
+  "unscaled_values": {
+    "body_normalized_rmse": {
+      "control": [
+        0.0005631379421106485,
+        0.0012812057542636428,
+        0.0005383274071322599
+      ],
+      "active": [
+        0.00019788163609202924,
+        0.0001956800168259593,
+        0.00019376686706393934
+      ]
+    },
+    "cost_valid_matches": {
+      "control": [
+        39,
+        39,
+        41
+      ],
+      "active": [
+        40,
+        40,
+        41
+      ]
+    },
+    "body_valid_matches": {
+      "control": [
+        45,
+        9,
+        45
+      ],
+      "active": [
+        50,
+        53,
+        53
+      ]
+    },
+    "cost_h1_valid_matches": {
+      "control": [
+        25,
+        25,
+        26
+      ],
+      "active": [
+        23,
+        22,
+        26
+      ]
+    }
+  },
+  "rmse_display_multiplier": 1000.0,
+  "all_y_axes_start_at_zero": true,
+  "yaw_valid_each_model": "26/27",
+  "h32_formal_denominator": 45,
+  "h32_resolved_references": 44,
+  "h32_unknown_references": 1,
+  "qualification_changed": false,
+  "source_target_status": "NUMERIC_UNRESOLVED",
+  "is_controller_performance": false,
+  "selected_seed": null,
+  "model_inferences": 0,
+  "model_updates": 0,
+  "new_physics_steps": 0,
+  "files": {
+    "body_jvp69_paired_summary.png": {
+      "bytes": 234372,
+      "sha256": "88cc2198abc22c988dec1be48e998c0cd0cc5a6057891b32774e66291aae696c"
+    },
+    "body_jvp69_paired_summary.svg": {
+      "bytes": 131324,
+      "sha256": "9a9ee83909fd284f373bf7e467eb4d5d76bcec64ff323bde2f93ccaab3ea1273"
+    }
+  }
+}

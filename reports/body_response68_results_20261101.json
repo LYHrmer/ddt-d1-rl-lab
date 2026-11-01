@@ -1,0 +1,444 @@
+{
+  "schema": "d1-body-response68-summary-v1",
+  "date": "2026-11-01",
+  "status": "COMPLETE",
+  "admission": {
+    "status": "ADMITTED",
+    "admitted": true,
+    "qualified_state_channels": 48,
+    "required_state_channels": 48,
+    "states": 24,
+    "label_rows": 96,
+    "rows_dropped": 0,
+    "selected_epsilon": null,
+    "old_yaw_qualification_is_body_qualification": false,
+    "fits_authorized_by_this_result": 0
+  },
+  "source_decisions_changed": false,
+  "scope": {
+    "sources": [
+      "58",
+      "62"
+    ],
+    "states": 24,
+    "unique_training_seeds": [
+      53103,
+      53106,
+      53109,
+      53112
+    ],
+    "ticks": [
+      110,
+      260,
+      410
+    ],
+    "absolute_action_epsilons": [
+      3.125e-06,
+      6.25e-06,
+      1.25e-05,
+      2.5e-05
+    ],
+    "label_rows": 96,
+    "channels": [
+      "vx",
+      "vy"
+    ],
+    "scalar_fd_targets": 192,
+    "qualified_state_channel_pairs": 48,
+    "independent_episode_claim": false,
+    "rows_dropped": 0,
+    "selected_epsilon": null
+  },
+  "method": {
+    "body_velocity": "normalized inverse quaternion rotation of poststate qvel[0:3], first two body components",
+    "dtype": "float64 transform followed by float64 central/one-sided differences",
+    "action_direction": "actual executed float32 actions promoted to float64 before differencing; no yaw-error multiplier",
+    "source_yaw_recovery_exact_points": 24,
+    "body_qualification_inherited_from_yaw": false,
+    "stability_rule": {
+      "central_same_sign_all_four": true,
+      "minimum_absolute_central_fd": 1e-05,
+      "maximum_four_epsilon_relative_spread": 0.25,
+      "one_sided_same_sign_each_epsilon": true,
+      "maximum_one_sided_relative_gap": 0.25
+    }
+  },
+  "source_channel_statistics": [
+    {
+      "source": "58",
+      "channel": "vx",
+      "qualified_states": 12,
+      "required_states": 12,
+      "positive_states": 9,
+      "negative_states": 3,
+      "unresolved_states": 0,
+      "central_fd_min": -0.0009206134374967201,
+      "central_fd_max": 0.0064717206774145275,
+      "minimum_absolute_central_fd": 0.0003390355529653277,
+      "maximum_four_epsilon_relative_spread": 0.017494934200850527,
+      "maximum_one_sided_relative_gap": 8.829987920503469e-07
+    },
+    {
+      "source": "58",
+      "channel": "vy",
+      "qualified_states": 12,
+      "required_states": 12,
+      "positive_states": 12,
+      "negative_states": 0,
+      "unresolved_states": 0,
+      "central_fd_min": 0.002092095962927254,
+      "central_fd_max": 0.005898126624326316,
+      "minimum_absolute_central_fd": 0.002092095962927254,
+      "maximum_four_epsilon_relative_spread": 0.00863564913947499,
+      "maximum_one_sided_relative_gap": 2.1426615587898684e-07
+    },
+    {
+      "source": "62",
+      "channel": "vx",
+      "qualified_states": 12,
+      "required_states": 12,
+      "positive_states": 8,
+      "negative_states": 4,
+      "unresolved_states": 0,
+      "central_fd_min": -0.0006489635925865933,
+      "central_fd_max": 0.003181473829938497,
+      "minimum_absolute_central_fd": 3.3567071344720034e-05,
+      "maximum_four_epsilon_relative_spread": 0.11337673001627559,
+      "maximum_one_sided_relative_gap": 0.0069754355478682546
+    },
+    {
+      "source": "62",
+      "channel": "vy",
+      "qualified_states": 12,
+      "required_states": 12,
+      "positive_states": 12,
+      "negative_states": 0,
+      "unresolved_states": 0,
+      "central_fd_min": 0.0017823269475580883,
+      "central_fd_max": 0.007032615290669675,
+      "minimum_absolute_central_fd": 0.0017823269475580883,
+      "maximum_four_epsilon_relative_spread": 0.008755759637743271,
+      "maximum_one_sided_relative_gap": 0.0034694456548068253
+    }
+  ],
+  "qualification_columns": [
+    "source",
+    "seed",
+    "tick",
+    "vx_qualified",
+    "vy_qualified"
+  ],
+  "qualification_by_state": [
+    [
+      "58",
+      53103,
+      110,
+      true,
+      true
+    ],
+    [
+      "58",
+      53103,
+      260,
+      true,
+      true
+    ],
+    [
+      "58",
+      53103,
+      410,
+      true,
+      true
+    ],
+    [
+      "58",
+      53106,
+      110,
+      true,
+      true
+    ],
+    [
+      "58",
+      53106,
+      260,
+      true,
+      true
+    ],
+    [
+      "58",
+      53106,
+      410,
+      true,
+      true
+    ],
+    [
+      "58",
+      53109,
+      110,
+      true,
+      true
+    ],
+    [
+      "58",
+      53109,
+      260,
+      true,
+      true
+    ],
+    [
+      "58",
+      53109,
+      410,
+      true,
+      true
+    ],
+    [
+      "58",
+      53112,
+      110,
+      true,
+      true
+    ],
+    [
+      "58",
+      53112,
+      260,
+      true,
+      true
+    ],
+    [
+      "58",
+      53112,
+      410,
+      true,
+      true
+    ],
+    [
+      "62",
+      53103,
+      110,
+      true,
+      true
+    ],
+    [
+      "62",
+      53103,
+      260,
+      true,
+      true
+    ],
+    [
+      "62",
+      53103,
+      410,
+      true,
+      true
+    ],
+    [
+      "62",
+      53106,
+      110,
+      true,
+      true
+    ],
+    [
+      "62",
+      53106,
+      260,
+      true,
+      true
+    ],
+    [
+      "62",
+      53106,
+      410,
+      true,
+      true
+    ],
+    [
+      "62",
+      53109,
+      110,
+      true,
+      true
+    ],
+    [
+      "62",
+      53109,
+      260,
+      true,
+      true
+    ],
+    [
+      "62",
+      53109,
+      410,
+      true,
+      true
+    ],
+    [
+      "62",
+      53112,
+      110,
+      true,
+      true
+    ],
+    [
+      "62",
+      53112,
+      260,
+      true,
+      true
+    ],
+    [
+      "62",
+      53112,
+      410,
+      true,
+      true
+    ]
+  ],
+  "failures": [],
+  "unresolved_state_channels": 0,
+  "work": {
+    "new_physics_steps": 0,
+    "model_updates": 0,
+    "policy_updates": 0,
+    "fits": 0,
+    "model_inferences": 0,
+    "checkpoints_read": 0,
+    "heldout_rows_read": 0
+  },
+  "validation": {
+    "synthetic_tests_passed": 11,
+    "synthetic_tests_failed": 0,
+    "pytest_seconds": 0.92,
+    "source_input_verification_after": "COMPLETE",
+    "source_bindings_reverified_for_publication": 288
+  },
+  "resources": {
+    "declared": {
+      "cpu_seconds": 60,
+      "wall_seconds": 120,
+      "nice": 10,
+      "single_cpu": true,
+      "threads": 1,
+      "memory_high_bytes": 2147483648,
+      "memory_max_bytes": 3221225472,
+      "swap_max_bytes": 0,
+      "minimum_start_effective_bytes": 4294967296,
+      "minimum_runtime_effective_bytes": 2147483648
+    },
+    "entry_nice_thread_checks_passed": true,
+    "formal_cpu_seconds": 1.716854354,
+    "formal_wall_seconds": 1.7903044570011843,
+    "bounded": {
+      "checks01": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_s": 12.076744532998418,
+        "minimum_effective_bytes": 4833599488,
+        "peak_group_bytes": 310378496,
+        "cpu_affinity": [
+          0
+        ],
+        "final_memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "retry_permitted": false,
+        "owned_process_group_empty": true,
+        "child_reaped": true,
+        "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+        "samples": 9,
+        "memory_high_bytes": 2147483648,
+        "memory_max_bytes": 3221225472,
+        "swap_max_bytes": 0,
+        "minimum_effective_gib": 4.501640319824219,
+        "peak_group_mib": 296.0
+      },
+      "execution01": {
+        "status": "COMPLETE",
+        "returncode": 0,
+        "elapsed_s": 13.084980728999653,
+        "minimum_effective_bytes": 4823883776,
+        "peak_group_bytes": 381538304,
+        "cpu_affinity": [
+          0
+        ],
+        "final_memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "retry_permitted": false,
+        "owned_process_group_empty": true,
+        "child_reaped": true,
+        "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+        "samples": 10,
+        "memory_high_bytes": 2147483648,
+        "memory_max_bytes": 3221225472,
+        "swap_max_bytes": 0,
+        "minimum_effective_gib": 4.492591857910156,
+        "peak_group_mib": 363.86328125
+      }
+    }
+  },
+  "versions": {
+    "torch": "2.12.1",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.0",
+    "gymnasium": "1.2.0"
+  },
+  "torch_runtime_version": "2.12.1+cu130",
+  "identities": {
+    "plan": {
+      "path": "docs/experiments68/body_response68_preregistered.json",
+      "bytes": 39680,
+      "sha256": "b8ca3c2a3d89e9dda50c6b9df263910a0f7d2f722c9e00993e3ba641d956405e"
+    },
+    "source": {
+      "path": "tools68/labels68.py",
+      "bytes": 17865,
+      "sha256": "6b97290d5fb54f2fb2854f86239fe91c8f6d4ccfacf5f01c60bd27f07d3962d5"
+    },
+    "tests": {
+      "path": "tests/test_labels68.py",
+      "bytes": 7702,
+      "sha256": "c40eed0c20dfbd189ac6e7bdb583debe45e8355b6550c294d33a581c06a97c1c"
+    },
+    "raw_report": {
+      "path": "evidence/body_response68/admission_01/report.json",
+      "bytes": 109455,
+      "sha256": "c22b7168021d6ffaf80542c7ec4f329a2c0cfa7f22508bb242f7eb0c02cd59e1"
+    },
+    "labels_npz": {
+      "path": "evidence/body_response68/admission_01/body_labels96.npz",
+      "bytes": 21382,
+      "sha256": "1aceafc82c58732695f3747185b762cfaa58efd5af510524e7d570303b17f9e0"
+    },
+    "complete_manifest": {
+      "path": "reports/body_response68_raw_manifest_20261101.json",
+      "bytes": 60525,
+      "sha256": "38895035e0035c5fe4c8bce6633a90c4c6703f94d2c2005de7b025987a50c781"
+    }
+  },
+  "interpretation": {
+    "body_response_label_admission_only": true,
+    "control_performance_improvement_claim": false,
+    "training_result_claim": false,
+    "old62_coverage_rejection_changed": false,
+    "unresolved_questions": [
+      "Whether the added objective improves heldout free-rollout cost directions.",
+      "Whether any qualified model improves complete closed-loop control.",
+      "How well labels from four training seeds generalize; four epsilon scales are not independent samples."
+    ]
+  }
+}
