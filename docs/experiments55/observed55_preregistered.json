@@ -1,0 +1,61 @@
+{
+  "schema": "d1-observed-gradient55-v1",
+  "source_sha256": {
+    "tools55/run55.py": "163d118405bda54cecc1107ce1413ff2bad43275559624bcdfa7a9123b6ebd59",
+    "tools55/observed55.py": "6ab08144e285e552f54127b6903cc6e3d9e8fe221a6c4c97672381ec372f4545",
+    "tests/test_observed55.py": "1485f05fe7411ead94af5a428255e3d87dfc4195d1b732c9cbb6eae5888fce4c",
+    "tests/test_run55.py": "517429735906c966aba24e3a20749908f8e84b3513a3ff5e6d073ad4685ab96b",
+    ".github/workflows/observed-gradient55.yml": "f117bbbcda6e71adbe49c1bcdd203c76090dd7b6648a782d2c726e98dc60633a",
+    "docs/observed_gradient55_plan_20261101.md": "6f6ee98442afd4bcff9a7f3f573c1185f49068ca9ddc54f8113149d9bd402422",
+    "tools54/numerics54.py": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9",
+    "tools54/reproduce54.py": "cda905b4b3bc1194a85838c08db270dabceb1f5a4a6e0694884676aa336a6814",
+    "docs/experiments53/model_gradient53_preregistered.json": "1c820dbe60bd5431d4b314a4b5275e4afd155f0e5441ef66b14e4f6f6ffcc157",
+    "reports/model_gradient53_results_20261101.json": "a8419794c8df0febc33aa4b9433dbfd3221547b5bb41845898e447fe89250547",
+    "reports/model_gradient54_results_20261101.json": "f8389414d40fb8aed39b250736ee2e5181b3547581dd09b6914b34ed3e929131"
+  },
+  "model_seeds": [
+    53001,
+    53002,
+    53003
+  ],
+  "probe_seeds": [
+    55301,
+    55302,
+    55303
+  ],
+  "evaluation_seeds": [
+    55401,
+    55402,
+    55403
+  ],
+  "estimator_arms": [
+    "free_rollout",
+    "observed_forward_model_backward"
+  ],
+  "precision": "float64 for both gradient estimators; unchanged float32 physical actor",
+  "point_ticks": [
+    110,
+    260,
+    410
+  ],
+  "horizon": 32,
+  "selfcheck_epsilon": 0.001,
+  "true_fd_epsilons": [
+    0.005,
+    0.01
+  ],
+  "theta_step": 0.01,
+  "development_source": "53 development only",
+  "original_per_model_matches_required": 7,
+  "new_all_model_matches_for_paired_control": 9,
+  "cpu_seconds_cap": 600,
+  "wall_seconds_cap": 900,
+  "preflight_cap_policy": 256,
+  "formal_cap_policy": 15000,
+  "planned_max_formal_policy": 14328,
+  "planned_preflight_policy": 224,
+  "artifact_cap_bytes": 134217728,
+  "model_updates_cap": 0,
+  "policy_network_updates_cap": 0,
+  "qualification": "all original thresholds; mean turn MAE<=0.95 baseline and every seed improves; mean J<=baseline, each pair<=1.05"
+}

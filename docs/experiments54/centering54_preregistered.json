@@ -1,0 +1,28 @@
+{
+  "schema": "d1-model-gradient54-centering-diagnostic-v1",
+  "source_sha256": {
+    "tools54/center54.py": "ed345bb0dfc808c4fd66e7a8c6d649c91cbff9e77a9a33100de7175accb0108e",
+    "tools54/numerics54.py": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9",
+    "tools54/reproduce54.py": "cda905b4b3bc1194a85838c08db270dabceb1f5a4a6e0694884676aa336a6814",
+    "docs/model_gradient54_centering_20261101.md": "825e8fbbeb4db93e41258f39bbcedb846b23c615202bd8eeb6c6492f06315b85",
+    "docs/experiments54/diagnostic54_preregistered.json": "5d21ebcbc22f23f4f284ee97a1a3c104887abf07a8baf112ead06dde64daf593",
+    "reports/model_gradient53_results_20261101.json": "a8419794c8df0febc33aa4b9433dbfd3221547b5bb41845898e447fe89250547",
+    "evidence/model_gradient54/diagnostic_01/report.json": "94b217ccaeedd462df104f83f0738bbc5c8bfa4237ebebdbd16fc1b81f7894b3"
+  },
+  "model_seeds": [
+    53001,
+    53002,
+    53003
+  ],
+  "probe_points": 9,
+  "selfcheck_epsilon": 0.001,
+  "physics_comparison_epsilons": [
+    0.005,
+    0.01
+  ],
+  "oracle_only": true,
+  "new_physics_cap": 0,
+  "training_updates_cap": 0,
+  "cpu_seconds_cap": 180,
+  "wall_seconds_cap": 240
+}
