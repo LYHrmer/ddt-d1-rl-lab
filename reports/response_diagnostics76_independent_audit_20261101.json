@@ -1,0 +1,588 @@
+{
+  "schema": "d1-response-diagnostics76-independent-audit-v1",
+  "status": "PASSED",
+  "source_report": "evidence/response_diagnostics76/readback_01/report.json",
+  "source_report_sha256": "3afe476afbd410f0120d5a113f58c421eac25025c45acc216c6235869fa81b8c",
+  "source72_report": "evidence/yaw_weight72/execution_01/report.json",
+  "source72_report_sha256": "4c9b564fd6933ade933509418047f7e10e2d6e873d270f8a3e0c109706c92b38",
+  "source_commit": "3a304bf",
+  "method": "Independent standard-library JSON/SHA256/CSV and scalar gate recomputation; no imports from tools76, no model, actor, physics, NumPy, Torch or pytest.",
+  "predicates": {
+    "complete_verified_readback": true,
+    "all3186_original_valid_matches_preserved": true,
+    "complete_unique3186_rows": true,
+    "all4050_selfchecks_recomputed": true,
+    "all30_model_kind_summaries_match": true,
+    "all650_input_identities_match": true,
+    "four_executed_sources_match": true,
+    "old_unknown_preserved": true,
+    "missing_yaw_not_fabricated": true,
+    "no_original_decision_replacement": true
+  },
+  "checks": {
+    "total": 181364,
+    "by_predicate": {
+      "complete": 1,
+      "no_execution": 1,
+      "legacy_decision_unchanged": 1,
+      "source_complete": 1,
+      "source72_sha": 1,
+      "input_coverage": 1,
+      "input_identity": 650,
+      "published_binding": 649,
+      "source_code_identity": 4,
+      "source_code_coverage": 1,
+      "physical_reference_copy": 1,
+      "expected_row_count": 1,
+      "row_unique": 3186,
+      "row_expected": 3186,
+      "row_source_parity": 12744,
+      "original_valid_match_parity": 3186,
+      "legacy_not_replaced": 3186,
+      "selfcheck_names": 3186,
+      "selfcheck_count": 3186,
+      "selfcheck_recorded": 3186,
+      "selfcheck_original_receipt": 4050,
+      "source_selfcheck_formula": 4050,
+      "selfcheck_recomputed": 56700,
+      "response_recomputed": 60534,
+      "reason_flags_recomputed": 3186,
+      "reasons_recomputed": 3186,
+      "limits_preserved": 3186,
+      "endpoint_coverage": 3186,
+      "endpoint_input_seam": 2808,
+      "yaw_no_fabricated_selfcheck": 864,
+      "all_rows_complete": 1,
+      "summary_count": 1,
+      "model_kind_summary": 30,
+      "model_kind_count": 30,
+      "selfcheck_total": 1,
+      "selfcheck_summary": 1,
+      "low_magnitude_classification": 1,
+      "physical_unknown_coverage": 1,
+      "unrecorded_physical_coverage": 1,
+      "missing_yaw_selfchecks": 1,
+      "csv_count": 1,
+      "csv_row_parity": 3186,
+      "final_report_unchanged": 1
+    },
+    "failures": []
+  },
+  "counts": {
+    "cost_h32": 378,
+    "endpoint_precision_records": 2808,
+    "cost_h1": 216,
+    "body_vx": 864,
+    "body_vy": 864,
+    "yaw": 864
+  },
+  "selfchecks": {
+    "total": 4050,
+    "arithmetic_agreement_passed": 4050,
+    "direction_qualification_failed": 123,
+    "opposite_self_signs": 0,
+    "both_below_floor": 123,
+    "zero_derivatives": 0
+  },
+  "selfchecks_by_kind": {
+    "cost_h32": {
+      "total": 378,
+      "arithmetic_agreement_passed": 378,
+      "direction_qualification_failed": 0,
+      "opposite_self_signs": 0,
+      "both_below_floor": 0,
+      "zero_derivatives": 0
+    },
+    "cost_h1": {
+      "total": 216,
+      "arithmetic_agreement_passed": 216,
+      "direction_qualification_failed": 3,
+      "opposite_self_signs": 0,
+      "both_below_floor": 3,
+      "zero_derivatives": 0
+    },
+    "body_vx": {
+      "total": 1728,
+      "arithmetic_agreement_passed": 1728,
+      "direction_qualification_failed": 120,
+      "opposite_self_signs": 0,
+      "both_below_floor": 120,
+      "zero_derivatives": 0
+    },
+    "body_vy": {
+      "total": 1728,
+      "arithmetic_agreement_passed": 1728,
+      "direction_qualification_failed": 0,
+      "opposite_self_signs": 0,
+      "both_below_floor": 0,
+      "zero_derivatives": 0
+    }
+  },
+  "reason_counts_overlapping": {
+    "PHYSICAL_REFERENCE_NOT_RECORDED": 54,
+    "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 46,
+    "PHYSICAL_REFERENCE_UNRESOLVED": 6,
+    "NO_MODEL_SELFCHECK_RECORDED": 864,
+    "MODEL_BELOW_MAGNITUDE_FLOOR": 70
+  },
+  "per_model_kind": [
+    {
+      "model_seed": 64001,
+      "arm": "active",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 16
+      },
+      "original_match_true": 128,
+      "original_match_false": 16,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "active",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "active",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 3
+      },
+      "original_match_true": 33,
+      "original_match_false": 3,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "active",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 8,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1
+      },
+      "original_match_true": 45,
+      "original_match_false": 8,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64001,
+      "arm": "active",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144
+      },
+      "original_match_true": 132,
+      "original_match_false": 12,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "control",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 20
+      },
+      "original_match_true": 124,
+      "original_match_false": 20,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "control",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "control",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 5
+      },
+      "original_match_true": 31,
+      "original_match_false": 5,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64001,
+      "arm": "control",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 6,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1
+      },
+      "original_match_true": 47,
+      "original_match_false": 6,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64001,
+      "arm": "control",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "active",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 12
+      },
+      "original_match_true": 132,
+      "original_match_false": 12,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "active",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "active",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 2
+      },
+      "original_match_true": 34,
+      "original_match_false": 2,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "active",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 6,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1
+      },
+      "original_match_true": 47,
+      "original_match_false": 6,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64002,
+      "arm": "active",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144,
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 4
+      },
+      "original_match_true": 136,
+      "original_match_false": 8,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "control",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 4
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "control",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "control",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 2,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 5
+      },
+      "original_match_true": 29,
+      "original_match_false": 7,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64002,
+      "arm": "control",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 4,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1
+      },
+      "original_match_true": 49,
+      "original_match_false": 4,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64002,
+      "arm": "control",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "active",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 4
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "active",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "active",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 1
+      },
+      "original_match_true": 35,
+      "original_match_false": 1,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "active",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 3
+      },
+      "original_match_true": 50,
+      "original_match_false": 3,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64003,
+      "arm": "active",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "control",
+      "kind": "body_vx",
+      "rows": 144,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 4
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "control",
+      "kind": "body_vy",
+      "rows": 144,
+      "reasons": {},
+      "original_match_true": 144,
+      "original_match_false": 0,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "control",
+      "kind": "cost_h1",
+      "rows": 36,
+      "reasons": {
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 1
+      },
+      "original_match_true": 35,
+      "original_match_false": 1,
+      "original_match_unknown": 0
+    },
+    {
+      "model_seed": 64003,
+      "arm": "control",
+      "kind": "cost_h32",
+      "rows": 63,
+      "reasons": {
+        "PHYSICAL_REFERENCE_NOT_RECORDED": 9,
+        "PHYSICAL_REFERENCE_UNRESOLVED": 1,
+        "QUALIFIED_MODEL_PHYSICS_OPPOSITE_SIGN": 3
+      },
+      "original_match_true": 50,
+      "original_match_false": 3,
+      "original_match_unknown": 10
+    },
+    {
+      "model_seed": 64003,
+      "arm": "control",
+      "kind": "yaw",
+      "rows": 144,
+      "reasons": {
+        "NO_MODEL_SELFCHECK_RECORDED": 144,
+        "MODEL_BELOW_MAGNITUDE_FLOOR": 3
+      },
+      "original_match_true": 140,
+      "original_match_false": 4,
+      "original_match_unknown": 0
+    }
+  ],
+  "physical_unknown_rows": [
+    {
+      "row": 36,
+      "model_seed": 64001,
+      "arm": "control",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    },
+    {
+      "row": 567,
+      "model_seed": 64001,
+      "arm": "active",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    },
+    {
+      "row": 1098,
+      "model_seed": 64002,
+      "arm": "control",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    },
+    {
+      "row": 1629,
+      "model_seed": 64002,
+      "arm": "active",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    },
+    {
+      "row": 2160,
+      "model_seed": 64003,
+      "arm": "control",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    },
+    {
+      "row": 2691,
+      "model_seed": 64003,
+      "arm": "active",
+      "role": "old64",
+      "seed": 64301,
+      "tick": 110,
+      "kind": "cost_h32",
+      "original_valid_match": null,
+      "qualified_match": null
+    }
+  ],
+  "physical_reference_not_recorded_rows": 54,
+  "conditional_yaw_selfcheck_not_recorded_rows": 864,
+  "largest_observed_ad_fd_absolute_gap": 1.543434254624998e-06,
+  "bindings": {
+    "consumed_inputs": 650,
+    "published72_raw_manifest_bindings": 649,
+    "source_code_files": 4,
+    "source_code_sha256": {
+      "tools76/readback76.py": "2b824ca03a51350082a21e4778fbc512addcbd814c4652555d925f7000b2234f",
+      "tools76/precision76.py": "7eda2359bde5672e32037c046fb33740569ee6602d41c809a0aa60769c207f74",
+      "tools76/reasons76.py": "8ee3a251cbf104b7fc0b213f8188469849a27caa7d4389653e4e198e0463f69a",
+      "tools74/runtime74.py": "ded01828f6c06b4ca8085566f3173e7a3f455ba76f314ab4829708a2db6c8dc0"
+    }
+  },
+  "runtime": {
+    "reported_cpu_seconds": 0.92136263,
+    "reported_wall_seconds": 1.2568296109966468,
+    "reported_peak_rss_bytes": 75653120,
+    "audit_cpu_seconds_before_write": 0.469168162
+  },
+  "scope_limits": [
+    "Endpoint precision presence and saved-FD/epsilon seams were checked; the exact-rational and one-neighbor arithmetic was not independently re-executed in this audit.",
+    "123 direction failures count two checks per each60 body epsilon rows plus3 H1 checks; they are not123 independent physical points.",
+    "54 development rows have no recorded physical reference; these are separate from6 model rows sharing the single old64 unresolved physical point.",
+    "864 conditional yaw rows retain their archived decisions while explanatory qualified_match remainsNone because no conditional JVP selfcheck was archived.",
+    "Gain ratios remain descriptive and do not change frozen gates."
+  ]
+}
