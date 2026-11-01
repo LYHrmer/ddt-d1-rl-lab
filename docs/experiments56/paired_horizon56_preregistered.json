@@ -1,0 +1,70 @@
+{
+  "schema": "d1-paired-horizon56-v1",
+  "source_sha256": {
+    "docs/experiments53/model_gradient53_preregistered.json": "1c820dbe60bd5431d4b314a4b5275e4afd155f0e5441ef66b14e4f6f6ffcc157",
+    "reports/model_gradient53_results_20261101.json": "a8419794c8df0febc33aa4b9433dbfd3221547b5bb41845898e447fe89250547",
+    "evidence/observed_gradient55/local_01/report.json": "2e7c08f5654a12d7d4b146cc88a50d1be5d8be63d0a45a3bbedbb7bb744c6be9",
+    "evidence/observed_gradient55/execution_01/probe_snapshots.pkl": "8263d7727e6768abbbd85dc40cd819bcf2dee749dbffca4a07c4a0d0cb54ce00",
+    "tools56/run56.py": "0a7dc978a565824ac494508f098295ac8c64620853cb4622cc76b79699e15ddd",
+    "tools56/fit56.py": "a1fd728aa0532301447d3d627628c20f89883c9270ce50c031680db1aa59e92e",
+    "tools54/numerics54.py": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9",
+    "tools54/reproduce54.py": "cda905b4b3bc1194a85838c08db270dabceb1f5a4a6e0694884676aa336a6814",
+    "tools55/probe_local55.py": "04dfe5e7d25e8324a6124d16d2d3a0401a37866c32cdcc28b30a7590e58b4bdf",
+    "tools55/run55.py": "163d118405bda54cecc1107ce1413ff2bad43275559624bcdfa7a9123b6ebd59",
+    "tools53/run_pilot53.py": "064ea4fbc373d3d9fd4e9f431f1964aa4a8b95d1dc1cd387cceadfaea774a43c",
+    "tools53/collection53.py": "2471c5f1163d7e7bd0e020ff171ba3789f6d0ecc2d98ec0769db1ca704bee812",
+    "docs/paired_horizon56_plan_20261101.md": "bfdb99dd3883a72e7634d1142605c0ac5daf9c9c981cd59e532c286f92a00208",
+    "evidence/observed_gradient55/admission_01/report.json": "7587a156ca02b4b5ab98cd48660629560625e191c6291deff21a6e09c2ed1abe",
+    "evidence/observed_gradient55/execution_01/probe_00.npz": "91b1b9cdf116d22e532d8c0b56be3f623447caf62a11173ef875264af4f0a177",
+    "evidence/observed_gradient55/execution_01/probe_01.npz": "85f345ff2f3f28616f5b9d0754ed2919d68367e48436c88e8aef41b94a1b6682",
+    "evidence/observed_gradient55/execution_01/probe_02.npz": "fffe9f0a23e16d10b2fca1b0a8e4b52d96de64826072307ed2a60a80275e2c7b",
+    "evidence/observed_gradient55/execution_01/probe_03.npz": "7e2b5b0cc98e18a86ba577320bd4b7520d21e5dea07f41106bdeec43bf04ebd6",
+    "evidence/observed_gradient55/execution_01/probe_04.npz": "b77aeafaaf14f8cb2b2672cb26ac7573338c3e2fed1ea13f8c1a60b04c040b16",
+    "evidence/observed_gradient55/execution_01/probe_05.npz": "31f1041b87e61bdbae54b3a495b9ee8c934c8b6a4c2e98baac5f79233a09ec4f",
+    "evidence/observed_gradient55/execution_01/probe_06.npz": "251810c72111f56cc45fa13c75b97c9e1dceb8767cad88c0c9001c12c4500c91",
+    "evidence/observed_gradient55/execution_01/probe_07.npz": "944ee68ea66370da7b346636bd6dbf57db2efce05d1b0d616c64bcaeb8a10615",
+    "evidence/observed_gradient55/execution_01/probe_08.npz": "72e417197cb54821f69f7177a9c6aaf9209288be5241cba288833dc2a97ebb79"
+  },
+  "model_seeds": [
+    56001,
+    56002,
+    56003
+  ],
+  "probe_seeds": [
+    56301,
+    56302,
+    56303
+  ],
+  "horizons": [
+    8,
+    32
+  ],
+  "updates_per_model": 1000,
+  "expected_policy_steps": 4680,
+  "hard_policy_cap": 5000,
+  "cpu_seconds": 600,
+  "wall_seconds": 900,
+  "model_updates_cap": 6000,
+  "policy_updates_cap": 0,
+  "fit_only_variable": "training loss prefix horizon on common32 windows",
+  "selfcheck_epsilon": 0.001,
+  "selfcheck_relative_tolerance": 0.1,
+  "selfcheck_absolute_tolerance": 0.0001,
+  "physical_eps": [
+    3.125e-05,
+    6.25e-05,
+    0.000125,
+    0.00025
+  ],
+  "normalized_gradient_error_floor": 1e-05,
+  "strict_direction_matches_per_model": 9,
+  "strict_roles": [
+    "old_probe",
+    "old55_local",
+    "fresh"
+  ],
+  "training_source": "complete53 7200 existing transitions only",
+  "checkpoint_selection": "fixed final1000, no overwrite/retry/resume",
+  "selection_uses_test_data": false,
+  "control_parameter_updates_cap": 0
+}
