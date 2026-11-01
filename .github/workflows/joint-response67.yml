@@ -1,0 +1,32 @@
+name: joint-response67
+on:
+  push:
+    branches: [main]
+    paths: ['tools67/**', 'tests/test_joint67.py', 'docs/experiments67/**', '.github/workflows/joint-response67.yml']
+  pull_request:
+    paths: ['tools67/**', 'tests/test_joint67.py', 'docs/experiments67/**', '.github/workflows/joint-response67.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  joint-response-contracts:
+    runs-on: ubuntu-22.04
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONPATH: '.:training'
+      CUDA_VISIBLE_DEVICES: ''
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
+          python -m pip install --quiet 'numpy<3' pytest
+      - name: Verify true-trajectory response and cost projection
+        run: python -m pytest --noconftest tests/test_joint67.py -q
