@@ -1,0 +1,427 @@
+{
+  "checkpoint": "evidence/low_memory_delay25/execution_01/random/train/policy.zip",
+  "versions": {
+    "torch": "2.12.1",
+    "numpy": "2.2.6",
+    "mujoco": "3.3.0",
+    "gymnasium": "1.2.0"
+  },
+  "fit": {
+    "horizon": 8,
+    "updates_per_seed": 1000,
+    "batch": 64,
+    "batch_seed": 52000,
+    "widths": [
+      128,
+      128,
+      128
+    ],
+    "activation": "tanh",
+    "zero_initialized_residual_output": true,
+    "ridge_lambda": 0.001,
+    "input_std_floor": 0.001,
+    "learning_rate": 0.0003,
+    "gradient_clip": 1.0,
+    "checkpoint": "final_only",
+    "cpu_seconds_per_seed": 600,
+    "group_weights": "equal seven groups",
+    "physical_scale45": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      0.5,
+      0.5,
+      0.5,
+      1.0,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      0.3,
+      2.0,
+      2.0,
+      2.0,
+      5.0,
+      2.0,
+      2.0,
+      2.0,
+      5.0,
+      2.0,
+      2.0,
+      2.0,
+      5.0,
+      2.0,
+      2.0,
+      2.0,
+      5.0
+    ]
+  },
+  "gradient": {
+    "horizon": 32,
+    "model_fd_epsilon": 0.001,
+    "absolute_tolerance": 0.0001,
+    "relative_tolerance": 0.1,
+    "minimum_direction_magnitude": 1e-05,
+    "dev_mean_minimum_magnitude": 1e-06,
+    "physical_thetas": [
+      0.0,
+      0.0,
+      0.005,
+      -0.005,
+      0.01,
+      -0.01
+    ],
+    "physical_fd_relative_agreement": 0.25,
+    "direction_matches_each_model": 7,
+    "all_54_physical_branches_complete_required": true,
+    "proposal": "-0.01 * sign(equal mean development gradient); all three model means same sign and all development model derivative checks pass",
+    "selection_uses_physical_results": false
+  },
+  "control_gate": {
+    "tasks": [
+      "forward_stop",
+      "reverse_stop",
+      "turn_stop"
+    ],
+    "full_horizon_ticks": 600,
+    "original_thresholds_unchanged": true,
+    "both_arms_all_9_threshold_passes_required": true,
+    "turn_mae_ratio_max": 0.95,
+    "turn_mae_improves_each_seed": true,
+    "mean_J_ratio_max": 1.0,
+    "each_pair_J_ratio_max": 1.05
+  },
+  "schema": "d1-model-gradient53-preregistration-v1",
+  "question": "Do fixed 8-step models predict a valid 32-step closed-loop yaw feedback gradient within the original qualification tasks?",
+  "model_seeds": [
+    53001,
+    53002,
+    53003
+  ],
+  "admission_seed": 53000,
+  "data_seeds": {
+    "train": [
+      53101,
+      53102,
+      53103,
+      53104,
+      53105,
+      53106,
+      53107,
+      53108,
+      53109,
+      53110,
+      53111,
+      53112
+    ],
+    "development": [
+      53201,
+      53202,
+      53203
+    ],
+    "probe": [
+      53301,
+      53302,
+      53303
+    ]
+  },
+  "evaluation_seeds": [
+    53401,
+    53402,
+    53403
+  ],
+  "data": {
+    "trial_policy_ticks": 600,
+    "training_action_noise_sigma": 0.02,
+    "training_noise_seed_offset": 900000,
+    "probe_ticks": [
+      110,
+      260,
+      410
+    ],
+    "fixed_delay_ticks": 0,
+    "train_tasks": [
+      "forward_stop",
+      "reverse_stop",
+      "turn_stop",
+      "forward_stop",
+      "reverse_stop",
+      "turn_stop",
+      "forward_stop",
+      "reverse_stop",
+      "turn_stop",
+      "forward_stop",
+      "reverse_stop",
+      "turn_stop"
+    ],
+    "development_and_probe_task": "turn_stop",
+    "sequence_source": "tools/evaluate_d1_ppo.py:SEQUENCES",
+    "state": "qpos23+qvel22",
+    "action": "executed action16; PD implicit in learned transition",
+    "stop_on_first_failed_trial": true,
+    "full_600_ticks_required": true,
+    "done_semantics": "trial boundary; actual terminated/truncated separately retained"
+  },
+  "budget": {
+    "preflight_expected_policy": 224,
+    "preflight_cap_policy": 256,
+    "formal_expected_max_policy": 23328,
+    "formal_cap_policy": 24000,
+    "formal_cap_native": 240000,
+    "formal_cap_pd_updates": 120000,
+    "expected_all_stages_policy": 23552,
+    "cap_all_stages_policy": 24256,
+    "model_updates": 3000,
+    "policy_network_updates": 0,
+    "theta_proposals_max": 1,
+    "cpu_seconds": 3600,
+    "wall_seconds": 4500,
+    "artifact_bytes_max": 134217728,
+    "nice": 10,
+    "threads": 1,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_bytes": 0,
+    "admission_gib": 4,
+    "reserve_gib": 2
+  },
+  "limitations": [
+    "one local model-gradient round; no critic or full neural policy update",
+    "three model initializations, not policy training seeds",
+    "nine correlated probe points from three reset seeds",
+    "original zero-delay flat-ground tasks only; no claim on 0.3rad/s or wider course",
+    "52 remains incomplete; no old data reused, retry, resume, or post-hoc gate changes",
+    "48 not rerun; v27 not rebound; frozen sources untouched"
+  ],
+  "identities": {
+    "../wheel-legged-control-lab/runtime/d1_b22/runtime_manifest_v27.json": {
+      "bytes": 856947,
+      "sha256": "d3c38429362e82745179f2c526b2ee52d805526df390d52346c805e5a51fff09"
+    },
+    "../wheel-legged-control-lab/scripts/resource_guard42.py": {
+      "bytes": 9324,
+      "sha256": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2"
+    },
+    "../wheel-legged-control-lab/scripts/run_bounded49.py": {
+      "bytes": 6802,
+      "sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d"
+    },
+    ".github/workflows/model-gradient52.yml": {
+      "bytes": 1179,
+      "sha256": "d354a9c450f90eea769278387b6805f43512a2e89c6e3c7449c4a4c63d004db5"
+    },
+    "docs/model_gradient52_plan_20261031.md": {
+      "bytes": 5005,
+      "sha256": "8cbc6f3c4dde6c3e1d002b3b35bd668ff0ad285324bf96ae06b60f111efeadb4"
+    },
+    "evidence/interface_audit_03/golden_run_01/schema.json": {
+      "bytes": 4828,
+      "sha256": "bb45f7332a59ca2cb61552c2033f5e02149268c3ab3b828817914c6ebf16f52c"
+    },
+    "evidence/low_memory_delay25/execution_01/random/export/golden_fixtures.json": {
+      "bytes": 2466221,
+      "sha256": "48d83eedbe5db09658ab7791f3b226a50853c125db7884123dfcd6f2160bb114"
+    },
+    "evidence/low_memory_delay25/execution_01/random/export/report.json": {
+      "bytes": 5632,
+      "sha256": "6d473ea88e665214e270dbf354bb3d84b861df2dac5e2a19959969e13d799597"
+    },
+    "evidence/low_memory_delay25/execution_01/random/train/policy.zip": {
+      "bytes": 2606842,
+      "sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22"
+    },
+    "evidence/low_memory_delay25/execution_01/random/train/protocol.json": {
+      "bytes": 8401,
+      "sha256": "ea458bb2bf449c06279fcb0299284dcb5d2a345c959ab67c57831297933e81a2"
+    },
+    "evidence/low_memory_delay25/execution_01/random/train/result.json": {
+      "bytes": 9905,
+      "sha256": "0ecb4bbd01a4ac0041f55b7ceab0df334a88d3a98fc3eaf0a21e60b4a0e6a4ad"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/L_calf.STL": {
+      "bytes": 731084,
+      "sha256": "e3389a611c0869b002c9ad6c92e5967367e585f31ce67887b47d95f85210599b"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/L_foot.STL": {
+      "bytes": 1512884,
+      "sha256": "afc74ac83c9286f9d201d43dfc682195895a678464e5f8564763b071368d9eeb"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/L_hip.STL": {
+      "bytes": 2066984,
+      "sha256": "6bd4d237b585fce86dc97d0d6f52b10811588f9b9fe2b2de8a74763c33f41d90"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/L_thigh.STL": {
+      "bytes": 2605884,
+      "sha256": "c804473b99df48fe293a7d37e89096313c5421ffbeb1b0141130bfb0ceb4b2ee"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/R_calf.STL": {
+      "bytes": 731184,
+      "sha256": "71c9d33c49b3fcf0ce6aecee4f8407dc9872a1d6f8340705ac43df7154f7966b"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/R_foot.STL": {
+      "bytes": 1545084,
+      "sha256": "11f49126b3fec371ce1277556828a1517309347d777907b57567a50e807dba1f"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/R_hip.STL": {
+      "bytes": 2073184,
+      "sha256": "91751fa14272761ce4176cfb50cefde6397e43cd639ed5a5dc94d64d3b6f69d1"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/R_thigh.STL": {
+      "bytes": 2612484,
+      "sha256": "8d5e6772757f64cb691e8f595f914c5b3acf36295d59e3c1c72543f86302ce4b"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/base_link.STL": {
+      "bytes": 4928784,
+      "sha256": "d13fd7d3a7924e988b957008617744c44de73fbb39b43f3483fbcda989efd92a"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/docking_Link.STL": {
+      "bytes": 1834184,
+      "sha256": "afe9cfe3f8896ff3d53c8bb3b61e12727973705b21751b94c2e5148743072f2c"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/meshes/funtion_Link.STL": {
+      "bytes": 278684,
+      "sha256": "ff81ab5dda97f86c083e0410b0a836cfe438df045d25177cc7ac0215fe76fc9b"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/mujoco/robot.xml": {
+      "bytes": 16718,
+      "sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757"
+    },
+    "src/ddt_ros2_control/urdfs/d1_description/mujoco/scene_contract_plane_02.xml": {
+      "bytes": 921,
+      "sha256": "e224f7ee008bb0afe49db88ed496b9186626126e515be4035183bd9f1f225cff"
+    },
+    "tests/test_adapter52.py": {
+      "bytes": 10945,
+      "sha256": "e65138d9eb53e9fda4725f146f146084e3e68ad0d4c90f95167129ce6c5a4265"
+    },
+    "tests/test_control52.py": {
+      "bytes": 10190,
+      "sha256": "53cbf5d52e5e1fcfcd5cd52f40cc20e0fed0ecd54d873210d9fdd4bca166cc5a"
+    },
+    "tests/test_dynamics52.py": {
+      "bytes": 3905,
+      "sha256": "c9c8bc53073d7a3e1e09487e1f61e5e768269499cfa8cdd0c7ffe2a884178f39"
+    },
+    "tools/evaluate_d1_ppo.py": {
+      "bytes": 22604,
+      "sha256": "47e5b3dd2a806b958c1be5d24a46a54848e6a4981401a07f40b0be3a4107f121"
+    },
+    "tools16/evaluate_comparison16.py": {
+      "bytes": 21345,
+      "sha256": "8325306f29aa904ffe6b1c905566ccfdc6cf33864bcc5979cc439c92a942b1dc"
+    },
+    "tools33/reference_shape33.py": {
+      "bytes": 1543,
+      "sha256": "db3c8f70d9deaa968ba5f2d1489edb624e19be8158202453a61924c278d9cf0c"
+    },
+    "tools52/adapter52.py": {
+      "bytes": 14827,
+      "sha256": "ba3199b6a25a6da6efcd97051e5dd8fd0a5423afd703dfa14950ef9dee742297"
+    },
+    "tools52/control52.py": {
+      "bytes": 7796,
+      "sha256": "8bc637b13fad5255425252e9e53a4fa4f85fdd5f6c5c4b1283ec94d367a328f4"
+    },
+    "tools52/dynamics52.py": {
+      "bytes": 14896,
+      "sha256": "623f379faa89592ea8d5b4b53e158de3795b4f1112fbe29dfd165556a2dc46a3"
+    },
+    "tools52/run_pilot52.py": {
+      "bytes": 21577,
+      "sha256": "2e6faed7a4e14f2fd34f80729c914de5c702c0177cc347c3b8c771df6b6d3e42"
+    },
+    "training/configs/interface03b.json": {
+      "bytes": 2630,
+      "sha256": "dee7aaaea980fbfbfb438c85be9e97fc605bb5a375f62f366fccc7edbaa7bff8"
+    },
+    "training/configs/pilot03b.json": {
+      "bytes": 2826,
+      "sha256": "3996e6e7c677be59e2852692d3f71ef7d0de8a689b6be3493f9ba466d92a589f"
+    },
+    "training/configs/pilot03c.json": {
+      "bytes": 3185,
+      "sha256": "562bdc6b26fba7bbb4906f7045ba11cbe70848a3335bd8d5e1659540a3f2b604"
+    },
+    "training/configs/pilot03d.json": {
+      "bytes": 3867,
+      "sha256": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea"
+    },
+    "training/d1_rl/__init__.py": {
+      "bytes": 123,
+      "sha256": "d3bfc8ce5b67e613448636f480f830a96c11de41b993fbf6ebeb2799bc034e1c"
+    },
+    "training/d1_rl/env.py": {
+      "bytes": 34736,
+      "sha256": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b"
+    },
+    "training/d1_rl/factory03.py": {
+      "bytes": 1414,
+      "sha256": "1cec9db3a0875cdb401b0f213f9b0e7a70daa653b1a1d60c3d4ef29d9d406ac1"
+    },
+    "training/d1_rl/fast_checks.py": {
+      "bytes": 3666,
+      "sha256": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd"
+    },
+    "training/d1_rl/interface.py": {
+      "bytes": 6122,
+      "sha256": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232"
+    },
+    "training/d1_rl/task03c.py": {
+      "bytes": 6567,
+      "sha256": "782f244b0f0916914bb1dcb0235306d45b18e8c36fb65f39cd3518b490b30475"
+    },
+    "training/d1_rl/task03d.py": {
+      "bytes": 7114,
+      "sha256": "1780b223ed141eecced07f69d01a6ae5802868093258ff76b0b47383ac8a9e5d"
+    },
+    "tools53/run_pilot53.py": {
+      "bytes": 13547,
+      "sha256": "064ea4fbc373d3d9fd4e9f431f1964aa4a8b95d1dc1cd387cceadfaea774a43c"
+    },
+    "tools53/collection53.py": {
+      "bytes": 19153,
+      "sha256": "2471c5f1163d7e7bd0e020ff171ba3789f6d0ecc2d98ec0769db1ca704bee812"
+    },
+    "tests/test_collection53.py": {
+      "bytes": 16088,
+      "sha256": "dfbf8edb14733cdd2b8399262faf99ba2471fdef943284f0ed3c73b21ff6ba68"
+    },
+    "tests/test_run_pilot53.py": {
+      "bytes": 2344,
+      "sha256": "58bb03338298752bc950d99582918fccf67067bd44837f4c3154cd793207d001"
+    },
+    ".github/workflows/model-gradient53.yml": {
+      "bytes": 1232,
+      "sha256": "607ffa984a53bcee03f086ca78c244812e598e4caa0b33eb466bec693d6e65d4"
+    },
+    "docs/model_gradient53_proposal_20261101.md": {
+      "bytes": 6325,
+      "sha256": "8fd904a77c9c0c64626476069650a68fc9720a9bd3a20db295b41813cd898e54"
+    },
+    "docs/experiments52/model_gradient52_revision02.json": {
+      "bytes": 12179,
+      "sha256": "6fb453fb32cc8b893b1115feb230f101bdbbae2ae6e2de48cdd8a65bef6f4a5f"
+    },
+    "reports/model_gradient52_results_20261031.json": {
+      "bytes": 30530,
+      "sha256": "fe1b2f874c4edf2771cd4afe32dc1e055c545c0fa7cb4d211e0ddb5fad9d380f"
+    }
+  }
+}
