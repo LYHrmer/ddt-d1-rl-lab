@@ -1,0 +1,48 @@
+{
+  "schema": "d1-physical-fd55c-diagnostic-v1",
+  "source_sha256": {
+    "tools55/probe_local55.py": "04dfe5e7d25e8324a6124d16d2d3a0401a37866c32cdcc28b30a7590e58b4bdf",
+    "tools55/run55.py": "163d118405bda54cecc1107ce1413ff2bad43275559624bcdfa7a9123b6ebd59",
+    "docs/experiments55/observed55_preregistered.json": "6777c1d9fe691cc58c63b9a6d31ba368f785f57b95063b075ebf4997e17e86f4",
+    "docs/observed_gradient55_local_plan_20261101.md": "1956845fe0cffbcf0431d458e1187e8ae364315633cf4ffb79d9b6e14194c5f2",
+    "evidence/observed_gradient55/execution_01/report.json": "f67d97fe209aa133879d30f7b67c4f5c32453b3f40151e3e33e8468877b0041b",
+    "evidence/observed_gradient55/execution_01/collection_55301.npz": "c3e6f7ac3f2eb418aac3c3c8afb7fe05a75c60093d564d4122db10cd2eec2915",
+    "evidence/observed_gradient55/execution_01/collection_55302.npz": "eec5fae7f4553b1058b032fd3f6267827424c8f0055dc6d3ae813f907fd0956d",
+    "evidence/observed_gradient55/execution_01/collection_55303.npz": "fd25cf4e19e30f2a3603c32d57727f34ca0048c3acfad2b0a3fc87e8aa5eb9b8",
+    "evidence/observed_gradient55/execution_01/probe_00.npz": "91b1b9cdf116d22e532d8c0b56be3f623447caf62a11173ef875264af4f0a177",
+    "evidence/observed_gradient55/execution_01/probe_01.npz": "85f345ff2f3f28616f5b9d0754ed2919d68367e48436c88e8aef41b94a1b6682",
+    "evidence/observed_gradient55/execution_01/probe_02.npz": "fffe9f0a23e16d10b2fca1b0a8e4b52d96de64826072307ed2a60a80275e2c7b",
+    "evidence/observed_gradient55/execution_01/probe_03.npz": "7e2b5b0cc98e18a86ba577320bd4b7520d21e5dea07f41106bdeec43bf04ebd6",
+    "evidence/observed_gradient55/execution_01/probe_04.npz": "b77aeafaaf14f8cb2b2672cb26ac7573338c3e2fed1ea13f8c1a60b04c040b16",
+    "evidence/observed_gradient55/execution_01/probe_05.npz": "31f1041b87e61bdbae54b3a495b9ee8c934c8b6a4c2e98baac5f79233a09ec4f",
+    "evidence/observed_gradient55/execution_01/probe_06.npz": "251810c72111f56cc45fa13c75b97c9e1dceb8767cad88c0c9001c12c4500c91",
+    "evidence/observed_gradient55/execution_01/probe_07.npz": "944ee68ea66370da7b346636bd6dbf57db2efce05d1b0d616c64bcaeb8a10615",
+    "evidence/observed_gradient55/execution_01/probe_08.npz": "72e417197cb54821f69f7177a9c6aaf9209288be5241cba288833dc2a97ebb79"
+  },
+  "probe_seeds": [
+    55301,
+    55302,
+    55303
+  ],
+  "eps": [
+    3.125e-05,
+    6.25e-05,
+    0.000125,
+    0.00025
+  ],
+  "expected_policy_steps": 4680,
+  "hard_policy_cap": 5000,
+  "cpu_seconds": 300,
+  "wall_seconds": 420,
+  "does_not_rejudge55": true,
+  "training_updates_cap": 0,
+  "local_stability_rule": {
+    "all_central_abs_ge": 1e-05,
+    "central_same_sign": true,
+    "whole_grid_relative_spread_max": 0.25,
+    "each_one_sided_same_sign": true,
+    "each_one_sided_relative_gap_max": 0.25,
+    "epsilon_selection": null
+  },
+  "action_resolution": "all four first-step wheels nonzero on each perturbed branch"
+}

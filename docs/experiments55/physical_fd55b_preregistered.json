@@ -1,0 +1,39 @@
+{
+  "schema": "d1-physical-fd55b-diagnostic-v1",
+  "source_sha256": {
+    "tools55/probe_stability55.py": "1502c99be466d21aef350524cb3e10f8e31e86152a70a70ca367860aa369e95f",
+    "tools55/run55.py": "163d118405bda54cecc1107ce1413ff2bad43275559624bcdfa7a9123b6ebd59",
+    "docs/experiments55/observed55_preregistered.json": "6777c1d9fe691cc58c63b9a6d31ba368f785f57b95063b075ebf4997e17e86f4",
+    "docs/observed_gradient55_stability_plan_20261101.md": "f61ed9209dc4629ff0c118c0818edea71e0613336925246cf50f9f951f0cb465",
+    "evidence/observed_gradient55/execution_01/report.json": "f67d97fe209aa133879d30f7b67c4f5c32453b3f40151e3e33e8468877b0041b",
+    "evidence/observed_gradient55/execution_01/probe_snapshots.pkl": "8263d7727e6768abbbd85dc40cd819bcf2dee749dbffca4a07c4a0d0cb54ce00",
+    "evidence/observed_gradient55/execution_01/probe_00.npz": "91b1b9cdf116d22e532d8c0b56be3f623447caf62a11173ef875264af4f0a177",
+    "evidence/observed_gradient55/execution_01/probe_01.npz": "85f345ff2f3f28616f5b9d0754ed2919d68367e48436c88e8aef41b94a1b6682",
+    "evidence/observed_gradient55/execution_01/probe_02.npz": "fffe9f0a23e16d10b2fca1b0a8e4b52d96de64826072307ed2a60a80275e2c7b",
+    "evidence/observed_gradient55/execution_01/probe_03.npz": "7e2b5b0cc98e18a86ba577320bd4b7520d21e5dea07f41106bdeec43bf04ebd6",
+    "evidence/observed_gradient55/execution_01/probe_04.npz": "b77aeafaaf14f8cb2b2672cb26ac7573338c3e2fed1ea13f8c1a60b04c040b16",
+    "evidence/observed_gradient55/execution_01/probe_05.npz": "31f1041b87e61bdbae54b3a495b9ee8c934c8b6a4c2e98baac5f79233a09ec4f",
+    "evidence/observed_gradient55/execution_01/probe_06.npz": "251810c72111f56cc45fa13c75b97c9e1dceb8767cad88c0c9001c12c4500c91",
+    "evidence/observed_gradient55/execution_01/probe_07.npz": "944ee68ea66370da7b346636bd6dbf57db2efce05d1b0d616c64bcaeb8a10615",
+    "evidence/observed_gradient55/execution_01/probe_08.npz": "72e417197cb54821f69f7177a9c6aaf9209288be5241cba288833dc2a97ebb79"
+  },
+  "epsilons": [
+    0.00025,
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01
+  ],
+  "probe_seeds": [
+    55301,
+    55302,
+    55303
+  ],
+  "expected_max_policy": 5832,
+  "hard_cap_policy": 6000,
+  "cpu_cap_seconds": 300,
+  "wall_cap_seconds": 420,
+  "training_updates_cap": 0,
+  "does_not_rejudge55": true
+}
