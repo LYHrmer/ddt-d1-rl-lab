@@ -2,9 +2,9 @@ name: paired-horizon56
 on:
   push:
     branches: [main]
-    paths: ['tools56/**', 'tests/test_*56.py', 'docs/experiments56/**', '.github/workflows/paired-horizon56.yml']
+    paths: ['tools56/**', 'tools57/**', 'tests/test_*56.py', 'tests/test_response57.py', 'docs/experiments56/**', 'docs/experiments57/**', '.github/workflows/paired-horizon56.yml']
   pull_request:
-    paths: ['tools56/**', 'tests/test_*56.py', 'docs/experiments56/**', '.github/workflows/paired-horizon56.yml']
+    paths: ['tools56/**', 'tools57/**', 'tests/test_*56.py', 'tests/test_response57.py', 'docs/experiments56/**', 'docs/experiments57/**', '.github/workflows/paired-horizon56.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,5 +28,5 @@ jobs:
         run: |
           python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
           python -m pip install --quiet 'numpy<3' pytest
-      - name: Verify paired sampling, horizon supervision and incomplete evidence
-        run: python -m pytest --noconftest tests/test_fit56.py tests/test_run56.py tests/test_numerics54.py -q
+      - name: Verify paired fits, observed gradients and action-response diagnostics
+        run: python -m pytest --noconftest tests/test_fit56.py tests/test_run56.py tests/test_numerics54.py tests/test_observed55.py tests/test_response57.py -q
