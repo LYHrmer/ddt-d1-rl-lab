@@ -1,0 +1,406 @@
+{
+  "schema": "d1-objective81-source-feasibility-v1",
+  "status": "COMPLETE",
+  "review_mode": "stdlib-only preexecution source/resource review; no imported project or numeric module",
+  "scientific_status": "NOT_RUN; no physical calibration or candidate improvement is guaranteed",
+  "scope": "Frozen input closure,source interfaces,planned forward count,and empirical full-H artifact forecast; not a replacement for formal admission or numerical tests",
+  "inputs": {
+    "parent_plan80": {
+      "path": "docs/experiments80/steady_sampling80_preregistered.json",
+      "bytes": 182566,
+      "sha256": "094fb27cecad7ac4a6f5b226265c1403dc871ffc8d59c78eae4b5fdb91d36c38"
+    },
+    "source75_report": {
+      "path": "evidence/world_vz75/execution_01/report.json",
+      "bytes": 8689024,
+      "sha256": "26768d7378479f8038b89f793efab3cadcd801b2b9867c7e5daf49d15b9e3f79"
+    },
+    "reference80_report": {
+      "path": "evidence/steady_sampling80/execution_01/report.json",
+      "bytes": 900504,
+      "sha256": "312fd50afe2e953bc96ce9d57204680b38bc0216e6928593859955edd8ba97f7"
+    },
+    "reference79_report": {
+      "path": "evidence/feedback79/execution_01/report.json",
+      "bytes": 301208,
+      "sha256": "b057eb95015bfb75c3df770ef9f62c3e61e939fdf36c54a990aab0cf4b0e12ab"
+    },
+    "approved_v2_proposal": {
+      "path": "/home/lyh/steady_sampling80_work_20261103/solution81_proposal_v2.md",
+      "bytes": 11245,
+      "sha256": "e0f168f8c4ae2cd6b2c49186ad1861caf449d6d98031fdef4b711e3a63e2444b"
+    },
+    "inspected81_source_snapshot": [
+      {
+        "path": "tools81/run81.py",
+        "bytes": 37975,
+        "sha256": "7216dd5d467dc6ec1b63d0e2f9be29659e1a07d075f02f4cf76bfb520b569040"
+      },
+      {
+        "path": "tools81/policy81.py",
+        "bytes": 23393,
+        "sha256": "11a37212db3977d8dfea4988e90cc70fa822c9fd1194567184666d54447d4e37"
+      },
+      {
+        "path": "tools81/compare81.py",
+        "bytes": 17146,
+        "sha256": "d54ba2d701b5d31e58a57474084d9b51c8806b267fa1d0c3e792ff891ae96e81"
+      },
+      {
+        "path": "tools81/diagnostics81.py",
+        "bytes": 9695,
+        "sha256": "dbcc8f821698bafa1550dd1712c752dc7a50565c4f3ff74d00c51eb8f9ada77d"
+      }
+    ],
+    "snapshot_semantics": "inspection-time hashes only; final81 plan must bind final source versions"
+  },
+  "parent_source_closure": {
+    "expected_bindings": 1368,
+    "checked_bindings": 1368,
+    "all_sha256_equal": true,
+    "missing": [],
+    "mismatches": [],
+    "sorted_binding_inventory_sha256": "4db5b73624038ac6ba29b2a6749c9968ad9d04919f15674a7d3785341fd5610d",
+    "inheritance_rule": "Every parent80 path must remain present with identical SHA; union new81 dependencies without replacement",
+    "additional_direct_bindings_recommended": [
+      {
+        "path": "evidence/low_memory_delay25/execution_01/random/train/policy.zip",
+        "bytes": 2606842,
+        "sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+        "directly_present_in_parent80_closure": false
+      },
+      {
+        "path": "evidence/low_memory_delay25/execution_01/random/export/golden_fixtures.json",
+        "bytes": 2466221,
+        "sha256": "48d83eedbe5db09658ab7791f3b226a50853c125db7884123dfcd6f2160bb114",
+        "directly_present_in_parent80_closure": false
+      },
+      {
+        "path": "/home/lyh/wheel-legged-control-lab/scripts/run_bounded49.py",
+        "bytes": 6802,
+        "sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+        "directly_present_in_parent80_closure": false
+      },
+      {
+        "path": "/home/lyh/wheel-legged-control-lab/scripts/resource_guard42.py",
+        "bytes": 9324,
+        "sha256": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2",
+        "directly_present_in_parent80_closure": false
+      }
+    ]
+  },
+  "frozen_control_models": [
+    {
+      "seed": 64001,
+      "arm": "control",
+      "file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64001/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "2bf421e7a0d386e8b40de20613fff18154711fab3ee0f99ee6e7f444b8651719"
+      },
+      "mapping_sha256_recorded": "edd04cfef54bfcbdfbb8b30b32d4bb8b2430d22b8694fe5936cc83b01a9c7419",
+      "mapping_recalculated": false,
+      "completed_updates": 1000
+    },
+    {
+      "seed": 64002,
+      "arm": "control",
+      "file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64002/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "1d05ee44067d4b033f3604a54975f4727d7ce2d9ec4109c84ae463a9e9a3804f"
+      },
+      "mapping_sha256_recorded": "e41d508a1fd995e90e56cf1b276c0ea5fabf346916feabd7cf80ac7034a2c794",
+      "mapping_recalculated": false,
+      "completed_updates": 1000
+    },
+    {
+      "seed": 64003,
+      "arm": "control",
+      "file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64003/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "80afdbc19b856e8805eb0d4ef1b0156c3ee2076f5c3f601a2d3ee49aee872a16"
+      },
+      "mapping_sha256_recorded": "508badf3dbddc9e6ed1eca27ef27148007f4b759c3907d1cebe46114fdc61c58",
+      "mapping_recalculated": false,
+      "completed_updates": 1000
+    }
+  ],
+  "forward_budget": {
+    "cap": 30000,
+    "planned": 23328,
+    "remaining": 6672,
+    "D_gradient_and_ideal_FD": {
+      "formula": "3 models x2 arms x6 D starts x(1 AD +4 scales x2 signs) x32",
+      "calls": 10368
+    },
+    "V_actual_F32_weight_predictions": {
+      "trace_formula": "3 models x(6 stable starts x17 actors +9 other starts x3 actors)",
+      "traces": 387,
+      "calls": 12384
+    },
+    "V_shared_anchor_AD": {
+      "formula": "3 models x6 V starts x32; C andQ and per-reset AD reuse same graph",
+      "calls": 576
+    },
+    "prefixes": [
+      1,
+      8,
+      16,
+      32
+    ],
+    "prefix_recomputed_forwards": 0,
+    "H_model_forwards": 0,
+    "notes": [
+      "Ideal FD is only D. V actual-F32 endpoint finite differences are separate from ideal F64 AD selfchecks.",
+      "No additional V four-scale ideal FD is budgeted; adding it costs9216 and would make32544.",
+      "Current hook counts after each model forward and errors above cap; one excess call could execute if a future code change overruns. Exact planned count and no extra diagnostic rollout remain required."
+    ]
+  },
+  "physical_budget": {
+    "preflight_policy": 224,
+    "D_policy": 1800,
+    "V_collection_policy": 1800,
+    "V_branches": 372,
+    "V_branch_policy": 11904,
+    "formal_screen_policy": 15504,
+    "screen_including_preflight_policy": 15728,
+    "H_episodes": 63,
+    "H_policy": 37800,
+    "formal_full_policy": 53304,
+    "full_including_preflight_policy": 53528,
+    "full_native": 535280,
+    "full_PD": 267640,
+    "shared_anchor_repeat_sites": 15,
+    "main_candidates": 6,
+    "candidate_parameter_updates": 6,
+    "model_updates": 0
+  },
+  "artifact_feasibility": {
+    "conclusion": "EMPIRICAL_FULL_H_ESTIMATE_FITS_WITH_RUNTIME_GUARDS",
+    "cap_bytes": 167772160,
+    "estimated_bytes_including_reserves": 149130042,
+    "estimated_MiB": 142.22149085998535,
+    "remaining_bytes": 18642118,
+    "remaining_MiB": 17.77850914001465,
+    "components": [
+      {
+        "category": "all_physical_journals_including_admission",
+        "count": 53528,
+        "unit_bytes_allowance": 1190,
+        "estimated_bytes": 63698320,
+        "basis": "80 observed maximum line1061; allow129 extra bytes for longer phase/counter strings"
+      },
+      {
+        "category": "actual_F32_promoted_model_traces",
+        "count": 387,
+        "unit_bytes_allowance": 61000,
+        "estimated_bytes": 23607000,
+        "basis": "80 compressed NPZ maximum52917; approx15% compression/metadata margin; full trace preserved"
+      },
+      {
+        "category": "physical_branches",
+        "count": 372,
+        "unit_bytes_allowance": 37000,
+        "estimated_bytes": 13764000,
+        "basis": "80 compressed NPZ maximum27074; adds627-value first actor input,32x6 F64 cost components and margin"
+      },
+      {
+        "category": "D_V_full_episode_and_context_archives",
+        "count": 6,
+        "unit_bytes_allowance": 700000,
+        "estimated_bytes": 4200000,
+        "basis": "80 maximum full turn episode directory669536; D only2 starts,V5; archive/source inputs preserved"
+      },
+      {
+        "category": "H_full_episode_npz_and_receipt_allowance",
+        "count": 63,
+        "unit_bytes_allowance": 165000,
+        "estimated_bytes": 10395000,
+        "basis": "79 maximum full-episode NPZ139732 plus receipt/compression margin"
+      },
+      {
+        "category": "six_main_full_F32_actor_checkpoints",
+        "count": 6,
+        "unit_bytes_allowance": 465215,
+        "estimated_bytes": 2791290,
+        "basis": "same complete25 architecture as80 observed torch.save checkpoint"
+      },
+      {
+        "category": "actual_F32_head_and_exact_F64_delta_files",
+        "count": 48,
+        "unit_bytes_allowance": 32960,
+        "estimated_bytes": 1582080,
+        "basis": "16x129 F32 head plus same-shaped F64 actual delta;8192 container allowance"
+      },
+      {
+        "category": "ideal_F64_head_files",
+        "count": 48,
+        "unit_bytes_allowance": 24704,
+        "estimated_bytes": 1185792,
+        "basis": "16x129 F64 head;8192 container allowance; no complete ideal actor/traces saved"
+      },
+      {
+        "category": "direction_head_step_files",
+        "count": 6,
+        "unit_bytes_allowance": 107264,
+        "estimated_bytes": 643584,
+        "basis": "six F64 head-sized tensors plus8192 container allowance"
+      },
+      {
+        "category": "all_JSON_duplicates_and_progress",
+        "count": 1,
+        "unit_bytes_allowance": 16777216,
+        "estimated_bytes": 16777216,
+        "basis": "includes standalone point receipts,arm receipts,seed copies,prediction andbranch summaries,seals,cross_readback,diagnostics,and final report copies; planning allowance,not measured81 output"
+      },
+      {
+        "category": "guard_stdout_stderr_resources",
+        "count": 1,
+        "unit_bytes_allowance": 1048576,
+        "estimated_bytes": 1048576,
+        "basis": "conservative external-work allowance; runner stdout is summary,not full report"
+      },
+      {
+        "category": "additional_admission_artifacts",
+        "count": 1,
+        "unit_bytes_allowance": 1048576,
+        "estimated_bytes": 1048576,
+        "basis": "preflight journal already counted; additional snapshot/mapping/receipt artifacts allowance"
+      },
+      {
+        "category": "finalization_and_failed_prefix_reserve",
+        "count": 1,
+        "unit_bytes_allowance": 8388608,
+        "estimated_bytes": 8388608,
+        "basis": "separate from normal JSON allowance; preserve failure and terminal report"
+      }
+    ],
+    "observed79_80": {
+      "prediction80_npz": {
+        "file_count": 135,
+        "sum_bytes": 7066430,
+        "maximum_file_bytes": 52917,
+        "inventory_sha256": "d8a3452cd2fcd866b98131d7f1c2ef64363d8fa677985eb4a86d4038ebc67bf7",
+        "maximum_uncompressed_npz_member_bytes": 198784
+      },
+      "physical80_npz": {
+        "file_count": 120,
+        "sum_bytes": 3217974,
+        "maximum_file_bytes": 27074,
+        "inventory_sha256": "74eba24fda7839372e558faaa5f29ba96975d3106e214f5779e330824d0d01f1",
+        "maximum_uncompressed_npz_member_bytes": 100736
+      },
+      "physical80_json": {
+        "file_count": 120,
+        "sum_bytes": 178276,
+        "maximum_file_bytes": 1506,
+        "inventory_sha256": "ee22373d3a2358a39c580b766c5a862452c80933508a3e84eefd04896aaa7f5a"
+      },
+      "full79_npz": {
+        "file_count": 63,
+        "sum_bytes": 8632542,
+        "maximum_file_bytes": 139732,
+        "inventory_sha256": "8b49795d6df8634a722f7368e1e7b83a03f0f7a8726e9d122e431a99b210ab6d"
+      },
+      "full79_json": {
+        "file_count": 63,
+        "sum_bytes": 127214,
+        "maximum_file_bytes": 2036,
+        "inventory_sha256": "feecc634c70a43c1bd605a706a9aa863031443939a0cb849579fd2e78fc42552"
+      },
+      "development80_all_files": {
+        "file_count": 36,
+        "sum_bytes": 5688363,
+        "maximum_file_bytes": 553842,
+        "inventory_sha256": "98a543c8edec0685b0703631070d499c24d4873c28bb8aa70c5d1b0e80e1d6a2"
+      },
+      "actor80_checkpoints": {
+        "file_count": 12,
+        "sum_bytes": 5582580,
+        "maximum_file_bytes": 465215,
+        "inventory_sha256": "077cbcc6083d48758b1eb4e07a190a8d4208d5098a009607eb1e0b900a506cc7"
+      },
+      "journal80": {
+        "path": "evidence/steady_sampling80/execution_01/all_physics_steps.jsonl",
+        "bytes": 9536881,
+        "sha256": "4f2dbeab5c5a6f4dd74fb4f8bd87d55f22831412965c3874857026ce1ce9e82e",
+        "rows": 9240,
+        "max_line_bytes": 1061
+      },
+      "development80_max_episode_bytes": 669536
+    },
+    "actual_main_actor_checkpoints": 6,
+    "actual_F32_probe_head_files": 48,
+    "ideal_F64_head_files": 48,
+    "complete_ideal_F64_actor_files": 0,
+    "ideal_F64_full_trace_files": 0,
+    "full_actual_model_traces": 387,
+    "normal_duplicate_JSON_allowance_bytes": 16777216,
+    "failure_finalization_reserve_bytes": 8388608,
+    "guard_work_included_in_estimate": true,
+    "runtime_cap_scope": "run81 checks all files under raw output.parent including preflight and execution; external guard work directory is not included by that implementation",
+    "limitations": [
+      "This is a compressed-size forecast with explicit per-file margins, not an adversarial worst-case storage proof.",
+      "80 maximum uncompressed prediction NPZ is198784 bytes; losing compression could breach160MiB. Runtime cap must stop safely and retain all existing evidence; no truncation/deletion or scientific completion claim.",
+      "Standalone receipts,summaries and final report intentionally duplicate scalar evidence; allowance includes those copies. Final report is written after verify_final,so the8MiB runtime reserve must remain intact.",
+      "Full-H completion is conditional on allV gates; failure-path incomplete data must never be promoted to complete."
+    ]
+  },
+  "live_snapshot_memory": {
+    "D_inputs": 6,
+    "D_live_snapshots_released_before_V": true,
+    "V_live_snapshots": 15,
+    "estimated_V_MjData_bytes_from_prior_approximately": 222000000,
+    "guaranteed_headroom": false,
+    "notes": [
+      "V snapshots are same-env live snapshots; disk integration/Python context is not a full live restoration substitute.",
+      "Actual allocation is guarded by initial effective available4GiB sustained10s,run-time2GiB reserve,MemoryHigh2GiB/MemoryMax3GiB/swap0."
+    ]
+  },
+  "supervision": {
+    "supervisor_path": "/home/lyh/wheel-legged-control-lab/scripts/run_bounded49.py",
+    "resource_guard_path": "/home/lyh/wheel-legged-control-lab/scripts/resource_guard42.py",
+    "preflight_guard_timeout_s": 480,
+    "formal_guard_timeout_s": 1500,
+    "admission_wait_cap_s": 300,
+    "execution_wall_cap_s": 1200,
+    "timeout_includes_admission_wait": true,
+    "formal_cpu_rlimit_soft_hard": [
+      899,
+      900
+    ],
+    "formal_cooperative_cpu_s": 880,
+    "formal_cooperative_wall_s": 1190,
+    "nice": 10,
+    "cpu_affinity_count": 1,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "oom_policy": "kill",
+    "completion_requires": [
+      "raw report status=COMPLETE and verification_after=COMPLETE",
+      "guard status=COMPLETE and returncode=0",
+      "child_reaped=true and owned_process_group_empty=true"
+    ],
+    "partial_limits": [
+      "runtime74 handles TERM,INT,XCPU and attempts final source verification",
+      "SIGKILL/OOM may leave only guard,initial incomplete anddurable prefix journals; no promise of a final report"
+    ]
+  },
+  "freeze_requirements": [
+    "Bind final81 run/policy/compare/diagnostics,all4 test files,proposal/literature/execution docs,CI,and this feasibility file; record plan SHA outside its own source map.",
+    "Inherit every one of1368 parent80 SHA entries unchanged and bind parent80 plan itself.",
+    "Directly bind actual25 checkpoint,golden fixtures,and both external supervisor files or record and verify them in an explicit external-source SHA section.",
+    "Do not call80 verify/calculate/select_points/evaluate/recover_updates with newglobals or monkeypatch frozen modules; new81 runner owns seeds,counters,stages andconditional H."
+  ],
+  "limitations": [
+    "No model,actor,physics,Torch,NumPy,pytest or training was executed for this review.",
+    "Recorded model mapping hashes are source metadata,not independently decoded tensor mapping hashes in this feasibility review.",
+    "Budget fit and internal AD/FD agreement do not prove a true physical descent direction or eliminate model-gradient error.",
+    "Existing75/78 NOT_REQUALIFIED remains unchanged even if a later81 control candidate passes."
+  ],
+  "cpu_seconds_stdlib_review": 0.31839960100000003
+}
