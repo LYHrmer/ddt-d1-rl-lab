@@ -1,0 +1,19 @@
+name: output-isolation77
+on:
+  push:
+    branches: [main]
+    paths: ['tools77/**', 'tests/test_*77.py', '.github/workflows/output-isolation77.yml']
+  pull_request:
+    paths: ['tools77/**', 'tests/test_*77.py', '.github/workflows/output-isolation77.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  geometry:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -B -m unittest discover -s tests -p 'test_*77.py' -v
