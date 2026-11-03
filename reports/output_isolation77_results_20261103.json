@@ -1,0 +1,3232 @@
+{
+  "schema": "d1-output_isolation77-published-v1",
+  "source_commit": "db9b0f13c73b393b4798ac05ad50f7c047ed621e",
+  "plan_sha256": "878a12e143662e72494a07ec0f9b93049ec7517bf10ad762ed75b7dbe872697b",
+  "source_bindings_verified": 1235,
+  "sealed_artifacts_verified": 0,
+  "formal": {
+    "status": "COMPLETE",
+    "model_calls": 0,
+    "actor_calls": 0,
+    "physics_steps": 0,
+    "updates": 0,
+    "failure": null,
+    "plan_sha256": "878a12e143662e72494a07ec0f9b93049ec7517bf10ad762ed75b7dbe872697b",
+    "schema": "d1-output-isolation77-result-v1",
+    "comparisons": [
+      {
+        "seed": 64001,
+        "all": {
+          "control": {
+            "body_vx": {
+              "normalized_rmse": 0.00020067710836960836,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 148,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019673225841448032,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.001463832141262009,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 0,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.001660676615358162,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00019871447270449302
+          },
+          "active": {
+            "body_vx": {
+              "normalized_rmse": 0.0002128941012678938,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 160,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019716871293273236,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004639201246005423,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0016603937126919899,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00020518211388205167
+          },
+          "world_only": {
+            "body_vx": {
+              "normalized_rmse": 0.00018838541692059061,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 135,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00022788567482678768,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004639201246005423,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.001660676615358162,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.0002090704977987152
+          },
+          "other_only": {
+            "body_vx": {
+              "normalized_rmse": 0.00022925687431871086,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 164,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00020571512345007352,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.001463832141262009,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 0,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0016603937126919899,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00021780430027718023
+          },
+          "body_protected": {
+            "body_vx": {
+              "normalized_rmse": 0.00020067710835537344,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 148,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019673225842420144,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004639201246005423,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.001660676615358162,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00019871447270211734
+          }
+        },
+        "by_role": {
+          "old56": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00014490611027993016,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019910638428884332,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0017611387607636066,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012657497636858553,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001741280176494234
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00014807615883898344,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002103592254724931,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045397703734948363,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012902304993799704,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018190320579623527
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00013781955503940099,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 24,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002878825198210118,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045397703734948363,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012657497636858553,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00022568847441745195
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00016396903660310325,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001476053023827569,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0017611387607636066,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012902304993799704,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015600187539907158
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.000144906110278936,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019910638428330445,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045397703734948363,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012657497636858553,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00017412801764584305
+            }
+          },
+          "old64": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00018356625037825217,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00011484193893679766,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0014075179823796787,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013690978182567285,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015310982858179667
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00019978398020829272,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00011340796268064646,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045944715344925665,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001353018115287959,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00016244230475347606
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00016518538578506813,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 27,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010822805265400788,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045944715344925665,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013690978182567285,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013964154657235877
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00021861296276886919,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00016674004323598247,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0014075179823796787,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001353018115287959,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001944143378314988
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00018356625030694813,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001148419389645151,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00045944715344925665,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013690978182567285,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001531098285494477
+            }
+          },
+          "old69": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00024334761879903126,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002611482635355033,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0012202041034579292,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002435080200075051,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025240491192008064
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00026669297880544686,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002513762978871021,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005558282953974413,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0024370849423601356,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025914782276101377
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00022951286690867532,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00023475083970553076,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005558282953974413,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002435080200075051,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023214662696137878
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0002848047769658582,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00031407884721912377,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0012202041034579292,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0024370849423601356,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00029979933560055294
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00024334761880457197,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00026114826355636234,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005558282953974413,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002435080200075051,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025240491193354237
+            }
+          },
+          "old72": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 7.876116109574953e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00017947684440378444,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0017043109855336112,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001510519636717424,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013859159096837523
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 7.67916850315104e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00018464278422037372,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004909495760263779,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0015062463297605504,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00014140353718105885
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 8.716902258441056e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00026148398252372234,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004909495760263779,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001510519636717424,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001949003740565777
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 8.329178827133944e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00012102005191068108,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0017043109855336112,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0015062463297605504,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00010388304712007051
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 7.876116114167346e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00017947684439302723,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004909495760263779,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001510519636717424,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013859159097445912
+            }
+          },
+          "fresh": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.0002850276757987512,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 24,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00020068764554954718,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011125340866986238,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014496198294913678,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00024649169057745
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00029623841137645286,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 24,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019995533539496373,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003300696784449739,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001442574996910784,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002527244868703436
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0002662523061656794,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 20,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00020393115872178517,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003300696784449739,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014496198294913678,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023714785265331059
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00031633023358633184,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 24,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00022070935081141201,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011125340866986238,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 0,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001442574996910784,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00027274295061135696
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.0002850276757776466,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 24,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00020068764556930603,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003300696784449739,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014496198294913678,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002464916905732916
+            }
+          }
+        }
+      },
+      {
+        "seed": 64002,
+        "all": {
+          "control": {
+            "body_vx": {
+              "normalized_rmse": 0.00020935783373565278,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019206038006470806,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0014004202850420998,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 56,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015621229526633772,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00020089536099308683
+          },
+          "active": {
+            "body_vx": {
+              "normalized_rmse": 0.00022175711927636236,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.0001990578199618864,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004779722103190258,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015615630824149331,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00021071335462866323
+          },
+          "world_only": {
+            "body_vx": {
+              "normalized_rmse": 0.00019463699764700552,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 160,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00022592769658563928,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004779722103190258,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015621229526633772,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00021086356363479814
+          },
+          "other_only": {
+            "body_vx": {
+              "normalized_rmse": 0.00024077699787228312,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019677572887213135,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0014004202850420998,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 56,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015615630824149331,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00021987979690907028
+          },
+          "body_protected": {
+            "body_vx": {
+              "normalized_rmse": 0.0002093578337198213,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019206038005800552,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004779722103190258,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015621229526633772,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 176,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00020089536098163375
+          }
+        },
+        "by_role": {
+          "old56": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00016800827924220616,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.000206825578687048,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0016866396638172054,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 8,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001396281709679856,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018841921596954943
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00018989560765470957,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00023270725913646662,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004983268354935564,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014102054234879527,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002123829209957312
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00015154261740873368,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00029076519972200696,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004983268354935564,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001396281709679856,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002318507777218662
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.000211099817756569,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00017075832911238594,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0016866396638172054,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 8,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014102054234879527,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00019199158838098944
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00016800827922333164,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00020682557867814427,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004983268354935564,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001396281709679856,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018841921595624768
+            }
+          },
+          "old64": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00019592633172293977,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010190476386632914,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001326135215935984,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0011513312620938278,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015615970728881978
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00020882747756035956,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010381537605059155,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005174439700720473,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001172016855051821,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00016490383210942706
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00017819963626241082,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001025192557905936,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005174439700720473,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0011513312620938278,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001453707470090057
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0002287354033867125,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00014327510440501195,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001326135215935984,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001172016855051821,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001908502558352348
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00019592633172876283,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010190476385338336,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005174439700720473,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0011513312620938278,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015615970728824873
+            }
+          },
+          "old69": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00022655363658980656,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00024216142019916722,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011657759371583724,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002113990379434919,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023448742363391665
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00023940165971210806,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002366431269532412,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004467677192128944,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0020938774650121174,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023802638951082695
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00021382852978649544,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002354657206312001,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004467677192128944,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002113990379434919,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00022490747624637173
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0002575994286544813,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00027654236446230046,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011657759371583724,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0020938774650121174,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00026723879301620396
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00022655363655718812,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00024216142017676644,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004467677192128944,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002113990379434919,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002344874236065923
+            }
+          },
+          "old72": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 9.212997737639954e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00018486183392044589,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001641363598168413,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0015667735800742163,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00014605107047161006
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 9.975109496924787e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019423101988961565,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005592061046683921,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001574285960550802,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015439554727213504
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 9.060378046342745e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002560316658574881,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005592061046683921,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0015667735800742163,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.000192043301049562
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0001163049114197381,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00014546394361467593,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001641363598168413,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001574285960550802,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013169394692294468
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 9.212997737853902e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00018486183394114802,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005592061046683921,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0015667735800742163,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00014605107048538656
+            }
+          },
+          "fresh": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00030450799725565433,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019610837815301976,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001072095569541329,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001415005135243581,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025610897717032237
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00031456065700831735,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001986557803311887,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00033748542134474945,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001402638347106198,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00026307083266346516
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0002841933212183877,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019790326356858504,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00033748542134474945,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001415005135243581,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002448790982875371
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00033630417428146816,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00021513213759905402,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.001072095569541329,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001402638347106198,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00028229624002727916
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.0003045079972315193,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00019610837814446264,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.00033748542134474945,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001415005135243581,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002561089771526982
+            }
+          }
+        }
+      },
+      {
+        "seed": 64003,
+        "all": {
+          "control": {
+            "body_vx": {
+              "normalized_rmse": 0.0001923191329502577,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00021696211888334448,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0013124986631277789,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 60,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015626369849727204,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 172,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00020501123131317636
+          },
+          "active": {
+            "body_vx": {
+              "normalized_rmse": 0.00020385895952897712,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 172,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00021768204397744332,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004391143122928164,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015798388768229056,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00021088379222979027
+          },
+          "world_only": {
+            "body_vx": {
+              "normalized_rmse": 0.0001850953940691784,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 160,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.0002727843935005013,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004391143122928164,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015626369849727204,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 172,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.00023310043998570743
+          },
+          "other_only": {
+            "body_vx": {
+              "normalized_rmse": 0.00021585965592729584,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 172,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00019748185384821926,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0013124986631277789,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 60,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015798388768229056,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.0002068749304004475
+          },
+          "body_protected": {
+            "body_vx": {
+              "normalized_rmse": 0.00019231913296422254,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 168,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_vy": {
+              "normalized_rmse": 0.00021696211887531455,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "world_vz": {
+              "normalized_rmse": 0.0004391143122928164,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 180,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "yaw": {
+              "normalized_rmse": 0.0015626369849727204,
+              "scalar_count": 180,
+              "endpoint_sign_and_magnitude_matches": 172,
+              "unresolved_physical_references": 0,
+              "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+            },
+            "body_xy_normalized_rmse": 0.0002050112313154775
+          }
+        },
+        "by_role": {
+          "old56": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00015905814041619598,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00024056495733867838,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0016355103990212429,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012039864389783656,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00020392522003423027
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00017925668726884059,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002516912128882212,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004258148887666692,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.00117539028701321,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002184964834679758
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00016522710244230225,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00035030829415064896,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004258148887666692,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012039864389783656,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00027387578966770376
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0001823903772380826,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00015219427606890968,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0016355103990212429,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.00117539028701321,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00016797224082744976
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00015905814045597032,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00024056495731140245,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004258148887666692,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0012039864389783656,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002039252200336536
+            }
+          },
+          "old64": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00016494487584860893,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010371141052887322,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011721654099415863,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013871086124652423,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013777312644816023
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.0001883710125804839,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001217295927356244,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004413330287707851,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014230981031248444,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00015859024580373442
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00014374750721296423,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0001287733865886004,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004413330287707851,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013871086124652423,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001364659864644636
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00021031827781313011,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00015659875060554601,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011721654099415863,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0014230981031248444,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001854143288334251
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00016494487589214162,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00010371141055527268,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004413330287707851,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0013871086124652423,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0001377731264841557
+            }
+          },
+          "old69": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00020394085914953266,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00025009570002161374,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011067682393839382,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0021595880414617234,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00022818822625187142
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00020612921100439477,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00022766081767542335,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004207955014670596,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002178680518570071,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00021716203574052333
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00019575739119035503,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00026524992899162745,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004207955014670596,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0021595880414617234,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023310778733851549
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00021878477003295068,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002567434655512789,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0011067682393839382,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.002178680518570071,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00023852042124486095
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.0002039408591241241,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002500957000169335,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0004207955014670596,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.0021595880414617234,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00022818822623795233
+            }
+          },
+          "old72": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.00010833555452235818,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00023282847266947463,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0015597354625293224,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001375534381821214,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018158426426767704
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.00010696699748131516,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00024260634020072268,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005556618165454563,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001413884345469929,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018748303237327434
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.00012433065937848318,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0003274773467369586,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005556618165454563,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001375534381821214,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00024768884259022104
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 9.940469106170505e-05,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00016386507747488384,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0015597354625293224,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001413884345469929,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00013552316447921865
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00010833555457017682,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00023282847266191568,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0005556618165454563,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001375534381821214,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00018158426427709558
+            }
+          },
+          "fresh": {
+            "control": {
+              "body_vx": {
+                "normalized_rmse": 0.0002812445092584152,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00022355825398227326,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0009522011558543183,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001509835335924869,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025404405809978056
+            },
+            "active": {
+              "body_vx": {
+                "normalized_rmse": 0.0002936742896654864,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00021925673706418188,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003196636139773956,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001525446197452107,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002591506368490726
+            },
+            "world_only": {
+              "body_vx": {
+                "normalized_rmse": 0.000263740619263624,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.0002348599650579156,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003196636139773956,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001509835335924869,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002497181585673789
+            },
+            "other_only": {
+              "body_vx": {
+                "normalized_rmse": 0.0003126161534381702,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00023353838210914984,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0009522011558543183,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 12,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001525446197452107,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.0002759248405894591
+            },
+            "body_protected": {
+              "body_vx": {
+                "normalized_rmse": 0.00028124450925814145,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 28,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_vy": {
+                "normalized_rmse": 0.00022355825397352028,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "world_vz": {
+                "normalized_rmse": 0.0003196636139773956,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 36,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "yaw": {
+                "normalized_rmse": 0.001509835335924869,
+                "scalar_count": 36,
+                "endpoint_sign_and_magnitude_matches": 32,
+                "unresolved_physical_references": 0,
+                "model_JVP_qualification_for_constructed_modes": "NOT_MEASURED"
+              },
+              "body_xy_normalized_rmse": 0.00025404405809577774
+            }
+          }
+        }
+      }
+    ],
+    "original_decisions_changed": false,
+    "source_candidate_status": "FAILED",
+    "input_files": {
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_00.npz": "073a41a9c7696c5b3dc60241f3ad8b1547999e1a837426abfc17af229c30dac0",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_00.npz": "07745968c62a70b8c5a5ed2585cb4a81f59fa85bd121f99d53aa04ac5e97328c",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_01.npz": "defbea1d8329285bd9acaa566a67745cfa429bd3a509e4aa7a595e91d8603643",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_01.npz": "2088c2568d016dbec1824e0fe09ef4558cedfa1adf46c64ce3affc4ca6063ae6",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_02.npz": "440fc8fb153e0d708c74d15b8314917717d313eae69a5d6c891aedc0fe3178b4",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_02.npz": "f3773fcd28f8818ca612f808860d04111e05b87e1d663f3a452a434be556d9db",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_03.npz": "91e56f43524a8d3ac6d29d22fc45fda9e049e90fe6c22b7d270362ac52e73560",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_03.npz": "e68e3d9670eb718a2c535fb5e731f2ad28986ef0bf64cca7760964cc8b95ec04",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_04.npz": "704a61cfc4410d431667263083386b28e9d17c758625bb5da167276751c50470",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_04.npz": "303a8a84564f7fa6ff482e0df16edebd7b6167f58f98fca87930d77c8d94c5ec",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_05.npz": "e282058888c5fd62a0183af304f0499f5d98930e33f7a379d6ec7442e4e8a4b1",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_05.npz": "9cd5e98e592b1d55ad513cc34567ee4e310ad027770c044436730d5662c7dc27",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_06.npz": "76c2bf698048ec00294ed524ed9580bb83e081aed7d17a59c2f154bfa73f7dff",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_06.npz": "57bb9e08a9718a9d68d000980e5f36b3da71f7fb140500d928784e2532ca7d66",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_07.npz": "5e31d7e81a59534e6f94c62cad50536f872ff0cdd5d0d123a7f1ef0b930fd859",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_07.npz": "a01cb9be0e174ebd5be6ca04cae8801e3b1d4adc36398ddd9f6b46bf1cbefa23",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old56/point_08.npz": "5bba2a1ac8914d777effc39865a14b09c1a2105238d81f50bb3c0dd7862dba7c",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old56/point_08.npz": "bb5109761f9f3ce0c72192ff5717d8635688acccbc43d0ce24d36a19f0a222a7",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_00.npz": "d598a8092a072a16d8a0a1714665e323fb968c2c504fff3da1c3b90cb2f3ed2c",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_00.npz": "3f6b3d6e4afc9407505ad11fa79b4935fda62190c8fc4d3fa8710b24f1a1cdc6",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_01.npz": "f2ee9edce845f2a8ba0e61b7b7703e6a30efdaa9c8466f2223e595bb0457267f",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_01.npz": "5564c009318af9dc89ec7d4e7ee47c10e1b204e6568126d33dafbd52dd0de41f",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_02.npz": "bda807e745638324fa9fd9fd4c001e5b51b75c1a07b865f1e3f5a2f7f1f2b0d8",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_02.npz": "ec0441a8513401a1aafdfe58d9fc6d0b58fbe20818d1d26fa663c7584abe55d5",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_03.npz": "ae50010787e8b99217eb58ae3aa96ee02c2b205253dbb35cd74d68ca3f0704d4",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_03.npz": "57b327fba5f15e6652b19d68967bccbed19f615515cd416f3652257c2d4cccd1",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_04.npz": "140d187794b33ef9861ced65a767ed5ec26bdb9c5d55fc8f9bff580470f51326",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_04.npz": "864345c96970cfb1233da4252baf3038c01b87e745ccb9a2c427ecf108dbb8a4",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_05.npz": "56484ba4f90ec679f63beebeb7d2537955cdff82327e6d48eb85c08a4d20a6f1",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_05.npz": "8bb2e787f9c2506fa42671a2815afbce165d0239e922271e83191450451d0412",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_06.npz": "69bbc45d56ac55c0618ace9e80d4c46e21108ec77259857680581990b5d7e1ce",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_06.npz": "7c6de8077724200a0b2861424e9da299954d368e27014638ea8ec8cd9407f65d",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_07.npz": "ea7d722aed0d1ace7ba3a1a9c411c8141a78670465e56642b5fbf9627be992ba",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_07.npz": "058a5e3a875246e8c449d3ceba721b9baee86f6a3ff0d53e948d7043f0a3b007",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old64/point_08.npz": "b45d20855d23e87193ebc5435b8a706fc731003e6661382b39e26b08e38f7732",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old64/point_08.npz": "dcb5c5e03d3cbdedc40d0947ebd4ac62ceddf5a4a3e7bcef7d9bd5e255ead073",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_00.npz": "5cb09b18eb9d0f23505c99898fa84f1c36aae0c88146388b188d83c4e1f933a6",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_00.npz": "598daa18d49bc8091095f041322958096c5e06f05b1195f5377f9ba7b3035f27",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_01.npz": "51804a7f03ef154cfb4563c210a093e6f081999e344daccdbe13370ae4f4a98f",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_01.npz": "6290bafb538310b1e7988a5afa87e108ff0b83b314fc6cd5ef9742d84a42d82f",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_02.npz": "8e11a06ee06f2984e2a5283af2ea210efbd5d7f206f6c2dbb4c19eece108098b",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_02.npz": "2fcff3ccf510fd783b2be02a1474c0331f71c2ec125c955fda04f35ba456f73b",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_03.npz": "824011de1e9faa4029ccf37c9aad698e029f7d9d73976a486cb85d8f818c978e",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_03.npz": "86baeb3213a259e5b1b06f49a3637af691eb824e0c4c606f60110c1b0d558063",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_04.npz": "a464a5a3ec333284574e6359164ca00cc1d5014fa47bad7efb8673effc39f59e",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_04.npz": "fef2ad3c5b03cbbd7a036579a49d37d51f62b0e2d0d66524db3f1ae1224234cf",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_05.npz": "0de72d8dc2f9321e82d23b9ac637d53952d0b6e0bbfcea832455a2a981f22353",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_05.npz": "fea1d20c3bbe2cca6b918939e8ee42eebe007c0438683c1b039ffcc0b04f2133",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_06.npz": "997701cf6bbd989f1c62804be32f02588d1901a52ef53e1c57980d3fc088f1ee",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_06.npz": "0f995f9254ee4fe85febc954bbf30911d805290ec329b5e4c2205c4e2ae3e3c4",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_07.npz": "9ed292666d09138158ad3e433b265b61777b69b1999028b47a55b02d9c67fe2a",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_07.npz": "61fdd89e0e8613fdfc90b7845b94bb724babc449d6090f9966b19b391ee2f391",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old69/point_08.npz": "e74a9f47c65f6836db88cf4658c7201eb2b14c3a18c17e13b54cef734437a70a",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old69/point_08.npz": "f0b679d73d85fbeb5048fbebd576126abb3b7b0cb6a2264313017c540cc7b020",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_00.npz": "99175642be9fdd5b63eb0dab938c81778411a1dd26f6b8841215c63f00b82419",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_00.npz": "1ea26c6296ce347b29d925e87e3a7e431cc9385e6ee768d249004cc66bb4857e",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_01.npz": "9797afcd43c51d2ab28b0e6308dcb1200163184fe4767377096df9c4ae9ada15",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_01.npz": "be22f51523dace78a9b523a6dac80606da91c179c2eba9ff3e212007220d0aeb",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_02.npz": "4a81d0e09e8199139be7a896b297a663d888901674314b5c8e11642a9f1668be",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_02.npz": "9aab08d06a7f059596540d9f11f085d5a00da6210da9c8a3067d48767271b00a",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_03.npz": "c0bade8ea8475cd9634c6693f27c5d810e4a62a16c205f5d34a9b2750fe9159a",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_03.npz": "b5007f3f6b267e7c123aecb8fab0ca9f655a5569dc4a65e3c3d7d0452cef8ba5",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_04.npz": "e1abecb30afe217e2b40359ea1f186b87b350f3a06d3711ed2dde9d63830a76a",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_04.npz": "8ab815afe44d3b9a3ed3a8f7bf26433d322b96c15bb061ee2aec227b1fd56c88",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_05.npz": "bfdf70ac6af0cb5e1afbf0f38961081c6c29261afe6ca2c14c8253590f9f847c",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_05.npz": "92e27be68cfdf52471bb9f0e57126aad85e8e9ff7ac21bda2f8462813bfd3c1e",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_06.npz": "8a19c160d843c413d28dd03836f9e05058a4f1ee60ab1bcee6ef6343c901a1e4",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_06.npz": "8d6f4bea903ef8ee1c59aee2262765cc1357391e92ef7d18a2f548159b33182d",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_07.npz": "28b897fabf5212502c7e7479325c1b42bd569651c1ef5cd28269abb9f3e5d6e8",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_07.npz": "7b4d3d7c3f5cc4d8c98f1b404a651248d35b3cb5a2c06b31c2143d97102787ea",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_old72/point_08.npz": "82b7331c2241e1633d3f4aa4e47a19fe5b11a6d007ebd1d4975f91caa72efff6",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_old72/point_08.npz": "dd08d62b811628aa1d28fcecf31df803cfc198edc361abde36c61bdfaec92fd3",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_00.npz": "9906b8140fda66c69c5ca68e03709f2eee3184ff1a987a9f924f4e77dee1a210",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_00.npz": "94c7cd8e57e1a622741b850f5c4777a126b7daf7e0fc45469fac7ea88441492b",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_01.npz": "0309125464eec9e6e6b23e691033e7d9bc820970e6bc25f36804bbb13a0ee1ec",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_01.npz": "5e0a793f9c6f1c65f4398787ff0c864493badf6f5ffb4fa5540062f375d7f55c",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_02.npz": "1773efee4902dbfd7b43332ef5f3db0e73a820cbcef648f7fe5438273bc13e66",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_02.npz": "59d858c0fb643998e871a5cf399b168206038e61cad97dd3120cf8e30970a8d4",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_03.npz": "de430963b4ce63b643993f8b05f6ea0cc7206519a1897687a06b4c2a0bb06a81",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_03.npz": "f1b7f96b64c72b575c5bea38982db3cb9327db314697785302ff32941334cb30",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_04.npz": "023901b3a8287d46838d3783dedd9f539b019936c8ab09a949da3c71bb98f195",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_04.npz": "d4eb770c35b69b27c81c99f917d682773154973f0594c23c51fafb819ba1044a",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_05.npz": "65d597b788b4b4c578ba6f5a1b804e10121a456785b88d1bdab08a74a5b24ae4",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_05.npz": "c96f5ead1a086c133b50ab99e8bd3c3ddd08b2769abfb82fcb6381de295ff63a",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_06.npz": "63bc3b91153ce42a4ed09cc0df2fb53180f332b572dbca62077bc18596191897",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_06.npz": "1b97bd5ad1114eb933eedf0ba2c80fefbe41f9d84c7c99c6c8a3cf61afcff119",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_07.npz": "85dc5796bf2c42bbad231a0535b654a0af35e700c34dbbd79f033d1c204cd379",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_07.npz": "53c2dcbc5d737d7fa7715903f786b3fe956992939e802860e598b40eaab5931f",
+      "evidence/world_vz75/execution_01/control_seed64001/first_step_fresh/point_08.npz": "3c784052b8357bbee3ed1e1fbb5437044d9635c6b340cbc55c56135b00fab38b",
+      "evidence/world_vz75/execution_01/active_seed64001/first_step_fresh/point_08.npz": "f70494087027ba373dc30e825bfaac6165f60db0c08210ed189a39d7531370db",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_00.npz": "36bd0ff8d3803eacb19d203524a2c88409e909a537787e10633af9a300be41b4",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_00.npz": "92e4f35d16f300477e7b481eea864012db66453b6fbba1f1db7bc1dde24e20b3",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_01.npz": "e3b593fc17d27f564f9f2f300814284ad906f5cf7349c1cce57c97be530a34da",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_01.npz": "b13047b3bf888315f31e31b1debb0c7c48f9268cafa95902058215412a0e5889",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_02.npz": "6a0e99029b3274a2131a3a96fb419b81a5c085d405d7d2f1b5ff9256e10a556b",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_02.npz": "ed576ea5f5d8b4973877792467ef2e855da7e20b89938333cc7d368978f33cf6",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_03.npz": "07757abfb977009fedf119736ffb3eed2e2344fbae3fba23aeb62587c99bc16e",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_03.npz": "198c80f5ee761c3ebadd9e6f8113b17e4bb886ddc252a4e4bd7f97c8d4d7ccf8",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_04.npz": "dade72f38a10ab6e8db6c820fa7345bd3c6c3efb8befcfc7b52c0dbbf9e85e11",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_04.npz": "832a683d69468b32971f267ecebce04b26dff1436da8e1a1b6c6935f5bdfd1ba",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_05.npz": "24d03aa17dac42e7d840c80d3de292fd20d7baa1fd042fe45195ba2cf12911ac",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_05.npz": "ee23de81b417119f9472d1412b9cafbcf48b35ba7da3ef41b7c747da1fa99f16",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_06.npz": "87918ec931c0a4674511e8f9fdbf3d26ed4e9b48b03c1f0cd3d90b3d0c0f9a4d",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_06.npz": "58637b4c41e5d2026ccca609db926b5e227cd4bfa67fefcd6ea7ca7e2305bea9",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_07.npz": "c7fd237001454d0ef8bfb9e4f165adee6a1f29708e4934604ffa70735eedaac7",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_07.npz": "894f6b391d1a6228af0fb2c3cfceebbeb1980ec45826e9732982ac0d6525230d",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old56/point_08.npz": "b76ab2a06401414614748a1d7bdbfbbf76242803abbbd34060c8019461a0baa2",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old56/point_08.npz": "45109b2bb0fd2b130f311332b5423fc4d62f911f98d3662f301786c258a58e4a",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_00.npz": "6471be7b4869290139e49ab9c4d4b7ac0227ec95eafc189b274ed4875516a6a2",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_00.npz": "38d474f4c681e9ee685ed023dd8579737631005f01f6c0282d7fd6d657f1c15c",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_01.npz": "4e3bbeb29c7c7f13cdc844b2ea4cf794cf0fbba978e7d4b197e6418854d38803",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_01.npz": "a1a652f89258d48023964d47c94df53326fe53c59d6202f397ed7e6fc0390776",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_02.npz": "7ea290fb29ddb5b1e5435d6021a8cccd555f42098136a1a6c025e5c0f3d51506",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_02.npz": "f8aaa72a7dce401268bc1286066b8cc95df3b8ac6dbc7ec2bb27452ec9a91b7e",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_03.npz": "b933712c6f714b60febece87469997a914e837a248d939c2cd3a3a47ed4224b9",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_03.npz": "77d611c04bae80bd84296822321ec8709d0adaff45efecfd53b539195c8d133d",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_04.npz": "09d1648c6ff086340a385e119a235d62b4f016ab267a31bd5030ee2ec1ec0dd8",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_04.npz": "53ec4b9c505abd6ec42a2eacdb3551869c071aecdc965d584ce49c05a3e8f950",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_05.npz": "181d06122279c2e9b4b1c976200a8b542a81d272d2391977ff5fa6d69fa30336",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_05.npz": "e10d45260116cc05b682f732446ab535e1ce366df70628487e9021e80e9c2681",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_06.npz": "f79e15989ef4ccc54171be248d51b34666ce08d5a94802e8a0cd2dc21d297b18",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_06.npz": "d98803c8b10ceaa239d8a4d7abc6b08d9d98b466ed2b278ddd9bc8dfbb23b460",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_07.npz": "314e121686e942c75904a550cd7e50aedc8951ffda85b702bf5727d782ba769a",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_07.npz": "48b727a37d6113d883ffdda221bca1efba3f09b6e9b421cea2c7b7726ac894fe",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old64/point_08.npz": "97163c6a7114992015679f1d1d9eace3eea7e9a89ee943099c088d30946ebfd6",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old64/point_08.npz": "76477d8b5a5b3ce453f7d35cc177bd1ebaae256542a1ce7ff32a7cc39aa89a9b",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_00.npz": "d975031abfeeb3415348c74a1c9237633303a191b63d6dea65c137b73214c860",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_00.npz": "99339fc29d7924679bce2378cf00e5fa4b5aaff10c7440b498063726d365a802",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_01.npz": "ccb8227e390c7ddd4fe819912b2b98bb00c32c429300210e8b02f99eac3b6e0a",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_01.npz": "6a448de211d11f97224f773d828928a414e874cd86f893bd5a138c3f1c6e0046",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_02.npz": "b7e6342af13cd3c50ca28d4da8fdf254b1ffff55bcc3ea800eaa63df3c162b2e",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_02.npz": "a4817c265256cfbc457ac063d4f92f4fda290695753a12a6f67ad3dd5fe6931c",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_03.npz": "45563fab140d47b27e35d83e09a54a48f4b2da890150e241efd7375f3ede2be0",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_03.npz": "d774d154ec9358e52f9d450c921645614f81a334ddd9334dac765b8443ac18fe",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_04.npz": "3fc481ad891ee9eb027be2697836acaa7200208ec778745d8ac714477f14c4c7",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_04.npz": "08c42e8401b3023a8ccc7b9ec525fff0dd1438e6956184322bdfe1792099a129",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_05.npz": "c8d465d42977a230224bd63b877e3bcc32454d9999af90c345e4ae1e6c08a3a3",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_05.npz": "68624b37fa72e4a01db3aca22b39e861a38fc89a6338afdc0fd35e68af6eaa14",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_06.npz": "4d5e9431bdedf96d9acfa4259a82bf7eda7cabdd6c7b3e2523e9742839060d3e",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_06.npz": "f5f0a6cab654b2ec94e51e37aae540ed46e7958343e2906d381ffde9437ddf67",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_07.npz": "d73c216f9e2342fe37ad29f905f83fbab4fe8d9cc7e9f1d8f84bfd810579fa05",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_07.npz": "6cc6c711fa17fdc8946a3682be25ea85544f58f58c4e6653e4e1b180366c168a",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old69/point_08.npz": "3a67ddd64923cb540e68e7a0e4506fad694b1c3ef716d8fd7fa8652763c58fab",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old69/point_08.npz": "707dec241800373b4d197a0e23eb4af8fe2b06e331488505a3b33a3dee7abfc5",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_00.npz": "8950218ba42ff1409b6c24b8cc5d8125c28b1eef415ec040118f3a7fdc42a2d2",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_00.npz": "e7d0f2739d5aa1eb2bc3413deea904bcb1742be2a935136135a4ac883b4f3e13",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_01.npz": "8a4a33a7fd83f5ce7a49f672d07f9d8ef394934898b4426df6e291c742137fd3",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_01.npz": "c257f9954671951653593d244d598eec9e2aeb7bed9c42dffa0bb9d5dcf8212c",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_02.npz": "37b23e5645ec56433ed9238db4087343b0a4a50253cdd4dbda8281f02fd26d5d",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_02.npz": "5bd0252f2046c2137325529d698c11c6638a16d2ca80b19cc5f046d70b241789",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_03.npz": "b9168409fd4d2078fbcdb5f87825563d3a4d199226ba16fd4c1fc4a2d16741a9",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_03.npz": "b1c2d3a5cd1d13b791935568c6c2ee09b723ae02b87a77477ac6ce257e5546bc",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_04.npz": "a6929b19a2b6a882183285c48ca4b99b17193d74ff44f315f939e97d23236e19",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_04.npz": "1ed4223af99441e4604d3e2f1a9ea260da28cfcd3dc3ee8914da000df98518ca",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_05.npz": "47520896baa1aad84fed81a8b5c5318945d448eeef45f17e351cfe6a12dab582",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_05.npz": "0fcf12a45807978fb345c8977e3c76d32c62975caad1432f1e3205a28fbdcc1a",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_06.npz": "13e081240f58f8a117bd5ab5ceb10f02ccf862ae99ca781bfb1f75c143d1037b",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_06.npz": "414e8d50511f1931bb2e4a37709127eddd6f6854b027149fb2dc508c01f96fa6",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_07.npz": "00f4cf47071e603eef5d748f3c02c554c9678a3842335254aa1c24b134490c17",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_07.npz": "ef6aa4b2dbbef9d63b74ad07332e126c0bbf1708d48944008c32d3ec0e8431d1",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_old72/point_08.npz": "37f79ec6d1724472f5a3e6614ee34ef20daab7acda8d8ffc6714c9cfba009345",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_old72/point_08.npz": "cf03c0ce7bb58de787a46b677ab7b52b7513aa3d463aa2daa4de47e0a88245ea",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_00.npz": "ff88385ac801b9e7dd9e241dce21c3402f88ce6686abadb7acddacc654afe67f",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_00.npz": "6bf5649507814583aebe96ab4fee74972d0ef98bf888ba3fa3bd29057d9f8453",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_01.npz": "7986b351d3a19ee4cdd3cc6f947ccae1e9d120bde788311fd1f24a2dd4420e98",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_01.npz": "2bec137e69eab6aff9d0aad96a1c5a9eb4b463b9d8b146d2a9ebe41359bd6461",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_02.npz": "9d1d86a47544f2261ee683368fa3dfb85d62987a70e258adf8f9f308e9208d89",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_02.npz": "43d18ed39f61c346b263c8885b73636c534808f07a8a6aa69b541270dd49121b",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_03.npz": "503fc67967853b93dfba8ba828e89c3ec3600fdd7cd5c298b7e99a256458cdc8",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_03.npz": "6b1eb11c36db2b273837a7aaacbebb0abadbad4b1f2263630bfe37596d3dfbfb",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_04.npz": "92d5209a338762c701b1341df2d74e2c001eaa74ed58dba5c76134b8b68b7c26",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_04.npz": "0d6308ba6c7adeb0ffcea23652739628b968de09c2f4c0e2db9de44409349bbf",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_05.npz": "86d4da7323803fe9cc0c41c77738e5380fea978856d80bf557d2484c2eb47836",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_05.npz": "e722447083d5ee2fce5dc5b59a280099d276244f14f2c8971d312d192f2b75b9",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_06.npz": "e8b7ac19f1f0fb1ebcc4027683d04517e97500ebf0d4d08ef4994e3021ec90ba",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_06.npz": "6c2480897e0005b30a661453a3a1e6967e9597c6e3ea2257be5263d493f8985e",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_07.npz": "19fa97de7633d396b3b21e3514da111c96158cbbfae18bd0757daaa2132110c3",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_07.npz": "93d7ae13ad8c9c9067266e1948b1e8857ad891771ac0b8c19cc6e09f9ac4e308",
+      "evidence/world_vz75/execution_01/control_seed64002/first_step_fresh/point_08.npz": "727e6cb86ef685890cf03ae98a3e8ba2d7e6cb9b9b24fda4b72292a489252148",
+      "evidence/world_vz75/execution_01/active_seed64002/first_step_fresh/point_08.npz": "70904d04e7b7b5d7d712b95aeecc51e62eca648f2c89a138a4609a25a70badf2",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_00.npz": "3327d71b021807a5cfb25144ea37cd0a5dfd27e7b32b0d5fbed0d3df1066721f",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_00.npz": "3fd973eb7dd6274838b9ec281fa079fa678a7e45eefbdaf1b1f4dffc563e9379",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_01.npz": "1e3de806952554fcdc49d1cb9010cfe30ec7ae4d90411f3d8dfa63b1ed8f01b8",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_01.npz": "969bc9da8082e8f18d7fe81655ec4290e9ad6cf28e16d8427eede36aa8e921d7",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_02.npz": "84177ed7633941a6e564f1ff85831a3bfe5c4edd42b0e693783f2865936c3d40",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_02.npz": "67b1afb6e1552286631a9a710fbc577fe9e6a176a91a137034101ea31ec5a812",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_03.npz": "baf81fb9a5e9bbc68ecca252b5e4286d3b0df05cd7abaeab543951e23f8f7f14",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_03.npz": "5365b392d5b6cd0cb304d31100c675280d9a847613c5d8436c03346d97242cd4",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_04.npz": "c535fda38b77aef6b0d7023611c773ff58107acdfe716b0ca51951f539817bde",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_04.npz": "192e41b05558609bd53e2a417a2bf46cdc6ab9d0a0536420e1a7091c3280f918",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_05.npz": "e49a6e3279110cff31f8720126dbacfc079d874fffaac6d1da510ad90f015361",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_05.npz": "fe89b721bd289c922a427eb47daa55d4db14c8379a783bd4c5676d4e71a87ef5",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_06.npz": "6bfc82f440a6a968b02d375af428e0107f2d1982af092ac49e1b6d5a802fb37e",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_06.npz": "7311a9d108a0ec1d172906183af2adc9112958ce08eb71009a7f4e36c94299fa",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_07.npz": "93e133b96afb03a2fc385552e69969deba67611f00d9447241280cc287a1e52f",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_07.npz": "d369c563efae03f331668d340e3537222eacd7bb0cb4457af26fc7ae726e5b38",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old56/point_08.npz": "a22a9a605a955f54cb83fdc49b616024325d1c370c0bc67ad062541f1005b037",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old56/point_08.npz": "9e04d43d0e7e7959c294f508de891ed7294fc9d88a63800542f9ff646baa1cdd",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_00.npz": "abb3cf68fbd440a51a5f4747b8b2d88dc4a98fe64a949626d162f8f8e7c21d66",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_00.npz": "b206c32759b7ff2a9508999dea766264af42e28b80f121d3db9c7a8d53e6af56",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_01.npz": "824b32d8ea8b1e9c70705ad1027e95c05ae2c969eaae4328bcc3f7341be3d447",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_01.npz": "16440a096d7e6a093de0c16808aef56aa752150b8da27692ff73ffe49dbb7a50",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_02.npz": "ce014b5fba65c8f65424fb6804dbea4cb1be317245c866914c94262d900cfcc4",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_02.npz": "4adbebcc3eddb004c01400f18457fbc2802356f4e6f67eb9e115c59975da0e6f",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_03.npz": "c190b30a49e42a48655c8da72d4f911bbea7902531f0adf5ab9b7e92bb99019d",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_03.npz": "e250dfcfc9ffe273ff5b09cc9e13338cd98da30670a7e00cd2a9a4fb4de0bc4c",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_04.npz": "609279f452cf9a3d109ef197c000751b1e2c5c98cab03fbd3b095cc146550a9e",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_04.npz": "6871bfabdf2d6ededbe6115435e9d91a464f7e949ed96b77d1a89ecf6483d77a",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_05.npz": "fdb55c88e5bb872a37833ef152855405979206ab53f0116e6438a639169d2288",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_05.npz": "7ed1b5955fb3df89d99f1bc27ea747aed3c1a8c1734997cd2d89fdd1655e1828",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_06.npz": "cc00b56a68e661bb137d1b41199ed7ea40dfa4712513a363e100748acbb98fa7",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_06.npz": "37332ef4b78c0d0f86b1a36a54cbb0cf9e8a40c5134a45725295334ba88a8501",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_07.npz": "d7cbc2f2840d721c670dc3610b8400e2066903aab3fba6d96f242dc498c9bd73",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_07.npz": "3ec071d648c6f57ff61bf68d8996fd5736aa3b60bcded4c5136ab004b9b79e6c",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old64/point_08.npz": "49bcd02a364a4ae9a8d2e9a08a0bbfb15d6d0d7422ad0f4f66c43d4abe343658",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old64/point_08.npz": "1fcf0beca06729503bc442a2f5689164c7bed9a709c9577c1c411d10af212342",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_00.npz": "b470791a74e633402c120e050a646c501a6aedae1921c49369e318c2f65dd1c9",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_00.npz": "44fa00cffcc3db2f3d42649c42d7d7ca30482cfb4891acf2c204f279d66fea82",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_01.npz": "18f8cc9169499c39961a5e291366e55d0d5bec074b77a9365aed50efb6b5b47b",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_01.npz": "fec1c663fe74c46a13ff33018708a59e526a0e140ae0d90cea892ee983823f25",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_02.npz": "1b3ade88fcc1d47b5a357e80b56d280e19542d2ac776f407f53dfe101ed675f0",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_02.npz": "c1ee5297510e1a3a6bb6b440af0fc8dcff3e7bf95b05b8ba52b2302697daabfc",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_03.npz": "9c91922c1333f3b516ac0291b00a3526e5e477d2b389dc72deabd9cb6d9c7e7b",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_03.npz": "d563887ee5cb6f0ae6ae44352fcd66808267d6b5310bc1ec058a65c2fb198f28",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_04.npz": "472760511a8f26fa3137dc082726faa6bd4a34c04b465d55c24f3081e6dfe6eb",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_04.npz": "e37132c304d55c5157d5c2048b50a16780bf533df5c0f0dec754d93df4aa095b",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_05.npz": "3e0c84722701499446285a88ae112a21113a8eea21e2e986b7f3da6ad2e8f4f0",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_05.npz": "e3d6f88fc220ac871f399f9a1ba54c3dbfe6fdfb157202007b5576e85a86de80",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_06.npz": "ae67d7da9576f5434e0bb15ff1e64c173f59b9db858e55e295b82fff4f5dde9c",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_06.npz": "56aa523275375c923ef0937b97ecc0875baad6c4cd413e0d2134948fd84dee62",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_07.npz": "84ea08a2cd245b10be51848fb2f4fc583ee70ca225e553946933785d6927bbb1",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_07.npz": "a6dda34ac749fc97e480eff4c659312d301f4bb0969697241e2d67c2d0b53350",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old69/point_08.npz": "27c9949c32a9a327a8c8c203b44b18184ffc9ae13dd3754e6feeccecf5663030",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old69/point_08.npz": "2c64d7c488845138a10c76be7040561b9455e1a53f2a8b57224c43223b2c9656",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_00.npz": "4b48dc11fb23dc714e67c56105a0a578f080c2453f2f4099aeab074da7fd83b2",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_00.npz": "a2664450d74165dc2b55a31fdbbf035964a930ec7bd914e5bfb75aed58fb7f86",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_01.npz": "3f8ca76aaa74ef836892fedd6eab187f9d9b64d85c58ae0e4f0d4ff2f5663744",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_01.npz": "a7b4891d8313c66152cba61e2b648fb01cfadbc0d3548a39d40b4930ec9a9744",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_02.npz": "76397477ee36f157300e14a6f4443d0c61f44561fa2bd09d6c172aa2230208a0",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_02.npz": "a23f66ebf761c893d89e4857910e6910750deff0e530f7d38876d97a77f2bdff",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_03.npz": "d1f5665888b006652111561df942120db79090a0da18226a75b66b5df8331d94",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_03.npz": "59ea65bc5e155ad973e6f496794e2e71842c3b49485a6c43fc3d08cd77530507",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_04.npz": "894454e207518ed5a7c6a7d77ac93f94931241f650aa4f64abee956ee42deae5",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_04.npz": "a56e2e5be4e18085f630b77f0d152bd16fd58d46955d8569525a9daf1a3b9273",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_05.npz": "371c151299d39fcf0ff101f3ddd2c69a3af8e791b1bd540f3dbc23c03a1c9e9a",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_05.npz": "82876f6672b2760420b64c1e70782638716233257c54bed90c590a83c030d8e4",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_06.npz": "8eb248946ce3ca49527b4260cf2f9a6a5af5215dc49c76e96be4830816650b8e",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_06.npz": "0b5628b1c2243f5d1bb1e46cfe3ea00391c73669176765926e008eb795c2db7d",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_07.npz": "7171c6342f843f1dabe1dd1b7e9ca99f3ee2beda12e8aadac66e6ac900c75d4b",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_07.npz": "0694610f52d8caadc23ca423aff70e8fd2de51edca6d205a7d2fd412bb652426",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_old72/point_08.npz": "92d6668cd65cd979ddc9eeadb2e5b05161d6ac65635b7ca3371aa24d18290645",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_old72/point_08.npz": "480229be8436793608b1c760d89c586448f4ee8a40f03e789c6f3dcf679ba4ca",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_00.npz": "08ba103ed72b1e49d4b0a2e5cc3edd9e3b83bc7d845c5873dc206a0884481f47",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_00.npz": "c19c7add24170e380165c501f5787fe5a5879c4a688b92326890e6380e3edf17",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_01.npz": "77933e951e5c5f825d71de703362061ef63a20cba953fc09731bc7904248f2ab",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_01.npz": "dc61015b91ec8a4c4709bc766ff51e74bd5adbe79fd367906238411107672f03",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_02.npz": "73b21b12c64e7247c0bd7834b7b3df2d4913774579982c778dd7d9b5adda5fc9",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_02.npz": "92c080a9084dc18354fc7c1d21d826f49d0d4b230bf1f777d590e3edab9d849a",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_03.npz": "0714395b4fdd798cda828dc11e386309323e5a639bc8dfc275988bc3cb06baeb",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_03.npz": "956b56318ab64abd5fe01f899e58f3e98533326c933deba85af8c1ef28fc93b2",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_04.npz": "0bc721aab21211ba9bb20e3834534f6f2a40d9e68cb9a06f06f9e5b75fc24c9e",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_04.npz": "9ddd2b752bc5ae33f84b272327acbc63eeae9336fc13c76d53eb0d22032ab107",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_05.npz": "9ea11c802c35008587e4ffa44e2d41ec9656448e3ca1c908c737e011760cfbd0",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_05.npz": "67346c048009e227c7ab68632f58f12da91a5d28889d5d02a73d47423b253eec",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_06.npz": "da12e1125b189e4bbdf42f1907566a87894453bd7e343b0d29dbbfdb98ce0902",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_06.npz": "151c356f5f55ee0e01a046885e7fc27913bad26e595afd1050e815af422205d3",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_07.npz": "b8e9872c9e1ee38056d34477b558d0b6a203f863c0779080cf3990c0b6e38817",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_07.npz": "0de16878809989b3f5df5a91dd5059d0486091be30db356331b3cf3c321f546d",
+      "evidence/world_vz75/execution_01/control_seed64003/first_step_fresh/point_08.npz": "eb3375b6f178a42a0cae3c5467cb9599c491d03769b3f0b2ab768963b5d1ebdf",
+      "evidence/world_vz75/execution_01/active_seed64003/first_step_fresh/point_08.npz": "cc183a9e26b74eba08392a12cf514b98977798f4bd15259a0d640c045d67c24b"
+    },
+    "paired_intervals": 540,
+    "endpoint_interventions": 5400,
+    "maximum_body_preservation_gap": 1.3877787807814457e-17,
+    "maximum_body_fd_preservation_gap": 2.220446049250313e-13,
+    "maximum_horizontal_compensation": 0.00020253169338446675,
+    "minimum_abs_Rzz": 0.9946832973800175,
+    "new_candidate_accepted": false,
+    "scope": "retrospective saved first-step endpoints; no new model JVP, H32 rollout or heldout evaluation",
+    "verification_after": "COMPLETE",
+    "cpu_seconds": 0.7551504809999999,
+    "wall_seconds": 0.7555284280097112
+  },
+  "compressed_full_report": {
+    "path": "docs/assets/output_isolation77/report.json.gz",
+    "bytes": 363699,
+    "sha256": "10e3bda38f4d9a2f483c348eb800504ff45f8fee3c308248101915d1ae63f1fe",
+    "decompressed_byte_identical": true
+  },
+  "raw_manifest": {
+    "evidence/output_isolation77/readback_01/initial_incomplete.json": {
+      "bytes": 167,
+      "sha256": "0c748db495ab0df3d0d45bf35d0cb80e7e9d95e786c9ddb914922a269e1accce"
+    },
+    "evidence/output_isolation77/readback_01/report.json": {
+      "bytes": 5292434,
+      "sha256": "6831ef1ae2aea97431d40cb27172f31b26b48abee3608f2e72883e24cd153aca"
+    }
+  },
+  "raw_bytes": 5292601,
+  "resource_receipts": {
+    "readback01": {
+      "schema": "bounded-control-job49-v1",
+      "status": "COMPLETE",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tools77/readback77.py",
+        "--plan",
+        "docs/experiments77/output_isolation77_preregistered.json",
+        "--output",
+        "evidence/output_isolation77/readback_01"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-isolation77-readback01-20261103.service",
+      "timeout_s": 360.0,
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "minimum_effective_bytes": 5501362176,
+      "peak_group_bytes": 61296640,
+      "child_started": true,
+      "returncode": 0,
+      "error": null,
+      "signals": [],
+      "retry_permitted": false,
+      "cpu_affinity": [
+        0
+      ],
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "child_pid": 319073,
+      "owned_process_group_empty": true,
+      "child_reaped": true,
+      "elapsed_s": 11.070631794980727
+    }
+  },
+  "resource_raw_manifest": {
+    "/home/lyh/model_gradient77_work_20261103/readback01/report.json": {
+      "bytes": 977,
+      "sha256": "94dfd3eb60072de1f567ffa7f31792c12d837d2abaadbc3d45cffbeb4b0ad1c1"
+    },
+    "/home/lyh/model_gradient77_work_20261103/readback01/resources.jsonl": {
+      "bytes": 14351,
+      "sha256": "414b83e1c36327c4ff65becc663f0a753cefd69b6fed70355a318503385e5c92"
+    },
+    "/home/lyh/model_gradient77_work_20261103/readback01/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/home/lyh/model_gradient77_work_20261103/readback01/stdout.log": {
+      "bytes": 134,
+      "sha256": "637c26e48c023b09822b885a73251c99c6c17a58afdd778c6fc7a383b4b85e20"
+    }
+  },
+  "independent_audits": {
+    "reports/output_isolation77_independent_audit_20261103.json": {
+      "bytes": 190102,
+      "sha256": "c42280a78bcb601ebfb94275a6ccf5a35988ce8655842d673403cad9748a3b0c"
+    }
+  },
+  "local_validation": "8 stdlib geometry tests passed; Ruff passed",
+  "new_training_updates": 0,
+  "new_physics_steps": 0,
+  "controller_performance_claimed": false,
+  "runtime_rebound": false,
+  "complete_repair_validated": false
+}
