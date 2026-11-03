@@ -1,0 +1,121 @@
+{
+  "schema": "d1-feedback79-source-feasibility-v1",
+  "status": "READ_ONLY_COMPLETE",
+  "created_utc": "2026-11-03T05:13:45.758146+00:00",
+  "experiment_status": "NOT_RUN",
+  "new_model_calls": 0,
+  "new_physics_steps": 0,
+  "new_model_updates": 0,
+  "new_policy_updates": 0,
+  "source_models": [
+    {
+      "model_seed": 64001,
+      "path": "evidence/world_vz75/execution_01/control_seed64001/final_state_dict.pt",
+      "bytes": 203580,
+      "file_sha256": "2bf421e7a0d386e8b40de20613fff18154711fab3ee0f99ee6e7f444b8651719",
+      "source_fit_status": "COMPLETE",
+      "source_fit_updates": 1000,
+      "source_mapping_sha256_receipt": "edd04cfef54bfcbdfbb8b30b32d4bb8b2430d22b8694fe5936cc83b01a9c7419",
+      "mapping_recomputed": false,
+      "qualification": "not implied by complete fit"
+    },
+    {
+      "model_seed": 64002,
+      "path": "evidence/world_vz75/execution_01/control_seed64002/final_state_dict.pt",
+      "bytes": 203580,
+      "file_sha256": "1d05ee44067d4b033f3604a54975f4727d7ce2d9ec4109c84ae463a9e9a3804f",
+      "source_fit_status": "COMPLETE",
+      "source_fit_updates": 1000,
+      "source_mapping_sha256_receipt": "e41d508a1fd995e90e56cf1b276c0ea5fabf346916feabd7cf80ac7034a2c794",
+      "mapping_recomputed": false,
+      "qualification": "not implied by complete fit"
+    },
+    {
+      "model_seed": 64003,
+      "path": "evidence/world_vz75/execution_01/control_seed64003/final_state_dict.pt",
+      "bytes": 203580,
+      "file_sha256": "80afdbc19b856e8805eb0d4ef1b0156c3ee2076f5c3f601a2d3ee49aee872a16",
+      "source_fit_status": "COMPLETE",
+      "source_fit_updates": 1000,
+      "source_mapping_sha256_receipt": "508badf3dbddc9e6ed1eca27ef27148007f4b759c3907d1cebe46114fdc61c58",
+      "mapping_recomputed": false,
+      "qualification": "not implied by complete fit"
+    }
+  ],
+  "source_files": {
+    "tools52/adapter52.py": {
+      "sha256": "ba3199b6a25a6da6efcd97051e5dd8fd0a5423afd703dfa14950ef9dee742297",
+      "bytes": 14827
+    },
+    "tools52/control52.py": {
+      "sha256": "8bc637b13fad5255425252e9e53a4fa4f85fdd5f6c5c4b1283ec94d367a328f4",
+      "bytes": 7796
+    },
+    "tools52/dynamics52.py": {
+      "sha256": "623f379faa89592ea8d5b4b53e158de3795b4f1112fbe29dfd165556a2dc46a3",
+      "bytes": 14896
+    },
+    "tools53/collection53.py": {
+      "sha256": "2471c5f1163d7e7bd0e020ff171ba3789f6d0ecc2d98ec0769db1ca704bee812",
+      "bytes": 19153
+    },
+    "tools53/run_pilot53.py": {
+      "sha256": "064ea4fbc373d3d9fd4e9f431f1964aa4a8b95d1dc1cd387cceadfaea774a43c",
+      "bytes": 13547
+    },
+    "tools54/numerics54.py": {
+      "sha256": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9",
+      "bytes": 13296
+    },
+    "tools69/fit69.py": {
+      "sha256": "acdebc4e0192264409216aeac54386ba947790f75a180ac5bb33624e6892113d",
+      "bytes": 17141
+    },
+    "tools75/fit75.py": {
+      "sha256": "fc83250ada43d767f04624d3ce990448b93d711e874b191216df0529845f2133",
+      "bytes": 19336
+    },
+    "tools78/model78.py": {
+      "sha256": "1219395e75450474adabbb0be65f939a48e2ed714ca628954c4718cd1297ae9c",
+      "bytes": 3849
+    },
+    "docs/experiments53/model_gradient53_preregistered.json": {
+      "sha256": "1c820dbe60bd5431d4b314a4b5275e4afd155f0e5441ef66b14e4f6f6ffcc157",
+      "bytes": 13582
+    },
+    "docs/experiments75/world_vz75_preregistered.json": {
+      "sha256": "ecaad0a625b3e55cadc2fe90f11b27d714b6f87c0e7b73b96f553d3dcd1d4a4c",
+      "bytes": 124818
+    },
+    "docs/experiments78/protected_response78_preregistered.json": {
+      "sha256": "2f17a3139a23c2256d31964989ac16ba8f14896bb779f18a78aca09a88f72a4a",
+      "bytes": 178133
+    },
+    "evidence/world_vz75/execution_01/report.json": {
+      "sha256": "26768d7378479f8038b89f793efab3cadcd801b2b9867c7e5daf49d15b9e3f79",
+      "bytes": 8689024
+    },
+    "evidence/world_vz75/labels_01/report.json": {
+      "sha256": "b594679c6fb2fd612f90a90ab35868ef8ccc131a12f9fef4186585fa357f4a64",
+      "bytes": 609098
+    },
+    "evidence/world_vz75/labels_01/world_vz_labels96.npz": {
+      "sha256": "ebd5676e4da25c02431b0889916f7ca79750ba1e0c9eca60c3e74b0f3b29370a",
+      "bytes": 22530
+    }
+  },
+  "v27_sha256": "d3c38429362e82745179f2c526b2ee52d805526df390d52346c805e5a51fff09",
+  "old_candidate_decisions_changed": false,
+  "observed_interface_constraints": [
+    "adapter52.load_actor returns a frozen actor; numeric54 supports same-dtype F64 actor components",
+    "fit75.fit_model requires exact7200 training transitions and1000 updates",
+    "FrozenPair78 forbids trainable components",
+    "cost52 is a finite-horizon local cost, not original PPO reward or full-task qualification J"
+  ],
+  "not_verified": [
+    "no new actor or fitter implementation yet",
+    "source mapping SHA read from receipt, not recomputed via torch",
+    "no new resource admission or numerical execution",
+    "no new candidate qualification"
+  ]
+}
