@@ -1,0 +1,201 @@
+{
+  "schema": "d1-steady-sampling80-source-feasibility-v1",
+  "status": "READ_ONLY_COMPLETE",
+  "experiment_status": "NOT_RUN",
+  "source_head": "36ff48ba932b9c049a1c7602bd6b27ec62aa5aac",
+  "prior79_plan": {
+    "path": "docs/experiments79/feedback79_preregistered.json",
+    "bytes": 180867,
+    "sha256": "107cebce4a95190cfe4725debb8efe2692c81517d188e672eca9b940c7cfa4b5"
+  },
+  "prior_bound_files_verified": 1357,
+  "source_mismatches": [],
+  "sources": [
+    {
+      "path": "tools79/policy79.py",
+      "bytes": 19153,
+      "sha256": "4882f04f420517fd9380dcb2dac3e5a7975be73b075a8c8fed3b64327eb960d3"
+    },
+    {
+      "path": "tools79/compare79.py",
+      "bytes": 13414,
+      "sha256": "f29a895547bd6638b696349f690d97456fd39871cfedbeddae2c4e63b5901f27"
+    },
+    {
+      "path": "tools79/run79.py",
+      "bytes": 25894,
+      "sha256": "f13be3b8b028665713aedb7506118d0f8d0654fdb5de4be6d38a65be198c156f"
+    },
+    {
+      "path": "tools52/adapter52.py",
+      "bytes": 14827,
+      "sha256": "ba3199b6a25a6da6efcd97051e5dd8fd0a5423afd703dfa14950ef9dee742297"
+    },
+    {
+      "path": "tools52/run_pilot52.py",
+      "bytes": 21577,
+      "sha256": "2e6faed7a4e14f2fd34f80729c914de5c702c0177cc347c3b8c771df6b6d3e42"
+    },
+    {
+      "path": "tools53/collection53.py",
+      "bytes": 19153,
+      "sha256": "2471c5f1163d7e7bd0e020ff171ba3789f6d0ecc2d98ec0769db1ca704bee812"
+    },
+    {
+      "path": "tools54/numerics54.py",
+      "bytes": 13296,
+      "sha256": "c30b109228790047febae672cd7e0d3dd8180f5deb0d061bc5242fbb005373b9"
+    },
+    {
+      "path": "tools/evaluate_d1_ppo.py",
+      "bytes": 22604,
+      "sha256": "47e5b3dd2a806b958c1be5d24a46a54848e6a4981401a07f40b0be3a4107f121"
+    }
+  ],
+  "complete_source_models": [
+    {
+      "seed": 64001,
+      "fit_status": "COMPLETE",
+      "fit_updates": 1000,
+      "weight_file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64001/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "2bf421e7a0d386e8b40de20613fff18154711fab3ee0f99ee6e7f444b8651719"
+      },
+      "mapping_sha256": "edd04cfef54bfcbdfbb8b30b32d4bb8b2430d22b8694fe5936cc83b01a9c7419",
+      "full_model_qualification": "NOT_PASSED"
+    },
+    {
+      "seed": 64002,
+      "fit_status": "COMPLETE",
+      "fit_updates": 1000,
+      "weight_file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64002/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "1d05ee44067d4b033f3604a54975f4727d7ce2d9ec4109c84ae463a9e9a3804f"
+      },
+      "mapping_sha256": "e41d508a1fd995e90e56cf1b276c0ea5fabf346916feabd7cf80ac7034a2c794",
+      "full_model_qualification": "NOT_PASSED"
+    },
+    {
+      "seed": 64003,
+      "fit_status": "COMPLETE",
+      "fit_updates": 1000,
+      "weight_file": {
+        "path": "evidence/world_vz75/execution_01/control_seed64003/final_state_dict.pt",
+        "bytes": 203580,
+        "sha256": "80afdbc19b856e8805eb0d4ef1b0156c3ee2076f5c3f601a2d3ee49aee872a16"
+      },
+      "mapping_sha256": "508badf3dbddc9e6ed1eca27ef27148007f4b759c3907d1cebe46114fdc61c58",
+      "full_model_qualification": "NOT_PASSED"
+    }
+  ],
+  "original_actor": {
+    "path": "evidence/low_memory_delay25/execution_01/random/train/policy.zip",
+    "bytes": 2606842,
+    "sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22"
+  },
+  "wheel_v27": {
+    "path": "/home/lyh/wheel-legged-control-lab/runtime/d1_b22/runtime_manifest_v27.json",
+    "bytes": 856947,
+    "sha256": "d3c38429362e82745179f2c526b2ee52d805526df390d52346c805e5a51fff09"
+  },
+  "turn_sampling_coverage": [
+    {
+      "arm": "legacy",
+      "turn_start_tick": 110,
+      "first_last_cost_state_time_s": [
+        2.22,
+        2.84
+      ],
+      "positive_steady_samples": 0,
+      "negative_steady_samples": 0
+    },
+    {
+      "arm": "legacy",
+      "turn_start_tick": 260,
+      "first_last_cost_state_time_s": [
+        5.22,
+        5.84
+      ],
+      "positive_steady_samples": 0,
+      "negative_steady_samples": 0
+    },
+    {
+      "arm": "legacy",
+      "turn_start_tick": 410,
+      "first_last_cost_state_time_s": [
+        8.22,
+        8.84
+      ],
+      "positive_steady_samples": 0,
+      "negative_steady_samples": 0
+    },
+    {
+      "arm": "steady",
+      "turn_start_tick": 175,
+      "first_last_cost_state_time_s": [
+        3.52,
+        4.14
+      ],
+      "positive_steady_samples": 32,
+      "negative_steady_samples": 0
+    },
+    {
+      "arm": "steady",
+      "turn_start_tick": 325,
+      "first_last_cost_state_time_s": [
+        6.5200000000000005,
+        7.140000000000001
+      ],
+      "positive_steady_samples": 0,
+      "negative_steady_samples": 32
+    },
+    {
+      "arm": "steady",
+      "turn_start_tick": 410,
+      "first_last_cost_state_time_s": [
+        8.22,
+        8.84
+      ],
+      "positive_steady_samples": 0,
+      "negative_steady_samples": 0
+    }
+  ],
+  "interface_findings": [
+    "Frozen policy79 update_actor only accepts 3 or 9 starts; planned 27-start averaging requires independent policy80 with original update mathematics preserved.",
+    "Frozen compare79 binds its feedback arms and 794xx evaluation grid; independent compare80 must retain original control thresholds while judging the new sampling question.",
+    "Full live Snapshot stores MjData plus Python/shaper/RNG state. Existing save_points archives INTEGRATION and Python state only; physical branches must restore the live Snapshot in the same environment, not reconstruct it from that archive.",
+    "Forward/reverse sampling remains 110/260/410; only turn_stop first two starts change to175/325. The fixed410 parking start is shared.",
+    "Both steps reuse each arm's fixed27-point set from the same original25 development trajectories; this is a new paired protocol, not a replay of79 online learning."
+  ],
+  "planned_budget": {
+    "admission_policy": 224,
+    "development_episodes": 9,
+    "development_policy": 5400,
+    "unique_complete_live_snapshots": 33,
+    "starts_per_arm_per_update": 27,
+    "policy_updates": 12,
+    "model_updates": 0,
+    "short_probe_points": 15,
+    "short_branches_per_point": 8,
+    "short_probe_policy": 3840,
+    "holdout_episodes": 63,
+    "holdout_policy": 37800,
+    "maximum_policy": 47264,
+    "maximum_native": 472640,
+    "maximum_pd": 236320,
+    "policy_if_screen_rejected": 9464
+  },
+  "actual_new_work": {
+    "model_calls": 0,
+    "actor_calls": 0,
+    "physical_policy_steps": 0,
+    "training_updates": 0
+  },
+  "limits": [
+    "Static source and file-identity checks only; no new model, actor or simulator was imported or executed.",
+    "Coverage calculation establishes overlap, not a cause of79 failure or a guarantee of control improvement.",
+    "Existing model failures and unknown references remain unchanged."
+  ]
+}
