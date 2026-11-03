@@ -1,0 +1,467 @@
+{
+  "schema": "project82-delivery-v1",
+  "date": "2026-11-03",
+  "base_head": "885c340efe3b6dd94d7b5c6703ee0758bac49832",
+  "status": "COMPLETE_BOUNDED_SCOPE",
+  "all_project_problems_solved": false,
+  "results": {
+    "native_core": {
+      "status": "PASS",
+      "assertions_per_native_run": 11256,
+      "local_unittest": {
+        "passed": 5,
+        "skipped": 0
+      },
+      "clean_source_unittest": {
+        "passed": 3,
+        "skipped_local_historical_evidence": 2
+      },
+      "probe_actions": "synthetic",
+      "model_calls": 0,
+      "physics_steps": 0,
+      "ROS_connected": false,
+      "hardware_qualified": false,
+      "CI_requires_compiler_before_unittest": true
+    },
+    "performance": "No new qualifying policy; original81 decision unchanged"
+  },
+  "readbacks": {
+    "time_error82": {
+      "schema": "d1-time-error82-posthoc-readback-v1",
+      "status": "COMPLETE",
+      "analysis_role": "derived_posthoc_descriptive",
+      "source_report_sha256": "4d1d82990b85b81fc6214222f1ab28c9f4018aadcfc449f3c132673c22f53148",
+      "source_plan_sha256": "987db250df14869b9f8ce72ab3522d3356de646233341c9a66c4bbccb3d6cf20",
+      "script_sha256": "07a50895a711de8abfcddc6971a5cda442d4b14c8e633fd0e1fc4636f37ea4ad",
+      "source_policy_audit_sha256": "c66db0bece6ca243cf50ed36877123f51e55d3911808585d0f430e96b38674bb",
+      "checks": 46724,
+      "episode_count": 63,
+      "unique_baseline_episodes": 9,
+      "candidate_episodes": 54,
+      "paired_candidate_vs_baseline": 54,
+      "paired_Q6_vs_C6": 27,
+      "raw_policy_rows": 37800,
+      "clock_semantics": "Interval index t carries post-transition response and command_during_interval; windows use interval start=t*0.02 exactly as original evaluator.",
+      "sign_semantics": "signed bias=response-command; command-aligned negative bias means undertracking. Strata use actual per-interval command sign,including mixed1–3s.",
+      "aggregation": "all three registered reset seeds equal-weight; baseline9episodes shared,not counted as independent per-model replicas; no scale/seed/window selection gate",
+      "new_model_calls": 0,
+      "new_actor_calls": 0,
+      "new_physics_steps": 0,
+      "new_updates": 0,
+      "original_gates_changed": false,
+      "cpu_seconds": 1.054821996
+    },
+    "response_crosscheck82": {
+      "schema": "d1-response-crosscheck82-v1",
+      "status": "COMPLETE",
+      "analysis_role": "posthoc_descriptive",
+      "script_sha256": "5813e28f27d1c8fd5017eedb8780045dd850635fab1c85a10cdcd2d0c70b3741",
+      "source_report_sha256": "4d1d82990b85b81fc6214222f1ab28c9f4018aadcfc449f3c132673c22f53148",
+      "source_plan_sha256": "987db250df14869b9f8ce72ab3522d3356de646233341c9a66c4bbccb3d6cf20",
+      "checks": 68914,
+      "new_model_calls": 0,
+      "new_actor_calls": 0,
+      "new_physics_steps": 0,
+      "new_updates": 0,
+      "original_gates_changed": false,
+      "cpu_seconds": 1.4513658010000001,
+      "wall_seconds": 1.6845728670014068
+    }
+  },
+  "resources": {
+    "readback01": {
+      "schema": "bounded-control-job49-v1",
+      "status": "COMPLETE",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/lyh/project82_review_20261103/time_error82.py",
+        "--output",
+        "/home/lyh/project82_review_20261103/time_error82.json"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-project82-readback01-20261103.service",
+      "timeout_s": 330.0,
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "minimum_effective_bytes": 8382967808,
+      "peak_group_bytes": 158982144,
+      "child_started": true,
+      "returncode": 0,
+      "error": null,
+      "signals": [],
+      "retry_permitted": false,
+      "cpu_affinity": [
+        0
+      ],
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "child_pid": 411179,
+      "owned_process_group_empty": true,
+      "child_reaped": true,
+      "elapsed_s": 12.074185725999996
+    },
+    "response_readback01": {
+      "schema": "bounded-control-job49-v1",
+      "status": "COMPLETE",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/lyh/project82_review_20261103/response_crosscheck82.py",
+        "--output",
+        "/home/lyh/project82_review_20261103/response_crosscheck82.json"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-response82-readback01-20261103.service",
+      "timeout_s": 330.0,
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "minimum_effective_bytes": 7537475584,
+      "peak_group_bytes": 100413440,
+      "child_started": true,
+      "returncode": 0,
+      "error": null,
+      "signals": [],
+      "retry_permitted": false,
+      "cpu_affinity": [
+        0
+      ],
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "child_pid": 426316,
+      "owned_process_group_empty": true,
+      "child_reaped": true,
+      "elapsed_s": 12.070963295002002
+    },
+    "adapter_tests01": {
+      "schema": "bounded-control-job49-v1",
+      "status": "COMPLETE",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_adapter82.py",
+        "-v"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-adapter82-tests01-20261103.service",
+      "timeout_s": 120.0,
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "minimum_effective_bytes": 7349714944,
+      "peak_group_bytes": 124833792,
+      "child_started": true,
+      "returncode": 0,
+      "error": null,
+      "signals": [],
+      "retry_permitted": false,
+      "cpu_affinity": [
+        0
+      ],
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "child_pid": 425099,
+      "owned_process_group_empty": true,
+      "child_reaped": true,
+      "elapsed_s": 12.074799533991609
+    },
+    "adapter_tests02": {
+      "schema": "bounded-control-job49-v1",
+      "status": "COMPLETE",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/lyh/project82_review_20261103/check_engineering82.py"
+      ],
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-adapter82-tests02-20261103.service",
+      "timeout_s": 120.0,
+      "supervisor_sha256": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+      "minimum_effective_bytes": 9929846784,
+      "peak_group_bytes": 128876544,
+      "child_started": true,
+      "returncode": 0,
+      "error": null,
+      "signals": [],
+      "retry_permitted": false,
+      "cpu_affinity": [
+        0
+      ],
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "child_pid": 428971,
+      "owned_process_group_empty": true,
+      "child_reaped": true,
+      "elapsed_s": 13.08042380202096
+    }
+  },
+  "resource_contract": {
+    "serial_local_heavy_jobs": true,
+    "Nice": 10,
+    "cpu_threads": 1,
+    "MemoryHigh_bytes": 2147483648,
+    "MemoryMax_bytes": 3221225472,
+    "MemorySwapMax_bytes": 0,
+    "startup_available_bytes": 4294967296,
+    "runtime_reserve_bytes": 2147483648
+  },
+  "frozen_before": {
+    "status": "PASS",
+    "groups": [
+      {
+        "root": "/home/lyh/ddt_ros2_ws",
+        "plan": "docs/experiments81/objective81_preregistered.json",
+        "plan_sha256": "987db250df14869b9f8ce72ab3522d3356de646233341c9a66c4bbccb3d6cf20",
+        "files": 1390
+      },
+      {
+        "root": "/home/lyh/wheel-legged-control-lab",
+        "plan": "reports/control_candidates49_preregistration.json",
+        "plan_sha256": "227285cdf4391a78513003dcda09185b09ab862da119b31c7558addba86a855c",
+        "files": 17
+      }
+    ],
+    "v27_sha256": "d3c38429362e82745179f2c526b2ee52d805526df390d52346c805e5a51fff09",
+    "failures": [],
+    "cpu_seconds": 0.075133702,
+    "new_physics_steps": 0,
+    "new_model_calls": 0,
+    "new_parameter_updates": 0
+  },
+  "frozen_after": {
+    "status": "PASS",
+    "groups": [
+      {
+        "root": "/home/lyh/ddt_ros2_ws",
+        "plan": "docs/experiments81/objective81_preregistered.json",
+        "plan_sha256": "987db250df14869b9f8ce72ab3522d3356de646233341c9a66c4bbccb3d6cf20",
+        "files": 1390
+      },
+      {
+        "root": "/home/lyh/wheel-legged-control-lab",
+        "plan": "reports/control_candidates49_preregistration.json",
+        "plan_sha256": "227285cdf4391a78513003dcda09185b09ab862da119b31c7558addba86a855c",
+        "files": 17
+      }
+    ],
+    "v27_sha256": "d3c38429362e82745179f2c526b2ee52d805526df390d52346c805e5a51fff09",
+    "failures": [],
+    "cpu_seconds": 0.088995736,
+    "new_physics_steps": 0,
+    "new_model_calls": 0,
+    "new_parameter_updates": 0
+  },
+  "mpc82_source_bindings_verified_after": 32,
+  "new_code_sha256": {
+    "runtime82/adapter82.hpp": "0fd2d861d4a3ea8b1ad648923f200447f4ee819051b56de14e54df8331e990f3",
+    "runtime82/probe82.cpp": "53ac0cad4df9a59e2476438dc17cfafc9817bd5781255b04b25fba142c09e517",
+    "runtime82/README.md": "ad6ea242152ace84382f716e47843a1b47604d18d78dcf6f97d263118a794974",
+    "tests/native/adapter82_test.cpp": "8400a3f1fb0d9d1658a0312cab442e4714f2ba510f47e13975121c11d7a54466",
+    "tests/test_adapter82.py": "ec3ab65c8b9f732dc8bdab57f62d04f98e1f14bf92e555097efdc34d8b4c052d",
+    ".github/workflows/adapter82.yml": "c5becfeb16adc4958fda7ab7cc14cfee2d79f75f97f3cd76155e1b65467e1b6b"
+  },
+  "public_artifacts": {
+    "docs/assets/project82/time_error82.py": {
+      "bytes": 31860,
+      "sha256": "07a50895a711de8abfcddc6971a5cda442d4b14c8e633fd0e1fc4636f37ea4ad",
+      "original_bytes": 31860,
+      "original_sha256": "07a50895a711de8abfcddc6971a5cda442d4b14c8e633fd0e1fc4636f37ea4ad",
+      "source": "/home/lyh/project82_review_20261103/time_error82.py"
+    },
+    "docs/assets/project82/time_error82.json.gz": {
+      "bytes": 544835,
+      "sha256": "5f751694271fc5fa998a1ca8d30178c7e8ef7580a56899e0f298548e8cdc8b64",
+      "original_bytes": 3987032,
+      "original_sha256": "254b3c59417149166df41d71ca70ddb7df4b6de637a805e2005e540d2c21aea2",
+      "source": "/home/lyh/project82_review_20261103/time_error82.json"
+    },
+    "docs/assets/project82/response_crosscheck82.py": {
+      "bytes": 39469,
+      "sha256": "5813e28f27d1c8fd5017eedb8780045dd850635fab1c85a10cdcd2d0c70b3741",
+      "original_bytes": 39469,
+      "original_sha256": "5813e28f27d1c8fd5017eedb8780045dd850635fab1c85a10cdcd2d0c70b3741",
+      "source": "/home/lyh/project82_review_20261103/response_crosscheck82.py"
+    },
+    "docs/assets/project82/response_crosscheck82.json.gz": {
+      "bytes": 258760,
+      "sha256": "ab832620dca3df690fce28e4208a3edfe62aea492ab4e2f65c2b91f86eb9469e",
+      "original_bytes": 1663278,
+      "original_sha256": "d92a82cc93e06b8a9e2e52394d9e7752703f1232114dcab5306717a28f36b061",
+      "source": "/home/lyh/project82_review_20261103/response_crosscheck82.json"
+    },
+    "docs/assets/project82/plan82.md": {
+      "bytes": 4412,
+      "sha256": "72ed76a9ba69be8728117d25cda2dc4941283b8a9ebacf104551f8a48cc6b761",
+      "original_bytes": 4412,
+      "original_sha256": "72ed76a9ba69be8728117d25cda2dc4941283b8a9ebacf104551f8a48cc6b761",
+      "source": "/home/lyh/project82_review_20261103/plan82.md"
+    },
+    "docs/assets/project82/integrity82.py": {
+      "bytes": 1924,
+      "sha256": "562211b02abb098643dc55302e7d0cc517ba0c7b1508a301a9d51fa937025f84",
+      "original_bytes": 1924,
+      "original_sha256": "562211b02abb098643dc55302e7d0cc517ba0c7b1508a301a9d51fa937025f84",
+      "source": "/home/lyh/project82_review_20261103/integrity82.py"
+    },
+    "docs/assets/project82/integrity_before82.json": {
+      "bytes": 720,
+      "sha256": "0819a477ff5847a6c076f7c35287a1762c508668dda33172b455765d3ac04731",
+      "original_bytes": 720,
+      "original_sha256": "0819a477ff5847a6c076f7c35287a1762c508668dda33172b455765d3ac04731",
+      "source": "/home/lyh/project82_review_20261103/integrity_before82.json"
+    },
+    "docs/assets/project82/integrity_after82.json": {
+      "bytes": 720,
+      "sha256": "2d0434e41753474e76fbfbc111a2a4b8c213f5a19b87cf32a19013c68bbda1f3",
+      "original_bytes": 720,
+      "original_sha256": "2d0434e41753474e76fbfbc111a2a4b8c213f5a19b87cf32a19013c68bbda1f3",
+      "source": "/home/lyh/project82_review_20261103/integrity_after82.json"
+    },
+    "docs/assets/project82/supervision/readback01/report.json": {
+      "bytes": 942,
+      "sha256": "7faa4ad007c781703969cfc18a06fcca9c15118a21d239be842fddbcdce6d6ab",
+      "original_bytes": 942,
+      "original_sha256": "7faa4ad007c781703969cfc18a06fcca9c15118a21d239be842fddbcdce6d6ab",
+      "source": "/home/lyh/project82_review_20261103/readback01/report.json"
+    },
+    "docs/assets/project82/supervision/readback01/resources.jsonl.gz": {
+      "bytes": 1213,
+      "sha256": "360e9a4ffc623dd61c45dc6ae4bfde5b1c9a170699f1e8e822fbd4868167ced9",
+      "original_bytes": 16069,
+      "original_sha256": "7c0835e74c4d8c36fdeffaca4875c7271e30bba9aff6f0376a9ac7547ccb288f",
+      "source": "/home/lyh/project82_review_20261103/readback01/resources.jsonl"
+    },
+    "docs/assets/project82/supervision/readback01/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/lyh/project82_review_20261103/readback01/stderr.log"
+    },
+    "docs/assets/project82/supervision/readback01/stdout.log": {
+      "bytes": 165,
+      "sha256": "cdfb9c5ccb40c4e35132e9312316c6daecb57cb42c2330e8c6f0c99fd7446a24",
+      "original_bytes": 165,
+      "original_sha256": "cdfb9c5ccb40c4e35132e9312316c6daecb57cb42c2330e8c6f0c99fd7446a24",
+      "source": "/home/lyh/project82_review_20261103/readback01/stdout.log"
+    },
+    "docs/assets/project82/supervision/response_readback01/report.json": {
+      "bytes": 961,
+      "sha256": "85ac65dfe3e392f919e7d1c2ba0b6497b0bd2205d13eac7320dcf0d6b4d24ab8",
+      "original_bytes": 961,
+      "original_sha256": "85ac65dfe3e392f919e7d1c2ba0b6497b0bd2205d13eac7320dcf0d6b4d24ab8",
+      "source": "/home/lyh/project82_review_20261103/response_readback01/report.json"
+    },
+    "docs/assets/project82/supervision/response_readback01/resources.jsonl.gz": {
+      "bytes": 1221,
+      "sha256": "e0082bddb450e015c4239628ec7d11bc82c51760a8f8169a30d2c8198421ad3a",
+      "original_bytes": 16113,
+      "original_sha256": "c95faea112b038424e6952f1070ee9d9d7771a3cb253c0a1758116bc46508a70",
+      "source": "/home/lyh/project82_review_20261103/response_readback01/resources.jsonl"
+    },
+    "docs/assets/project82/supervision/response_readback01/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/lyh/project82_review_20261103/response_readback01/stderr.log"
+    },
+    "docs/assets/project82/supervision/response_readback01/stdout.log": {
+      "bytes": 276,
+      "sha256": "fe91444799125a97539e7726d2908cc0bbd10e55e3fc9979000f34d9573ce748",
+      "original_bytes": 276,
+      "original_sha256": "fe91444799125a97539e7726d2908cc0bbd10e55e3fc9979000f34d9573ce748",
+      "source": "/home/lyh/project82_review_20261103/response_readback01/stdout.log"
+    },
+    "docs/assets/project82/supervision/adapter_tests01/report.json": {
+      "bytes": 913,
+      "sha256": "98b4f6de1425efefcea89fffd0275f08f0e96638756cad3520f687fe24ccecbd",
+      "original_bytes": 913,
+      "original_sha256": "98b4f6de1425efefcea89fffd0275f08f0e96638756cad3520f687fe24ccecbd",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests01/report.json"
+    },
+    "docs/assets/project82/supervision/adapter_tests01/resources.jsonl.gz": {
+      "bytes": 1217,
+      "sha256": "edf84aa5472244dda75d9a9ab472ec01ae79908cb0495c295cf7881afca1743e",
+      "original_bytes": 15961,
+      "original_sha256": "fd5197d5ae38832b212f3c62c88a9bd9f44df571e88929dbbcef956d49e8f693",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests01/resources.jsonl"
+    },
+    "docs/assets/project82/supervision/adapter_tests01/stderr.log": {
+      "bytes": 542,
+      "sha256": "5a21d11f447f73b08f2892ab8b8356d1640c359f0873d22002ce54581838b5b9",
+      "original_bytes": 542,
+      "original_sha256": "5a21d11f447f73b08f2892ab8b8356d1640c359f0873d22002ce54581838b5b9",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests01/stderr.log"
+    },
+    "docs/assets/project82/supervision/adapter_tests01/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests01/stdout.log"
+    },
+    "docs/assets/project82/supervision/adapter_tests02/report.json": {
+      "bytes": 868,
+      "sha256": "82519836ee22a3d063e2f388037003a799a5c7f005460f9cc4634fd960f361f9",
+      "original_bytes": 868,
+      "original_sha256": "82519836ee22a3d063e2f388037003a799a5c7f005460f9cc4634fd960f361f9",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests02/report.json"
+    },
+    "docs/assets/project82/supervision/adapter_tests02/resources.jsonl.gz": {
+      "bytes": 1299,
+      "sha256": "1ccf543cb7924635b1bbc63742f23d405cb3016907f4ccee79cc3c5fd24902e6",
+      "original_bytes": 17720,
+      "original_sha256": "3e3674ffc5a1d6db24603174b5b9231023fb0b9131e19e590c57cf0dab724791",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests02/resources.jsonl"
+    },
+    "docs/assets/project82/supervision/adapter_tests02/stderr.log": {
+      "bytes": 1251,
+      "sha256": "2c67fbea426ec0799f78a5a8a5f879a8c6b959a95a529a86165d39b19add9d91",
+      "original_bytes": 1251,
+      "original_sha256": "2c67fbea426ec0799f78a5a8a5f879a8c6b959a95a529a86165d39b19add9d91",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests02/stderr.log"
+    },
+    "docs/assets/project82/supervision/adapter_tests02/stdout.log": {
+      "bytes": 1239,
+      "sha256": "488b7058c72cba956cdc5cee76a85c6bef3d770e53e6b6624b415cdcfd498182",
+      "original_bytes": 1239,
+      "original_sha256": "488b7058c72cba956cdc5cee76a85c6bef3d770e53e6b6624b415cdcfd498182",
+      "source": "/home/lyh/project82_review_20261103/adapter_tests02/stdout.log"
+    }
+  },
+  "CI": "Exact final commit CI is checked after commit/push; this is not a CI-success claim.",
+  "interpretation_limits": [
+    "No archive48 rerun, runtime_v27 rebinding, frozen-source modification, partial promotion or new training.",
+    "Only MPC82 performed new physics in this batch; all evidence readers are standard-library data audits.",
+    "All original performance gates remain in force; a complete failed candidate is rejected.",
+    "Native test-only core is not connected to ROS, actor_server34 or hardware.",
+    "Historical raw artifacts are required to rerun their readback scripts; this package does not claim all old data is published.",
+    "Only the complete new MPC execution is additionally published as raw data.",
+    "Readback scripts intentionally retain the exact executed absolute paths and source hashes.",
+    "Tests, deterministic checks and shared-reset models are not independent statistical replications.",
+    "No source cleanup, failed-artifact deletion or experiment continuation was performed."
+  ]
+}

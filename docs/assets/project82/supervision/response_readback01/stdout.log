@@ -1,0 +1,1 @@
+{"status": "COMPLETE", "counts": {"response_rows_all_prefixes": 288, "response_rows_H32": 72, "steady_endpoint_actions": 288, "parameter_pairs": 24, "model_seeds": 3, "independent_V_reset_seeds": 3, "scales": 4, "arms": 2}, "cpu_seconds": 1.4513658010000001, "failure": null}

@@ -1,0 +1,45 @@
+name: adapter82-native-contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime82/**'
+      - 'tests/native/adapter82_test.cpp'
+      - 'tests/test_adapter82.py'
+      - 'docs/project82*'
+      - 'reports/project82*'
+      - '.github/workflows/adapter82.yml'
+  pull_request:
+    paths:
+      - 'runtime82/**'
+      - 'tests/native/adapter82_test.cpp'
+      - 'tests/test_adapter82.py'
+      - 'docs/project82*'
+      - 'reports/project82*'
+      - '.github/workflows/adapter82.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native-contract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile native core and exercise synthetic interface/fault cases
+        # No ONNX weights, vendor robot assets, ROS, training or physics.
+        # Two local legacy-evidence checks explicitly skip when their inputs
+        # are absent; all tests of the new native core are mandatory.
+        run: |
+          c++ --version
+          python -B -m unittest discover -s tests -p test_adapter82.py -v
