@@ -1,0 +1,1277 @@
+{
+  "schema": "project83-d1-delivery-v1",
+  "status": "COMPLETE",
+  "scope": "bounded engineering validation and local learned-model geometry; no control-performance qualification",
+  "global_policy_candidate_accepted": false,
+  "hardware_qualified": false,
+  "default_changed": false,
+  "new_physics_steps": 0,
+  "new_parameter_updates": 0,
+  "runtime": {
+    "cases": {
+      "native": {
+        "attempt_ledger_rows": 64,
+        "engine_status": "COMPLETE",
+        "fault": "",
+        "fresh_session_paired_rows": [
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 0
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 1
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 2
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 3
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 4
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 5
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 6
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 7
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 8
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 9
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 10
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 11
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 12
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 13
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 14
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 15
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 16
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 17
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 18
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 19
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 20
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 21
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 22
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 23
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 24
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 25
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 26
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 27
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 28
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 29
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 30
+          },
+          {
+            "actions16_f32_bytes": true,
+            "effective_input_sha256": true,
+            "effective_yaw11_f32_bytes": true,
+            "raw627_f32_bytes": true,
+            "tick": 31
+          }
+        ],
+        "maximum_capture_age_ns": {
+          "accepted": 1667125,
+          "begin": 14751,
+          "end": 1692155
+        },
+        "observed_rows": 64,
+        "path": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_01/native",
+        "requests_attempted": 64,
+        "requests_completed": 64,
+        "scalar_shaper_replay_generations": [
+          1,
+          2
+        ],
+        "session_inference_attempts": [
+          32,
+          32
+        ],
+        "session_inference_returns": [
+          32,
+          32
+        ],
+        "source_report_status": "COMPLETE",
+        "status": "COMPLETE"
+      },
+      "nominal": {
+        "attempt_ledger_rows": 24,
+        "dds_recount": {
+          "authorized_efforts_consumed": 24,
+          "authorized_publish_returns_after_deadline": 0,
+          "expired_authorized_messages_rejected": 0,
+          "revoked_authorized_messages_rejected": 0,
+          "wire_authorized_messages_observed": 24
+        },
+        "engine_status": "COMPLETE",
+        "fault": "",
+        "maximum_capture_age_ns": {
+          "accepted": 10989099,
+          "begin": 5520120,
+          "end": 11013363
+        },
+        "maximum_dds_capture_age_ns": {
+          "consume": 16507797,
+          "publish_entry": 11381968,
+          "publish_return": 11423292,
+          "receive": 16233261
+        },
+        "observed_rows": 24,
+        "path": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_nominal",
+        "requests_attempted": 24,
+        "requests_completed": 24,
+        "scalar_shaper_replay_generations": [
+          1
+        ],
+        "session_inference_attempts": [
+          24
+        ],
+        "session_inference_returns": [
+          24
+        ],
+        "source_report_status": "COMPLETE",
+        "status": "COMPLETE"
+      },
+      "late_receive": {
+        "attempt_ledger_rows": 1,
+        "dds_recount": {
+          "authorized_efforts_consumed": 0,
+          "authorized_publish_returns_after_deadline": 0,
+          "expired_authorized_messages_rejected": 1,
+          "revoked_authorized_messages_rejected": 0,
+          "wire_authorized_messages_observed": 1
+        },
+        "engine_status": "INCOMPLETE",
+        "fault": "CONSUMER_DEADLINE",
+        "maximum_capture_age_ns": {
+          "accepted": 1938577,
+          "begin": 1217365,
+          "end": 1970122
+        },
+        "maximum_dds_capture_age_ns": {
+          "consume": 24466880,
+          "publish_entry": 2064229,
+          "publish_return": 2081635,
+          "receive": 3221533
+        },
+        "observed_rows": 1,
+        "path": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_late_receive",
+        "requests_attempted": 1,
+        "requests_completed": 1,
+        "scalar_shaper_replay_generations": [
+          1
+        ],
+        "session_inference_attempts": [
+          1
+        ],
+        "session_inference_returns": [
+          1
+        ],
+        "source_report_status": "COMPLETE",
+        "status": "COMPLETE"
+      },
+      "late_response": {
+        "attempt_ledger_rows": 1,
+        "dds_recount": {
+          "authorized_efforts_consumed": 0,
+          "authorized_publish_returns_after_deadline": 0,
+          "expired_authorized_messages_rejected": 0,
+          "revoked_authorized_messages_rejected": 0,
+          "wire_authorized_messages_observed": 0
+        },
+        "engine_status": "INCOMPLETE",
+        "fault": "RPC_DEADLINE",
+        "maximum_capture_age_ns": {
+          "accepted": null,
+          "begin": 1269030,
+          "end": 24892671
+        },
+        "maximum_dds_capture_age_ns": {
+          "consume": null,
+          "publish_entry": 25233975,
+          "publish_return": 25303478,
+          "receive": 26566511
+        },
+        "observed_rows": 1,
+        "path": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_late_response",
+        "requests_attempted": 1,
+        "requests_completed": 0,
+        "scalar_shaper_replay_generations": [],
+        "session_inference_attempts": [
+          null
+        ],
+        "session_inference_returns": [
+          null
+        ],
+        "source_report_status": "COMPLETE",
+        "status": "COMPLETE"
+      },
+      "stale_command": {
+        "attempt_ledger_rows": 0,
+        "dds_recount": {
+          "authorized_efforts_consumed": 0,
+          "authorized_publish_returns_after_deadline": 0,
+          "expired_authorized_messages_rejected": 0,
+          "revoked_authorized_messages_rejected": 0,
+          "wire_authorized_messages_observed": 0
+        },
+        "engine_status": "INCOMPLETE",
+        "fault": "COMMAND_STALE",
+        "maximum_capture_age_ns": {
+          "accepted": null,
+          "begin": 1214467,
+          "end": 1252659
+        },
+        "maximum_dds_capture_age_ns": {
+          "consume": null,
+          "publish_entry": 1289466,
+          "publish_return": 1306622,
+          "receive": 2505580
+        },
+        "observed_rows": 1,
+        "path": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_stale_command",
+        "requests_attempted": 0,
+        "requests_completed": 0,
+        "scalar_shaper_replay_generations": [],
+        "session_inference_attempts": [
+          0
+        ],
+        "session_inference_returns": [
+          0
+        ],
+        "source_report_status": "COMPLETE",
+        "status": "COMPLETE"
+      }
+    },
+    "totals": {
+      "exact_inference_returns": null,
+      "known_session_inference_returns_lower_bound": 89,
+      "request_attempts": 90,
+      "request_completions": 89,
+      "unknown_or_missing_session_inference_count": 1
+    },
+    "independent_checks": 4314,
+    "failed_checks": 0
+  },
+  "policy": {
+    "models": [
+      {
+        "seed": 64001,
+        "status": "COMPLETE",
+        "points_verified": 21,
+        "gradient_shape": [
+          3,
+          516
+        ],
+        "gradient_norms": {
+          "yaw": 0.2214877327868025,
+          "forward": 0.2592188256592397,
+          "stop": 0.5361453194279362
+        },
+        "source_mapping_sha256": {
+          "model": "edd04cfef54bfcbdfbb8b30b32d4bb8b2430d22b8694fe5936cc83b01a9c7419",
+          "actor": "8fb00b77019c6bce7247a5f3e9774e63064e48307f620fc56ac7f0ef02a35106"
+        },
+        "objectives": {
+          "yaw": 0.06382124577892703,
+          "forward": 0.0189621721005526,
+          "stop": 0.09344809947632296
+        },
+        "raw_unconstrained_guard_dots": [
+          0.004720060515997199,
+          0.0498553111166479
+        ],
+        "raw_unconstrained_guard_conflicts": {
+          "forward": true,
+          "stop": true
+        },
+        "projected_raw_guard_dots": [
+          -1.8137270826914405e-18,
+          -1.5767385964240792e-18
+        ],
+        "active_constraints": [
+          0,
+          1
+        ],
+        "independently_computed_kkt": {
+          "primal": 0.0,
+          "dual": 0.0,
+          "stationarity_linf": 1.734723475976807e-18,
+          "complementarity": 4.681190845324426e-19
+        },
+        "kkt_tolerance": 2.3148773278680252e-11,
+        "primal_value": 0.0061207794349122805,
+        "dual_value": 0.0061207794349122805,
+        "primal_dual_gap": 0.0,
+        "retained_unscaled_yaw_descent_ratio": 0.7504616091276448,
+        "normalized_yaw_reduction_retention_ratio": 0.7229786555668943,
+        "normalized_yaw_reduction_lost_at_0_009": 0.0001039081772794228,
+        "directions": {
+          "unconstrained": {
+            "yaw_forward_stop_derivatives": [
+              -0.04167676340851389,
+              0.004009979903733993,
+              0.04235513400614262
+            ],
+            "descriptive_0_009_changes": [
+              -0.00037509087067662494,
+              3.6089819133605935e-05,
+              0.0003811962060552835
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.005877210106112895,
+            "guard_positive_raw_signs": [
+              true,
+              true
+            ],
+            "normalized_constraints_certified": false,
+            "nonzero_direction_resolved": true
+          },
+          "projected": {
+            "yaw_forward_stop_derivatives": [
+              -0.030131410377466906,
+              -1.481567744637097e-18,
+              -5.253258634201768e-19
+            ],
+            "descriptive_0_009_changes": [
+              -0.00027118269339720214,
+              -1.3334109701733871e-20,
+              -4.727932770781591e-21
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.004249097461001666,
+            "guard_positive_raw_signs": [
+              false,
+              false
+            ],
+            "normalized_constraints_certified": true,
+            "nonzero_direction_resolved": true
+          }
+        },
+        "unconstrained_0_01_row_l1_linear_yaw_upper_bound": 0.0018374117019966335,
+        "upper_bound_fraction_of_current_Q6": 0.028789969226882806,
+        "projected_usable_local_descent": true,
+        "local_proxy_only": true,
+        "physical_evidence": "NOT_RUN",
+        "performance_certificate": false
+      },
+      {
+        "seed": 64002,
+        "status": "COMPLETE",
+        "points_verified": 21,
+        "gradient_shape": [
+          3,
+          516
+        ],
+        "gradient_norms": {
+          "yaw": 0.2643842375425251,
+          "forward": 0.23339505352259546,
+          "stop": 0.3348639525851553
+        },
+        "source_mapping_sha256": {
+          "model": "e41d508a1fd995e90e56cf1b276c0ea5fabf346916feabd7cf80ac7034a2c794",
+          "actor": "8fb00b77019c6bce7247a5f3e9774e63064e48307f620fc56ac7f0ef02a35106"
+        },
+        "objectives": {
+          "yaw": 0.062175661246827406,
+          "forward": 0.021606734259413746,
+          "stop": 0.08955886082211945
+        },
+        "raw_unconstrained_guard_dots": [
+          -0.00023813988517138856,
+          0.06748004041421748
+        ],
+        "raw_unconstrained_guard_conflicts": {
+          "forward": false,
+          "stop": true
+        },
+        "projected_raw_guard_dots": [
+          -1.4217299127153172e-18,
+          -4.474459815676967e-19
+        ],
+        "active_constraints": [
+          0,
+          1
+        ],
+        "independently_computed_kkt": {
+          "primal": 0.0,
+          "dual": 0.0,
+          "stationarity_linf": 3.469446951953614e-18,
+          "complementarity": 1.426015622389144e-19
+        },
+        "kkt_tolerance": 2.743842375425251e-11,
+        "primal_value": 0.020679845884512254,
+        "dual_value": 0.020679845884512254,
+        "primal_dual_gap": 0.0,
+        "retained_unscaled_yaw_descent_ratio": 0.4082937246554648,
+        "normalized_yaw_reduction_retention_ratio": 0.5623484102044994,
+        "normalized_yaw_reduction_lost_at_0_009": 0.00021757636703346594,
+        "directions": {
+          "unconstrained": {
+            "yaw_forward_stop_derivatives": [
+              -0.05523835045110551,
+              -0.0001881922447704291,
+              0.05332672548158509
+            ],
+            "descriptive_0_009_changes": [
+              -0.0004971451540599495,
+              -1.693730202933862e-06,
+              0.00047994052933426575
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.007995816113420378,
+            "guard_positive_raw_signs": [
+              false,
+              true
+            ],
+            "normalized_constraints_certified": false,
+            "nonzero_direction_resolved": true
+          },
+          "projected": {
+            "yaw_forward_stop_derivatives": [
+              -0.03106319855849818,
+              -1.392321987577832e-18,
+              -3.7043546653900983e-19
+            ],
+            "descriptive_0_009_changes": [
+              -0.0002795687870264836,
+              -1.2530897888200487e-20,
+              -3.3339191988510883e-21
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.00449643447966947,
+            "guard_positive_raw_signs": [
+              false,
+              false
+            ],
+            "normalized_constraints_certified": true,
+            "nonzero_direction_resolved": true
+          }
+        },
+        "unconstrained_0_01_row_l1_linear_yaw_upper_bound": 0.00224627117305105,
+        "upper_bound_fraction_of_current_Q6": 0.036127821208586965,
+        "projected_usable_local_descent": true,
+        "local_proxy_only": true,
+        "physical_evidence": "NOT_RUN",
+        "performance_certificate": false
+      },
+      {
+        "seed": 64003,
+        "status": "COMPLETE",
+        "points_verified": 21,
+        "gradient_shape": [
+          3,
+          516
+        ],
+        "gradient_norms": {
+          "yaw": 0.26071439901511756,
+          "forward": 0.2463026985117526,
+          "stop": 0.2616532488889455
+        },
+        "source_mapping_sha256": {
+          "model": "508badf3dbddc9e6ed1eca27ef27148007f4b759c3907d1cebe46114fdc61c58",
+          "actor": "8fb00b77019c6bce7247a5f3e9774e63064e48307f620fc56ac7f0ef02a35106"
+        },
+        "objectives": {
+          "yaw": 0.06477358649836922,
+          "forward": 0.0199862525420515,
+          "stop": 0.09643459209174417
+        },
+        "raw_unconstrained_guard_dots": [
+          0.0014692477655235633,
+          0.04810912982734152
+        ],
+        "raw_unconstrained_guard_conflicts": {
+          "forward": true,
+          "stop": true
+        },
+        "projected_raw_guard_dots": [
+          6.0914862438354415e-19,
+          7.010580684513524e-18
+        ],
+        "active_constraints": [
+          0,
+          1
+        ],
+        "independently_computed_kkt": {
+          "primal": 2.6028180959879326e-17,
+          "dual": 0.0,
+          "stationarity_linf": 3.469446951953614e-18,
+          "complementarity": 4.9612640924553985e-18
+        },
+        "kkt_tolerance": 2.7071439901511757e-11,
+        "primal_value": 0.017639674260061702,
+        "dual_value": 0.017639674260061702,
+        "primal_dual_gap": 0.0,
+        "retained_unscaled_yaw_descent_ratio": 0.48097231751230807,
+        "normalized_yaw_reduction_retention_ratio": 0.747815089640588,
+        "normalized_yaw_reduction_lost_at_0_009": 0.00010784663065701536,
+        "directions": {
+          "unconstrained": {
+            "yaw_forward_stop_derivatives": [
+              -0.04751655816683311,
+              0.0010270934960913865,
+              0.033631206055073054
+            ],
+            "descriptive_0_009_changes": [
+              -0.00042764902350149795,
+              9.243841464822477e-06,
+              0.00030268085449565744
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.006602213133778917,
+            "guard_positive_raw_signs": [
+              true,
+              true
+            ],
+            "normalized_constraints_certified": false,
+            "nonzero_direction_resolved": true
+          },
+          "projected": {
+            "yaw_forward_stop_derivatives": [
+              -0.03553359920494251,
+              7.864622333097986e-19,
+              7.68256484335874e-18
+            ],
+            "descriptive_0_009_changes": [
+              -0.0003198023928444826,
+              7.078160099788187e-21,
+              6.914308359022866e-20
+            ],
+            "yaw_reduction_fraction_of_current_Q6": 0.0049372346064631475,
+            "guard_positive_raw_signs": [
+              true,
+              true
+            ],
+            "normalized_constraints_certified": true,
+            "nonzero_direction_resolved": true
+          }
+        },
+        "unconstrained_0_01_row_l1_linear_yaw_upper_bound": 0.002097097855330907,
+        "upper_bound_fraction_of_current_Q6": 0.03237581811814149,
+        "projected_usable_local_descent": true,
+        "local_proxy_only": true,
+        "physical_evidence": "NOT_RUN",
+        "performance_certificate": false
+      }
+    ],
+    "scalar_checks": 3330,
+    "maximum_comparison_absolute_gap": 5.551115123125783e-17,
+    "points_verified": 63,
+    "gradients_verified": 9,
+    "gradient_scalars_verified": 4644,
+    "source_binding_count": 1453,
+    "call_accounting": {
+      "recorded_completed_model_calls": 2016,
+      "recorded_attempted_model_calls": 2016,
+      "recorded_completed_actor_head_calls": 2016,
+      "recorded_attempted_actor_head_calls": 2016,
+      "independent_point_horizon_count": 2016,
+      "original_failed_execution_model_calls": 0,
+      "original_failed_execution_actor_calls": 0,
+      "cumulative_completed_model_calls": 2016,
+      "cumulative_completed_actor_head_calls": 2016,
+      "meaning": "saved actual hook receipts agree with all63 fixed H32 points; no runtime replay"
+    },
+    "producer_cpu_seconds": 7.334788983999999,
+    "producer_wall_seconds": 16.330225192010403,
+    "interpretation_limits": [
+      "Independent audit of saved gradients and convex geometry, not a new AD/FD or physical check.",
+      "Parameter file hashes and published mapping receipts are checked; tensor mappings are not recomputed.",
+      "A feasible zero vector is not evidence of useful descent; all three initializations are retained.",
+      "The .009 response and .01 row-L1 bound are local linear proxies, not a physical5% certificate.",
+      "Stop refers to post-motion D histories, not independently sampled cold-start standing.",
+      "Shared D resets are not multiplied by three model initializations into independent physical seeds.",
+      "Original83 zero-call failure remains INCOMPLETE; this checks only the separately sealed checked execution.",
+      "Allowed absolute sources are precisely the six names and hashes inherited from pinned81; no blanket exception."
+    ]
+  },
+  "engineering_failures_retained": [
+    "Original absolute-source admission failed before any model or actor call.",
+    "Original ROS seven/eight-pair CLI mismatch failed before actor or ROS construction.",
+    "First cold metadata command inherited wheel PYTHONPATH and detected shadowed Torch metadata; no model loaded.",
+    "Red contract tests intentionally fail; checked green tests and actual cold CLI are separately retained.",
+    "Three injected runtime faults remain INCOMPLETE even though their scenario assertions pass."
+  ],
+  "tests": {
+    "new_local_test_cases_passed_before_vendor": 57,
+    "native_fake_assertions": 131,
+    "native_header_packaging_check": "see engineering_receipts83.zip/vendor_native01"
+  },
+  "supervisors": {
+    "native_tests01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 3703021568,
+      "peak_group_bytes": 427085824,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-native-tests01.service": 3.88,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.82,
+        "/user.slice/user-1000.slice/user@1000.service": 0.82,
+        "/user.slice/user-1000.slice": 0.82,
+        "/user.slice": 0.82,
+        "/": 6.46
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": null
+    },
+    "d1_tests02": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 5258739712,
+      "peak_group_bytes": 516808704,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-d1-tests02.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.04,
+        "/user.slice/user-1000.slice/user@1000.service": 0.04,
+        "/user.slice/user-1000.slice": 0.04,
+        "/user.slice": 0.04,
+        "/": 0.04
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "runtime_build01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 4255363072,
+      "peak_group_bytes": 984576000,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-runtime-build01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "native_actual01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 6515224576,
+      "peak_group_bytes": 18669568,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-native-actual01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "ros_nominal01": {
+      "status": "INCOMPLETE",
+      "returncode": 1,
+      "minimum_effective_bytes": 6611959808,
+      "peak_group_bytes": 34099200,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-ros-nominal01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "cli_red01": {
+      "status": "INCOMPLETE",
+      "returncode": 2,
+      "minimum_effective_bytes": 6886871040,
+      "peak_group_bytes": 239742976,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-cli-red01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "admission_red01": {
+      "status": "INCOMPLETE",
+      "returncode": 1,
+      "minimum_effective_bytes": 6336737280,
+      "peak_group_bytes": 41959424,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-admission-red01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "admission_green01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 7451279360,
+      "peak_group_bytes": 48291840,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-admission-green01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "policy_geometry01": {
+      "status": "INCOMPLETE",
+      "returncode": 2,
+      "minimum_effective_bytes": 4589760512,
+      "peak_group_bytes": 52154368,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-policy-geometry01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "policy_cold01": {
+      "status": "INCOMPLETE",
+      "returncode": 2,
+      "minimum_effective_bytes": 6465601536,
+      "peak_group_bytes": 130666496,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-policy-cold01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.16,
+        "/user.slice/user-1000.slice/user@1000.service": 0.18,
+        "/user.slice/user-1000.slice": 0.14,
+        "/user.slice": 0.13,
+        "/": 0.18
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "policy_cold02": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 5723308032,
+      "peak_group_bytes": 70385664,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-policy-cold02.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.01,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.01,
+        "/": 0.01
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "runtime_checked_build01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 4038520832,
+      "peak_group_bytes": 1002643456,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-runtime-checked-build01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.12
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "ros_checked_nominal01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 3738820608,
+      "peak_group_bytes": 66629632,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-ros-checked-nominal01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.1,
+        "/user.slice/user-1000.slice/user@1000.service": 0.08,
+        "/user.slice/user-1000.slice": 0.08,
+        "/user.slice": 0.08,
+        "/": 0.15
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "ros_checked_late_receive01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 6521167872,
+      "peak_group_bytes": 51904512,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-ros-checked-late-receive01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "ros_checked_late_response01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 6518194176,
+      "peak_group_bytes": 25747456,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-ros-checked-late-response01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "ros_checked_stale_command01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 6265757696,
+      "peak_group_bytes": 25780224,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-ros-checked-stale-command01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "policy_checked01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 5141889024,
+      "peak_group_bytes": 1041879040,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-policy-checked01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "runtime_audit01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 5774966784,
+      "peak_group_bytes": 66781184,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-runtime-audit01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "policy_audit01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 7973072896,
+      "peak_group_bytes": 52297728,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-policy-audit01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    },
+    "vendor_native01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "minimum_effective_bytes": 7855861760,
+      "peak_group_bytes": 465829888,
+      "maximum_full_avg10": {
+        "/user.slice/user-1000.slice/user@1000.service/app.slice/project83-vendor-native01.service": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+        "/user.slice/user-1000.slice/user@1000.service": 0.0,
+        "/user.slice/user-1000.slice": 0.0,
+        "/user.slice": 0.0,
+        "/": 0.0
+      },
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true
+    }
+  },
+  "archives": {
+    "runtime": {
+      "path": "docs/assets/project83/runtime83_raw.zip",
+      "bytes": 225413,
+      "sha256": "71c81fb41d76d281ee0955ac0fd9d36ed1e77c0d47c58c61d9497fe9876b84b1",
+      "files": 49
+    },
+    "policy": {
+      "path": "docs/assets/project83/policy_geometry83_raw.zip",
+      "bytes": 278038,
+      "sha256": "28750b7439373ddd1e8b1cefac05098006c9ad4bf14fe1b771ad729c2733f7d5",
+      "files": 73
+    },
+    "engineering": {
+      "path": "docs/assets/project83/engineering_receipts83.zip",
+      "bytes": 244618,
+      "sha256": "ee87c03ca8dc2d67bf28fba6655355baedbf81c2468eed0976df240d4c63226c",
+      "files": 114
+    }
+  },
+  "assets_sha256": {
+    "docs/assets/project83/audit_policy83_checked.py": "757a5439259b9321843e6ff059407a729ec869d9eba144172faa52b96b35fa19",
+    "docs/assets/project83/runtime83_independent_audit_01.json.gz": "4629b628427589a25928ea207edb919768f05770112956c9726e4d07b100e7c1",
+    "docs/assets/project83/runtime83_raw.zip": "71c81fb41d76d281ee0955ac0fd9d36ed1e77c0d47c58c61d9497fe9876b84b1",
+    "docs/assets/project83/engineering_receipts83.zip": "ee87c03ca8dc2d67bf28fba6655355baedbf81c2468eed0976df240d4c63226c",
+    "docs/assets/project83/integrity_checked_final83.json": "b61207c3c51f826cc6076200a9e380841c17a832e41431c87a89abe3e940e0fe",
+    "docs/assets/project83/audit_runtime83_checked.py": "740a29212617877e694cc7483121db68056f196d4be868b2343a56c91fb25a4d",
+    "docs/assets/project83/integrity_before83.json": "34c2cff0de15bc20e535bf904735f17029db1976ac408b8e4ec444613d99da82",
+    "docs/assets/project83/verify_frozen83.py": "1d1ff5e4184a9e1c485b1a0476cea7b069b29bd933f3fb30a810d194dd8cb9b9",
+    "docs/assets/project83/policy_design83.md": "8952d607af07ba80974f1142758bdf0e98803dfc4b77cb135454d674cff69361",
+    "docs/assets/project83/revision83_engineering.md": "6512711cbe12eda55c9da1bcd49bf6777c3b48cef62dbdeee0328a9731748ed4",
+    "docs/assets/project83/policy_geometry83_raw.zip": "28750b7439373ddd1e8b1cefac05098006c9ad4bf14fe1b771ad729c2733f7d5",
+    "docs/assets/project83/policy83_independent_audit_01.json.gz": "ed28f8288fff9cb4aadf46af5678610d7defa5d2466b4b2dd8367b00d7af13a5",
+    "docs/assets/project83/integrity_final83.json": "e6af46b4dd165a9248dae9e99936a351c2a71d4e987820844e2e2ac54ce1d678",
+    "docs/assets/project83/plan83.md": "8c209cf1681a700c1938e5c0fbe544ba7e583f268114199a1f9fdcd60c3dc9f1"
+  },
+  "plans_sha256": {
+    "docs/experiments83/policy_geometry83_checked_preregistered.json": "2ddfec95f472022ad24139d930009a54bc2605541ff81b92e1a250d6031eeee3",
+    "docs/experiments83/policy_geometry83_preregistered.json": "616f93d1d337cea4392710b2e66edd05926773c8ed5294e7596c82be1ac3bcce",
+    "docs/experiments83/runtime83_preregistered.json": "437fcda05945ece13549f210760a66fecceec84318938472d62441d9804dcd3d",
+    "docs/experiments83/runtime83_checked_preregistered.json": "8ff126bde71e7307ef9a50f95da1ce1337ae4d584eae1fada095356eb6b1bdad",
+    "docs/experiments83/native_headers83_packaging.json": "446b3e728649ec62bcb79600c45674cc64819c8550a23cd92c02a3d1aec9ef88"
+  },
+  "known_limits": [
+    "Synthetic coherent packet transport only; real IMU/JointState synchronization and hardware are unvalidated.",
+    "24 nominal DDS ticks do not prove long-duration or worst-case realtime scheduling.",
+    "Late-response inference attempts/returns are unknown, not zero, without server closure.",
+    "Projection certificates are local learned-model arithmetic, not physical task improvement.",
+    "The old 80/81 policy failures and all frozen qualifications are unchanged."
+  ]
+}

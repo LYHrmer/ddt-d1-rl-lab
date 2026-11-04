@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "groups": [
+    {
+      "plan": "/home/lyh/ddt_ros2_ws/docs/experiments83/runtime83_checked_preregistered.json",
+      "expected_sha256": "8ff126bde71e7307ef9a50f95da1ce1337ae4d584eae1fada095356eb6b1bdad",
+      "actual_sha256": "8ff126bde71e7307ef9a50f95da1ce1337ae4d584eae1fada095356eb6b1bdad",
+      "source_bindings_verified": 56
+    },
+    {
+      "plan": "/home/lyh/ddt_ros2_ws/docs/experiments83/policy_geometry83_checked_preregistered.json",
+      "expected_sha256": "2ddfec95f472022ad24139d930009a54bc2605541ff81b92e1a250d6031eeee3",
+      "actual_sha256": "2ddfec95f472022ad24139d930009a54bc2605541ff81b92e1a250d6031eeee3",
+      "source_bindings_verified": 1453
+    }
+  ],
+  "failures": [],
+  "new_model_calls": 0,
+  "new_physics_steps": 0
+}

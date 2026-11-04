@@ -1,0 +1,648 @@
+{
+  "checks": {
+    "all_copies_byte_identical": true,
+    "all_headers_match_both_sealed_build_dependency_sha256": true,
+    "all_headers_match_installed_package_md5": true,
+    "exact_destination_file_set": true,
+    "header_bytes": 804087,
+    "headers": 41,
+    "source_and_receipts_unchanged_after_copy": true,
+    "source_symlinks": 0,
+    "unresolved_internal_nlohmann_includes": []
+  },
+  "copyright": {
+    "byte_identical": true,
+    "copy": "/home/lyh/ddt_ros2_ws/nlohmann/COPYRIGHT",
+    "copy_sha256": "bc0c490425bcbb7ced86b6f9d51cdde47166bd7fe2f434fc429df6fcd2d6667d",
+    "source": "/usr/share/doc/nlohmann-json3-dev/copyright",
+    "source_sha256": "bc0c490425bcbb7ced86b6f9d51cdde47166bd7fe2f434fc429df6fcd2d6667d"
+  },
+  "date": "2026-11-04",
+  "destination_root": "/home/lyh/ddt_ros2_ws/nlohmann",
+  "headers": [
+    {
+      "bytes": 2000,
+      "copy_sha256": "11fa1edc01753910dba091d4e96f5fb2a2155abb1a323548ce3dc9b169a24018",
+      "installed_package_md5": "1dcb328365988d86da4df17b54ef7dd7",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/adl_serializer.hpp",
+      "repository_relative_path": "nlohmann/adl_serializer.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "11fa1edc01753910dba091d4e96f5fb2a2155abb1a323548ce3dc9b169a24018",
+        "build_runtime83_checked_01": "11fa1edc01753910dba091d4e96f5fb2a2155abb1a323548ce3dc9b169a24018"
+      },
+      "system_source": "/usr/include/nlohmann/adl_serializer.hpp",
+      "system_source_sha256": "11fa1edc01753910dba091d4e96f5fb2a2155abb1a323548ce3dc9b169a24018"
+    },
+    {
+      "bytes": 3183,
+      "copy_sha256": "a67843c9de0e19ab6d28b356ec06350febe757ccb9d62b794cb02e91827bfd8a",
+      "installed_package_md5": "d741fb89867fac41a83a45770e0114bc",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/byte_container_with_subtype.hpp",
+      "repository_relative_path": "nlohmann/byte_container_with_subtype.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "a67843c9de0e19ab6d28b356ec06350febe757ccb9d62b794cb02e91827bfd8a",
+        "build_runtime83_checked_01": "a67843c9de0e19ab6d28b356ec06350febe757ccb9d62b794cb02e91827bfd8a"
+      },
+      "system_source": "/usr/include/nlohmann/byte_container_with_subtype.hpp",
+      "system_source_sha256": "a67843c9de0e19ab6d28b356ec06350febe757ccb9d62b794cb02e91827bfd8a"
+    },
+    {
+      "bytes": 18506,
+      "copy_sha256": "12cc521ca690d5097bf1a811da82a7109e338cc32dc87ef7baa2f1b75dbc7929",
+      "installed_package_md5": "3408b3bb5f55bee7af7b6de5cb88704a",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/conversions/from_json.hpp",
+      "repository_relative_path": "nlohmann/detail/conversions/from_json.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "12cc521ca690d5097bf1a811da82a7109e338cc32dc87ef7baa2f1b75dbc7929",
+        "build_runtime83_checked_01": "12cc521ca690d5097bf1a811da82a7109e338cc32dc87ef7baa2f1b75dbc7929"
+      },
+      "system_source": "/usr/include/nlohmann/detail/conversions/from_json.hpp",
+      "system_source_sha256": "12cc521ca690d5097bf1a811da82a7109e338cc32dc87ef7baa2f1b75dbc7929"
+    },
+    {
+      "bytes": 38114,
+      "copy_sha256": "c90f3568eee135b39c0fc9093c8e76d55d14eb5be0a0a9400efeb2e640395185",
+      "installed_package_md5": "fb01bed2afc7a8098dfad2452e675d65",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/conversions/to_chars.hpp",
+      "repository_relative_path": "nlohmann/detail/conversions/to_chars.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "c90f3568eee135b39c0fc9093c8e76d55d14eb5be0a0a9400efeb2e640395185",
+        "build_runtime83_checked_01": "c90f3568eee135b39c0fc9093c8e76d55d14eb5be0a0a9400efeb2e640395185"
+      },
+      "system_source": "/usr/include/nlohmann/detail/conversions/to_chars.hpp",
+      "system_source_sha256": "c90f3568eee135b39c0fc9093c8e76d55d14eb5be0a0a9400efeb2e640395185"
+    },
+    {
+      "bytes": 14612,
+      "copy_sha256": "2ed86af93bcc6900585130a3be362d8c7bbdbcc47a788c17066d9d39d8ec2107",
+      "installed_package_md5": "946e14f2bb7d72115f9665b1a2bfdb26",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/conversions/to_json.hpp",
+      "repository_relative_path": "nlohmann/detail/conversions/to_json.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "2ed86af93bcc6900585130a3be362d8c7bbdbcc47a788c17066d9d39d8ec2107",
+        "build_runtime83_checked_01": "2ed86af93bcc6900585130a3be362d8c7bbdbcc47a788c17066d9d39d8ec2107"
+      },
+      "system_source": "/usr/include/nlohmann/detail/conversions/to_json.hpp",
+      "system_source_sha256": "2ed86af93bcc6900585130a3be362d8c7bbdbcc47a788c17066d9d39d8ec2107"
+    },
+    {
+      "bytes": 8004,
+      "copy_sha256": "f63df2d041329d82f05448a43daa145dd7d28266b4e70621a8491e6ed2c373e2",
+      "installed_package_md5": "15ea65d233a320d45e1207f3617dcaa4",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/exceptions.hpp",
+      "repository_relative_path": "nlohmann/detail/exceptions.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "f63df2d041329d82f05448a43daa145dd7d28266b4e70621a8491e6ed2c373e2",
+        "build_runtime83_checked_01": "f63df2d041329d82f05448a43daa145dd7d28266b4e70621a8491e6ed2c373e2"
+      },
+      "system_source": "/usr/include/nlohmann/detail/exceptions.hpp",
+      "system_source_sha256": "f63df2d041329d82f05448a43daa145dd7d28266b4e70621a8491e6ed2c373e2"
+    },
+    {
+      "bytes": 3710,
+      "copy_sha256": "c3df85b0e0678145b99baaf10c98291937dc25d295bc3a03bfb5c9cdc06e2442",
+      "installed_package_md5": "b34d3aec8544d7f7092e87ce27bed254",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/hash.hpp",
+      "repository_relative_path": "nlohmann/detail/hash.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "c3df85b0e0678145b99baaf10c98291937dc25d295bc3a03bfb5c9cdc06e2442",
+        "build_runtime83_checked_01": "c3df85b0e0678145b99baaf10c98291937dc25d295bc3a03bfb5c9cdc06e2442"
+      },
+      "system_source": "/usr/include/nlohmann/detail/hash.hpp",
+      "system_source_sha256": "c3df85b0e0678145b99baaf10c98291937dc25d295bc3a03bfb5c9cdc06e2442"
+    },
+    {
+      "bytes": 82927,
+      "copy_sha256": "b800a7f80b32d038ca64e2524c4541a7b36c1c44aa4f77334ea52a7365916192",
+      "installed_package_md5": "9100b67fe51fd355ab7cae692c95f72b",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/binary_reader.hpp",
+      "repository_relative_path": "nlohmann/detail/input/binary_reader.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "b800a7f80b32d038ca64e2524c4541a7b36c1c44aa4f77334ea52a7365916192",
+        "build_runtime83_checked_01": "b800a7f80b32d038ca64e2524c4541a7b36c1c44aa4f77334ea52a7365916192"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/binary_reader.hpp",
+      "system_source_sha256": "b800a7f80b32d038ca64e2524c4541a7b36c1c44aa4f77334ea52a7365916192"
+    },
+    {
+      "bytes": 17009,
+      "copy_sha256": "e5f815c6c96a0781616af2df832de89cde3d4eac0c2585e32e04a0b8907a070b",
+      "installed_package_md5": "5beca4fcaadfae844ee940e0a444b9fb",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/input_adapters.hpp",
+      "repository_relative_path": "nlohmann/detail/input/input_adapters.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "e5f815c6c96a0781616af2df832de89cde3d4eac0c2585e32e04a0b8907a070b",
+        "build_runtime83_checked_01": "e5f815c6c96a0781616af2df832de89cde3d4eac0c2585e32e04a0b8907a070b"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/input_adapters.hpp",
+      "system_source_sha256": "e5f815c6c96a0781616af2df832de89cde3d4eac0c2585e32e04a0b8907a070b"
+    },
+    {
+      "bytes": 20713,
+      "copy_sha256": "fb4a20edf3fdcc59f830383a5816df853d0c12e038c544367e672653af2b1f7a",
+      "installed_package_md5": "4778b52469f517dac6f5fa10365ecc82",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/json_sax.hpp",
+      "repository_relative_path": "nlohmann/detail/input/json_sax.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "fb4a20edf3fdcc59f830383a5816df853d0c12e038c544367e672653af2b1f7a",
+        "build_runtime83_checked_01": "fb4a20edf3fdcc59f830383a5816df853d0c12e038c544367e672653af2b1f7a"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/json_sax.hpp",
+      "system_source_sha256": "fb4a20edf3fdcc59f830383a5816df853d0c12e038c544367e672653af2b1f7a"
+    },
+    {
+      "bytes": 54235,
+      "copy_sha256": "f130ad1700612f048b0d879937e843017b374b12e1cf17a5a4abaa066398b8ae",
+      "installed_package_md5": "0dba673f5e72e6d7c7f3d9788c05a50c",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/lexer.hpp",
+      "repository_relative_path": "nlohmann/detail/input/lexer.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "f130ad1700612f048b0d879937e843017b374b12e1cf17a5a4abaa066398b8ae",
+        "build_runtime83_checked_01": "f130ad1700612f048b0d879937e843017b374b12e1cf17a5a4abaa066398b8ae"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/lexer.hpp",
+      "system_source_sha256": "f130ad1700612f048b0d879937e843017b374b12e1cf17a5a4abaa066398b8ae"
+    },
+    {
+      "bytes": 18465,
+      "copy_sha256": "381ea6773194135dc754be65b3a92e3f0c1cb7a95d2e81e633b21f48bd483c38",
+      "installed_package_md5": "869cd93dcbf105d0d194b525d564cd7c",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/parser.hpp",
+      "repository_relative_path": "nlohmann/detail/input/parser.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "381ea6773194135dc754be65b3a92e3f0c1cb7a95d2e81e633b21f48bd483c38",
+        "build_runtime83_checked_01": "381ea6773194135dc754be65b3a92e3f0c1cb7a95d2e81e633b21f48bd483c38"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/parser.hpp",
+      "system_source_sha256": "381ea6773194135dc754be65b3a92e3f0c1cb7a95d2e81e633b21f48bd483c38"
+    },
+    {
+      "bytes": 605,
+      "copy_sha256": "74165b5bfc846ec864a1a925f2581954b138156412fe55ec3d777117acd344d9",
+      "installed_package_md5": "611899faf0007b49fc172b0abf5c6e01",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/input/position_t.hpp",
+      "repository_relative_path": "nlohmann/detail/input/position_t.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "74165b5bfc846ec864a1a925f2581954b138156412fe55ec3d777117acd344d9",
+        "build_runtime83_checked_01": "74165b5bfc846ec864a1a925f2581954b138156412fe55ec3d777117acd344d9"
+      },
+      "system_source": "/usr/include/nlohmann/detail/input/position_t.hpp",
+      "system_source_sha256": "74165b5bfc846ec864a1a925f2581954b138156412fe55ec3d777117acd344d9"
+    },
+    {
+      "bytes": 720,
+      "copy_sha256": "ac86431bcf82d1b91e6d49124bb8a03d04837ebfdf5ef50ec72ff71995b6e79b",
+      "installed_package_md5": "b7cd3cec0d36028c861e1bdf33bb7dce",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/internal_iterator.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/internal_iterator.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "ac86431bcf82d1b91e6d49124bb8a03d04837ebfdf5ef50ec72ff71995b6e79b",
+        "build_runtime83_checked_01": "ac86431bcf82d1b91e6d49124bb8a03d04837ebfdf5ef50ec72ff71995b6e79b"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/internal_iterator.hpp",
+      "system_source_sha256": "ac86431bcf82d1b91e6d49124bb8a03d04837ebfdf5ef50ec72ff71995b6e79b"
+    },
+    {
+      "bytes": 23164,
+      "copy_sha256": "0a47b194b99f22c963ceb33f3fe637ec941b7128486ec6a234d276158551c2a2",
+      "installed_package_md5": "5aaa94de0ee9e1652f9c62c58a1875cc",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/iter_impl.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/iter_impl.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "0a47b194b99f22c963ceb33f3fe637ec941b7128486ec6a234d276158551c2a2",
+        "build_runtime83_checked_01": "0a47b194b99f22c963ceb33f3fe637ec941b7128486ec6a234d276158551c2a2"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/iter_impl.hpp",
+      "system_source_sha256": "0a47b194b99f22c963ceb33f3fe637ec941b7128486ec6a234d276158551c2a2"
+    },
+    {
+      "bytes": 5838,
+      "copy_sha256": "208e4b039625682497efb84137bc90cf23c3bd45ebdbdeae6681cace60b3cec7",
+      "installed_package_md5": "f56b9495659f52b5bcba4845055cccbf",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/iteration_proxy.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/iteration_proxy.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "208e4b039625682497efb84137bc90cf23c3bd45ebdbdeae6681cace60b3cec7",
+        "build_runtime83_checked_01": "208e4b039625682497efb84137bc90cf23c3bd45ebdbdeae6681cace60b3cec7"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/iteration_proxy.hpp",
+      "system_source_sha256": "208e4b039625682497efb84137bc90cf23c3bd45ebdbdeae6681cace60b3cec7"
+    },
+    {
+      "bytes": 1404,
+      "copy_sha256": "76ffa1c26019b858a89dfc1bc4c2257c9ef7232601f5f3eacf2c8148b465fcb0",
+      "installed_package_md5": "73d1d769e1a3eb89a5c75604e1f87a90",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/iterator_traits.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/iterator_traits.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "76ffa1c26019b858a89dfc1bc4c2257c9ef7232601f5f3eacf2c8148b465fcb0",
+        "build_runtime83_checked_01": "76ffa1c26019b858a89dfc1bc4c2257c9ef7232601f5f3eacf2c8148b465fcb0"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/iterator_traits.hpp",
+      "system_source_sha256": "76ffa1c26019b858a89dfc1bc4c2257c9ef7232601f5f3eacf2c8148b465fcb0"
+    },
+    {
+      "bytes": 3549,
+      "copy_sha256": "d312900dd5cd5e8ed6ceb7bad33ed4972c9ca7e8eb8a9a682825a8894113a624",
+      "installed_package_md5": "34bc7a4f233017a2fe199adf86e79a7f",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/json_reverse_iterator.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/json_reverse_iterator.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "d312900dd5cd5e8ed6ceb7bad33ed4972c9ca7e8eb8a9a682825a8894113a624",
+        "build_runtime83_checked_01": "d312900dd5cd5e8ed6ceb7bad33ed4972c9ca7e8eb8a9a682825a8894113a624"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/json_reverse_iterator.hpp",
+      "system_source_sha256": "d312900dd5cd5e8ed6ceb7bad33ed4972c9ca7e8eb8a9a682825a8894113a624"
+    },
+    {
+      "bytes": 2958,
+      "copy_sha256": "b9c28ded6b26f1f4a9f05a2be28c7b8f1a5ce4ee6ec10e44f1add08a4787d840",
+      "installed_package_md5": "44a61ae6b7cd64d12e5a8fe26f672986",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/iterators/primitive_iterator.hpp",
+      "repository_relative_path": "nlohmann/detail/iterators/primitive_iterator.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "b9c28ded6b26f1f4a9f05a2be28c7b8f1a5ce4ee6ec10e44f1add08a4787d840",
+        "build_runtime83_checked_01": "b9c28ded6b26f1f4a9f05a2be28c7b8f1a5ce4ee6ec10e44f1add08a4787d840"
+      },
+      "system_source": "/usr/include/nlohmann/detail/iterators/primitive_iterator.hpp",
+      "system_source_sha256": "b9c28ded6b26f1f4a9f05a2be28c7b8f1a5ce4ee6ec10e44f1add08a4787d840"
+    },
+    {
+      "bytes": 30299,
+      "copy_sha256": "d6b18d22003660f33dcadaee2f57da5f995aff92b827a127a2f4241b196790db",
+      "installed_package_md5": "01d93b997729e771dd073ae694f2249a",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/json_pointer.hpp",
+      "repository_relative_path": "nlohmann/detail/json_pointer.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "d6b18d22003660f33dcadaee2f57da5f995aff92b827a127a2f4241b196790db",
+        "build_runtime83_checked_01": "d6b18d22003660f33dcadaee2f57da5f995aff92b827a127a2f4241b196790db"
+      },
+      "system_source": "/usr/include/nlohmann/detail/json_pointer.hpp",
+      "system_source_sha256": "d6b18d22003660f33dcadaee2f57da5f995aff92b827a127a2f4241b196790db"
+    },
+    {
+      "bytes": 1460,
+      "copy_sha256": "6b58be24543d20016bf29e656b168a2349e403bb2c1d29968faecb1704a92453",
+      "installed_package_md5": "ecb6297c6ae20d809abb2500d2819a69",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/json_ref.hpp",
+      "repository_relative_path": "nlohmann/detail/json_ref.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "6b58be24543d20016bf29e656b168a2349e403bb2c1d29968faecb1704a92453",
+        "build_runtime83_checked_01": "6b58be24543d20016bf29e656b168a2349e403bb2c1d29968faecb1704a92453"
+      },
+      "system_source": "/usr/include/nlohmann/detail/json_ref.hpp",
+      "system_source_sha256": "6b58be24543d20016bf29e656b168a2349e403bb2c1d29968faecb1704a92453"
+    },
+    {
+      "bytes": 40326,
+      "copy_sha256": "cfcc9928b3c8cb1d7be8dc840e146c5d74868d1e8a077c496690f06e287565ca",
+      "installed_package_md5": "beb721756ab8df405c9fbc683c8780c6",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/macro_scope.hpp",
+      "repository_relative_path": "nlohmann/detail/macro_scope.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "cfcc9928b3c8cb1d7be8dc840e146c5d74868d1e8a077c496690f06e287565ca",
+        "build_runtime83_checked_01": "cfcc9928b3c8cb1d7be8dc840e146c5d74868d1e8a077c496690f06e287565ca"
+      },
+      "system_source": "/usr/include/nlohmann/detail/macro_scope.hpp",
+      "system_source_sha256": "cfcc9928b3c8cb1d7be8dc840e146c5d74868d1e8a077c496690f06e287565ca"
+    },
+    {
+      "bytes": 608,
+      "copy_sha256": "c1752a1bda02bf6813dbeccc322d270c2934792f0d9828e7d6eb26cc545cf86a",
+      "installed_package_md5": "2a4f4694a5210a2b9db5c7e1d80ed05d",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/macro_unscope.hpp",
+      "repository_relative_path": "nlohmann/detail/macro_unscope.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "c1752a1bda02bf6813dbeccc322d270c2934792f0d9828e7d6eb26cc545cf86a",
+        "build_runtime83_checked_01": "c1752a1bda02bf6813dbeccc322d270c2934792f0d9828e7d6eb26cc545cf86a"
+      },
+      "system_source": "/usr/include/nlohmann/detail/macro_unscope.hpp",
+      "system_source_sha256": "c1752a1bda02bf6813dbeccc322d270c2934792f0d9828e7d6eb26cc545cf86a"
+    },
+    {
+      "bytes": 143,
+      "copy_sha256": "8af4d4514fd8994c47daad0e4962e2233d349642d603b9738c2a152a79dba3ec",
+      "installed_package_md5": "c93d32d6f93433f14bea3862641007e4",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/call_std/begin.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/call_std/begin.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "8af4d4514fd8994c47daad0e4962e2233d349642d603b9738c2a152a79dba3ec",
+        "build_runtime83_checked_01": "8af4d4514fd8994c47daad0e4962e2233d349642d603b9738c2a152a79dba3ec"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/call_std/begin.hpp",
+      "system_source_sha256": "8af4d4514fd8994c47daad0e4962e2233d349642d603b9738c2a152a79dba3ec"
+    },
+    {
+      "bytes": 142,
+      "copy_sha256": "d496c413cc108d194918838f1c4f22c4820c91fd56e8684ec22638bc912738f5",
+      "installed_package_md5": "7d0f84a6d5e5c2df54ac9b565c4f3c00",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/call_std/end.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/call_std/end.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "d496c413cc108d194918838f1c4f22c4820c91fd56e8684ec22638bc912738f5",
+        "build_runtime83_checked_01": "d496c413cc108d194918838f1c4f22c4820c91fd56e8684ec22638bc912738f5"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/call_std/end.hpp",
+      "system_source_sha256": "d496c413cc108d194918838f1c4f22c4820c91fd56e8684ec22638bc912738f5"
+    },
+    {
+      "bytes": 4568,
+      "copy_sha256": "c8ea57ed8cb7f3b4421df19c707b376092daecc4e166dab5626d2de711fec09e",
+      "installed_package_md5": "dec201eab3cce442e1206a5351078150",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/cpp_future.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/cpp_future.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "c8ea57ed8cb7f3b4421df19c707b376092daecc4e166dab5626d2de711fec09e",
+        "build_runtime83_checked_01": "c8ea57ed8cb7f3b4421df19c707b376092daecc4e166dab5626d2de711fec09e"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/cpp_future.hpp",
+      "system_source_sha256": "c8ea57ed8cb7f3b4421df19c707b376092daecc4e166dab5626d2de711fec09e"
+    },
+    {
+      "bytes": 1800,
+      "copy_sha256": "47753a00f0ccfa77e1b8798a5d45f78d1677b59949083edc17193b17e6cfe47e",
+      "installed_package_md5": "246b92002b66ab85590acc453b8a6b8e",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/detected.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/detected.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "47753a00f0ccfa77e1b8798a5d45f78d1677b59949083edc17193b17e6cfe47e",
+        "build_runtime83_checked_01": "47753a00f0ccfa77e1b8798a5d45f78d1677b59949083edc17193b17e6cfe47e"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/detected.hpp",
+      "system_source_sha256": "47753a00f0ccfa77e1b8798a5d45f78d1677b59949083edc17193b17e6cfe47e"
+    },
+    {
+      "bytes": 174,
+      "copy_sha256": "ff3cf9ed5a429c0e47a0e191426038a464f66d7cea34180e30204acb54c4f7dc",
+      "installed_package_md5": "2f8aec0c79506b67bec05b834d6af3fe",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/identity_tag.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/identity_tag.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "ff3cf9ed5a429c0e47a0e191426038a464f66d7cea34180e30204acb54c4f7dc",
+        "build_runtime83_checked_01": "ff3cf9ed5a429c0e47a0e191426038a464f66d7cea34180e30204acb54c4f7dc"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/identity_tag.hpp",
+      "system_source_sha256": "ff3cf9ed5a429c0e47a0e191426038a464f66d7cea34180e30204acb54c4f7dc"
+    },
+    {
+      "bytes": 6609,
+      "copy_sha256": "e61d51ba39415a1af6fb335db7eacd8967304566e165fe91d8d0d29f240f7af8",
+      "installed_package_md5": "49056690bc0d9e1af139ce1017d70f97",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/is_sax.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/is_sax.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "e61d51ba39415a1af6fb335db7eacd8967304566e165fe91d8d0d29f240f7af8",
+        "build_runtime83_checked_01": "e61d51ba39415a1af6fb335db7eacd8967304566e165fe91d8d0d29f240f7af8"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/is_sax.hpp",
+      "system_source_sha256": "e61d51ba39415a1af6fb335db7eacd8967304566e165fe91d8d0d29f240f7af8"
+    },
+    {
+      "bytes": 17745,
+      "copy_sha256": "720d31380101c6cecdc0a3a6d7e4e332eb516cb2be698ee94ad85787ebded12c",
+      "installed_package_md5": "e7b6d4aff0c558f3b68995737640d2e2",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/type_traits.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/type_traits.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "720d31380101c6cecdc0a3a6d7e4e332eb516cb2be698ee94ad85787ebded12c",
+        "build_runtime83_checked_01": "720d31380101c6cecdc0a3a6d7e4e332eb516cb2be698ee94ad85787ebded12c"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/type_traits.hpp",
+      "system_source_sha256": "720d31380101c6cecdc0a3a6d7e4e332eb516cb2be698ee94ad85787ebded12c"
+    },
+    {
+      "bytes": 244,
+      "copy_sha256": "4f4920f2a4a6e01aca3c6e67f23bc95488ea4a5659c240d4bedb4e4653c09037",
+      "installed_package_md5": "c5fd6b6a91d3857c9a249cbc26322f85",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/meta/void_t.hpp",
+      "repository_relative_path": "nlohmann/detail/meta/void_t.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "4f4920f2a4a6e01aca3c6e67f23bc95488ea4a5659c240d4bedb4e4653c09037",
+        "build_runtime83_checked_01": "4f4920f2a4a6e01aca3c6e67f23bc95488ea4a5659c240d4bedb4e4653c09037"
+      },
+      "system_source": "/usr/include/nlohmann/detail/meta/void_t.hpp",
+      "system_source_sha256": "4f4920f2a4a6e01aca3c6e67f23bc95488ea4a5659c240d4bedb4e4653c09037"
+    },
+    {
+      "bytes": 61258,
+      "copy_sha256": "ca3f44113749e4c13b6d0cb5f437132726ff9c515df50d09d675d19bd15826cf",
+      "installed_package_md5": "115c33935df8aa0d37942eaa18f64516",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/output/binary_writer.hpp",
+      "repository_relative_path": "nlohmann/detail/output/binary_writer.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "ca3f44113749e4c13b6d0cb5f437132726ff9c515df50d09d675d19bd15826cf",
+        "build_runtime83_checked_01": "ca3f44113749e4c13b6d0cb5f437132726ff9c515df50d09d675d19bd15826cf"
+      },
+      "system_source": "/usr/include/nlohmann/detail/output/binary_writer.hpp",
+      "system_source_sha256": "ca3f44113749e4c13b6d0cb5f437132726ff9c515df50d09d675d19bd15826cf"
+    },
+    {
+      "bytes": 3773,
+      "copy_sha256": "40b264badf502dbea29591e2b2c40af51c8059bfa9ba2e4f9b8b763c4ebdf651",
+      "installed_package_md5": "f314514cac75a1d21e04fd8a9330432c",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/output/output_adapters.hpp",
+      "repository_relative_path": "nlohmann/detail/output/output_adapters.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "40b264badf502dbea29591e2b2c40af51c8059bfa9ba2e4f9b8b763c4ebdf651",
+        "build_runtime83_checked_01": "40b264badf502dbea29591e2b2c40af51c8059bfa9ba2e4f9b8b763c4ebdf651"
+      },
+      "system_source": "/usr/include/nlohmann/detail/output/output_adapters.hpp",
+      "system_source_sha256": "40b264badf502dbea29591e2b2c40af51c8059bfa9ba2e4f9b8b763c4ebdf651"
+    },
+    {
+      "bytes": 39349,
+      "copy_sha256": "1ee543573c19b73918c427e4d61011d49d73fe74c94ced7fd94ad2451a73163c",
+      "installed_package_md5": "633f3c09b0103057d1af4e826ba6d630",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/output/serializer.hpp",
+      "repository_relative_path": "nlohmann/detail/output/serializer.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "1ee543573c19b73918c427e4d61011d49d73fe74c94ced7fd94ad2451a73163c",
+        "build_runtime83_checked_01": "1ee543573c19b73918c427e4d61011d49d73fe74c94ced7fd94ad2451a73163c"
+      },
+      "system_source": "/usr/include/nlohmann/detail/output/serializer.hpp",
+      "system_source_sha256": "1ee543573c19b73918c427e4d61011d49d73fe74c94ced7fd94ad2451a73163c"
+    },
+    {
+      "bytes": 1698,
+      "copy_sha256": "9dcac101923af37532865f9b04552e54093f21e46b98f4fc0ceb615f2f91384c",
+      "installed_package_md5": "bea2af7669dfc06e8e89b83b948c3fdd",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/string_escape.hpp",
+      "repository_relative_path": "nlohmann/detail/string_escape.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "9dcac101923af37532865f9b04552e54093f21e46b98f4fc0ceb615f2f91384c",
+        "build_runtime83_checked_01": "9dcac101923af37532865f9b04552e54093f21e46b98f4fc0ceb615f2f91384c"
+      },
+      "system_source": "/usr/include/nlohmann/detail/string_escape.hpp",
+      "system_source_sha256": "9dcac101923af37532865f9b04552e54093f21e46b98f4fc0ceb615f2f91384c"
+    },
+    {
+      "bytes": 3098,
+      "copy_sha256": "24fef9cdccad9a593db17e366f6e5f97f759ab80748771da9f9533bc2ef90fe4",
+      "installed_package_md5": "58cd19e47ba88b7a5c8c72b4d9018ca1",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/detail/value_t.hpp",
+      "repository_relative_path": "nlohmann/detail/value_t.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "24fef9cdccad9a593db17e366f6e5f97f759ab80748771da9f9533bc2ef90fe4",
+        "build_runtime83_checked_01": "24fef9cdccad9a593db17e366f6e5f97f759ab80748771da9f9533bc2ef90fe4"
+      },
+      "system_source": "/usr/include/nlohmann/detail/value_t.hpp",
+      "system_source_sha256": "24fef9cdccad9a593db17e366f6e5f97f759ab80748771da9f9533bc2ef90fe4"
+    },
+    {
+      "bytes": 170631,
+      "copy_sha256": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0",
+      "installed_package_md5": "ef8da84870be717990840c164177545b",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/json.hpp",
+      "repository_relative_path": "nlohmann/json.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0",
+        "build_runtime83_checked_01": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0"
+      },
+      "system_source": "/usr/include/nlohmann/json.hpp",
+      "system_source_sha256": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0"
+    },
+    {
+      "bytes": 2118,
+      "copy_sha256": "f72caa6116635d2a5e644d292f2df742deeca0b2515ea73a530723d3814abb5e",
+      "installed_package_md5": "9d71fee893117e327d10df76f74e150f",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/json_fwd.hpp",
+      "repository_relative_path": "nlohmann/json_fwd.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "f72caa6116635d2a5e644d292f2df742deeca0b2515ea73a530723d3814abb5e",
+        "build_runtime83_checked_01": "f72caa6116635d2a5e644d292f2df742deeca0b2515ea73a530723d3814abb5e"
+      },
+      "system_source": "/usr/include/nlohmann/json_fwd.hpp",
+      "system_source_sha256": "f72caa6116635d2a5e644d292f2df742deeca0b2515ea73a530723d3814abb5e"
+    },
+    {
+      "bytes": 7082,
+      "copy_sha256": "9dcd7ae8d310f725fb31755dc51c18c9104086628c48b1f5343a6f40a2e18ba9",
+      "installed_package_md5": "9cd6c32e035c54e62e2cb29854a181b7",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/ordered_map.hpp",
+      "repository_relative_path": "nlohmann/ordered_map.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "9dcd7ae8d310f725fb31755dc51c18c9104086628c48b1f5343a6f40a2e18ba9",
+        "build_runtime83_checked_01": "9dcd7ae8d310f725fb31755dc51c18c9104086628c48b1f5343a6f40a2e18ba9"
+      },
+      "system_source": "/usr/include/nlohmann/ordered_map.hpp",
+      "system_source_sha256": "9dcd7ae8d310f725fb31755dc51c18c9104086628c48b1f5343a6f40a2e18ba9"
+    },
+    {
+      "bytes": 86041,
+      "copy_sha256": "f64ebead5217e6521cc34a78d66ccc2e2bad1ccb2c284d9cff0ea78f78115956",
+      "installed_package_md5": "eb984e16b788ab1197841c3df6731744",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/thirdparty/hedley/hedley.hpp",
+      "repository_relative_path": "nlohmann/thirdparty/hedley/hedley.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "f64ebead5217e6521cc34a78d66ccc2e2bad1ccb2c284d9cff0ea78f78115956",
+        "build_runtime83_checked_01": "f64ebead5217e6521cc34a78d66ccc2e2bad1ccb2c284d9cff0ea78f78115956"
+      },
+      "system_source": "/usr/include/nlohmann/thirdparty/hedley/hedley.hpp",
+      "system_source_sha256": "f64ebead5217e6521cc34a78d66ccc2e2bad1ccb2c284d9cff0ea78f78115956"
+    },
+    {
+      "bytes": 5205,
+      "copy_sha256": "17e28db134fd4d5e2127967850ee485aafb79f57583c0b3d092dac244ec3c67f",
+      "installed_package_md5": "890c626b10c6fad545c6c6601a4f9c88",
+      "package_md5_matches": true,
+      "repository_copy": "/home/lyh/ddt_ros2_ws/nlohmann/thirdparty/hedley/hedley_undef.hpp",
+      "repository_relative_path": "nlohmann/thirdparty/hedley/hedley_undef.hpp",
+      "sealed_build_dependency_sha256": {
+        "build_runtime83_01": "17e28db134fd4d5e2127967850ee485aafb79f57583c0b3d092dac244ec3c67f",
+        "build_runtime83_checked_01": "17e28db134fd4d5e2127967850ee485aafb79f57583c0b3d092dac244ec3c67f"
+      },
+      "system_source": "/usr/include/nlohmann/thirdparty/hedley/hedley_undef.hpp",
+      "system_source_sha256": "17e28db134fd4d5e2127967850ee485aafb79f57583c0b3d092dac244ec3c67f"
+    }
+  ],
+  "integration": {
+    "existing_include_flag": "-I <repository-root>",
+    "frozen_files_modified": false,
+    "include": "<nlohmann/json.hpp>",
+    "new_build_path_changes": "Future -I ROOT builds select repository copies before system headers; contents are identical, paths differ.",
+    "next_validation": "Root-owned serial compilation of the existing native tests with repository headers; not performed by packaging.",
+    "original_recorded_build_input_paths_preserved": true,
+    "why_repository_root": "Frozen test_adapter83 already places this directory on the compiler include path."
+  },
+  "new_actor_calls": 0,
+  "new_compilations": 0,
+  "new_model_calls": 0,
+  "new_physics_steps": 0,
+  "package": {
+    "architecture": "all",
+    "dpkg_md5_manifest": "/var/lib/dpkg/info/nlohmann-json3-dev.md5sums",
+    "dpkg_md5_manifest_sha256": "323b8e9db495243722b701a92df3adee5d590052b5045e612945b8f4203ff741",
+    "dpkg_status_record": "Package: nlohmann-json3-dev\nStatus: install ok installed\nPriority: optional\nSection: libdevel\nInstalled-Size: 1218\nMaintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>\nArchitecture: all\nMulti-Arch: foreign\nSource: nlohmann-json3\nVersion: 3.10.5-2\nConflicts: nlohmann-json-dev\nDescription: JSON for Modern C++\n JSON library with intuitive syntax, trivial integration and serious\n testing. Other aspects, as memory efficiency and speed were not so\n important. The library consists of a single source file json.hpp.\nOriginal-Maintainer: Hubert Chathi <uhoreg@debian.org>\nHomepage: https://nlohmann.github.io/json/",
+    "name": "nlohmann-json3-dev",
+    "provenance_boundary": "Local installed package and dpkg metadata; no independently verified .deb signature or upstream release archive.",
+    "source_package": "nlohmann-json3",
+    "source_root": "/usr/include/nlohmann",
+    "upstream_version": "3.10.5",
+    "version": "3.10.5-2"
+  },
+  "parameter_updates": 0,
+  "readme": {
+    "path": "/home/lyh/ddt_ros2_ws/nlohmann/README.md",
+    "sha256": "13f96d8cfe5ef7cb614e7a19a83d73726ee4e4a2d0467cdca453e102bda119e3"
+  },
+  "schema": "d1-native-headers83-packaging-v1",
+  "scope": "Source-byte packaging verification only; no compilation, inference, model execution, physics, or parameter update.",
+  "sealed_build_receipts": {
+    "build_runtime83_01": {
+      "all_recorded_dependency_sha256_equal_system_and_copy": true,
+      "path": "/home/lyh/project83_work_20261104/build_runtime83_01/build_receipt.json",
+      "recorded_dependency_paths_equal_all_copied_sources": true,
+      "recorded_nlohmann_dependencies": 41,
+      "sha256": "c892e70f9af4616e2aee04290ff288177e8ba562b267cbaa91a829cb3e9c5f2e"
+    },
+    "build_runtime83_checked_01": {
+      "all_recorded_dependency_sha256_equal_system_and_copy": true,
+      "path": "/home/lyh/project83_work_20261104/build_runtime83_checked_01/build_receipt.json",
+      "recorded_dependency_paths_equal_all_copied_sources": true,
+      "recorded_nlohmann_dependencies": 41,
+      "sha256": "b02a8dacc6fbad16b6c8953f0726e11f31fe7f452ac43f762970f729200ef24f"
+    }
+  },
+  "status": "COMPLETE",
+  "verification_after": "COMPLETE"
+}

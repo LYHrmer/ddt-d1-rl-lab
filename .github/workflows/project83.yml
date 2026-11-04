@@ -1,0 +1,76 @@
+name: project83-model-free-contracts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'runtime83/**'
+      - 'tools83/**'
+      - 'tests/test_*83.py'
+      - 'tests/native/*83*.cpp'
+      - 'runtime82/**'
+      - 'tools52/adapter52.py'
+      - 'tools52/dynamics52.py'
+      - 'tools54/numerics54.py'
+      - 'tools56/fit56.py'
+      - 'tools59/run59.py'
+      - 'tools74/runtime74.py'
+      - 'tools79/policy79.py'
+      - 'tools81/policy81.py'
+      - '.github/workflows/project83.yml'
+  pull_request:
+    paths:
+      - 'runtime83/**'
+      - 'tools83/**'
+      - 'tests/test_*83.py'
+      - 'tests/native/*83*.cpp'
+      - 'runtime82/**'
+      - 'tools52/adapter52.py'
+      - 'tools52/dynamics52.py'
+      - 'tools54/numerics54.py'
+      - 'tools56/fit56.py'
+      - 'tools59/run59.py'
+      - 'tools74/runtime74.py'
+      - 'tools79/policy79.py'
+      - 'tools81/policy81.py'
+      - '.github/workflows/project83.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  geometry-and-session:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.12']
+    env:
+      PYTHONPATH: '.'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      CUDA_VISIBLE_DEVICES: ''
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install native headers and the scalar test runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends g++ nlohmann-json3-dev libssl-dev
+          python -m pip install --quiet 'pytest>=7,<9'
+      - name: Verify analytic policy geometry and complete-source metadata contracts
+        # Pure scalar tests: no Torch, NumPy, MuJoCo, checkpoints or D archives.
+        # This does not execute the 2016-forward workstation gradient audit.
+        run: python -B -m pytest --noconftest tests/test_policy_geometry83.py tests/test_source_admission83.py tests/test_policy_checked83.py tests/test_cli83.py -q
+      - name: Compile native session and exercise synthetic protocol and reset faults
+        # Uses only the inert fake server. No ONNX calls, ROS, robot assets,
+        # hardware or physics; the optional ROS entry point is not built here.
+        run: python -B -m unittest discover -s tests -p test_adapter83.py -v

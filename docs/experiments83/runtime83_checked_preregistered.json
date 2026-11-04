@@ -1,0 +1,325 @@
+{
+  "already_completed_native_requests": 64,
+  "binding_groups": {
+    "explicit_build_inputs": [
+      "/usr/bin/cmake",
+      "/usr/bin/x86_64-linux-gnu-g++-11",
+      "/usr/bin/make",
+      "/usr/bin/python3",
+      "/usr/bin/bash",
+      "/usr/include/nlohmann/json.hpp",
+      "/usr/include/openssl/evp.h",
+      "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+      "/opt/ros/humble/setup.bash",
+      "/opt/ros/humble/setup.sh",
+      "/opt/ros/humble/local_setup.bash",
+      "/opt/ros/humble/local_setup.sh",
+      "/opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake",
+      "/opt/ros/humble/share/rclcpp/cmake/rclcppConfig.cmake",
+      "/opt/ros/humble/share/std_msgs/cmake/std_msgsConfig.cmake",
+      "/opt/ros/humble/lib/librclcpp.so"
+    ],
+    "external_preparation_files": [
+      "/home/lyh/project83_work_20261104/build_runtime83.sh",
+      "/home/lyh/project83_work_20261104/run_ros83.sh",
+      "/home/lyh/project83_work_20261104/runtime83_manifest.json"
+    ],
+    "frozen_core_and_reference_readers": [
+      "/home/lyh/ddt_ros2_ws/runtime82/adapter82.hpp",
+      "/home/lyh/ddt_ros2_ws/tests/native/adapter82_test.cpp",
+      "/home/lyh/ddt_ros2_ws/tests/test_adapter82.py",
+      "/home/lyh/ddt_ros2_ws/tools34/cpp_reference34.py",
+      "/home/lyh/ddt_ros2_ws/tools34/replay_cpp_reference34.py",
+      "/home/lyh/ddt_ros2_ws/tools19/cpp_actor19.py"
+    ],
+    "new_runtime_and_tests": [
+      "/home/lyh/ddt_ros2_ws/runtime83/CMakeLists.txt",
+      "/home/lyh/ddt_ros2_ws/runtime83/session83.hpp",
+      "/home/lyh/ddt_ros2_ws/runtime83/probe83.cpp",
+      "/home/lyh/ddt_ros2_ws/runtime83/ros_probe83.cpp",
+      "/home/lyh/ddt_ros2_ws/tests/native/adapter83_fake.cpp",
+      "/home/lyh/ddt_ros2_ws/tests/native/adapter83_test.cpp",
+      "/home/lyh/ddt_ros2_ws/tests/test_adapter83.py"
+    ],
+    "pressure_supervisor": [
+      "/home/lyh/wheel-legged-control-lab/scripts/run_pressure83.py",
+      "/home/lyh/wheel-legged-control-lab/scripts/resource_pressure83.py",
+      "/home/lyh/wheel-legged-control-lab/scripts/run_bounded49.py",
+      "/home/lyh/wheel-legged-control-lab/scripts/resource_guard42.py",
+      "/home/lyh/wheel-legged-control-lab/tests/test_pressure_cleanup83.py"
+    ]
+  },
+  "build": {
+    "actor_calls": 0,
+    "compiler": "/usr/bin/x86_64-linux-gnu-g++-11",
+    "cpu_s_budget": 120,
+    "cxx_standard": 17,
+    "dependency_binding_scope": "Explicit compiler/tool/config/library inputs are prebound; actual compiler .o.d headers, flags, link commands, CMake cache and built binaries are additionally recorded after build. This is not a claim of a presealed full operating-system SDK.",
+    "exclusive": true,
+    "generator": "Unix Makefiles",
+    "optimization": "-O1 -DNDEBUG",
+    "output": "/home/lyh/project83_work_20261104/build_runtime83_01",
+    "parallel_jobs": 1,
+    "physics_steps": 0,
+    "required_completion_receipt": "/home/lyh/project83_work_20261104/build_runtime83_01/build_receipt.json",
+    "ros_option": "ADAPTER83_WITH_ROS=ON",
+    "script": "/home/lyh/project83_work_20261104/build_runtime83.sh",
+    "source_ros_environment": "/opt/ros/humble/setup.bash",
+    "wall_s_budget": 180
+  },
+  "changes": "Independent argv contract repair; original runtime body from manifest copy onward byte-identical",
+  "cold_validation_sha256": "3f164822edc3138738f6a655605c9f02ea008ddefdde64b1d14578ddf70bf682",
+  "date": "2026-11-04",
+  "failure_policy": {
+    "build_initial_incomplete_preserved": true,
+    "external_termination": "supervisor terminal report and available partial receipts only; do not infer source-level completion",
+    "new_output_only": true,
+    "overwrite": false,
+    "preserve_partial": true,
+    "resume": false,
+    "retry": false,
+    "source_or_identity_change": "INCOMPLETE; never authorize changed actor",
+    "unknown_counts_remain_unknown": true
+  },
+  "first_ros_attempt": {
+    "evidence": "/home/lyh/project83_work_20261104/ros_nominal01",
+    "remaining_original_modes": "NOT_STARTED",
+    "ros_contexts": 0,
+    "rpc_attempts": 0,
+    "status": "INCOMPLETE"
+  },
+  "fixed_contract": {
+    "action_shape": [
+      16
+    ],
+    "allowed_ros_topic_suffixes": [
+      "coherent39",
+      "test_effort"
+    ],
+    "command_stale_ns": 500000000,
+    "deadline_ns": 20000000,
+    "deadline_origin": "steady clock capture timestamp",
+    "deadline_scope": "check request, response validation, publish entry/return, and consumer acceptance separately. Already-published DDS messages cannot be recalled.",
+    "forbidden_claims": [
+      "hard realtime hardware acceptance",
+      "physical closed-loop performance improvement",
+      "real hardware sensor synchronization validated",
+      "deployment or replacement of qualified default",
+      "fault fixture accepted as healthy runtime"
+    ],
+    "hardware_connected": false,
+    "onnx_inputs": {
+      "history": [
+        1,
+        10,
+        57
+      ],
+      "obs": [
+        1,
+        57
+      ]
+    },
+    "physics_steps": 0,
+    "raw_actor_shape": [
+      627
+    ],
+    "raw_history_frames": 11,
+    "reset": "new actor34 process; no retained shaper or dirty pipe",
+    "sensor_source": "coherent synthetic 39-value fixture only",
+    "shaper": {
+      "clip": [
+        -0.25,
+        0.25
+      ],
+      "dt_s": 0.02,
+      "gain": 1.5,
+      "tau_s": 0.1
+    },
+    "training_updates": 0
+  },
+  "native": {
+    "command": [
+      "rtk",
+      "proxy",
+      "/home/lyh/project83_work_20261104/build_runtime83_01/probe83",
+      "--manifest",
+      "/home/lyh/project83_work_20261104/runtime83_manifest.json",
+      "--output",
+      "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_01/native",
+      "--ticks",
+      "32",
+      "--sessions",
+      "2"
+    ],
+    "cpu_s_budget": 30,
+    "exclusive": true,
+    "manifest": "/home/lyh/project83_work_20261104/runtime83_manifest.json",
+    "manifest_max_requests": 64,
+    "output": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_01/native",
+    "parent_directory_must_be_created_before_native": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_01",
+    "required": [
+      "status == COMPLETE",
+      "verification_after == COMPLETE",
+      "fresh_session_value_and_effective_hash_replay == true",
+      "engine status COMPLETE and cleanup complete",
+      "exact four frozen runtime identities"
+    ],
+    "rpc_attempts_max": 64,
+    "sessions": 2,
+    "ticks_per_session": 32,
+    "wall_s_budget": 60
+  },
+  "native_repeat_authorized": false,
+  "parent_plan_sha256": "437fcda05945ece13549f210760a66fecceec84318938472d62441d9804dcd3d",
+  "purpose": "Opt-in synthetic sensor/actual frozen actor34 transport and isolated DDS engineering validation; no robot physics or hardware deployment.",
+  "qualified_reference": {
+    "default_model_replaced": false,
+    "identities": {
+      "binary_sha256": "eb3e0dc8f1500e8c57a9001e3a9bd6a78153dc319d024d27aecd4b2c2df2c3aa",
+      "model_sha256": "917dedb759859a9ac63a233dda03e6f5a8f1e40ddf68a30fcaf3864c0f5df9f8",
+      "ort_library_sha256": "0db7bb6201cc86370e54cb9ff0baf768a75660a872f4732822d325c84ac3d9d9",
+      "source_sha256": "e83847db338126192d09e62361423ce7d2d1e60254546a58e0b8299186c653bc"
+    },
+    "identity_parity_cases": 72,
+    "model_path_from": "stages.formal.cases[0].cpp_reference34.transport.command[2]",
+    "qualification_field": "cpp_original_and_holdout_qualified",
+    "qualification_value": true,
+    "report": "/home/lyh/ddt_ros2_ws/evidence/cpp_reference34/execution_01/report.json",
+    "report_sha256": "c5a66490a4fbd92c3f4458792fcde28f65002acb7ee5aca519c79e366d50addb",
+    "source_commit": "dd93918165dedb23171cace8dbebeb77265d1e4d"
+  },
+  "resource_protocol": {
+    "cleanup": "pidfd-verified owned cgroup descendants including actors with separate PGID; exclude supervisor; final owned children empty and direct child reaped required",
+    "cpu_affinity_count": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "memory_oom_group": true,
+    "memory_swap_max_bytes": 0,
+    "nice": 10,
+    "owned_high_max_events_allowed": 0,
+    "runtime_full_psi_avg10_strictly_below": 10.0,
+    "runtime_reserve_min_bytes": 2147483648,
+    "serial_root_owned_only": true,
+    "startup_effective_available_min_bytes": 4294967296,
+    "startup_full_psi_avg10_strictly_below": 1.0,
+    "startup_stable_s": 10,
+    "supervisor": "/home/lyh/wheel-legged-control-lab/scripts/run_pressure83.py",
+    "thread_env": 1
+  },
+  "ros": {
+    "cases": {
+      "late_receive": {
+        "expected_runtime_accepted": false,
+        "expected_runtime_status": "INCOMPLETE",
+        "manifest": "/home/lyh/project83_work_20261104/runtime83_checked_ros_late_receive_manifest.json",
+        "namespace": "/adapter83/project83_late_receive",
+        "output": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_late_receive",
+        "rpc_attempts_max": 1,
+        "ticks": 1
+      },
+      "late_response": {
+        "expected_runtime_accepted": false,
+        "expected_runtime_status": "INCOMPLETE",
+        "manifest": "/home/lyh/project83_work_20261104/runtime83_checked_ros_late_response_manifest.json",
+        "namespace": "/adapter83/project83_late_response",
+        "output": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_late_response",
+        "rpc_attempts_max": 1,
+        "ticks": 1
+      },
+      "nominal": {
+        "expected_runtime_accepted": true,
+        "expected_runtime_status": "COMPLETE",
+        "manifest": "/home/lyh/project83_work_20261104/runtime83_checked_ros_nominal_manifest.json",
+        "namespace": "/adapter83/project83_nominal",
+        "output": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_nominal",
+        "rpc_attempts_max": 24,
+        "ticks": 24
+      },
+      "stale_command": {
+        "expected_runtime_accepted": false,
+        "expected_runtime_status": "INCOMPLETE",
+        "manifest": "/home/lyh/project83_work_20261104/runtime83_checked_ros_stale_command_manifest.json",
+        "namespace": "/adapter83/project83_stale_command",
+        "output": "/home/lyh/ddt_ros2_ws/evidence/runtime83/execution_checked_01/ros_stale_command",
+        "rpc_attempts_max": 0,
+        "ticks": 1
+      }
+    },
+    "completion": "Scenario status COMPLETE proves expected assertions only. Non-nominal engine/runtime remains INCOMPLETE and runtime_accepted=false. Nominal requires both scenario and runtime COMPLETE.",
+    "cpu_s_budget_all_cases": 30,
+    "derived_manifest_sha256": "00eae5f916526565b4305e6e183b67dae1b18ace5b049133c23ea67cefaaf0cf",
+    "domain_id": 183,
+    "faults": {
+      "late_receive": "One completed RPC, then first authorized message observer delays 21 ms; consumer must reject expired authorization, consume no effort, zero effective effort, preserve raw message.",
+      "late_response": "First request followed by injected 21 ms response read delay; fail closed. Actual inference completion may be unknown; never relabel unknown as zero.",
+      "stale_command": "One synthetic packet after 501 ms command age; zero RPC attempts, COMMAND_STALE."
+    },
+    "localhost_only": true,
+    "manifest_derivation": "Read sealed native manifest; change max_requests only from 64 to 30; JSON indent=2 sort_keys=true with final newline. Write a new mode-specific manifest using xb before the probe. Never overwrite or retry a mode.",
+    "manifest_max_requests": 30,
+    "rpc_attempts_max_all_cases": 26,
+    "script": "/home/lyh/project83_work_20261104/run_ros_checked83.sh",
+    "units": "Four new exclusive checked-entry units, serial, no repeated mode; 15s child wall/7s CPU each",
+    "wall_s_budget_all_cases": 60
+  },
+  "schema": "d1-runtime83-checked-preregistered-v1",
+  "source_sha256": {
+    "/home/lyh/ddt_ros2_ws/docs/experiments83/runtime83_preregistered.json": "437fcda05945ece13549f210760a66fecceec84318938472d62441d9804dcd3d",
+    "/home/lyh/ddt_ros2_ws/evidence/cpp_reference34/execution_01/build/actor_server34": "eb3e0dc8f1500e8c57a9001e3a9bd6a78153dc319d024d27aecd4b2c2df2c3aa",
+    "/home/lyh/ddt_ros2_ws/evidence/cpp_reference34/execution_01/report.json": "c5a66490a4fbd92c3f4458792fcde28f65002acb7ee5aca519c79e366d50addb",
+    "/home/lyh/ddt_ros2_ws/evidence/low_memory_delay25/execution_01/random/export/policy.onnx": "917dedb759859a9ac63a233dda03e6f5a8f1e40ddf68a30fcaf3864c0f5df9f8",
+    "/home/lyh/ddt_ros2_ws/reports/cpp_reference34_results_20261018.json": "a8e8824ca51ad54370317cef21c7463927425441c3ca786ff0f1c4ddffc8f039",
+    "/home/lyh/ddt_ros2_ws/runtime34/actor_server34.cpp": "e83847db338126192d09e62361423ce7d2d1e60254546a58e0b8299186c653bc",
+    "/home/lyh/ddt_ros2_ws/runtime82/adapter82.hpp": "0fd2d861d4a3ea8b1ad648923f200447f4ee819051b56de14e54df8331e990f3",
+    "/home/lyh/ddt_ros2_ws/runtime83/CMakeLists.txt": "b23127428cfb7d1963055199a2827ec114f9a708f66bafe7154f585b00d24a4a",
+    "/home/lyh/ddt_ros2_ws/runtime83/checked/CMakeLists.txt": "d8fdba760f17609bc8fab4674f89dc9a5324c72560f7c9d3a9a6d19e56b89da4",
+    "/home/lyh/ddt_ros2_ws/runtime83/cli83.hpp": "82c690aa7a760ea6fd31cfcab75398c34031f22302787400972258822424fa63",
+    "/home/lyh/ddt_ros2_ws/runtime83/probe83.cpp": "9d339e4aaa1256531813fd66ed8ac771ef573563a3c534e6323f8dd7a79c0ea5",
+    "/home/lyh/ddt_ros2_ws/runtime83/ros_checked83.cpp": "13e8e6e1e4b0697dbfb83136df81ac17d4849a58a16bce4ff70c43c273134ad8",
+    "/home/lyh/ddt_ros2_ws/runtime83/ros_probe83.cpp": "7ec96b7a5d3ddcb8107cbec8fe7abf2732c2437e2dac2cefe652579b19d9a969",
+    "/home/lyh/ddt_ros2_ws/runtime83/session83.hpp": "9a97beac0f9fbcb0057126847a000e58e88761d46c2648ba2fc5224c3f457e76",
+    "/home/lyh/ddt_ros2_ws/tests/native/adapter82_test.cpp": "8400a3f1fb0d9d1658a0312cab442e4714f2ba510f47e13975121c11d7a54466",
+    "/home/lyh/ddt_ros2_ws/tests/native/adapter83_fake.cpp": "93239be051cd5914b7966321340cce8892bb33b6cd5da27561d719f1eba5afd8",
+    "/home/lyh/ddt_ros2_ws/tests/native/adapter83_test.cpp": "af93bbce3b6b126de65f915dbe843e6fee21993bd3fdfd836f4c2e101b56e949",
+    "/home/lyh/ddt_ros2_ws/tests/native/cli83_test.cpp": "73a2421e59bace0f87f1d7cd59e2acf9bd8f488bcee3e7ac45d796f06910a6e6",
+    "/home/lyh/ddt_ros2_ws/tests/test_adapter82.py": "ec3ab65c8b9f732dc8bdab57f62d04f98e1f14bf92e555097efdc34d8b4c052d",
+    "/home/lyh/ddt_ros2_ws/tests/test_adapter83.py": "0bc697fe9c0c6d46cf634b41f92a480223b15b736e95d9d12553134d4ac32406",
+    "/home/lyh/ddt_ros2_ws/tests/test_cli83.py": "826488ff5688ad61fc29b10325dd83fde9f1f7a9504682da84112f5560a44b26",
+    "/home/lyh/ddt_ros2_ws/tools19/cpp_actor19.py": "d061542149b9da698c0930a25bd07d0600cc96bbf3d0bb18a8c909bca9d6f427",
+    "/home/lyh/ddt_ros2_ws/tools34/cpp_reference34.py": "ffd8f9a6b4f8f085a29812e4dce1d1c00c9f2b0f29f05f420bc7e0003f01b048",
+    "/home/lyh/ddt_ros2_ws/tools34/replay_cpp_reference34.py": "fba99eecd9a54c73edbee1f19a605c9979b3e0f92fc695aaaf468cd6684da9a1",
+    "/home/lyh/project83_work_20261104/build_checked83.sh": "4394b9a910b5c07fcddf3b2df06f6f0be760a4be903465e3acede5959d33165a",
+    "/home/lyh/project83_work_20261104/build_runtime83.sh": "5ccc8f546b43b8e6454240198ae9469bc2d7777a41d8d3c64803eeed2fe45acb",
+    "/home/lyh/project83_work_20261104/build_runtime83_checked_01/build_receipt.json": "b02a8dacc6fbad16b6c8953f0726e11f31fe7f452ac43f762970f729200ef24f",
+    "/home/lyh/project83_work_20261104/cold_ros_checked83.py": "c41583d4452f1a9f112c97ee6876540423d0624c74233044dc4fc8327b0bd171",
+    "/home/lyh/project83_work_20261104/cold_runtime_checked83.json": "3f164822edc3138738f6a655605c9f02ea008ddefdde64b1d14578ddf70bf682",
+    "/home/lyh/project83_work_20261104/revision83_engineering.md": "6512711cbe12eda55c9da1bcd49bf6777c3b48cef62dbdeee0328a9731748ed4",
+    "/home/lyh/project83_work_20261104/run_ros83.sh": "5d1be2581997bdd3787837e9fa85200bbc04e5b8ebb5ed5089dccf925422b649",
+    "/home/lyh/project83_work_20261104/run_ros_checked83.sh": "8c6c3336aee51bcf96a273a6c18bc480606a803e657f87c762446788ca329bef",
+    "/home/lyh/project83_work_20261104/runtime83_manifest.json": "7abcf69900292f83393e25c5020a7f5708710b6eb1261b496b7cb4160d01fe7a",
+    "/home/lyh/project83_work_20261104/seal_runtime_checked83.py": "bbd51d9e62a2f75326770170e06eb687e35c7b40250205d2ab961b5a3c6d2fee",
+    "/home/lyh/wheel-legged-control-lab/scripts/resource_guard42.py": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2",
+    "/home/lyh/wheel-legged-control-lab/scripts/resource_pressure83.py": "29f14e68cc6df4ab79765f842bfe53030a36e9a36f16379e59b53563671d1a56",
+    "/home/lyh/wheel-legged-control-lab/scripts/run_bounded49.py": "4ed57d66a443d360764ab2773d509c1513ca004265e58fd2ddce842cb9dcee3d",
+    "/home/lyh/wheel-legged-control-lab/scripts/run_pressure83.py": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "/home/lyh/wheel-legged-control-lab/tests/test_pressure_cleanup83.py": "3cafbef1634662ad896db7fbd76411378617385252084fcf707dbbf37c6bf08a",
+    "/opt/ros/humble/lib/librclcpp.so": "a77b618c7f8f7e5144c96ea4be928a86110df41df7716e74dbc46cacf8edc61c",
+    "/opt/ros/humble/local_setup.bash": "c6ee2a04aaaff54dd278b4bce7128000f13b145fbd2b2187fe428733005c25fb",
+    "/opt/ros/humble/local_setup.sh": "9cb492a8d61c065240fc13d7cae0fda49d7908f03b9b41a54383acd376638929",
+    "/opt/ros/humble/setup.bash": "12556a2725a823c3841f8fbab50892c8b8c69df9654d2a74761407226ecca4df",
+    "/opt/ros/humble/setup.sh": "ccd02c6ab5ae3a2abcf03ed2e989243132c459869cb4a6234a48ce11d76b75a1",
+    "/opt/ros/humble/share/ament_cmake/cmake/ament_cmakeConfig.cmake": "63ca73edb46c26b3ea15988e0e15dab10937fc167dafb8859d188e4431769900",
+    "/opt/ros/humble/share/rclcpp/cmake/rclcppConfig.cmake": "5add32703ad5f4d443c3284841ec415bfff2fd26faa4867ffadacd74a05b8530",
+    "/opt/ros/humble/share/std_msgs/cmake/std_msgsConfig.cmake": "754258580fe0a9dbb64df636aeec591e5c9fb37eef71ecb3aa73ee88a01c38f1",
+    "/usr/bin/bash": "59474588a312b6b6e73e5a42a59bf71e62b55416b6c9d5e4a6e1c630c2a9ecd4",
+    "/usr/bin/cmake": "fd22547781b64bb2db04370970b93db1f3fada1e41e60873b015ee0747009fc0",
+    "/usr/bin/make": "92f646030615cd98490a68a94c0aefd87b552be3158b941c02e43b0bfdb576db",
+    "/usr/bin/python3": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae",
+    "/usr/bin/x86_64-linux-gnu-g++-11": "2360901d864cf10bfd6296e261cb2c14053552a80377761ab07146ec9ec9a2c0",
+    "/usr/include/nlohmann/json.hpp": "7262f190c3a2f2bb334236b3b74acaa1ac1ffb72920c4654bcaf02a7db1a4ec0",
+    "/usr/include/openssl/evp.h": "5fe8b8ffa59140110355ebb507e03dc3292f800bf6a62da17574365b181f05bf",
+    "/usr/lib/libonnxruntime.so.1.10.0": "0db7bb6201cc86370e54cb9ff0baf768a75660a872f4732822d325c84ac3d9d9",
+    "/usr/lib/x86_64-linux-gnu/libcrypto.so.3": "7cc817ff1841b59516d684f357bc0c3fc2cc52c3fa9b4ffb8ce8bdc215f02915"
+  },
+  "status": "PREREGISTERED_NOT_EXECUTED"
+}
