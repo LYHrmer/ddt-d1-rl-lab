@@ -4,7 +4,7 @@
 
 ## 一句话
 
-在 16 执行器 D1 上训练**全身策略 + 关节 PD**。策略每 20 ms 给出 12 个腿角目标和 4 个轮速目标，由底层伺服跟踪并限矩。自训 PPO 经 ONNX 导出，在 C++/ONNX Runtime 和原生 MuJoCo 中完成平地 36 + 36 场闭环验证。[动作接口](training/d1_rl/interface.py) · [C++34 结果](docs/cpp_reference34_results_20261018.md)
+在 16 执行器 D1 上做**感知全身控制**。策略每 20 ms 给出 12 个腿关节角目标和 4 个轮速目标，由 250 Hz 的腿部位置 PD 和轮速伺服跟踪。训练端以感知 PPO 为基线，逐步引入 SuperMimic 式的模型强化学习。当前先在原生 MuJoCo 中核验轮地响应，待模型能算准提速和后溜、梯度也经小扰动验证，再用模型梯度训练策略。[动作接口](training/d1_rl/interface.py) · [上坡实测与迁移方案](docs/terrain_world91.md)
 
 ## 60 秒版本
 
