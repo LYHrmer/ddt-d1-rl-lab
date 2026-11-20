@@ -55,6 +55,10 @@ def work(stage):
                 str(BASE / "training_01"), "--root", str(BASE / "evaluate_01")]
         if stage == "readback":
             args.extend(["--output", str(BASE / "readback_01.json")])
+    elif stage == "sensor":
+        complete_stage("training")
+        subprocess.run([sys.executable, "-B", "-m", "tools89.training_contacts89"], check=True)
+        args = ["-m", "tools89.sensor89"]
     elif stage == "video":
         complete_stage("evaluate")
         args = ["-m", "tools89.video89"]
@@ -66,7 +70,8 @@ def work(stage):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("stage", choices=("roadcheck", "admission", "smoke", "training", "evaluate", "readback", "tests", "video"))
+    parser.add_argument("stage", choices=("roadcheck", "admission", "smoke", "training", "evaluate", "readback",
+                                          "sensor", "tests", "video"))
     parser.add_argument("--worker", action="store_true")
     args = parser.parse_args()
     if args.worker:

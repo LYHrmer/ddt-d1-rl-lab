@@ -1,0 +1,3773 @@
+{
+  "status": "COMPLETE",
+  "protocol_sha256": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+  "counts": {
+    "smoke_episodes": 6,
+    "training_models": 6,
+    "evaluation_episodes": 30,
+    "smoke_transitions": 600,
+    "training_transitions": 24576,
+    "evaluation_transitions": 9000,
+    "optimizer_steps": 30,
+    "policy_transitions": 34176,
+    "pd_updates": 170880,
+    "native_steps": 341760
+  },
+  "prior_attempts": [
+    {
+      "stage": "preflight",
+      "status": "INCOMPLETE",
+      "error": "ValueError: reset geometry differs from native terrain",
+      "native_steps": 0,
+      "report_sha256": "f11a66704b73998556297bb797ed16c5fab6e133271284ba2a1f6058fca45d0b",
+      "guard_sha256": "ab83cb5615e3f159ba3d2e25b1688369121c01e40ad714ca6a3306d201e91453",
+      "sources": {
+        "common89.py": "a8fa58e716dd081bb21ef00758c4a1e7b1dea50743752ee42d8c110105abc3c0",
+        "course89.py": "3671894aa868d6674bafcf58a8254cad05119e7c8e54ec7e9d1eb4bddc9e3c29",
+        "eval89.py": "b2900bbebea7c896d4ee7552c69b5476fc0a0ad0ce0310aa6275fff891eb8112",
+        "launch89.py": "48ca0fd2e51524552078caf13c0d8ad83e75fa83444ca274e44feaa77456c11e",
+        "run89.py": "52aa5d404f1716fd08dae20551313976edb55c6e3104acccc680af441ea3e951",
+        "train89.py": "bfed52711471f221700c41b03cbb8f1dc1f863d1fd22b2d3978f5a369390ef44"
+      }
+    }
+  ],
+  "admission": {
+    "archive87": {
+      "method": "World x of each native wheel cylinder center plus its bounding-sphere radius. Below-toe upper bounds rule out a loaded contact beyond the toe at that stored endpoint.",
+      "wheel_order": [
+        "FL_foot",
+        "FR_foot",
+        "RL_foot",
+        "RR_foot"
+      ],
+      "sphere_radii_m": [
+        0.08926925562588722,
+        0.08926925562588722,
+        0.08926925562588722,
+        0.08926925562588722
+      ],
+      "seeds": [
+        {
+          "seed": 87011,
+          "uphill_ticks": 1200,
+          "base_origin_past_toe_ticks": 13,
+          "max_wheel_x_upper_bound_m": [
+            0.9438901982212013,
+            0.8729383104787232,
+            0.4827542979122386,
+            0.4561125954432202
+          ],
+          "max_rear_wheel_x_upper_bound_m": 0.4827542979122386,
+          "both_axles_could_reach_toe_ticks": 0,
+          "all_four_could_reach_toe_ticks": 0,
+          "training_report_sha256": "b0c31060bee73d32715a1a4659b73b82aef91ebcd298246fcea38e45347a41ad"
+        },
+        {
+          "seed": 87023,
+          "uphill_ticks": 1200,
+          "base_origin_past_toe_ticks": 31,
+          "max_wheel_x_upper_bound_m": [
+            0.949121693848554,
+            0.8823706585346165,
+            0.5088017053299496,
+            0.46661982870722046
+          ],
+          "max_rear_wheel_x_upper_bound_m": 0.5088017053299496,
+          "both_axles_could_reach_toe_ticks": 0,
+          "all_four_could_reach_toe_ticks": 0,
+          "training_report_sha256": "6330b6371834ad5cb08dcde14cf12e2d5bd16cf95e4b3992a0310004c9c459df"
+        },
+        {
+          "seed": 87037,
+          "uphill_ticks": 1500,
+          "base_origin_past_toe_ticks": 78,
+          "max_wheel_x_upper_bound_m": [
+            0.957328372613321,
+            0.9107864250815596,
+            0.4958476077317486,
+            0.4831970536063483
+          ],
+          "max_rear_wheel_x_upper_bound_m": 0.4958476077317486,
+          "both_axles_could_reach_toe_ticks": 0,
+          "all_four_could_reach_toe_ticks": 0,
+          "training_report_sha256": "955da9456cd61759b830fa4d0e7bfa64361f889e0b203cdfad3345e793f3361b"
+        }
+      ],
+      "uphill_ticks": 3900,
+      "all_four_could_reach_toe_ticks": 0
+    },
+    "original_resets_matching87": 33,
+    "mixed_uphill_starts": [
+      {
+        "seed": 89101,
+        "base_x_m": 1.1,
+        "base_z_m": 0.4934120745563536,
+        "per_wheel_normal_clearance_m": [
+          0.004837583853179603,
+          0.005587249107416245,
+          0.0020000000000000434,
+          0.004570609238440812
+        ],
+        "max_clearance_difference_m": 3.191891195797325e-16,
+        "lowest_x_wheel_bound_m": 0.8228948553371851,
+        "max_native_road_height_error_m": 7.25193306794214e-09
+      },
+      {
+        "seed": 89102,
+        "base_x_m": 1.1,
+        "base_z_m": 0.4926224203289717,
+        "per_wheel_normal_clearance_m": [
+          0.006862772062086339,
+          0.0034887244838724546,
+          0.004749781579323278,
+          0.001999999999999849
+        ],
+        "max_clearance_difference_m": 2.3592239273284576e-16,
+        "lowest_x_wheel_bound_m": 0.8307098718147288,
+        "max_native_road_height_error_m": 7.340986957204976e-09
+      },
+      {
+        "seed": 89103,
+        "base_x_m": 1.1,
+        "base_z_m": 0.4948841073287822,
+        "per_wheel_normal_clearance_m": [
+          0.009664889018165618,
+          0.003499257900670419,
+          0.007222530021494505,
+          0.002000000000000085
+        ],
+        "max_clearance_difference_m": 1.6653345369377348e-16,
+        "lowest_x_wheel_bound_m": 0.8242747314873902,
+        "max_native_road_height_error_m": 7.1591536240922515e-09
+      }
+    ],
+    "policy_transitions": 0,
+    "pd_updates": 0,
+    "native_steps": 0,
+    "native_road_probes": {
+      "tolerance_m": 2e-06,
+      "interior_sample_count": 168,
+      "original_reference_row_edge_failures": 6,
+      "original_reference_edge_first_failure": {
+        "seed": 89102,
+        "terrain": "flat",
+        "episode": 0,
+        "wheel": "FL_foot",
+        "x_m": 0.1658945993606491,
+        "expected_height_m": 0.0,
+        "original_row_edge": {
+          "y_m": 1.2,
+          "height_m": -0.15999999999999992,
+          "abs_error_m": 0.15999999999999992,
+          "floor_within_tolerance": false
+        },
+        "two_cell_interiors": [
+          {
+            "y_m": 1.25,
+            "height_m": 2.220446049250313e-16,
+            "abs_error_m": 2.220446049250313e-16,
+            "floor_within_tolerance": true
+          },
+          {
+            "y_m": -1.25,
+            "height_m": 2.220446049250313e-16,
+            "abs_error_m": 2.220446049250313e-16,
+            "floor_within_tolerance": true
+          }
+        ]
+      },
+      "original_reference_edge_max_error_m": 0.15999999999999992,
+      "max_interior_error_m": 7.340986957204976e-09
+    }
+  },
+  "smoke": {
+    "cases": [
+      {
+        "arm": "original",
+        "seed": 89101,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 0.0,
+        "moving": 50,
+        "both_axles_on_slope_moving": 0,
+        "four_wheels_on_slope_moving": 0,
+        "any_rear_on_slope": false,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "43ce5598404a3c6bca1db9657496bfacac493c905ed44dca565c843a62cf6dfa"
+      },
+      {
+        "arm": "mixed",
+        "seed": 89101,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 1.1,
+        "moving": 50,
+        "both_axles_on_slope_moving": 50,
+        "four_wheels_on_slope_moving": 41,
+        "any_rear_on_slope": true,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "7fdfc02af0cb4796a70483f3a6402bea6901f25bb61152dfc2580f825dca7a02"
+      },
+      {
+        "arm": "original",
+        "seed": 89102,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 0.0,
+        "moving": 50,
+        "both_axles_on_slope_moving": 0,
+        "four_wheels_on_slope_moving": 0,
+        "any_rear_on_slope": false,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "9bc9b07067920485191d054f2479df6794b0764f4c3f723daf3c0ff3202a513e"
+      },
+      {
+        "arm": "mixed",
+        "seed": 89102,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 1.1,
+        "moving": 50,
+        "both_axles_on_slope_moving": 50,
+        "four_wheels_on_slope_moving": 37,
+        "any_rear_on_slope": true,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "40acd5ea3be338396b9dc16bd1cc71adc27253416d54a3be45ef3b285c1d3e9c"
+      },
+      {
+        "arm": "original",
+        "seed": 89103,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 0.0,
+        "moving": 50,
+        "both_axles_on_slope_moving": 0,
+        "four_wheels_on_slope_moving": 0,
+        "any_rear_on_slope": false,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "63d066741c137eae4a0faaf2aa937a6c2f30c3a3e15a2449def7a5ef249aa24b"
+      },
+      {
+        "arm": "mixed",
+        "seed": 89103,
+        "ticks": 100,
+        "pd_updates": 500,
+        "native_steps": 1000,
+        "initial_base_x_m": 1.1,
+        "moving": 50,
+        "both_axles_on_slope_moving": 50,
+        "four_wheels_on_slope_moving": 39,
+        "any_rear_on_slope": true,
+        "clean": true,
+        "passed": true,
+        "trace_sha256": "26d7cd507f76a62fa8060a870651dea40cf1ac75ebd8765e19901fc4267aa92c"
+      }
+    ],
+    "preflight_pass": true
+  },
+  "training": {
+    "models": [
+      {
+        "model": "original_89011",
+        "parent_seed": 87011,
+        "train_seed": 89011,
+        "arm": "original",
+        "report_sha256": "114e7d6cf2c5bbc43286a9f47eb0355301928a0549884d63a0feab165e0ad0ae",
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "optimizer_steps": 4,
+        "parent_policy_sha256": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16881,
+            "mlp_extractor.encoder.0.weight": 16881,
+            "mlp_extractor.encoder.0.bias": 16881,
+            "mlp_extractor.encoder.2.weight": 16881,
+            "mlp_extractor.encoder.2.bias": 16881,
+            "mlp_extractor.encoder.4.weight": 16881,
+            "mlp_extractor.encoder.4.bias": 16881,
+            "mlp_extractor.policy_net.0.weight": 16881,
+            "mlp_extractor.policy_net.0.bias": 16881,
+            "mlp_extractor.policy_net.2.weight": 16881,
+            "mlp_extractor.policy_net.2.bias": 16881,
+            "mlp_extractor.value_net.0.weight": 16881,
+            "mlp_extractor.value_net.0.bias": 16881,
+            "mlp_extractor.value_net.2.weight": 16881,
+            "mlp_extractor.value_net.2.bias": 16881,
+            "mlp_extractor.range_projection.weight": 5,
+            "action_net.weight": 16881,
+            "action_net.bias": 16881,
+            "value_net.weight": 16881,
+            "value_net.bias": 16881
+          }
+        },
+        "initial_probe_actions_sha256": "58f0bedeb137d3ade7414f3809e0e792aec79f2e2ffd48fe4440422e3e4bb26d",
+        "pre_rollout_torch_rng_sha256": "269e44875e424b9eeadd28c9f3c3653ade37ed631a6b00f5f2dc719047ec6cd6",
+        "range_projection_delta_l2": 0.007723275572061539,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 14,
+          "forward_calls": 4125
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.01711328513920307,
+        "max_probed_sensor_action_change": 0.010441064834594727,
+        "episodes": [
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              124,
+              27,
+              3,
+              96,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 6
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              127,
+              22,
+              6,
+              95,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 9
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              117,
+              26,
+              4,
+              103,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 7
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              131,
+              6,
+              8,
+              105,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 33
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              125,
+              22,
+              4,
+              99,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 10
+          },
+          {
+            "terrain": "down",
+            "ticks": 196,
+            "moving_ticks": 146,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "ffc944a9e9aa645569a4a8b9b2604e8ca2084a890ca08e014ea0b4bb39ad6873",
+          "slope_start": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "start_x_m": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+          "qpos": "d90a000a122c70245e6d69d4cfbe20f801fc035bf33d3c942e1c4f98eecc10fe",
+          "body_vx_m_s": "189383309b02d218e63f98d28ae2b3b7651b67d2b5fd3a64d85db0e16828029b",
+          "command_vx_m_s": "e06dfbe5c4e02646cb54941dab484352a1a1d1692b52107bba798c55fb0f6bab"
+        },
+        "train_trace_sha256": "380d45327c3510d0761797c80c341658527b67b9d60251acb822bcbc5a3c250d"
+      },
+      {
+        "model": "mixed_89011",
+        "parent_seed": 87011,
+        "train_seed": 89011,
+        "arm": "mixed",
+        "report_sha256": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "optimizer_steps": 3,
+        "parent_policy_sha256": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16881,
+            "mlp_extractor.encoder.0.weight": 16881,
+            "mlp_extractor.encoder.0.bias": 16881,
+            "mlp_extractor.encoder.2.weight": 16881,
+            "mlp_extractor.encoder.2.bias": 16881,
+            "mlp_extractor.encoder.4.weight": 16881,
+            "mlp_extractor.encoder.4.bias": 16881,
+            "mlp_extractor.policy_net.0.weight": 16881,
+            "mlp_extractor.policy_net.0.bias": 16881,
+            "mlp_extractor.policy_net.2.weight": 16881,
+            "mlp_extractor.policy_net.2.bias": 16881,
+            "mlp_extractor.value_net.0.weight": 16881,
+            "mlp_extractor.value_net.0.bias": 16881,
+            "mlp_extractor.value_net.2.weight": 16881,
+            "mlp_extractor.value_net.2.bias": 16881,
+            "mlp_extractor.range_projection.weight": 5,
+            "action_net.weight": 16881,
+            "action_net.bias": 16881,
+            "value_net.weight": 16881,
+            "value_net.bias": 16881
+          }
+        },
+        "initial_probe_actions_sha256": "58f0bedeb137d3ade7414f3809e0e792aec79f2e2ffd48fe4440422e3e4bb26d",
+        "pre_rollout_torch_rng_sha256": "269e44875e424b9eeadd28c9f3c3653ade37ed631a6b00f5f2dc719047ec6cd6",
+        "range_projection_delta_l2": 0.006086220499128103,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 15,
+          "forward_calls": 4127
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.019440293312072754,
+        "max_probed_sensor_action_change": 0.009800516068935394,
+        "episodes": [
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              124,
+              27,
+              3,
+              96,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 6
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": true,
+            "terminated": false,
+            "truncated": true,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.9294642769803257,
+              "body_vx_m_s": -0.170215188913629
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              2,
+              1,
+              18,
+              0,
+              1,
+              1,
+              8,
+              1,
+              25,
+              28,
+              164
+            ],
+            "moving_base_past_toe": 250
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              117,
+              26,
+              4,
+              103,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 7
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 117,
+            "moving_ticks": 67,
+            "slope_start": true,
+            "terminated": true,
+            "truncated": false,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.9227328646422764,
+              "body_vx_m_s": -0.2430326286316423
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              7,
+              13,
+              13,
+              33
+            ],
+            "moving_base_past_toe": 67
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              137,
+              11,
+              4,
+              98,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 0
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 79,
+            "moving_ticks": 29,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "c8cd692db2f60d20440d6e7e48995c3c07cfd1955cca8cac04cedcc1f5f7d384",
+          "slope_start": "f48d66b3f3e96a1e8d5358720998362a26248df410418d13fc2fa5ba726b3c21",
+          "start_x_m": "b1715ab41b05730c544e2add3a7d12a09e872401a3442fc7bbad51892db19366",
+          "qpos": "786c126d94d0a4cf5e681a16e759e0554f059b43fcc035da1476b82a49945931",
+          "body_vx_m_s": "80c28c9cf901891fdbc301e3df908bfb3cce6ea1a8677e0ade86efedec5f1791",
+          "command_vx_m_s": "0105d4e3c223be03583e2f64a5509af27c1a73f79431c5fd682181d0639901cd"
+        },
+        "train_trace_sha256": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e"
+      },
+      {
+        "model": "original_89023",
+        "parent_seed": 87023,
+        "train_seed": 89023,
+        "arm": "original",
+        "report_sha256": "af043a5ac8876ffccbfa1e39cd730c0b17fcff01acd013e857e7db29a2d51cec",
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "optimizer_steps": 4,
+        "parent_policy_sha256": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16881,
+            "mlp_extractor.encoder.0.weight": 16881,
+            "mlp_extractor.encoder.0.bias": 16881,
+            "mlp_extractor.encoder.2.weight": 16881,
+            "mlp_extractor.encoder.2.bias": 16881,
+            "mlp_extractor.encoder.4.weight": 16881,
+            "mlp_extractor.encoder.4.bias": 16881,
+            "mlp_extractor.policy_net.0.weight": 16881,
+            "mlp_extractor.policy_net.0.bias": 16881,
+            "mlp_extractor.policy_net.2.weight": 16881,
+            "mlp_extractor.policy_net.2.bias": 16881,
+            "mlp_extractor.value_net.0.weight": 16881,
+            "mlp_extractor.value_net.0.bias": 16881,
+            "mlp_extractor.value_net.2.weight": 16881,
+            "mlp_extractor.value_net.2.bias": 16881,
+            "mlp_extractor.range_projection.weight": 5,
+            "action_net.weight": 16881,
+            "action_net.bias": 16881,
+            "value_net.weight": 16881,
+            "value_net.bias": 16881
+          }
+        },
+        "initial_probe_actions_sha256": "7e79aeeed4d8b1af4dc2fa59a300add3ee6f2990980b732450640d9e44385d1b",
+        "pre_rollout_torch_rng_sha256": "7ae7a0cdeaf09adab9c70d06afbc272091ae762ed3ef01f1a753501f131fe07c",
+        "range_projection_delta_l2": 0.006677297875285149,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 14,
+          "forward_calls": 4125
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.023171275854110718,
+        "max_probed_sensor_action_change": 0.012696057558059692,
+        "episodes": [
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              123,
+              17,
+              4,
+              106,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 17
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              130,
+              19,
+              6,
+              95,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 19
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              124,
+              6,
+              5,
+              115,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 21
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              124,
+              6,
+              10,
+              110,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 21
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              130,
+              8,
+              5,
+              107,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 11
+          },
+          {
+            "terrain": "down",
+            "ticks": 196,
+            "moving_ticks": 146,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "ffc944a9e9aa645569a4a8b9b2604e8ca2084a890ca08e014ea0b4bb39ad6873",
+          "slope_start": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "start_x_m": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+          "qpos": "8fb6ace786f0cded646537b1673928d1e5e681a7754d846e96307e0a6351353c",
+          "body_vx_m_s": "127e7b8027a9211a5b45de1097a24eb2aadf4266a807663793a0b0191bce8412",
+          "command_vx_m_s": "e06dfbe5c4e02646cb54941dab484352a1a1d1692b52107bba798c55fb0f6bab"
+        },
+        "train_trace_sha256": "0e50585c9270080103bba2301aa4ab7379ac4ab8a5fa91fd7db15c4332ba3ac4"
+      },
+      {
+        "model": "mixed_89023",
+        "parent_seed": 87023,
+        "train_seed": 89023,
+        "arm": "mixed",
+        "report_sha256": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121",
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "optimizer_steps": 5,
+        "parent_policy_sha256": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16881,
+            "mlp_extractor.encoder.0.weight": 16881,
+            "mlp_extractor.encoder.0.bias": 16881,
+            "mlp_extractor.encoder.2.weight": 16881,
+            "mlp_extractor.encoder.2.bias": 16881,
+            "mlp_extractor.encoder.4.weight": 16881,
+            "mlp_extractor.encoder.4.bias": 16881,
+            "mlp_extractor.policy_net.0.weight": 16881,
+            "mlp_extractor.policy_net.0.bias": 16881,
+            "mlp_extractor.policy_net.2.weight": 16881,
+            "mlp_extractor.policy_net.2.bias": 16881,
+            "mlp_extractor.value_net.0.weight": 16881,
+            "mlp_extractor.value_net.0.bias": 16881,
+            "mlp_extractor.value_net.2.weight": 16881,
+            "mlp_extractor.value_net.2.bias": 16881,
+            "mlp_extractor.range_projection.weight": 5,
+            "action_net.weight": 16881,
+            "action_net.bias": 16881,
+            "value_net.weight": 16881,
+            "value_net.bias": 16881
+          }
+        },
+        "initial_probe_actions_sha256": "7e79aeeed4d8b1af4dc2fa59a300add3ee6f2990980b732450640d9e44385d1b",
+        "pre_rollout_torch_rng_sha256": "7ae7a0cdeaf09adab9c70d06afbc272091ae762ed3ef01f1a753501f131fe07c",
+        "range_projection_delta_l2": 0.007659657392650843,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 15,
+          "forward_calls": 4127
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.03278198838233948,
+        "max_probed_sensor_action_change": 0.008513718843460083,
+        "episodes": [
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              123,
+              17,
+              4,
+              106,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 17
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 92,
+            "moving_ticks": 42,
+            "slope_start": true,
+            "terminated": true,
+            "truncated": false,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.8973448353386014,
+              "body_vx_m_s": -0.27100789283115767
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8,
+              8,
+              9,
+              16
+            ],
+            "moving_base_past_toe": 42
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              116,
+              30,
+              9,
+              95,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 16
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 106,
+            "moving_ticks": 56,
+            "slope_start": true,
+            "terminated": true,
+            "truncated": false,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.9163935812220936,
+              "body_vx_m_s": -0.26181305683147643
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              4,
+              9,
+              12,
+              28
+            ],
+            "moving_base_past_toe": 56
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              118,
+              8,
+              4,
+              120,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 17
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 298,
+            "moving_ticks": 248,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "f9664fa0de577bc099019bd235caf8de52ad99f06084d97f93fd181e7a963b0a",
+          "slope_start": "d22e664fd168b308eef387524f6be3b3790535304c8648a42c9d2c9a0b78d8dd",
+          "start_x_m": "23f1c7db0dea726f4d7e4d6fafc3e1519f68274fb9144631a2ecd267386ea738",
+          "qpos": "1d17689fa94be0a886faa76a36ca28f6bc742a8abd1af9b3fdb1159091934b4a",
+          "body_vx_m_s": "a766c7f9ffe3830b54a293cd627d41d34fd7739200dc5d856b1004fd5b405d85",
+          "command_vx_m_s": "ea934e5d7f5199a9250640c3b5f6d7b6c410961dc374712e91632689e9b11209"
+        },
+        "train_trace_sha256": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5"
+      },
+      {
+        "model": "original_89037",
+        "parent_seed": 87037,
+        "train_seed": 89037,
+        "arm": "original",
+        "report_sha256": "719839285f60b81252ed0b37b4688b002108189f3871bd001521685d3d43e02d",
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "optimizer_steps": 6,
+        "parent_policy_sha256": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16880,
+            "mlp_extractor.encoder.0.weight": 16880,
+            "mlp_extractor.encoder.0.bias": 16880,
+            "mlp_extractor.encoder.2.weight": 16880,
+            "mlp_extractor.encoder.2.bias": 16880,
+            "mlp_extractor.encoder.4.weight": 16880,
+            "mlp_extractor.encoder.4.bias": 16880,
+            "mlp_extractor.policy_net.0.weight": 16880,
+            "mlp_extractor.policy_net.0.bias": 16880,
+            "mlp_extractor.policy_net.2.weight": 16880,
+            "mlp_extractor.policy_net.2.bias": 16880,
+            "mlp_extractor.value_net.0.weight": 16880,
+            "mlp_extractor.value_net.0.bias": 16880,
+            "mlp_extractor.value_net.2.weight": 16880,
+            "mlp_extractor.value_net.2.bias": 16880,
+            "mlp_extractor.range_projection.weight": 4,
+            "action_net.weight": 16880,
+            "action_net.bias": 16880,
+            "value_net.weight": 16880,
+            "value_net.bias": 16880
+          }
+        },
+        "initial_probe_actions_sha256": "e34b8f3280b1703c14796b09f8ed3273b46506cc40bb25070b75773d13769328",
+        "pre_rollout_torch_rng_sha256": "b7e8ef929fa7cb238f4fd12cd9f46b4455ddd77a3fc2d24c45dfc0431445a2a0",
+        "range_projection_delta_l2": 0.00900364015251398,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 14,
+          "forward_calls": 4125
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.026331543922424316,
+        "max_probed_sensor_action_change": 0.009194253012537956,
+        "episodes": [
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              117,
+              12,
+              3,
+              118,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 19
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              129,
+              18,
+              7,
+              96,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 19
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              121,
+              19,
+              3,
+              107,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 21
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              123,
+              11,
+              9,
+              107,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 15
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 196,
+            "moving_ticks": 146,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false,
+            "moving_wheel_mask_counts": [
+              128,
+              4,
+              0,
+              14,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 0
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "ffc944a9e9aa645569a4a8b9b2604e8ca2084a890ca08e014ea0b4bb39ad6873",
+          "slope_start": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "start_x_m": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479",
+          "qpos": "770aa6f1bc6044b1b81c12ef428fc6755489cbfd68265e1805077e2bff9c7599",
+          "body_vx_m_s": "68c1b5fa3c028406a3ba9d628ce03cdb0c32cb25ae8e32c4ffa54baf4f323cb5",
+          "command_vx_m_s": "e06dfbe5c4e02646cb54941dab484352a1a1d1692b52107bba798c55fb0f6bab"
+        },
+        "train_trace_sha256": "c4617ec296f6f0d56a0a9ce217007f2fa7a43f22e53bfc7d58cabb7120a39e89"
+      },
+      {
+        "model": "mixed_89037",
+        "parent_seed": 87037,
+        "train_seed": 89037,
+        "arm": "mixed",
+        "report_sha256": "c3a18de375cbda776d2597c12a7bb48c179dc0277a153b2fc4b6f804d6176bbb",
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "optimizer_steps": 8,
+        "parent_policy_sha256": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12",
+        "inheritance": {
+          "parameter_tensors": 20,
+          "adam_parameters": 20,
+          "inherited_adam_steps": {
+            "log_std": 16880,
+            "mlp_extractor.encoder.0.weight": 16880,
+            "mlp_extractor.encoder.0.bias": 16880,
+            "mlp_extractor.encoder.2.weight": 16880,
+            "mlp_extractor.encoder.2.bias": 16880,
+            "mlp_extractor.encoder.4.weight": 16880,
+            "mlp_extractor.encoder.4.bias": 16880,
+            "mlp_extractor.policy_net.0.weight": 16880,
+            "mlp_extractor.policy_net.0.bias": 16880,
+            "mlp_extractor.policy_net.2.weight": 16880,
+            "mlp_extractor.policy_net.2.bias": 16880,
+            "mlp_extractor.value_net.0.weight": 16880,
+            "mlp_extractor.value_net.0.bias": 16880,
+            "mlp_extractor.value_net.2.weight": 16880,
+            "mlp_extractor.value_net.2.bias": 16880,
+            "mlp_extractor.range_projection.weight": 4,
+            "action_net.weight": 16880,
+            "action_net.bias": 16880,
+            "value_net.weight": 16880,
+            "value_net.bias": 16880
+          }
+        },
+        "initial_probe_actions_sha256": "e34b8f3280b1703c14796b09f8ed3273b46506cc40bb25070b75773d13769328",
+        "pre_rollout_torch_rng_sha256": "b7e8ef929fa7cb238f4fd12cd9f46b4455ddd77a3fc2d24c45dfc0431445a2a0",
+        "range_projection_delta_l2": 0.008606222458183765,
+        "leg_rows_changed": 12,
+        "wheel_rows_changed": 4,
+        "counts": {
+          "native_steps": 40960,
+          "pd_updates": 20480,
+          "policy_transitions": 4096,
+          "resets": 15,
+          "forward_calls": 4127
+        },
+        "reload_probe_actions_bitwise_equal": true,
+        "max_probed_change_from_parent": 0.02544158697128296,
+        "max_probed_sensor_action_change": 0.008827319368720055,
+        "episodes": [
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              117,
+              12,
+              3,
+              118,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 19
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": true,
+            "terminated": false,
+            "truncated": true,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.910502154778993,
+              "body_vx_m_s": -0.23488653402778517
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              3,
+              0,
+              7,
+              0,
+              1,
+              2,
+              3,
+              5,
+              30,
+              27,
+              172
+            ],
+            "moving_base_past_toe": 250
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              121,
+              19,
+              3,
+              107,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 21
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 93,
+            "moving_ticks": 43,
+            "slope_start": true,
+            "terminated": true,
+            "truncated": false,
+            "start_x_m": 1.1,
+            "stand_endpoint": {
+              "end_tick": 50,
+              "time_s": 1.0,
+              "command_m_s": 0.0,
+              "base_x_m": 0.910591875250434,
+              "body_vx_m_s": -0.2636509945631029
+            },
+            "moving_wheel_mask_counts": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              10,
+              7,
+              8,
+              17
+            ],
+            "moving_base_past_toe": 43
+          },
+          {
+            "terrain": "down",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "flat",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true
+          },
+          {
+            "terrain": "up",
+            "ticks": 300,
+            "moving_ticks": 250,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": true,
+            "moving_wheel_mask_counts": [
+              117,
+              23,
+              5,
+              105,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "moving_base_past_toe": 42
+          },
+          {
+            "terrain": "down",
+            "ticks": 103,
+            "moving_ticks": 53,
+            "slope_start": false,
+            "terminated": false,
+            "truncated": false
+          }
+        ],
+        "stand_endpoint_source_arrays_sha256": {
+          "episode_tick": "d92a49fa14fb64374b68497135efa700b26a0ba643850860033f08bd9ede5b0f",
+          "slope_start": "325db02b39a4d7f783280da51425beff1f3e3a06ea51438b3ead5fedea5ac27f",
+          "start_x_m": "35ea280b3d5b1735b37f1a9667fe399495803eccb2febcf18a0cbc3cbadb8d4a",
+          "qpos": "62cb332c939a37f4276f9774cac4b6d4c8535d29c8f8500f85b0eececc6225f9",
+          "body_vx_m_s": "0c839645a1de5b329b8a2dacd1173bcdc307bacc15d61cd04519b298ea0c6d70",
+          "command_vx_m_s": "514dd9ff678b341be32f3d446d248df4cd145ddc56418424b563a691ff4910a7"
+        },
+        "train_trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22"
+      }
+    ],
+    "wheel_mask_bits_FL_FR_RL_RR": [
+      1,
+      2,
+      4,
+      8
+    ]
+  },
+  "coverage_pairs": [
+    {
+      "train_seed": 89011,
+      "identical_prefix_ticks": 900,
+      "original": {
+        "uphill_ticks": 1500,
+        "uphill_moving_ticks": 1250,
+        "both_axles_on_slope_moving": 0,
+        "all_four_on_slope_moving": 0,
+        "all_four_fraction": 0.0,
+        "uphill_moving_base_past_toe": 65,
+        "terminated_episodes": 0
+      },
+      "mixed": {
+        "uphill_ticks": 1317,
+        "uphill_moving_ticks": 1067,
+        "both_axles_on_slope_moving": 308,
+        "all_four_on_slope_moving": 197,
+        "all_four_fraction": 0.1846298031865042,
+        "uphill_moving_base_past_toe": 330,
+        "terminated_episodes": 1
+      },
+      "fraction_increase": 0.1846298031865042,
+      "coverage_pass": false
+    },
+    {
+      "train_seed": 89023,
+      "identical_prefix_ticks": 900,
+      "original": {
+        "uphill_ticks": 1500,
+        "uphill_moving_ticks": 1250,
+        "both_axles_on_slope_moving": 0,
+        "all_four_on_slope_moving": 0,
+        "all_four_fraction": 0.0,
+        "uphill_moving_base_past_toe": 89,
+        "terminated_episodes": 0
+      },
+      "mixed": {
+        "uphill_ticks": 1098,
+        "uphill_moving_ticks": 848,
+        "both_axles_on_slope_moving": 85,
+        "all_four_on_slope_moving": 44,
+        "all_four_fraction": 0.05188679245283019,
+        "uphill_moving_base_past_toe": 148,
+        "terminated_episodes": 2
+      },
+      "fraction_increase": 0.05188679245283019,
+      "coverage_pass": false
+    },
+    {
+      "train_seed": 89037,
+      "identical_prefix_ticks": 1200,
+      "original": {
+        "uphill_ticks": 1396,
+        "uphill_moving_ticks": 1146,
+        "both_axles_on_slope_moving": 0,
+        "all_four_on_slope_moving": 0,
+        "all_four_fraction": 0.0,
+        "uphill_moving_base_past_toe": 74,
+        "terminated_episodes": 0
+      },
+      "mixed": {
+        "uphill_ticks": 1293,
+        "uphill_moving_ticks": 1043,
+        "both_axles_on_slope_moving": 278,
+        "all_four_on_slope_moving": 189,
+        "all_four_fraction": 0.18120805369127516,
+        "uphill_moving_base_past_toe": 375,
+        "terminated_episodes": 1
+      },
+      "fraction_increase": 0.18120805369127516,
+      "coverage_pass": false
+    }
+  ],
+  "coverage_pass": false,
+  "evaluation": {
+    "cases": [
+      {
+        "case": "original_89011_flat_89201",
+        "arm": "original",
+        "training_seed": 89011,
+        "terrain": "flat",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "b72c0eb376287b2130196d3a15e88eb84f01e88ebb0ac7af5c674a5040db29be",
+        "score_vx_m_s": 0.19094859990671675,
+        "fixed_speed_rmse_m_s": 0.03409434576469961,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.5230686035281714,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.163332249596715
+      },
+      {
+        "case": "original_89011_up_89201",
+        "arm": "original",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "f06a11794ea6d40bb919ffe394e69a66bc8b18fd6bd7cfa2bbcb227f5c5d371e",
+        "score_vx_m_s": 0.10576169734749165,
+        "fixed_speed_rmse_m_s": 0.07588317689762633,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.323473460289015,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9819690968841313
+      },
+      {
+        "case": "original_89011_up_89202",
+        "arm": "original",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "298da0e7013dec5c31e7d6f41ee5ddc349b94188860def5ef406b26b00178aa1",
+        "score_vx_m_s": 0.09904055311546989,
+        "fixed_speed_rmse_m_s": 0.07712521742131954,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3005947270673228,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9490393474698067
+      },
+      {
+        "case": "original_89011_up_89203",
+        "arm": "original",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "ec0bf113f8a47f7edda076e78473a4eb2858687f32dbf01ea482c0e5640476f7",
+        "score_vx_m_s": 0.10016220438413835,
+        "fixed_speed_rmse_m_s": 0.07594899137512566,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3056359280018367,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9569248989224435
+      },
+      {
+        "case": "original_89011_down_89201",
+        "arm": "original",
+        "training_seed": 89011,
+        "terrain": "down",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "d560d19aba743928b88f3fa0d2a87b47e365af04eb015a92063c9d640160a3d3",
+        "score_vx_m_s": 0.3024554993528734,
+        "fixed_speed_rmse_m_s": 0.07837806661604621,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.7774768124792547,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.3527190264314415
+      },
+      {
+        "case": "mixed_89011_flat_89201",
+        "arm": "mixed",
+        "training_seed": 89011,
+        "terrain": "flat",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "af975a5469f0473e6f8937e49f4b1bcd887fa47eae71e18864e0a516296000c5",
+        "score_vx_m_s": 0.18321216241976482,
+        "fixed_speed_rmse_m_s": 0.03530331002047146,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.5000223514784136,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.162562654167414
+      },
+      {
+        "case": "mixed_89011_up_89201",
+        "arm": "mixed",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "e91a7f01ca90e096c07beea82e1a2b0150371e04aea40a7e6ac5a1cdbb18cafc",
+        "score_vx_m_s": 0.10198344448955896,
+        "fixed_speed_rmse_m_s": 0.07771605852251418,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.31103786696215885,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9840938434004785
+      },
+      {
+        "case": "mixed_89011_up_89202",
+        "arm": "mixed",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "da8d1292c31d6e00b3f5a6aad48e81f6c1f4f9597ac3bd87a19d0e2d1d1b65b1",
+        "score_vx_m_s": 0.09966368601781836,
+        "fixed_speed_rmse_m_s": 0.07748694861840079,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.300002675176143,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.956292298436165
+      },
+      {
+        "case": "mixed_89011_up_89203",
+        "arm": "mixed",
+        "training_seed": 89011,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "74af01a2195c68aa9cd022c3fd117d1d6a4f9d9775a3793077f7443644a7989a",
+        "score_vx_m_s": 0.10055011998605207,
+        "fixed_speed_rmse_m_s": 0.07651032385327852,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.31313601434177885,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9699193209409716
+      },
+      {
+        "case": "mixed_89011_down_89201",
+        "arm": "mixed",
+        "training_seed": 89011,
+        "terrain": "down",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "fa1253137e758f2a50099f82e675d04ad5e2b5858c8d85d1d279687d95861588",
+        "score_vx_m_s": 0.30680633662233747,
+        "fixed_speed_rmse_m_s": 0.08073354947573634,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.7672044214010337,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.3714773446321487
+      },
+      {
+        "case": "original_89023_flat_89202",
+        "arm": "original",
+        "training_seed": 89023,
+        "terrain": "flat",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "59f71d699fdac0abd802b24a612198c4dba06a7c1da8481b6dbb70897f6f7cfd",
+        "score_vx_m_s": 0.18632371807236062,
+        "fixed_speed_rmse_m_s": 0.037488969024741414,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.48729678414240796,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.1179388754069803
+      },
+      {
+        "case": "original_89023_up_89201",
+        "arm": "original",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "177d91f35214e6c084298bc58f600e20dc1090da21a5ca5c4a9f442be39b7436",
+        "score_vx_m_s": 0.10805209585556018,
+        "fixed_speed_rmse_m_s": 0.07473249537350779,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3247526994619663,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.98343277387321
+      },
+      {
+        "case": "original_89023_up_89202",
+        "arm": "original",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "423c112648feed84a65befd510e09c3bfcb3be039dd4c2ad1846b52e631ad035",
+        "score_vx_m_s": 0.10112377449967015,
+        "fixed_speed_rmse_m_s": 0.07686076817797197,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.30002840177228585,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.9517570458352567
+      },
+      {
+        "case": "original_89023_up_89203",
+        "arm": "original",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "974859e731b349101824e436f0564f2ffebfd6bef41956ff763b20db281eeeb5",
+        "score_vx_m_s": 0.10174185279679422,
+        "fixed_speed_rmse_m_s": 0.0755881853510698,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3094322752050007,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.965456484630704
+      },
+      {
+        "case": "original_89023_down_89202",
+        "arm": "original",
+        "training_seed": 89023,
+        "terrain": "down",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "8974136efead1394ec117cef180a2c3a4ed37da5ebf7b2e914b4daf36cd5f7f7",
+        "score_vx_m_s": 0.30690057844730584,
+        "fixed_speed_rmse_m_s": 0.0785072615432968,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.7397813051744216,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.306562641263008
+      },
+      {
+        "case": "mixed_89023_flat_89202",
+        "arm": "mixed",
+        "training_seed": 89023,
+        "terrain": "flat",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "6e61637e2d8c24bb055dad38ca00442936a211d5f1e76424bae5119ba43e4193",
+        "score_vx_m_s": 0.18129829089528754,
+        "fixed_speed_rmse_m_s": 0.036849524740878464,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.5000250824828935,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.1646412439644336
+      },
+      {
+        "case": "mixed_89023_up_89201",
+        "arm": "mixed",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "8215cb00ffd669f4b831da36e5ad0d95ef84b5fefad9b8249b0974d02912e79f",
+        "score_vx_m_s": 0.1052588633331203,
+        "fixed_speed_rmse_m_s": 0.07609826645240336,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.32476091618987657,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.026809947937727
+      },
+      {
+        "case": "mixed_89023_up_89202",
+        "arm": "mixed",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "4d1d7de84b4fb2b130744176325508cc1a43cc43d45b564c437226852effbc62",
+        "score_vx_m_s": 0.10291550905168277,
+        "fixed_speed_rmse_m_s": 0.07605819277878978,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3186895874240917,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0028247967362405
+      },
+      {
+        "case": "mixed_89023_up_89203",
+        "arm": "mixed",
+        "training_seed": 89023,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "e5745b33c778a005e2d4411ea8203a78985b191cfec6123a12fa7c2775059231",
+        "score_vx_m_s": 0.10459397044597477,
+        "fixed_speed_rmse_m_s": 0.07451358801016097,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3305627142642592,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.012057787552476
+      },
+      {
+        "case": "mixed_89023_down_89202",
+        "arm": "mixed",
+        "training_seed": 89023,
+        "terrain": "down",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "85bf018ccd3fb7db79c952fd58a69fa53939f7c7a45c52dff99a1ec2fc733558",
+        "score_vx_m_s": 0.30520203464699824,
+        "fixed_speed_rmse_m_s": 0.07940566482286736,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.7701646246069297,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.369212332367897
+      },
+      {
+        "case": "original_89037_flat_89203",
+        "arm": "original",
+        "training_seed": 89037,
+        "terrain": "flat",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "89c0f61c130ac49a81228ecf033c14deb5c9a7df57019ca6b85d9a594370d02e",
+        "score_vx_m_s": 0.18726331442754227,
+        "fixed_speed_rmse_m_s": 0.03213721768541216,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.506498051024289,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.211565512046218
+      },
+      {
+        "case": "original_89037_up_89201",
+        "arm": "original",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "ac2fad331340b8927c3718fc0888cce332c8f93b2236164c5674f870dccc9391",
+        "score_vx_m_s": 0.11207005072960838,
+        "fixed_speed_rmse_m_s": 0.07258680901665511,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.34915822894174886,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0778126467019318
+      },
+      {
+        "case": "original_89037_up_89202",
+        "arm": "original",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "e8d9a4d1a530285949087c0183c81307be850c50107d01d53279510ba763d509",
+        "score_vx_m_s": 0.10562206544148223,
+        "fixed_speed_rmse_m_s": 0.07445422397608029,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3356145042449604,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0437173705548046
+      },
+      {
+        "case": "original_89037_up_89203",
+        "arm": "original",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "d5601490bf08e2a2d49a0b984fec209ca10e5b265cf640ef0d7b01a3813ce0f5",
+        "score_vx_m_s": 0.10893418873338896,
+        "fixed_speed_rmse_m_s": 0.07233966971021444,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3477203583235726,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0658971410244704
+      },
+      {
+        "case": "original_89037_down_89203",
+        "arm": "original",
+        "training_seed": 89037,
+        "terrain": "down",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "d394854353962c98ded9154393fa49649df82725680e8d5c55dd6fe91c45ba6e",
+        "score_vx_m_s": 0.3124188915586233,
+        "fixed_speed_rmse_m_s": 0.08321377940741576,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.8063418284991081,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.4327418960630895
+      },
+      {
+        "case": "mixed_89037_flat_89203",
+        "arm": "mixed",
+        "training_seed": 89037,
+        "terrain": "flat",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "c9192ba0c6b462bfed6dc248aeeecbed0c4ed0e33ef3fa9de02bbba79846c81c",
+        "score_vx_m_s": 0.18470916939605478,
+        "fixed_speed_rmse_m_s": 0.03203434024074591,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.5209841117574191,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.174256335198879
+      },
+      {
+        "case": "mixed_89037_up_89201",
+        "arm": "mixed",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89201,
+        "ticks": 300,
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "57b65cb587dc99d18fc5b935021216c62346cbe72b903548b1ce503347995ce4",
+        "score_vx_m_s": 0.10748984242171296,
+        "fixed_speed_rmse_m_s": 0.0749170351156715,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3287528627271683,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0143955044448374
+      },
+      {
+        "case": "mixed_89037_up_89202",
+        "arm": "mixed",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89202,
+        "ticks": 300,
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "490040fa97d9c490325998f30136391727c69d16d1eaa3c42de785f3095617ab",
+        "score_vx_m_s": 0.10218858668484294,
+        "fixed_speed_rmse_m_s": 0.07663243356838992,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.3169726586001723,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 2.984567439928651
+      },
+      {
+        "case": "mixed_89037_up_89203",
+        "arm": "mixed",
+        "training_seed": 89037,
+        "terrain": "up",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "98c4e528af2f556e82826c3402492b0375fcafbebaca2a304cc21b8a9d203c0a",
+        "score_vx_m_s": 0.10431963756267812,
+        "fixed_speed_rmse_m_s": 0.07485174922304633,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.33007011509304995,
+        "reached_mark": false,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.0033375713974237
+      },
+      {
+        "case": "mixed_89037_down_89203",
+        "arm": "mixed",
+        "training_seed": 89037,
+        "terrain": "down",
+        "seed": 89203,
+        "ticks": 300,
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "ea722ddc339bcbddbe70953236baf2d2226b3ee17fede42749a3fb8047d2ae33",
+        "score_vx_m_s": 0.30775363615148693,
+        "fixed_speed_rmse_m_s": 0.07973040928878881,
+        "fallen": false,
+        "illegal_contact": false,
+        "course_completed": true,
+        "max_loaded_front_contact_past_toe_m": 0.791335467627187,
+        "reached_mark": true,
+        "four_wheel_slope_ticks": 0,
+        "rear_wheel_slope_ticks": 0,
+        "wheel_saturated_ticks": 0,
+        "max_replayed_vx_error_m_s": 0.0,
+        "actor_components_replayed": 4800,
+        "range_components_recast": 4800,
+        "wheel_target_mean_4_to_6_rad_s": 3.3787543430924414
+      }
+    ],
+    "verdict": {
+      "uphill_paired_train_seed_means": [
+        {
+          "training_seed": 89011,
+          "original_vx_m_s": 0.10165481828236662,
+          "mixed_vx_m_s": 0.10073241683114313,
+          "paired_delta_vx_m_s": -0.0009224014512234924,
+          "all_six_clean": true,
+          "passes": false
+        },
+        {
+          "training_seed": 89023,
+          "original_vx_m_s": 0.10363924105067485,
+          "mixed_vx_m_s": 0.10425611427692595,
+          "paired_delta_vx_m_s": 0.0006168732262511051,
+          "all_six_clean": true,
+          "passes": false
+        },
+        {
+          "training_seed": 89037,
+          "original_vx_m_s": 0.10887543496815985,
+          "mixed_vx_m_s": 0.10466602222307801,
+          "paired_delta_vx_m_s": -0.004209412745081839,
+          "all_six_clean": true,
+          "passes": false
+        }
+      ],
+      "uphill_speed_pass": false,
+      "uphill_clean_marks": {
+        "original": 0,
+        "mixed": 0
+      },
+      "uphill_stable_pass": false,
+      "pace_retention": {
+        "flat": {
+          "paired": [
+            {
+              "training_seed": 89011,
+              "seed": 89201,
+              "original_rmse_m_s": 0.03409434576469961,
+              "mixed_rmse_m_s": 0.03530331002047146,
+              "delta_rmse_m_s": 0.001208964255771855,
+              "both_clean": true
+            },
+            {
+              "training_seed": 89023,
+              "seed": 89202,
+              "original_rmse_m_s": 0.037488969024741414,
+              "mixed_rmse_m_s": 0.036849524740878464,
+              "delta_rmse_m_s": -0.0006394442838629499,
+              "both_clean": true
+            },
+            {
+              "training_seed": 89037,
+              "seed": 89203,
+              "original_rmse_m_s": 0.03213721768541216,
+              "mixed_rmse_m_s": 0.03203434024074591,
+              "delta_rmse_m_s": -0.00010287744466624948,
+              "both_clean": true
+            }
+          ],
+          "mean_delta_rmse_m_s": 0.0001555475090808852,
+          "passes": true
+        },
+        "down": {
+          "paired": [
+            {
+              "training_seed": 89011,
+              "seed": 89201,
+              "original_rmse_m_s": 0.07837806661604621,
+              "mixed_rmse_m_s": 0.08073354947573634,
+              "delta_rmse_m_s": 0.0023554828596901306,
+              "both_clean": true
+            },
+            {
+              "training_seed": 89023,
+              "seed": 89202,
+              "original_rmse_m_s": 0.0785072615432968,
+              "mixed_rmse_m_s": 0.07940566482286736,
+              "delta_rmse_m_s": 0.0008984032795705532,
+              "both_clean": true
+            },
+            {
+              "training_seed": 89037,
+              "seed": 89203,
+              "original_rmse_m_s": 0.08321377940741576,
+              "mixed_rmse_m_s": 0.07973040928878881,
+              "delta_rmse_m_s": -0.003483370118626941,
+              "both_clean": true
+            }
+          ],
+          "mean_delta_rmse_m_s": -7.649465978875243e-05,
+          "passes": true
+        }
+      },
+      "retention_pass": true,
+      "total_falls": 0,
+      "total_illegal_contacts": 0,
+      "total_clean_full_horizon": 30
+    }
+  },
+  "measurements": {
+    "file": "uphill_curriculum89_eval.csv.gz",
+    "rows": 9000,
+    "bytes": 200987,
+    "sha256": "c5ce4dc299c6b16384d39e30cb219807b321d502b3a784a0d1570f48c889523b"
+  },
+  "video": {
+    "status": "COMPLETE",
+    "protocol_sha256": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "source_sha256": "28df2419954a7ecf8da4ad746fa040a7e880c83b829a6985fe2dd609d1036590",
+    "training_seed": 89011,
+    "reset_seed": 89201,
+    "terrain": "up",
+    "unmodified_policy_output": true,
+    "physics_steps": 0,
+    "policy_calls": 0,
+    "frames_written": 150,
+    "source_cases": {
+      "original": {
+        "case": "original_89011_up_89201",
+        "trace.npz": "f06a11794ea6d40bb919ffe394e69a66bc8b18fd6bd7cfa2bbcb227f5c5d371e",
+        "metrics.json": "6c239b9ab433e2dea76b748ba1f634586c1caa07a3440cfee5c9c576b024920d"
+      },
+      "mixed": {
+        "case": "mixed_89011_up_89201",
+        "trace.npz": "e91a7f01ca90e096c07beea82e1a2b0150371e04aea40a7e6ac5a1cdbb18cafc",
+        "metrics.json": "618d8b9144c2f74d0b6405988365fb730f0df9006cbd84c7c97b62502999b203"
+      }
+    },
+    "bytes": 677885,
+    "sha256": "2eca7d64b8d9dbadf5026ff53888b5e294f97ed0cb41fa5a4dd94d02875a44dc",
+    "stream": {
+      "codec_name": "h264",
+      "width": 1212,
+      "height": 590,
+      "r_frame_rate": "25/1",
+      "duration": "6.000000",
+      "nb_read_frames": "150"
+    },
+    "fps": 25
+  },
+  "resources": {
+    "admission": {
+      "startup_effective_bytes": 7867596800,
+      "minimum_effective_bytes": 7306764288,
+      "peak_group_bytes": 599998464,
+      "elapsed_s": 24.768843638012186,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "f69fd1cf1afb29e707abc8b03833aec865ceb5fe5022197be2ea9a2eb34ebe14",
+      "samples_sha256": "1e28f7af7edf9811a96348cbc43d47ed7fefba75ef179caa6202d36084aa46f7"
+    },
+    "smoke": {
+      "startup_effective_bytes": 7887142912,
+      "minimum_effective_bytes": 6915649536,
+      "peak_group_bytes": 977997824,
+      "elapsed_s": 22.995442073908634,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "ea69dba9d7a3c7d6c9e5b49f185cec93f9e6d16f501f6abdc217b6fcbb37f46e",
+      "samples_sha256": "098f8812130ba1c00f526dc6872f1da0f77cc2bc797914eb9821a7626f0150cc"
+    },
+    "training": {
+      "startup_effective_bytes": 7925960704,
+      "minimum_effective_bytes": 6726742016,
+      "peak_group_bytes": 1186275328,
+      "elapsed_s": 104.4405197519809,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "6c29754c790e12144d382d92563681b817b39d46ec53f23978db642d1e88c1f3",
+      "samples_sha256": "78268791daa9838d13c5bad316d8160cfd8e467290a81ba8a073321d0f953f58"
+    },
+    "evaluate": {
+      "startup_effective_bytes": 7903330304,
+      "minimum_effective_bytes": 6767083520,
+      "peak_group_bytes": 1014243328,
+      "elapsed_s": 84.75847190700006,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "df3bd7343c54894a6dc37aa413a882ecb33ace103f37c5fda3835f9799285b46",
+      "samples_sha256": "d19c1fb55acbc4802c30e3bb6583fd85625d404b43a78d162dc00c5b86088e74"
+    },
+    "readback": {
+      "startup_effective_bytes": 7842144256,
+      "minimum_effective_bytes": 6739570688,
+      "peak_group_bytes": 1041899520,
+      "elapsed_s": 105.01540959894191,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "1c1562e84c15b2318e1f9caa9ceb43bbb9dd4d604d20055d8439737f74d72bef",
+      "samples_sha256": "ac6cee86329d88efd6ff1321a3b1cf684d179f39da88334ebaf256568afea494"
+    },
+    "video": {
+      "startup_effective_bytes": 7876825088,
+      "minimum_effective_bytes": 7513800704,
+      "peak_group_bytes": 521891840,
+      "elapsed_s": 18.32343197299633,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "f1bd06672c6c19c10bee0b77174da1ed957ddda8f0c3a9211e7e6a280e31e5af",
+      "samples_sha256": "6eac2f49bc7184b119f1792baf9347595634e319bb25d592e42e9bd7cb48ee3f"
+    },
+    "roadcheck": {
+      "startup_effective_bytes": 7885205504,
+      "minimum_effective_bytes": 7307399168,
+      "peak_group_bytes": 663220224,
+      "elapsed_s": 14.637895563966595,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "343bca7ff83cfa0fc0ab9ad830abaed3bf0c3edad05cad814d1934f48f60a484",
+      "samples_sha256": "3fa020764fdabf816a8e5e574101dce88b2a57c794fe81822e1ee7e42ea1b079"
+    },
+    "sensor": {
+      "startup_effective_bytes": 7886471168,
+      "minimum_effective_bytes": 7096995840,
+      "peak_group_bytes": 768843776,
+      "elapsed_s": 28.31220068107359,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "report_sha256": "ac29142907ddcb9974aa5af1783f05d9b4cc20b07b3f1fe9d66b4ecff5f33ab3",
+      "samples_sha256": "0c6699c47461f9414bc0323cb856c2a92a01a21caaf2d49eedfc61f9a4dd9f9d"
+    }
+  },
+  "source_receipts_sha256": {
+    "admission": "8c0d8a33520f38a7ad471d911c0d1df81a29ded01cfe133dff696999e2e2c7ee",
+    "smoke": "61ef3c2fc726ac03f845a1a3aa6e233dc41817d61bc76d864ca977ae97361dd3",
+    "training": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "evaluate": "0e6f5917d51c2a86ae9ed17cee6b4011531106c6a828a83f9707d7e5481376f2",
+    "readback": "8fe15584ff64012134c77dd2691637a6d492aed000020276613a597d416b8f49",
+    "video": "69a3c725bc47335b9ddb3c9ab93ee6faa96a51b385b156052eb82d87e81e879d",
+    "roadcheck": "d24d3096b8a6119856e9b64d0828c146a67ca4de436f9c4d3ccf39c2210bc4a9",
+    "sensor": "d4f71c5f4eb27b2f9c13ecf1bde8511e46cecc3921092629d01123d66dcc5e3a",
+    "training_contacts": "54657810ad956232db4049f0f1483f45a461cfd3eef0eb3c447ce3213f5b30b1"
+  },
+  "passes_all_gates": false,
+  "sensor_readback": {
+    "status": "COMPLETE",
+    "protocol_sha256": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "source_sha256": "6fc93ada81a6aed28cdebecf2930e0bbbb18e9b78f4723c820ce2bb27147f539",
+    "training_report_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "probe88_report_sha256": "71549890935482997a61b0fbf83945084f480a33acb207c7c4b10f3f94839b50",
+    "native_steps": 0,
+    "optimizer_steps": 0,
+    "fixed_history": "Original 88 C++ decisions, proprioception and issued action history",
+    "decision_ticks_inclusive_exclusive": [
+      200,
+      300
+    ],
+    "wheel_order": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "source_cases": [
+      {
+        "case": "original_88101",
+        "seed": 88101,
+        "trace_sha256": "f8e39ee47c9cb4ce8c8ac8a6b1c8e43c421d1f95c7315d0062255454248feb67",
+        "metrics_sha256": "240e648a786ff69e6179ad704f098a5b8b6e0e146d55000854b87bcee0e727cc",
+        "archived_range_values_matched": 4800,
+        "delivered_captures": 36,
+        "max_archived_vx_error_m_s": 0.0,
+        "window_decisions_with_distance_change": 100,
+        "window_decisions_with_validity_change": 0
+      },
+      {
+        "case": "original_88102",
+        "seed": 88102,
+        "trace_sha256": "b457f360026a7933e7601f3354433b51c322f18f1db51e14bc812da1c8ee3f00",
+        "metrics_sha256": "8de6fa8c9d22f3767bd609c901e075b0e7c9bc413b1389b5167b6421bdeba884",
+        "archived_range_values_matched": 4800,
+        "delivered_captures": 36,
+        "max_archived_vx_error_m_s": 0.0,
+        "window_decisions_with_distance_change": 100,
+        "window_decisions_with_validity_change": 0
+      },
+      {
+        "case": "original_88103",
+        "seed": 88103,
+        "trace_sha256": "2478a066c4414de0202c32cc630f33df08425184d88a34e1f2046bf168911f1f",
+        "metrics_sha256": "beab8b1eacd6cb5aa3475b7cb17dc0abbd79fb0dd22691d3708c32da3f1181af",
+        "archived_range_values_matched": 4800,
+        "delivered_captures": 36,
+        "max_archived_vx_error_m_s": 0.0,
+        "window_decisions_with_distance_change": 100,
+        "window_decisions_with_validity_change": 0
+      }
+    ],
+    "training_seeds": [
+      {
+        "training_seed": 89011,
+        "model_sha256": {
+          "original": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+          "mixed": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0"
+        },
+        "comparisons": {
+          "mixed_minus_original_on_up": {
+            "signed_mean_rad_s": -0.005226045474410057,
+            "mean_abs_rad_s": 0.017224993432561557,
+            "per_wheel_signed_mean_rad_s": [
+              -0.01706459919611613,
+              0.02166416645050049,
+              0.0023337294658025104,
+              -0.027837478617827097
+            ],
+            "reference_signed_means_rad_s": [
+              -0.005462009459733963,
+              -0.005048975721001625,
+              -0.0051671512424945835
+            ]
+          },
+          "original_up_minus_flat": {
+            "signed_mean_rad_s": 0.0006507661193609238,
+            "mean_abs_rad_s": 0.0006684590131044388,
+            "per_wheel_signed_mean_rad_s": [
+              0.0007994780937830607,
+              0.0004450350999832153,
+              0.0013939370711644492,
+              -3.5385787487030027e-05
+            ],
+            "reference_signed_means_rad_s": [
+              0.0006463561207056045,
+              0.0006517145782709121,
+              0.0006542276591062546
+            ]
+          },
+          "mixed_up_minus_flat": {
+            "signed_mean_rad_s": 0.0005250580608844758,
+            "mean_abs_rad_s": 0.0005250580608844758,
+            "per_wheel_signed_mean_rad_s": [
+              0.0007455180088678996,
+              0.00018898149331410727,
+              0.0011411855618158977,
+              2.454717953999837e-05
+            ],
+            "reference_signed_means_rad_s": [
+              0.0005215268582105636,
+              0.0005257964134216308,
+              0.0005278509110212326
+            ]
+          },
+          "curriculum_change_in_up_minus_flat": {
+            "signed_mean_rad_s": -0.00012570805847644806,
+            "mean_abs_rad_s": 0.00015567454198996226,
+            "per_wheel_signed_mean_rad_s": [
+              -5.396008491516113e-05,
+              -0.0002560536066691081,
+              -0.0002527515093485514,
+              5.99329670270284e-05
+            ],
+            "reference_signed_means_rad_s": [
+              -0.0001248292624950409,
+              -0.00012591816484928132,
+              -0.00012637674808502197
+            ]
+          }
+        }
+      },
+      {
+        "training_seed": 89023,
+        "model_sha256": {
+          "original": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+          "mixed": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d"
+        },
+        "comparisons": {
+          "mixed_minus_original_on_up": {
+            "signed_mean_rad_s": 0.033011966322859125,
+            "mean_abs_rad_s": 0.048396304125587146,
+            "per_wheel_signed_mean_rad_s": [
+              -0.008554228146870931,
+              -0.022214447458585102,
+              0.09451486120621364,
+              0.06830167969067892
+            ],
+            "reference_signed_means_rad_s": [
+              0.034222516044974324,
+              0.032032767310738564,
+              0.032780615612864494
+            ]
+          },
+          "original_up_minus_flat": {
+            "signed_mean_rad_s": 0.0003782882044712702,
+            "mean_abs_rad_s": 0.0003782882044712702,
+            "per_wheel_signed_mean_rad_s": [
+              0.00017214516798655193,
+              0.00025892059008280434,
+              0.0007561201850573222,
+              0.0003259668747584025
+            ],
+            "reference_signed_means_rad_s": [
+              0.00037565790116786955,
+              0.0003788437694311142,
+              0.00038036294281482694
+            ]
+          },
+          "mixed_up_minus_flat": {
+            "signed_mean_rad_s": 0.0001761609067519506,
+            "mean_abs_rad_s": 0.0001761609067519506,
+            "per_wheel_signed_mean_rad_s": [
+              0.00021665990352630614,
+              0.00027194023132324217,
+              5.639046430587769e-05,
+              0.0001596530278523763
+            ],
+            "reference_signed_means_rad_s": [
+              0.0001749526709318161,
+              0.0001763906329870224,
+              0.00017713941633701324
+            ]
+          },
+          "curriculum_change_in_up_minus_flat": {
+            "signed_mean_rad_s": -0.00020212729771931965,
+            "mean_abs_rad_s": 0.0002308944861094157,
+            "per_wheel_signed_mean_rad_s": [
+              4.4514735539754234e-05,
+              1.3019641240437826e-05,
+              -0.0006997297207514445,
+              -0.0001663138469060262
+            ],
+            "reference_signed_means_rad_s": [
+              -0.00020070523023605347,
+              -0.0002024531364440918,
+              -0.00020322352647781373
+            ]
+          }
+        }
+      },
+      {
+        "training_seed": 89037,
+        "model_sha256": {
+          "original": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+          "mixed": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80"
+        },
+        "comparisons": {
+          "mixed_minus_original_on_up": {
+            "signed_mean_rad_s": -0.08370465400318304,
+            "mean_abs_rad_s": 0.08370465400318304,
+            "per_wheel_signed_mean_rad_s": [
+              -0.0695493350426356,
+              -0.0976630320151647,
+              -0.08743827342987061,
+              -0.08016797552506129
+            ],
+            "reference_signed_means_rad_s": [
+              -0.08418324142694474,
+              -0.08327490501105786,
+              -0.08365581557154655
+            ]
+          },
+          "original_up_minus_flat": {
+            "signed_mean_rad_s": -0.00034060701727867126,
+            "mean_abs_rad_s": 0.00042344629764556885,
+            "per_wheel_signed_mean_rad_s": [
+              -0.000966903567314148,
+              -0.0004591842492421468,
+              -0.00010201881329218547,
+              0.00016567856073379517
+            ],
+            "reference_signed_means_rad_s": [
+              -0.0003381811082363129,
+              -0.00034122951328754427,
+              -0.0003424104303121567
+            ]
+          },
+          "mixed_up_minus_flat": {
+            "signed_mean_rad_s": 0.0006017648925383885,
+            "mean_abs_rad_s": 0.0006017648925383885,
+            "per_wheel_signed_mean_rad_s": [
+              5.494554837544759e-06,
+              0.0008035510778427124,
+              0.0007423291603724162,
+              0.0008556847771008809
+            ],
+            "reference_signed_means_rad_s": [
+              0.0005977075546979904,
+              0.0006025899201631546,
+              0.0006049972027540207
+            ]
+          },
+          "curriculum_change_in_up_minus_flat": {
+            "signed_mean_rad_s": 0.0009423719098170598,
+            "mean_abs_rad_s": 0.0009423719098170598,
+            "per_wheel_signed_mean_rad_s": [
+              0.0009723981221516927,
+              0.0012627353270848593,
+              0.0008443479736646016,
+              0.0006900062163670858
+            ],
+            "reference_signed_means_rad_s": [
+              0.0009358886629343033,
+              0.0009438194334506989,
+              0.0009474076330661773
+            ]
+          }
+        }
+      }
+    ],
+    "report_sha256": "d4f71c5f4eb27b2f9c13ecf1bde8511e46cecc3921092629d01123d66dcc5e3a"
+  },
+  "training_contacts_readback": {
+    "status": "COMPLETE",
+    "protocol_sha256": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "source_sha256": "fe0c757947cd6a4360eb9b6ccaf01e90d3bb9898b05413cd61bf934d8fe73b93",
+    "training_report_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "native_steps": 0,
+    "optimizer_steps": 0,
+    "method": "Cold forward dynamics from recorded qpos, qvel and last applied PD torques, using the frozen illegal-contact classifier. Its recorded interval flag is an OR over ten native steps and the final boundary. Only 20 ms endpoints are stored; original solver warm-starts, substep forces and the first offending part within an interval are unavailable.",
+    "models": [
+      {
+        "model": "original_89011",
+        "train_report_sha256": "114e7d6cf2c5bbc43286a9f47eb0355301928a0549884d63a0feab165e0ad0ae",
+        "policy_sha256": "edaf2b59e11712a40b23220b5f4379fd8c517d63cae6d094904db0873e2b3b9a",
+        "trace_sha256": "380d45327c3510d0761797c80c341658527b67b9d60251acb822bcbc5a3c250d",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 0,
+        "fallen_intervals": 0
+      },
+      {
+        "model": "mixed_89011",
+        "train_report_sha256": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+        "policy_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+        "trace_sha256": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 1,
+        "fallen_intervals": 0
+      },
+      {
+        "model": "original_89023",
+        "train_report_sha256": "af043a5ac8876ffccbfa1e39cd730c0b17fcff01acd013e857e7db29a2d51cec",
+        "policy_sha256": "1331362c3bc6170efe5469fa4efb3b9d2f445a6ed472b365861e389d442599a4",
+        "trace_sha256": "0e50585c9270080103bba2301aa4ab7379ac4ab8a5fa91fd7db15c4332ba3ac4",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 0,
+        "fallen_intervals": 0
+      },
+      {
+        "model": "mixed_89023",
+        "train_report_sha256": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121",
+        "policy_sha256": "ffd6874141edd7458d6444d62916318eb242ec9f4a2eca8377a996b204c86d9d",
+        "trace_sha256": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 2,
+        "fallen_intervals": 0
+      },
+      {
+        "model": "original_89037",
+        "train_report_sha256": "719839285f60b81252ed0b37b4688b002108189f3871bd001521685d3d43e02d",
+        "policy_sha256": "75962fcf065df64a8aab2b9eae6d3036d3d8635590edbfa2ead92b464a44de90",
+        "trace_sha256": "c4617ec296f6f0d56a0a9ce217007f2fa7a43f22e53bfc7d58cabb7120a39e89",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 0,
+        "fallen_intervals": 0
+      },
+      {
+        "model": "mixed_89037",
+        "train_report_sha256": "c3a18de375cbda776d2597c12a7bb48c179dc0277a153b2fc4b6f804d6176bbb",
+        "policy_sha256": "b6bb6544fc5f4699713d38a5a13f345a5571d1ce202fca7a302df9ecedb52d80",
+        "trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22",
+        "verified_arrays": 21,
+        "archived_ticks": 4096,
+        "illegal_contact_intervals": 1,
+        "fallen_intervals": 0
+      }
+    ],
+    "events": [
+      {
+        "model": "mixed_89011",
+        "terrain": "up",
+        "training_seed": 89011,
+        "episode_index": 9,
+        "terminal_rollout_row": 2816,
+        "end_time_s": 2.34,
+        "slope_start": true,
+        "start_x_m": 1.1,
+        "normal_force_threshold_n": 1.0,
+        "confirmed_bodies_at_endpoint": [
+          "RR_calf"
+        ],
+        "threshold_at_endpoint_reconstructed": true,
+        "history": [
+          {
+            "rollout_row": 2814,
+            "episode_tick": 115,
+            "time_s": 2.3,
+            "roll_deg": 1.3075172778821107,
+            "pitch_deg": -29.91647473853026,
+            "base_world_xyz_m": [
+              0.6823173777060874,
+              0.01356785666467574,
+              0.3906982512086238
+            ],
+            "body_vx_m_s": -0.5225965452743006,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 2815,
+            "episode_tick": 116,
+            "time_s": 2.32,
+            "roll_deg": 1.3345422498691082,
+            "pitch_deg": -31.342711186057624,
+            "base_world_xyz_m": [
+              0.6732084654759598,
+              0.01309459246618587,
+              0.38541819022927243
+            ],
+            "body_vx_m_s": -0.5299780977228601,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 2816,
+            "episode_tick": 117,
+            "time_s": 2.34,
+            "roll_deg": 0.37017662667503365,
+            "pitch_deg": -32.57027195635671,
+            "base_world_xyz_m": [
+              0.6638171369340107,
+              0.013073558800831104,
+              0.38068406106225045
+            ],
+            "body_vx_m_s": -0.4931791411732698,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": true,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": true,
+            "nonwheel_support_contacts": [
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 118.26539340948896,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5583829318055903,
+                  -0.14153737037773012,
+                  -0.0002563249965533976
+                ]
+              },
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 214.86677655455995,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5573192632743226,
+                  -0.1636128517617952,
+                  -0.0005905346155608282
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "model": "mixed_89023",
+        "terrain": "up",
+        "training_seed": 89023,
+        "episode_index": 3,
+        "terminal_rollout_row": 991,
+        "end_time_s": 1.84,
+        "slope_start": true,
+        "start_x_m": 1.1,
+        "normal_force_threshold_n": 1.0,
+        "confirmed_bodies_at_endpoint": [
+          "RL_calf",
+          "RR_calf"
+        ],
+        "threshold_at_endpoint_reconstructed": true,
+        "history": [
+          {
+            "rollout_row": 989,
+            "episode_tick": 90,
+            "time_s": 1.8,
+            "roll_deg": 1.2784550517248083,
+            "pitch_deg": -28.672221892762998,
+            "base_world_xyz_m": [
+              0.6912843338501591,
+              0.026769900238972823,
+              0.38794568702514
+            ],
+            "body_vx_m_s": -0.5051709021178131,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 990,
+            "episode_tick": 91,
+            "time_s": 1.82,
+            "roll_deg": 1.5515740594476384,
+            "pitch_deg": -29.895022961345553,
+            "base_world_xyz_m": [
+              0.682015754843167,
+              0.026404959257642455,
+              0.38234880120785975
+            ],
+            "body_vx_m_s": -0.5622600499202073,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 991,
+            "episode_tick": 92,
+            "time_s": 1.84,
+            "roll_deg": 1.2949597798390327,
+            "pitch_deg": -31.110929137836578,
+            "base_world_xyz_m": [
+              0.6724482590698515,
+              0.025395641702467817,
+              0.37557050008860277
+            ],
+            "body_vx_m_s": -0.5622976439345384,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": true,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": true,
+            "nonwheel_support_contacts": [
+              {
+                "body": "RL_calf",
+                "cold_normal_force_n": 160.6015003992162,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.6040028133059888,
+                  0.19999892825273158,
+                  0.001246391734945257
+                ]
+              },
+              {
+                "body": "RL_calf",
+                "cold_normal_force_n": 244.4117343400785,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.6064798296106532,
+                  0.2196332836774547,
+                  0.001104161028060685
+                ]
+              },
+              {
+                "body": "RL_calf",
+                "cold_normal_force_n": 174.60512112423433,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.6045932490736273,
+                  0.20457800833008707,
+                  0.0012142649271625061
+                ]
+              },
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 786.3240302760685,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5229350516084481,
+                  -0.11228192725319067,
+                  0.0002309692446430811
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "model": "mixed_89023",
+        "terrain": "up",
+        "training_seed": 89023,
+        "episode_index": 9,
+        "terminal_rollout_row": 2597,
+        "end_time_s": 2.12,
+        "slope_start": true,
+        "start_x_m": 1.1,
+        "normal_force_threshold_n": 1.0,
+        "confirmed_bodies_at_endpoint": [
+          "RR_calf"
+        ],
+        "threshold_at_endpoint_reconstructed": true,
+        "history": [
+          {
+            "rollout_row": 2595,
+            "episode_tick": 104,
+            "time_s": 2.08,
+            "roll_deg": 3.4333654871599486,
+            "pitch_deg": -28.623824391901213,
+            "base_world_xyz_m": [
+              0.6780131413630254,
+              -0.009114517091780934,
+              0.38590070213553473
+            ],
+            "body_vx_m_s": -0.516303178306394,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 2596,
+            "episode_tick": 105,
+            "time_s": 2.1,
+            "roll_deg": 4.225863060376209,
+            "pitch_deg": -30.000187589907654,
+            "base_world_xyz_m": [
+              0.6679606155575957,
+              -0.010420136435983536,
+              0.3822322947912759
+            ],
+            "body_vx_m_s": -0.5225288042568941,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 2597,
+            "episode_tick": 106,
+            "time_s": 2.12,
+            "roll_deg": 3.2976986475572763,
+            "pitch_deg": -31.422137647902627,
+            "base_world_xyz_m": [
+              0.6580862081551294,
+              -0.010864932633038761,
+              0.37960553767734256
+            ],
+            "body_vx_m_s": -0.44467844874780627,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": true,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": true,
+            "nonwheel_support_contacts": [
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 544.0154254942572,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5489923718925699,
+                  -0.20055824666475774,
+                  0.0009691143786574319
+                ]
+              },
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 546.804565369959,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5446937327326156,
+                  -0.15530002076996574,
+                  -0.0002156597587207043
+                ]
+              },
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 545.0688443502,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5437831147135895,
+                  -0.1999967988647524,
+                  -0.0002719082659859706
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "model": "mixed_89037",
+        "terrain": "up",
+        "training_seed": 89037,
+        "episode_index": 10,
+        "terminal_rollout_row": 3092,
+        "end_time_s": 1.86,
+        "slope_start": true,
+        "start_x_m": 1.1,
+        "normal_force_threshold_n": 1.0,
+        "confirmed_bodies_at_endpoint": [
+          "RR_calf"
+        ],
+        "threshold_at_endpoint_reconstructed": true,
+        "history": [
+          {
+            "rollout_row": 3090,
+            "episode_tick": 91,
+            "time_s": 1.82,
+            "roll_deg": 0.5627175830727822,
+            "pitch_deg": -28.130863616970814,
+            "base_world_xyz_m": [
+              0.685799734320002,
+              0.03420021776441205,
+              0.39475177798968375
+            ],
+            "body_vx_m_s": -0.5615522616204144,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 3091,
+            "episode_tick": 92,
+            "time_s": 1.84,
+            "roll_deg": 0.19446204163310798,
+            "pitch_deg": -29.661108096748432,
+            "base_world_xyz_m": [
+              0.6758281402471774,
+              0.03404704444400901,
+              0.38886382113443424
+            ],
+            "body_vx_m_s": -0.5854383604339856,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": false,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": false,
+            "nonwheel_support_contacts": []
+          },
+          {
+            "rollout_row": 3092,
+            "episode_tick": 93,
+            "time_s": 1.86,
+            "roll_deg": 1.4533025207614614,
+            "pitch_deg": -31.25111322250021,
+            "base_world_xyz_m": [
+              0.6658367103388227,
+              0.03441778692822784,
+              0.3823859340393575
+            ],
+            "body_vx_m_s": -0.5738783786434926,
+            "command_m_s": 0.2,
+            "archived_interval_illegal": true,
+            "archived_fallen": false,
+            "cold_illegal_at_endpoint": true,
+            "nonwheel_support_contacts": [
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 635.9650993299772,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5270051776459138,
+                  -0.12467407130177742,
+                  -0.00018340926853316342
+                ]
+              },
+              {
+                "body": "RR_calf",
+                "cold_normal_force_n": 551.0360689308011,
+                "above_threshold": true,
+                "contact_world_xyz_m": [
+                  0.5299281636909716,
+                  -0.09997171182413157,
+                  0.00043009149984152284
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "observed_flagged_intervals": 4,
+    "cold_positive_endpoints": 4,
+    "checked_earlier_endpoints": 8,
+    "report_sha256": "54657810ad956232db4049f0f1483f45a461cfd3eef0eb3c447ce3213f5b30b1"
+  }
+}
