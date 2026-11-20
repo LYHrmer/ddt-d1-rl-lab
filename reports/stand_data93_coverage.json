@@ -1,0 +1,8693 @@
+{
+  "protocol_sha256": "2412b8aa31e78ebb918f30a1890c6319e916d184127470ca063f25ed88964e8d",
+  "status": "COMPLETE",
+  "horizon": 8,
+  "source_reports_sha256": {
+    "reports/uphill_curriculum89.json": "abd331e8e4d8dfc91abc9c30b3969ce88641d08e526758cf5a9f9aff27d50c8f",
+    "reports/terrain_world91.json": "9a57795b1fa54ea22cc065badf5a1cd8fd6e9c3c87dc12af9164a4f0b096bded",
+    "reports/stand_wbc90.json": "f7086930344e087d4a962350e6874010fd920c0c96abbc481eb00d08653bb5d3"
+  },
+  "semantics": {
+    "wheels": [
+      "FL",
+      "FR",
+      "RL",
+      "RR"
+    ],
+    "mask": "Per-wheel floor contact >= the uphill toe with normal force >1 N at the observed endpoint.",
+    "primary": "Nine observed endpoints (source and eight targets), eight adjacent comparisons.",
+    "secondary": "Eight target endpoints, seven adjacent comparisons; the source-to-first-target switch is omitted.",
+    "partitions": "all_four, stable_other and mask_changed are mutually exclusive within a basis. A switch counts a changed mask once per time interval even when multiple wheels change.",
+    "counts": "Episode counts are distinct within each bin. Several overlapping windows from one episode can enter different bins.",
+    "rows": "Zero-based source file rows, stop exclusive. A window starting at row j uses state[j], actions[j+1:j+9], states[j+1:j+9]. Its eight target-interval commands define the phase.",
+    "split": "89 mixed is the complete 91 fit set. Group future fit/dev splits by whole rollout/episode before windowing. Keep all histories from a validation reset together across parents and arms. The physical 90/93 panels are reserved for evaluation.",
+    "reset": "Training starts at post-step tick 1. The zero-time actor observation is retained; a recorded float64 reset state45 is absent."
+  },
+  "counts": {
+    "completed_episodes": 42,
+    "terminated_episodes": 4,
+    "truncated_episodes": 38,
+    "training_transitions": 11766,
+    "legal_windows": 11472,
+    "slope_stand_windows": 252,
+    "slope_stand_episodes": 6,
+    "slope_stand_distinct_reset_observations": 6,
+    "slope_stand_distinct_first_post_states": 6,
+    "slope_stand_parent_policies": 3,
+    "slope_stand_rollout_files": 3,
+    "discarded_unfinished_rows": 480
+  },
+  "sources": [
+    {
+      "training_seed": 89011,
+      "parent_seed": 87011,
+      "model": "mixed_89011",
+      "path": "evidence/uphill89/training_01/mixed_89011/train_trace.npz",
+      "trace_sha256": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+      "report_sha256": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+      "completed_episodes": 14,
+      "discarded_unfinished_rows": 79,
+      "parent_policy_sha256": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe"
+    },
+    {
+      "training_seed": 89023,
+      "parent_seed": 87023,
+      "model": "mixed_89023",
+      "path": "evidence/uphill89/training_01/mixed_89023/train_trace.npz",
+      "trace_sha256": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+      "report_sha256": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121",
+      "completed_episodes": 14,
+      "discarded_unfinished_rows": 298,
+      "parent_policy_sha256": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08"
+    },
+    {
+      "training_seed": 89037,
+      "parent_seed": 87037,
+      "model": "mixed_89037",
+      "path": "evidence/uphill89/training_01/mixed_89037/train_trace.npz",
+      "trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22",
+      "report_sha256": "c3a18de375cbda776d2597c12a7bb48c179dc0277a153b2fc4b6f804d6176bbb",
+      "completed_episodes": 14,
+      "discarded_unfinished_rows": 103,
+      "parent_policy_sha256": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12"
+    }
+  ],
+  "episodes": [
+    {
+      "training_seed": 89011,
+      "id": 0,
+      "start_row": 0,
+      "end_row_exclusive": 300,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 0,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 0,
+      "stop_window_source_row_exclusive": 292
+    },
+    {
+      "training_seed": 89011,
+      "id": 1,
+      "start_row": 300,
+      "end_row_exclusive": 600,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 1,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 300,
+      "stop_window_source_row_exclusive": 592
+    },
+    {
+      "training_seed": 89011,
+      "id": 2,
+      "start_row": 600,
+      "end_row_exclusive": 900,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 2,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 600,
+      "stop_window_source_row_exclusive": 892
+    },
+    {
+      "training_seed": 89011,
+      "id": 3,
+      "start_row": 900,
+      "end_row_exclusive": 1200,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 3,
+      "slope_start": true,
+      "legal_windows": 292,
+      "first_window_source_row": 900,
+      "stop_window_source_row_exclusive": 1192
+    },
+    {
+      "training_seed": 89011,
+      "id": 4,
+      "start_row": 1200,
+      "end_row_exclusive": 1500,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 4,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1200,
+      "stop_window_source_row_exclusive": 1492
+    },
+    {
+      "training_seed": 89011,
+      "id": 5,
+      "start_row": 1500,
+      "end_row_exclusive": 1800,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 5,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1500,
+      "stop_window_source_row_exclusive": 1792
+    },
+    {
+      "training_seed": 89011,
+      "id": 6,
+      "start_row": 1800,
+      "end_row_exclusive": 2100,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 6,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1800,
+      "stop_window_source_row_exclusive": 2092
+    },
+    {
+      "training_seed": 89011,
+      "id": 7,
+      "start_row": 2100,
+      "end_row_exclusive": 2400,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 7,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2100,
+      "stop_window_source_row_exclusive": 2392
+    },
+    {
+      "training_seed": 89011,
+      "id": 8,
+      "start_row": 2400,
+      "end_row_exclusive": 2700,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 8,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2400,
+      "stop_window_source_row_exclusive": 2692
+    },
+    {
+      "training_seed": 89011,
+      "id": 9,
+      "start_row": 2700,
+      "end_row_exclusive": 2817,
+      "terrain": 1,
+      "terminated": true,
+      "truncated": false,
+      "transitions": 116,
+      "parent_seed": 87011,
+      "source_episode_index": 9,
+      "slope_start": true,
+      "legal_windows": 109,
+      "first_window_source_row": 2700,
+      "stop_window_source_row_exclusive": 2809
+    },
+    {
+      "training_seed": 89011,
+      "id": 10,
+      "start_row": 2817,
+      "end_row_exclusive": 3117,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 10,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2817,
+      "stop_window_source_row_exclusive": 3109
+    },
+    {
+      "training_seed": 89011,
+      "id": 11,
+      "start_row": 3117,
+      "end_row_exclusive": 3417,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 11,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3117,
+      "stop_window_source_row_exclusive": 3409
+    },
+    {
+      "training_seed": 89011,
+      "id": 12,
+      "start_row": 3417,
+      "end_row_exclusive": 3717,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 12,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3417,
+      "stop_window_source_row_exclusive": 3709
+    },
+    {
+      "training_seed": 89011,
+      "id": 13,
+      "start_row": 3717,
+      "end_row_exclusive": 4017,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87011,
+      "source_episode_index": 13,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3717,
+      "stop_window_source_row_exclusive": 4009
+    },
+    {
+      "training_seed": 89023,
+      "id": 14,
+      "start_row": 0,
+      "end_row_exclusive": 300,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 0,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 0,
+      "stop_window_source_row_exclusive": 292
+    },
+    {
+      "training_seed": 89023,
+      "id": 15,
+      "start_row": 300,
+      "end_row_exclusive": 600,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 1,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 300,
+      "stop_window_source_row_exclusive": 592
+    },
+    {
+      "training_seed": 89023,
+      "id": 16,
+      "start_row": 600,
+      "end_row_exclusive": 900,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 2,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 600,
+      "stop_window_source_row_exclusive": 892
+    },
+    {
+      "training_seed": 89023,
+      "id": 17,
+      "start_row": 900,
+      "end_row_exclusive": 992,
+      "terrain": 1,
+      "terminated": true,
+      "truncated": false,
+      "transitions": 91,
+      "parent_seed": 87023,
+      "source_episode_index": 3,
+      "slope_start": true,
+      "legal_windows": 84,
+      "first_window_source_row": 900,
+      "stop_window_source_row_exclusive": 984
+    },
+    {
+      "training_seed": 89023,
+      "id": 18,
+      "start_row": 992,
+      "end_row_exclusive": 1292,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 4,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 992,
+      "stop_window_source_row_exclusive": 1284
+    },
+    {
+      "training_seed": 89023,
+      "id": 19,
+      "start_row": 1292,
+      "end_row_exclusive": 1592,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 5,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1292,
+      "stop_window_source_row_exclusive": 1584
+    },
+    {
+      "training_seed": 89023,
+      "id": 20,
+      "start_row": 1592,
+      "end_row_exclusive": 1892,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 6,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1592,
+      "stop_window_source_row_exclusive": 1884
+    },
+    {
+      "training_seed": 89023,
+      "id": 21,
+      "start_row": 1892,
+      "end_row_exclusive": 2192,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 7,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1892,
+      "stop_window_source_row_exclusive": 2184
+    },
+    {
+      "training_seed": 89023,
+      "id": 22,
+      "start_row": 2192,
+      "end_row_exclusive": 2492,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 8,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2192,
+      "stop_window_source_row_exclusive": 2484
+    },
+    {
+      "training_seed": 89023,
+      "id": 23,
+      "start_row": 2492,
+      "end_row_exclusive": 2598,
+      "terrain": 1,
+      "terminated": true,
+      "truncated": false,
+      "transitions": 105,
+      "parent_seed": 87023,
+      "source_episode_index": 9,
+      "slope_start": true,
+      "legal_windows": 98,
+      "first_window_source_row": 2492,
+      "stop_window_source_row_exclusive": 2590
+    },
+    {
+      "training_seed": 89023,
+      "id": 24,
+      "start_row": 2598,
+      "end_row_exclusive": 2898,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 10,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2598,
+      "stop_window_source_row_exclusive": 2890
+    },
+    {
+      "training_seed": 89023,
+      "id": 25,
+      "start_row": 2898,
+      "end_row_exclusive": 3198,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 11,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2898,
+      "stop_window_source_row_exclusive": 3190
+    },
+    {
+      "training_seed": 89023,
+      "id": 26,
+      "start_row": 3198,
+      "end_row_exclusive": 3498,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 12,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3198,
+      "stop_window_source_row_exclusive": 3490
+    },
+    {
+      "training_seed": 89023,
+      "id": 27,
+      "start_row": 3498,
+      "end_row_exclusive": 3798,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87023,
+      "source_episode_index": 13,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3498,
+      "stop_window_source_row_exclusive": 3790
+    },
+    {
+      "training_seed": 89037,
+      "id": 28,
+      "start_row": 0,
+      "end_row_exclusive": 300,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 0,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 0,
+      "stop_window_source_row_exclusive": 292
+    },
+    {
+      "training_seed": 89037,
+      "id": 29,
+      "start_row": 300,
+      "end_row_exclusive": 600,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 1,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 300,
+      "stop_window_source_row_exclusive": 592
+    },
+    {
+      "training_seed": 89037,
+      "id": 30,
+      "start_row": 600,
+      "end_row_exclusive": 900,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 2,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 600,
+      "stop_window_source_row_exclusive": 892
+    },
+    {
+      "training_seed": 89037,
+      "id": 31,
+      "start_row": 900,
+      "end_row_exclusive": 1200,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 3,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 900,
+      "stop_window_source_row_exclusive": 1192
+    },
+    {
+      "training_seed": 89037,
+      "id": 32,
+      "start_row": 1200,
+      "end_row_exclusive": 1500,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 4,
+      "slope_start": true,
+      "legal_windows": 292,
+      "first_window_source_row": 1200,
+      "stop_window_source_row_exclusive": 1492
+    },
+    {
+      "training_seed": 89037,
+      "id": 33,
+      "start_row": 1500,
+      "end_row_exclusive": 1800,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 5,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1500,
+      "stop_window_source_row_exclusive": 1792
+    },
+    {
+      "training_seed": 89037,
+      "id": 34,
+      "start_row": 1800,
+      "end_row_exclusive": 2100,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 6,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 1800,
+      "stop_window_source_row_exclusive": 2092
+    },
+    {
+      "training_seed": 89037,
+      "id": 35,
+      "start_row": 2100,
+      "end_row_exclusive": 2400,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 7,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2100,
+      "stop_window_source_row_exclusive": 2392
+    },
+    {
+      "training_seed": 89037,
+      "id": 36,
+      "start_row": 2400,
+      "end_row_exclusive": 2700,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 8,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2400,
+      "stop_window_source_row_exclusive": 2692
+    },
+    {
+      "training_seed": 89037,
+      "id": 37,
+      "start_row": 2700,
+      "end_row_exclusive": 3000,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 9,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 2700,
+      "stop_window_source_row_exclusive": 2992
+    },
+    {
+      "training_seed": 89037,
+      "id": 38,
+      "start_row": 3000,
+      "end_row_exclusive": 3093,
+      "terrain": 1,
+      "terminated": true,
+      "truncated": false,
+      "transitions": 92,
+      "parent_seed": 87037,
+      "source_episode_index": 10,
+      "slope_start": true,
+      "legal_windows": 85,
+      "first_window_source_row": 3000,
+      "stop_window_source_row_exclusive": 3085
+    },
+    {
+      "training_seed": 89037,
+      "id": 39,
+      "start_row": 3093,
+      "end_row_exclusive": 3393,
+      "terrain": 2,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 11,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3093,
+      "stop_window_source_row_exclusive": 3385
+    },
+    {
+      "training_seed": 89037,
+      "id": 40,
+      "start_row": 3393,
+      "end_row_exclusive": 3693,
+      "terrain": 0,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 12,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3393,
+      "stop_window_source_row_exclusive": 3685
+    },
+    {
+      "training_seed": 89037,
+      "id": 41,
+      "start_row": 3693,
+      "end_row_exclusive": 3993,
+      "terrain": 1,
+      "terminated": false,
+      "truncated": true,
+      "transitions": 299,
+      "parent_seed": 87037,
+      "source_episode_index": 13,
+      "slope_start": false,
+      "legal_windows": 292,
+      "first_window_source_row": 3693,
+      "stop_window_source_row_exclusive": 3985
+    }
+  ],
+  "uphill_by_start_and_command": [
+    {
+      "slope_start": false,
+      "command_phase": "command_change",
+      "summary": {
+        "windows": 63,
+        "episodes": 9,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 63,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 0,
+              "episodes": 0
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 63,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 2,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 3,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 4,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 5,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 6,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 8,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 63,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 0,
+              "episodes": 0
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 63,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 2,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 3,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 4,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 5,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 6,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slope_start": false,
+      "command_phase": "move",
+      "summary": {
+        "windows": 2187,
+        "episodes": 9,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 1375,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 812,
+              "episodes": 9
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 1375,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 144,
+              "episodes": 9
+            },
+            {
+              "switches": 2,
+              "windows": 387,
+              "episodes": 9
+            },
+            {
+              "switches": 3,
+              "windows": 149,
+              "episodes": 9
+            },
+            {
+              "switches": 4,
+              "windows": 92,
+              "episodes": 9
+            },
+            {
+              "switches": 5,
+              "windows": 34,
+              "episodes": 7
+            },
+            {
+              "switches": 6,
+              "windows": 4,
+              "episodes": 2
+            },
+            {
+              "switches": 7,
+              "windows": 2,
+              "episodes": 1
+            },
+            {
+              "switches": 8,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 1427,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 760,
+              "episodes": 9
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 1427,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 153,
+              "episodes": 9
+            },
+            {
+              "switches": 2,
+              "windows": 379,
+              "episodes": 9
+            },
+            {
+              "switches": 3,
+              "windows": 134,
+              "episodes": 9
+            },
+            {
+              "switches": 4,
+              "windows": 77,
+              "episodes": 9
+            },
+            {
+              "switches": 5,
+              "windows": 13,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 4,
+              "episodes": 1
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slope_start": false,
+      "command_phase": "stand",
+      "summary": {
+        "windows": 378,
+        "episodes": 9,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 378,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 0,
+              "episodes": 0
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 378,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 2,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 3,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 4,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 5,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 6,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 8,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 378,
+              "episodes": 9
+            },
+            "mask_changed": {
+              "windows": 0,
+              "episodes": 0
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 378,
+              "episodes": 9
+            },
+            {
+              "switches": 1,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 2,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 3,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 4,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 5,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 6,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slope_start": true,
+      "command_phase": "command_change",
+      "summary": {
+        "windows": 42,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 42,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 1,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 3,
+              "windows": 6,
+              "episodes": 3
+            },
+            {
+              "switches": 4,
+              "windows": 9,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 12,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 11,
+              "episodes": 5
+            },
+            {
+              "switches": 7,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 8,
+              "windows": 1,
+              "episodes": 1
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 42,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 1,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 2,
+              "episodes": 2
+            },
+            {
+              "switches": 3,
+              "windows": 9,
+              "episodes": 4
+            },
+            {
+              "switches": 4,
+              "windows": 11,
+              "episodes": 5
+            },
+            {
+              "switches": 5,
+              "windows": 12,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 6,
+              "episodes": 4
+            },
+            {
+              "switches": 7,
+              "windows": 1,
+              "episodes": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slope_start": true,
+      "command_phase": "move",
+      "summary": {
+        "windows": 666,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 21,
+              "episodes": 2
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 645,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 21,
+              "episodes": 2
+            },
+            {
+              "switches": 1,
+              "windows": 20,
+              "episodes": 2
+            },
+            {
+              "switches": 2,
+              "windows": 60,
+              "episodes": 3
+            },
+            {
+              "switches": 3,
+              "windows": 77,
+              "episodes": 4
+            },
+            {
+              "switches": 4,
+              "windows": 156,
+              "episodes": 5
+            },
+            {
+              "switches": 5,
+              "windows": 136,
+              "episodes": 6
+            },
+            {
+              "switches": 6,
+              "windows": 120,
+              "episodes": 6
+            },
+            {
+              "switches": 7,
+              "windows": 61,
+              "episodes": 6
+            },
+            {
+              "switches": 8,
+              "windows": 15,
+              "episodes": 3
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 31,
+              "episodes": 2
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 635,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 31,
+              "episodes": 2
+            },
+            {
+              "switches": 1,
+              "windows": 27,
+              "episodes": 3
+            },
+            {
+              "switches": 2,
+              "windows": 76,
+              "episodes": 4
+            },
+            {
+              "switches": 3,
+              "windows": 116,
+              "episodes": 5
+            },
+            {
+              "switches": 4,
+              "windows": 174,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 129,
+              "episodes": 6
+            },
+            {
+              "switches": 6,
+              "windows": 85,
+              "episodes": 6
+            },
+            {
+              "switches": 7,
+              "windows": 28,
+              "episodes": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "slope_start": true,
+      "command_phase": "stand",
+      "summary": {
+        "windows": 252,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 5,
+              "episodes": 1
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 247,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 5,
+              "episodes": 1
+            },
+            {
+              "switches": 1,
+              "windows": 9,
+              "episodes": 4
+            },
+            {
+              "switches": 2,
+              "windows": 25,
+              "episodes": 4
+            },
+            {
+              "switches": 3,
+              "windows": 30,
+              "episodes": 6
+            },
+            {
+              "switches": 4,
+              "windows": 64,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 56,
+              "episodes": 6
+            },
+            {
+              "switches": 6,
+              "windows": 44,
+              "episodes": 6
+            },
+            {
+              "switches": 7,
+              "windows": 17,
+              "episodes": 6
+            },
+            {
+              "switches": 8,
+              "windows": 2,
+              "episodes": 2
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 10,
+              "episodes": 4
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 242,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 10,
+              "episodes": 4
+            },
+            {
+              "switches": 1,
+              "windows": 7,
+              "episodes": 4
+            },
+            {
+              "switches": 2,
+              "windows": 34,
+              "episodes": 5
+            },
+            {
+              "switches": 3,
+              "windows": 50,
+              "episodes": 6
+            },
+            {
+              "switches": 4,
+              "windows": 67,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 50,
+              "episodes": 6
+            },
+            {
+              "switches": 6,
+              "windows": 30,
+              "episodes": 6
+            },
+            {
+              "switches": 7,
+              "windows": 4,
+              "episodes": 2
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "slope_stand": {
+    "episodes": [
+      {
+        "episode_id": 3,
+        "training_seed": 89011,
+        "parent_seed": 87011,
+        "source_episode_index": 3,
+        "first_source_row": 900,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "d905dbe16fe1052c0476f6d5935f82fcbee94e989622f4506721024d02f4aa47",
+        "first_post_state45_sha256": "b97f8d08e0973028dec2fd8ddb8c37c5ee141c5a78d9bc472549da75e873bbdf",
+        "support_mask_01": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 2,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 3,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 9,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 13,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 18,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 2,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 3,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 14,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 17,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "episode_id": 9,
+        "training_seed": 89011,
+        "parent_seed": 87011,
+        "source_episode_index": 9,
+        "first_source_row": 2700,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "79396611140144882f0ed9c109ac4a74ae30866d630139e7579097501f7443e0",
+        "first_post_state45_sha256": "f85ab1710b380e80d6d004ba94ba97c71a83884505ac3285f2fa25a1d6c7f751",
+        "support_mask_01": [
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 8,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 1,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 41,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 13,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "episode_id": 17,
+        "training_seed": 89023,
+        "parent_seed": 87023,
+        "source_episode_index": 3,
+        "first_source_row": 900,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "d401c8256573da401b20c72900c3e15b1139fa875bd4d662fe6967e01f85efd5",
+        "first_post_state45_sha256": "a7b05ff3484516b1a8cd68950312ff256366f6df4fffcef984c95eef27d46204",
+        "support_mask_01": [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 8,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 16,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 1,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 41,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 14,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 9,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "episode_id": 23,
+        "training_seed": 89023,
+        "parent_seed": 87023,
+        "source_episode_index": 9,
+        "first_source_row": 2492,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "dac3f3b731802ec250c22b9c985b17af1b2a48bd89f541fc136725d67fb04307",
+        "first_post_state45_sha256": "fa2a6e54c20a999bcd4b05ce724d8d4a004017ae8aebe6485ce7b83f3caf7ba3",
+        "support_mask_01": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 5,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 37,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 12,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 1,
+                "episodes": 1
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 7,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 35,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 12,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "episode_id": 32,
+        "training_seed": 89037,
+        "parent_seed": 87037,
+        "source_episode_index": 4,
+        "first_source_row": 1200,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "9a414a56ccfdb2e74ba25d1c74d70f36eccec54d2413fc75087b3daf1ec653e5",
+        "first_post_state45_sha256": "6cc2762d5db7133a017c04cd52aff70ced9e3d280cbdc65c64425a088f2facf1",
+        "support_mask_01": [
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 18,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 1,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 41,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 14,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 9,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "episode_id": 38,
+        "training_seed": 89037,
+        "parent_seed": 87037,
+        "source_episode_index": 10,
+        "first_source_row": 3000,
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "reset_proprio627_sha256": "cbb76b8ca08b06f6443384a58c34613ed88de2138574aaef980f6f65f8064b50",
+        "first_post_state45_sha256": "4d339fe00702c8f072a2f2463659cfb0da9d5382d66043000fc2be6f906b798c",
+        "support_mask_01": [
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 2,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 3,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 12,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 13,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 8,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 1,
+                "episodes": 1
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 42,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 2,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 18,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 9,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "summary": {
+      "windows": 252,
+      "episodes": 6,
+      "source_and_targets": {
+        "groups": {
+          "all_four": {
+            "windows": 5,
+            "episodes": 1
+          },
+          "stable_other": {
+            "windows": 0,
+            "episodes": 0
+          },
+          "mask_changed": {
+            "windows": 247,
+            "episodes": 6
+          }
+        },
+        "by_switch_count": [
+          {
+            "switches": 0,
+            "windows": 5,
+            "episodes": 1
+          },
+          {
+            "switches": 1,
+            "windows": 9,
+            "episodes": 4
+          },
+          {
+            "switches": 2,
+            "windows": 25,
+            "episodes": 4
+          },
+          {
+            "switches": 3,
+            "windows": 30,
+            "episodes": 6
+          },
+          {
+            "switches": 4,
+            "windows": 64,
+            "episodes": 6
+          },
+          {
+            "switches": 5,
+            "windows": 56,
+            "episodes": 6
+          },
+          {
+            "switches": 6,
+            "windows": 44,
+            "episodes": 6
+          },
+          {
+            "switches": 7,
+            "windows": 17,
+            "episodes": 6
+          },
+          {
+            "switches": 8,
+            "windows": 2,
+            "episodes": 2
+          }
+        ]
+      },
+      "targets_only": {
+        "groups": {
+          "all_four": {
+            "windows": 10,
+            "episodes": 4
+          },
+          "stable_other": {
+            "windows": 0,
+            "episodes": 0
+          },
+          "mask_changed": {
+            "windows": 242,
+            "episodes": 6
+          }
+        },
+        "by_switch_count": [
+          {
+            "switches": 0,
+            "windows": 10,
+            "episodes": 4
+          },
+          {
+            "switches": 1,
+            "windows": 7,
+            "episodes": 4
+          },
+          {
+            "switches": 2,
+            "windows": 34,
+            "episodes": 5
+          },
+          {
+            "switches": 3,
+            "windows": 50,
+            "episodes": 6
+          },
+          {
+            "switches": 4,
+            "windows": 67,
+            "episodes": 6
+          },
+          {
+            "switches": 5,
+            "windows": 50,
+            "episodes": 6
+          },
+          {
+            "switches": 6,
+            "windows": 30,
+            "episodes": 6
+          },
+          {
+            "switches": 7,
+            "windows": 4,
+            "episodes": 2
+          }
+        ]
+      }
+    },
+    "by_parent": [
+      {
+        "parent_seed": 87011,
+        "summary": {
+          "windows": 84,
+          "episodes": 2,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 84,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 8,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 12,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 19,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 15,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 25,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 3,
+                "episodes": 2
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 1,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 83,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 13,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 16,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 20,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 23,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 10,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "parent_seed": 87023,
+        "summary": {
+          "windows": 84,
+          "episodes": 2,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 5,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 79,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 6,
+                "episodes": 2
+              },
+              {
+                "switches": 2,
+                "windows": 14,
+                "episodes": 2
+              },
+              {
+                "switches": 3,
+                "windows": 11,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 22,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 10,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 8,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 7,
+                "episodes": 2
+              },
+              {
+                "switches": 8,
+                "windows": 1,
+                "episodes": 1
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 8,
+                "episodes": 2
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 76,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 8,
+                "episodes": 2
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 2
+              },
+              {
+                "switches": 2,
+                "windows": 17,
+                "episodes": 2
+              },
+              {
+                "switches": 3,
+                "windows": 19,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 15,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 9,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 10,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              }
+            ]
+          }
+        }
+      },
+      {
+        "parent_seed": 87037,
+        "summary": {
+          "windows": 84,
+          "episodes": 2,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 84,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 7,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 23,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 31,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 11,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 7,
+                "episodes": 2
+              },
+              {
+                "switches": 8,
+                "windows": 1,
+                "episodes": 1
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 1,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 83,
+                "episodes": 2
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 4,
+                "episodes": 2
+              },
+              {
+                "switches": 3,
+                "windows": 15,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 32,
+                "episodes": 2
+              },
+              {
+                "switches": 5,
+                "windows": 18,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 10,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 2,
+                "episodes": 1
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "by_last_tick": [
+      {
+        "first_last_tick": 9,
+        "final_last_tick": 16,
+        "windows": 48,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 3,
+              "episodes": 1
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 45,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 3,
+              "episodes": 1
+            },
+            {
+              "switches": 1,
+              "windows": 6,
+              "episodes": 3
+            },
+            {
+              "switches": 2,
+              "windows": 12,
+              "episodes": 4
+            },
+            {
+              "switches": 3,
+              "windows": 2,
+              "episodes": 2
+            },
+            {
+              "switches": 4,
+              "windows": 11,
+              "episodes": 4
+            },
+            {
+              "switches": 5,
+              "windows": 13,
+              "episodes": 4
+            },
+            {
+              "switches": 6,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 8,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 6,
+              "episodes": 3
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 42,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 6,
+              "episodes": 3
+            },
+            {
+              "switches": 1,
+              "windows": 4,
+              "episodes": 4
+            },
+            {
+              "switches": 2,
+              "windows": 11,
+              "episodes": 4
+            },
+            {
+              "switches": 3,
+              "windows": 4,
+              "episodes": 3
+            },
+            {
+              "switches": 4,
+              "windows": 16,
+              "episodes": 4
+            },
+            {
+              "switches": 5,
+              "windows": 7,
+              "episodes": 3
+            },
+            {
+              "switches": 6,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 7,
+              "windows": 0,
+              "episodes": 0
+            }
+          ]
+        }
+      },
+      {
+        "first_last_tick": 17,
+        "final_last_tick": 32,
+        "windows": 96,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 2,
+              "episodes": 1
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 94,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 2,
+              "episodes": 1
+            },
+            {
+              "switches": 1,
+              "windows": 2,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 10,
+              "episodes": 2
+            },
+            {
+              "switches": 3,
+              "windows": 12,
+              "episodes": 5
+            },
+            {
+              "switches": 4,
+              "windows": 22,
+              "episodes": 5
+            },
+            {
+              "switches": 5,
+              "windows": 16,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 25,
+              "episodes": 4
+            },
+            {
+              "switches": 7,
+              "windows": 6,
+              "episodes": 2
+            },
+            {
+              "switches": 8,
+              "windows": 1,
+              "episodes": 1
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 3,
+              "episodes": 1
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 93,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 3,
+              "episodes": 1
+            },
+            {
+              "switches": 1,
+              "windows": 2,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 13,
+              "episodes": 3
+            },
+            {
+              "switches": 3,
+              "windows": 21,
+              "episodes": 5
+            },
+            {
+              "switches": 4,
+              "windows": 17,
+              "episodes": 5
+            },
+            {
+              "switches": 5,
+              "windows": 27,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 11,
+              "episodes": 3
+            },
+            {
+              "switches": 7,
+              "windows": 2,
+              "episodes": 1
+            }
+          ]
+        }
+      },
+      {
+        "first_last_tick": 33,
+        "final_last_tick": 50,
+        "windows": 108,
+        "episodes": 6,
+        "source_and_targets": {
+          "groups": {
+            "all_four": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 108,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 0,
+              "episodes": 0
+            },
+            {
+              "switches": 1,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 3,
+              "episodes": 3
+            },
+            {
+              "switches": 3,
+              "windows": 16,
+              "episodes": 6
+            },
+            {
+              "switches": 4,
+              "windows": 31,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 27,
+              "episodes": 6
+            },
+            {
+              "switches": 6,
+              "windows": 18,
+              "episodes": 5
+            },
+            {
+              "switches": 7,
+              "windows": 11,
+              "episodes": 5
+            },
+            {
+              "switches": 8,
+              "windows": 1,
+              "episodes": 1
+            }
+          ]
+        },
+        "targets_only": {
+          "groups": {
+            "all_four": {
+              "windows": 1,
+              "episodes": 1
+            },
+            "stable_other": {
+              "windows": 0,
+              "episodes": 0
+            },
+            "mask_changed": {
+              "windows": 107,
+              "episodes": 6
+            }
+          },
+          "by_switch_count": [
+            {
+              "switches": 0,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 1,
+              "windows": 1,
+              "episodes": 1
+            },
+            {
+              "switches": 2,
+              "windows": 10,
+              "episodes": 4
+            },
+            {
+              "switches": 3,
+              "windows": 25,
+              "episodes": 6
+            },
+            {
+              "switches": 4,
+              "windows": 34,
+              "episodes": 6
+            },
+            {
+              "switches": 5,
+              "windows": 16,
+              "episodes": 5
+            },
+            {
+              "switches": 6,
+              "windows": 19,
+              "episodes": 5
+            },
+            {
+              "switches": 7,
+              "windows": 2,
+              "episodes": 1
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "archived_validation90": {
+    "cases": [
+      {
+        "reset_seed": 90101,
+        "parent_seed": 87011,
+        "arm": "original",
+        "trace_sha256": "021552eab130ef11919647d8435c014ff780d8a9b05d3dd185531b7860c2c147",
+        "initial_state_sha256": "f10724e8f57cdd3098f21d6b2024684ec6c79fe1f0fc6d5d8bf402207b24e207",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 16,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 26,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 16,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 20,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 4,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 19,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 23,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 19,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 18,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 4,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "reset_seed": 90101,
+        "parent_seed": 87011,
+        "arm": "common",
+        "trace_sha256": "36dc8648f9a443076cb794511b0dadc2a7884f9b269aa79f98b8b7866db1ba5b",
+        "initial_state_sha256": "f10724e8f57cdd3098f21d6b2024684ec6c79fe1f0fc6d5d8bf402207b24e207",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 4,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 38,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 20,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 6,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 36,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 18,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "reset_seed": 90102,
+        "parent_seed": 87023,
+        "arm": "original",
+        "trace_sha256": "f56db6e98a72d8a78476770ba7a2d9d27392fe2fb491742ab0d70590453b872c",
+        "initial_state_sha256": "e578224e18e8fe24f8c2feb112c6017132e8894461daef1d56515d7aababb5bb",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 7,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 35,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 16,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 8,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 34,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 8,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "reset_seed": 90102,
+        "parent_seed": 87023,
+        "arm": "common",
+        "trace_sha256": "5953af65531f038fa5cab32f89e0b87fdc9a5ab2dcd37579b11106bbf1c0a9b0",
+        "initial_state_sha256": "e578224e18e8fe24f8c2feb112c6017132e8894461daef1d56515d7aababb5bb",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 5,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 37,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 17,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 7,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 35,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 7,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 20,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "reset_seed": 90103,
+        "parent_seed": 87037,
+        "arm": "original",
+        "trace_sha256": "65483acc7234529f669fb6565ad740d83dfc65a5a1eed0c3d9f13dfeae170c8e",
+        "initial_state_sha256": "e81fe4fa56ce85a3704d5a38c2c19af40a5461f991d2cd422780c25113466b60",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 25,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 17,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 25,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 13,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 1,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 27,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 15,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 27,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 12,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 4,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      },
+      {
+        "reset_seed": 90103,
+        "parent_seed": 87037,
+        "arm": "common",
+        "trace_sha256": "f3397885207996c721583d102f0fdb951e9f42560ffc32e75dc8a9280e357888",
+        "initial_state_sha256": "e81fe4fa56ce85a3704d5a38c2c19af40a5461f991d2cd422780c25113466b60",
+        "first_support_tick": 1,
+        "last_support_tick": 50,
+        "support_mask_01": [
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "summary": {
+          "windows": 42,
+          "episodes": 1,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 10,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 32,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 5,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 12,
+                "episodes": 1
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 30,
+                "episodes": 1
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 12,
+                "episodes": 1
+              },
+              {
+                "switches": 1,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 2,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 3,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 3,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "by_arm": {
+      "original": {
+        "summary": {
+          "windows": 126,
+          "episodes": 3,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 48,
+                "episodes": 3
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 78,
+                "episodes": 3
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 48,
+                "episodes": 3
+              },
+              {
+                "switches": 1,
+                "windows": 10,
+                "episodes": 3
+              },
+              {
+                "switches": 2,
+                "windows": 43,
+                "episodes": 3
+              },
+              {
+                "switches": 3,
+                "windows": 7,
+                "episodes": 2
+              },
+              {
+                "switches": 4,
+                "windows": 16,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 2,
+                "episodes": 1
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 54,
+                "episodes": 3
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 72,
+                "episodes": 3
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 54,
+                "episodes": 3
+              },
+              {
+                "switches": 1,
+                "windows": 10,
+                "episodes": 3
+              },
+              {
+                "switches": 2,
+                "windows": 41,
+                "episodes": 3
+              },
+              {
+                "switches": 3,
+                "windows": 10,
+                "episodes": 1
+              },
+              {
+                "switches": 4,
+                "windows": 11,
+                "episodes": 1
+              },
+              {
+                "switches": 5,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 6,
+                "windows": 0,
+                "episodes": 0
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        },
+        "by_last_tick": [
+          {
+            "first_last_tick": 9,
+            "final_last_tick": 16,
+            "windows": 24,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 6,
+                  "episodes": 1
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 18,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 6,
+                  "episodes": 1
+                },
+                {
+                  "switches": 1,
+                  "windows": 3,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 12,
+                  "episodes": 2
+                },
+                {
+                  "switches": 3,
+                  "windows": 2,
+                  "episodes": 2
+                },
+                {
+                  "switches": 4,
+                  "windows": 1,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 8,
+                  "episodes": 2
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 16,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 8,
+                  "episodes": 2
+                },
+                {
+                  "switches": 1,
+                  "windows": 3,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 11,
+                  "episodes": 2
+                },
+                {
+                  "switches": 3,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          },
+          {
+            "first_last_tick": 17,
+            "final_last_tick": 32,
+            "windows": 48,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 19,
+                  "episodes": 2
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 29,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 19,
+                  "episodes": 2
+                },
+                {
+                  "switches": 1,
+                  "windows": 2,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 14,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 3,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 8,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 20,
+                  "episodes": 2
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 28,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 20,
+                  "episodes": 2
+                },
+                {
+                  "switches": 1,
+                  "windows": 2,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 15,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 4,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 7,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          },
+          {
+            "first_last_tick": 33,
+            "final_last_tick": 50,
+            "windows": 54,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 23,
+                  "episodes": 3
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 31,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 23,
+                  "episodes": 3
+                },
+                {
+                  "switches": 1,
+                  "windows": 5,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 17,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 7,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 26,
+                  "episodes": 3
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 28,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 26,
+                  "episodes": 3
+                },
+                {
+                  "switches": 1,
+                  "windows": 5,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 15,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 4,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 4,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "common": {
+        "summary": {
+          "windows": 126,
+          "episodes": 3,
+          "source_and_targets": {
+            "groups": {
+              "all_four": {
+                "windows": 19,
+                "episodes": 3
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 107,
+                "episodes": 3
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 19,
+                "episodes": 3
+              },
+              {
+                "switches": 1,
+                "windows": 12,
+                "episodes": 3
+              },
+              {
+                "switches": 2,
+                "windows": 48,
+                "episodes": 3
+              },
+              {
+                "switches": 3,
+                "windows": 14,
+                "episodes": 3
+              },
+              {
+                "switches": 4,
+                "windows": 21,
+                "episodes": 3
+              },
+              {
+                "switches": 5,
+                "windows": 4,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 4,
+                "episodes": 2
+              },
+              {
+                "switches": 7,
+                "windows": 4,
+                "episodes": 1
+              },
+              {
+                "switches": 8,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          },
+          "targets_only": {
+            "groups": {
+              "all_four": {
+                "windows": 25,
+                "episodes": 3
+              },
+              "stable_other": {
+                "windows": 0,
+                "episodes": 0
+              },
+              "mask_changed": {
+                "windows": 101,
+                "episodes": 3
+              }
+            },
+            "by_switch_count": [
+              {
+                "switches": 0,
+                "windows": 25,
+                "episodes": 3
+              },
+              {
+                "switches": 1,
+                "windows": 14,
+                "episodes": 3
+              },
+              {
+                "switches": 2,
+                "windows": 49,
+                "episodes": 3
+              },
+              {
+                "switches": 3,
+                "windows": 13,
+                "episodes": 3
+              },
+              {
+                "switches": 4,
+                "windows": 15,
+                "episodes": 3
+              },
+              {
+                "switches": 5,
+                "windows": 4,
+                "episodes": 2
+              },
+              {
+                "switches": 6,
+                "windows": 6,
+                "episodes": 1
+              },
+              {
+                "switches": 7,
+                "windows": 0,
+                "episodes": 0
+              }
+            ]
+          }
+        },
+        "by_last_tick": [
+          {
+            "first_last_tick": 9,
+            "final_last_tick": 16,
+            "windows": 24,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 2,
+                  "episodes": 1
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 22,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 1,
+                  "windows": 3,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 9,
+                  "episodes": 2
+                },
+                {
+                  "switches": 3,
+                  "windows": 4,
+                  "episodes": 3
+                },
+                {
+                  "switches": 4,
+                  "windows": 3,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 6,
+                  "windows": 1,
+                  "episodes": 1
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 4,
+                  "episodes": 2
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 20,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 4,
+                  "episodes": 2
+                },
+                {
+                  "switches": 1,
+                  "windows": 3,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 10,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 1,
+                  "episodes": 1
+                },
+                {
+                  "switches": 4,
+                  "windows": 4,
+                  "episodes": 1
+                },
+                {
+                  "switches": 5,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          },
+          {
+            "first_last_tick": 17,
+            "final_last_tick": 32,
+            "windows": 48,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 1,
+                  "episodes": 1
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 47,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 1,
+                  "episodes": 1
+                },
+                {
+                  "switches": 1,
+                  "windows": 3,
+                  "episodes": 2
+                },
+                {
+                  "switches": 2,
+                  "windows": 16,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 6,
+                  "episodes": 3
+                },
+                {
+                  "switches": 4,
+                  "windows": 13,
+                  "episodes": 3
+                },
+                {
+                  "switches": 5,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 6,
+                  "windows": 3,
+                  "episodes": 1
+                },
+                {
+                  "switches": 7,
+                  "windows": 4,
+                  "episodes": 1
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 2,
+                  "episodes": 1
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 46,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 1,
+                  "windows": 5,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 16,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 10,
+                  "episodes": 3
+                },
+                {
+                  "switches": 4,
+                  "windows": 7,
+                  "episodes": 3
+                },
+                {
+                  "switches": 5,
+                  "windows": 2,
+                  "episodes": 1
+                },
+                {
+                  "switches": 6,
+                  "windows": 6,
+                  "episodes": 1
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          },
+          {
+            "first_last_tick": 33,
+            "final_last_tick": 50,
+            "windows": 54,
+            "episodes": 3,
+            "source_and_targets": {
+              "groups": {
+                "all_four": {
+                  "windows": 16,
+                  "episodes": 3
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 38,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 16,
+                  "episodes": 3
+                },
+                {
+                  "switches": 1,
+                  "windows": 6,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 23,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 4,
+                  "episodes": 3
+                },
+                {
+                  "switches": 4,
+                  "windows": 5,
+                  "episodes": 2
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 8,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            },
+            "targets_only": {
+              "groups": {
+                "all_four": {
+                  "windows": 19,
+                  "episodes": 3
+                },
+                "stable_other": {
+                  "windows": 0,
+                  "episodes": 0
+                },
+                "mask_changed": {
+                  "windows": 35,
+                  "episodes": 3
+                }
+              },
+              "by_switch_count": [
+                {
+                  "switches": 0,
+                  "windows": 19,
+                  "episodes": 3
+                },
+                {
+                  "switches": 1,
+                  "windows": 6,
+                  "episodes": 3
+                },
+                {
+                  "switches": 2,
+                  "windows": 23,
+                  "episodes": 3
+                },
+                {
+                  "switches": 3,
+                  "windows": 2,
+                  "episodes": 2
+                },
+                {
+                  "switches": 4,
+                  "windows": 4,
+                  "episodes": 2
+                },
+                {
+                  "switches": 5,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 6,
+                  "windows": 0,
+                  "episodes": 0
+                },
+                {
+                  "switches": 7,
+                  "windows": 0,
+                  "episodes": 0
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
