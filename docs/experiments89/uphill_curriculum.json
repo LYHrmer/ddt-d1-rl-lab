@@ -1,0 +1,56 @@
+{
+  "protocol": "d1-perceptive-ppo-uphill-reset-curriculum89-v1",
+  "hypothesis": "Giving the existing perceptive PPO on-policy experience with all four wheels on the incline will improve autonomous speed and loaded-front progress on the original uphill approach.",
+  "parent_protocol": "docs/experiments87/full_body_perception.json",
+  "parent_protocol_sha256": "b6ea1719001c9c710f7d6cfba3daf721abda8145455e4098cdac983044ba5b78",
+  "parent_training_report_sha256": "5bcc0da026999923449946c2ee7e0d0e54ed25b25c65d1b9ee61bbb9c82cc20f",
+  "parent_policy_sha256": {"87011": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe", "87023": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08", "87037": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12"},
+  "curriculum": {
+    "slope_start_x_m": 1.10,
+    "original_start_x_m": 0.0,
+    "toe_x_m": 0.60,
+    "uphill_angle_deg": 4.0,
+    "only_variable": "Original training always starts at world base x=0. Mixed training alternates x=0 and x=1.10 over successive uphill resets, starting at x=0. All flat and downhill resets stay original. Place the shifted robot tangent to the local slope while preserving the sampled joint pose, relative heading, wheel clearance and at-rest velocity. Compute observation, history and sensor packet from that initial pose.",
+    "interface": "Use the live delayed range input in both arms. No terrain label, reset coordinate or clock-based wheel offset enters the policy. Reward including its original world-height term, PD, limits, FIFO, clocks and command course are inherited from 87."
+  },
+  "preflight": {
+    "reset_seeds": [89101, 89102, 89103],
+    "ticks_per_episode": 100,
+    "max_episodes": 6,
+    "max_transitions": 600,
+    "parent_for_each_seed": "Use the matching trained range parent from 87 in both arms, deterministic inference. In fixed uphill mode use reset(seed) without integration then reset() for the second uphill occurrence. Run the first two seconds including one second of movement.",
+    "gate": "All 6 complete with finite real observations and no falls or illegal contact. For each original, no rear wheel is loaded beyond the toe. For each slope start, at least 25 of the 50 moving ticks have a loaded front and rear wheel on the slope and at least one tick has all 4 wheels loaded there. Require the zero-integration reset, contact geometry and observation compatibility checks before sampling. Stop before training on failure."
+  },
+  "training": {
+    "arms": ["original", "mixed"],
+    "parent_seeds": [87011, 87023, 87037],
+    "seeds": [89011, 89023, 89037],
+    "transitions_per_model": 4096,
+    "max_models": 6,
+    "max_transitions": 24576,
+    "settings": "Pair both arms on identical complete 87 range policy and Adam state for that seed. Collect one fresh 4096-step CPU/single-env PPO rollout per model with the exact 87 optimizer settings, clipped policy, batch size 256, at most four epochs and target KL 0.005.",
+    "integrity": "Validate identities and the full policy/optimizer state before learning. Verify that both arms produce identical recorded actions, states, observations and rewards up to the first changed reset and that new complete models reload. Retain training terminations, truncations, native counters, update counts and source array hashes."
+  },
+  "coverage": {
+    "denominator": "All training intervals with a positive forward command on the uphill terrain. Count an interval only if the endpoint has simultaneous contact greater than 1 N past the toe for each of FL, FR, RL, RR. Report per training seed and arm. Keep base-origin and front+rear support counts separately.",
+    "minimum_mixed_fraction": 0.20,
+    "minimum_paired_fraction_increase": 0.15,
+    "rule": "Pass coverage only when every training seed meets both thresholds from complete physical rollouts."
+  },
+  "evaluation": {
+    "reset_seeds": [89201, 89202, 89203],
+    "terrains": ["flat", "up", "down"],
+    "speed_interval_end_ticks": [200, 300],
+    "min_paired_uphill_delta_m_s": 0.0200,
+    "course_mark_m_past_toe": 0.40,
+    "max_mean_retention_rmse_increase_m_s": 0.0100,
+    "max_episodes": 30,
+    "max_transitions": 9000,
+    "design": "Evaluate every checkpoint from original x=0 with the ordinary sensed policy and unmodified PD. Cross 3 training seeds with all 3 independent resets for uphill (18 episodes). Each training seed uses its correspondingly indexed reset for flat and down (12 episodes). No wheel offset or altered initial placement during evaluation.",
+    "rule": "Uphill speed requires >=0.0200 m/s mean paired improvement, averaging the three held-out resets separately per training seed, in all three seed pairs with full clean uphill episodes. Stable mark requires all 9 mixed uphill episodes to finish cleanly and cross 0.40 m. For flat and down separately require all paired full clean episodes and mean fixed-horizon speed RMSE deterioration <=0.0100 m/s. Report all gates and failures separately; partial or unfilled windows cannot pass."
+  },
+  "video": "Render the paired original-start uphill evaluation for the first registered training and test seeds, 89011/89201, independently of its outcome. Use only saved states, side-by-side honest labels, real-time playback <=5 MB.",
+  "resources": {"cpu_environments": 1, "threads": 1, "nice": 10, "memory_high_gib": 2, "memory_max_gib": 3, "swap_max_bytes": 0, "minimum_effective_gib_at_start": 4, "minimum_effective_gib_during_run": 2, "parallel_heavy_jobs": 1, "partial": "preserve without overwrite, continuation or replacement run"},
+  "max_new_policy_transitions": 34176,
+  "max_native_steps": 341760
+}
