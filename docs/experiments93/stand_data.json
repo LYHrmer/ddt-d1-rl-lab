@@ -1,0 +1,95 @@
+{
+  "protocol": "d1-crossed-standing-data93-v1",
+  "registration_base_d1": "bc69c1032fd2baead46886afc60f103c8273abac",
+  "registration_base_wheel": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "parents": [
+    87011,
+    87023,
+    87037
+  ],
+  "resets": [
+    90101,
+    90102,
+    90103
+  ],
+  "model_seeds": [
+    91011,
+    91023,
+    91037
+  ],
+  "arms": [
+    "original",
+    "common"
+  ],
+  "horizon": 50,
+  "policies_sha256": {
+    "87011": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe",
+    "87023": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08",
+    "87037": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12"
+  },
+  "weights_sha256": {
+    "91011": "abcc8298f34ccf9d63d49b5e878f2d255876a3cd81285d3596f86bf9fc64a178",
+    "91023": "068891156ccd8394cd4cf1e34ae9639d57634c3a1f890282ed51400aac56d773",
+    "91037": "118d7ca4870b684056579f2a457f7fac93ee74e8aa33907e89460cde91f85015"
+  },
+  "source_sha256": {
+    "docs/experiments89/uphill_curriculum.json": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "docs/experiments90/stand_wbc.json": "b6e4f94c46fc7fde0a1a3f6892c09162c498ff4988260a43a0b0aefcef71a8bd",
+    "docs/experiments91/terrain_world_model.json": "aedb3c121d026f18b7d8197f2bfda91f001197a875704717f7e4192f6d0aa929",
+    "docs/experiments92/fixed_actions.json": "b40fe92e8ec9bea5c44416c2ea63a666d307800fa478ffaeca84037a662509eb",
+    "reports/uphill_curriculum89.json": "abd331e8e4d8dfc91abc9c30b3969ce88641d08e526758cf5a9f9aff27d50c8f",
+    "reports/stand_wbc90.json": "f7086930344e087d4a962350e6874010fd920c0c96abbc481eb00d08653bb5d3",
+    "reports/terrain_world91.json": "9a57795b1fa54ea22cc065badf5a1cd8fd6e9c3c87dc12af9164a4f0b096bded",
+    "reports/fixed_actions92.json": "e52b67c8429408a9eca7ed8130a6c77ba33d891a8b95ade452bffcf6c3b610ed",
+    "reports/fixed_actions92_curves.jsonl.gz": "2ef8b9376af77761b149ea472e49398439e62de5fcbbc15064de4cec718ad93f",
+    "evidence/wbc90/stand_01/report.json": "0008db012bd3ad3fb9923cfa22029d814c84c681912bfc5ebf65727e16f3914b",
+    "evidence/terrain_replay92/replay_01/seal.json": "a2a9af40c5a2ee0ded91c1570b117257f20c05bc4acb464b99d3bedece5e510e",
+    "evidence/terrain_world91/fit_01/models/complete.json": "6e34f2e92293e68e629e2c16d35209021a69e9511b42e4d39c6287ef12d6c540",
+    "tools89/course89.py": "ab3b5fc207060bc0b2cb820a512b6c586e0c63d3c0a53b182fedd6774445e416",
+    "tools89/common89.py": "a8fa58e716dd081bb21ef00758c4a1e7b1dea50743752ee42d8c110105abc3c0",
+    "tools87/ppo87.py": "4eb677ace9651b11bfa8debaa36c6708599684d425beb408ee68edee00e9d054",
+    "tools90/stand90.py": "e6dfc86da9b1c8576885e2344d2c5f7fec5e3f5dba15178ed6727d4717ccbba4",
+    "tools91/data91.py": "e1e39bdf8d7dc14c5389434dffee662d672a4befdbd82ddd10341903b7a91fdc",
+    "tools91/model91.py": "16a4220e1aea8962a078241af88eb01a950e7e3d6c40b941427a35b51bdd4f63",
+    "tools91/score91.py": "978b8ea4e0fc16cd9b8bab4782f9b136f6556894dd38212e99b73d08a61f2694",
+    "tools92/replay92.py": "4ce2a6a28ce987e8181e960117b15a00777aabefc90263ca0300f58f513fe4c2",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/configs/diagnostic03b_zero.json": "47da5ec68e4942a685162a022c4390ee9e8d52a19718903917336b8baeb78420"
+  },
+  "question": "Does the sign of absolute rollback bias persist across parent policies at a fixed reset, or across resets at a fixed policy? Which recorded support phase has sparse world-model training coverage?",
+  "design": "Complete the Cartesian grid of 3 fixed learned policies by 3 fixed physical resets on the 4 degree uphill. Reuse the 90 diagonal physics and 92 fixed-action diagonal model traces. Simulate the 6 missing cells only. Within each cell compare unchanged deterministic parent against the same feasible common-wheel correction as 90. No training, new random states, model-based action selection, or ranking by seed. The original 3 physical initial states were known before this registration; the 6 off-diagonal combinations are newly measured. Treat reset as a block, not a new independent draw per policy/arm/model.",
+  "sampling": "Use the exact 90 two-reset procedure (second uphill x=1.10 m), source PD/FIFO, zero command throughout the first 50 intervals of 20 ms. Capture the measured reset state and observation before the first decision, both issued and actually applied actions, states, command, pitch, actual wheel speeds, applied torque and loaded-beyond-toe masks. Compare initial qpos/qvel/observation and the first endpoint state against the two physical diagonal arms at the same reset. A clean input set requires all 18 arms, with 12 newly complete at 50/50, 3 known distinct initial conditions, single beat FIFO, no fall/illegal contact and matching SHA256s. Keep every early stop and error as evidence.",
+  "model": "Only start state45 and the full applied action tape may enter inference with uphill terrain context fixed. Require all 3 complete 91 checkpoints. Freeze the 12 inputs before prediction. Compute 36 new fixed-action model trajectories; reuse the 18 diagonal standing traces from 92. For identical initial state and identical first applied action within each reset and model, compare all 45 first predicted endpoint values bitwise to the stored diagonal. Never use later physical states for model inputs.",
+  "gates": {
+    "model_pair": "At 1 s measure physical and predicted max(0, x0-x50) for each arm. Original minus common is the benefit. Grade with the immutable 91 standing rule: positive effect, error <=0.003 m and strictly below the null error, each arm error <=0.030 m, both arms complete. Report 27 model/cell predictions on 9 paired physical cells, 3 independent reset states. Preserve every failure. Numerical benefit of correcting wheel targets is separate from data completeness.",
+    "bias": "For each cell at ticks 16,32,50, record all six signed errors in rollback (predicted minus measured, three models times two arms). Strictly positive throughout the cell is HIGH, strictly negative throughout is LOW, otherwise MIXED. Primary attribution uses 50. If each column has a unanimous nonmixed sign across all three policies and the columns include both HIGH and LOW, the sign follows reset. Apply the transposed rule for parent. Otherwise attribution remains mixed. Incomplete grid cannot qualify. This is a diagnostic of these three states, not a population claim.",
+    "training_coverage": "Use the same three completed mixed-89 sources admitted by 91. Exclude unfinished trailing episodes; retain the four terminated complete episodes. H8 spans nine physical endpoints from source state to eighth target. No crossing episodes. For the six slope starts, consider all windows fully contained in post-step zero-command endpoints 1..50 (42 per episode), and classify by four-wheel support beyond the toe (>1 N per wheel). Tabulate parents, episodes, window completion time and missing exact t0 transition. Newly acquired rows are evaluation-only; never include 90/92/93 evaluation rows in the training index.",
+    "targeted_sampling": "Compare 18 late H8 windows ending 33..50 per trajectory, same endpoint convention. Persistent support means all four wheels loaded in all 9 endpoints. Compare against all other late windows on the same trajectory. For each model and physical arm with both types compute the median absolute world-x increment error in persistent windows minus the median in other windows, using the free predictions (not restarted per window). Pool by median of available within-trajectory contrasts per parent/reset cell. An absent training stratum seen under every parent and reset supports collecting additional independent training episodes. Recommend subsequently testing targeted sampling for response error only if also >=6 eligible cells cover all parents and resets and the median contrast at each reset is strictly positive. Otherwise report coverage separately from its unproven role in model error. Never count overlapping windows as independent episodes."
+  },
+  "budget": {
+    "new_physical_arms": 12,
+    "reused_physical_arms": 6,
+    "new_policy_steps": 600,
+    "new_pd_updates": 3000,
+    "new_native_steps": 6000,
+    "new_model_arms": 36,
+    "new_model_steps": 1800,
+    "reused_fixed_model_arms": 18,
+    "policy_updates": 0,
+    "world_model_updates": 0
+  },
+  "resources": {
+    "threads": 1,
+    "cpu_environments": 1,
+    "nice": 10,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_max_bytes": 0,
+    "minimum_effective_gib_at_start": 4,
+    "minimum_effective_gib_during_run": 2,
+    "parallel_heavy_jobs": 1,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "video": "Render all nine pairs in numerical parent/reset order using the measured physics states only. Identical fixed camera, original and common-wheel correction side by side, playback speed marked, first-second rollback and difference in millimetres. Render-only; no additional simulation steps. Save a verified MP4 on the user's desktop.",
+  "retention": "Use new exclusive directories; one physical collection and one model prediction attempt. No continuation, replacement, or overwriting. Retain partials and exact counters. An incomplete dataset cannot receive a complete data certificate. Public readback and display only consume recorded arrays."
+}
