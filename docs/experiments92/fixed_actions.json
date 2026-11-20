@@ -1,0 +1,45 @@
+{
+  "protocol": "d1-fixed-applied-action-replay92-v1",
+  "registration_base_d1": "0f80a387a585c33d8309217172568d0977331744",
+  "registration_base_wheel": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "question": "When the model receives exactly the applied action stream from each original physical arm, does it still miss the size of the uphill wheel response?",
+  "design": "Paired retrospective input-source ablation at the 20 ms applied motor-target seam. Replay every candidate model, reset and intervention arm of 91. Reuse the sealed 91 closed-loop predictions as the comparator. In the fixed-action arm only, replace the model-feedback-generated actions by that physical arm's archived 16D applied actions. Both predictors start at the same recorded state and freely predict every subsequent state. This diagnosis conditions on measured actions, which include the original physical controller's feedback. It does not demonstrate deployable policy improvement or identify which feedback channel matters.",
+  "source_sha256": {
+    "docs/experiments91/terrain_world_model.json": "aedb3c121d026f18b7d8197f2bfda91f001197a875704717f7e4192f6d0aa929",
+    "reports/terrain_world91.json": "9a57795b1fa54ea22cc065badf5a1cd8fd6e9c3c87dc12af9164a4f0b096bded",
+    "reports/terrain_world91_curves.jsonl.gz": "0334e86f773909cd0a86ca5b47b2004037d05f60dadcdf22c4f3e83724aea567",
+    "reports/uphill_diagnosis88.json": "908ad31bae9e1cd7bbabb77993e3906e9af8312dff52ac846c0f6e60c37fc80e",
+    "reports/stand_wbc90.json": "f7086930344e087d4a962350e6874010fd920c0c96abbc481eb00d08653bb5d3",
+    "evidence/terrain_world91/candidate_01/seal.json": "e1c8a6b3ce1a6b02034836cbf238dc0841f01a5778afeb1eedb18d24cc6c5a85",
+    "evidence/terrain_world91/prepare_01/report.json": "1990a8559ebfdab75da3f06c7d672e51369835ba0ecdc9c4b2174cf0461cac22",
+    "evidence/terrain_world91/fit_01/models/complete.json": "6e34f2e92293e68e629e2c16d35209021a69e9511b42e4d39c6287ef12d6c540",
+    "tools91/model91.py": "16a4220e1aea8962a078241af88eb01a950e7e3d6c40b941427a35b51bdd4f63",
+    "tools91/rollout91.py": "098a53b822c2e494ef7757af3db16261d47a10a86a4ef959892356b90a0ec3fe",
+    "tools91/score91.py": "978b8ea4e0fc16cd9b8bab4782f9b136f6556894dd38212e99b73d08a61f2694",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/configs/diagnostic03b_zero.json": "47da5ec68e4942a685162a022c4390ee9e8d52a19718903917336b8baeb78420"
+  },
+  "model_seeds": [91011, 91023, 91037],
+  "weights_sha256": {
+    "91011": "abcc8298f34ccf9d63d49b5e878f2d255876a3cd81285d3596f86bf9fc64a178",
+    "91023": "068891156ccd8394cd4cf1e34ae9639d57634c3a1f890282ed51400aac56d773",
+    "91037": "118d7ca4870b684056579f2a457f7fac93ee74e8aa33907e89460cde91f85015"
+  },
+  "tasks": {
+    "move": {"reset_seeds": [88101, 88102, 88103], "start_tick": 180, "horizon": 120, "intervention": "wheel_plus", "prefix_steps": [4, 8, 16, 32, 50, 120], "recorded_action_rows": "88 applied_action[181:301], including the pending action at the initial state. One row per 20 ms interval; do not add another delay.", "score": "Intervention minus original mean body-x speed at absolute endpoints 201..300.", "effect_tolerance": 0.010, "per_arm_tolerance": 0.040, "unit": "m/s"},
+    "stand": {"reset_seeds": [90101, 90102, 90103], "start_tick": 0, "horizon": 50, "intervention": "common", "prefix_steps": [4, 8, 16, 32, 50], "recorded_action_rows": "90 applied[0:50], starting with the zero pending action immediately after reset.", "score": "Original minus intervention rollback. Rollback is max(0, initial world x minus world x at 1 s).", "effect_tolerance": 0.003, "per_arm_tolerance": 0.030, "unit": "m"}
+  },
+  "input_integrity": "Seal 12 inputs containing only the actual initial state and applied action stream. Verify trace and start hashes, record indexing, one-tick FIFO and initial action alignment. Inference receives each sealed input, the original fixed uphill terrain context and a verified final checkpoint. No later physical states, teacher forcing, actor, perception update or additional displacement integration enter prediction. Require the same first applied action and bitwise-identical first predicted endpoint as the stored 91 closed-loop arm for every completed prediction.",
+  "pair_gate": "Use the unmodified 91 scorer, checking the same physical references and control scores. Both arms must complete, the predicted effect must be positive, its absolute error must be <= effect_tolerance and strictly smaller than the zero-effect comparator error, and each arm's absolute error must be <= per_arm_tolerance. Use full precision. Report 9 model/reset predictions for each of the two tasks, reusing the same 3 physical pairs per task. A model gate requires all 6 pairs, a family gate all 3 models.",
+  "diagnostic_rule": {
+    "scope": "Apply independently to each task. A missing or truncated arm makes that task's attribution inconclusive. Preserve each numeric prefix on an incomplete arm without filling the horizon.",
+    "feedback": "If all 9 fixed-action pairs pass while the sealed closed-loop panel has failures, prioritize feedback amplification in that task. This does not identify which sensor, action channel or state is responsible.",
+    "dynamics": "If every fixed-action effect is strictly below its matched physical effect and at least one pair per model fails the effect-magnitude tolerance, prioritize dynamics and the training distribution in that task. A remaining deficit with archived actions rules out feedback-generated actions as its sole explanation.",
+    "mixed": "For every other complete pattern, report the individual passes, regressions, signs and error changes. For curriculum decisions do not infer a single cause from mixed evidence.",
+    "prefixes": "At the listed relative horizons retain each arm and each intervention-minus-original instantaneous body and world longitudinal velocity, and forward displacement from the branch state; for stand also report the original-minus-intervention clamped rollback reduction. Compare with matched physical and closed curves. These time points describe growth and sign changes rather than adding new acceptance gates.",
+    "course_decision": "Use the stationary task attribution to decide whether a standing-sample reweighting experiment is warranted. Feedback priority calls for investigation of closed-loop state/action feedback first. Persistent dynamics under-response makes matched sampling or representation tests appropriate; neither is identified as a cause by this test. Mixed evidence requires localization before changing the course."
+  },
+  "budget": {"new_physics_steps": 0, "model_updates": 0, "policy_updates": 0, "policy_calls": 0, "new_model_rollouts": 36, "max_model_calls": 3060, "closed_rollouts_reused": 36, "physical_rollouts_reused": 12},
+  "resources": {"cpu_environments": 1, "threads": 1, "nice": 10, "memory_high_gib": 2, "memory_max_gib": 3, "swap_bytes": 0, "minimum_effective_gib_at_launch": 4, "minimum_effective_gib_running": 2, "concurrent_heavy_jobs": 1, "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"},
+  "preservation": "Use fresh exclusive stage paths, separate preparation, prediction and scoring, retain failures and partials, never resume or replace a scientific attempt. A predicted fall, invalid quaternion, nonfinite state or model error retains the actual prefix and fails its pair. A resource abort cannot authorize another attempt."
+}
