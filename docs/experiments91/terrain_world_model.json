@@ -1,0 +1,53 @@
+{
+  "protocol": "d1-terrain-world-model-transfer91-v1",
+  "registration_base_d1": "023c954db878ef55db2c4386f9b43a248053c22c",
+  "registration_wheel": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "question": "Can an autoregressive action-conditioned dynamics model predict the sign and magnitude of two archived D1 uphill wheel interventions, under feedback from the actual parent policy?",
+  "design": "Retrospective transfer test. Physical effects from 88 and 90 were already published when the margins were set. Use an effect of zero as the comparator. Each pair changes only the registered wheel command intervention. The two model families differ in inputs, data and fitting design; the comparison cannot isolate any one of these changes.",
+  "parents_sha256": {
+    "docs/experiments87/full_body_perception.json": "b6ea1719001c9c710f7d6cfba3daf721abda8145455e4098cdac983044ba5b78",
+    "docs/experiments88/uphill_wheel_probe.json": "4576909ad2f205f33e4426329979913e77788d2203cda31c534f19239ab5d990",
+    "docs/experiments89/uphill_curriculum.json": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "docs/experiments90/stand_wbc.json": "b6e4f94c46fc7fde0a1a3f6892c09162c498ff4988260a43a0b0aefcef71a8bd"
+  },
+  "truth_sha256": {
+    "reports/uphill_diagnosis88.json": "908ad31bae9e1cd7bbabb77993e3906e9af8312dff52ac846c0f6e60c37fc80e",
+    "reports/stand_wbc90.json": "f7086930344e087d4a962350e6874010fd920c0c96abbc481eb00d08653bb5d3"
+  },
+  "old_models": {
+    "seeds": [64001, 64002, 64003],
+    "sha256": ["2bf421e7a0d386e8b40de20613fff18154711fab3ee0f99ee6e7f444b8651719", "1d05ee44067d4b033f3604a54975f4727d7ce2d9ec4109c84ae463a9e9a3804f", "80afdbc19b856e8805eb0d4ef1b0156c3ee2076f5c3f601a2d3ee49aee872a16"],
+    "source": "Complete 75 control checkpoints after 1000 optimizer steps each; no refit."
+  },
+  "fit": {
+    "training_source": "Only the three complete 89 mixed PPO collection files. Keep all 42 ended episodes, including falls. Discard the three incomplete trailing episodes. Fit post-state plus the next applied FIFO action to the next post-state. Exclude every evaluation trace and every original-arm copy from estimation, normalization and window sampling.",
+    "trace_sha256": ["4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e", "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5", "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22"],
+    "usable_transitions": 11766, "ended_episodes": 42,
+    "seeds": [91011, 91023, 91037], "window_rng": 91000,
+    "updates_per_seed": 300, "horizon": 8, "batch": 64, "adam_lr": 0.0003, "grad_clip": 1.0,
+    "architecture": "Action-conditioned residual dynamics with a fixed ridge model (lambda=0.001) and a 64x64 tanh MLP; state has 45 components and the applied action has 16. Predict 20 ms per step. Six geometry inputs give ground height relative to the predicted base and local slope at offsets +0.25, 0 and -0.25 m on the fixed course. The policy only has its existing observation interface.",
+    "objective": "Use the seven equal-weight scaled state groups of tools52/dynamics52.group_loss, averaged over the eight free-running predictions. Only the first state is observed. Within a window use recorded applied actions and fixed terrain; never reset later states. Use the training-input mean and population standard deviation with floor 0.001. Fit a ridge step to the scaled state increment with an unpenalized intercept; add a zero-output-initialized residual MLP trained by Adam. Normalize the predicted quaternion at each step.",
+    "selection": "Use the final checkpoint of every seed. Common sampling sequence. No test-directed model, hyperparameter, epoch or seed selection."
+  },
+  "tasks": {
+    "move": {
+      "reset_seeds": [88101, 88102, 88103], "intervention": "wheel_plus",
+      "parent": "88 frozen original C++34 deployed PPO25, zero yaw command",
+      "boundary": "Initialize at the observed state after 180 intervals (3.60 s), including the pending one-tick action and proprioceptive history. Add 0.50 rad/s to all four issued wheel targets from decision 180 in the intervention arm.",
+      "horizon": 120, "score_endpoints": [201, 300], "quantity": "mean body-frame longitudinal velocity", "units": "m/s",
+      "effect": "intervention minus original", "effect_tolerance": 0.010, "per_arm_tolerance": 0.040
+    },
+    "stand": {
+      "reset_seeds": [90101, 90102, 90103], "parent_seeds": [87011, 87023, 87037], "intervention": "common",
+      "parent": "90 matching frozen 87 sensed PPO including its range branch",
+      "boundary": "Initialize at the pre-decision slope reset with initial history, empty sensor packet and one-tick FIFO. During zero command apply exactly the 90 feasible common reverse-target correction.",
+      "horizon": 50, "quantity": "max(0, initial world x minus world x at 1 s)", "units": "m",
+      "effect": "original minus intervention", "effect_tolerance": 0.003, "per_arm_tolerance": 0.030
+    }
+  },
+  "rollout": "Start each arm from the same causal boundary. Call the real parent policy on the predicted state-derived feedback, preserve sensor clock, delays and 1-tick action FIFO. Query static course geometry at predicted poses for sensing. No post-boundary physical states, contact labels, real future actions, teacher forcing or MuJoCo integration. Record predicted falls, incomplete arms, nonfinite output and errors; an incomplete arm fails its pair.",
+  "gate": "For each pair both horizons must finish, the predicted signed benefit must be positive, the error in the effect must be <= the task tolerance and strictly less than the zero-effect comparator error. Both absolute arm errors must be <= the task per-arm tolerance. Evaluate full precision. A model passes with all six pairs. A family qualifies with all three models. The 6 physical pairs are shared by the models. New training or policy-gradient equivalence is outside this test.",
+  "budget": {"max_model_updates": 900, "max_imagined_steps_per_model": 1020, "max_imagined_steps_total": 6120, "physical_steps": 0, "policy_updates": 0},
+  "resources": {"single_cpu": true, "threads": 1, "nice": 10, "memory_high_gib": 2, "memory_max_gib": 3, "swap_max_bytes": 0, "minimum_effective_gib_at_start": 4, "minimum_effective_gib_during_run": 2, "parallel_heavy_jobs": 1},
+  "integrity": "Write separate immutable prediction receipts for both model families before reading physical outcomes in the scorer. Preserve every attempt and partial. Never resume, overwrite or replace a scientific attempt."
+}
