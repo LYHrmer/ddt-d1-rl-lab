@@ -1,0 +1,2559 @@
+{
+  "protocol_sha256": "aedb3c121d026f18b7d8197f2bfda91f001197a875704717f7e4192f6d0aa929",
+  "registration_commit": "7fb8ac4",
+  "design": "retrospective",
+  "resources": {
+    "prepare": {
+      "elapsed_s": 12.112224804935977,
+      "cpu_affinity": [
+        0
+      ],
+      "minimum_effective_bytes": 6800658432,
+      "peak_group_bytes": 382615552,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "guard_sha256": "5f33a79b40f7ba74cb00ffef55ded8a384af76018f136f9f40f90f2799ca4890",
+      "samples": 20,
+      "admitted_effective_bytes": 7187890176,
+      "minimum_running_effective_bytes": 6800658432
+    },
+    "archived": {
+      "elapsed_s": 22.989332461031154,
+      "cpu_affinity": [
+        0
+      ],
+      "minimum_effective_bytes": 6508568576,
+      "peak_group_bytes": 980422656,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "guard_sha256": "d97da7afee9c185e230a342a8ceb5807416335dae2a8a71e7483cfcd850ee435",
+      "samples": 63,
+      "admitted_effective_bytes": 7291301888,
+      "minimum_running_effective_bytes": 6508568576
+    },
+    "fit": {
+      "elapsed_s": 17.163379314006306,
+      "cpu_affinity": [
+        0
+      ],
+      "minimum_effective_bytes": 7239942144,
+      "peak_group_bytes": 423960576,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "guard_sha256": "132e04568a9fba79b32260285d355304bce53683884d122717ece5c1bb5fc0ec",
+      "samples": 40,
+      "admitted_effective_bytes": 7439482880,
+      "minimum_running_effective_bytes": 7239942144
+    },
+    "candidate": {
+      "elapsed_s": 23.499052898958325,
+      "cpu_affinity": [
+        0
+      ],
+      "minimum_effective_bytes": 6465667072,
+      "peak_group_bytes": 969912320,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "guard_sha256": "43f04c58d5514e748e0af802b62e1e42d72fc19e5bc5c608143aa4f2c54419d8",
+      "samples": 65,
+      "admitted_effective_bytes": 7934636032,
+      "minimum_running_effective_bytes": 6465667072
+    }
+  },
+  "starts": [
+    {
+      "case": "move_88101",
+      "source_trace_sha256": "f8e39ee47c9cb4ce8c8ac8a6b1c8e43c421d1f95c7315d0062255454248feb67",
+      "parent_policy_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+      "start_sha256": "bc7e447c33ba339c9c4a2dffb30a7e213b6c7754d2dfe0dcf205904d1ea14b9d",
+      "final_prefix_action_max_abs_error": 3.5762786865234375e-07
+    },
+    {
+      "case": "move_88102",
+      "source_trace_sha256": "b457f360026a7933e7601f3354433b51c322f18f1db51e14bc812da1c8ee3f00",
+      "parent_policy_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+      "start_sha256": "aec1e20bb3f86beaaf18110336bd01fd4be4ead1946446ba981ae368114e7ba5",
+      "final_prefix_action_max_abs_error": 4.76837158203125e-07
+    },
+    {
+      "case": "move_88103",
+      "source_trace_sha256": "2478a066c4414de0202c32cc630f33df08425184d88a34e1f2046bf168911f1f",
+      "parent_policy_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+      "start_sha256": "ce101714e8abe1cf904de4857d28585cbeeb2dd652d9a41e0555f9a496ebcd40",
+      "final_prefix_action_max_abs_error": 2.086162567138672e-07
+    },
+    {
+      "case": "stand_90101",
+      "source_trace_sha256": "021552eab130ef11919647d8435c014ff780d8a9b05d3dd185531b7860c2c147",
+      "parent_policy_sha256": "8b30b01e3f254b7b67a1404347914aaaf4552f180fa087392befd3303e17e4fe",
+      "start_sha256": "caf0c29ae47799ddd74d168b6d8dfe95e3e3b732f49890c9c17064ec434093ad",
+      "initial_state_sha256": "f10724e8f57cdd3098f21d6b2024684ec6c79fe1f0fc6d5d8bf402207b24e207",
+      "reset_observation_exact": true
+    },
+    {
+      "case": "stand_90102",
+      "source_trace_sha256": "f56db6e98a72d8a78476770ba7a2d9d27392fe2fb491742ab0d70590453b872c",
+      "parent_policy_sha256": "efbc46ac5b1a737db1cabfcbb79631413581a32d188f2796caaffdb07fc4ca08",
+      "start_sha256": "6dc27482c680cc45133954c7263c97b466ed42d70ef16628111ffda0d661e29f",
+      "initial_state_sha256": "e578224e18e8fe24f8c2feb112c6017132e8894461daef1d56515d7aababb5bb",
+      "reset_observation_exact": true
+    },
+    {
+      "case": "stand_90103",
+      "source_trace_sha256": "65483acc7234529f669fb6565ad740d83dfc65a5a1eed0c3d9f13dfeae170c8e",
+      "parent_policy_sha256": "3184d51028557fa363b198f1dd0fbf9c1a7e9706f4500fcacaebc22f5f1c1e12",
+      "start_sha256": "70204eefbdf3fe98f31ec49618161ce2839ce5648d016380905813ea4bd1ffbb",
+      "initial_state_sha256": "e81fe4fa56ce85a3704d5a38c2c19af40a5461f991d2cd422780c25113466b60",
+      "reset_observation_exact": true
+    }
+  ],
+  "dataset": {
+    "stage_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "sources": [
+      {
+        "training_seed": 89011,
+        "parent_seed": 87011,
+        "model": "mixed_89011",
+        "path": "evidence/uphill89/training_01/mixed_89011/train_trace.npz",
+        "trace_sha256": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+        "report_sha256": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+        "completed_episodes": 14,
+        "discarded_unfinished_rows": 79
+      },
+      {
+        "training_seed": 89023,
+        "parent_seed": 87023,
+        "model": "mixed_89023",
+        "path": "evidence/uphill89/training_01/mixed_89023/train_trace.npz",
+        "trace_sha256": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+        "report_sha256": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121",
+        "completed_episodes": 14,
+        "discarded_unfinished_rows": 298
+      },
+      {
+        "training_seed": 89037,
+        "parent_seed": 87037,
+        "model": "mixed_89037",
+        "path": "evidence/uphill89/training_01/mixed_89037/train_trace.npz",
+        "trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22",
+        "report_sha256": "c3a18de375cbda776d2597c12a7bb48c179dc0277a153b2fc4b6f804d6176bbb",
+        "completed_episodes": 14,
+        "discarded_unfinished_rows": 103
+      }
+    ],
+    "episodes": [
+      {
+        "training_seed": 89011,
+        "id": 0,
+        "start_row": 0,
+        "end_row_exclusive": 300,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 1,
+        "start_row": 300,
+        "end_row_exclusive": 600,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 2,
+        "start_row": 600,
+        "end_row_exclusive": 900,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 3,
+        "start_row": 900,
+        "end_row_exclusive": 1200,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 4,
+        "start_row": 1200,
+        "end_row_exclusive": 1500,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 5,
+        "start_row": 1500,
+        "end_row_exclusive": 1800,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 6,
+        "start_row": 1800,
+        "end_row_exclusive": 2100,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 7,
+        "start_row": 2100,
+        "end_row_exclusive": 2400,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 8,
+        "start_row": 2400,
+        "end_row_exclusive": 2700,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 9,
+        "start_row": 2700,
+        "end_row_exclusive": 2817,
+        "terrain": 1,
+        "terminated": true,
+        "truncated": false,
+        "transitions": 116
+      },
+      {
+        "training_seed": 89011,
+        "id": 10,
+        "start_row": 2817,
+        "end_row_exclusive": 3117,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 11,
+        "start_row": 3117,
+        "end_row_exclusive": 3417,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 12,
+        "start_row": 3417,
+        "end_row_exclusive": 3717,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89011,
+        "id": 13,
+        "start_row": 3717,
+        "end_row_exclusive": 4017,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 14,
+        "start_row": 0,
+        "end_row_exclusive": 300,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 15,
+        "start_row": 300,
+        "end_row_exclusive": 600,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 16,
+        "start_row": 600,
+        "end_row_exclusive": 900,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 17,
+        "start_row": 900,
+        "end_row_exclusive": 992,
+        "terrain": 1,
+        "terminated": true,
+        "truncated": false,
+        "transitions": 91
+      },
+      {
+        "training_seed": 89023,
+        "id": 18,
+        "start_row": 992,
+        "end_row_exclusive": 1292,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 19,
+        "start_row": 1292,
+        "end_row_exclusive": 1592,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 20,
+        "start_row": 1592,
+        "end_row_exclusive": 1892,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 21,
+        "start_row": 1892,
+        "end_row_exclusive": 2192,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 22,
+        "start_row": 2192,
+        "end_row_exclusive": 2492,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 23,
+        "start_row": 2492,
+        "end_row_exclusive": 2598,
+        "terrain": 1,
+        "terminated": true,
+        "truncated": false,
+        "transitions": 105
+      },
+      {
+        "training_seed": 89023,
+        "id": 24,
+        "start_row": 2598,
+        "end_row_exclusive": 2898,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 25,
+        "start_row": 2898,
+        "end_row_exclusive": 3198,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 26,
+        "start_row": 3198,
+        "end_row_exclusive": 3498,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89023,
+        "id": 27,
+        "start_row": 3498,
+        "end_row_exclusive": 3798,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 28,
+        "start_row": 0,
+        "end_row_exclusive": 300,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 29,
+        "start_row": 300,
+        "end_row_exclusive": 600,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 30,
+        "start_row": 600,
+        "end_row_exclusive": 900,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 31,
+        "start_row": 900,
+        "end_row_exclusive": 1200,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 32,
+        "start_row": 1200,
+        "end_row_exclusive": 1500,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 33,
+        "start_row": 1500,
+        "end_row_exclusive": 1800,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 34,
+        "start_row": 1800,
+        "end_row_exclusive": 2100,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 35,
+        "start_row": 2100,
+        "end_row_exclusive": 2400,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 36,
+        "start_row": 2400,
+        "end_row_exclusive": 2700,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 37,
+        "start_row": 2700,
+        "end_row_exclusive": 3000,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 38,
+        "start_row": 3000,
+        "end_row_exclusive": 3093,
+        "terrain": 1,
+        "terminated": true,
+        "truncated": false,
+        "transitions": 92
+      },
+      {
+        "training_seed": 89037,
+        "id": 39,
+        "start_row": 3093,
+        "end_row_exclusive": 3393,
+        "terrain": 2,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 40,
+        "start_row": 3393,
+        "end_row_exclusive": 3693,
+        "terrain": 0,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      },
+      {
+        "training_seed": 89037,
+        "id": 41,
+        "start_row": 3693,
+        "end_row_exclusive": 3993,
+        "terrain": 1,
+        "terminated": false,
+        "truncated": true,
+        "transitions": 299
+      }
+    ],
+    "transitions": 11766,
+    "completed_episodes": 42,
+    "terminated_episodes": 4,
+    "truncated_episodes": 38
+  },
+  "families": {
+    "archived": {
+      "models": [
+        {
+          "seed": 64001,
+          "source": {
+            "seed": 64001,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 64001,
+              "weights_sha256": "2bf421e7a0d386e8b40de20613fff18154711fab3ee0f99ee6e7f444b8651719",
+              "weights_file": "evidence/world_vz75/execution_01/control_seed64001/final_state_dict.pt",
+              "model_sha256": "edd04cfef54bfcbdfbb8b30b32d4bb8b2430d22b8694fe5936cc83b01a9c7419",
+              "source_report_sha256": "26768d7378479f8038b89f793efab3cadcd801b2b9867c7e5daf49d15b9e3f79",
+              "updates": 1000
+            },
+            "predictions_sha256": "c27e8071df4bb7e82ea6d2c2a1b4d6440d6e5e0c2ca0da18b32462475c0dd051"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.21845590791009603,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "419eb798572ce62ea85e4268aa689b07200f40c9b2df486cc254ac406d0ba708",
+                  "error": null
+                },
+                {
+                  "score": 0.27017105250777496,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "51a4df4da12c9e473e4a20cea705cce3c50612689697222971f6c9fbd0133b72",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.21845590791009603,
+                0.27017105250777496
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.051715144597678925,
+              "effect_abs_error": 0.019080717146065074,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.11883048838491578,
+                0.13791120553098085
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.23544637369101762,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "6f81544362586f4892b0d91d55d7456393acaff808deaa515c0060b18c3c6fb1",
+                  "error": null
+                },
+                {
+                  "score": 0.28484222535404036,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "c801d81a4271a7c5682e7edb1bdc2dc5499e9d2927e395097d656b09b6a40972",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.23544637369101762,
+                0.28484222535404036
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.04939585166302274,
+              "effect_abs_error": 0.01652165806922465,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.13486500650251912,
+                0.15138666457174377
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.2417075355535774,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "f773aa061b01dd18d2410cec3e3e94a80c3960dced14d6028d85525e4ce57488",
+                  "error": null
+                },
+                {
+                  "score": 0.2897467019264426,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "9e29e15962c063e673b3df6ed68d93a5f1c556dd02726d11d270666ed285868b",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.2417075355535774,
+                0.2897467019264426
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.04803916637286518,
+              "effect_abs_error": 0.016261960611507906,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.1403775530550037,
+                0.1566395136665116
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.03519937992095956,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b5e97a5f7a3c21654918b726a3875799c639a144ef517d4ecbe43a128adc9d4c",
+                  "error": null
+                },
+                {
+                  "score": 0.030680632591247647,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "1e3d072e27ace4c669860e929bfb154eef51d13d51d7cbc8ed0fd4fc346d0e93",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.03519937992095956,
+                0.030680632591247647
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": 0.004518747329711914,
+              "effect_abs_error": 0.0023615538610889386,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.13705933748624644,
+                0.1346977836251575
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.025481915473938077,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "831eea1a199d23b9ef30bc7b901a74ca0de778bc62c03b95c9ae4563331ba21c",
+                  "error": null
+                },
+                {
+                  "score": 0.020358777046203702,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "af676075ee2510e7d72d92521ee9dc11a878a3c3b1810b455357c4dd9782014c",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.025481915473938077,
+                0.020358777046203702
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.005123138427734375,
+              "effect_abs_error": 0.0021841772601639553,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.15421483401836233,
+                0.15203065675819838
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.022415614128112882,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "d7d0033caafa4cb847b9fcaba39795dafcc780df099a090fcfb68703890afc29",
+                  "error": null
+                },
+                {
+                  "score": 0.01744077205657968,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "6d252b842f08a4bc718f7d5f1953cddccffcfaf593c53fa4546f663fa1424275",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.022415614128112882,
+                0.01744077205657968
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.004974842071533203,
+              "effect_abs_error": 0.003280628906861649,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.14907469914467497,
+                0.14579407023781332
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 0,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        },
+        {
+          "seed": 64002,
+          "source": {
+            "seed": 64002,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 64002,
+              "weights_sha256": "1d05ee44067d4b033f3604a54975f4727d7ce2d9ec4109c84ae463a9e9a3804f",
+              "weights_file": "evidence/world_vz75/execution_01/control_seed64002/final_state_dict.pt",
+              "model_sha256": "e41d508a1fd995e90e56cf1b276c0ea5fabf346916feabd7cf80ac7034a2c794",
+              "source_report_sha256": "26768d7378479f8038b89f793efab3cadcd801b2b9867c7e5daf49d15b9e3f79",
+              "updates": 1000
+            },
+            "predictions_sha256": "78823dce0049f94363b01c339cdcb0df35e4a51b59f2e682fd368997eb4e0e61"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.23893351133986734,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b6130a27dcac87b5024cf150517565485d40e7f95ab84046ce147b55f2842db3",
+                  "error": null
+                },
+                {
+                  "score": 0.30551145421004017,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "4c4b6d7ca55f08ff18cb75d451c378a2c3cc3eb9f3cc430c301f3a4cf25c36de",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.23893351133986734,
+                0.30551145421004017
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.06657794287017282,
+              "effect_abs_error": 0.03394351541855897,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.1393080918146871,
+                0.17325160723324606
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": false,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.25043669330505103,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "dff039e376ec26aedbaeb4c0354260cd9192b9029474c1ef5868386f5cdafecd",
+                  "error": null
+                },
+                {
+                  "score": 0.31475147340488707,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "a6df1a5b86d239efe414778941c7adace0944373a4de588aca7c7c078c168add",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.25043669330505103,
+                0.31475147340488707
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.06431478009983604,
+              "effect_abs_error": 0.031440586506037954,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.14985532611655253,
+                0.18129591262259048
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.24397716149501644,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "3e8cbaf08a4317007db9e6b1384c9b661fa42812298cb1e7312f88f81d923cad",
+                  "error": null
+                },
+                {
+                  "score": 0.3088966279154969,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "2dd2ab2f0f5fb87cde3323fc5faa451f4297d0990783a6adf35376c166bf3464",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.24397716149501644,
+                0.3088966279154969
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.06491946642048044,
+              "effect_abs_error": 0.033142260659123166,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.14264717899644275,
+                0.1757894396555659
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": false,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.023508882522583097,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "73b2f5cd327ebe596827b43ca1278a77289203d2ee4382447fa99ec1b900c029",
+                  "error": null
+                },
+                {
+                  "score": 0.019348716735839933,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "4e76e3b7a7ca63ca52ef1891f9d5e206a00cbf0dfaa56a16f6ed2c42a50f6f85",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.023508882522583097,
+                0.019348716735839933
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": 0.004160165786743164,
+              "effect_abs_error": 0.0027201354040576886,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.1487498348846229,
+                0.1460296994805652
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.010853266716003507,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "91c608b7de087eba168835597e70a42c25f526ff16c2718488a2df24281752b8",
+                  "error": null
+                },
+                {
+                  "score": 0.006414151191711515,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "25d2a73689d176b2c1ae2451087c5bc749a50ede824482ec0da32daabd39271c",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.010853266716003507,
+                0.006414151191711515
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.004439115524291992,
+              "effect_abs_error": 0.002868200163606338,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.1688434827762969,
+                0.16597528261269057
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.0047951698303223544,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "190768c753bf929cd565bf2767a1073751d2ca9ef5a4ce428115107b7619ee4e",
+                  "error": null
+                },
+                {
+                  "score": 0.0010589122772217685,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "c6c8404a2945e142a1c5e9a2dcf5fc3ffa16d8973a3a6bbd748433157cd64aed",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.0047951698303223544,
+                0.0010589122772217685
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.003736257553100586,
+              "effect_abs_error": 0.004519213425294266,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.1666951434424655,
+                0.16217593001717123
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 0,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        },
+        {
+          "seed": 64003,
+          "source": {
+            "seed": 64003,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 64003,
+              "weights_sha256": "80afdbc19b856e8805eb0d4ef1b0156c3ee2076f5c3f601a2d3ee49aee872a16",
+              "weights_file": "evidence/world_vz75/execution_01/control_seed64003/final_state_dict.pt",
+              "model_sha256": "508badf3dbddc9e6ed1eca27ef27148007f4b759c3907d1cebe46114fdc61c58",
+              "source_report_sha256": "26768d7378479f8038b89f793efab3cadcd801b2b9867c7e5daf49d15b9e3f79",
+              "updates": 1000
+            },
+            "predictions_sha256": "566ea13d02663768f8861480a3b12cc1dfde669b2657c53f234099df5afe7f04"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.21839688135933585,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "aff6dc97e607948197dcb091c083c98c48cb280918ea49c9a0e8a9bb62318248",
+                  "error": null
+                },
+                {
+                  "score": 0.2575460650709016,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "290c4f508616c4f58e4c9770bd828411b9e3e0138ae2607eb65e4321c0d8ffa5",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.21839688135933585,
+                0.2575460650709016
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.039149183711565755,
+              "effect_abs_error": 0.006514756259951904,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.1187714618341556,
+                0.1252862180941075
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.2267935427500451,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "05a1b663b6fdc602c5aba1f2603794e7d789ba590870d8324a0cc8461a0d300b",
+                  "error": null
+                },
+                {
+                  "score": 0.26552305040245006,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "ede9b1132cab553117287ea959df459e4a43a82f956b8b8fbb8b59dd956cb915",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.2267935427500451,
+                0.26552305040245006
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.03872950765240496,
+              "effect_abs_error": 0.00585531405860687,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.1262121755615466,
+                0.13206748962015347
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.222739535256955,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "f254ea795b515add72d1fc565b4d3426bac288912c03f9919808eea8d9c9a01a",
+                  "error": null
+                },
+                {
+                  "score": 0.2618617676775885,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "e27635976055454994f4a51e60a6cfe4e67c5dc85855a4395874052b8feb72c8",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.222739535256955,
+                0.2618617676775885
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.03912223242063351,
+              "effect_abs_error": 0.007345026659276235,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.12140955275838129,
+                0.12875457941765753
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.03764472007751474,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "842cd63b77a393fc6fac9c5fb2747568495eea2ed4d907b7147e8ad6073e6a51",
+                  "error": null
+                },
+                {
+                  "score": 0.03349027633667001,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "8935155b75dada982fda6a09094b4bf8e27a11b5e76c94fa4ed1ba8036d2803d",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.03764472007751474,
+                0.03349027633667001
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": 0.0041544437408447266,
+              "effect_abs_error": 0.002725857449956126,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.13461399732969126,
+                0.13188813987973513
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.022653913497924894,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "328952ab9bf142247a4113885f0bb6b8fb42820ec77b6d69a02c9565ad6d18ff",
+                  "error": null
+                },
+                {
+                  "score": 0.018227314949035733,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "3a1be40b43f2b1d3ceb52e6f2076efc93a26baa6d8e3b6901c5e5e0d9c4a6f32",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.022653913497924894,
+                0.018227314949035733
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.00442659854888916,
+              "effect_abs_error": 0.00288071713900917,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.15704283599437552,
+                0.15416211885536635
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.0217928647994996,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "916e6a692a67e4b98ccaf228f3641cb5fae10013e519460668c30478779cd1cd",
+                  "error": null
+                },
+                {
+                  "score": 0.01763043403625497,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "31560efa1e542dae752cba56840d1c3a5cbeaef3b524e416c1597aa62f5a197e",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.0217928647994996,
+                0.01763043403625497
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.004162430763244629,
+              "effect_abs_error": 0.004093040215150223,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.14969744847328825,
+                0.14560440825813803
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 0,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        }
+      ],
+      "models_passed": 0,
+      "passed": false
+    },
+    "candidate": {
+      "models": [
+        {
+          "seed": 91011,
+          "source": {
+            "seed": 91011,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 91011,
+              "updates": 300,
+              "updates_attempted": 300,
+              "horizon": 8,
+              "batch_size": 64,
+              "batch_seed": 91000,
+              "ridge_lambda": 0.001,
+              "learning_rate": 0.0003,
+              "clip_norm": 1.0,
+              "training_sha256": "21af65ae9a4860974a4a132d77a215fb64e9568acb4181dd22f8e3973d1aae80",
+              "training_windows": 11472,
+              "training_transitions": 11766,
+              "weights_file": "final_state_dict.pt",
+              "weights_sha256": "abcc8298f34ccf9d63d49b5e878f2d255876a3cd81285d3596f86bf9fc64a178",
+              "model_sha256": "06353352985b7e36bc0792c3cc74805f8fd3b45ce1b95bfa0f23d5a362ba872b"
+            },
+            "predictions_sha256": "4b59c30a4c534e68270a2a4b796291730fe20f66ec31504228265250c04f6f55"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.08963446478854753,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "7ebf0a47d12a662afbb9491d2aeacbfd2dfe9b486140247299447b7b5c209724",
+                  "error": null
+                },
+                {
+                  "score": 0.11087111826694876,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "f2742d7dadedaea886b3c394279e5bc8f4189fea21f60bfe2fc83373ae5d7ecf",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.08963446478854753,
+                0.11087111826694876
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.02123665347840123,
+              "effect_abs_error": 0.011397773973212622,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.009990954736632723,
+                0.021388728709845345
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.09294478804545271,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "d240d84e43bc14756c3ac693edb1a7d6e513535eae6c692690784ef9530f6004",
+                  "error": null
+                },
+                {
+                  "score": 0.11389133457551397,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "c17b8372cb7bfb55dd64ad04ac836adbd5e1c31dd0291e826dd289e9348b9258",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.09294478804545271,
+                0.11389133457551397
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.020946546530061255,
+              "effect_abs_error": 0.011927647063736835,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.007636579143045788,
+                0.019564226206782623
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.08816894530577433,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "ea3d275d23b1c7b3c1ce5b0fe1d1f77078622f4b309b778db87739b02b199dcc",
+                  "error": null
+                },
+                {
+                  "score": 0.10936034765219453,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "77c28acf4a07cf4f4f379c6809bce8daaf44939634ef07bdccd52f36249edb3c",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.08816894530577433,
+                0.10936034765219453
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.021191402346420196,
+              "effect_abs_error": 0.010585803414937076,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.013161037192799374,
+                0.02374684060773645
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.20536181926727304,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "ea56a547bec66509c914632e53b006af8948cc47837bdea31cf914e9a662cc7a",
+                  "error": null
+                },
+                {
+                  "score": 0.20221481323242196,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "8a7eaf01b0e1fe42c9323384223037d46ce9cd2181c4f61660204b89ef126f18",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.20536181926727304,
+                0.20221481323242196
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": 0.0031470060348510742,
+              "effect_abs_error": 0.0037332951559497785,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.03310310186006704,
+                0.03683639701601682
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.1836600661277772,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "7131a5aa9578106119fcbb7bb64f92568794eaed1c625037ee4de7afebd7c9b3",
+                  "error": null
+                },
+                {
+                  "score": 0.1799056291580201,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "cee410946f678150418c1568b91583d0a43a3e284418f5f3fc2fad155362cc49",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.1836600661277772,
+                0.1799056291580201
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.00375443696975708,
+              "effect_abs_error": 0.0035528787181412502,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.003963316635476777,
+                0.007516195353618027
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.1769759416580201,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "1161ef0b8c3c7e7e2c0e943ee206feb3c4bb502bfb2aba71c80a6b3dd32cd81b",
+                  "error": null
+                },
+                {
+                  "score": 0.17255613803863534,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "02f09d6a18eeb9be0274a599e56c999780bc670efbbda77719a32a3189a953e8",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.1769759416580201,
+                0.17255613803863534
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.004419803619384766,
+              "effect_abs_error": 0.0038356673590100865,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.005485628385232255,
+                0.009321295744242342
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 0,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        },
+        {
+          "seed": 91023,
+          "source": {
+            "seed": 91023,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 91023,
+              "updates": 300,
+              "updates_attempted": 300,
+              "horizon": 8,
+              "batch_size": 64,
+              "batch_seed": 91000,
+              "ridge_lambda": 0.001,
+              "learning_rate": 0.0003,
+              "clip_norm": 1.0,
+              "training_sha256": "21af65ae9a4860974a4a132d77a215fb64e9568acb4181dd22f8e3973d1aae80",
+              "training_windows": 11472,
+              "training_transitions": 11766,
+              "weights_file": "final_state_dict.pt",
+              "weights_sha256": "068891156ccd8394cd4cf1e34ae9639d57634c3a1f890282ed51400aac56d773",
+              "model_sha256": "3a64be63d165e6a8dfece962713b5f99bab7aecf6bdfc05d7d61a8abdb3c7b12"
+            },
+            "predictions_sha256": "4a2136dba868727c935453ec645ce2a423d78969fe8ead963ec62e7327ad0c06"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.0922010823753241,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "9043fac08f5f01ab0e4d3d6e3a2697e145aea900446770f97c12c22fc0298337",
+                  "error": null
+                },
+                {
+                  "score": 0.11762879302933048,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "7af3fe945410e0ae01d6c436bd5194dcf474b579f44e85f780db0226275eceb5",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.0922010823753241,
+                0.11762879302933048
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.025427710654006383,
+              "effect_abs_error": 0.007206716797607468,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.007424337149856158,
+                0.014631053947463626
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": true
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.09397154552373016,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "f48948f5afb9685d3d2f1fd9e16ebe17b528a9367afc855b0442968174008fdd",
+                  "error": null
+                },
+                {
+                  "score": 0.11830370228823943,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "7a75fa05f2fccedc1cd8622c547c3515420a2daf59e971154dc7bbf8f7fafff8",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.09397154552373016,
+                0.11830370228823943
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.02433215676450927,
+              "effect_abs_error": 0.008542036829288821,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.006609821664768339,
+                0.01515185849405716
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": true
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.09062639894592961,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "497b6de6c291309d0265bfd86119cc15214ae259eeaa4ecff98d7b5a402c2e62",
+                  "error": null
+                },
+                {
+                  "score": 0.11517434567328638,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "c0a9b001918e66999322f6adc4e33144c8d1a2fb0d0c5c2cf62b9524ac93aff1",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.09062639894592961,
+                0.11517434567328638
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.024547946727356773,
+              "effect_abs_error": 0.007229259034000499,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.0107035835526441,
+                0.0179328425866446
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": true
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.19490686655044565,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b0279e8dd950ecb7e41c775863661222ce26d05b9f3dc3b7f298ac5a9ef44423",
+                  "error": null
+                },
+                {
+                  "score": 0.19560722112655649,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b95dfe55fd60e1cd8991d962b65b2c8c79c7a369e6010dbac71abed12898e8a2",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.19490686655044565,
+                0.19560722112655649
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": -0.0007003545761108398,
+              "effect_abs_error": 0.0075806557669116925,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.02264814914323965,
+                0.03022880491015134
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": false,
+                "effect_tolerance": false,
+                "beats_zero_effect": false,
+                "both_absolute_arms": false
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.17536828517913827,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "3c93762f5c5d5a5750dadb34732b081144c0a454dfb1a7fa3190ed13c945a62d",
+                  "error": null
+                },
+                {
+                  "score": 0.17512861490249643,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "bfb92507a3a10d97f6f56c8267ad3cc545447b2d915d640a8cb6bd8b7f4139be",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.17536828517913827,
+                0.17512861490249643
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.0002396702766418457,
+              "effect_abs_error": 0.007067645411256485,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.004328464313162139,
+                0.0027391810980943454
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.16775641441345224,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "ff40299955d793093ade3ad4c0925b92ae253f637519fb5852e1a95f24c6cf2b",
+                  "error": null
+                },
+                {
+                  "score": 0.16716024875640878,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "6aaafc794b2f8385e99bd863021de7c0932a0e37a250a4364c3d485d071918e3",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.16775641441345224,
+                0.16716024875640878
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.000596165657043457,
+              "effect_abs_error": 0.007659305321351395,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.003733898859335616,
+                0.003925406462015779
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 3,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        },
+        {
+          "seed": 91037,
+          "source": {
+            "seed": 91037,
+            "model": {
+              "status": "COMPLETE",
+              "seed": 91037,
+              "updates": 300,
+              "updates_attempted": 300,
+              "horizon": 8,
+              "batch_size": 64,
+              "batch_seed": 91000,
+              "ridge_lambda": 0.001,
+              "learning_rate": 0.0003,
+              "clip_norm": 1.0,
+              "training_sha256": "21af65ae9a4860974a4a132d77a215fb64e9568acb4181dd22f8e3973d1aae80",
+              "training_windows": 11472,
+              "training_transitions": 11766,
+              "weights_file": "final_state_dict.pt",
+              "weights_sha256": "118d7ca4870b684056579f2a457f7fac93ee74e8aa33907e89460cde91f85015",
+              "model_sha256": "a2bca86100cf9e3fa0bbc28be1d80e51f7fa4e9f49224bc4622a0644599bf16c"
+            },
+            "predictions_sha256": "548ad4b8fcf7cc1110cb928749d683487ef3d7e306e151f0b4924130224d49a6"
+          },
+          "pairs": [
+            {
+              "task": "move",
+              "reset_seed": 88101,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.09082613698337039,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "5d2b503b6b82cee71dd67a362977c06c9a1df2f16b7a589724e7396169c21908",
+                  "error": null
+                },
+                {
+                  "score": 0.11351258211358062,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "7e70e5f127ed9324980532191fa755ace581db50c42038fd8ef5017291595b26",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.09962541952518025,
+                0.1322598469767941
+              ],
+              "prediction": [
+                0.09082613698337039,
+                0.11351258211358062
+              ],
+              "true_effect": 0.03263442745161385,
+              "predicted_effect": 0.02268644513021023,
+              "effect_abs_error": 0.00994798232140362,
+              "zero_effect_abs_error": 0.03263442745161385,
+              "arm_abs_errors": [
+                0.008799282541809866,
+                0.018747264863213486
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": true,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": true
+            },
+            {
+              "task": "move",
+              "reset_seed": 88102,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.09181150916039192,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "085244e0b5634c6862cf6db21707240e5a4ab9c417734251ffb8ab70e1dbca0d",
+                  "error": null
+                },
+                {
+                  "score": 0.11334453530041444,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "bd2f50d248c4849e1d8e2cf86d967c395751c68864c9ddd2734d922189140588",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1005813671884985,
+                0.1334555607822966
+              ],
+              "prediction": [
+                0.09181150916039192,
+                0.11334453530041444
+              ],
+              "true_effect": 0.03287419359379809,
+              "predicted_effect": 0.021533026140022518,
+              "effect_abs_error": 0.011341167453775572,
+              "zero_effect_abs_error": 0.03287419359379809,
+              "arm_abs_errors": [
+                0.008769858028106578,
+                0.02011102548188215
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "move",
+              "reset_seed": 88103,
+              "parent_seed": 25,
+              "arms": [
+                {
+                  "score": 0.08597267866254965,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "5b9fc12474c7bf1f080f86c2f5d91244201b14ef9cc6cd7816a0c2bff5e1a67e",
+                  "error": null
+                },
+                {
+                  "score": 0.10750753976407176,
+                  "status": "COMPLETE",
+                  "accepted_steps": 120,
+                  "attempted_steps": 120,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b243a8c54fdc9f6b86ec8144598966c2dc62655b43e03b5c421c292b8c2dfb50",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.10132998249857371,
+                0.13310718825993098
+              ],
+              "prediction": [
+                0.08597267866254965,
+                0.10750753976407176
+              ],
+              "true_effect": 0.03177720576135727,
+              "predicted_effect": 0.021534861101522113,
+              "effect_abs_error": 0.01024234465983516,
+              "zero_effect_abs_error": 0.03177720576135727,
+              "arm_abs_errors": [
+                0.015357303836024058,
+                0.025599648495859217
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90101,
+              "parent_seed": 87011,
+              "arms": [
+                {
+                  "score": 0.18819341659545907,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "31ec08e78bb4aa9990face459e37b967f4cda692fb9953140fe8f0b4f24b614f",
+                  "error": null
+                },
+                {
+                  "score": 0.18837968111038217,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "31be4e23919fd8b5589356cb0e2a8015daa3cb5e27bdea5a3cf4e466412528ec",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.172258717407206,
+                0.16537841621640514
+              ],
+              "prediction": [
+                0.18819341659545907,
+                0.18837968111038217
+              ],
+              "true_effect": 0.006880301190800853,
+              "predicted_effect": -0.0001862645149230957,
+              "effect_abs_error": 0.007066565705723948,
+              "zero_effect_abs_error": 0.006880301190800853,
+              "arm_abs_errors": [
+                0.015934699188253076,
+                0.023001264893977025
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": false,
+                "effect_tolerance": false,
+                "beats_zero_effect": false,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90102,
+              "parent_seed": 87023,
+              "arms": [
+                {
+                  "score": 0.16956905126571664,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "24e9f9229354e966399679efa07ea8de491d9e3b45b67e262fed130a54f2eb6b",
+                  "error": null
+                },
+                {
+                  "score": 0.16875306367874154,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "b96d37e61021352f12263552ecb405d1cb19c761463b108211e4a7c3781d0c63",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.1796967494923004,
+                0.17238943380440208
+              ],
+              "prediction": [
+                0.16956905126571664,
+                0.16875306367874154
+              ],
+              "true_effect": 0.00730731568789833,
+              "predicted_effect": 0.0008159875869750977,
+              "effect_abs_error": 0.006491328100923233,
+              "zero_effect_abs_error": 0.00730731568789833,
+              "arm_abs_errors": [
+                0.01012769822658377,
+                0.0036363701256605374
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            },
+            {
+              "task": "stand",
+              "reset_seed": 90103,
+              "parent_seed": 87037,
+              "arms": [
+                {
+                  "score": 0.16017160415649423,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "399564068cc7e2d85ae702b5d625e3d86efb3c61b090d3d70f08013260b8e267",
+                  "error": null
+                },
+                {
+                  "score": 0.15821716785430917,
+                  "status": "COMPLETE",
+                  "accepted_steps": 50,
+                  "attempted_steps": 50,
+                  "raw_action_error": 0.0,
+                  "trace_sha256": "51e48db4c316a8bc2ea483b9c11dffdb3b8a890da808f2d3907c027da26e5082",
+                  "error": null
+                }
+              ],
+              "truth": [
+                0.17149031327278785,
+                0.163234842294393
+              ],
+              "prediction": [
+                0.16017160415649423,
+                0.15821716785430917
+              ],
+              "true_effect": 0.008255470978394852,
+              "predicted_effect": 0.0019544363021850586,
+              "effect_abs_error": 0.0063010346762097935,
+              "zero_effect_abs_error": 0.008255470978394852,
+              "arm_abs_errors": [
+                0.011318709116293624,
+                0.00501767444008383
+              ],
+              "checks": {
+                "both_complete": true,
+                "positive": true,
+                "effect_tolerance": false,
+                "beats_zero_effect": true,
+                "both_absolute_arms": true
+              },
+              "passed": false
+            }
+          ],
+          "pairs_passed": 1,
+          "passed": false,
+          "cases_by_status": {
+            "COMPLETE": 12
+          },
+          "imagined_steps": 1020
+        }
+      ],
+      "models_passed": 0,
+      "passed": false
+    }
+  },
+  "truth_sha256": {
+    "reports/uphill_diagnosis88.json": "908ad31bae9e1cd7bbabb77993e3906e9af8312dff52ac846c0f6e60c37fc80e",
+    "reports/stand_wbc90.json": "f7086930344e087d4a962350e6874010fd920c0c96abbc481eb00d08653bb5d3"
+  },
+  "prediction_seals": {
+    "archived": "7cd05d464ddd7ac92d85d29d5409b688d8e10fd0890fac0a8d76c2f024c8e765",
+    "candidate": "e1c8a6b3ce1a6b02034836cbf238dc0841f01a5778afeb1eedb18d24cc6c5a85"
+  },
+  "curves_sha256": "0334e86f773909cd0a86ca5b47b2004037d05f60dadcdf22c4f3e83724aea567",
+  "curve_count": 84,
+  "physical_pairs": 6,
+  "policy_updates": 0,
+  "new_physics_steps": 0,
+  "model_updates": 900,
+  "imagined_steps": 6120
+}
