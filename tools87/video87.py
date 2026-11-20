@@ -12,7 +12,6 @@ import subprocess
 import sys
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -84,6 +83,8 @@ def source_tick(frame):
 
 
 def chinese_font(size, bold=False):
+    from PIL import ImageFont
+
     name = "NotoSansCJK-Bold.ttc" if bold else "NotoSansCJK-Regular.ttc"
     return ImageFont.truetype(name, size, index=2)
 
@@ -170,6 +171,8 @@ def render(baseline, perceptive, output):
 
 
 def _write_video(traces, output, report):
+    from PIL import Image, ImageDraw
+
     os.environ.setdefault("MUJOCO_GL", "egl")
     os.environ.setdefault("EGL_PLATFORM", "surfaceless")
     os.environ.setdefault("LIBGL_ALWAYS_SOFTWARE", "1")

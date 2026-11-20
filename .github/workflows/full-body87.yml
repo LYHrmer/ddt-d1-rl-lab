@@ -26,7 +26,7 @@ jobs:
       MKL_NUM_THREADS: '1'
       OPENBLAS_NUM_THREADS: '1'
       PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
-      MUJOCO_GL: egl
+      MUJOCO_GL: disable
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

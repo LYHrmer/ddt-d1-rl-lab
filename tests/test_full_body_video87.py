@@ -1,5 +1,6 @@
 """Timestamp and source-pair checks. No renderer, physics or policy calls."""
 import hashlib
+import importlib
 import json
 from pathlib import Path
 import sys
@@ -26,10 +27,13 @@ def write_episode(tmp_path, arm, seed, count=301, terminated=False):
     return path
 
 
-def test_video_covers_six_seconds_without_extrapolating_recorded_poses(tmp_path):
+def test_video_covers_six_seconds_without_extrapolating_recorded_poses(tmp_path, monkeypatch):
+    from tools87 import video87
+    monkeypatch.setitem(sys.modules, "PIL", None)
+    reader = importlib.reload(video87)
     left = write_episode(tmp_path, "baseline", 811)
     right = write_episode(tmp_path, "range", 811, 82, terminated=True)
-    records = read_pair(left, right)
+    records = reader.read_pair(left, right)
     indices = [source_tick(i) for i in range(FRAMES)]
     assert len(indices) == 150 and indices[0] == 0 and indices[-1] == 300
     assert np.all(np.diff(indices) > 0)

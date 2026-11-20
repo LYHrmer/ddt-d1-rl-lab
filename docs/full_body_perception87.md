@@ -42,6 +42,8 @@
 
 本机原始轨迹、六个完整检查点、测距输入、模型探针、视频源帧和资源日志位于 `evidence/full_body87/`。复现需要恢复原 D1 资产、完整 25 权重和 34 运行时。下列入口在新的工作副本中运行，遇到已有输出会停止，以保留现有结果。受限资源启动器使用相邻 wheel 仓库已有的 systemd 监督程序。
 
+预算在提交 `6a282ab` 登记，采样、训练与首版成片对应 `6250901`。第一次云端检查发现数值测试提前加载了 EGL，纯轨迹读取提前加载了 Pillow。发布修正将绘图库移入实际渲染入口，云端的零渲染测试使用 MuJoCo 的无图形模式。原始成绩和已编码的视频均可按各自 SHA 核对。
+
 ```bash
 rtk proxy /usr/bin/python3 -B tools87/launch87.py preflight
 rtk proxy /usr/bin/python3 -B tools87/launch87.py experiment
