@@ -2,9 +2,9 @@ name: D1 terrain world model
 
 on:
   push:
-    paths: ['tools91/**', 'tests/*91.py', 'docs/experiments91/**', 'reports/terrain_world91*', '.github/workflows/terrain-world91.yml']
+    paths: ['tools91/**', 'tests/*91.py', 'docs/experiments91/**', 'docs/terrain_world91.md', 'docs/assets/terrain_world91.png', 'reports/terrain_world91*', '.github/workflows/terrain-world91.yml']
   pull_request:
-    paths: ['tools91/**', 'tests/*91.py', 'docs/experiments91/**', 'reports/terrain_world91*', '.github/workflows/terrain-world91.yml']
+    paths: ['tools91/**', 'tests/*91.py', 'docs/experiments91/**', 'docs/terrain_world91.md', 'docs/assets/terrain_world91.png', 'reports/terrain_world91*', '.github/workflows/terrain-world91.yml']
 
 permissions:
   contents: read

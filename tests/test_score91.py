@@ -36,6 +36,25 @@ def test_signed_gates_require_both_arms_and_strict_null_advantage():
     assert partial["predicted_effect"] is None and partial["effect_abs_error"] is None and not partial["passed"]
 
 
+def test_public_training_inventory_matches_registered_sources_and_model_budget():
+    plan = json.loads(PLAN.read_bytes())
+    report = json.loads((ROOT / "reports/terrain_world91.json").read_bytes())
+    data = report["dataset"]
+    assert [s["trace_sha256"] for s in data["sources"]] == plan["fit"]["trace_sha256"]
+    assert {s["trace_sha256"] for s in data["sources"]}.isdisjoint({c["source_trace_sha256"] for c in report["starts"]})
+    assert len(data["episodes"]) == data["completed_episodes"] == plan["fit"]["ended_episodes"]
+    assert sum(e["transitions"] for e in data["episodes"]) == plan["fit"]["usable_transitions"]
+    assert sum(e["terminated"] for e in data["episodes"]) == data["terminated_episodes"]
+    assert all(e["terminated"] or e["truncated"] for e in data["episodes"])
+    old = [m["source"]["model"] for m in report["families"]["archived"]["models"]]
+    assert [m["weights_sha256"] for m in old] == plan["old_models"]["sha256"]
+    fits = [m["source"]["model"] for m in report["families"]["candidate"]["models"]]
+    assert all(m["status"] == "COMPLETE" and m["updates"] == m["updates_attempted"] == plan["fit"]["updates_per_seed"]
+               for m in fits)
+    assert len({m["model_sha256"] for m in fits}) == 3 and len({m["training_sha256"] for m in fits}) == 1
+    assert sum(m["updates"] for m in fits) == report["model_updates"] == plan["budget"]["max_model_updates"]
+
+
 def test_public_prediction_curves_reproduce_all_gates_and_failures():
     report = json.loads((ROOT / "reports/terrain_world91.json").read_bytes())
     raw = (ROOT / "reports/terrain_world91_curves.jsonl.gz").read_bytes()
