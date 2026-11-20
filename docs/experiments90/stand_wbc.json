@@ -1,0 +1,38 @@
+{
+  "protocol": "d1-perceptive-ppo-stand-and-shadow-wbc90-v1",
+  "registration_base_d1": "ecb1365e79e853020534b23cc546789921173775",
+  "parent87": "docs/experiments87/full_body_perception.json",
+  "parent87_sha256": "b6ea1719001c9c710f7d6cfba3daf721abda8145455e4098cdac983044ba5b78",
+  "parent89": "docs/experiments89/uphill_curriculum.json",
+  "parent89_sha256": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+  "stand": {
+    "hypothesis": "The common reverse wheel target during a zero command contributes at least 3 cm of one-second rollback on a 4 degree uphill start.",
+    "arms": ["original", "common"], "parent_seeds": [87011, 87023, 87037], "reset_seeds": [90101, 90102, 90103],
+    "slope_start_x_m": 1.10, "stand_ticks": 50, "ticks_per_episode": 100, "min_rollback_reduction_m": 0.030,
+    "placement": "Fixed uphill, mixed reset convention from 89. Call reset(seed) then the second reset without stepping. Use the identical frozen 87 range parent and reset for both arms. Issue the deterministic action at 50 Hz before the unchanged one-beat FIFO. One second stopped, then one second of the original forward command.",
+    "only_variable": "For issue ticks 0..49 with zero command, convert the four wheel targets to rad/s, add delta=min(max(0,-mean(targets)),5-max(targets)) to all four, and convert back. Preserve differential targets, every leg action on the same policy input, the observation, limits, PI/PD contract and the FIFO. Ticks >=50 pass through unchanged on their own input. A changed state can change subsequent PPO predictions.",
+    "gate": "For each parent/reset pair: max(0,x_reset-x_50) for original minus the same quantity for common must be >=0.030 m. All six runs must finish 100 ticks without falls or illegal contact. Report all reset, 1s, 2s positions, signed displacements, paired reductions and trace hashes. No pooling, automatic widening or retries.",
+    "max_policy_steps": 600, "max_pd_updates": 3000, "max_native_steps": 6000
+  },
+  "shadow": {
+    "hypothesis": "Can an optional inverse-dynamics QP return reachable PPO/PD interface targets on 180 preselected measured-input frames with every registered hard residual <=0.0001 in its native unit?",
+    "only_variable": "Optional QP on versus a bit-identical PPO action bypass, on the exact same saved observations. No simulator control, new transitions, gradients or optimization of policy weights.",
+    "source_stage_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "source_pattern": "evidence/uphill89/training_01/mixed_{seed}/train_trace.npz",
+    "source_design": "Use the first 4096-step PPO data collection in each complete mixed 89 rollout, before that rollout's update. Re-evaluate its corresponding frozen 87 parent deterministically on each stored observation for the nominal action. The historical feedback uses the action actually issued in the archive. Replay all earlier measurements in the episode for estimator warmup. All row intervals below are inclusive, zero-based, pre-decision.",
+    "phase_selection": "Flat starts use episode ticks 40..59 (10 stand + 10 moving). On-slope stand uses 0..9 and 40..49, including the initial missing range packet. For the unshifted uphill start, select the first 20 positive-command frames beginning the tick after the first observed loaded front wheel past the toe with no rear wheel past it. Labels are solely for selection/scoring.",
+    "sources": [
+      {"seed":89011,"parent":87011,"trace_sha256":"4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e","flat":[[640,659]],"slope_stand":[[900,909],[940,949]],"front_contact":[[173,192]]},
+      {"seed":89023,"parent":87023,"trace_sha256":"586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5","flat":[[640,659]],"slope_stand":[[900,909],[940,949]],"front_contact":[[174,193]]},
+      {"seed":89037,"parent":87037,"trace_sha256":"04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22","flat":[[40,59]],"slope_stand":[[1200,1209],[1240,1249]],"front_contact":[[467,486]]}
+    ],
+    "samples_per_case": 20, "max_frames": 180, "hard_tolerance": 0.0001, "deadline_ms": 20.0,
+    "estimator": "Proprioception (gravity, angular velocity, joint encoders, command and issued-action history) and eight 6 Hz delayed range/validity pairs only. Keep an episode-local causal estimate, explicit missing-range behavior and distinct front/rear support plane estimates. No simulator contact forces, course height field, base truth, terrain label or future observation may enter the controller. A kinematic support flag is an estimate, not a measured contact.",
+    "constraints": "Nominal D1, 22 accelerations, four world-frame contact forces and sixteen actuator torques. Hard floating-base and joint dynamics, unilateral estimated supports, inactive zero forces, L1 friction diamond mu=0.55, normal force upper bound 0.65*m*g per wheel, hard support-normal and rolling acceleration, lateral slip soft. Use nominal cylinder support points. Physical torque limits 80/12 Nm legs/wheels and the image of the existing clipped position/velocity servo on normalized targets. Leg target +/-0.50 rad, wheels +/-5 rad/s. Check the issued target through the frozen servo at the estimated state. D1 FIFO delays its execution by one beat.",
+    "numerics": "Use one fixed set of acceleration tracking weights inherited from the wheel inverse dynamics reference, body translation [1,1,5], rotation [10,10,2], joints 0.05, lateral 1. Cold OSQP 1.1.3 per frame, abs and rel tolerance 1e-7, 4000 iterations maximum, polishing on. Recheck signed physical constraints independently in original units after reconstructing torque.",
+    "gate": "Attempt all 180, check all bypass payloads bit-for-bit. Require 180 accepted reachable targets and every hard residual <=1e-4 for mechanical feasibility. Retain rejections and exact failure causes. Time estimator + model + solver on the limited single CPU, list each frame >20 ms and report p50/p95/p99/max. Score timing separately from mechanical feasibility. Disclose one-time setup and timed boundary. An offline pass does not measure closed-loop performance.",
+    "training_updates": 0, "native_steps": 0
+  },
+  "resources": {"cpu_environments":1,"threads":1,"nice":10,"memory_high_gib":2,"memory_max_gib":3,"swap_max_bytes":0,"minimum_effective_gib_at_start":4,"minimum_effective_gib_during_run":2,"parallel_heavy_jobs":1},
+  "retention": "Each stage claims exclusive paths. Retain errors, missing frames and partials in place. The two approved stages are independent. No automatic retraining, rerunning of a physical condition, new seed, solver retuning after results, or downstream closed-loop WBC."
+}
