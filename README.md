@@ -5,7 +5,15 @@
 
 > **求职向概览（机器人控制 / 部署方向）：[PORTFOLIO.md](PORTFOLIO.md)** — 30 秒定位、时序与安全约束、可核验结果、面试故事、简历条目与边界。
 
-**30 秒版：** 纯 PPO → ONNX → 单线程 C++/ONNX Runtime → MuJoCo 仿真闭环（策略 50 Hz、PD 250 Hz、物理 500 Hz）；ROS2 控制器适配仍需单独验证。33 候选在 formal 36/36 与独立 holdout 36/36 通过（综合 J 相对 25 基线变差 5.89%，如实保留）；C++ 路径的 72 场轨迹与 Python 逐位相同，零物理重放 43,200 次推理 59 秒完成。
+**D1 的主线是全身策略 + 关节 PD。** 策略以 50 Hz 同时发出 12 个腿关节角度目标和 4 个轮速目标，决定轮腿怎样配合行驶和平衡。腿部位置伺服和轮速伺服以 250 Hz 跟踪目标并限矩，MuJoCo 以 500 Hz 积分。[实际动作到力矩的映射](training/d1_rl/interface.py)
+
+自训 PPO 通过 ONNX 在单线程 C++ 中运行。33 候选在原平地 formal 36/36 与独立 holdout 36/36 通过，综合 J 相对 25 基线高 5.89%。C++34 的 72 场轨迹与 Python 逐位相同，零物理重放 43,200 次推理耗时 59 秒。ROS2 控制器适配仍需单独验证。[C++34 资格结果](docs/cpp_reference34_results_20261018.md)
+
+## 原 PPO 与感知 PPO 怎样过坡
+
+[![同一 4° 下坡，左为 PPO25 全身策略，右为测距 PPO](docs/assets/full_body87/down.gif)](docs/assets/full_body87/down.mp4)
+
+左侧是已经训练好的第 25 轮 PPO，由原 C++34 程序运行。右侧从同一权重起步，加入八束前视测距后微调 4,096 步。三组配对训练种子合计 24,576 个原生 D1 环境转移。独立评测中，三个组都在下坡 3/3 过线、上坡 0/3 过线。报告也列出了同样微调但屏蔽所有测距的对照组。[6 秒下坡视频](docs/assets/full_body87/down.mp4) · [同种子上坡未过线视频](docs/assets/full_body87/up.mp4) · [三组逐地形结果](docs/full_body_perception87.md)
 
 ## C++34：直行、转向与停车
 
