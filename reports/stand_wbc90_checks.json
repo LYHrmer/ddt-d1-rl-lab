@@ -1,0 +1,120 @@
+{
+  "protocol_sha256": "b6e4f94c46fc7fde0a1a3f6892c09162c498ff4988260a43a0b0aefcef71a8bd",
+  "guards": {
+    "stand": {
+      "status": "COMPLETE",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-wbc90-stand-01.service",
+      "returncode": 0,
+      "elapsed_s": 23.245964510017075,
+      "minimum_effective_bytes": 6537093120,
+      "peak_group_bytes": 993288192,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "receipt_sha256": "a582c3ac2b51476e5842626624bd1983dad63d7f7b3af1ccac7e7b704db08d3b"
+    },
+    "shadow": {
+      "status": "COMPLETE",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-wbc90-shadow-01.service",
+      "returncode": 0,
+      "elapsed_s": 18.939391279011033,
+      "minimum_effective_bytes": 6710284288,
+      "peak_group_bytes": 1218682880,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "receipt_sha256": "9efa8377f9cf47075d569f75ca5d8d4145488ed30fe655a1f2891706a2869d14"
+    },
+    "first_readback": {
+      "status": "INCOMPLETE",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-wbc90-readback-01.service",
+      "returncode": 1,
+      "elapsed_s": 13.624308671918698,
+      "minimum_effective_bytes": 7021621248,
+      "peak_group_bytes": 488718336,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "receipt_sha256": "c6974b51e9e179afb2af47764972b27d7cba937ddf33537ec86907a8b9cd28c8"
+    },
+    "body_frame_readback": {
+      "status": "COMPLETE",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-wbc90-readback-heading.service",
+      "returncode": 0,
+      "elapsed_s": 15.149121201015078,
+      "minimum_effective_bytes": 6625021952,
+      "peak_group_bytes": 740716544,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "receipt_sha256": "5740d236d7db5880ec452bbf72131d3c8fa161e6b96120375e45fd3162669ceb"
+    },
+    "tests": {
+      "status": "COMPLETE",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-wbc90-tests-1795181465480097349.service",
+      "returncode": 0,
+      "elapsed_s": 11.344743972993456,
+      "minimum_effective_bytes": 7104970752,
+      "peak_group_bytes": 69468160,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "receipt_sha256": "42fb8668a98985a38c095e2a36420c7cbc570ca845cc193b00c54d2e4a2c1ac2"
+    }
+  },
+  "first_readback": {
+    "failure": "ValueError: support diagnostic normal_angle_mean_deg",
+    "first_reader_sha256": "157d3232f087a77be50c31eb4f0eee5996303f590199df746191978889f8632a",
+    "unaligned_normal_comparison_deg": 1.1798908514922268,
+    "registered_body_frame_comparison_deg": 1.1729956890658542,
+    "reason": "Estimated yaw is episode-relative. The first reader compared the two normals in their separate world frames.",
+    "disposition": "Original guard, stderr and empty output directory preserved. The separate heading audit starts from both archived poses and expresses each normal in its own base frame.",
+    "native_steps": 0,
+    "qp_solves": 0
+  },
+  "checks": {
+    "asset_free_unit_and_public_receipt_tests": 22,
+    "articulated_mujoco_regressions": 1,
+    "synthetic_fixture_sha256": "0f001563fb9695ee585a2bf825dbbef95b08cb77637d883909db8202a993444b",
+    "optional_corrected_implementation_sha256": "f51d1ef6bc63d6427c873dddd73d57ff8c45e2de64a1ed8c456e9ece5616ae54",
+    "numeric_origin": "stdout of the guarded real MuJoCo synthetic regression",
+    "original_max_error_m_s2": 3.1239812,
+    "corrected_max_error_m_s2": 2.0539836e-10,
+    "tolerance_m_s2": 1e-06,
+    "moving_wheel_samples": 14,
+    "stationary_wheel_samples": 8,
+    "native_steps": 0,
+    "qp_solves_on_synthetic_regression": 0,
+    "formal_frames_resolved_after_fix": 0
+  }
+}
