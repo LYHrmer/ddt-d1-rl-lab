@@ -1,0 +1,72 @@
+{
+  "protocol": "d1-full-body-perceptive-ppo-smoke87-v1",
+  "architecture": "50 Hz full-body actor, 12 leg position targets and 4 wheel speed targets, 250 Hz joint servo, 500 Hz native MuJoCo",
+  "parent": {
+    "checkpoint": "evidence/low_memory_delay25/execution_01/random/train/policy.zip",
+    "checkpoint_sha256": "873cd14ff67e7d399472d97a94e082f7a97d068b00db414986443e50fcdb4f22",
+    "onnx_sha256": "917dedb759859a9ac63a233dda03e6f5a8f1e40ddf68a30fcaf3864c0f5df9f8",
+    "cpp34_sha256": "eb3e0dc8f1500e8c57a9001e3a9bd6a78153dc319d024d27aecd4b2c2df2c3aa",
+    "report34_sha256": "c5a66490a4fbd92c3f4458792fcde28f65002acb7ee5aca519c79e366d50addb"
+  },
+  "course": {
+    "terrains": ["flat", "up", "down"],
+    "grade_degrees": [0, 4, -4],
+    "toe_x_m": 0.6,
+    "policy_hz": 50,
+    "ticks": 300,
+    "stand_ticks": 50,
+    "command_forward_m_s": 0.2,
+    "action_delay_ticks": 1,
+    "sensor_hz": 6,
+    "delivery_delay_ticks": 2,
+    "range_features": "Eight first-return distances and eight validity flags from onboard rays. Self-occlusion and unavailable readings are invalid. No terrain labels or simulator ground truth enter the actor."
+  },
+  "baseline": {
+    "controller": "original qualified C++34 actor process with fresh history per episode",
+    "reset_seeds": [87101, 87102, 87103],
+    "max_episodes": 9,
+    "max_transitions": 2700
+  },
+  "training": {
+    "arms": ["masked", "range"],
+    "seeds": [87011, 87023, 87037],
+    "sole_arm_difference": "Mask or deliver the delayed terrain features to the actor. Critic proprioception, reward, course, seed, PPO hyperparameters, input size and starting weights are matched.",
+    "initialization": "Copy final COMPLETE25 policy and optimizer into an independent new training run. A zero-initialized terrain projection preserves initial actor output.",
+    "valid_initial_action_max_abs_error": 0.00001,
+    "episode_course": "Cycle through flat, uphill and downhill at resets, one native environment.",
+    "rollout_transitions_per_model": 4096,
+    "rollouts_per_model": 1,
+    "minibatch": 256,
+    "max_epochs": 4,
+    "learning_rate": 0.0001,
+    "target_kl": 0.005,
+    "max_total_transitions": 24576,
+    "smoke_acceptance": "Complete all six real rollouts, count native and PD updates, verify paired collection before the first update, finite changes to the learned leg and wheel outputs, actor reload, and effective causal sensor inputs. Record a zero or missing signal as a failed check."
+  },
+  "evaluation": {
+    "heldout_reset_seeds": [87201, 87202, 87203],
+    "pairing": "Pair each training seed in order with one independent reset seed. Evaluate each checkpoint on all three terrains. For each reset and terrain run the original actor once as a common physical reference.",
+    "max_episodes": 27,
+    "max_transitions": 8100,
+    "scores": "Use all episodes. Report falls, illegal contacts, front loaded contact position past the toe, speed RMSE over commanded motion, peak absolute roll/pitch and wheel saturation. Include a fixed-horizon speed RMSE for [1,6] s, charging a missing tick the full 0.2 m/s command. A missing section is not a completed section.",
+    "course_mark_m_after_toe": 0.4,
+    "claim": "Engineering smoke only. Report all three paired outcomes by terrain without promoting an individual seed or replacing a qualified model."
+  },
+  "video": {
+    "roles": ["baseline", "range"],
+    "selection": "Show the same independent reset in both panels. Prefer uphill, then downhill, then flat. Prefer both runs complete without fall or illegal contact and passing the 0.40 m front-wheel mark on slopes. Among eligible runs show the range episode closest to its group's median fixed-horizon speed RMSE, breaking ties by training seed. If none qualify, show an identified unsuccessful pair. Use actual trajectories at real speed.",
+    "duration_s": 6
+  },
+  "resources": {
+    "cpu_environments": 1,
+    "threads": 1,
+    "nice": 10,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_max_bytes": 0,
+    "minimum_effective_gib_at_start": 4,
+    "minimum_effective_gib_during_run": 2,
+    "parallel_heavy_jobs": 1,
+    "partial_outputs": "retain without overwrite or continuation"
+  }
+}
