@@ -1,0 +1,37 @@
+name: D1 uphill paired probe
+
+on:
+  push:
+    paths:
+      - 'tools88/**'
+      - 'tests/*88.py'
+      - 'docs/experiments88/**'
+      - 'reports/uphill*88*'
+      - '.github/workflows/uphill88.yml'
+  pull_request:
+    paths:
+      - 'tools88/**'
+      - 'tests/*88.py'
+      - 'docs/experiments88/**'
+      - 'reports/uphill*88*'
+      - '.github/workflows/uphill88.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  check-paired-measurements:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      MUJOCO_GL: disable
+      OPENBLAS_NUM_THREADS: '1'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install 'gymnasium==1.2.0' 'mujoco==3.3.0' 'numpy<3' pytest
+      - name: Check wheel targets, contact math and all public scoring endpoints
+        run: python -m pytest --noconftest -q tests/test*88.py

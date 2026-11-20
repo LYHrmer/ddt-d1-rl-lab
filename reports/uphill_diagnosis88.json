@@ -1,0 +1,1673 @@
+{
+  "protocol_sha256": "4576909ad2f205f33e4426329979913e77788d2203cda31c534f19239ab5d990",
+  "source_sha256": "8e5b683c3537b5f589705095d580e06fe28671be8a062bdff750bb71474ee277",
+  "primary_pass": true,
+  "policy_transitions": 1800,
+  "training_transitions": 0,
+  "pd_updates": 9000,
+  "native_steps": 18000,
+  "pairs": [
+    {
+      "seed": 88101,
+      "original_vx_m_s": 0.09962541952518025,
+      "wheel_plus_vx_m_s": 0.1322598469767941,
+      "delta_vx_m_s": 0.03263442745161385,
+      "identical_state_through_s": 3.62,
+      "first_changed_applied_interval_start_s": 3.62,
+      "passes": true
+    },
+    {
+      "seed": 88102,
+      "original_vx_m_s": 0.1005813671884985,
+      "wheel_plus_vx_m_s": 0.1334555607822966,
+      "delta_vx_m_s": 0.03287419359379809,
+      "identical_state_through_s": 3.62,
+      "first_changed_applied_interval_start_s": 3.62,
+      "passes": true
+    },
+    {
+      "seed": 88103,
+      "original_vx_m_s": 0.10132998249857371,
+      "wheel_plus_vx_m_s": 0.13310718825993098,
+      "delta_vx_m_s": 0.03177720576135727,
+      "identical_state_through_s": 3.62,
+      "first_changed_applied_interval_start_s": 3.62,
+      "passes": true
+    }
+  ],
+  "cases": [
+    {
+      "seed": 88101,
+      "arm": "original",
+      "ticks": 300,
+      "trace_sha256": "f8e39ee47c9cb4ce8c8ac8a6b1c8e43c421d1f95c7315d0062255454248feb67",
+      "full_clean": true,
+      "score_vx_m_s": 0.09962541952518025,
+      "max_loaded_front_contact_past_toe_m": 0.3218374645121673,
+      "reached_mark": false,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.8434315000938724,
+      "first_loaded_toe_s": {
+        "front": 3.1799999999998714,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 119,
+          "mean_axle_normal_force_n": 238.93566294061733,
+          "axle_x_at_last_sample_m": 0.8956638314288081,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.00732886025231919,
+          "longitudinal_slip_abs_m_s": 0.00732886025231919,
+          "tangential_slip_m_s": 0.008042092930351208,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.37494219848944055,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 209,
+          "mean_axle_normal_force_n": 236.92163867630867,
+          "axle_x_at_last_sample_m": 0.450915663450725,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.009434403580309263,
+          "longitudinal_slip_abs_m_s": 0.009434403580309263,
+          "tangential_slip_m_s": 0.010314274982560044,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.6239511109903189,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 2.9594837076961995,
+        "actual_rad_s": 1.4207013641058188,
+        "last_pd_torque_nm": 0.7698547531023912
+      }
+    },
+    {
+      "seed": 88101,
+      "arm": "wheel_plus",
+      "ticks": 300,
+      "trace_sha256": "3963de19360f4f94b9e82ebe05852b8964bc90e4a6cbabf9b32e8f3b9b8cf8e0",
+      "full_clean": true,
+      "score_vx_m_s": 0.1322598469767941,
+      "max_loaded_front_contact_past_toe_m": 0.3913480714435805,
+      "reached_mark": false,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.8434315000938724,
+      "first_loaded_toe_s": {
+        "front": 3.1799999999998714,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 109,
+          "mean_axle_normal_force_n": 234.10436192378683,
+          "axle_x_at_last_sample_m": 0.974679183121002,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.007528164329175418,
+          "longitudinal_slip_abs_m_s": 0.007528164329175418,
+          "tangential_slip_m_s": 0.00823018920037462,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.30166594846536454,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 217,
+          "mean_axle_normal_force_n": 235.3434459033966,
+          "axle_x_at_last_sample_m": 0.5237895919564792,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.009289971362549122,
+          "longitudinal_slip_abs_m_s": 0.009289971362549122,
+          "tangential_slip_m_s": 0.010153222091543063,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.6684480277842928,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 3.4279157809913157,
+        "actual_rad_s": 1.811194266817301,
+        "last_pd_torque_nm": 0.8093257376108223
+      }
+    },
+    {
+      "seed": 88102,
+      "arm": "original",
+      "ticks": 300,
+      "trace_sha256": "b457f360026a7933e7601f3354433b51c322f18f1db51e14bc812da1c8ee3f00",
+      "full_clean": true,
+      "score_vx_m_s": 0.1005813671884985,
+      "max_loaded_front_contact_past_toe_m": 0.32006791973209225,
+      "reached_mark": false,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.8499888159451954,
+      "first_loaded_toe_s": {
+        "front": 3.219999999999867,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 119,
+          "mean_axle_normal_force_n": 242.44344563393915,
+          "axle_x_at_last_sample_m": 0.8922976852056481,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.007476444683711844,
+          "longitudinal_slip_abs_m_s": 0.007476444683711844,
+          "tangential_slip_m_s": 0.008193298401586776,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.3403776707266095,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 49,
+          "loaded_contact_samples": 150,
+          "mean_axle_normal_force_n": 233.29741066186943,
+          "axle_x_at_last_sample_m": 0.45077074001828626,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.007848695888757752,
+          "longitudinal_slip_abs_m_s": 0.007848695888757752,
+          "tangential_slip_m_s": 0.008477627101679977,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.424179588370054,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 2.9873713105916977,
+        "actual_rad_s": 1.4478330497852203,
+        "last_pd_torque_nm": 0.7711167542830205
+      }
+    },
+    {
+      "seed": 88102,
+      "arm": "wheel_plus",
+      "ticks": 300,
+      "trace_sha256": "5563ae8ec8d9c9879680d1b73c6cc9b1ab29353cb2e459cfd01751befca8c3e9",
+      "full_clean": true,
+      "score_vx_m_s": 0.1334555607822966,
+      "max_loaded_front_contact_past_toe_m": 0.4000156780613787,
+      "reached_mark": true,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.8499888159451954,
+      "first_loaded_toe_s": {
+        "front": 3.219999999999867,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 115,
+          "mean_axle_normal_force_n": 230.42757966348216,
+          "axle_x_at_last_sample_m": 0.9718033873333335,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.00846044716553682,
+          "longitudinal_slip_abs_m_s": 0.00846044716553682,
+          "tangential_slip_m_s": 0.009178297835631444,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.3347226691050419,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 159,
+          "mean_axle_normal_force_n": 245.63687380374608,
+          "axle_x_at_last_sample_m": 0.5242829270691478,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.008966932329830396,
+          "longitudinal_slip_abs_m_s": 0.008966932329830396,
+          "tangential_slip_m_s": 0.009616978329099704,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.44162160366848013,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 3.4569454453885555,
+        "actual_rad_s": 1.8395577352647954,
+        "last_pd_torque_nm": 0.8098528104163495
+      }
+    },
+    {
+      "seed": 88103,
+      "arm": "original",
+      "ticks": 300,
+      "trace_sha256": "2478a066c4414de0202c32cc630f33df08425184d88a34e1f2046bf168911f1f",
+      "full_clean": true,
+      "score_vx_m_s": 0.10132998249857371,
+      "max_loaded_front_contact_past_toe_m": 0.31169728699541854,
+      "reached_mark": false,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.884370048186874,
+      "first_loaded_toe_s": {
+        "front": 3.199999999999869,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 121,
+          "mean_axle_normal_force_n": 248.06477200123794,
+          "axle_x_at_last_sample_m": 0.8969324895947763,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.00972846423711761,
+          "longitudinal_slip_abs_m_s": 0.00972846423711761,
+          "tangential_slip_m_s": 0.010658727498576537,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.35539981810453514,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 151,
+          "mean_axle_normal_force_n": 233.71977148516976,
+          "axle_x_at_last_sample_m": 0.4542990802608531,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.008692102786577127,
+          "longitudinal_slip_abs_m_s": 0.008692102786577127,
+          "tangential_slip_m_s": 0.009426466209424588,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.436964266932,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 2.9795224223285914,
+        "actual_rad_s": 1.4417139343998848,
+        "last_pd_torque_nm": 0.7684278765817791
+      }
+    },
+    {
+      "seed": 88103,
+      "arm": "wheel_plus",
+      "ticks": 300,
+      "trace_sha256": "608335a97ab6e04f4fed0a100a1aa94858ab8d1f1db11638c2e637c8501682e8",
+      "full_clean": true,
+      "score_vx_m_s": 0.13310718825993098,
+      "max_loaded_front_contact_past_toe_m": 0.38600093225845733,
+      "reached_mark": false,
+      "wheel_offsets_clipped": 0,
+      "wheel_saturated_ticks": 0,
+      "peak_abs_last_pd_wheel_torque_nm": 1.884370048186874,
+      "first_loaded_toe_s": {
+        "front": 3.199999999999869,
+        "rear": null
+      },
+      "last_second_contact": {
+        "front": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 116,
+          "mean_axle_normal_force_n": 238.28652306947126,
+          "axle_x_at_last_sample_m": 0.9733269354865997,
+          "normal_load_fraction_past_toe": 1.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.009862823555250004,
+          "longitudinal_slip_abs_m_s": 0.009862823555250004,
+          "tangential_slip_m_s": 0.010711126781963703,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.31078783544421623,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        },
+        "rear": {
+          "boundaries": 50,
+          "loaded_boundaries": 50,
+          "loaded_contact_samples": 152,
+          "mean_axle_normal_force_n": 246.92808598946235,
+          "axle_x_at_last_sample_m": 0.5253583390171885,
+          "normal_load_fraction_past_toe": 0.0,
+          "longitudinal_direction_defined_load_fraction": 1.0,
+          "longitudinal_slip_signed_m_s": -0.010457554286218407,
+          "longitudinal_slip_abs_m_s": 0.010457554286218407,
+          "tangential_slip_m_s": 0.011358445192458926,
+          "sum_tangential_force_magnitude_over_sum_normal_force": 0.4871758828684179,
+          "min_configured_sliding_friction": 1.0,
+          "contact_dimensions": [
+            3
+          ]
+        }
+      },
+      "score_window_four_wheel_means": {
+        "target_rad_s": 3.4460608780384065,
+        "actual_rad_s": 1.8206963890325942,
+        "last_pd_torque_nm": 0.8128529772756508
+      }
+    }
+  ],
+  "archive87": {
+    "cases": 36,
+    "torque_saturated_ticks": 0,
+    "drivetrain": [
+      {
+        "split": "development",
+        "arm": "baseline",
+        "terrain_summary": {
+          "flat": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.1836017221430107,
+                "wheel_target_rad_s": 3.1718742767969768,
+                "wheel_actual_rad_s": 2.1963500328701966,
+                "wheel_torque_nm": 0.4871133732082154
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.18332907934129108,
+                "wheel_target_rad_s": 3.163183758159479,
+                "wheel_actual_rad_s": 2.1796379529360714,
+                "wheel_torque_nm": 0.49153272457606884
+              },
+              "last_second": {
+                "body_vx_m_s": 0.18859180917179832,
+                "wheel_target_rad_s": 3.176446855564913,
+                "wheel_actual_rad_s": 2.2431736888692297,
+                "wheel_torque_nm": 0.46747460917504013
+              },
+              "commanded": {
+                "body_vx_m_s": 0.18478099459180752,
+                "wheel_target_rad_s": 3.129441100961218,
+                "wheel_actual_rad_s": 2.1022505392480606,
+                "wheel_torque_nm": 0.5142407904064147
+              }
+            }
+          },
+          "up": {
+            "episodes": 3,
+            "reached_mark": 0,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18360172200183553,
+                "wheel_target_rad_s": 3.1718742767969768,
+                "wheel_actual_rad_s": 2.1963498524081895,
+                "wheel_torque_nm": 0.48711322307331345
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.1434162239654938,
+                "wheel_target_rad_s": 3.1230742419759436,
+                "wheel_actual_rad_s": 1.873669172345451,
+                "wheel_torque_nm": 0.6231255396799127
+              },
+              "last_second": {
+                "body_vx_m_s": 0.1063637731353567,
+                "wheel_target_rad_s": 2.9752975779275097,
+                "wheel_actual_rad_s": 1.490646595503983,
+                "wheel_torque_nm": 0.7427289398681448
+              },
+              "commanded": {
+                "body_vx_m_s": 0.14218241109571464,
+                "wheel_target_rad_s": 3.044650799191246,
+                "wheel_actual_rad_s": 1.7366854829558294,
+                "wheel_torque_nm": 0.6546724194387495
+              }
+            }
+          },
+          "down": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18360172297443134,
+                "wheel_target_rad_s": 3.1718742767969768,
+                "wheel_actual_rad_s": 2.196350217851139,
+                "wheel_torque_nm": 0.4871132288777196
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.22158757418840638,
+                "wheel_target_rad_s": 3.192855692406495,
+                "wheel_actual_rad_s": 2.4253608396572846,
+                "wheel_torque_nm": 0.38480325034252577
+              },
+              "last_second": {
+                "body_vx_m_s": 0.3145405732296462,
+                "wheel_target_rad_s": 3.3982377640903,
+                "wheel_actual_rad_s": 3.429537582525463,
+                "wheel_torque_nm": -0.013337373586500575
+              },
+              "commanded": {
+                "body_vx_m_s": 0.24214524326208617,
+                "wheel_target_rad_s": 3.214297243362914,
+                "wheel_actual_rad_s": 2.582142981194498,
+                "wheel_torque_nm": 0.3172265399919046
+              }
+            }
+          }
+        }
+      },
+      {
+        "split": "heldout",
+        "arm": "baseline",
+        "terrain_summary": {
+          "flat": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.1831975444985059,
+                "wheel_target_rad_s": 3.1625360831618305,
+                "wheel_actual_rad_s": 2.1939996461553695,
+                "wheel_torque_nm": 0.48618861955175313
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.18254899282888296,
+                "wheel_target_rad_s": 3.156809576849143,
+                "wheel_actual_rad_s": 2.17334471492264,
+                "wheel_torque_nm": 0.4925708122874097
+              },
+              "last_second": {
+                "body_vx_m_s": 0.18132312108481194,
+                "wheel_target_rad_s": 3.1463292809824153,
+                "wheel_actual_rad_s": 2.161587497711536,
+                "wheel_torque_nm": 0.49135971169285525
+              },
+              "commanded": {
+                "body_vx_m_s": 0.17975859240583228,
+                "wheel_target_rad_s": 3.111244221882274,
+                "wheel_actual_rad_s": 2.046888054395064,
+                "wheel_torque_nm": 0.5329752887223566
+              }
+            }
+          },
+          "up": {
+            "episodes": 3,
+            "reached_mark": 0,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.1831975444985059,
+                "wheel_target_rad_s": 3.1625360831618305,
+                "wheel_actual_rad_s": 2.1939996461553695,
+                "wheel_torque_nm": 0.48618861955175313
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.13889381570001316,
+                "wheel_target_rad_s": 3.1139703169465065,
+                "wheel_actual_rad_s": 1.8453889076872432,
+                "wheel_torque_nm": 0.6334575683620393
+              },
+              "last_second": {
+                "body_vx_m_s": 0.10242997136068542,
+                "wheel_target_rad_s": 2.96047207514445,
+                "wheel_actual_rad_s": 1.4422566968130959,
+                "wheel_torque_nm": 0.7589967537847752
+              },
+              "commanded": {
+                "body_vx_m_s": 0.13931908096987236,
+                "wheel_target_rad_s": 3.0333583999238907,
+                "wheel_actual_rad_s": 1.7000332323861251,
+                "wheel_torque_nm": 0.6672827747813418
+              }
+            }
+          },
+          "down": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.1831975444985059,
+                "wheel_target_rad_s": 3.1625360831618305,
+                "wheel_actual_rad_s": 2.1939996461553695,
+                "wheel_torque_nm": 0.48618861955175313
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.22207964848343917,
+                "wheel_target_rad_s": 3.1847755203644437,
+                "wheel_actual_rad_s": 2.4193141561099942,
+                "wheel_torque_nm": 0.3845140521508015
+              },
+              "last_second": {
+                "body_vx_m_s": 0.3108395754693185,
+                "wheel_target_rad_s": 3.379754777004321,
+                "wheel_actual_rad_s": 3.3772896952988525,
+                "wheel_torque_nm": 0.0018037432844087303
+              },
+              "commanded": {
+                "body_vx_m_s": 0.23696232660770508,
+                "wheel_target_rad_s": 3.1976850433709725,
+                "wheel_actual_rad_s": 2.5264522364311746,
+                "wheel_torque_nm": 0.3370928977583643
+              }
+            }
+          }
+        }
+      },
+      {
+        "split": "heldout",
+        "arm": "masked",
+        "terrain_summary": {
+          "flat": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18521835421612423,
+                "wheel_target_rad_s": 3.1931319822867708,
+                "wheel_actual_rad_s": 2.2093494109046277,
+                "wheel_torque_nm": 0.492058806157132
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.18460984575567127,
+                "wheel_target_rad_s": 3.1837726220488545,
+                "wheel_actual_rad_s": 2.1901297990464035,
+                "wheel_torque_nm": 0.49609043512820145
+              },
+              "last_second": {
+                "body_vx_m_s": 0.1826777266903302,
+                "wheel_target_rad_s": 3.165345251063506,
+                "wheel_actual_rad_s": 2.1704945370791866,
+                "wheel_torque_nm": 0.4972060078175242
+              },
+              "commanded": {
+                "body_vx_m_s": 0.18242385674098996,
+                "wheel_target_rad_s": 3.1404326935485005,
+                "wheel_actual_rad_s": 2.0740487065834583,
+                "wheel_torque_nm": 0.5341256912191927
+              }
+            }
+          },
+          "up": {
+            "episodes": 3,
+            "reached_mark": 0,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18521835421612423,
+                "wheel_target_rad_s": 3.1931319822867708,
+                "wheel_actual_rad_s": 2.2093494109046277,
+                "wheel_torque_nm": 0.492058806157132
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.14301124340884674,
+                "wheel_target_rad_s": 3.1428078850110377,
+                "wheel_actual_rad_s": 1.8754109366360092,
+                "wheel_torque_nm": 0.6325875405193576
+              },
+              "last_second": {
+                "body_vx_m_s": 0.10513119791121751,
+                "wheel_target_rad_s": 2.987141240388155,
+                "wheel_actual_rad_s": 1.4659628185461273,
+                "wheel_torque_nm": 0.7597168815599354
+              },
+              "commanded": {
+                "body_vx_m_s": 0.1413954593261417,
+                "wheel_target_rad_s": 3.0628679459169508,
+                "wheel_actual_rad_s": 1.7220237622272725,
+                "wheel_torque_nm": 0.6710648264458672
+              }
+            }
+          },
+          "down": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18521835421612423,
+                "wheel_target_rad_s": 3.1931319822867708,
+                "wheel_actual_rad_s": 2.2093494109046277,
+                "wheel_torque_nm": 0.492058806157132
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.22404595519455486,
+                "wheel_target_rad_s": 3.2115259567896524,
+                "wheel_actual_rad_s": 2.4428123879519767,
+                "wheel_torque_nm": 0.3872086440446239
+              },
+              "last_second": {
+                "body_vx_m_s": 0.31654317612742905,
+                "wheel_target_rad_s": 3.40983091245095,
+                "wheel_actual_rad_s": 3.4538708012755737,
+                "wheel_torque_nm": -0.01907041877374906
+              },
+              "commanded": {
+                "body_vx_m_s": 0.2423835017752741,
+                "wheel_target_rad_s": 3.2313470358525715,
+                "wheel_actual_rad_s": 2.5840264170657687,
+                "wheel_torque_nm": 0.3252932720157488
+              }
+            }
+          }
+        }
+      },
+      {
+        "split": "heldout",
+        "arm": "range",
+        "terrain_summary": {
+          "flat": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18336085328623564,
+                "wheel_target_rad_s": 3.1863369842370353,
+                "wheel_actual_rad_s": 2.1965863336448437,
+                "wheel_torque_nm": 0.49433946987854466
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.1835390878223239,
+                "wheel_target_rad_s": 3.1790172194441157,
+                "wheel_actual_rad_s": 2.1775814544576124,
+                "wheel_torque_nm": 0.5014226616715773
+              },
+              "last_second": {
+                "body_vx_m_s": 0.18199440845482842,
+                "wheel_target_rad_s": 3.159974986066421,
+                "wheel_actual_rad_s": 2.1659396315617694,
+                "wheel_torque_nm": 0.49687028920137793
+              },
+              "commanded": {
+                "body_vx_m_s": 0.18170218178538752,
+                "wheel_target_rad_s": 3.134499101061374,
+                "wheel_actual_rad_s": 2.066730138584069,
+                "wheel_torque_nm": 0.5344248384931332
+              }
+            }
+          },
+          "up": {
+            "episodes": 3,
+            "reached_mark": 0,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18322361852400562,
+                "wheel_target_rad_s": 3.1857945824662846,
+                "wheel_actual_rad_s": 2.2007728234715374,
+                "wheel_torque_nm": 0.49130477139639345
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.1422536980587037,
+                "wheel_target_rad_s": 3.1383360669016844,
+                "wheel_actual_rad_s": 1.8655355596504268,
+                "wheel_torque_nm": 0.6354848093242232
+              },
+              "last_second": {
+                "body_vx_m_s": 0.10465956068534148,
+                "wheel_target_rad_s": 2.9812742019693057,
+                "wheel_actual_rad_s": 1.4611772371723857,
+                "wheel_torque_nm": 0.7602120554694944
+              },
+              "commanded": {
+                "body_vx_m_s": 0.14101246367117348,
+                "wheel_target_rad_s": 3.057028795517981,
+                "wheel_actual_rad_s": 1.716711226818617,
+                "wheel_torque_nm": 0.6701990910857459
+              }
+            }
+          },
+          "down": {
+            "episodes": 3,
+            "reached_mark": 3,
+            "wheel_torque_saturated_ticks": 0,
+            "means_across_seeds_and_wheels": {
+              "pre_toe": {
+                "body_vx_m_s": 0.18378502150450682,
+                "wheel_target_rad_s": 3.187622233728568,
+                "wheel_actual_rad_s": 2.2016834345052145,
+                "wheel_torque_nm": 0.4951056139373611
+              },
+              "post_toe": {
+                "body_vx_m_s": 0.2219497240704774,
+                "wheel_target_rad_s": 3.2047446568806968,
+                "wheel_actual_rad_s": 2.425721793680418,
+                "wheel_torque_nm": 0.3914746915510996
+              },
+              "last_second": {
+                "body_vx_m_s": 0.31443528832063733,
+                "wheel_target_rad_s": 3.397783613701662,
+                "wheel_actual_rad_s": 3.4238689665641306,
+                "wheel_torque_nm": -0.012599600427838224
+              },
+              "commanded": {
+                "body_vx_m_s": 0.24072170435806106,
+                "wheel_target_rad_s": 3.222803606136391,
+                "wheel_actual_rad_s": 2.565693915896919,
+                "wheel_torque_nm": 0.32990689453074146
+              }
+            }
+          }
+        }
+      }
+    ],
+    "original_contact": [
+      {
+        "seed": 87101,
+        "terrain": "flat",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.219999999999867,
+          "rear": 5.999999999999561
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.1000227600304067,
+          "rear": 0.6000089509572242
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 134,
+            "mean_axle_normal_force_n": 279.0604937952974,
+            "axle_x_at_last_sample_m": 1.078445087953129,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.012323145063418074,
+            "longitudinal_slip_abs_m_s": 0.012323145063418074,
+            "tangential_slip_m_s": 0.014280825669188027,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.4518110081596878,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 171,
+            "mean_axle_normal_force_n": 201.57107773274217,
+            "axle_x_at_last_sample_m": 0.5798543359929946,
+            "normal_load_fraction_past_toe": 0.0067474536820307665,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.004232180111138172,
+            "longitudinal_slip_abs_m_s": 0.004232180111138172,
+            "tangential_slip_m_s": 0.004670071898238669,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.5580607233848088,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87101,
+        "terrain": "up",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.219999999999867,
+          "rear": null
+        },
+        "max_loaded_contact_x_m": {
+          "front": 0.910429958257951,
+          "rear": 0.44381000247055
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 122,
+            "mean_axle_normal_force_n": 248.1405874124629,
+            "axle_x_at_last_sample_m": 0.8887929344130174,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.007631356991167222,
+            "longitudinal_slip_abs_m_s": 0.007631356991167222,
+            "tangential_slip_m_s": 0.008535644458433156,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.36430817289927325,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 210,
+            "mean_axle_normal_force_n": 233.54312695765952,
+            "axle_x_at_last_sample_m": 0.4424170509322869,
+            "normal_load_fraction_past_toe": 0.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.00911074204883489,
+            "longitudinal_slip_abs_m_s": 0.00911074204883489,
+            "tangential_slip_m_s": 0.009797690711896108,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.6260061625134289,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87101,
+        "terrain": "down",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.219999999999867,
+          "rear": 5.299999999999638
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.3583706890004694,
+          "rear": 0.8181796809725969
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 119,
+            "mean_axle_normal_force_n": 318.8938350441642,
+            "axle_x_at_last_sample_m": 1.3449229646663112,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.0027374041665862822,
+            "longitudinal_slip_abs_m_s": 0.002744931294964033,
+            "tangential_slip_m_s": 0.0058935832390226844,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.32924319450940537,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 49,
+            "loaded_contact_samples": 133,
+            "mean_axle_normal_force_n": 175.04821852798852,
+            "axle_x_at_last_sample_m": 0.8123531883825483,
+            "normal_load_fraction_past_toe": 0.6484694629848994,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": 0.006444463399076379,
+            "longitudinal_slip_abs_m_s": 0.006444463399076379,
+            "tangential_slip_m_s": 0.006953628559548923,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.32331338926024117,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87102,
+        "terrain": "flat",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.319999999999856,
+          "rear": null
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.0868281464954688,
+          "rear": 0.5869382753314318
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 125,
+            "mean_axle_normal_force_n": 262.8224056083194,
+            "axle_x_at_last_sample_m": 1.0804340120937281,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.01055343887553954,
+            "longitudinal_slip_abs_m_s": 0.01055343887553954,
+            "tangential_slip_m_s": 0.012264195043845566,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.42947306956742826,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 49,
+            "loaded_contact_samples": 131,
+            "mean_axle_normal_force_n": 195.6019867231732,
+            "axle_x_at_last_sample_m": 0.5830830427199332,
+            "normal_load_fraction_past_toe": 0.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.004626283932795388,
+            "longitudinal_slip_abs_m_s": 0.004626283932795388,
+            "tangential_slip_m_s": 0.00503823007592286,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.4479284208236109,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87102,
+        "terrain": "up",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.319999999999856,
+          "rear": null
+        },
+        "max_loaded_contact_x_m": {
+          "front": 0.9016036056544451,
+          "rear": 0.4580611216410818
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 120,
+            "mean_axle_normal_force_n": 232.37972884202455,
+            "axle_x_at_last_sample_m": 0.889280835878413,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.008124290534155669,
+            "longitudinal_slip_abs_m_s": 0.008124290534155669,
+            "tangential_slip_m_s": 0.00889927580684657,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.39949924540579707,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 150,
+            "mean_axle_normal_force_n": 240.72039166817476,
+            "axle_x_at_last_sample_m": 0.44822628613544246,
+            "normal_load_fraction_past_toe": 0.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.010645189490543206,
+            "longitudinal_slip_abs_m_s": 0.010645189490543206,
+            "tangential_slip_m_s": 0.011753698250295961,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.41910091670126204,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87102,
+        "terrain": "down",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.319999999999856,
+          "rear": 5.319999999999636
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.3428983701475632,
+          "rear": 0.8120057743376925
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 114,
+            "mean_axle_normal_force_n": 300.1795418162687,
+            "axle_x_at_last_sample_m": 1.3445551269457434,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.0012239815921072596,
+            "longitudinal_slip_abs_m_s": 0.0012301586117378252,
+            "tangential_slip_m_s": 0.0017023738406595817,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.3010619705391402,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 123,
+            "mean_axle_normal_force_n": 175.62503893739895,
+            "axle_x_at_last_sample_m": 0.8135824765750186,
+            "normal_load_fraction_past_toe": 0.6416361773140464,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": 0.004981536625069395,
+            "longitudinal_slip_abs_m_s": 0.004982064368290567,
+            "tangential_slip_m_s": 0.005324815512454613,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.31871267650456153,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87103,
+        "terrain": "flat",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.1599999999998736,
+          "rear": 5.659999999999599
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.1375779530649777,
+          "rear": 0.6667383981196264
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 141,
+            "mean_axle_normal_force_n": 284.5361392682171,
+            "axle_x_at_last_sample_m": 1.1230326921099425,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.012618528729649105,
+            "longitudinal_slip_abs_m_s": 0.012618528729649105,
+            "tangential_slip_m_s": 0.015041883894591292,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.4872838031851594,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 192,
+            "mean_axle_normal_force_n": 418.56444235586395,
+            "axle_x_at_last_sample_m": 0.6322538266309403,
+            "normal_load_fraction_past_toe": 0.3122735555776241,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.0040166162295252605,
+            "longitudinal_slip_abs_m_s": 0.0040166162295252605,
+            "tangential_slip_m_s": 0.009613345743151546,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.8272066862606635,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87103,
+        "terrain": "up",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.1599999999998736,
+          "rear": null
+        },
+        "max_loaded_contact_x_m": {
+          "front": 0.940724165097761,
+          "rear": 0.5000014300429914
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 121,
+            "mean_axle_normal_force_n": 245.30147075012783,
+            "axle_x_at_last_sample_m": 0.9165460339698691,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.008340933417498418,
+            "longitudinal_slip_abs_m_s": 0.008340933417498418,
+            "tangential_slip_m_s": 0.009189755397045245,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.3374667274523544,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 176,
+            "mean_axle_normal_force_n": 336.8663491664931,
+            "axle_x_at_last_sample_m": 0.4752119278268152,
+            "normal_load_fraction_past_toe": 0.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.007076968116080568,
+            "longitudinal_slip_abs_m_s": 0.007076968116080568,
+            "tangential_slip_m_s": 0.010547731496501712,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.7126238165843012,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      },
+      {
+        "seed": 87103,
+        "terrain": "down",
+        "first_loaded_contact_past_toe_s": {
+          "front": 3.1599999999998736,
+          "rear": 5.219999999999647
+        },
+        "max_loaded_contact_x_m": {
+          "front": 1.3760956946426055,
+          "rear": 0.8375717601555417
+        },
+        "last_second": {
+          "front": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 113,
+            "mean_axle_normal_force_n": 304.2838471844963,
+            "axle_x_at_last_sample_m": 1.3657486639076497,
+            "normal_load_fraction_past_toe": 1.0,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": -0.002194430150591552,
+            "longitudinal_slip_abs_m_s": 0.002201490914200847,
+            "tangential_slip_m_s": 0.002783358292139707,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.2638371670863847,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          },
+          "rear": {
+            "boundaries": 50,
+            "loaded_boundaries": 50,
+            "loaded_contact_samples": 135,
+            "mean_axle_normal_force_n": 170.3543930981038,
+            "axle_x_at_last_sample_m": 0.832521324851803,
+            "normal_load_fraction_past_toe": 0.710213570925385,
+            "longitudinal_direction_defined_load_fraction": 1.0,
+            "longitudinal_slip_signed_m_s": 0.0040493281558457,
+            "longitudinal_slip_abs_m_s": 0.00404941965755021,
+            "tangential_slip_m_s": 0.004423964757678268,
+            "sum_tangential_force_magnitude_over_sum_normal_force": 0.3498822478618326,
+            "min_configured_sliding_friction": 1.0,
+            "contact_dimensions": [
+              3
+            ]
+          }
+        }
+      }
+    ],
+    "contact_boundaries": 10800,
+    "contact_position_validation": true,
+    "range_training_exposure": [
+      {
+        "training_seed": 87011,
+        "all_ticks": 4096,
+        "uphill_ticks": 1200,
+        "uphill_ticks_base_origin_past_toe": 13,
+        "uphill_max_base_origin_past_toe_m": 0.007474934933416444,
+        "toe_x_m": 0.6,
+        "policy_hz": 50,
+        "completed_rollouts": 1,
+        "optimizer_steps": 5,
+        "uphill_episodes": [
+          {
+            "start_tick": 600,
+            "end_tick_exclusive": 900,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 0
+          },
+          {
+            "start_tick": 1500,
+            "end_tick_exclusive": 1800,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 0
+          },
+          {
+            "start_tick": 2400,
+            "end_tick_exclusive": 2700,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 11
+          },
+          {
+            "start_tick": 3300,
+            "end_tick_exclusive": 3600,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 2
+          }
+        ],
+        "verified_train_array_sha256": {
+          "terrain": "f70d17a1cc2264ebf27d492b1f970ba7bdb61b032919bd034780f03ee91cc4b6",
+          "qpos": "20d076f1efe6ebec1237935180f65eaacf43ac6188baf220606c696fb54a910e",
+          "terminated": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "truncated": "36969da676a339a7c5c4433ecc49a4ade2e02cda5b22ba621ddd60af07c35c05"
+        }
+      },
+      {
+        "training_seed": 87023,
+        "all_ticks": 4096,
+        "uphill_ticks": 1200,
+        "uphill_ticks_base_origin_past_toe": 31,
+        "uphill_max_base_origin_past_toe_m": 0.040203003318742825,
+        "toe_x_m": 0.6,
+        "policy_hz": 50,
+        "completed_rollouts": 1,
+        "optimizer_steps": 5,
+        "uphill_episodes": [
+          {
+            "start_tick": 600,
+            "end_tick_exclusive": 900,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 2
+          },
+          {
+            "start_tick": 1500,
+            "end_tick_exclusive": 1800,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 11
+          },
+          {
+            "start_tick": 2400,
+            "end_tick_exclusive": 2700,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 0
+          },
+          {
+            "start_tick": 3300,
+            "end_tick_exclusive": 3600,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 18
+          }
+        ],
+        "verified_train_array_sha256": {
+          "terrain": "f70d17a1cc2264ebf27d492b1f970ba7bdb61b032919bd034780f03ee91cc4b6",
+          "qpos": "4f1b509a68ca9def2ceae83875080b83e816d35edb3053c0710153e72da15ac2",
+          "terminated": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "truncated": "36969da676a339a7c5c4433ecc49a4ade2e02cda5b22ba621ddd60af07c35c05"
+        }
+      },
+      {
+        "training_seed": 87037,
+        "all_ticks": 4096,
+        "uphill_ticks": 1500,
+        "uphill_ticks_base_origin_past_toe": 78,
+        "uphill_max_base_origin_past_toe_m": 0.04184469488981957,
+        "toe_x_m": 0.6,
+        "policy_hz": 50,
+        "completed_rollouts": 1,
+        "optimizer_steps": 4,
+        "uphill_episodes": [
+          {
+            "start_tick": 0,
+            "end_tick_exclusive": 300,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 10
+          },
+          {
+            "start_tick": 900,
+            "end_tick_exclusive": 1200,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 15
+          },
+          {
+            "start_tick": 1800,
+            "end_tick_exclusive": 2100,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 16
+          },
+          {
+            "start_tick": 2700,
+            "end_tick_exclusive": 3000,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 14
+          },
+          {
+            "start_tick": 3600,
+            "end_tick_exclusive": 3900,
+            "recorded_terminal_boundary": true,
+            "ticks_base_origin_past_toe": 23
+          }
+        ],
+        "verified_train_array_sha256": {
+          "terrain": "ba175efd1494a9dc788fc02bb3d73d1c97788537c962e0e8fc9742bcf6bb0c31",
+          "qpos": "1848e30b175498c59d313a12668083de674a17ec86de96a10faaee539e4a611d",
+          "terminated": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+          "truncated": "36969da676a339a7c5c4433ecc49a4ade2e02cda5b22ba621ddd60af07c35c05"
+        }
+      }
+    ],
+    "uphill_sensor_same_pose": [
+      {
+        "case": "range_87011_up_87201",
+        "status": "VERIFIED",
+        "capture_hz": 6,
+        "control_hz": 50,
+        "delivery_delay_ticks": 2,
+        "archived_feature_values": 4800,
+        "archived_features_exact": true,
+        "max_abs_archived_feature_error": 0.0,
+        "delivered_captures": 36,
+        "ticks_changed_packet": 298,
+        "ticks_changed_validity": 0,
+        "max_abs_distance_change_jointly_valid_m": 0.15792454779148102,
+        "max_abs_change_normalized_all_16": 0.00023792684078216553,
+        "periods": {
+          "moving": {
+            "ticks": 250,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              0.0003119170665740967,
+              4.8116445541381835e-05,
+              0.0005490744113922119,
+              -9.76458191871643e-05
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.00020286552608013154,
+            "mean_abs_up_minus_flat_rad_s": 0.0002516884356737137,
+            "max_abs_up_minus_flat_rad_s": 0.0008943676948547363
+          },
+          "last_second": {
+            "ticks": 50,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              0.0004718005657196045,
+              7.306337356567383e-05,
+              0.000828215479850769,
+              -0.00014802813529968262
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.0003062628209590912,
+            "mean_abs_up_minus_flat_rad_s": 0.0003802768886089325,
+            "max_abs_up_minus_flat_rad_s": 0.0008943676948547363
+          },
+          "from_first_loaded_crossing": {
+            "ticks": 137,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              0.0004024161909618517,
+              6.229555519827962e-05,
+              0.0007069426296401198,
+              -0.00012616824059590807
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.00026137153380108573,
+            "mean_abs_up_minus_flat_rad_s": 0.00032445565409903977,
+            "max_abs_up_minus_flat_rad_s": 0.0008943676948547363
+          }
+        }
+      },
+      {
+        "case": "range_87023_up_87202",
+        "status": "VERIFIED",
+        "capture_hz": 6,
+        "control_hz": 50,
+        "delivery_delay_ticks": 2,
+        "archived_feature_values": 4800,
+        "archived_features_exact": true,
+        "max_abs_archived_feature_error": 0.0,
+        "delivered_captures": 36,
+        "ticks_changed_packet": 298,
+        "ticks_changed_validity": 0,
+        "max_abs_distance_change_jointly_valid_m": 0.15779820084571838,
+        "max_abs_change_normalized_all_16": 0.0003116130828857422,
+        "periods": {
+          "moving": {
+            "ticks": 250,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -1.2467503547668456e-05,
+              0.00025612235069274905,
+              0.00025114238262176515,
+              0.00022794097661972047
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.00018068455159664154,
+            "mean_abs_up_minus_flat_rad_s": 0.00018691830337047577,
+            "max_abs_up_minus_flat_rad_s": 0.00041753053665161133
+          },
+          "last_second": {
+            "ticks": 50,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -1.868009567260742e-05,
+              0.0003866851329803467,
+              0.0003797292709350586,
+              0.00034445226192474364
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.00027304664254188535,
+            "mean_abs_up_minus_flat_rad_s": 0.0002823866903781891,
+            "max_abs_up_minus_flat_rad_s": 0.00041753053665161133
+          },
+          "from_first_loaded_crossing": {
+            "ticks": 136,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -1.5977112685932833e-05,
+              0.0003303872311816496,
+              0.00032435554791899286,
+              0.00029426396769635817
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 0.00023325740852776696,
+            "mean_abs_up_minus_flat_rad_s": 0.00024124596487073337,
+            "max_abs_up_minus_flat_rad_s": 0.00041753053665161133
+          }
+        }
+      },
+      {
+        "case": "range_87037_up_87203",
+        "status": "VERIFIED",
+        "capture_hz": 6,
+        "control_hz": 50,
+        "delivery_delay_ticks": 2,
+        "archived_feature_values": 4800,
+        "archived_features_exact": true,
+        "max_abs_archived_feature_error": 0.0,
+        "delivered_captures": 36,
+        "ticks_changed_packet": 298,
+        "ticks_changed_validity": 0,
+        "max_abs_distance_change_jointly_valid_m": 0.15938006341457367,
+        "max_abs_change_normalized_all_16": 0.0002774074673652649,
+        "periods": {
+          "moving": {
+            "ticks": 250,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -0.0001799112558364868,
+              7.908463478088379e-05,
+              8.535921573638916e-05,
+              0.0002645793557167053
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 6.227798759937286e-05,
+            "mean_abs_up_minus_flat_rad_s": 0.00015223361551761628,
+            "max_abs_up_minus_flat_rad_s": 0.0004348158836364746
+          },
+          "last_second": {
+            "ticks": 50,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -0.0002678036689758301,
+              0.00012083053588867188,
+              0.0001327991485595703,
+              0.0004020571708679199
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 9.697079658508301e-05,
+            "mean_abs_up_minus_flat_rad_s": 0.00023087263107299805,
+            "max_abs_up_minus_flat_rad_s": 0.0004348158836364746
+          },
+          "from_first_loaded_crossing": {
+            "ticks": 139,
+            "up_minus_flat_mean_per_wheel_rad_s": [
+              -0.00022865242237667384,
+              0.00010243851503879904,
+              0.00011214035020457754,
+              0.00034143170006841204
+            ],
+            "up_minus_flat_four_wheel_mean_rad_s": 8.18395357337787e-05,
+            "mean_abs_up_minus_flat_rad_s": 0.00019616574692211562,
+            "max_abs_up_minus_flat_rad_s": 0.0004348158836364746
+          }
+        }
+      }
+    ],
+    "range_uphill_last_second": [
+      {
+        "train_seed": 87011,
+        "reset_seed": 87201,
+        "actions": {
+          "ticks": 50,
+          "measured_mean_per_wheel_rad_s": [
+            2.907003229856491,
+            4.066703248023987,
+            2.3028449535369875,
+            2.56691161096096
+          ],
+          "range_minus_masked_mean_per_wheel_rad_s": [
+            -0.012539786100387574,
+            -0.0019780278205871584,
+            -0.021203526854515077,
+            0.004026305675506592
+          ],
+          "range_minus_masked_four_wheel_mean_rad_s": -0.007923758774995803,
+          "range_minus_masked_mean_absolute_rad_s": 0.0099369116127491,
+          "range_minus_masked_max_absolute_rad_s": 0.021266192197799683,
+          "mean_absolute_change_over_mean_absolute_target": 0.0033560831244012733,
+          "masked_minus_parent_mean_per_wheel_rad_s": [
+            -0.012922149896621705,
+            0.009781420230865479,
+            -0.02417996823787689,
+            0.04040926992893219
+          ],
+          "masked_minus_parent_mean_absolute_rad_s": 0.021823202073574067
+        },
+        "reward": {
+          "speed_tracking_gap_to_exact_command": 0.42213074354327024,
+          "frozen_world_height_contribution": -0.0004073729990152889,
+          "ground_relative_height_counterfactual_contribution": -0.0008010382907519915,
+          "ground_relative_minus_world_contribution": -0.0003936652917367027,
+          "max_abs_road_height_under_base_m": 0.004975793439489798
+        }
+      },
+      {
+        "train_seed": 87023,
+        "reset_seed": 87202,
+        "actions": {
+          "ticks": 50,
+          "measured_mean_per_wheel_rad_s": [
+            2.8805213987827303,
+            4.197773796319962,
+            2.3230182111263273,
+            2.524816682934761
+          ],
+          "range_minus_masked_mean_per_wheel_rad_s": [
+            0.00013770461082458497,
+            -0.00942351222038269,
+            -0.009837192296981812,
+            -0.00852692723274231
+          ],
+          "range_minus_masked_four_wheel_mean_rad_s": -0.0069124817848205565,
+          "range_minus_masked_mean_absolute_rad_s": 0.0069813340902328495,
+          "range_minus_masked_max_absolute_rad_s": 0.009862631559371948,
+          "mean_absolute_change_over_mean_absolute_target": 0.0023415253860348782,
+          "masked_minus_parent_mean_per_wheel_rad_s": [
+            0.021457368135452272,
+            0.011924469470977783,
+            0.036946406960487364,
+            0.020656320452690124
+          ],
+          "masked_minus_parent_mean_absolute_rad_s": 0.022746141254901885
+        },
+        "reward": {
+          "speed_tracking_gap_to_exact_command": 0.3998819169646742,
+          "frozen_world_height_contribution": -0.000278638766529874,
+          "ground_relative_height_counterfactual_contribution": -0.0005439125613412703,
+          "ground_relative_minus_world_contribution": -0.0002652737948113963,
+          "max_abs_road_height_under_base_m": 0.0045777723617204825
+        }
+      },
+      {
+        "train_seed": 87037,
+        "reset_seed": 87203,
+        "actions": {
+          "ticks": 50,
+          "measured_mean_per_wheel_rad_s": [
+            2.95707249045372,
+            4.186864906549454,
+            2.3451532453298567,
+            2.504645958542824
+          ],
+          "range_minus_masked_mean_per_wheel_rad_s": [
+            0.004606658220291137,
+            -0.003645288944244385,
+            -0.004910558462142944,
+            -0.010715562105178832
+          ],
+          "range_minus_masked_four_wheel_mean_rad_s": -0.0036661878228187563,
+          "range_minus_masked_mean_absolute_rad_s": 0.005969516932964325,
+          "range_minus_masked_max_absolute_rad_s": 0.01074671745300293,
+          "mean_absolute_change_over_mean_absolute_target": 0.00199087811634229,
+          "masked_minus_parent_mean_per_wheel_rad_s": [
+            0.034957677125930786,
+            0.002747189998626709,
+            -0.005200523138046265,
+            -0.032786259055137636
+          ],
+          "masked_minus_parent_mean_absolute_rad_s": 0.018922912329435347
+        },
+        "reward": {
+          "speed_tracking_gap_to_exact_command": 0.3981771857656974,
+          "frozen_world_height_contribution": -0.0004012822893321234,
+          "ground_relative_height_counterfactual_contribution": -0.0008368003040237557,
+          "ground_relative_minus_world_contribution": -0.0004355180146916322,
+          "max_abs_road_height_under_base_m": 0.0052833844637274405
+        }
+      }
+    ],
+    "parent_reconstruction_max_action_error": 4.76837158203125e-07,
+    "ppo_reconstruction_max_action_error": 0.0,
+    "sensor_mask_reconstruction_max_error": 0.0
+  },
+  "resources": {
+    "probe": {
+      "startup_effective_bytes": 8341422080,
+      "minimum_effective_bytes": 6236069888,
+      "peak_group_bytes": 654290944,
+      "elapsed_s": 27.30854520201683,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+    },
+    "archive": {
+      "startup_effective_bytes": 7376400384,
+      "minimum_effective_bytes": 6080724992,
+      "peak_group_bytes": 1046228992,
+      "elapsed_s": 53.87499261100311,
+      "owned_cgroup_children_empty": true,
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+    }
+  },
+  "measurements_sha256": "d2b57ecc0d13c45c7bdb6fb33593ab0845619d406c787011aa8da1603869f4f6",
+  "probe_report_sha256": "71549890935482997a61b0fbf83945084f480a33acb207c7c4b10f3f94839b50",
+  "readback_sha256": {
+    "contact88.json": "488b496923d648efe3cda560ca062fb6694021d1c9eebbcd0bfea15fa864c498",
+    "drivetrain88.json": "3364ec4c6fc993ea48d3d8c521cb7d4b85d8d0c1e0a04e37876563683d733cfe",
+    "plot88.png": "f44b6686647d7e366e283dab615c1a5448cc21998adf0c13812d1525124a7c1b",
+    "policy88.json": "3db5e6ccfbf61176cf9e80fb6fe50b79b05bfb88d585d60e8206a992ebd9ece0",
+    "verify88.json": "dbca69b331b40fa5f7aa670c24b83c1614e5795e83b892bc0a709b58a43c488c"
+  }
+}
