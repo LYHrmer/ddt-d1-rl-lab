@@ -1,0 +1,30 @@
+{
+  "protocol": "d1-uphill-wheel-target-causal-probe88-v1",
+  "parent_protocol": "docs/experiments87/full_body_perception.json",
+  "parent_protocol_sha256": "b6ea1719001c9c710f7d6cfba3daf721abda8145455e4098cdac983044ba5b78",
+  "hypothesis": "Under the original full-body controller on the +4 degree course, additional wheel speed demand after front-wheel entry increases actual forward body speed.",
+  "controller": "Complete random-delay PPO25 checkpoint, original ONNX and C++34 process, qualified identities from the parent protocol. Fresh controller, FIFO and plant for each episode.",
+  "reset_seeds": [88101, 88102, 88103],
+  "arm_delta_rad_s": {"original": 0.0, "wheel_plus": 0.50},
+  "order": "For each reset seed in order, original then wheel_plus.",
+  "terrain": "up",
+  "issue_start_tick": 180,
+  "issue_start_s": 3.60,
+  "wheel_action_rows": [3, 7, 11, 15],
+  "wheel_scale_rad_s": 5.0,
+  "intervention": "At and after the registered issue time add the arm delta to all four requested wheel rates, clip the corresponding normalized outputs to [-1,1] and send through the original 1-tick FIFO. Record raw and issued actions. Keep all 12 leg outputs from the actor at each decision. Feed back the action actually issued to the next decision. Intervention timing uses only the clock.",
+  "course": "Original 87 native +4 degree slope, toe at x=0.60 m, stand through 1 s then request 0.20 m/s. Six seconds at 50 Hz, 250 Hz joint servos and 500 Hz MuJoCo.",
+  "max_episodes": 6,
+  "max_policy_transitions": 1800,
+  "max_native_steps": 18000,
+  "training_transitions": 0,
+  "primary": {
+    "interval_end_ticks_exclusive_inclusive": [200, 300],
+    "per_pair_min_delta_mean_body_vx_m_s": 0.0200,
+    "rule": "Support the hypothesis only if each of the three paired mean actual speeds improves by at least the threshold, all six complete the full horizon, and no fall or illegal contact occurs. Use unrounded numbers and all 100 interval endpoints per arm. A missing or invalid pair cannot pass."
+  },
+  "independent_course_mark_m_past_toe": 0.40,
+  "secondary": "Report per-arm maximum loaded front contact beyond toe, count reaching the original mark, torque saturation and offset clipping. A positive speed effect alone does not qualify a controller.",
+  "integrity": "Check SHA256 of complete parent inputs, matched physical observations through intervention delay, unmodified raw leg commands and correct FIFO. Record failures and partial data. Do not rerun or resume an attempt.",
+  "resources": {"cpu_environments": 1, "threads": 1, "nice": 10, "memory_high_gib": 2, "memory_max_gib": 3, "swap_max_bytes": 0, "minimum_effective_gib_at_start": 4, "minimum_effective_gib_during_run": 2, "parallel_heavy_jobs": 1}
+}
