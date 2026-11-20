@@ -36,5 +36,7 @@ jobs:
           python-version: '3.10'
       - run: python -m pip install --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
       - run: python -m pip install 'stable-baselines3==2.7.0' 'gymnasium==1.2.0' 'mujoco==3.3.0' 'numpy<3' pytest
-      - name: Check reset geometry, inherited Adam state, coverage, holdout and clip sources
-        run: python -m pytest --noconftest -q tests/test*89.py
+      - name: Check reset math, inherited Adam state, coverage, holdout and clip sources
+        run: python -m pytest -q tests/test*89.py
+      - name: Reproduce the native heightfield grid-edge reading
+        run: python -m pytest -q tools89/check_heightfield89.py

@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import time
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -14,6 +15,8 @@ from tools89.common89 import BASE, check_worker, complete_stage, read
 def run_unit(stage):
     name = f"d1-curriculum89-{stage}"
     guard = BASE / f"guard_{stage}_01"
+    if stage == "tests":
+        guard = BASE / f"guard_tests_{time.time_ns()}"
     if guard.exists():
         raise FileExistsError(f"keeping existing {stage} attempt at {guard}")
     env = {"PYTHONPATH": os.pathsep.join(map(str, (ROOT / ".python-deps", ROOT / "training", ROOT))),
@@ -63,8 +66,10 @@ def work(stage):
         complete_stage("evaluate")
         args = ["-m", "tools89.video89"]
     else:
-        args = ["-m", "pytest", "--noconftest", "-p", "no:cacheprovider", "-q",
-                *(str(p) for p in sorted((ROOT / "tests").glob("test*89.py")))]
+        pytest_args = ["-m", "pytest", "-p", "no:cacheprovider", "-q"]
+        tests = sorted((ROOT / "tests").glob("test*89.py"))
+        subprocess.run([sys.executable, "-B", *pytest_args, *tests], check=True)
+        args = [*pytest_args, str(ROOT / "tools89" / "check_heightfield89.py")]
     subprocess.run([sys.executable, "-B", *args], check=True)
 
 
