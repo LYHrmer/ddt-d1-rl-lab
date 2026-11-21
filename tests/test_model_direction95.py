@@ -1,7 +1,8 @@
 """Algebra and archive semantics using a scalar analytic fixture, without D1 rollouts."""
 import numpy as np
 import pytest
-import torch
+
+torch = pytest.importorskip("torch")
 
 from tools95 import model95 as direction
 
