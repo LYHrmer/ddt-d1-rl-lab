@@ -2,9 +2,9 @@ name: D1 late response loss
 
 on:
   push:
-    paths: ['tools99/**', 'tests/test_late*99.py', 'docs/supermimic_late_response99*', '.github/workflows/late_response99.yml']
+    paths: ['tools99/**', 'tests/test_*99.py', 'docs/experiments99/**', 'docs/supermimic_late_response99*', 'docs/assets/late_response99.mp4', 'reports/late_response99*', '.github/workflows/late_response99.yml']
   pull_request:
-    paths: ['tools99/**', 'tests/test_late*99.py', 'docs/supermimic_late_response99*', '.github/workflows/late_response99.yml']
+    paths: ['tools99/**', 'tests/test_*99.py', 'docs/experiments99/**', 'docs/supermimic_late_response99*', 'docs/assets/late_response99.mp4', 'reports/late_response99*', '.github/workflows/late_response99.yml']
 
 permissions:
   contents: read
@@ -28,7 +28,9 @@ jobs:
           python -m pip install --quiet 'numpy==2.2.6' 'pytest==8.4.2'
           python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
           python -c 'import torch'
-      - name: Check loss gradients, sample boundaries and archived training labels
+      - name: Check gradients, matched fits, sealed blind endpoints and movie
         run: |
-          python -B -m pytest -p no:cacheprovider -q tests/test_late*99.py
+          python -B -m pytest -p no:cacheprovider -q tests/test_*99.py
           python -B -m tools99.data99
+      - name: Recompute both comparisons and all promotion gates from public files
+        run: python -B -m tools99.publish99 --check
