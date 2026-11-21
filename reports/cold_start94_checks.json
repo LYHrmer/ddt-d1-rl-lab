@@ -1,0 +1,197 @@
+{
+  "registered_commit": "f4e50c43c2f0e210b4c8a8ea06cf865e971bd7c3",
+  "stages": {
+    "guard_contacts_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 333725696,
+      "elapsed_s": 11.864829791999,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "f9a7cd01de2c8aa62d673addd41d606605d2e17e950fa7bea35ba221f030452b",
+      "log_sha256": "dcddc7ec5176e303635184c630eac1dfc455c46e5767cd5a241c857e01d69aa7",
+      "startup_effective_bytes": 6996008960,
+      "runtime_min_effective_bytes": 6804955136
+    },
+    "guard_preflight_1795248253148274286": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 1659662336,
+      "elapsed_s": 24.427769982999962,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "98226bec05901340dd6310c552a29724e4622912618843a15b56a61c51eb355e",
+      "log_sha256": "62709863a64bf3596b143b9159371e34519882011c6d580557e2286961768401",
+      "startup_effective_bytes": 6136799232,
+      "runtime_min_effective_bytes": 5101490176,
+      "pytest_summary": "21 passed in 5.29s"
+    },
+    "guard_readback_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 30990336,
+      "elapsed_s": 10.345121177000692,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "94415a15a8f75ddba3fc0a50236b44ff6f70dcf6a47b23e303d7c18143fc545e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "startup_effective_bytes": 6669561856,
+      "runtime_min_effective_bytes": 6647447552
+    },
+    "guard_seed94011_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 1094692864,
+      "elapsed_s": 57.15951928499999,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "303f2848878b98320ae483bea35be878534f7a5bca3e4b64e5d73d48013a4dc1",
+      "log_sha256": "9c737bdd38a8c5ce9a7adb0ae855ca58006f8ca26b123fe095aef565c0b9deb0",
+      "startup_effective_bytes": 6099947520,
+      "runtime_min_effective_bytes": 5367894016
+    },
+    "guard_seed94023_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 1099571200,
+      "elapsed_s": 57.25116184500075,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "d7d99bca611c9b75e13f78d49cc00f205f059db0890dca615ea813e725ddea3e",
+      "log_sha256": "b36d906b325c4d9c0e3ff7fca9c59f0eb10e9a151403f7036578208f03a15893",
+      "startup_effective_bytes": 5923811328,
+      "runtime_min_effective_bytes": 5175738368
+    },
+    "guard_seed94037_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 1039646720,
+      "elapsed_s": 55.609285815000476,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "53e700b847fbc3cc3e373a98b975ab2e08c2c07b3635ce5ff60ba5fb7d8ff216",
+      "log_sha256": "0e2a600baede8fb4e8ef44bb7d65e28b2f0a0bb594a438f56856fe254bec5e7e",
+      "startup_effective_bytes": 6755938304,
+      "runtime_min_effective_bytes": 5804793856
+    },
+    "guard_verify_1795249000949636078": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 406523904,
+      "elapsed_s": 16.152540597999177,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "56c2ce50eaadc91577792b8ce0cd20ce1920739093225f5d47ae7cdb7aad2bad",
+      "log_sha256": "6945b80f952b33dee00910158992086f13272c469a9a0c5908f412b1de586bce",
+      "startup_effective_bytes": 6625509376,
+      "runtime_min_effective_bytes": 5368377344,
+      "pytest_summary": "27 passed in 4.63s"
+    },
+    "guard_video_01": {
+      "status": "COMPLETE",
+      "returncode": 0,
+      "cpu_affinity": [
+        0
+      ],
+      "peak_group_bytes": 555708416,
+      "elapsed_s": 21.1934540630009,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "owned_cgroup_children_empty": true,
+      "guard_sha256": "cd493fc238a5c2f98010ee6c659bc754fcc9e701624c6afbb284a680b7c19cf1",
+      "log_sha256": "73f14a45925b0f939655fe3ab269276c47eadb3b5508a3eba28b6e9efc9b768b",
+      "startup_effective_bytes": 6743212032,
+      "runtime_min_effective_bytes": 6265073664
+    }
+  },
+  "artifacts": {
+    "docs/assets/cold_start94.mp4": "a6b87007b7f902b1d09e5c654579b8140957aa0a7b2ff8f2b12cdcafffe9236d",
+    "reports/cold_start94.json": "a6e770eec5cda66cbc9614182ee19afaa02b1e89c08f1797df3ddecb92108872",
+    "reports/cold_start94_prefix.json": "95f7f97c7b3e8559dee090ba988c50f66a86ad401da1e5414556a4e412624cec",
+    "reports/cold_start94_contacts.json.gz": "0f1d78e7d886ba919aa4d79875251ad11fda1ed54ca2f0cc6841b6ddf696d495",
+    "reports/cold_start94_curves.npz": "a91a35b6ff66b3ed4b95699b90b1d8ea8eaec3f768a00eed2124c9d0580080eb",
+    "reports/cold_start94_video.json": "c186f926a253c5b5767e324d130ec3936b34f706f0aa5e872a1eb5f968b7b188"
+  },
+  "desktop_copy": {
+    "name": "D1_SuperMimic冷启动_九组驻坡校准_20261121.mp4",
+    "sha256": "a6b87007b7f902b1d09e5c654579b8140957aa0a7b2ff8f2b12cdcafffe9236d",
+    "bytes": 1618530,
+    "matches_repository": true
+  }
+}

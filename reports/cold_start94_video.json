@@ -1,0 +1,290 @@
+{
+  "status": "COMPLETE",
+  "file": "video.mp4",
+  "frames": 375,
+  "fps": 25,
+  "playback_speed": 0.5,
+  "source_dt_s": 0.02,
+  "cover_frames": 0,
+  "endpoint_hold_frames": 8,
+  "new_physics_steps": 0,
+  "model_steps": 0,
+  "policy_calls": 0,
+  "training_updates": 0,
+  "rendered_poses": 606,
+  "pairs": [
+    {
+      "seed": 94011,
+      "reset": 948101,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 0,
+      "endpoint_frame": 32,
+      "last_frame": 40,
+      "left": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948101/m20/trace.npz",
+        "sha256": "f66cf551353bdd82651aa9f24efb25a7203f4de4735de9187fbdd5c4d2a89de6",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -247.4993740801803,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948101/p20/trace.npz",
+        "sha256": "429a390d8406bef5c9a9d57fcbbeea2dff309f8653c1a7e47bece88836ee3e4e",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -243.34404283979939,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94011,
+      "reset": 948102,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 41,
+      "endpoint_frame": 73,
+      "last_frame": 81,
+      "left": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948102/m20/trace.npz",
+        "sha256": "1c84971b3d03d69e30de861fcf6c0118b159000c8cca0daddead01ec2260d4b0",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -254.20168026433697,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948102/p20/trace.npz",
+        "sha256": "607aa80830bd7b1a4b95636572173c994ed2a8bb2cbb1dd04d5c0f39ce49fd28",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -251.29292701033734,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94011,
+      "reset": 948103,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 82,
+      "endpoint_frame": 114,
+      "last_frame": 122,
+      "left": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948103/m20/trace.npz",
+        "sha256": "4270d95a206f46810c3943a954777abef445405eda5c8477eabf68f4c19ac071",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -252.41055631575105,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94011_01/round1/cal_948103/p20/trace.npz",
+        "sha256": "dfa4c1a9d1b6191cad6435d3302c51b02b1f3b8d011e42a7b724112776ff2bc7",
+        "ticks": 31,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.62,
+        "final_displacement_mm": -238.3169065252122,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94023,
+      "reset": 948101,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 123,
+      "endpoint_frame": 156,
+      "last_frame": 164,
+      "left": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948101/m20/trace.npz",
+        "sha256": "ee22fde2f1e35476f5a1858e967c1f1db86a44150157931186c8b7030c9da612",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -254.27025536527148,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948101/p20/trace.npz",
+        "sha256": "b291f6cba0b262b617b44816be5313f0a09c84cb0cd11a9ac29ff5bcb1428be5",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -248.9506545416249,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94023,
+      "reset": 948102,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 165,
+      "endpoint_frame": 198,
+      "last_frame": 206,
+      "left": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948102/m20/trace.npz",
+        "sha256": "85b2bf6f4ce21d92f54001afbf3ac1cbca5016bc66fdeddda648e4b8952b2f00",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -261.58026714000835,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948102/p20/trace.npz",
+        "sha256": "5d129a0ceae3434186210cb13c96830a0be2b7cf3b24f2fa3b71263b245d110f",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -247.07273728947564,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94023,
+      "reset": 948103,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 207,
+      "endpoint_frame": 240,
+      "last_frame": 248,
+      "left": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948103/m20/trace.npz",
+        "sha256": "3d95a4ea67f325422face75431669a674de01968258b5c772143c087916f8b23",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -259.9584040863594,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94023_01/round1/cal_948103/p20/trace.npz",
+        "sha256": "1bb7528f2dcb4345841efdda139975424d27857b79e267db9a4242ee6b43644d",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -245.57121894647204,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94037,
+      "reset": 948101,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 249,
+      "endpoint_frame": 282,
+      "last_frame": 290,
+      "left": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948101/m20/trace.npz",
+        "sha256": "8eb62000fbf94ed5081f866eb2cec75d3398e7fe946c4b619469e7f0a55f764d",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -257.2977218920822,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948101/p20/trace.npz",
+        "sha256": "8a8354fa95c87e8ef6e5c75e0130e42513a78c2fe126e22f633fb9b56e4165ea",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -240.47290865093584,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94037,
+      "reset": 948102,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 291,
+      "endpoint_frame": 324,
+      "last_frame": 332,
+      "left": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948102/m20/trace.npz",
+        "sha256": "ceaaf1f4194bcb17cfad22e820eeb161f98070e5bf5d26d147e07e3ca4dd14ff",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -263.8866904027851,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948102/p20/trace.npz",
+        "sha256": "048c0c06a833a8411045e42a59c12b54c74b63ecaf410d4ff03dd8b8e7157f4c",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -249.72428496777565,
+        "first_second_rollback_mm": null
+      }
+    },
+    {
+      "seed": 94037,
+      "reset": 948103,
+      "round": 1,
+      "kind": "calibration",
+      "status": "STOPPED_AT_CALIBRATION",
+      "status_label": "轮地预测未过门",
+      "first_frame": 333,
+      "endpoint_frame": 366,
+      "last_frame": 374,
+      "left": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948103/m20/trace.npz",
+        "sha256": "61756a58cb35321331530ca6a3a7af63d57990249b5ad269af19d0fbf1c922f8",
+        "ticks": 33,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.66,
+        "final_displacement_mm": -262.18741539086153,
+        "first_second_rollback_mm": null
+      },
+      "right": {
+        "trace": "evidence/cold_start94/seed94037_01/round1/cal_948103/p20/trace.npz",
+        "sha256": "b9493ec1a148384c2c3665eb7afa1df987960259892259d96b327e7917ec0acd",
+        "ticks": 32,
+        "stop_reason": "非法接触",
+        "source_end_s": 0.64,
+        "final_displacement_mm": -247.95943233813145,
+        "first_second_rollback_mm": null
+      }
+    }
+  ],
+  "manifest_sha256": "e465ad3dbc11bdb3e204f394102d178ae89f54f482740b597b74d156f4383822",
+  "bytes": 1618530,
+  "sha256": "a6b87007b7f902b1d09e5c654579b8140957aa0a7b2ff8f2b12cdcafffe9236d",
+  "duration_s": 15.0,
+  "stream": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 500,
+    "r_frame_rate": "25/1",
+    "duration": "15.000000",
+    "nb_read_frames": "375"
+  }
+}
