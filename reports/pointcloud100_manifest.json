@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "protocol_sha256": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+  "files": {
+    "reports/pointcloud100.json": "25f280307c5a229e4fd12631bb28726ee0346ad4491c6c415f03ed088569702a",
+    "reports/pointcloud100_clouds.npz": "f788b566416997051ebdfab372039f19498c8346834f266bb89266a5228fa4e1",
+    "docs/assets/pointcloud100.mp4": "0f6631214383befe98ee7a97a721f33394e773250842211b13cd945f68d1f2d8",
+    "reports/pointcloud100_video.json": "f1e1d5dfd519f45eb09651147d8510cb9de87636a37e60872927b5323b4a7d20"
+  },
+  "seals": {
+    "replay": "223ee7a15c5a49d60a73acd5e6d3f6e80e77e5a0bd5a28b6ba3389de1200d4c0",
+    "video": "1d48e72f37b8737444fb2491b66212061884e9ce26f355d16ddffa7057444661"
+  },
+  "producers": {
+    "replay": {
+      "tools100/common100.py": "432ccb87416f595baad386b4862c23defa92dc246f6d4c86f44bae8a8e88da2a",
+      "tools100/launch100.py": "c43a5a4060967d1c4b127b45a1d36679805df0827f49767297755e7ea70fdcbf",
+      "tools100/score100.py": "c3adc0da94eed01a686e6b33dc7b01d655c1dc14c6e8107c03326b33b6aca593",
+      "tools100/replay100.py": "17f4db1834c5b2c205a016e479be42ef358f00e7f2ff2daeae6c990774698469",
+      "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+      "tools100/readback100.py": "b73e2d60ebd7cba07dbe5893757574ce90bc1009abda4d8a9b37dd6c9d2f0a06"
+    },
+    "video": {
+      "tools100/common100.py": "432ccb87416f595baad386b4862c23defa92dc246f6d4c86f44bae8a8e88da2a",
+      "tools100/launch100.py": "c43a5a4060967d1c4b127b45a1d36679805df0827f49767297755e7ea70fdcbf",
+      "tools100/score100.py": "c3adc0da94eed01a686e6b33dc7b01d655c1dc14c6e8107c03326b33b6aca593",
+      "tools100/video100.py": "927ed9c99f0e074eea008240a3e9f04c68b0c06815fbc4871eb69a5b11bea042"
+    }
+  },
+  "resources": {
+    "replay": {
+      "startup_effective_bytes": 8996982784,
+      "minimum_running_bytes": 8484282368,
+      "peak_group_bytes": 582184960,
+      "elapsed_s": 15.668026274999647,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-pointcloud100-replay-01.service",
+      "resource_log_sha256": "7b6ed403ef13fd974376500647604bf3c617103b653df94dfadd56b69613b171",
+      "receipt_sha256": "75afa88a266502029faa06388412b65e0b39afeb8f8244194ea1f7739117569b"
+    },
+    "video": {
+      "startup_effective_bytes": 9004490752,
+      "minimum_running_bytes": 8757108736,
+      "peak_group_bytes": 201195520,
+      "elapsed_s": 19.73950497399892,
+      "final_memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_affinity": [
+        0
+      ],
+      "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+      "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-pointcloud100-video-01.service",
+      "resource_log_sha256": "6f08faa91a4fc93fe1aeae3eaaa433008c6eda6e392cfcce6a147c8b0229989d",
+      "receipt_sha256": "3d5a2dc4de355b8a95c2058a513d8295c4d36f40892f50656377e401fd3dcffc"
+    }
+  }
+}
