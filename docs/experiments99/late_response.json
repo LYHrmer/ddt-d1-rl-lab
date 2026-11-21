@@ -1,0 +1,54 @@
+{
+  "experiment": "D1 round 99: does learning the signed paired response at ticks 17-32 improve independent full-horizon policy sensitivities?",
+  "parent_d1_commit": "ef5966a6d14e311aa13fedb71e1272933604f469",
+  "parent_wheel_commit": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "parents_sha256": {
+    "docs/supermimic_late_response99_proposal.md": "2c5823782403290d6352dfd06003df1e65a1dbd824a178c8864e09a155d7fa0e",
+    "reports/endpoint98.json": "6baa5af25cfc710b5d869a9cb2321e5376a5591fbdd2e054dcd7377487db422d",
+    "reports/paired_response96_curves.npz": "48151366dda596791b426ae503a2501ecefa6f36a4c9108d78b2d76e3d927183",
+    "tools99/data99.py": "c13e3163567dcca9c02e06dc0085cb5fff2db4425c6a152e18baffd480328966",
+    "tools99/loss99.py": "d5980a43bf399cea123a7059226740f14d66b30a7b9fb9f33cbecd2bff3d64a0",
+    "tools98/score98.py": "96b9110633e372c5b33809bf807ee2cb6336607cf4a950f95f3e15a311f40436",
+    "tools95/score95.py": "554397449dcd2d9235b298e068b30607206bf0752c30ff959488ad88abc0d8b7"
+  },
+  "local_parent_seals_sha256": {
+    "evidence/endpoint98/fit_01/seal.json": "a8e9b97cd684ffc80bbf28459ff35020242cefc13131a832bc07d0a95a342099",
+    "evidence/paired_response96/collection_01/seal.json": "bd8eaba67195d518807c8d4aefa6ada75e0780be7200613dd89e4f7ed28beefb",
+    "evidence/policy_direction95/directions_01/seal.json": "ee58a6fd4b67cf2908c4aa885bffbb286dacfea7003a2ae99acb229939d744eb"
+  },
+  "training_seeds": [94011, 94023, 94037],
+  "paired_training_resets": [96101, 96102, 96103],
+  "blind_resets": [99201, 99202, 99203],
+  "validation_multipliers": {"m1": -1.0, "mh": -0.5, "zero": 0.0, "ph": 0.5, "p1": 1.0},
+  "arms": {"control": 0, "late": 1},
+  "train_horizon": 32,
+  "horizon_ticks": 32,
+  "dt_s": 0.02,
+  "task": "Frozen 4-degree uphill stand at x=1.10 m, same 50 Hz whole-body actor, delayed sensing, actuator FIFO and 250 Hz servos. Freeze the three directions sealed in round 95.",
+  "fit": {
+    "parent": "For each training seed both arms start from the same completed round-98 endpoint weights, buffers and Adam state at step 175. Update the residual only at learning rate 0.0003, clip norm 1. Select only Adam step 200 in a complete matched fit.",
+    "data": "Both arms take all 18 registered training prefixes from that seed at every update. Roll 18 trajectories from reset to endpoint 16, then carry the predicted states of the 6 round-96 action-pair arms forward through tick 32 on their recorded applied actions. This is 384 model sample steps per update. No teacher forcing. The observed terminal training endpoint at 94011/96103/m1 is included with its safety flags. Only original training partitions provide numerical fitting inputs.",
+    "base": "The same seven-group normalized H1-8 state loss, early normalized paired response and H16 state loss as round 98 endpoint with coefficient one. Both arms compute and log all the same components.",
+    "only_variable": "Set late response coefficient to 0 (control) or 1 (late). At each of ticks 17-32 compare the signed positive-minus-negative longitudinal departures, each relative to its own t0. Divide mean squared prediction error by the same seed's fixed training-label mean square across all three pairs and sixteen endpoints, floored at 1e-10 m^2."
+  },
+  "validation": {
+    "blinding": "Seal all available closed-loop model predictions and neutral analytical derivatives from the three reset previews before collecting any of the 45 shared native trajectories. No native state injection after reset. Preserve partial and stopped trajectories and availability counters.",
+    "matched_effect": "For each seed use all six matched analytical-versus-native relative slope errors (three resets, both symmetric radii). Error is abs(a-b)/max(abs(a),abs(b)); undefined for two zero slopes. All three seed medians must decrease strictly against the equal-budget control. A missing comparison cannot pass.",
+    "h16": "Reuse round 98 normalized seven-group H16 state MSE, original scales and acceptance rules. All fifteen aligned trajectory scores must be available in both arms in each seed; the late arm must strictly reduce each of the three seed medians.",
+    "h32": "Use every tools95.score95.score_cell gate, unchanged. Native target is the negative mean absolute departure from the native reset in ticks 1-32. Require all nine candidate cells to pass safety, completion, stable positive native slopes, both positive-step benefits, and analytical agreement with model and native at both radii with the 25% symmetric magnitude tolerance.",
+    "interpretation": "Report matched sensitivity improvement, H16 state and H32 all-nine separately. Preserve the round-98 promotion gates (H16 and H32 with verified inputs) and report separately whether all three outcomes hold. Neither training a new whole-body policy nor deploying it is part of this trial."
+  },
+  "budget": {
+    "training_episodes_reused": 54, "new_training_native_decisions": 0, "updates_per_arm": 25,
+    "world_updates": 150, "fit_model_steps": 57600,
+    "blind_native_episodes": 45, "native_decisions": 1440, "servo_updates": 7200, "physics_substeps": 14400,
+    "blind_forecasts": 90, "validation_model_steps": 2880, "validation_backwards": 18, "model_steps_total": 60480,
+    "policy_updates": 0, "ppo_updates": 0
+  },
+  "resources": {
+    "cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648, "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0, "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "retention": "One immutable attempt per stage under the common serial lock. Preserve partials and all failed gates. Replay recorded poses and curves only, no extra physics, policy or model evaluation for video. No cover frames."
+}
