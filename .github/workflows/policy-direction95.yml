@@ -32,3 +32,5 @@ jobs:
       - name: Recompute published policy-direction scores
         if: ${{ hashFiles('reports/policy_direction95.json', 'reports/policy_direction95_curves.npz') != '' }}
         run: python -B -m tools95.publish95 --check
+      - name: Replay the public observation and privileged-input checks
+        run: python -B -m tools95.check_privileged_observation95 --check-example

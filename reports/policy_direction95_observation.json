@@ -1,0 +1,76 @@
+{
+  "source_identity": {
+    "reports/policy_direction95.json": "fd16dfbe1d675e267e1808c4d3597e669601769863c1c7c2613e55b368204a8a",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3"
+  },
+  "traces": 45,
+  "endpoints": 1485,
+  "decisions": 1440,
+  "exact_reconstructed_current57_history10x57_and_visible16": 1485,
+  "wheel_position_slots_zero": 5940,
+  "unchanged_full_inputs_with_fixed_packets_and_issued_actions": {
+    "world_xy": 1485,
+    "world_linear_velocity_xyz": 1485,
+    "wheel_angles": 1485
+  },
+  "positive_control_changed_all_four_current_wheel_velocity_slots": 1485,
+  "max_float64_gyro_filter_abs_error": 5.995204332975845e-15,
+  "capture_and_delivery_ticks_per_trace": {
+    "capture": [
+      0,
+      9,
+      17,
+      25
+    ],
+    "delivery": [
+      2,
+      11,
+      19,
+      27
+    ]
+  },
+  "packets_captured": 180,
+  "packets_delivered": 180,
+  "endpoints_before_first_delivery": 90,
+  "valid_capture_beams": 1440,
+  "invalid_capture_beams": 0,
+  "range_encoder_offline_unit_check": {
+    "synthetic_beams": 8,
+    "valid": 3,
+    "invalid": 5
+  },
+  "public_example": {
+    "seed": 94011,
+    "reset": 95101,
+    "arm": "zero",
+    "source_sha256": "877738ac9841ef75ab1604b26f515960c06e57fe2f2bd7dc7f962ccd6872fd50",
+    "metrics": {
+      "endpoints": 33,
+      "decisions": 32,
+      "capture_ticks": [
+        0,
+        9,
+        17,
+        25
+      ],
+      "delivery_ticks": [
+        2,
+        11,
+        19,
+        27
+      ],
+      "pre_delivery_endpoints": 2,
+      "valid_capture_beams": 32,
+      "invalid_capture_beams": 0,
+      "max_filter_abs_error": 5.995204332975845e-15
+    }
+  },
+  "scope": [
+    "Native inputs include the terminal observation. Only the first 32 of 33 observations per arm led to a decision.",
+    "Mutations test the recorded input mapping with the received packets and issued controls fixed. Actual motion can change future measurements, contacts and history.",
+    "Attitude and gyro use an ideal simulated IMU. Robot geometry supplies simulated first-return ranges and modeled self-occlusion.",
+    "All eight captured beams were valid on these starts. Invalid measurements are tested only by the separate encoder fixture.",
+    "This audit does not execute the learned model or actor, measure hardware sensor errors, or evaluate inference from correlations."
+  ]
+}
