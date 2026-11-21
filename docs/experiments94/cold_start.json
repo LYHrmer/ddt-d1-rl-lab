@@ -1,0 +1,21 @@
+{
+  "experiment": "D1 SuperMimic-style cold-start 4-degree standing smoke",
+  "base_d1": "9f8e59d79cbeee7901d60a69b6a1ee7a50707e88",
+  "base_wheel": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "proposal": "docs/supermimic_cold_start94_proposal.md",
+  "seeds": [94011, 94023, 94037],
+  "rounds": 2,
+  "fit_episodes_per_round": 12,
+  "fit_reset": "944000 + 1000*seed_index + 100*round_index + episode_index (zero-based)",
+  "calibration_resets": [[948101, 948102, 948103], [948201, 948202, 948203]],
+  "evaluation_resets": [949001, 949002, 949003],
+  "offsets_rad_s": [-0.20, -0.10, 0.10, 0.20],
+  "fit_calibration_ticks": 50,
+  "evaluation_ticks": 100,
+  "world": {"updates_per_round": 100, "batch": 32, "horizon": 8, "learning_rate": 0.0003, "fit_ridge_on_first_round_only": true},
+  "actor": {"updates_per_passing_round": 4, "batch": 8, "horizon": 32, "learning_rate": 0.0003, "grad_norm_max": 1.0},
+  "gates": {"relative_gradient_error_max": 0.25, "effect_error_mm_max": 3, "arm_error_mm_max": 30, "minimum_rollback_reduction_mm": 30, "maximum_absolute_drift_must_not_increase": true},
+  "budget": {"native_decisions": 9000, "servo_updates": 45000, "physics_substeps": 90000, "world_updates": 600, "policy_updates": 24, "ppo_updates": 0},
+  "resource_supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "retention": "Independent exclusive seed units. Stop that seed at a failed gate, no continuation, replacement or transfer of unused budget."
+}
