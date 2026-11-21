@@ -1,0 +1,71 @@
+{
+  "name": "D1 next-packet feature prediction on unseen precontact terrain",
+  "schema": 1,
+  "base_commit": "7c422db4283f573d19750574c0d93b06fa60adf9",
+  "hypothesis": "Adding action-conditioned prediction of the next delivered depth and proprioceptive embeddings reduces occluded wheel-track height-difference error on a held-out source and obstacle geometry.",
+  "upstream": "https://github.com/ASIG-X/JEPLO/blob/460e2272907af053d6e66b57fec71fdbe6ca1774/training/rsl_rl/rsl_rl/modules/jepa_estimator_sensor_ss.py",
+  "seeds": [101011, 101023, 101037],
+  "capture_ticks": [25, 34, 42, 50, 59, 67, 75, 84, 92, 100, 109, 117, 125, 134, 142, 150],
+  "delay_ticks": 2,
+  "visibilities": ["clear", "masked"],
+  "data": {
+    "source_seeds": {"train": [89011, 89023], "holdout": [89037]},
+    "layouts": {
+      "train": [
+        {"id": "narrow", "box_center_x_m": 0.755, "box_half_x_m": 0.070, "box_abs_y_m": 0.210, "box_half_y_m": 0.105},
+        {"id": "long", "box_center_x_m": 0.815, "box_half_x_m": 0.095, "box_abs_y_m": 0.230, "box_half_y_m": 0.115}
+      ],
+      "holdout": [
+        {"id": "unseen", "box_center_x_m": 0.785, "box_half_x_m": 0.085, "box_abs_y_m": 0.220, "box_half_y_m": 0.110}
+      ]
+    },
+    "population": "All complete flat episodes of the three registered mixed-89 sources. Keep native episode identities. Both mirror sides at each geometry. No episode, native source seed or box geometry shared between train and holdout.",
+    "timing": "Full 50 Hz pose prefix through tick 152, first 6 Hz captures used at tick 25, 40 ms delay. No held packets or post-contact states. Pre-action delivery proprioception and only already-issued action history. Labels use delivered world queries; geometric comparator only uses measured returns and onboard wheel query.",
+    "sensor_base": "docs/experiments100/pointcloud_density.json",
+    "sensor": "Both arms receive identical 520-bin range images, validity bits and the same fixed angular occlusion. Two 30 mm high mirrored perturbations per geometry. Truth is left minus right at front axle +0.35 m, including neutral before/after either obstacle.",
+    "source_stage_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+    "trace_sha256": {
+      "89011": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+      "89023": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+      "89037": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22"
+    }
+  },
+  "fit": {
+    "updates_per_arm": 50, "batch_size": 48, "loss_weights": [0, 1],
+    "sample": "Same initialization and sampling schedule within each seed. Eight training rows with replacement from each of six strata (signed high/neutral truth by visibility), per step. Last packets keep current supervision; no future targets across boundaries.",
+    "inputs": "Current and up to two previous delivered range images/valid bits, 38 measured IMU and joint features per packet and two prior issued 16-D actions. Standardize valid ranges per mirrored ray on training only (std floor 0.015 m), proprio on training only (floor 0.05), clip to +/-5. No ground-truth map, oracle geometry, future action or target at inference.",
+    "architecture": "Shared mirrored 520 to 16 tanh eye encoder; mean and half-difference form 32-D depth latent. 38 to 8 tanh proprio latent. 40 latents plus 32 past-action components feed a 32-D GRU; zero hidden start; 1-D linear terrain readout in units of 30 mm. Training predictor takes hidden and 32 action components, 64 to 32 tanh to 40. Separate depth and proprio embedding MSE with equal weight; targets stop-gradient.",
+    "objective": "Current normalized terrain MSE + 0.1 times the equally weighted per-modality mean latent standard deviation shortfall below 0.5 + lambda times next-packet feature MSE. Difference between arms is lambda alone. Adam lr=0.003, betas=(0.9,0.999), eps=1e-8, gradient norm cap=1, no schedule or checkpoint selection.",
+    "missing": "No retained range in the full three-packet history yields no estimate. No valid shared predictions, an incomplete roster, or a nonfinite model output invalidate promotion."
+  },
+  "budget": {
+    "train_episodes": 8, "holdout_episodes": 5, "independent_clouds": 672,
+    "train_rows": 1024, "holdout_rows": 320, "directions_per_cloud": 520, "perception_updates": 300,
+    "policy_updates": 0, "world_updates": 0, "native_decisions": 0, "physics_substeps": 0
+  },
+  "evaluation": {
+    "quality": "Apply round 100 grade to every delivered test packet, including the first and last. Tolerance 10 mm; require high-side class and magnitude for raised truth, neutral estimate within +/-10 mm for neutral truth. Missing fails.",
+    "gates": "Each of the three fitted seeds separately: occluded paired MAE strictly smaller, clear paired MAE no larger; for each visibility qualified count cannot fall and missing estimates cannot increase. MAEs compare the identical intersection of finite paired estimates. References must include neutral, genuinely raised left and right rows. All registered observations and all three seeds required for promotion.",
+    "diagnostics": "By visibility and seed, publish MAE, qualified, no estimate, true raised-side misses, wrong side, neutral false alarms, and reversals. On the same packets report the frozen geometry-only solver. For each lambda=1 encoder, compare next-packet depth and proprio embedding MSE with persistence (copy current features), same encoder, same within-stream pairs. Diagnostics have no promotion vote.",
+    "seal": "Fit sees train.npz only. Save every final checkpoint and its shared initialization and draw-order identity before any held-out inference or scoring. Publish the complete paired prediction grid and grade, including failures.",
+    "video": "No cover. First held-out episode by identity, left and right mirror, masked/clear and fixed seed order. Include three-seed full-grid outcomes and the first registered baseline pass to candidate fail when present. Sensor replay only."
+  },
+  "parents_sha256": {
+    "docs/jeplo_d1_perception_proposal.md": "be36f5ab2f46da149a91c668ff36b3bd0ad71d671ea695111543734697e2e1e4",
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "docs/experiments89/uphill_curriculum.json": "984bb559f3a51be979bcbe82c24190b9576c65672132af1057a65beeb494a8de",
+    "docs/experiments90/stand_wbc.json": "b6e4f94c46fc7fde0a1a3f6892c09162c498ff4988260a43a0b0aefcef71a8bd",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools100/score100.py": "c3adc0da94eed01a686e6b33dc7b01d655c1dc14c6e8107c03326b33b6aca593",
+    "tools100/readback100.py": "b73e2d60ebd7cba07dbe5893757574ce90bc1009abda4d8a9b37dd6c9d2f0a06",
+    "tools89/train89.py": "bfed52711471f221700c41b03cbb8f1dc1f863d1fd22b2d3978f5a369390ef44",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232"
+  },
+  "resources": {
+    "cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472, "swap_max_bytes": 0,
+    "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  }
+}
