@@ -1,0 +1,54 @@
+{
+  "experiment": "D1 round 98: can supervision of the uncorrected 16th state from reset improve native blind endpoint and full-horizon response?",
+  "parent_d1_commit": "3f4f2958f1de3a18a9c95818b713be4745aeda36",
+  "parent_wheel_commit": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "parents_sha256": {
+    "reports/cold_start94.json": "a6e770eec5cda66cbc9614182ee19afaa02b1e89c08f1797df3ddecb92108872",
+    "reports/policy_direction95.json": "fd16dfbe1d675e267e1808c4d3597e669601769863c1c7c2613e55b368204a8a",
+    "reports/paired_response96.json": "4c46b71939cd7df9802f11f78e49a9cd9a56b91636ee329bb0c04c0ceb70c8e4",
+    "reports/suffix_replay97.json": "45c9ef80e44da4ae651a46a92f74f4c6b7f9df86d703df0c2dfe4a73bb8a84da",
+    "tools52/dynamics52.py": "623f379faa89592ea8d5b4b53e158de3795b4f1112fbe29dfd165556a2dc46a3",
+    "tools95/score95.py": "554397449dcd2d9235b298e068b30607206bf0752c30ff959488ad88abc0d8b7"
+  },
+  "local_parent_seals_sha256": {
+    "evidence/policy_direction95/directions_01/seal.json": "ee58a6fd4b67cf2908c4aa885bffbb286dacfea7003a2ae99acb229939d744eb",
+    "evidence/paired_response96/collection_01/seal.json": "bd8eaba67195d518807c8d4aefa6ada75e0780be7200613dd89e4f7ed28beefb",
+    "evidence/paired_response96/fit_01/seal.json": "c2b3f711af82859c82539b764be9937e884d74958ba67c8f761f0bd39f75094f"
+  },
+  "training_seeds": [94011, 94023, 94037],
+  "paired_training_resets": [96101, 96102, 96103],
+  "blind_resets": [98201, 98202, 98203],
+  "validation_multipliers": {"m1": -1.0, "mh": -0.5, "zero": 0.0, "ph": 0.5, "p1": 1.0},
+  "arms": {"control": 0, "endpoint": 1},
+  "train_horizon": 16,
+  "horizon_ticks": 32,
+  "dt_s": 0.02,
+  "task": "Frozen round-94 4-degree uphill stand from x=1.10m, same policy, task return, perceptual delays, 1-tick actuator FIFO, leg PD and wheel servos. Use the three whole-policy directions independently sealed in round 95.",
+  "fit": {
+    "parent": "Each seed forks its complete round-96 paired step-50 world checkpoint twice. Both start from identical weights, frozen linear model and buffers and independent copies of its saved Adam moments at step 150.",
+    "data": "Every update in both arms uses the complete same batch of 18 reset prefixes: that seed's 12 round-94 fit episodes in roster order, the three negative round-96 collection arms in reset order, then the three positive arms. Take native state at tick 0, the first 16 actually applied actions and endpoints 1-16; every prefix must exist with intact source/provenance. No sampling or teacher forcing. Never use any previous or current blind trajectory in fitting.",
+    "base": "Mean normalized state-group loss across all 18 trajectories and endpoints 1-8, plus the original paired longitudinal response MSE on the first eight endpoints of the three plus/minus pairs. Use round-96's stored positive normalization denominator for this seed and native double precision paired displacement targets.",
+    "only_variable": "Both arms compute all sixteen states from reset through the same frozen plant architecture. Endpoint weight is zero or one times the existing equal-seven-group normalized state MSE at endpoint 16 over all 18 trajectories. Only this term's contribution to the training gradient changes.",
+    "optimizer": "25 Adam updates of residual parameters, learning rate 0.0003, gradient norm cap 1. Score only the completed terminal checkpoint at Adam step 175. Preserve interrupted, nonfinite and partial work without replacement."
+  },
+  "validation": {
+    "blinding": "After fitting, take three previously unused reset previews (no physical integration), predict up to 90 closed-loop trajectories (two fitted models per seed, three resets, five frozen parameter probes), and seal outputs before measuring 45 native paths. Both families share every native answer. No real state after reset is injected into either prediction.",
+    "h16": "For each arm, measure its actually retained coordinate vector at tick 16 against native state45 at the same tick. Use the seven groups and the float32 physical scales of tools52.dynamics52.group_loss, scoring the archived coordinates in float64. Divide coordinate deviations by their scale, take MSE within each group, then the unweighted mean across groups. Report per-group errors. Do not change quaternion conventions.",
+    "h16_primary": "For each of the three training seeds, median all 15 prespecified trajectory errors (three resets, five policy settings). Require all 15 comparable for both fits and a strict decrease for the endpoint fit against the matched control in all three seeds. A valid observed t16 at or before normal terminal contact can be scored with unsafe flag. An accepted model t16 before a later stop can be scored. Missing, rejected or invalid t16, exceptional native collection, or an incomplete fit cannot establish the primary result.",
+    "h32": "Reuse every tools95.score95.score_cell gate without changes: all five native arms complete and safe, all five predictions complete, both native central slopes positive and within 25% of one another, native positive half and full step each beat neutral, model neutral analytic derivative matches both its own and native central slopes in sign and the 25% symmetric relative tolerance. Return is negative mean absolute departure from the native reset x over 32 endpoints. All nine candidate cells must pass.",
+    "interpretation": "H16 primary plus nine complete H32 candidate passes with verified inputs supports independent testing of the candidate's own policy gradient. Report round-96's matched H32 slope-median decrease and neutral absolute-return-error non-increase by seed separately to gauge attribution. An H32 physical terminal at tick 32 has a numeric return and fails safety; earlier terminations have no H32 numeric return. Never substitute shorter means, seeds, or arms."
+  },
+  "budget": {
+    "training_episodes_reused": 54, "new_training_native_decisions": 0, "updates_per_arm": 25,
+    "world_updates": 150, "fit_model_steps": 43200,
+    "blind_native_episodes": 45, "native_decisions": 1440, "servo_updates": 7200, "physics_substeps": 14400,
+    "blind_forecasts": 90, "validation_model_steps": 2880, "validation_backwards": 18, "model_steps_total": 46080,
+    "policy_updates": 0, "ppo_updates": 0
+  },
+  "resources": {
+    "cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648, "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0, "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "retention": "Hold the common serial lock and use a fresh one-shot directory per stage. Keep all failures and partials. Never resume or overwrite an attempt. The video shows recorded native and model trajectories only, has no cover and adds zero integration and training steps."
+}
