@@ -20,17 +20,20 @@ def reward_m(x, origin, horizon=HORIZON):
 
 
 def same_sign(left, right):
-    return None if left is None or right is None else left * right > 0
+    if any(v is None or not math.isfinite(v) for v in (left, right)):
+        return None
+    return (left > 0 and right > 0) or (left < 0 and right < 0)
 
 
 def agrees(left, right):
-    if left is None or right is None:
-        return None
-    return same_sign(left, right) and abs(left - right) <= 0.25 * max(abs(left), abs(right))
+    sign = same_sign(left, right)
+    return sign and abs(left - right) <= 0.25 * max(abs(left), abs(right))
 
 
 def difference(left, right):
-    return None if left is None or right is None else left - right
+    if any(v is None or not math.isfinite(v) for v in (left, right)):
+        return None
+    return left - right
 
 
 def radius_score(native, model, ad, low, high):
@@ -82,6 +85,8 @@ def summarize(cells):
     if keys != expected or len(cells) != len(expected):
         raise ValueError("expected one record, including missing arms, for each of the nine cells")
     scores = [c["score"] for c in cells]
+    if any(set(s["radii"]) != {"0.5", "1.0"} for s in scores):
+        raise ValueError("expected both radii in every recorded cell")
     radii = [r for score in scores for r in score["radii"].values()]
     count = sum(score["passed"] for score in scores)
     return {
