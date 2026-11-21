@@ -1,0 +1,31 @@
+{
+  "experiment": "D1 cold whole-body actor parameter direction, reset-only diagnostic 95",
+  "proposal": "docs/supermimic_policy_direction95_proposal.md",
+  "parent_d1_commit": "ec102b892f1a9986eb9099f81b0dc8fd719b9e4f",
+  "independent_training_seeds": [94011, 94023, 94037],
+  "development": {
+    "input": "round 1, training episodes j=0,1,2 per seed, t0 only",
+    "policy": "original initial.pt; all network parameters",
+    "world": "same seed's completed 100-update round1/world.pt",
+    "direction": "One hypothetical initial Adam displacement, minimizing mean absolute world-x departure from t0 over ticks 1..32, averaged over three starts",
+    "lr": 0.0003, "clip_norm": 1.0, "optimizer": "fresh Adam, default betas and epsilon",
+    "seal": "seal all possible directions then all holdout model predictions prior to first holdout native decision"
+  },
+  "holdout_resets": [95101, 95102, 95103],
+  "multipliers": {"m1": -1.0, "mh": -0.5, "zero": 0.0, "ph": 0.5, "p1": 1.0},
+  "horizon_ticks": 32,
+  "task": "native D1 4 degree uphill at x=1.10 m, same 1-tick action FIFO, delayed range feedback, original PD, no fixed wheel offset or exploration",
+  "reward": "negative mean of abs(x[t]-physical_x[0]), t=1..32, in metres",
+  "measures": {
+    "per_radius": "(R(+h)-R(-h))/(2*h), h=0.5,1.0; for both native and model",
+    "agreement": "same nonzero sign and abs(a-b)<=0.25*max(abs(a),abs(b))",
+    "native_direction": "both slopes positive, mutually agree, both agree with the analytic validation-start gradient dotted with the sealed parameter displacement, R(+h)>R(0) for both h",
+    "model_internal": "report agreement of analytic and both model finite differences",
+    "cell": "all five H32 native arms complete without fall, truncation, or illegal contact; five model arms numerically complete without its predicted fall; native direction and model internal checks pass",
+    "overall": "9/9 cells; no replacement, averaging across failures, or shorter-horizon promotion",
+    "terminal": "if first contact on tick32 preserve numeric return and fail safety; before tick32 return is missing"
+  },
+  "budget": {"native_episodes": 45, "native_decisions": 1440, "servo_updates": 7200, "physics_substeps": 14400, "development_model_steps": 288, "validation_model_steps": 1440, "model_steps_total": 1728, "development_backwards": 3, "validation_backwards": 9, "temporary_adam_displacements": 3, "world_updates": 0, "persistent_policy_updates": 0, "ppo_updates": 0},
+  "resources": {"cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648, "memory_max_bytes": 3221225472, "swap_max_bytes": 0, "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648, "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"},
+  "retention": "one attempt per stage; preserve early stops, traces, missing arms and failures; no resuming a partial run"
+}
