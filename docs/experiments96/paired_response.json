@@ -1,0 +1,44 @@
+{
+  "experiment": "D1 paired world-model response to a sealed whole-policy displacement, round 96",
+  "parent_d1_commit": "bd85fb5150c7d2f752cb80f13f8c5b14b7e6f996",
+  "parent_wheel_commit": "c2163ea05be4919e4ec06e8b7f8db6db0e31ef53",
+  "proposal_sha256": "2e8c0eccc3471dea95b65e10bf0fb33055b37d8ca06fe1dfc5ef3f42263efbeb",
+  "direction_report95_sha256": "fd16dfbe1d675e267e1808c4d3597e669601769863c1c7c2613e55b368204a8a",
+  "direction_seal95_sha256": "ee58a6fd4b67cf2908c4aa885bffbb286dacfea7003a2ae99acb229939d744eb",
+  "training_seeds": [94011, 94023, 94037],
+  "new_training_resets": [96101, 96102, 96103],
+  "blind_resets": [96201, 96202, 96203],
+  "collection_tags": ["m1", "p1"],
+  "validation_multipliers": {"m1": -1.0, "mh": -0.5, "zero": 0.0, "ph": 0.5, "p1": 1.0},
+  "task": "4 degree uphill stationary start, x=1.10 m, native 94 reset, same perception, one policy-tick action FIFO and unchanged joint PD",
+  "horizon_ticks": 32,
+  "arms": {"control": 0, "paired": 1},
+  "fit": {
+    "parent": "same seed's complete round-one world94 and saved residual Adam moments/step; freeze all buffers, linear plant, actor and direction95",
+    "data": "twelve source training episodes of the same seed from 94 and six new native episodes of this seed; 94/95 evaluation curves excluded from fit",
+    "horizon": 8, "updates_per_arm": 50, "old_windows_per_batch": 16, "paired_windows_per_batch": 8,
+    "sampling": "same ordered rows per arm, uniformly with replacement, RNG seed = world seed + 960000, ordered episode then tick",
+    "target": "For each matched 8-tick window and each future tick: (x_plus(t)-x_plus(start)) - (x_minus(t)-x_minus(start)); use actually applied actions and the physical initial state of each arm",
+    "loss": "same eight-step group state prediction loss on 32 windows, plus lambda times mean squared paired-target error divided by the seed's mean squared paired target across all eligible training windows/ticks",
+    "denominator_floor_m2": 1e-10, "lr": 0.0003, "clip_grad_norm": 1.0,
+    "terminal": "never cross an episode end; an observed normal terminal transition may end a training window; reject exceptional/partial acquisition as a complete training arm",
+    "selection": "all three training resets must have paired usable windows per seed; validate only completed 50-update checkpoints; retain all failures"
+  },
+  "validation": {
+    "predictions_blind": "seal both models' predictions at every eligible seed/reset for the same five frozen policy variants before starting any native validation decision",
+    "derivative": "neutral-arm H32 reward AD dotted with the direction sealed at round 95, no new parameter update",
+    "reward": "minus mean absolute longitudinal displacement from actual physical x0 over ticks 1..32, metres",
+    "per_radius": "central slope for h=0.5 and 1; same nonzero sign and abs(a-b) <= 0.25*max(abs(a),abs(b)); both positive arms must individually improve over neutral",
+    "cell": "reuse all round-95 native safety/completeness, model completeness, positive stable native slopes, native and model AD/FD magnitude, and positive-vs-neutral gates",
+    "comparison": "only count candidate support if 9/9 cells pass and, separately for each training seed, the median of all six normalized slope errors strictly decreases vs control and the median of all three neutral H32 absolute reward errors does not increase",
+    "missing": "publish unsafe terminal endpoint numbers separately from safety; shorter runs have no H32 score, missing comparisons cannot pass; never replace an arm or a seed"
+  },
+  "budget": {
+    "collection_native_episodes": 18, "blind_native_episodes": 45, "native_episodes": 63,
+    "native_decisions": 2016, "servo_updates": 10080, "physics_substeps": 20160,
+    "fit_model_steps": 76800, "validation_model_steps": 2880, "model_steps_total": 79680,
+    "world_updates": 300, "validation_backwards": 18, "persistent_policy_updates": 0, "ppo_updates": 0
+  },
+  "resources": {"cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648, "memory_max_bytes": 3221225472, "swap_max_bytes": 0, "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648, "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"},
+  "retention": "one fresh attempt per stage; preserve all original and partial outputs; no replacement, resume or automatic rerun"
+}
