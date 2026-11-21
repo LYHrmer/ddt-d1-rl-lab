@@ -1,0 +1,461 @@
+{
+  "schema": 1,
+  "status": "COMPLETE",
+  "parent_stage_sha256": "2c518e335cae080d055042c530ff62f52fd3046e6e191929980e1717eb18d4b3",
+  "sources": [
+    {
+      "source_seed": 89011,
+      "parent_seed": 87011,
+      "path": "evidence/uphill89/training_01/mixed_89011/train_trace.npz",
+      "trace_sha256": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+      "native_report_sha256": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+      "complete_episode_count": 14,
+      "excluded_incomplete_tail_rows": 79,
+      "admitted_flat_episodes": [
+        {
+          "source_seed": 89011,
+          "episode": 2,
+          "first_archive_row": 600,
+          "end_archive_row_exclusive": 900,
+          "physical_episode_qpos_sha256": "341ab0411b4dfcc00cc0675c133e5cc309b31d53cfe297d0031a059fe165793c"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 5,
+          "first_archive_row": 1500,
+          "end_archive_row_exclusive": 1800,
+          "physical_episode_qpos_sha256": "63677b1e08679186ce798c534018ba35e593a32c8b2d3e2e40f8ac0d328e1803"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 8,
+          "first_archive_row": 2400,
+          "end_archive_row_exclusive": 2700,
+          "physical_episode_qpos_sha256": "4eb3e515a635dcdfd8eedf71e5630a571cafd1361a4aaadba40a588527b816cd"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 11,
+          "first_archive_row": 3117,
+          "end_archive_row_exclusive": 3417,
+          "physical_episode_qpos_sha256": "fe6baea7de2dd343ec236ad1539d3cf829ad792f7651d61723df5ffb61c7b35b"
+        }
+      ]
+    },
+    {
+      "source_seed": 89023,
+      "parent_seed": 87023,
+      "path": "evidence/uphill89/training_01/mixed_89023/train_trace.npz",
+      "trace_sha256": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+      "native_report_sha256": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121",
+      "complete_episode_count": 14,
+      "excluded_incomplete_tail_rows": 298,
+      "admitted_flat_episodes": [
+        {
+          "source_seed": 89023,
+          "episode": 2,
+          "first_archive_row": 600,
+          "end_archive_row_exclusive": 900,
+          "physical_episode_qpos_sha256": "4151e06e05b751c0d55976baa3c58b7e496977ebac7e9841147b919362a58653"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 5,
+          "first_archive_row": 1292,
+          "end_archive_row_exclusive": 1592,
+          "physical_episode_qpos_sha256": "61c4cc8ac5e56f6bf59750521a2dfc323b1f754be950a52235b10abea9b8a5e9"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 8,
+          "first_archive_row": 2192,
+          "end_archive_row_exclusive": 2492,
+          "physical_episode_qpos_sha256": "46fbb3704884395fd60202978b3d8c91be1ef324a296b36afa3adc9c2f3c21c5"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 11,
+          "first_archive_row": 2898,
+          "end_archive_row_exclusive": 3198,
+          "physical_episode_qpos_sha256": "64d95248e6f0255b63f7e3963e292ca916b733c5de145314117bf81009ca885f"
+        }
+      ]
+    },
+    {
+      "source_seed": 89037,
+      "parent_seed": 87037,
+      "path": "evidence/uphill89/training_01/mixed_89037/train_trace.npz",
+      "trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22",
+      "native_report_sha256": "c3a18de375cbda776d2597c12a7bb48c179dc0277a153b2fc4b6f804d6176bbb",
+      "complete_episode_count": 14,
+      "excluded_incomplete_tail_rows": 103,
+      "admitted_flat_episodes": [
+        {
+          "source_seed": 89037,
+          "episode": 0,
+          "first_archive_row": 0,
+          "end_archive_row_exclusive": 300,
+          "physical_episode_qpos_sha256": "0381ce845dfc2881801f3de247e0f35565c735177cc83843b16cab586095469d"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 3,
+          "first_archive_row": 900,
+          "end_archive_row_exclusive": 1200,
+          "physical_episode_qpos_sha256": "16a4587be53dc4efa02bc4f5eaa64a7a015aba9e338f875a27688a17710eac9b"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 6,
+          "first_archive_row": 1800,
+          "end_archive_row_exclusive": 2100,
+          "physical_episode_qpos_sha256": "792ce5f081eddb1c42baac2e66e3fc569eefefbd3fe8a86dfde068364cb253a8"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 9,
+          "first_archive_row": 2700,
+          "end_archive_row_exclusive": 3000,
+          "physical_episode_qpos_sha256": "e04cc16d50cedbfc94468f6f9bf8aa176f2e56955205bae75540b61da985e436"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 12,
+          "first_archive_row": 3393,
+          "end_archive_row_exclusive": 3693,
+          "physical_episode_qpos_sha256": "e524cf6f628b6b5f11023ee27aa7d02f6f4fec5d1dc482f6550770ce31b38379"
+        }
+      ]
+    }
+  ],
+  "splits": {
+    "train": {
+      "rows": 1024,
+      "clouds": 512,
+      "series": 64,
+      "episodes": 8,
+      "sha256": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+      "layouts": [
+        "narrow_left",
+        "narrow_right",
+        "long_left",
+        "long_right"
+      ],
+      "prefix_bounds": [
+        {
+          "source_seed": 89011,
+          "episode": 2,
+          "reset_wheel_max_x_m": 0.26562495952490994,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.6356000692183673,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89011,
+          "episode": 5,
+          "reset_wheel_max_x_m": 0.2639280783423344,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.5929081495847736,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89011,
+          "episode": 8,
+          "reset_wheel_max_x_m": 0.26458039676694256,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.6091356172383289,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89011,
+          "episode": 11,
+          "reset_wheel_max_x_m": 0.2718168959079902,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.5823899182607406,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89023,
+          "episode": 2,
+          "reset_wheel_max_x_m": 0.26060445660245396,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.5921875153248982,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89023,
+          "episode": 5,
+          "reset_wheel_max_x_m": 0.27467508534961915,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.6128459812212689,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89023,
+          "episode": 8,
+          "reset_wheel_max_x_m": 0.26047121148461216,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.6215367968063554,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        },
+        {
+          "source_seed": 89023,
+          "episode": 11,
+          "reset_wheel_max_x_m": 0.2538492744798653,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.5845474096431463,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.685
+        }
+      ],
+      "native_first_return_files_sha256": {
+        "train_89011_ep02_narrow_left.npz": "d60748f2f4f9effd93559919af9c922fc3821c594c172ca3a490ba6b46566570",
+        "train_89011_ep05_narrow_left.npz": "a28b9d7829038c47eb75ee6e78a81db6e727f4a9ecdbf29828dcd0226d4656ee",
+        "train_89011_ep08_narrow_left.npz": "5513849501cb054fd5f7ac643b9a090073d0149ce7f3b2a890e7d35b34bb0014",
+        "train_89011_ep11_narrow_left.npz": "25e97acd4722873e6afef6b37512ed5ea1d6a19c53612242c25a89a7de7b4f44",
+        "train_89023_ep02_narrow_left.npz": "c88dfff676440650c5673008ba28b9989df96703f87850a46fc247749df5589b",
+        "train_89023_ep05_narrow_left.npz": "68a2b979c807401d5b921f3c3503fe4308eba5452a94b62c8037982e274b92b0",
+        "train_89023_ep08_narrow_left.npz": "17ea4cc3af0152a8cf036ce75b9db5075ff093f9e1fb75cf7b3d3000b5e26b58",
+        "train_89023_ep11_narrow_left.npz": "620ec2be0b514f455235aae8884ec22591892dd6a64541c94315a2f044cb5556",
+        "train_89011_ep02_narrow_right.npz": "e1f6d5d151d4b9a6b8c349099d85c9e33300a59aa07cf0060f553a3f13b9bd2b",
+        "train_89011_ep05_narrow_right.npz": "34ddbd987e1812c0ab77583c05fb3e551ffb1631a9a6461b716c0d43ed193ed6",
+        "train_89011_ep08_narrow_right.npz": "488dad8cc1e70cf94de206182373631592361291e1b1b682ee631ee0af59abc1",
+        "train_89011_ep11_narrow_right.npz": "675b6221960376b91d6dad03a4a9adf13358300fb43d8aaada0b6da1b4c49f8a",
+        "train_89023_ep02_narrow_right.npz": "a49dee1476eb70a1e83a64e04d8da70d65c8858e0f6e12b89e1e9a36c74aa50b",
+        "train_89023_ep05_narrow_right.npz": "cdf84411ebd47bdbba35604affcdd73a381ba2a4d21a208afd0d48df86163e66",
+        "train_89023_ep08_narrow_right.npz": "e16f6b6a528142426b9792bc37fa55f2181b0ad00138af374d07701f0aacde0f",
+        "train_89023_ep11_narrow_right.npz": "b846f0df8456c9f5067bcf67024c12ed2ff5e5e262cc03c75d369194fbef9987",
+        "train_89011_ep02_long_left.npz": "39e715a3d87782c0d57ebf5df7ce7950768cf474f71265723e6246b6d0422fb1",
+        "train_89011_ep05_long_left.npz": "526dc0db3d05858c61f251759b33ea28a6ef0c1d7603c9534994c645aadeedc5",
+        "train_89011_ep08_long_left.npz": "addabf0dc0c16252a696a5f535e3b0cf916f415b1ee8e7e42ac5f050a755dada",
+        "train_89011_ep11_long_left.npz": "f692f6e0d070fa6e78b8421bb60de03b8eae3044e04388a86c92902701a5f2c0",
+        "train_89023_ep02_long_left.npz": "6be91ae09ef834a14375431b042dbfefafefabcc0c399437ce6e0b435f655355",
+        "train_89023_ep05_long_left.npz": "44df9800d5287c6a2875ef17191c4b1692f494dd7efbf3dc2a0f469d5f1a2340",
+        "train_89023_ep08_long_left.npz": "2c1816057d01366c74c0fc3f2cb2907239573b1bd8f6d5551f8959703206ad47",
+        "train_89023_ep11_long_left.npz": "fcb94c45ad6c10a6ee380c557de5878082b55e83ae671b72f267a14e5bd5d74a",
+        "train_89011_ep02_long_right.npz": "80412782ba40f9098883302a2713b5196e92462ff8f5b0ff62222f558d3767d3",
+        "train_89011_ep05_long_right.npz": "f6db9681c604545a30359c3f6fe3c67f1bf9f596903fcff280729bd4a847beee",
+        "train_89011_ep08_long_right.npz": "23ec1fdcc5878a4e1b2dd92ff3b1ecda5717821c744830269a0e2a78a7d67a4b",
+        "train_89011_ep11_long_right.npz": "3bd5cc5691608d8b0692874385f4164330f269ef86fc0f7696e94fabd15d3c10",
+        "train_89023_ep02_long_right.npz": "58476b8824ae12dacc294c41192b49f2fac226bdebbb08ec93a1e5f96057a2bd",
+        "train_89023_ep05_long_right.npz": "3359f63b6f444706229de46718fcd26721f199ad9ffcfe38fde376671bd73e87",
+        "train_89023_ep08_long_right.npz": "27f90c695a49aa2f9bfcca9c38d77c285741ae454448737891e258514f32a06a",
+        "train_89023_ep11_long_right.npz": "438eb5e53f00ef25b5bdb9d1f83d3bff0ebd637fd3e36992c915c9e29e1f65ac"
+      },
+      "episode_roster": [
+        {
+          "source_seed": 89011,
+          "episode": 2,
+          "first_archive_row": 600,
+          "end_archive_row_exclusive": 900,
+          "physical_episode_qpos_sha256": "341ab0411b4dfcc00cc0675c133e5cc309b31d53cfe297d0031a059fe165793c"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 5,
+          "first_archive_row": 1500,
+          "end_archive_row_exclusive": 1800,
+          "physical_episode_qpos_sha256": "63677b1e08679186ce798c534018ba35e593a32c8b2d3e2e40f8ac0d328e1803"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 8,
+          "first_archive_row": 2400,
+          "end_archive_row_exclusive": 2700,
+          "physical_episode_qpos_sha256": "4eb3e515a635dcdfd8eedf71e5630a571cafd1361a4aaadba40a588527b816cd"
+        },
+        {
+          "source_seed": 89011,
+          "episode": 11,
+          "first_archive_row": 3117,
+          "end_archive_row_exclusive": 3417,
+          "physical_episode_qpos_sha256": "fe6baea7de2dd343ec236ad1539d3cf829ad792f7651d61723df5ffb61c7b35b"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 2,
+          "first_archive_row": 600,
+          "end_archive_row_exclusive": 900,
+          "physical_episode_qpos_sha256": "4151e06e05b751c0d55976baa3c58b7e496977ebac7e9841147b919362a58653"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 5,
+          "first_archive_row": 1292,
+          "end_archive_row_exclusive": 1592,
+          "physical_episode_qpos_sha256": "61c4cc8ac5e56f6bf59750521a2dfc323b1f754be950a52235b10abea9b8a5e9"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 8,
+          "first_archive_row": 2192,
+          "end_archive_row_exclusive": 2492,
+          "physical_episode_qpos_sha256": "46fbb3704884395fd60202978b3d8c91be1ef324a296b36afa3adc9c2f3c21c5"
+        },
+        {
+          "source_seed": 89023,
+          "episode": 11,
+          "first_archive_row": 2898,
+          "end_archive_row_exclusive": 3198,
+          "physical_episode_qpos_sha256": "64d95248e6f0255b63f7e3963e292ca916b733c5de145314117bf81009ca885f"
+        }
+      ]
+    },
+    "holdout": {
+      "rows": 320,
+      "clouds": 160,
+      "series": 20,
+      "episodes": 5,
+      "sha256": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+      "layouts": [
+        "unseen_left",
+        "unseen_right"
+      ],
+      "prefix_bounds": [
+        {
+          "source_seed": 89037,
+          "episode": 0,
+          "reset_wheel_max_x_m": 0.2641475298986222,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.579851510804743,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.7000000000000001
+        },
+        {
+          "source_seed": 89037,
+          "episode": 3,
+          "reset_wheel_max_x_m": 0.264687356993592,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.607326543269384,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.7000000000000001
+        },
+        {
+          "source_seed": 89037,
+          "episode": 6,
+          "reset_wheel_max_x_m": 0.26074058391427235,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.6092604081500386,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.7000000000000001
+        },
+        {
+          "source_seed": 89037,
+          "episode": 9,
+          "reset_wheel_max_x_m": 0.2644825418438219,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.5771548344158502,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.7000000000000001
+        },
+        {
+          "source_seed": 89037,
+          "episode": 12,
+          "reset_wheel_max_x_m": 0.2600932869334633,
+          "first_tick": 0,
+          "last_tick": 152,
+          "wheel_max_x_m": 0.614416875079275,
+          "max_at_tick": 152,
+          "minimum_layout_leading_edge_x_m": 0.7000000000000001
+        }
+      ],
+      "native_first_return_files_sha256": {
+        "holdout_89037_ep00_unseen_left.npz": "7750d2273dd56151d821295b4e18d9046d188813306554b50f729de290dbbeb0",
+        "holdout_89037_ep03_unseen_left.npz": "7c0cdd55784f674059007d8c5182952771e752e4e5013e2202711d02a755af0b",
+        "holdout_89037_ep06_unseen_left.npz": "ee0f7848e57c5025d98ad0973d2fa9dda924e9c9737c39b268dab8b665eec652",
+        "holdout_89037_ep09_unseen_left.npz": "f06b80b8febd88d7d46fb7245ec3cdefd2d0634c086b35d1e0c7113ccd7051dc",
+        "holdout_89037_ep12_unseen_left.npz": "27cc2b5451e8c2806ba6df1418a0020ca0e77fa8e67301dd6fa588fba638ecab",
+        "holdout_89037_ep00_unseen_right.npz": "9df06e05ce36fdbbbff1beb2921d3c642b1d255254bff1719b314882c5808b55",
+        "holdout_89037_ep03_unseen_right.npz": "361b557744495fd1ed40f7bbb24879258f00805cef42e7e669e864b63691d819",
+        "holdout_89037_ep06_unseen_right.npz": "4c701705b866357a1a480e729de9389bebf7d79a8a4d75be100780c32424d84c",
+        "holdout_89037_ep09_unseen_right.npz": "db0f883d4b4ac60a7fdf7d84de628b65dd1fc968bf4b772f6976560c882d03cd",
+        "holdout_89037_ep12_unseen_right.npz": "61cd55900c9c1a734a1df2328fabdd43022dfdc809bb472c0877772d4c9e93fc"
+      },
+      "episode_roster": [
+        {
+          "source_seed": 89037,
+          "episode": 0,
+          "first_archive_row": 0,
+          "end_archive_row_exclusive": 300,
+          "physical_episode_qpos_sha256": "0381ce845dfc2881801f3de247e0f35565c735177cc83843b16cab586095469d"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 3,
+          "first_archive_row": 900,
+          "end_archive_row_exclusive": 1200,
+          "physical_episode_qpos_sha256": "16a4587be53dc4efa02bc4f5eaa64a7a015aba9e338f875a27688a17710eac9b"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 6,
+          "first_archive_row": 1800,
+          "end_archive_row_exclusive": 2100,
+          "physical_episode_qpos_sha256": "792ce5f081eddb1c42baac2e66e3fc569eefefbd3fe8a86dfde068364cb253a8"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 9,
+          "first_archive_row": 2700,
+          "end_archive_row_exclusive": 3000,
+          "physical_episode_qpos_sha256": "e04cc16d50cedbfc94468f6f9bf8aa176f2e56955205bae75540b61da985e436"
+        },
+        {
+          "source_seed": 89037,
+          "episode": 12,
+          "first_archive_row": 3393,
+          "end_archive_row_exclusive": 3693,
+          "physical_episode_qpos_sha256": "e524cf6f628b6b5f11023ee27aa7d02f6f4fec5d1dc482f6550770ce31b38379"
+        }
+      ]
+    }
+  },
+  "capture_ticks": [
+    25,
+    34,
+    42,
+    50,
+    59,
+    67,
+    75,
+    84,
+    92,
+    100,
+    109,
+    117,
+    125,
+    134,
+    142,
+    150
+  ],
+  "delay_ticks": 2,
+  "counts": {
+    "physical_steps": 0,
+    "policy_updates": 0,
+    "world_updates": 0,
+    "perception_updates": 0,
+    "independent_clouds": 672,
+    "new_packet_views": 1344,
+    "rays_per_cloud": 520,
+    "native_ray_calls": 698880
+  }
+}

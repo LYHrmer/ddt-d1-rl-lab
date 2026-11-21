@@ -1,0 +1,34 @@
+name: D1 predictive terrain perception
+
+on:
+  push:
+    paths: ['tools101/**', 'tests/test_*101.py', 'docs/experiments101/**', 'docs/jeplo_next_packet101*', 'docs/assets/jeplo101.mp4', 'reports/jeplo101/**', '.github/workflows/jeplo101.yml']
+  pull_request:
+    paths: ['tools101/**', 'tests/test_*101.py', 'docs/experiments101/**', 'docs/jeplo_next_packet101*', 'docs/assets/jeplo101.mp4', 'reports/jeplo101/**', '.github/workflows/jeplo101.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install CPU verification dependencies
+        run: |
+          python -m pip install --quiet 'numpy==2.2.6' 'pytest==8.4.2' 'pillow==11.3.0'
+          python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
+      - name: Check matched updates, temporal boundaries and grade rules
+        run: python -B -m pytest -p no:cacheprovider -q tests/test_*101.py
+      - name: Reconstruct the published grades and re-run all six frozen estimators
+        if: hashFiles('reports/jeplo101/manifest.json') != ''
+        run: python -B -m tools101.publish101 --check --replay-weights

@@ -1,0 +1,54 @@
+{
+  "fit_sha256": "49a294a0d5197472d749928c625848f212be635262e3384f3f3a78f6958ae56f",
+  "holdout_sha256": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+  "per_seed": {
+    "101011": {
+      "clear": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.1771638516585032,
+        "predicted_proprio_mse": 0.2506839557240407,
+        "persistence_depth_mse": 0.21249422836775922,
+        "persistence_proprio_mse": 0.3897173457344373
+      },
+      "masked": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.17679264048735302,
+        "predicted_proprio_mse": 0.2504847759753466,
+        "persistence_depth_mse": 0.21463529815961616,
+        "persistence_proprio_mse": 0.3897173457344373
+      }
+    },
+    "101023": {
+      "clear": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.19095014390846093,
+        "predicted_proprio_mse": 0.22756272902091343,
+        "persistence_depth_mse": 0.24125298199321454,
+        "persistence_proprio_mse": 0.32595327655474343
+      },
+      "masked": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.19358006224036217,
+        "predicted_proprio_mse": 0.22792490397890408,
+        "persistence_depth_mse": 0.24788162669865416,
+        "persistence_proprio_mse": 0.32595327655474343
+      }
+    },
+    "101037": {
+      "clear": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.20447352193295956,
+        "predicted_proprio_mse": 0.28273641942689814,
+        "persistence_depth_mse": 0.2690570262759381,
+        "persistence_proprio_mse": 0.401755378767848
+      },
+      "masked": {
+        "pairs": 150,
+        "predicted_depth_mse": 0.1989695459852616,
+        "predicted_proprio_mse": 0.28287600353360176,
+        "persistence_depth_mse": 0.2657501226034947,
+        "persistence_proprio_mse": 0.401755378767848
+      }
+    }
+  }
+}

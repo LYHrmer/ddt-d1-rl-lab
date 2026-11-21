@@ -1,0 +1,297 @@
+{
+  "protocol_sha256": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+  "files": {
+    "reports/jeplo101/train.npz": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+    "reports/jeplo101/holdout.npz": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+    "reports/jeplo101/data.json": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "reports/jeplo101/fit/fit.json": "49a294a0d5197472d749928c625848f212be635262e3384f3f3a78f6958ae56f",
+    "reports/jeplo101/fit/updates.jsonl": "d3f76116ed489f195161ab2de951fedfd00c6ff778bb53ab5981022b0185df1a",
+    "reports/jeplo101/fit/seed_101011_baseline.pt": "d252ec2df5a07a5798f2c6fc12e830adc1794d0df13f4c6df7044957d1b28943",
+    "reports/jeplo101/fit/seed_101011_predictive.pt": "058becf2a66bc4d5a28df50d2b4dfad31ba4ffc50a50c1574e59dd8e94034c08",
+    "reports/jeplo101/fit/seed_101023_baseline.pt": "1a99864744d4a11ff23f64254bcf04f36df6f72342eefaee8f2f1baa6de4e520",
+    "reports/jeplo101/fit/seed_101023_predictive.pt": "517702c56879a105d67a88b2f9f87cb66a5b13627a40347c7739f61d24bfdf7a",
+    "reports/jeplo101/fit/seed_101037_baseline.pt": "c3f0f7e6595a94b06491475fa1f5d1ca8349823fa87fc531d1f02f527a6116f6",
+    "reports/jeplo101/fit/seed_101037_predictive.pt": "511b0b38eb70cce37ec6766d4edf30028d3ae62a47cd0c7207de246a7bfc38a8",
+    "reports/jeplo101/predictions.npz": "6c480afb0472c137355d0387403fe90057331be846253942450100b9d609df11",
+    "reports/jeplo101/report.json": "5f329590baa47f1707857e3cd31d1389e237957d8fc264c6bac733485887d031",
+    "reports/jeplo101/forecast_seal.json": "00603f80e52b6f0974c0c0c5b2c1fb564f23263488109243f1e5dbf8e67a1aae",
+    "reports/jeplo101/latent.json": "8d299ffcbc84e30d1e493a27ad254c11e2fec39025d8bebf39c2fbd35b66dcaf",
+    "reports/jeplo101/video.json": "b317efa2a58fe966fc85a1e69d680d3c27ebe3cebecacf16ee30da8ca7977938",
+    "docs/assets/jeplo101.mp4": "03dd87babc81e62f94186122b5efc56f9cc67a4e26566da82f488843f247e162"
+  },
+  "posthoc_raised_failures": {
+    "baseline": [
+      {
+        "seed": 101011,
+        "raised_packets": 54,
+        "failed": 11,
+        "undershot_magnitude": 11,
+        "missing": 0
+      },
+      {
+        "seed": 101023,
+        "raised_packets": 54,
+        "failed": 14,
+        "undershot_magnitude": 14,
+        "missing": 0
+      },
+      {
+        "seed": 101037,
+        "raised_packets": 54,
+        "failed": 6,
+        "undershot_magnitude": 6,
+        "missing": 0
+      }
+    ],
+    "predictive": [
+      {
+        "seed": 101011,
+        "raised_packets": 54,
+        "failed": 13,
+        "undershot_magnitude": 13,
+        "missing": 0
+      },
+      {
+        "seed": 101023,
+        "raised_packets": 54,
+        "failed": 12,
+        "undershot_magnitude": 12,
+        "missing": 0
+      },
+      {
+        "seed": 101037,
+        "raised_packets": 54,
+        "failed": 12,
+        "undershot_magnitude": 12,
+        "missing": 0
+      }
+    ]
+  },
+  "stages": {
+    "prepare": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "data.json": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+          "holdout.npz": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+          "native/holdout_89037_ep00_unseen_left.npz": "7750d2273dd56151d821295b4e18d9046d188813306554b50f729de290dbbeb0",
+          "native/holdout_89037_ep00_unseen_right.npz": "9df06e05ce36fdbbbff1beb2921d3c642b1d255254bff1719b314882c5808b55",
+          "native/holdout_89037_ep03_unseen_left.npz": "7c0cdd55784f674059007d8c5182952771e752e4e5013e2202711d02a755af0b",
+          "native/holdout_89037_ep03_unseen_right.npz": "361b557744495fd1ed40f7bbb24879258f00805cef42e7e669e864b63691d819",
+          "native/holdout_89037_ep06_unseen_left.npz": "ee0f7848e57c5025d98ad0973d2fa9dda924e9c9737c39b268dab8b665eec652",
+          "native/holdout_89037_ep06_unseen_right.npz": "4c701705b866357a1a480e729de9389bebf7d79a8a4d75be100780c32424d84c",
+          "native/holdout_89037_ep09_unseen_left.npz": "f06b80b8febd88d7d46fb7245ec3cdefd2d0634c086b35d1e0c7113ccd7051dc",
+          "native/holdout_89037_ep09_unseen_right.npz": "db0f883d4b4ac60a7fdf7d84de628b65dd1fc968bf4b772f6976560c882d03cd",
+          "native/holdout_89037_ep12_unseen_left.npz": "27cc2b5451e8c2806ba6df1418a0020ca0e77fa8e67301dd6fa588fba638ecab",
+          "native/holdout_89037_ep12_unseen_right.npz": "61cd55900c9c1a734a1df2328fabdd43022dfdc809bb472c0877772d4c9e93fc",
+          "native/train_89011_ep02_long_left.npz": "39e715a3d87782c0d57ebf5df7ce7950768cf474f71265723e6246b6d0422fb1",
+          "native/train_89011_ep02_long_right.npz": "80412782ba40f9098883302a2713b5196e92462ff8f5b0ff62222f558d3767d3",
+          "native/train_89011_ep02_narrow_left.npz": "d60748f2f4f9effd93559919af9c922fc3821c594c172ca3a490ba6b46566570",
+          "native/train_89011_ep02_narrow_right.npz": "e1f6d5d151d4b9a6b8c349099d85c9e33300a59aa07cf0060f553a3f13b9bd2b",
+          "native/train_89011_ep05_long_left.npz": "526dc0db3d05858c61f251759b33ea28a6ef0c1d7603c9534994c645aadeedc5",
+          "native/train_89011_ep05_long_right.npz": "f6db9681c604545a30359c3f6fe3c67f1bf9f596903fcff280729bd4a847beee",
+          "native/train_89011_ep05_narrow_left.npz": "a28b9d7829038c47eb75ee6e78a81db6e727f4a9ecdbf29828dcd0226d4656ee",
+          "native/train_89011_ep05_narrow_right.npz": "34ddbd987e1812c0ab77583c05fb3e551ffb1631a9a6461b716c0d43ed193ed6",
+          "native/train_89011_ep08_long_left.npz": "addabf0dc0c16252a696a5f535e3b0cf916f415b1ee8e7e42ac5f050a755dada",
+          "native/train_89011_ep08_long_right.npz": "23ec1fdcc5878a4e1b2dd92ff3b1ecda5717821c744830269a0e2a78a7d67a4b",
+          "native/train_89011_ep08_narrow_left.npz": "5513849501cb054fd5f7ac643b9a090073d0149ce7f3b2a890e7d35b34bb0014",
+          "native/train_89011_ep08_narrow_right.npz": "488dad8cc1e70cf94de206182373631592361291e1b1b682ee631ee0af59abc1",
+          "native/train_89011_ep11_long_left.npz": "f692f6e0d070fa6e78b8421bb60de03b8eae3044e04388a86c92902701a5f2c0",
+          "native/train_89011_ep11_long_right.npz": "3bd5cc5691608d8b0692874385f4164330f269ef86fc0f7696e94fabd15d3c10",
+          "native/train_89011_ep11_narrow_left.npz": "25e97acd4722873e6afef6b37512ed5ea1d6a19c53612242c25a89a7de7b4f44",
+          "native/train_89011_ep11_narrow_right.npz": "675b6221960376b91d6dad03a4a9adf13358300fb43d8aaada0b6da1b4c49f8a",
+          "native/train_89023_ep02_long_left.npz": "6be91ae09ef834a14375431b042dbfefafefabcc0c399437ce6e0b435f655355",
+          "native/train_89023_ep02_long_right.npz": "58476b8824ae12dacc294c41192b49f2fac226bdebbb08ec93a1e5f96057a2bd",
+          "native/train_89023_ep02_narrow_left.npz": "c88dfff676440650c5673008ba28b9989df96703f87850a46fc247749df5589b",
+          "native/train_89023_ep02_narrow_right.npz": "a49dee1476eb70a1e83a64e04d8da70d65c8858e0f6e12b89e1e9a36c74aa50b",
+          "native/train_89023_ep05_long_left.npz": "44df9800d5287c6a2875ef17191c4b1692f494dd7efbf3dc2a0f469d5f1a2340",
+          "native/train_89023_ep05_long_right.npz": "3359f63b6f444706229de46718fcd26721f199ad9ffcfe38fde376671bd73e87",
+          "native/train_89023_ep05_narrow_left.npz": "68a2b979c807401d5b921f3c3503fe4308eba5452a94b62c8037982e274b92b0",
+          "native/train_89023_ep05_narrow_right.npz": "cdf84411ebd47bdbba35604affcdd73a381ba2a4d21a208afd0d48df86163e66",
+          "native/train_89023_ep08_long_left.npz": "2c1816057d01366c74c0fc3f2cb2907239573b1bd8f6d5551f8959703206ad47",
+          "native/train_89023_ep08_long_right.npz": "27f90c695a49aa2f9bfcca9c38d77c285741ae454448737891e258514f32a06a",
+          "native/train_89023_ep08_narrow_left.npz": "17ea4cc3af0152a8cf036ce75b9db5075ff093f9e1fb75cf7b3d3000b5e26b58",
+          "native/train_89023_ep08_narrow_right.npz": "e16f6b6a528142426b9792bc37fa55f2181b0ad00138af374d07701f0aacde0f",
+          "native/train_89023_ep11_long_left.npz": "fcb94c45ad6c10a6ee380c557de5878082b55e83ae671b72f267a14e5bd5d74a",
+          "native/train_89023_ep11_long_right.npz": "438eb5e53f00ef25b5bdb9d1f83d3bff0ebd637fd3e36992c915c9e29e1f65ac",
+          "native/train_89023_ep11_narrow_left.npz": "620ec2be0b514f455235aae8884ec22591892dd6a64541c94315a2f044cb5556",
+          "native/train_89023_ep11_narrow_right.npz": "b846f0df8456c9f5067bcf67024c12ed2ff5e5e262cc03c75d369194fbef9987",
+          "start.json": "90a4617802ff5edd9ac55de16b78ce98fe15a8a5fcbd91479c6dfcde3f8be18c",
+          "train.npz": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907"
+        },
+        "stage": "prepare",
+        "unit": "d1-jeplo101-prepare-01",
+        "protocol_sha256": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+        "sources": {
+          "tools101/common101.py": "605abbef1e29e19081f6d3cf5a7c0110d30103fd3e30d3b2d0ea591ba14a6235",
+          "tools101/launch101.py": "789ae9a05445cffef985a1a4e59ffca5ac77b546f0783750455791777e6fd410",
+          "tools101/data101.py": "6cc3ea411c5dae635137ffb333a5d8d8c2c46c55be46da320f31c90ae094047b"
+        },
+        "parents": {}
+      },
+      "seal_sha256": "9d1ef50aad0f2b05e73d9f62ebf60beb1fe23b91a9a8ed1114acec8ca2ee99b6",
+      "resources": {
+        "startup_bytes": 8366800896,
+        "minimum_running_bytes": 7733911552,
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-jeplo101-prepare-01.service",
+        "peak_group_bytes": 603275264,
+        "cpu_affinity": [
+          0
+        ],
+        "elapsed_s": 21.978055800998845,
+        "memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "receipt_sha256": "03618c062cf9749b3eb3257848687e08a1cd4a0668052a2136b6aee1413fc6ce",
+        "log_sha256": "9fe5677ff5c27b2108575d27138827e3f27e1a3036eeee3910023ac9617a2a27"
+      }
+    },
+    "fit": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "fit.json": "49a294a0d5197472d749928c625848f212be635262e3384f3f3a78f6958ae56f",
+          "fit_started.json": "ee34a3db6b1d599767142b6ccbd54b7dc65a3f7b4ad91b36a7043d9439226348",
+          "runtime.json": "8cea3b7a9b8c5255b585cc7c8156340d13b4fcc5116f048e95aa92221c6bd6aa",
+          "seed_101011_baseline.pt": "d252ec2df5a07a5798f2c6fc12e830adc1794d0df13f4c6df7044957d1b28943",
+          "seed_101011_predictive.pt": "058becf2a66bc4d5a28df50d2b4dfad31ba4ffc50a50c1574e59dd8e94034c08",
+          "seed_101023_baseline.pt": "1a99864744d4a11ff23f64254bcf04f36df6f72342eefaee8f2f1baa6de4e520",
+          "seed_101023_predictive.pt": "517702c56879a105d67a88b2f9f87cb66a5b13627a40347c7739f61d24bfdf7a",
+          "seed_101037_baseline.pt": "c3f0f7e6595a94b06491475fa1f5d1ca8349823fa87fc531d1f02f527a6116f6",
+          "seed_101037_predictive.pt": "511b0b38eb70cce37ec6766d4edf30028d3ae62a47cd0c7207de246a7bfc38a8",
+          "start.json": "80d22de658f29f7b6ae74603e4a0490e9b90d634ffda4e95783009e77e793d6b",
+          "updates.jsonl": "d3f76116ed489f195161ab2de951fedfd00c6ff778bb53ab5981022b0185df1a"
+        },
+        "stage": "fit",
+        "unit": "d1-jeplo101-fit-01",
+        "protocol_sha256": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+        "sources": {
+          "tools101/common101.py": "605abbef1e29e19081f6d3cf5a7c0110d30103fd3e30d3b2d0ea591ba14a6235",
+          "tools101/launch101.py": "789ae9a05445cffef985a1a4e59ffca5ac77b546f0783750455791777e6fd410",
+          "tools101/fit101.py": "422026fc27848808a5a55f02a268e4a4cd14141f003fdfc9273f827eeda96b5c"
+        },
+        "parents": {
+          "prepare": "9d1ef50aad0f2b05e73d9f62ebf60beb1fe23b91a9a8ed1114acec8ca2ee99b6"
+        }
+      },
+      "seal_sha256": "112c73b9713e347b300dfa24b88b8ce197f7c4285cd5de5499f48a79cbe27f07",
+      "resources": {
+        "startup_bytes": 8961421312,
+        "minimum_running_bytes": 8582422528,
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-jeplo101-fit-01.service",
+        "peak_group_bytes": 402096128,
+        "cpu_affinity": [
+          0
+        ],
+        "elapsed_s": 15.890934598000968,
+        "memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "receipt_sha256": "b36b284837913c23e7f326ccad6435bd2a30a80470b88582fbf0ee4d4f4780fd",
+        "log_sha256": "59d83db6c8898211c66f6f96fb7126c2a428be7e995ac45b303bdadaa0537333"
+      }
+    },
+    "evaluate": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "forecast_seal.json": "00603f80e52b6f0974c0c0c5b2c1fb564f23263488109243f1e5dbf8e67a1aae",
+          "latent.json": "8d299ffcbc84e30d1e493a27ad254c11e2fec39025d8bebf39c2fbd35b66dcaf",
+          "predict_started.json": "c6b15fc46363e2091c7b59c640855a0c1857efbeaa30f8479c0a8ec46bb7e9ac",
+          "predictions.npz": "6c480afb0472c137355d0387403fe90057331be846253942450100b9d609df11",
+          "report.json": "5f329590baa47f1707857e3cd31d1389e237957d8fc264c6bac733485887d031",
+          "runtime.json": "8cea3b7a9b8c5255b585cc7c8156340d13b4fcc5116f048e95aa92221c6bd6aa",
+          "start.json": "754302631f7f1adabad9aaf7470526a2b58a149ad33859fdfdfc861e88d801a0"
+        },
+        "stage": "evaluate",
+        "unit": "d1-jeplo101-evaluate-01",
+        "protocol_sha256": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+        "sources": {
+          "tools101/common101.py": "605abbef1e29e19081f6d3cf5a7c0110d30103fd3e30d3b2d0ea591ba14a6235",
+          "tools101/launch101.py": "789ae9a05445cffef985a1a4e59ffca5ac77b546f0783750455791777e6fd410",
+          "tools101/fit101.py": "422026fc27848808a5a55f02a268e4a4cd14141f003fdfc9273f827eeda96b5c",
+          "tools101/score101.py": "4d413a5225e303d92e186a639369c46e6e3896e254040ed0b7bcda4391b632d0"
+        },
+        "parents": {
+          "prepare": "9d1ef50aad0f2b05e73d9f62ebf60beb1fe23b91a9a8ed1114acec8ca2ee99b6",
+          "fit": "112c73b9713e347b300dfa24b88b8ce197f7c4285cd5de5499f48a79cbe27f07"
+        }
+      },
+      "seal_sha256": "2db35ca592a4146471717f406e57591328bc828cefeb3a4e1d8f183bbc278c6c",
+      "resources": {
+        "startup_bytes": 8613117952,
+        "minimum_running_bytes": 8076206080,
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-jeplo101-evaluate-01.service",
+        "peak_group_bytes": 375570432,
+        "cpu_affinity": [
+          0
+        ],
+        "elapsed_s": 12.61583912200149,
+        "memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "receipt_sha256": "a27b7752b387d71be3f72f7c4f0cf78cc1855d66c667f0416bfad5213b082008",
+        "log_sha256": "c7c6f0cd8371ff8fcccf361f35c54a78832d73859fa1664561b3dc58308c7c23"
+      }
+    },
+    "video": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "jeplo101.mp4": "03dd87babc81e62f94186122b5efc56f9cc67a4e26566da82f488843f247e162",
+          "start.json": "c8a1d142b82fb2c460ca418e098dabb1b3218bcc1f22f0083fa44f764a496aef",
+          "video.json": "b317efa2a58fe966fc85a1e69d680d3c27ebe3cebecacf16ee30da8ca7977938"
+        },
+        "stage": "video",
+        "unit": "d1-jeplo101-video-01",
+        "protocol_sha256": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+        "sources": {
+          "tools101/common101.py": "605abbef1e29e19081f6d3cf5a7c0110d30103fd3e30d3b2d0ea591ba14a6235",
+          "tools101/launch101.py": "789ae9a05445cffef985a1a4e59ffca5ac77b546f0783750455791777e6fd410",
+          "tools101/video101.py": "6d8d5e477462e71f94fe174ee8cb16773ab60911b19b69775ee9e6d3e5eae09e",
+          "tools101/score101.py": "4d413a5225e303d92e186a639369c46e6e3896e254040ed0b7bcda4391b632d0"
+        },
+        "parents": {
+          "prepare": "9d1ef50aad0f2b05e73d9f62ebf60beb1fe23b91a9a8ed1114acec8ca2ee99b6",
+          "evaluate": "2db35ca592a4146471717f406e57591328bc828cefeb3a4e1d8f183bbc278c6c"
+        }
+      },
+      "seal_sha256": "213fad3ccc7469c746c6948a692a8a41d286f3f2730f34923e5ede692c279f80",
+      "resources": {
+        "startup_bytes": 9052839936,
+        "minimum_running_bytes": 8799821824,
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-jeplo101-video-01.service",
+        "peak_group_bytes": 126005248,
+        "cpu_affinity": [
+          0
+        ],
+        "elapsed_s": 17.174512785000843,
+        "memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "receipt_sha256": "16e8ec7874959f53dd531dbd053c2d79a1ee6fdda2ff96ec7caab760698edb0b",
+        "log_sha256": "e32450329f4d59336867202d9f177353f89e5c5cf20ce2a1b456e65978db2f74"
+      }
+    }
+  }
+}
