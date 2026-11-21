@@ -2,9 +2,9 @@ name: D1 policy gradient direction
 
 on:
   push:
-    paths: ['tools95/**', 'tests/test_policy_direction95*.py', 'docs/experiments95/**', 'docs/supermimic_policy_direction95*', 'docs/assets/policy_direction95*', 'reports/cold_start95_wheel_direction.json', 'reports/policy_direction95*', '.github/workflows/policy-direction95.yml']
+    paths: ['tools95/**', 'tests/test_policy_direction95*.py', 'tests/test_observation_contract95.py', 'docs/experiments95/**', 'docs/supermimic_policy_direction95*', 'docs/assets/policy_direction95*', 'reports/cold_start95_wheel_direction.json', 'reports/policy_direction95*', '.github/workflows/policy-direction95.yml']
   pull_request:
-    paths: ['tools95/**', 'tests/test_policy_direction95*.py', 'docs/experiments95/**', 'docs/supermimic_policy_direction95*', 'docs/assets/policy_direction95*', 'reports/cold_start95_wheel_direction.json', 'reports/policy_direction95*', '.github/workflows/policy-direction95.yml']
+    paths: ['tools95/**', 'tests/test_policy_direction95*.py', 'tests/test_observation_contract95.py', 'docs/experiments95/**', 'docs/supermimic_policy_direction95*', 'docs/assets/policy_direction95*', 'reports/cold_start95_wheel_direction.json', 'reports/policy_direction95*', '.github/workflows/policy-direction95.yml']
 
 permissions:
   contents: read
@@ -34,3 +34,5 @@ jobs:
         run: python -B -m tools95.publish95 --check
       - name: Replay the public observation and privileged-input checks
         run: python -B -m tools95.check_privileged_observation95 --check-example
+      - name: Detect corrupted history and prematurely delivered measurements
+        run: python -B -m pytest -p no:cacheprovider -q tests/test_observation_contract95.py
