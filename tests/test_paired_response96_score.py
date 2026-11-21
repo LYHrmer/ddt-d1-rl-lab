@@ -1,5 +1,6 @@
 import math
 
+import numpy as np
 import pytest
 
 from tools96.score96 import ARMS, MODELS, RESETS, SEEDS, relative_error, reward_m, score_models, summarize
@@ -92,3 +93,23 @@ def test_public_checker_preserves_missing_cells_and_refuses_duplicate_publicatio
     assert all(s["slope_median_strictly_improved"] is None for s in report["summary"]["by_seed"])
     with pytest.raises(FileExistsError):
         publisher.publish()
+
+
+@pytest.mark.parametrize("ticks", [31, 32])
+def test_public_native_prefix_readback_keeps_terminal_flags_and_only_complete_rewards(ticks):
+    from tools96 import publish96 as p
+
+    ref = "native_94011_96201_zero_x"
+    x = 1.125 - np.arange(ticks + 1, dtype=np.float64)/128
+    flags = np.zeros((ticks, 4), bool)
+    flags[-1, 1:3] = True
+    curves = {ref: x, ref+"_flags": flags}
+    row = {"curve_key": ref, "flags_key": ref+"_flags", "status": "TERMINAL", "ticks": ticks, "safe": False,
+           "error": None, "return_m": -16.5/128 if ticks == 32 else None}
+    used = set()
+    p.verify_arm(row, curves, used, ref, 1.125, native=True)
+    assert used == set(curves)
+    assert (row["return_m"] is None) == (ticks < 32)
+    flags[-1] = False
+    with pytest.raises(ValueError):
+        p.verify_arm(row, curves, used, ref, 1.125, native=True)

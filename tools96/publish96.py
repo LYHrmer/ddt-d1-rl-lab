@@ -212,7 +212,7 @@ def verify_fit(fit, collection, curves, plan):
             and len(source["old_traces"]) == 12, "old training data differs from the round-94 fit")
     new = {p["reset"]: p for p in source["new_pairs"]}
     require(len(source["new_pairs"]) == len(new) == 3 and set(new) == set(TRAIN_RESETS), "paired fit has an unexpected training reset")
-    targets = []
+    targets, new_roster = [], []
     for c in collection:
         if c["training_seed"] != fit["seed"]:
             continue
@@ -226,6 +226,7 @@ def verify_fit(fit, collection, curves, plan):
         x, y = (curves[a["curve_key"]] for a in (minus, plus))
         for tick in range(n-7):
             targets.append((y[tick+1:tick+9] - y[tick]) - (x[tick+1:tick+9] - x[tick]))
+            new_roster.append((c["reset"], tick))
     target = np.stack(targets)
     norm = fit["normalization"]
     mse = float(np.mean(target**2))
@@ -234,6 +235,16 @@ def verify_fit(fit, collection, curves, plan):
             norm["floor_m2"] == floor and math.isclose(norm["target_mse_m2"], mse, rel_tol=1e-12, abs_tol=0.) and
             math.isclose(norm["denominator_m2"], max(mse, floor), rel_tol=1e-12, abs_tol=0.) and
             reset_hash({"plus_minus_x_m": target}) == norm["response_targets_sha256"], "native paired-response normalization differs")
+    old_roster = [(r["reset"], i) for r in old["fit_episodes"] for i in range(r["ticks"]-7)]
+    require(len(old_roster) == fit["batch"]["old_windows"] and len(new_roster) == fit["batch"]["paired_windows"], "batch population differs")
+    rng = np.random.default_rng(fit["seed"] + 960000)
+    old_rows, new_rows = [], []
+    for _ in range(plan["fit"]["updates_per_arm"]):
+        old_rows.append(rng.integers(len(old_roster), size=plan["fit"]["old_windows_per_batch"], dtype=np.int64))
+        new_rows.append(rng.integers(len(new_roster), size=plan["fit"]["paired_windows_per_batch"], dtype=np.int64))
+    batch_hash = reset_hash({"old_reset_start": np.array(old_roster, np.int64), "new_reset_start": np.array(new_roster, np.int64),
+                             "old_rows": np.stack(old_rows), "paired_rows": np.stack(new_rows)})
+    require(batch_hash == fit["batch"]["indices_sha256"], "shared batch schedule differs from registered sampler")
 
 
 def work_counts(collection, fits, cells):
