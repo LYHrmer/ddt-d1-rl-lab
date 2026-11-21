@@ -1,0 +1,167 @@
+{
+  "schema": 1,
+  "name": "D1 point-cloud density in unilateral wheel tracks",
+  "base_commit": "8c2ee235fab3d7e353345685010807c31104e390",
+  "stage": "development paired replay, perception only",
+  "seeds": [
+    87201,
+    87202,
+    87203
+  ],
+  "layouts": [
+    "flat",
+    "left",
+    "right"
+  ],
+  "visibilities": [
+    "clear",
+    "masked"
+  ],
+  "policy_hz": 50,
+  "sensor_hz": 6,
+  "delay_ticks": 2,
+  "capture_ticks": [
+    59,
+    67,
+    75,
+    84,
+    92,
+    100,
+    109,
+    117,
+    125,
+    134,
+    142,
+    150
+  ],
+  "sources": [
+    {
+      "seed": 87201,
+      "path": "evidence/full_body87/evaluate_01/range_87011_flat_87201/trace.npz",
+      "sha256": "fab92fb3d872dbe26ff8d1471f9021d1e92a92c96a806709bb017596637983f1"
+    },
+    {
+      "seed": 87202,
+      "path": "evidence/full_body87/evaluate_01/range_87023_flat_87202/trace.npz",
+      "sha256": "a5266bafa270aa0bf59d415f37d9456ad33dcdd72f7aee280d7627b6fc8612cc"
+    },
+    {
+      "seed": 87203,
+      "path": "evidence/full_body87/evaluate_01/range_87037_flat_87203/trace.npz",
+      "sha256": "b2097134ee3af5ebc13be48d7d1bbc73ce2d2f4bb923036475ec712d6d8fb08e"
+    }
+  ],
+  "parents_sha256": {
+    "docs/jeplo_d1_perception_proposal.md": "be36f5ab2f46da149a91c668ff36b3bd0ad71d671ea695111543734697e2e1e4",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "tools87/run87.py": "3114f6d465630112a5123da2b18157a64b68dcb09cc34672e39b80506e100f40",
+    "reports/full_body_perception87.json": "ab5b32fd534832826bdb10c1c8e711d354f81edf67bd386018bbe37a68b03e7f",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea"
+  },
+  "geometry": {
+    "mounts_m": [
+      [
+        0.355,
+        0.19,
+        0.055
+      ],
+      [
+        0.355,
+        -0.19,
+        0.055
+      ]
+    ],
+    "azimuth_deg": [
+      -24,
+      -20,
+      -16,
+      -12,
+      -8,
+      -4,
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "depression_deg": [
+      33,
+      36,
+      39,
+      42,
+      43,
+      45,
+      48,
+      51,
+      54,
+      56,
+      57,
+      60,
+      63,
+      66,
+      69,
+      72,
+      75,
+      78,
+      81,
+      82
+    ],
+    "sparse_depression_deg": [
+      82,
+      56,
+      43,
+      33
+    ],
+    "box_center_x_m": 0.775,
+    "box_abs_y_m": 0.22,
+    "box_half_x_m": 0.075,
+    "box_half_y_m": 0.1,
+    "box_height_m": 0.03,
+    "range_min_m": 0.14,
+    "range_max_m": 1.45,
+    "lookahead_m": 0.35,
+    "mask_abs_azimuth_max_deg": 4,
+    "mask_depression_deg": [
+      48,
+      61
+    ]
+  },
+  "observation": "Single first-return frame per acquisition, all scene and moving-only rays for self hits. Flatten in mount (L,R), depression, azimuth order. Sparse is an exact eight-column subset of the same dense return. Apply the inclusive angular mask to both mounts and both arms. At delivery the capture-time heading-level, base-origin point coordinates are held for 40 ms without odometry; query in the delivery-time heading-level base-origin frame. Shared midpoint axle x plus 0.35 m, individual front wheel left/right y.",
+  "estimator": {
+    "method": "Nearest valid point in horizontal radius for each query, average z of equidistant nearest hits. Return 1000*(left z-right z), or null if either side has no nearby hit.",
+    "radius_m": 0.15,
+    "tie_tolerance_m": 1e-12
+  },
+  "score": {
+    "tolerance_mm": 10,
+    "truth": "Only scorer uses delivered world-frame wheel query and analytical flat or mirrored box top at its XY position. Seal all arm estimates before labeling.",
+    "qualification": "If abs(truth)<=10, abs(estimate)<=10. Otherwise truth and estimate must both exceed 10 in magnitude with the same sign, and absolute error <=10 mm. Null fails.",
+    "primary": "For each seed, dense must strictly improve masked left/right layout passes across all 24 registered packets, with genuine left and right truth present. For each seed, clear failures on all 36 and flat false alarms on all 24 must not increase.",
+    "report": "Retain all 216 paired rows including missing results. Report true raised subset, clear/occluded, neutral false alarms, coverage, paired reversals and valid-packet errors."
+  },
+  "precontact": "Check all archived pose boundaries from reset through last delivery using conservative all-wheel front extent x < box leading edge x=0.700 m. Any incomplete coverage or otherwise invalid provenance is reported; do not substitute poses or layouts.",
+  "budget": {
+    "pairs": 18,
+    "packets_per_pair": 12,
+    "paired_rows": 216,
+    "independent_clouds": 108,
+    "directions_per_cloud": 520,
+    "physical_steps": 0,
+    "policy_updates": 0,
+    "world_updates": 0,
+    "perception_updates": 0
+  },
+  "resources": {
+    "cpu_affinity_count": 1,
+    "nice": 10,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_min_bytes": 4294967296,
+    "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "publication": "Publish both arms including failures, measured points, packet labels, replay implementation, and a cover-free desktop movie from the sealed measurements. No run selection or replacement."
+}
