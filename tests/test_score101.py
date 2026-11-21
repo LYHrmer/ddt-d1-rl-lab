@@ -7,6 +7,22 @@ from tools94.common94 import digest
 from tools101.score101 import (EPISODES, LAYOUTS, SEEDS, SOURCE_SEED, TICKS, VISIBILITIES, paired,
                                score_archives, seed_gate, validate_holdout)
 from tools101.video101 import clips_for
+from tools101.publish101 import compare_geometric_views
+
+
+def test_angular_mask_comparison_pairs_physical_captures_even_if_view_order_changes(tmp_path):
+    data = dict(cloud_id=np.array([8, 9, 9, 8]), visibility=np.array(["clear", "clear", "masked", "masked"]),
+                geometric_mm=np.array([30., 0., 0., np.nan]),
+                valid=np.array([[1, 1], [1, 1], [1, 0], [0, 1]], dtype=bool))
+    path = tmp_path / "heldout.npz"
+    np.savez(path, **data)
+    assert compare_geometric_views(path) == dict(captures=2, clear_valid_counts=[2], masked_valid_counts=[1],
+                                                 identical_finite_estimates=1)
+    data["cloud_id"][:] = 8
+    corrupt = tmp_path / "duplicated.npz"
+    np.savez(corrupt, **data)
+    with pytest.raises(ValueError, match="one-to-one"):
+        compare_geometric_views(corrupt)
 
 
 def registered_rows():

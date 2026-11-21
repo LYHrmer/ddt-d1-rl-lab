@@ -27,8 +27,10 @@ jobs:
         run: |
           python -m pip install --quiet 'numpy==2.2.6' 'pytest==8.4.2' 'pillow==11.3.0'
           python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
-      - name: Check matched updates, temporal boundaries and grade rules
-        run: python -B -m pytest -p no:cacheprovider -q tests/test_*101.py
       - name: Reconstruct the published grades and re-run all six frozen estimators
         if: hashFiles('reports/jeplo101/manifest.json') != ''
         run: python -B -m tools101.publish101 --check --replay-weights
+      - name: Install the archived D1 acquisition reader's import dependencies
+        run: python -m pip install --quiet 'gymnasium==1.2.0' 'mujoco==3.3.0'
+      - name: Check matched updates, temporal boundaries and grade rules
+        run: python -B -m pytest -p no:cacheprovider -q tests/test_*101.py

@@ -106,7 +106,8 @@ def compare_geometric_views(holdout):
         rows = np.flatnonzero(view == kind)
         sorted_rows[kind] = rows[np.argsort(cloud[rows])]
     clear, masked = sorted_rows["clear"], sorted_rows["masked"]
-    require(np.array_equal(cloud[clear], cloud[masked]), "physical captures do not match")
+    require(len(np.unique(cloud[clear])) == len(clear) and np.array_equal(cloud[clear], cloud[masked]),
+            "physical captures must pair one-to-one")
     return dict(captures=len(clear), clear_valid_counts=np.unique(valid[clear].sum(axis=1)).tolist(),
                 masked_valid_counts=np.unique(valid[masked].sum(axis=1)).tolist(),
                 identical_finite_estimates=int(np.sum(np.isfinite(geometry[clear]) & (geometry[clear] == geometry[masked]))))
