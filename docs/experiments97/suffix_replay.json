@@ -1,0 +1,45 @@
+{
+  "name": "D1 round 97: identify the source of late closed-loop world-model error on the stored round-96 4-degree stand task",
+  "parent_commit": "a921caaa9e62a66d8bc655b28097b8164f6aeb89",
+  "parents_sha256": {
+    "docs/experiments96/paired_response.json": "9b7b33c88b8229b79d851acb12d8569e2a55f3b39d1c2cd1a358cb43892773dd",
+    "reports/paired_response96.json": "4c46b71939cd7df9802f11f78e49a9cd9a56b91636ee329bb0c04c0ceb70c8e4",
+    "reports/paired_response96_curves.npz": "48151366dda596791b426ae503a2501ecefa6f36a4c9108d78b2d76e3d927183"
+  },
+  "local_parent_seals_sha256": {
+    "fit": "c2b3f711af82859c82539b764be9937e884d74958ba67c8f761f0bd39f75094f",
+    "predictions": "507320a1830627b8923714f01948c0b889ad5aa4a663f10cfd859cbcc80bfe0e",
+    "native": "e3d460939b06ee50e7d26b34b7edd476fb1609dea9a11be429bc90593b3f2624"
+  },
+  "training_seeds": [94011, 94023, 94037],
+  "resets": [96201, 96202, 96203],
+  "models": ["control", "paired"],
+  "arms": {"m1": -1, "mh": -0.5, "zero": 0, "ph": 0.5, "p1": 1},
+  "cut_tick": 16,
+  "end_tick": 32,
+  "dt_s": 0.02,
+  "stages": {
+    "fixed": "Keep each matching round-96 model's own saved 45-coordinate physical state at tick 16. Change only the subsequent action source from the recorded model-policy closed loop to the native applied16[16:32] of the same seed, reset and arm.",
+    "anchored": "Keep the identical applied action tape, model, terrain and precision as fixed. Change only the tick-16 state to the native 45-coordinate physical state of that arm converted to float32. Recur on the model's own predictions thereafter."
+  },
+  "inputs": "Use all 45 previously measured native paths, all 90 corresponding forecasts and exactly six complete 50-update world checkpoints. applied16 already includes the actuator delay. Terrain id is 1. No future physical state, zero-branch actions, inferred terrain contact or sensor data is provided at subsequent steps.",
+  "scoring": {
+    "reference": "Native and all three forecasts use negative mean absolute longitudinal departure from the original physical reset x0 over endpoints 17 through 32 inclusive. The input state at tick 16 is never a scored endpoint.",
+    "slope": "For each seed, reset and h in [0.5,1.0] compute (R(+h)-R(-h))/(2h) separately for native and forecast. Report same nonzero sign, absolute error, and symmetric relative error abs(f-n)/max(abs(f),abs(n)); if both zero the relative error is unavailable. Original 25% magnitude tolerance includes equality and requires matching nonzero sign.",
+    "attribution": "Compare closed to fixed, then fixed to anchored, separately within each model family. For every seed require all three resets and five arms in native and both compared methods with a full valid numeric suffix, strictly lower median of all six relative slope errors, and non-increasing median of the three neutral absolute return errors. Only agreement across all three seeds supports a common factor for that family. The paired-loss models are primary, original-loss controls are reported in parallel.",
+    "safety": "All native failures and flags are retained. A physical illegal-contact terminal at tick 32 supplies an observable endpoint but fails native safety. Any truly incomplete suffix, invalid state, exceptional or missing branch is labeled, never substituted and cannot pass an attribution gate. No new native safety claim is made.",
+    "scope": "These are two controlled diagnostic interventions on the same round-96 holdout, with finite differences of fixed action tapes. They do not establish a new policy gradient, a new blind test, or a change to the formal H32 round-96 return and safety decision."
+  },
+  "budget": {
+    "native_paths_reused": 45, "closed_forecasts_reused": 90, "checkpoints_reused": 6,
+    "arms_per_stage": 90, "max_model_steps_per_stage": 1440, "max_model_steps_total": 2880,
+    "new_native_decisions": 0, "new_servo_updates": 0, "new_physics_substeps": 0,
+    "new_actor_calls": 0, "backward_passes": 0, "world_updates": 0, "policy_updates": 0, "ppo_updates": 0
+  },
+  "resources": {
+    "cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648, "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0, "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "retention": "Use immutable stage directories, the existing shared serial lock, original failures, and new partial receipts. Do not overwrite or resume any attempt. Video displays stored trajectories only, from the first frame, without a cover."
+}
