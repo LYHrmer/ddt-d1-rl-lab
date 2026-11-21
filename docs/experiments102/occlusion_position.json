@@ -1,0 +1,66 @@
+{
+  "name": "D1 position of a fixed-size angular occlusion",
+  "schema": 1,
+  "base_commit": "10e5f6227cb1bcd4803b7a4b4f45f2ac0cbeebe9",
+  "scope": "Development intervention on the completed round-101 evaluation archive. That archive has already been scored. No independent new robot rollout or training.",
+  "hypothesis": "Moving a fixed-size pair of angular masks toward one nominal wheel track can make a previously correct single-packet terrain measurement fail. Frozen students may retain terrain information from previous packets.",
+  "source_seed": 89037,
+  "episodes": [0, 3, 6, 9, 12],
+  "layouts": ["unseen_left", "unseen_right"],
+  "target_sides": ["left", "right"],
+  "seeds": [101011, 101023, 101037],
+  "arms": ["baseline", "predictive"],
+  "capture_ticks": [25, 34, 42, 50, 59, 67, 75, 84, 92, 100, 109, 117, 125, 134, 142, 150],
+  "delay_ticks": 2,
+  "mask": {
+    "window_shape": [6, 3],
+    "original_starts": [[6, 5], [6, 5]],
+    "moved_starts": {"left": [[12, 8], [4, 10]], "right": [[4, 0], [12, 2]]},
+    "active_mod4": [2, 3],
+    "definition": "Starts are zero-based [depression row, azimuth column] in each ordered left/right 20x13 sensor image. Both arms mask two rectangles, 18 of 260 directions per sensor. Reference always applies round 101's mask. On capture ordinal modulo 4 equal to 2 or 3 the moved arm translates the same rectangles, otherwise it uses the original mask. Both target sides are crossed with both obstacle mirrors without consulting labels.",
+    "calibration": "Before opening outcomes, project the two front wheel queries (front axle +0.35 m) onto nominal level ground using the original mounts and nominal D1 standing geometry. Select the contiguous 6-row, 3-column window whose mean angles are closest, clipping to the view and favoring the smaller index at ties. No observed height, range, world pose at delivery or future observation selects the mask.",
+    "nominal_base_height_m": 0.45237399982329246,
+    "front_query_xy_m": [[0.51921393763024, 0.22031016496273878], [0.51921393763024, -0.2203141364527048]],
+    "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757"
+  },
+  "gates": {
+    "minimum_episodes": 3,
+    "change_mm": 10,
+    "primary": "On active packets, a finite old geometry estimate satisfying the frozen 10 mm round-100 grade becomes a failing or missing estimate at the new position. Require at least one such reversal in 3 of the 5 distinct native episodes and at least one on each targeted side. Inactive geometry must agree between positions. All registered rows required. No sign, size, seed or window selection after grading.",
+    "diagnostics": "Report geometric regressions and recoveries, changes >=10 mm or loss of a previously finite estimate, missing counts, nearest retained point distance, and genuinely raised targets including the targeted high side. A change in nearest distance alone does not qualify the challenge.",
+    "history": "For frozen baseline and predictive students at all three seeds compare full history on moved masks to a copy whose previous two depth/valid inputs are blank, with identical past proprioception, issued actions and current packet. Mark this inference ablation as out-of-training-distribution. Report qualified counts and errors on paired active inputs, especially raised targets with geometric regressions; an empty subset cannot demonstrate recovery. The archived original-position gains or model contrasts do not authorize promotion."
+  },
+  "budget": {
+    "physical_clouds": 160, "paired_rows": 320, "active_rows": 160, "active_physical_clouds": 80,
+    "directions_per_cloud": 520, "removed_per_position": 36,
+    "archived_estimates_mapped": 1920, "new_frozen_estimates": 3840,
+    "new_rays": 0, "native_decisions": 0, "physics_substeps": 0,
+    "perception_updates": 0, "policy_updates": 0, "world_updates": 0
+  },
+  "video": {
+    "episode": 0, "layout": "unseen_left", "target_side": "left", "focus_ordinals": [6, 7],
+    "focus_delivery_ticks": [77, 86], "return_delivery_tick": 94, "tick_range": [27, 152],
+    "fps": 20, "motion_speed": 0.1, "maximum_bytes": 5000000,
+    "description": "First native held-out episode, left fixture and left target, registered before outcome. Reconstruct all 126 native pose boundaries at 50 Hz in an offscreen software MuJoCo scene with the same virtual fixture. Use slow motion and holds around the seventh and eighth packet and return; show real robot pose, virtual terrain, track query and saved return visibility at the matched deliveries. No cover. The replayed robot follows its historical precontact motion."
+  },
+  "resources": {
+    "cpu_affinity_count": 1, "nice": 10, "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472, "swap_max_bytes": 0,
+    "admission_min_bytes": 4294967296, "runtime_min_bytes": 2147483648,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "parents_sha256": {
+    "docs/experiments101/predictive_perception.json": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+    "reports/jeplo101/manifest.json": "3e983f54715c33613bae2a13c7ed3723ab37d05781795ecd0b82b4aaf7e4724d",
+    "reports/jeplo101/fit/fit.json": "49a294a0d5197472d749928c625848f212be635262e3384f3f3a78f6958ae56f",
+    "reports/jeplo101/holdout.npz": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+    "reports/jeplo101/predictions.npz": "6c480afb0472c137355d0387403fe90057331be846253942450100b9d609df11",
+    "reports/jeplo101/data.json": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "reports/jeplo101/report.json": "5f329590baa47f1707857e3cd31d1389e237957d8fc264c6bac733485887d031",
+    "tools101/fit101.py": "422026fc27848808a5a55f02a268e4a4cd14141f003fdfc9273f827eeda96b5c",
+    "tools101/data101.py": "6cc3ea411c5dae635137ffb333a5d8d8c2c46c55be46da320f31c90ae094047b",
+    "tools101/score101.py": "4d413a5225e303d92e186a639369c46e6e3896e254040ed0b7bcda4391b632d0",
+    "tools100/score100.py": "c3adc0da94eed01a686e6b33dc7b01d655c1dc14c6e8107c03326b33b6aca593",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0"
+  }
+}
