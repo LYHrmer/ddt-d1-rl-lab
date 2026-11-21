@@ -1,0 +1,34 @@
+name: D1 endpoint model training
+
+on:
+  push:
+    paths: ['tools98/**', 'tests/test_endpoint*98*.py', 'docs/experiments98/**', 'docs/supermimic_endpoint98*', 'docs/assets/endpoint98.mp4', 'reports/endpoint98*', '.github/workflows/endpoint98.yml']
+  pull_request:
+    paths: ['tools98/**', 'tests/test_endpoint*98*.py', 'docs/experiments98/**', 'docs/supermimic_endpoint98*', 'docs/assets/endpoint98.mp4', 'reports/endpoint98*', '.github/workflows/endpoint98.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install CPU test dependencies
+        run: |
+          python -m pip install --quiet 'numpy==2.2.6' 'pytest==8.4.2'
+          python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
+          python -c 'import torch'
+      - name: Check matched training, blind endpoints and video provenance
+        run: python -B -m pytest -p no:cacheprovider -q tests/test_endpoint*98*.py
+      - name: Recompute H16 state errors and formal H32 gates
+        run: python -B -m tools98.publish98 --check
