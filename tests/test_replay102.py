@@ -67,7 +67,7 @@ def test_independent_solver_preserves_nearest_ties_and_records_missing_observati
 
 
 def test_past_depth_ablation_preserves_current_returns_and_all_proprioception_and_actions():
-    import torch
+    torch = pytest.importorskip("torch", reason="Tensor histories are exercised by the wheel-track occlusion CPU job")
     from tools101.fit101 import DeliveredPackets
 
     ticks = np.array(TICKS[:4])
