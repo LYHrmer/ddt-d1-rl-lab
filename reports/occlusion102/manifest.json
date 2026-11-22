@@ -1,0 +1,113 @@
+{
+  "protocol_sha256": "ead58eb2e893a6c3bc58bbeba95b97612cd5c449c77c8de5810b29dd1dbcdec0",
+  "stages": {
+    "replay": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "model_outputs/101011_baseline_h3.npz": "9e3d5dfcff52397b757f0f6a05d87099175e5c9dad5c5db98938e2850e1077b3",
+          "model_outputs/101011_baseline_no_past_depth.npz": "ca88c43ca48d514899f3663b4788fca914d73fe43de1cb33443f8bad62379fc6",
+          "model_outputs/101011_predictive_h3.npz": "a2dbe1a5c9f54cde0c89cb51c6844e51457286be3f4d1ce72acb0aded5f0bc81",
+          "model_outputs/101011_predictive_no_past_depth.npz": "7d4b7bb996b971e12b111e2efd465d6a02599e35e1166f36160701f8ffad48bc",
+          "model_outputs/101023_baseline_h3.npz": "54c9afd8616723dfcae6ebb73dd44357fc8d6e786e79ad459c97545af2e7be9f",
+          "model_outputs/101023_baseline_no_past_depth.npz": "8ec2f15e854f064b28eefefd9a4b2a94baa937e7bf277c437c70a279f850c477",
+          "model_outputs/101023_predictive_h3.npz": "e7328fd904f70f2cd319569b5f84a4a3cd65932395dac6462835798cc07ad09f",
+          "model_outputs/101023_predictive_no_past_depth.npz": "d7153ae5ccdf75942f52e485fd75e8be82c1d065437710b5181f4e0a6840c7c1",
+          "model_outputs/101037_baseline_h3.npz": "b03dba9c457927667cbd6b2bc11e73941d105646a5679bae24ae854d2666bb3f",
+          "model_outputs/101037_baseline_no_past_depth.npz": "79c461237a2da32298d55a9dc752b8119e591a5d7f05169189743ba20024887c",
+          "model_outputs/101037_predictive_h3.npz": "3f90fc1debeb5accc76f792e630460b294b80cae4a052d6697910b846b933d0a",
+          "model_outputs/101037_predictive_no_past_depth.npz": "d75e74c0d7cfc68c84c17b78409c3ee8710bffd1f3e75b7d5dac0d288c42b6f4",
+          "packets.npz": "3f950879802687b057b28f5c799e37403446ce87aad9bd194e5a1297f615db41",
+          "predictions.npz": "cc5127d91351763cee32824e2ddc0f123e00f377bef66d5a92dd6caf2fd25248",
+          "report.json": "1de9a179443ba68e039580355d3ff779e7ff801eb9f3311460b76796d2811e61",
+          "start.json": "e4a04e6e9401bb2338677b00ac76a70bf66caf1ccce46f134f9875e5410ad80e"
+        },
+        "unit": "d1-occlusion102-replay-01",
+        "stage": "replay",
+        "sources": {
+          "tools102/common102.py": "067782eb8df3ec601ecf3f3247db0fba55e020be7cfc6f359289103abdac04d2",
+          "tools102/launch102.py": "a9f7d06d67da59db7829b6fb4035496a0bbb1f53870ca0e4ca27e604d5b5769c",
+          "tools102/mask102.py": "8d7b7e14f52bf4493eaa525976815287889c571b08591c1f1759ee0238d445c4",
+          "tools102/replay102.py": "c1a699891d8ed5bdbf793eebe745dc86ff4a55741fed1d304d42806b6ea276f3"
+        },
+        "protocol_sha256": "ead58eb2e893a6c3bc58bbeba95b97612cd5c449c77c8de5810b29dd1dbcdec0"
+      },
+      "seal_sha256": "50a8ee71d6c43d51111401c4aa340110fd18f379c78f2725f479813575188d63",
+      "resources": {
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-occlusion102-replay-01.service",
+        "receipt_sha256": "f647cbc2f1280d4ff21f3e935d7da9b9761c1a0c16275312d4732d871686f80a",
+        "log_sha256": "2af04bcf4463a5fc4ea5f87698161a05db0cdff0fb3670ffe02080c7fe69b355",
+        "startup_bytes": 4393492480,
+        "minimum_running_bytes": 4078198784,
+        "cpu_affinity": [
+          0
+        ],
+        "peak_group_bytes": 537554944,
+        "elapsed_s": 46.83023730599962,
+        "final_memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        }
+      }
+    },
+    "video": {
+      "seal": {
+        "status": "COMPLETE",
+        "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+        "files": {
+          "driver.json": "af9d143d350b000cff0343dd8d3f36b522c17fe6cf08477b250b02f0c21c35c3",
+          "occlusion102.mp4": "7454b5218019a0533fce430ea6422aa2c84fd0caccade4805268db61d1874c0d",
+          "poses.npz": "5044af6b9e689022130e873f21d9a7e8765d1b235d9cf8dca15d58f0a6b865eb",
+          "start.json": "6e2dfd04a46670a26a90199dd2c6e107b98223cd28a1a42771a5151693dbdecd",
+          "video.json": "c324b003f77bdd8a2490a0dcd88952c5e778fa767a7797367db668bbe14e1e52"
+        },
+        "stage": "video",
+        "unit": "d1-occlusion102-video-02",
+        "protocol_sha256": "ead58eb2e893a6c3bc58bbeba95b97612cd5c449c77c8de5810b29dd1dbcdec0",
+        "sources": {
+          "tools102/common102.py": "067782eb8df3ec601ecf3f3247db0fba55e020be7cfc6f359289103abdac04d2",
+          "tools102/launch102.py": "a9f7d06d67da59db7829b6fb4035496a0bbb1f53870ca0e4ca27e604d5b5769c",
+          "tools102/mask102.py": "8d7b7e14f52bf4493eaa525976815287889c571b08591c1f1759ee0238d445c4",
+          "tools102/video102.py": "7b14b25d541af1338c873e2588f70ffe328cc4a1043fe23a6b10bc8500d06bfa",
+          "tools102/mesa_video102.py": "8cbe19d2e8e803479db709d30299df902b77bded6018211504bcc837dd6b237d"
+        },
+        "replay_seal_sha256": "50a8ee71d6c43d51111401c4aa340110fd18f379c78f2725f479813575188d63",
+        "first_attempt": {
+          "guard": "56c470a634eaefaa3c1a8ce85d5b3419a26be91df1919ced4f5684ea5ad2854d",
+          "partial": "68fad17cdfc55b564078b9a1860a78fe462dfad115aa9bb644cf52082ff6e72f",
+          "movie_receipt": "8daa878f4cd4034c5ba778a1df0c6f9e8f09e4c72957a9a13dc34ce15d1626f0"
+        }
+      },
+      "seal_sha256": "f94d51443264633743d797a1c1503e9198e613548086ce523c2b591c7ecffb66",
+      "resources": {
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-occlusion102-video-02.service",
+        "receipt_sha256": "a20f79111ad7687d7325f8ee6341555b62bd29d59c7fc7cd5b6a4d831407f7d8",
+        "log_sha256": "b969a39f2d29925e5c7ef6a6c167432b609465a62b76f37bc958465e72a15928",
+        "startup_bytes": 9607417856,
+        "minimum_running_bytes": 7672672256,
+        "cpu_affinity": [
+          0
+        ],
+        "peak_group_bytes": 873582592,
+        "elapsed_s": 92.06127925200417,
+        "final_memory_events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        }
+      }
+    }
+  },
+  "earlier_video_attempt": {
+    "receipt_sha256": "8daa878f4cd4034c5ba778a1df0c6f9e8f09e4c72957a9a13dc34ce15d1626f0",
+    "worker_partial_sha256": "68fad17cdfc55b564078b9a1860a78fe462dfad115aa9bb644cf52082ff6e72f",
+    "guard_sha256": "56c470a634eaefaa3c1a8ce85d5b3419a26be91df1919ced4f5684ea5ad2854d"
+  }
+}
