@@ -1,0 +1,46 @@
+{
+  "name": "D1 offline action timing for next-packet forecasts",
+  "base_commit": "48f1c30d68ef03b6efab7e40bf984de3fbc242f1",
+  "upstream_commit": "460e2272907af053d6e66b57fec71fdbe6ca1774",
+  "scope": "Development comparison on the previously examined round-101 archive. No rollout, policy or current terrain-readout update. A pass applies to recorded-action forecasts only.",
+  "seeds": [101011, 101023, 101037],
+  "arms": ["past", "transition"],
+  "frozen_representation": "For each seed both arms use its same round-101 predictive checkpoint, fixed normalizers, history state and 32 depth plus 8 body target features. The current observer only receives the same delivered sensors and its previous two issued actions.",
+  "variable": "Change only the time origin of an ordered, equal-length action block supplied to the auxiliary forecast heads. For consecutive capture boundaries c,c+g and deliveries d=c+2,d+g, g is 8 or 9 policy ticks. At modality boundary t (c for depth, d for body), past gets [t-g,t), transition gets [t,t+g). All blocks use the 16 issued action components and one validity bit per tick, with zero padding at the end to 9 slots. No cross-episode pairs. An action issued at the target boundary is excluded.",
+  "data": {
+    "train": {"rows": 1024, "pairs": 960, "native_episodes": 8, "native_intervals": 120, "native_action_ticks_per_clock": 1000},
+    "holdout": {"rows": 320, "pairs": 300, "per_visibility": 150, "native_episodes": 5, "native_intervals": 75, "native_action_ticks_per_clock": 625},
+    "source_action_slice": "[16,152) within each complete native flat episode; corroborate all issued[step] against proprio627[step+1,41:57]. Duplicated scene layouts or visibility views retain one underlying trajectory.",
+    "source_action_bytes_sha256": {"train":"52237433aa340ef30aca4a9fcbbd009280237c716d5e9ad8165eefd7c12c2c37","holdout":"bf4ccde012fdbf2b07fa42d8ecbd1eeea7ab8f524f9cb9fae66733953546b471"}
+  },
+  "fit": {
+    "trainable": "Two separate heads per arm, each receives frozen hidden32 plus flat 9x17 actions/validity, uses a 32-unit tanh layer, then outputs 32 depth or 8 body components. Initialized from identical tensors within seed. No change to encoder, current height estimate, whole-body policy, PD, curriculum or reward.",
+    "loss": "One half the sum of the per-component depth and body mean squared errors to the frozen next packet features.",
+    "optimizer": "Adam lr 0.003, betas (0.9,0.999), eps 1e-8, zero weight decay, foreach false; clip gradient norm at 1.",
+    "batches": "Successor rows only. For each seed, shuffle the 960 rows in complete epochs with NumPy default_rng(seed) and take the first 50 full batches of 48; both arms use the same schedule.",
+    "updates_per_arm": 50,
+    "total_head_updates": 300,
+    "batch_size": 48,
+    "policy_updates": 0,
+    "encoder_updates": 0,
+    "dynamics_updates": 0,
+    "new_physics_steps": 0,
+    "new_sensor_rays": 0
+  },
+  "gate": "Evaluate all 3 seeds separately, both modalities. On masked views, each transition-window MSE must be at most 0.95 times its matched positive past-window MSE and strictly below carrying the current embedding forward. On clear views neither modality may increase MSE relative to its matched past window. All seeds must pass. Report per-seed, per-visibility, per-modality and per-native-episode measurements. Fixed common targets within seed. No ranking, removing rows or pooling seeds to pass.",
+  "resources": {"cpu_affinity_count":1, "nice":10, "memory_high_bytes":2147483648, "memory_max_bytes":3221225472, "swap_max_bytes":0, "admission_min_bytes":4294967296, "runtime_min_bytes":2147483648, "supervisor_sha256":"236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"},
+  "parents_sha256": {
+    "docs/experiments101/predictive_perception.json":"6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+    "reports/jeplo101/manifest.json":"3e983f54715c33613bae2a13c7ed3723ab37d05781795ecd0b82b4aaf7e4724d",
+    "reports/jeplo101/data.json":"31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "reports/jeplo101/train.npz":"a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+    "reports/jeplo101/holdout.npz":"fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+    "reports/jeplo101/fit/fit.json":"49a294a0d5197472d749928c625848f212be635262e3384f3f3a78f6958ae56f",
+    "reports/jeplo101/fit/seed_101011_predictive.pt":"058becf2a66bc4d5a28df50d2b4dfad31ba4ffc50a50c1574e59dd8e94034c08",
+    "reports/jeplo101/fit/seed_101023_predictive.pt":"517702c56879a105d67a88b2f9f87cb66a5b13627a40347c7739f61d24bfdf7a",
+    "reports/jeplo101/fit/seed_101037_predictive.pt":"511b0b38eb70cce37ec6766d4edf30028d3ae62a47cd0c7207de246a7bfc38a8",
+    "tools101/fit101.py":"422026fc27848808a5a55f02a268e4a4cd14141f003fdfc9273f827eeda96b5c",
+    "tools101/data101.py":"6cc3ea411c5dae635137ffb333a5d8d8c2c46c55be46da320f31c90ae094047b",
+    "tools56/fit56.py":"a1fd728aa0532301447d3d627628c20f89883c9270ce50c031680db1aa59e92e"
+  }
+}
