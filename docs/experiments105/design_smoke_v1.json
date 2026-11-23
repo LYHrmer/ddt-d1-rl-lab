@@ -1,0 +1,39 @@
+{
+  "stage": "design smoke only, masked",
+  "source_seed": 89037,
+  "packets": 160,
+  "baseline_passed": 156,
+  "candidate_passed": 149,
+  "recovered": [
+    27,
+    218
+  ],
+  "regressed": [
+    84,
+    116,
+    126,
+    154,
+    156,
+    185,
+    188,
+    191,
+    287
+  ],
+  "unknown_row_ids": [
+    84,
+    116,
+    126,
+    127,
+    154,
+    156,
+    185,
+    188,
+    191,
+    250,
+    287
+  ],
+  "candidate_sha256": "d9682cec5bdfc61fcf644be16f346e82cdf440480d3129a620abd38a27246fc1",
+  "validation_scores_opened": 0,
+  "new_physics_steps": 0,
+  "updates": 0
+}
