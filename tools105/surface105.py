@@ -69,13 +69,9 @@ def _horizontal_layers(xy, z):
     return sorted(layers, key=lambda layer: layer[0])
 
 
-def _riser_segment(xy, z, low, high):
-    """A thin vertical face can locate an edge only within its measured lateral span."""
-    lower, lower_band = low
-    upper, upper_band = high
-    within = (z > lower + PLANE_TOL_M) & (z < upper - PLANE_TOL_M) & (np.abs(xy[:, 1]) <= WHEEL_WIDTH_M)
-    wall = xy[within]
-    if len(wall) < 3 or np.ptp(z[within]) < 2*PLANE_TOL_M:
+def _riser_segment(wall, wall_z, lower_xy, upper_xy):
+    """Return the observed endpoints of a thin riser separating these two supports."""
+    if len(wall) < 3 or np.ptp(wall_z) < 2*PLANE_TOL_M:
         return np.empty((0, 2))
     center = wall.mean(axis=0)
     _, _, axes = np.linalg.svd(wall - center, full_matrices=False)
@@ -85,13 +81,32 @@ def _riser_segment(xy, z, low, high):
             or np.ptp(along) < WHEEL_WIDTH_M / 2
             or not along.min() <= -center @ tangent <= along.max()):
         return np.empty((0, 2))
-    signed_upper = (xy[upper_band] - center) @ normal
+    signed_upper = (upper_xy - center) @ normal
     if np.median(signed_upper) < 0:
         normal = -normal
         signed_upper = -signed_upper
-    if signed_upper.min() < -PLANE_TOL_M or not np.any((xy[lower_band] - center) @ normal < -PLANE_TOL_M):
+    if signed_upper.min() < -PLANE_TOL_M or not np.any((lower_xy - center) @ normal < -PLANE_TOL_M):
         return np.empty((0, 2))
     return center + np.array([along.min(), along.max()])[:, None] * tangent
+
+
+def _visible_face(xy, z, low, high):
+    between = (z > low[0] + PLANE_TOL_M) & (z < high[0] - PLANE_TOL_M)
+    wall, wall_z = xy[between], z[between]
+    lower_xy, upper_xy = xy[low[1]], xy[high[1]]
+    # A single face can span multiple beams across the wheel. At a corner
+    # restrict the fit to the wheel's lane if the wider returns are inconsistent.
+    segment = _riser_segment(wall, wall_z, lower_xy, upper_xy)
+    if len(segment):
+        return segment
+    lane = np.abs(wall[:, 1]) <= WHEEL_WIDTH_M
+    return _riser_segment(wall[lane], wall_z[lane], lower_xy, upper_xy)
+
+
+def _plane(xy, z):
+    design = np.column_stack((xy, np.ones(len(xy))))
+    coeff, _, _, _ = np.linalg.lstsq(design, z, rcond=None)
+    return coeff if np.max(np.abs(design @ coeff - z)) <= PLANE_TOL_M else None
 
 
 def _wheel_height(points, query):
@@ -102,16 +117,20 @@ def _wheel_height(points, query):
     if not _has_spread(xy):
         return None
 
-    # A continuous tilted support should retain its slope at the actual query.
-    plane = np.column_stack((xy, np.ones(len(xy))))
-    coeff, _, _, _ = np.linalg.lstsq(plane, z, rcond=None)
-    if np.max(np.abs(plane @ coeff - z)) <= PLANE_TOL_M:
-        if np.linalg.norm(coeff[:2]) <= MAX_SLOPE and _covers_query(xy):
+    # Allow a small continuation of a locally continuous support. All measured
+    # hits within one wheel width must agree, including any visible riser.
+    close = distance <= WHEEL_WIDTH_M
+    can_continue = distance.min() <= WHEEL_WIDTH_M/2 and close.sum() >= 4 and _has_spread(xy[close])
+    coeff = _plane(xy, z)
+    if coeff is not None:
+        if np.linalg.norm(coeff[:2]) <= MAX_SLOPE and (can_continue or _covers_query(xy)):
             return float(coeff[2])
         return None
 
     layers = _horizontal_layers(xy, z)
     for height, band in layers:
+        if can_continue and band[close].all():
+            return height
         # Interpolation entirely inside the distance to a contradictory return
         # cannot bridge a hole between separated patches of the same height.
         radius = distance[~band].min(initial=RADIUS_M)
@@ -120,7 +139,7 @@ def _wheel_height(points, query):
     if len(layers) != 2 or layers[1][0] - layers[0][0] <= 2*PLANE_TOL_M:
         return None
     low, high = layers
-    face = _riser_segment(xy, z, low, high)
+    face = _visible_face(xy, z, low, high)
     top = _hull(np.vstack((xy[high[1]], face)))
     ground = xy[low[1]]
     if _inside(top, ground, margin=PLANE_TOL_M).any():

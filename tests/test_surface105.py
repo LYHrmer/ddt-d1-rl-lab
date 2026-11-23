@@ -39,6 +39,15 @@ def test_occluded_boundary_abstains_between_observed_supports():
     assert surface_delta_mm(cloud, queries(-0.06)) == pytest.approx(0.)
 
 
+def test_small_extrapolation_uses_an_isolated_plane_with_nearby_measured_support():
+    xy = np.linspace(-0.03, 0.03, 5)
+    left = grid([-0.03, -0.02, -0.01], xy + 0.2, lambda x, y: 0.1*x + 0.035)
+    right = grid([-0.03, -0.02, -0.01], xy - 0.2, lambda x, y: 0.)
+    points = np.vstack([left, right])
+    assert surface_delta_mm(points, queries(0.)) == pytest.approx(35.)
+    assert surface_delta_mm(points, queries(0.04)) is None
+
+
 def test_slope_is_one_surface_and_each_wheel_keeps_its_height():
     xy = np.linspace(-0.08, 0.08, 9)
     slope = lambda x, y: 0.18*x - 0.2*y - 0.42
@@ -65,3 +74,12 @@ def test_oblique_visible_face_uses_each_query_position():
     q = queries(0.006)
     points[:, :2] = points[:, :2] @ rot.T
     assert surface_delta_mm(points, q @ rot.T) == pytest.approx(47.)
+
+
+def test_recorded_design_packets_resolve_the_visible_surface_and_abstain_at_the_gap():
+    from tools105.data105 import inputs
+
+    _, points, q = inputs("design")
+    assert surface_delta_mm(points[218], q[218]) == pytest.approx(30., abs=0.001)
+    assert surface_delta_mm(points[27], q[27]) == pytest.approx(0., abs=0.001)
+    assert surface_delta_mm(points[127], q[127]) is None

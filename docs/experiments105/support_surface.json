@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "name": "D1 local wheel support surfaces from one delivered point cloud",
+  "scope": "Offline support-height readout on complete archived pre-contact D1 motion. The candidate was developed only on synthetic geometry and source 89037. The other two sources previously trained different models in round 101.",
+  "hypothesis": "In a band of measured returns near the wheel, identify a continuous support plane or select the supported side of a visible height discontinuity. This may reduce wrong-surface readings while retaining edge coverage.",
+  "variable": "Frozen nearest-return height versus local supported surface. Both arms consume identical gravity-aligned XYZ and capture-frame wheel queries after 40 ms of measured wheel/IMU compensation.",
+  "design_smoke": {
+    "source": 89037,
+    "first_revision": "cf73a78",
+    "masked_packets": 160,
+    "v1_qualified": 149,
+    "v1_unknown": 11,
+    "frozen_revision_qualified": 154,
+    "frozen_revision_unknown": 6,
+    "baseline_qualified": 156,
+    "rationale": "Single-plane bounded continuation recovers poorly sampled ground. Visible risers can span more than one wheel width. Remaining coverage is intentionally penalized. The two-source scoring is needed to resolve the tradeoff."
+  },
+  "populations": {
+    "design": {
+      "sources": [
+        89037
+      ],
+      "episodes": [
+        0,
+        3,
+        6,
+        9,
+        12
+      ],
+      "layouts": 2,
+      "packet_views": 320,
+      "native_windows": 80,
+      "gate": false
+    },
+    "validation": {
+      "sources": [
+        89011,
+        89023
+      ],
+      "episodes_per_source": [
+        2,
+        5,
+        8,
+        11
+      ],
+      "layouts": 4,
+      "packet_views": 1024,
+      "native_windows": 128,
+      "gate": true
+    }
+  },
+  "inference": {
+    "inputs": [
+      "gravity-aligned measured XYZ",
+      "two delivered wheel queries in the capture-frame XY plane"
+    ],
+    "excluded": [
+      "world pose",
+      "map or fixture geometry",
+      "target heights",
+      "episode or layout identity",
+      "contact indicators",
+      "future observations",
+      "previous packets"
+    ],
+    "window_source": "Three measured body gyro, gravity and four-wheel rate samples through delivery. Both arms use the same original on-board-frame local wheel queries and float32 measured ranges; original higher-precision rays are checked before rounding.",
+    "method": "Within 150 mm of each query, fit a local plane, or identify measured horizontal height bands with 2-D support. Fit a finite vertical riser where intermediate heights span the query. The upper footprint is locally convex. Ground evidence may only bound the query on the same side of that footprint. An unsupported range or ambiguous gap is unknown.",
+    "local_radius_m": 0.15,
+    "plane_residual_m": 0.002,
+    "maximum_plane_incline_deg": 35,
+    "wheel_width_m": 0.04,
+    "bounded_continuation": "Requires a return within half a wheel width and at least four neighboring returns within one wheel width with spread in two horizontal dimensions. They must agree with the single fitted plane or all be in the same observed height band."
+  },
+  "gate": {
+    "tolerance_mm": 10,
+    "unknown": "Always counts as a failure; also report separately, include first arrivals in all-packet counts.",
+    "each_validation_source": [
+      "strict increase in masked switch passes",
+      "no decrease in masked enter passes",
+      "no decrease in masked exit passes",
+      "no increase in masked stable failures",
+      "no increase in clear all-arrival failures"
+    ],
+    "overall": "Both validation sources must pass all conditions. Source 89037 has no vote."
+  },
+  "budget": {
+    "formal_readbacks": 1,
+    "paired_packet_views": 1344,
+    "physical_clouds": 672,
+    "raw_rays_fired": 0,
+    "native_decisions": 0,
+    "physics_steps": 0,
+    "model_updates": 0,
+    "policy_updates": 0,
+    "serial_cpu": 1,
+    "wall_timeout_s": 600
+  },
+  "resources": {
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_min_bytes": 4294967296,
+    "runtime_min_bytes": 2147483648
+  },
+  "pressure_supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "frozen_files_sha256": {
+    "tools105/surface105.py": "57730abdefc84c4ed857b6756ef42a10c1f286ecb9f9950f68522963cf6d4051",
+    "tools105/data105.py": "642b149c8680b3c5273286cd906f610a8544c1e542cd0a8b5921270e09b65447",
+    "tools105/score105.py": "47e4a0911e3ea853d3f64537b62d5e772f4619012dc0b993d3f1dd53495cc637",
+    "tools105/run105.py": "94c24f0188afde707463d6e00655ec059c98e790bc261700d0915f0dd0ff5384",
+    "tools100/score100.py": "c3adc0da94eed01a686e6b33dc7b01d655c1dc14c6e8107c03326b33b6aca593",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools100/readback100.py": "b73e2d60ebd7cba07dbe5893757574ce90bc1009abda4d8a9b37dd6c9d2f0a06",
+    "tools101/score101.py": "4d413a5225e303d92e186a639369c46e6e3896e254040ed0b7bcda4391b632d0",
+    "tools103/data103.py": "278a801e02bf2566f21abb97099496e60abcd2be304e268f0c2bbde1c9a5811f",
+    "tools104/motion104.py": "5177ba83bf681a40b4095b91bcf75874d77c1848cadd81736f747f7ac2e8d1fb",
+    "reports/jeplo101/manifest.json": "3e983f54715c33613bae2a13c7ed3723ab37d05781795ecd0b82b4aaf7e4724d",
+    "reports/jeplo101/data.json": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "reports/jeplo101/holdout.npz": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+    "reports/jeplo101/train.npz": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+    "reports/motion104/windows.npz": "354335e5d8aabb7021feb36949e5f2edef15df534694a36a9c640bde12267da7",
+    "docs/experiments105/design_smoke_v1.json": "4e7cc76cb23d37f01eb962968d6028356018b547cbb5b68756ef212cf5495ccb"
+  }
+}
