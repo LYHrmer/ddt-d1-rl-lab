@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE",
+  "returncode": 0,
+  "elapsed_s": 10.596126419986831,
+  "peak_group_bytes": 55947264,
+  "cpu_affinity": [
+    0
+  ],
+  "final_memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "owned_cgroup_children_empty": true,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "startup_minimum_effective_bytes": 7758778368,
+  "runtime_minimum_effective_bytes": 7808876544,
+  "high_bytes": 2147483648,
+  "max_bytes": 3221225472,
+  "swap_max_bytes": 0,
+  "guard_sha256": "849b2604cb2ef5598e06e366a0e0c617fca870db39b838b72e30012a3d179c2d",
+  "resource_samples_sha256": "760ac2785ac6ba78a4531998c7e651e13bcfd303aa438c78a929d24cc7807b7e"
+}

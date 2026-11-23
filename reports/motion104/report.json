@@ -1,0 +1,448 @@
+{
+  "status": "COMPLETE",
+  "holdout_sha256": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+  "forecast_sha256": "01352c440f956a1ab3ac7dd129704d7f28c1efe176996d5a98dbc334d3923db1",
+  "native_trace_sha256": "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22",
+  "windows_sha256": "354335e5d8aabb7021feb36949e5f2edef15df534694a36a9c640bde12267da7",
+  "episodes": 5,
+  "source_seeds": [
+    89037
+  ],
+  "physical_clouds": 160,
+  "motion_windows": 80,
+  "new_physics_steps": 0,
+  "new_rays": 0,
+  "model_updates": 0,
+  "policy_updates": 0,
+  "motion_mm": {
+    "reference_min": 0.229041,
+    "reference_median": 6.668834,
+    "reference_max": 10.558131,
+    "wheel_imu_median_error": 2.059648,
+    "wheel_imu_max_error": 6.774663
+  },
+  "results": {
+    "masked": {
+      "all_arrivals": {
+        "count": 160,
+        "arms": {
+          "original": {
+            "passed": 154,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 0.998351
+          },
+          "wheel_imu": {
+            "passed": 156,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 1,
+            "mae_mm": 0.695089
+          },
+          "reference_pose": {
+            "passed": 156,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 1,
+            "mae_mm": 0.695089
+          }
+        }
+      },
+      "switch": {
+        "count": 12,
+        "arms": {
+          "original": {
+            "passed": 7,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 11.331395
+          },
+          "wheel_imu": {
+            "passed": 10,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 5.587427
+          },
+          "reference_pose": {
+            "passed": 10,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 5.587427
+          }
+        }
+      },
+      "stable": {
+        "count": 138,
+        "arms": {
+          "original": {
+            "passed": 137,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 0.172169
+          },
+          "wheel_imu": {
+            "passed": 136,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 1,
+            "mae_mm": 0.320037
+          },
+          "reference_pose": {
+            "passed": 136,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 1,
+            "mae_mm": 0.320037
+          }
+        }
+      },
+      "enter": {
+        "count": 10,
+        "arms": {
+          "original": {
+            "passed": 6,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 10.597674
+          },
+          "wheel_imu": {
+            "passed": 9,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 3.704913
+          },
+          "reference_pose": {
+            "passed": 9,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 3.704913
+          }
+        }
+      },
+      "exit": {
+        "count": 2,
+        "arms": {
+          "original": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          },
+          "wheel_imu": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          },
+          "reference_pose": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          }
+        }
+      }
+    },
+    "clear": {
+      "all_arrivals": {
+        "count": 160,
+        "arms": {
+          "original": {
+            "passed": 154,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 0.998351
+          },
+          "wheel_imu": {
+            "passed": 156,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 1,
+            "mae_mm": 0.695089
+          },
+          "reference_pose": {
+            "passed": 156,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 1,
+            "mae_mm": 0.695089
+          }
+        }
+      },
+      "switch": {
+        "count": 12,
+        "arms": {
+          "original": {
+            "passed": 7,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 11.331395
+          },
+          "wheel_imu": {
+            "passed": 10,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 5.587427
+          },
+          "reference_pose": {
+            "passed": 10,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 5.587427
+          }
+        }
+      },
+      "stable": {
+        "count": 138,
+        "arms": {
+          "original": {
+            "passed": 137,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 0.172169
+          },
+          "wheel_imu": {
+            "passed": 136,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 1,
+            "mae_mm": 0.320037
+          },
+          "reference_pose": {
+            "passed": 136,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 1,
+            "mae_mm": 0.320037
+          }
+        }
+      },
+      "enter": {
+        "count": 10,
+        "arms": {
+          "original": {
+            "passed": 6,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 10.597674
+          },
+          "wheel_imu": {
+            "passed": 9,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 3.704913
+          },
+          "reference_pose": {
+            "passed": 9,
+            "missing": 0,
+            "recovered": 3,
+            "regressed": 0,
+            "mae_mm": 3.704913
+          }
+        }
+      },
+      "exit": {
+        "count": 2,
+        "arms": {
+          "original": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          },
+          "wheel_imu": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          },
+          "reference_pose": {
+            "passed": 1,
+            "missing": 0,
+            "recovered": 0,
+            "regressed": 0,
+            "mae_mm": 15.0
+          }
+        }
+      }
+    }
+  },
+  "masked_switch_arrivals": [
+    {
+      "row_id": 28,
+      "episode": 0,
+      "layout": "unseen_left",
+      "capture_tick": 125,
+      "delivery_tick": 127,
+      "target_mm": 30.0,
+      "measured_mm": {
+        "original": 30.0,
+        "wheel_imu": 30.0,
+        "reference_pose": 30.0
+      }
+    },
+    {
+      "row_id": 59,
+      "episode": 0,
+      "layout": "unseen_right",
+      "capture_tick": 117,
+      "delivery_tick": 119,
+      "target_mm": -30.0,
+      "measured_mm": {
+        "original": -0.0,
+        "wheel_imu": -30.0,
+        "reference_pose": -30.0
+      }
+    },
+    {
+      "row_id": 90,
+      "episode": 3,
+      "layout": "unseen_left",
+      "capture_tick": 109,
+      "delivery_tick": 111,
+      "target_mm": 30.0,
+      "measured_mm": {
+        "original": -0.0,
+        "wheel_imu": 30.0,
+        "reference_pose": 30.0
+      }
+    },
+    {
+      "row_id": 121,
+      "episode": 3,
+      "layout": "unseen_right",
+      "capture_tick": 100,
+      "delivery_tick": 102,
+      "target_mm": -30.0,
+      "measured_mm": {
+        "original": -13.434773,
+        "wheel_imu": -22.362385,
+        "reference_pose": -22.362385
+      }
+    },
+    {
+      "row_id": 127,
+      "episode": 3,
+      "layout": "unseen_right",
+      "capture_tick": 150,
+      "delivery_tick": 152,
+      "target_mm": 0.0,
+      "measured_mm": {
+        "original": -30.0,
+        "wheel_imu": -30.0,
+        "reference_pose": -30.0
+      }
+    },
+    {
+      "row_id": 155,
+      "episode": 6,
+      "layout": "unseen_left",
+      "capture_tick": 117,
+      "delivery_tick": 119,
+      "target_mm": 30.0,
+      "measured_mm": {
+        "original": 30.0,
+        "wheel_imu": 30.0,
+        "reference_pose": 30.0
+      }
+    },
+    {
+      "row_id": 186,
+      "episode": 6,
+      "layout": "unseen_right",
+      "capture_tick": 109,
+      "delivery_tick": 111,
+      "target_mm": -30.0,
+      "measured_mm": {
+        "original": -30.0,
+        "wheel_imu": -30.0,
+        "reference_pose": -30.0
+      }
+    },
+    {
+      "row_id": 218,
+      "episode": 9,
+      "layout": "unseen_left",
+      "capture_tick": 109,
+      "delivery_tick": 111,
+      "target_mm": 30.0,
+      "measured_mm": {
+        "original": 0.588487,
+        "wheel_imu": 0.588487,
+        "reference_pose": 0.588487
+      }
+    },
+    {
+      "row_id": 251,
+      "episode": 9,
+      "layout": "unseen_right",
+      "capture_tick": 117,
+      "delivery_tick": 119,
+      "target_mm": -30.0,
+      "measured_mm": {
+        "original": -30.0,
+        "wheel_imu": -30.0,
+        "reference_pose": -30.0
+      }
+    },
+    {
+      "row_id": 282,
+      "episode": 12,
+      "layout": "unseen_left",
+      "capture_tick": 109,
+      "delivery_tick": 111,
+      "target_mm": 30.0,
+      "measured_mm": {
+        "original": 30.0,
+        "wheel_imu": 30.0,
+        "reference_pose": 30.0
+      }
+    },
+    {
+      "row_id": 287,
+      "episode": 12,
+      "layout": "unseen_left",
+      "capture_tick": 150,
+      "delivery_tick": 152,
+      "target_mm": 0.0,
+      "measured_mm": {
+        "original": -0.0,
+        "wheel_imu": -0.0,
+        "reference_pose": -0.0
+      }
+    },
+    {
+      "row_id": 314,
+      "episode": 12,
+      "layout": "unseen_right",
+      "capture_tick": 109,
+      "delivery_tick": 111,
+      "target_mm": -30.0,
+      "measured_mm": {
+        "original": -30.0,
+        "wheel_imu": -30.0,
+        "reference_pose": -30.0
+      }
+    }
+  ]
+}
