@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETE",
+  "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+  "splits": {
+    "train": {
+      "split": "train",
+      "episodes": 8,
+      "source_seeds": [
+        89011,
+        89023
+      ],
+      "source_rows": 1024,
+      "verified_two_action_histories": 1024,
+      "native_intervals": 120,
+      "native_transition_ticks_per_clock": 1000,
+      "native_command_rows": 1088,
+      "packet_pairs": 960,
+      "forecast_action_column": "issued",
+      "native_applied_lag_policy_ticks": 1,
+      "native_applied_lag_ms": 20,
+      "native_applied_matches_previous_issued": 1088,
+      "native_applied_matches_same_tick_issued": 0,
+      "terminal_rows": 64,
+      "tape_sha256": "472215c9f5846de295d2b65b6bf3e64abc3357121bd594f5f74d403ac9fd9c9f",
+      "actions_sha256": "52237433aa340ef30aca4a9fcbbd009280237c716d5e9ad8165eefd7c12c2c37",
+      "roster_sha256": "7345e12764e06ed7a051a598b6d0926dd44b6d2766930a67e2759b1b738bb834",
+      "packets_sha256": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+      "catalog_sha256": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9"
+    },
+    "holdout": {
+      "split": "holdout",
+      "episodes": 5,
+      "source_seeds": [
+        89037
+      ],
+      "source_rows": 320,
+      "verified_two_action_histories": 320,
+      "native_intervals": 75,
+      "native_transition_ticks_per_clock": 625,
+      "native_command_rows": 680,
+      "packet_pairs": 300,
+      "forecast_action_column": "issued",
+      "native_applied_lag_policy_ticks": 1,
+      "native_applied_lag_ms": 20,
+      "native_applied_matches_previous_issued": 680,
+      "native_applied_matches_same_tick_issued": 0,
+      "terminal_rows": 20,
+      "tape_sha256": "5419f52249ee8fc84f7c30bbf42fd903ead300859c5ba3c3673070b69780f463",
+      "actions_sha256": "bf4ccde012fdbf2b07fa42d8ecbd1eeea7ab8f524f9cb9fae66733953546b471",
+      "roster_sha256": "6490ab03f2d3daa575cbdc900ec2e333322c7e6320806d754b1625f3b4791f49",
+      "packets_sha256": "fa518b23665ead8c1f77288aef163285bde85e8bdcfab3d2383e8762d3dd8223",
+      "catalog_sha256": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9"
+    }
+  },
+  "head_updates": 0,
+  "policy_updates": 0,
+  "physics_substeps": 0
+}

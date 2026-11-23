@@ -1,0 +1,46 @@
+name: D1 action-window forecasts
+
+on:
+  push:
+    paths: ['tools103/**', 'tests/test_*103.py', 'docs/experiments103/**', 'docs/jeplo_action_window103*', 'reports/action_window103/**', '.github/workflows/action-window103.yml']
+  pull_request:
+    paths: ['tools103/**', 'tests/test_*103.py', 'docs/experiments103/**', 'docs/jeplo_action_window103*', 'reports/action_window103/**', '.github/workflows/action-window103.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      NUMEXPR_NUM_THREADS: '1'
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install CPU dependencies
+        run: |
+          python -m pip install --quiet 'numpy==2.2.6' 'pytest==8.4.2'
+          python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu 'torch==2.8.0'
+      - name: Verify action indices, paired forecasting and scoring
+        run: python -B -m pytest -p no:cacheprovider -q tests/test_*103.py
+      - name: Verify published stages
+        shell: bash
+        run: |
+          archive=reports/action_window103
+          if [[ -d "$archive" ]] || git cat-file -e "HEAD^:$archive/prepare_manifest.json" 2>/dev/null; then
+            python -B -m tools103.publish103 --check-prepare
+          fi
+          if [[ -e "$archive/manifest.json" || -e "$archive/fit" || -e "$archive/forecast.npz" || -e "$archive/report.json" ]] || git cat-file -e "HEAD^:$archive/manifest.json" 2>/dev/null; then
+            python -B -m tools103.publish103 --check --replay-heads
+            python -B -m tools103.publish103 --edge-errors
+          fi

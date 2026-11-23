@@ -1,0 +1,123 @@
+{
+  "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+  "prepare_manifest_sha256": "db29520dd0ff8601df38414e05f4dbb96fdfa5d6da2470e6684177c5dc4ba877",
+  "stages": {
+    "prepare": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "audit.json": "8adc1076f61608208f21941c16eb139c313c93f1c2316c20eaa64df56c4f4f27",
+          "holdout_actions.npz": "5419f52249ee8fc84f7c30bbf42fd903ead300859c5ba3c3673070b69780f463",
+          "start.json": "ec8ee375bc6bec8b347a97fc29b8898b0d8767684864d4358ad04e494e4a0489",
+          "train_actions.npz": "472215c9f5846de295d2b65b6bf3e64abc3357121bd594f5f74d403ac9fd9c9f"
+        },
+        "stage": "prepare",
+        "unit": "d1-action103-prepare-01",
+        "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+        "sources": {
+          "tools103/run103.py": "a85ba61b8ff48fbde4d39deecf13519c4edd37e8b7e894e6057967f26b4ef1c9",
+          "tools103/data103.py": "278a801e02bf2566f21abb97099496e60abcd2be304e268f0c2bbde1c9a5811f"
+        },
+        "parents": {}
+      },
+      "seal_sha256": "62004b4b5a60f75cd41601fad943eef96deebed79d463088b73ec4fea86edadf",
+      "resources": {
+        "startup_effective_bytes": 7329832960,
+        "minimum_effective_bytes": 7292903424,
+        "peak_group_bytes": 40263680,
+        "elapsed_s": 10.33397578902077,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-action103-prepare-01.service",
+        "receipt_sha256": "727c7b9768776a55b85aadfe84c2674cc5d856edb37b276c856ef49865ecf341",
+        "samples_sha256": "7107a1156a2b70a43ad456b45523081c6b9063c2fdf5edc72febd13d145e7184"
+      }
+    },
+    "fit": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "models/fit.json": "4f8fa942ce66012fe5c843bbcb50cb7c1b099ef44ea4b0f243c07c34c43b4e15",
+          "models/fit_started.json": "55adc983048770c520f8d10c8b0303136b754f85963ffcff80ecd6fd6ca0e670",
+          "models/seed_101011_past.pt": "ba3e357a4fa04bb060fae4f206b4c799bfe30b47c95b4a49a45a4c19e22cdb2c",
+          "models/seed_101011_transition.pt": "23cdc2304ec127fcaeeae4c004782e221e3f387441fb55698b1a02fe3b6d8c53",
+          "models/seed_101023_past.pt": "7e24a6b7cdde1f330a75b1a530fc24af6f75f6c62b2296c7d10270a1c26943a9",
+          "models/seed_101023_transition.pt": "a42835417b832e419f216a87aa10cd12a510fd9884e5ede514b331dd94625718",
+          "models/seed_101037_past.pt": "4c57bb7920e69013ccf55f36be64538ef4b1fbbd2cd443329c2bfddee54e2340",
+          "models/seed_101037_transition.pt": "a7dda65f964aa26d32c288464aed99fcc3747217ae3c83c4a27288503582bdac",
+          "models/updates.jsonl": "96a72599ec1781dba2eb5ff33d10bdcc28eb8cfb094fc4cf2cb8f60138eb923b",
+          "runtime.json": "7bee6bda7870efd816c9faa664b452a0ac2b268d10d8e663cff8c95fde6f3431",
+          "start.json": "a2ee4302c124dd8f0098d7060dae6c0eb0f694e7e4da1e38f73a9258603f0807"
+        },
+        "stage": "fit",
+        "unit": "d1-action103-fit-01",
+        "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+        "sources": {
+          "tools103/run103.py": "a85ba61b8ff48fbde4d39deecf13519c4edd37e8b7e894e6057967f26b4ef1c9",
+          "tools103/data103.py": "278a801e02bf2566f21abb97099496e60abcd2be304e268f0c2bbde1c9a5811f",
+          "tools103/fit103.py": "752737dbf43559b66bc63c380f3a57daa5cc52885800e8725b3ee0a22f0ad932"
+        },
+        "parents": {
+          "prepare": "62004b4b5a60f75cd41601fad943eef96deebed79d463088b73ec4fea86edadf"
+        }
+      },
+      "seal_sha256": "dcebac4899bb8c7aab14ce2791b6212ad1046d6a7fb9cd4b474846348522cd75",
+      "resources": {
+        "startup_effective_bytes": 6925340672,
+        "minimum_effective_bytes": 6711377920,
+        "peak_group_bytes": 385740800,
+        "elapsed_s": 12.85541140200803,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-action103-fit-01.service",
+        "receipt_sha256": "6949686a50debbe142d5037ace3a4e61176d7ac8c5715a19f2d9b9becceace07",
+        "samples_sha256": "6ab6d05990e374531d4c51ec0110eea98f9230ab29b1696f374410099ed2ab13"
+      }
+    },
+    "evaluate": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "forecast.npz": "01352c440f956a1ab3ac7dd129704d7f28c1efe176996d5a98dbc334d3923db1",
+          "report.json": "4742e2e7db995190cc99573f5d862ec156a1ddfaaee887038d0dd32453b5c666",
+          "runtime.json": "7bee6bda7870efd816c9faa664b452a0ac2b268d10d8e663cff8c95fde6f3431",
+          "start.json": "1fd4afcb0009e5646919a7ad57bd2490354950740edd6ad889244c1fd84ea8f8"
+        },
+        "stage": "evaluate",
+        "unit": "d1-action103-evaluate-01",
+        "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+        "sources": {
+          "tools103/run103.py": "a85ba61b8ff48fbde4d39deecf13519c4edd37e8b7e894e6057967f26b4ef1c9",
+          "tools103/data103.py": "278a801e02bf2566f21abb97099496e60abcd2be304e268f0c2bbde1c9a5811f",
+          "tools103/fit103.py": "752737dbf43559b66bc63c380f3a57daa5cc52885800e8725b3ee0a22f0ad932",
+          "tools103/score103.py": "782bc054142d89c0f764ba59497da012f64094a992d753f1132b5506f4a85fe0"
+        },
+        "parents": {
+          "prepare": "62004b4b5a60f75cd41601fad943eef96deebed79d463088b73ec4fea86edadf",
+          "fit": "dcebac4899bb8c7aab14ce2791b6212ad1046d6a7fb9cd4b474846348522cd75"
+        }
+      },
+      "seal_sha256": "3a30918ec05ac93613342538d86b2ad22e469029f4a09525e6bb06033dbb1eee",
+      "resources": {
+        "startup_effective_bytes": 7841951744,
+        "minimum_effective_bytes": 7468724224,
+        "peak_group_bytes": 381812736,
+        "elapsed_s": 12.62040865799645,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-action103-evaluate-01.service",
+        "receipt_sha256": "6e612bcd0c881891200f6e9cc8dbefac979aa072de9941eb769f45076ff13daa",
+        "samples_sha256": "1147c4faf41c1ba8bd03e58ab380c763f44b1b6464d647d0f1619916995c6670"
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+  "stages": {
+    "prepare": {
+      "seal": {
+        "status": "COMPLETE",
+        "files": {
+          "audit.json": "8adc1076f61608208f21941c16eb139c313c93f1c2316c20eaa64df56c4f4f27",
+          "holdout_actions.npz": "5419f52249ee8fc84f7c30bbf42fd903ead300859c5ba3c3673070b69780f463",
+          "start.json": "ec8ee375bc6bec8b347a97fc29b8898b0d8767684864d4358ad04e494e4a0489",
+          "train_actions.npz": "472215c9f5846de295d2b65b6bf3e64abc3357121bd594f5f74d403ac9fd9c9f"
+        },
+        "stage": "prepare",
+        "unit": "d1-action103-prepare-01",
+        "protocol_sha256": "23eb7acbe80c21c6563be318c88a1a4fc636f97231e66367f6598c14fbfc4836",
+        "sources": {
+          "tools103/run103.py": "a85ba61b8ff48fbde4d39deecf13519c4edd37e8b7e894e6057967f26b4ef1c9",
+          "tools103/data103.py": "278a801e02bf2566f21abb97099496e60abcd2be304e268f0c2bbde1c9a5811f"
+        },
+        "parents": {}
+      },
+      "seal_sha256": "62004b4b5a60f75cd41601fad943eef96deebed79d463088b73ec4fea86edadf",
+      "resources": {
+        "startup_effective_bytes": 7329832960,
+        "minimum_effective_bytes": 7292903424,
+        "peak_group_bytes": 40263680,
+        "elapsed_s": 10.33397578902077,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+        "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-action103-prepare-01.service",
+        "receipt_sha256": "727c7b9768776a55b85aadfe84c2674cc5d856edb37b276c856ef49865ecf341",
+        "samples_sha256": "7107a1156a2b70a43ad456b45523081c6b9063c2fdf5edc72febd13d145e7184"
+      }
+    }
+  }
+}
