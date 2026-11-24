@@ -1,0 +1,1014 @@
+{
+  "plan": "786205ceac382f0293cf7cb5c010e3c1b7a8983f1bb2299142c31c8b6c1cac4d",
+  "sources": {
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd"
+  },
+  "episodes": [
+    {
+      "status": "COMPLETE",
+      "seed": 110011,
+      "terrain": "flat",
+      "gain": 1.0,
+      "score": {
+        "passed": false,
+        "failed": [
+          "lane",
+          "all_wheels_exited"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.124912963559757,
+          4.76236631565535,
+          5.401760534366505,
+          6.042512730178293
+        ],
+        "speed_m_s": 1.564455759863879,
+        "sections_m_s": [
+          1.5687422408440619,
+          1.5639803594341657,
+          1.5606657402602735
+        ],
+        "max_lane_y_m": 1.0587597109474856,
+        "exit_contact": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.04440150118780041
+      },
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "policy_forwards": 600
+      },
+      "initial_pose": [
+        0.0,
+        0.0,
+        0.4401939589605678,
+        0.999924951011364,
+        0.0,
+        0.0,
+        0.012251218099491966,
+        0.0829689081421123,
+        0.7892138765310212,
+        -1.5159633342070753,
+        0.0,
+        -0.09689759173019183,
+        0.7850192038550797,
+        -1.5139318386024168,
+        0.0,
+        0.08360444048771119,
+        1.0043538163367658,
+        -1.4996189680698984,
+        0.0,
+        -0.1199273912531674,
+        1.0074694882936033,
+        -1.5092144990478036,
+        0.0
+      ],
+      "terrain_rays": [
+        [
+          2.18,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          2.18,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          0.0,
+          0.0
+        ]
+      ],
+      "trace_sha256": "f250f9901bb717ff1e2fb6b37cf2d4be3df3a1286a2da7052239c34fe2829d70",
+      "file": "trajectories/flat_110011.npz"
+    },
+    {
+      "status": "COMPLETE",
+      "seed": 110023,
+      "terrain": "flat",
+      "gain": 1.0,
+      "score": {
+        "passed": false,
+        "failed": [
+          "lane",
+          "all_wheels_exited"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.115991189437464,
+          4.75159512758981,
+          5.389314601263241,
+          6.028639790165823
+        ],
+        "speed_m_s": 1.5685055785247566,
+        "sections_m_s": [
+          1.5733068031436794,
+          1.5680876016530256,
+          1.5641492269630821
+        ],
+        "max_lane_y_m": 1.0400311912091236,
+        "exit_contact": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.04033898347818766
+      },
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "policy_forwards": 600
+      },
+      "initial_pose": [
+        0.0,
+        0.0,
+        0.4398323500570848,
+        0.9998722350467273,
+        0.0,
+        0.0,
+        0.015984792230808686,
+        0.08932192662555362,
+        0.8019552435493338,
+        -1.5108265676684738,
+        0.0,
+        -0.11885375835876626,
+        0.7890641987358791,
+        -1.516949886002234,
+        0.0,
+        0.08653248602410686,
+        1.0041061095725101,
+        -1.5199505501651343,
+        0.0,
+        -0.08675824637976637,
+        1.010928666476208,
+        -1.5182324810384074,
+        0.0
+      ],
+      "terrain_rays": [
+        [
+          2.18,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          2.18,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          0.0,
+          0.0
+        ]
+      ],
+      "trace_sha256": "35565bc7c8ae04aa45e733f2826597f0fb41b48a003ebfbaf854284c9ad4b989",
+      "file": "trajectories/flat_110023.npz"
+    },
+    {
+      "status": "COMPLETE",
+      "seed": 110037,
+      "terrain": "flat",
+      "gain": 1.0,
+      "score": {
+        "passed": false,
+        "failed": [
+          "forward_speed",
+          "one_metre_speeds"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.12206066093465,
+          4.751365455363525,
+          5.383032975206256,
+          6.016400245807267
+        ],
+        "speed_m_s": 1.5836653702201617,
+        "sections_m_s": [
+          1.589055111057193,
+          1.5831113181962793,
+          1.5788627648079867
+        ],
+        "max_lane_y_m": 0.3550447761464698,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.03713685313559821
+      },
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "policy_forwards": 600
+      },
+      "initial_pose": [
+        0.0,
+        0.0,
+        0.44057114058424385,
+        0.9997408893999078,
+        0.0,
+        0.0,
+        -0.022762997647089216,
+        0.11803853519473524,
+        0.8157040988517391,
+        -1.5109816000389942,
+        0.0,
+        -0.08306112580017637,
+        0.7833311039645113,
+        -1.5139670968175465,
+        0.0,
+        0.08359868739790052,
+        0.9951545495684317,
+        -1.4874069497284235,
+        0.0,
+        -0.10396291307408664,
+        1.0078852140927042,
+        -1.5158239784545966,
+        0.0
+      ],
+      "terrain_rays": [
+        [
+          2.18,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          2.18,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          0.0,
+          0.0
+        ]
+      ],
+      "trace_sha256": "4adb8371cbf89aedccc2bf3722116816caf83eff0c2697f79ec25d8f502399b1",
+      "file": "trajectories/flat_110037.npz"
+    }
+  ],
+  "resources": {
+    "startup_effective_bytes": 10198257664,
+    "minimum_effective_bytes": 9685852160,
+    "peak_group_bytes": 572030976,
+    "elapsed_s": 18.686974304000614,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "preflight": {
+    "status": "COMPLETE",
+    "stage": "preflight",
+    "plan": "786205ceac382f0293cf7cb5c010e3c1b7a8983f1bb2299142c31c8b6c1cac4d",
+    "sources": {
+      "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+      "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+      "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+      "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+      "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+      "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+      "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+      "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd"
+    },
+    "terrain_rays": {
+      "flat": [
+        [
+          2.18,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          2.18,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.78,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          0.0,
+          0.0
+        ]
+      ],
+      "ridge": [
+        [
+          2.18,
+          -0.29,
+          0.01258682683110246,
+          0.012586826149831885
+        ],
+        [
+          2.18,
+          0.29,
+          0.01258682683110246,
+          0.012586826149831885
+        ],
+        [
+          3.13,
+          -0.29,
+          0.07901729680597791,
+          0.07901729749616676
+        ],
+        [
+          3.13,
+          0.29,
+          0.0790172968059778,
+          0.07901729749616676
+        ],
+        [
+          4.33,
+          -0.29,
+          0.16292947009205838,
+          0.16292947182837927
+        ],
+        [
+          4.33,
+          0.29,
+          0.16292947009205838,
+          0.16292947182837927
+        ],
+        [
+          4.78,
+          -0.29,
+          0.1552375242114068,
+          0.1552375225145931
+        ],
+        [
+          4.78,
+          0.29,
+          0.1552375242114068,
+          0.1552375225145931
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0916041251271964,
+          0.09160412364599861
+        ],
+        [
+          5.69,
+          0.29,
+          0.0916041251271964,
+          0.09160412364599861
+        ],
+        [
+          6.76,
+          -0.29,
+          0.01678243502974508,
+          0.016782434866442514
+        ],
+        [
+          6.76,
+          0.29,
+          0.01678243502974519,
+          0.016782434866442514
+        ],
+        [
+          7.1,
+          -0.29,
+          3.725290076417309e-10,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          3.725290076417309e-10,
+          0.0
+        ]
+      ],
+      "ripple": [
+        [
+          2.18,
+          -0.29,
+          0.012005720660090424,
+          0.01195684905058404
+        ],
+        [
+          2.18,
+          0.29,
+          0.008211756497621625,
+          0.008510950821274598
+        ],
+        [
+          3.13,
+          -0.29,
+          0.01340402141213437,
+          0.01340543500202207
+        ],
+        [
+          3.13,
+          0.29,
+          0.011595977842807748,
+          0.011594564997977931
+        ],
+        [
+          4.33,
+          -0.29,
+          0.023130122013390264,
+          0.023274620836000626
+        ],
+        [
+          4.33,
+          0.29,
+          0.0018698777072134742,
+          0.0017253791639993772
+        ],
+        [
+          4.78,
+          -0.29,
+          0.014565257728100023,
+          0.014604463016837986
+        ],
+        [
+          4.78,
+          0.29,
+          0.010434743389487244,
+          0.010395536983162014
+        ],
+        [
+          5.69,
+          -0.29,
+          0.01797274164855489,
+          0.018039894319990476
+        ],
+        [
+          5.69,
+          0.29,
+          0.007027256209403365,
+          0.006960105680009524
+        ],
+        [
+          6.76,
+          -0.29,
+          0.01796876862645158,
+          0.01796876934250625
+        ],
+        [
+          6.76,
+          0.29,
+          0.006932663172483533,
+          0.006932664423924722
+        ],
+        [
+          7.1,
+          -0.29,
+          3.725290076417309e-10,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          3.725290076417309e-10,
+          0.0
+        ]
+      ],
+      "step": [
+        [
+          2.18,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          2.18,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          3.13,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          4.33,
+          -0.29,
+          0.030000000000000027,
+          0.03
+        ],
+        [
+          4.33,
+          0.29,
+          0.030000000000000027,
+          0.03
+        ],
+        [
+          4.78,
+          -0.29,
+          0.030000000000000027,
+          0.03
+        ],
+        [
+          4.78,
+          0.29,
+          0.030000000000000027,
+          0.03
+        ],
+        [
+          5.69,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          5.69,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          6.76,
+          0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          -0.29,
+          0.0,
+          0.0
+        ],
+        [
+          7.1,
+          0.29,
+          0.0,
+          0.0
+        ]
+      ]
+    },
+    "max_torque_error_nm": 0.0,
+    "model_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "physics_steps": 0,
+    "policy_forwards": 1
+  },
+  "preflight_resources": {
+    "startup_effective_bytes": 10272395264,
+    "minimum_effective_bytes": 9629368320,
+    "peak_group_bytes": 677945344,
+    "elapsed_s": 16.410329820006154,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "preflight_partial": {
+    "status": "PARTIAL",
+    "error": "ValueError('vendor wheel torque conversion failed')",
+    "stage": "preflight",
+    "plan": "786205ceac382f0293cf7cb5c010e3c1b7a8983f1bb2299142c31c8b6c1cac4d",
+    "sources": {
+      "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+      "tools110/native.py": "40f57901bb7a2102b52c26f4702e24c27edf8d9071fe5b9d5e579aca3b80d1a4",
+      "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+      "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+      "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+      "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+      "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+      "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd"
+    }
+  },
+  "preflight_partial_guard": {
+    "schema": "pressure-supervisor83-v1",
+    "status": "INCOMPLETE",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "tools110.run",
+      "worker",
+      "preflight",
+      "--attempt",
+      "1"
+    ],
+    "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-speed110-preflight-01.service",
+    "timeout_s": 900.0,
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "pressure_policy_sha256": "29f14e68cc6df4ab79765f842bfe53030a36e9a36f16379e59b53563671d1a56",
+    "child_started": true,
+    "returncode": 1,
+    "error": "RuntimeError: child exit 1",
+    "signals": [],
+    "minimum_effective_bytes": 9672294400,
+    "peak_group_bytes": 716300288,
+    "retry_permitted": false,
+    "startup_full_avg10_strictly_below": 1.0,
+    "runtime_full_avg10_strictly_below": 10.0,
+    "maximum_full_avg10": {
+      "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-speed110-preflight-01.service": 0.0,
+      "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.0,
+      "/user.slice/user-1000.slice/user@1000.service": 0.0,
+      "/user.slice/user-1000.slice": 0.0,
+      "/user.slice": 0.0,
+      "/": 0.0
+    },
+    "new_physics_steps_in_supervisor": 0,
+    "cpu_affinity": [
+      0
+    ],
+    "final_memory_events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "child_pid": 454820,
+    "owned_cgroup_children_empty": true,
+    "remaining_owned_pids": [],
+    "child_reaped": true,
+    "elapsed_s": 16.665067691996228,
+    "returncode_after_cleanup": 1
+  },
+  "video": {
+    "status": "COMPLETE",
+    "stage": "video",
+    "plan": "786205ceac382f0293cf7cb5c010e3c1b7a8983f1bb2299142c31c8b6c1cac4d",
+    "sources": {
+      "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+      "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+      "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+      "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+      "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+      "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+      "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+      "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd"
+    },
+    "filename": "D1_1.5m\u6bcf\u79d2_\u539f\u5382\u5168\u8eab\u7b56\u7565_\u5b9e\u6d4b\u56de\u653e_110.mp4",
+    "sha256": "6a6a8c77c67b1e7319b7ab63fdad7cd6cc36a3eefcffd697ffe0de2b759ee0e2",
+    "bytes": 1209508,
+    "clips": [
+      {
+        "seed": 110011,
+        "terrain": "flat",
+        "stage": "flat",
+        "end_tick": 600,
+        "first_frame": 0,
+        "source_sha256": "f250f9901bb717ff1e2fb6b37cf2d4be3df3a1286a2da7052239c34fe2829d70",
+        "passed": false
+      }
+    ],
+    "frames": 340,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "13.600000",
+      "nb_read_frames": "340"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 2,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "physics_steps": 0
+  },
+  "video_resources": {
+    "startup_effective_bytes": 10183368704,
+    "minimum_effective_bytes": 5940781056,
+    "peak_group_bytes": 696221696,
+    "elapsed_s": 81.82535516700591,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "calibration_trials": 0,
+  "terrain_trials": 0,
+  "blind_trials": 0,
+  "policy_updates": 0,
+  "world_model_updates": 0
+}
