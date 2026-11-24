@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "stage": "installation",
+  "manifest_sha256": "dff92b6b5ebe287ac0ea133a401ba894e457483230ccb547a99243561cebd7bb",
+  "files": {
+    "geometry.json": "2f31bbfe3bc0c947a94716d75a9781a6a703dcb1e5a401db89ddd13114b03b69",
+    "clearance_original.json": "1107b5d79e8a356ad7aa95a3680321f8f7112ef6cb974b4c91f5f42061fff0c4",
+    "clearance_forward.json": "e3892decea7da94fdc373e1e28cf8e5436fe26603b62e7229f4db6fbc262cfe0",
+    "clearance_samples.npz": "4fc170dffa0962dc1e0eccf6026d46ac4865858cdea8369db1cbfe0b1d86ccf0",
+    "sightlines.json": "5e30f04776c1ceb7554461d0dd946b91154a5d7752f95f14ae8d787a6820ba3a"
+  }
+}

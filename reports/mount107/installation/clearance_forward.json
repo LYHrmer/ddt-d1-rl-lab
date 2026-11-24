@@ -1,0 +1,30 @@
+{
+  "poses": 459,
+  "minimum_m": 0.06875046651980424,
+  "minimum_by_shape": {
+    "visual": {
+      "gap_m": 0.06875046651980424,
+      "seed": 89202,
+      "tick": 152,
+      "pair": [
+        "FR_thigh/mesh#32",
+        "mount107_rail_right"
+      ]
+    },
+    "collision": {
+      "gap_m": 0.08431286682468919,
+      "seed": 89202,
+      "tick": 152,
+      "pair": [
+        "FR_thigh/box#33",
+        "mount107_rail_right"
+      ]
+    }
+  },
+  "precontact_clearance_m": {
+    "89201": 0.03502457768127443,
+    "89202": 0.04450423558975003,
+    "89203": 0.027688896652383166
+  },
+  "passed": true
+}

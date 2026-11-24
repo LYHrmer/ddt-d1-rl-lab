@@ -1,0 +1,816 @@
+{
+  "status": "COMPLETE",
+  "passed": false,
+  "opened_row_ids": [],
+  "old_four_way_blocked_ids": [
+    29,
+    62,
+    158,
+    286,
+    543,
+    927
+  ],
+  "counts": {
+    "original": {
+      "clear": 5,
+      "tangent": 0,
+      "blocked": 27,
+      "clear_in_masked_angular_range": 3
+    },
+    "forward": {
+      "clear": 8,
+      "tangent": 0,
+      "blocked": 24,
+      "clear_in_masked_angular_range": 4
+    }
+  },
+  "cases": [
+    {
+      "row_id": 29,
+      "source_seed": 89011,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 18.729373,
+            "range_m": 0.53852937,
+            "azimuth_deg": 6.062727,
+            "depression_deg": 63.581121,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 26.448385,
+            "range_m": 0.67353322,
+            "azimuth_deg": 59.549985,
+            "depression_deg": 45.72989,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 16.132286,
+            "range_m": 0.53731085,
+            "azimuth_deg": 6.803044,
+            "depression_deg": 68.360325,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 23.515308,
+            "range_m": 0.67152157,
+            "azimuth_deg": 64.004362,
+            "depression_deg": 48.051558,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 11.645975,
+            "range_m": 0.51142583,
+            "azimuth_deg": 8.552925,
+            "depression_deg": 70.56621,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 19.823748,
+            "range_m": 0.65206556,
+            "azimuth_deg": 67.453642,
+            "depression_deg": 47.700026,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 6.65272,
+            "range_m": 0.51580831,
+            "azimuth_deg": 10.491268,
+            "depression_deg": 75.528114,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 14.940873,
+            "range_m": 0.65444364,
+            "azimuth_deg": 72.560201,
+            "depression_deg": 49.743127,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 62,
+      "source_seed": 89011,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 33.103055,
+            "range_m": 0.69954244,
+            "azimuth_deg": -63.206021,
+            "depression_deg": 43.973647,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 27.128221,
+            "range_m": 0.5405836,
+            "azimuth_deg": -16.999549,
+            "depression_deg": 63.960907,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 32.403505,
+            "range_m": 0.68444156,
+            "azimuth_deg": -64.615452,
+            "depression_deg": 42.654602,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 26.377362,
+            "range_m": 0.51694528,
+            "azimuth_deg": -19.11156,
+            "depression_deg": 63.782052,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 27.229116,
+            "range_m": 0.68006483,
+            "azimuth_deg": -70.749043,
+            "depression_deg": 45.578784,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 23.216198,
+            "range_m": 0.51513024,
+            "azimuth_deg": -23.849466,
+            "depression_deg": 70.542823,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 24.860047,
+            "range_m": 0.66569465,
+            "azimuth_deg": -72.225102,
+            "depression_deg": 44.159541,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 21.861521,
+            "range_m": 0.4918552,
+            "azimuth_deg": -27.152267,
+            "depression_deg": 70.541514,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 158,
+      "source_seed": 89011,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 20.926525,
+            "range_m": 0.53610898,
+            "azimuth_deg": 7.870643,
+            "depression_deg": 64.575155,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 27.769771,
+            "range_m": 0.67510495,
+            "azimuth_deg": 61.011776,
+            "depression_deg": 45.823926,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 18.957682,
+            "range_m": 0.52371991,
+            "azimuth_deg": 12.373877,
+            "depression_deg": 66.723181,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 26.671249,
+            "range_m": 0.6725981,
+            "azimuth_deg": 64.527681,
+            "depression_deg": 45.665719,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 14.647497,
+            "range_m": 0.51028733,
+            "azimuth_deg": 11.281578,
+            "depression_deg": 71.595376,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 21.908836,
+            "range_m": 0.65478776,
+            "azimuth_deg": 68.996277,
+            "depression_deg": 47.685052,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 10.841518,
+            "range_m": 0.50088038,
+            "azimuth_deg": 18.551397,
+            "depression_deg": 73.841117,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 19.53163,
+            "range_m": 0.65497085,
+            "azimuth_deg": 72.702143,
+            "depression_deg": 47.26709,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 286,
+      "source_seed": 89011,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 16.334799,
+            "range_m": 0.53648902,
+            "azimuth_deg": 7.12103,
+            "depression_deg": 63.30401,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 22.748426,
+            "range_m": 0.67448352,
+            "azimuth_deg": 59.736644,
+            "depression_deg": 45.285302,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 14.382629,
+            "range_m": 0.52251032,
+            "azimuth_deg": 10.820976,
+            "depression_deg": 65.342971,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 20.385412,
+            "range_m": 0.66971609,
+            "azimuth_deg": 63.039351,
+            "depression_deg": 45.158441,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 8.404889,
+            "range_m": 0.50915399,
+            "azimuth_deg": 10.016595,
+            "depression_deg": 70.282424,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 15.089525,
+            "range_m": 0.65295125,
+            "azimuth_deg": 67.573433,
+            "depression_deg": 47.227255,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 4.495963,
+            "range_m": 0.4979377,
+            "azimuth_deg": 15.853768,
+            "depression_deg": 72.491159,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 11.058387,
+            "range_m": 0.65072618,
+            "azimuth_deg": 71.100846,
+            "depression_deg": 46.86558,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 543,
+      "source_seed": 89023,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 22.384093,
+            "range_m": 0.51595354,
+            "azimuth_deg": 14.043652,
+            "depression_deg": 61.00212,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 27.233488,
+            "range_m": 0.67582265,
+            "azimuth_deg": 61.16282,
+            "depression_deg": 41.892713,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 20.298592,
+            "range_m": 0.51414538,
+            "azimuth_deg": 14.451903,
+            "depression_deg": 65.385459,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 24.442205,
+            "range_m": 0.67034548,
+            "azimuth_deg": 64.432298,
+            "depression_deg": 44.209985,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 16.400736,
+            "range_m": 0.48696768,
+            "azimuth_deg": 19.36944,
+            "depression_deg": 67.925937,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 18.651354,
+            "range_m": 0.65396156,
+            "azimuth_deg": 68.606742,
+            "depression_deg": 43.634819,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 12.521165,
+            "range_m": 0.49011579,
+            "azimuth_deg": 21.25848,
+            "depression_deg": 72.497464,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 12.484702,
+            "range_m": 0.65209744,
+            "azimuth_deg": 72.415048,
+            "depression_deg": 45.791133,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 798,
+      "source_seed": 89023,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 3.546078,
+            "range_m": 0.54441144,
+            "azimuth_deg": 2.738058,
+            "depression_deg": 65.788978,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 9.809001,
+            "range_m": 0.66999208,
+            "azimuth_deg": 60.280537,
+            "depression_deg": 47.824509,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.52808613,
+            "azimuth_deg": 9.844412,
+            "depression_deg": 68.124132,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 4.307192,
+            "range_m": 0.66995695,
+            "azimuth_deg": 64.888375,
+            "depression_deg": 47.010644,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.51967564,
+            "azimuth_deg": 3.987295,
+            "depression_deg": 72.833881,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.65005257,
+            "azimuth_deg": 68.611774,
+            "depression_deg": 49.802473,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.50659028,
+            "azimuth_deg": 15.194655,
+            "depression_deg": 75.323165,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.65314705,
+            "azimuth_deg": 73.329518,
+            "depression_deg": 48.616921,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 831,
+      "source_seed": 89023,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.69010472,
+            "azimuth_deg": -61.766325,
+            "depression_deg": 44.404941,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.53900735,
+            "azimuth_deg": -13.120469,
+            "depression_deg": 63.621111,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.68121413,
+            "azimuth_deg": -65.383611,
+            "depression_deg": 46.176494,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.53154675,
+            "azimuth_deg": -13.956462,
+            "depression_deg": 67.611416,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.66969549,
+            "azimuth_deg": -69.403951,
+            "depression_deg": 46.141185,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.51261725,
+            "azimuth_deg": -18.419772,
+            "depression_deg": 70.389538,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.66441343,
+            "azimuth_deg": -73.566739,
+            "depression_deg": 47.707555,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "clear",
+            "inside_mm": 0.0,
+            "range_m": 0.50983768,
+            "azimuth_deg": -21.109683,
+            "depression_deg": 74.577852,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          }
+        ]
+      }
+    },
+    {
+      "row_id": 927,
+      "source_seed": 89023,
+      "lines": {
+        "original": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 19.415239,
+            "range_m": 0.5221615,
+            "azimuth_deg": 7.565136,
+            "depression_deg": 63.128394,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 25.652904,
+            "range_m": 0.66382774,
+            "azimuth_deg": 60.353913,
+            "depression_deg": 44.560093,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 16.831003,
+            "range_m": 0.51078948,
+            "azimuth_deg": 11.527611,
+            "depression_deg": 65.749882,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 22.105936,
+            "range_m": 0.66118739,
+            "azimuth_deg": 64.02485,
+            "depression_deg": 44.778361,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ],
+        "forward": [
+          {
+            "capture": "previous",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 12.35391,
+            "range_m": 0.49477104,
+            "azimuth_deg": 10.730883,
+            "depression_deg": 70.288662,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "previous",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 17.739382,
+            "range_m": 0.64250527,
+            "azimuth_deg": 68.25507,
+            "depression_deg": 46.464061,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          },
+          {
+            "capture": "current",
+            "mount": "left",
+            "classification": "blocked",
+            "inside_mm": 7.218871,
+            "range_m": 0.48685469,
+            "azimuth_deg": 17.18534,
+            "depression_deg": 73.05506,
+            "in_angular_range": true,
+            "in_masked_angular_range": true
+          },
+          {
+            "capture": "current",
+            "mount": "right",
+            "classification": "blocked",
+            "inside_mm": 11.101377,
+            "range_m": 0.64287663,
+            "azimuth_deg": 72.188334,
+            "depression_deg": 46.421311,
+            "in_angular_range": false,
+            "in_masked_angular_range": false
+          }
+        ]
+      }
+    }
+  ],
+  "parent_sha256": "557a0afe4309a8a53c144224c2a3e3f1e093d8732c42224acbe2d5c2200ed005",
+  "native_decisions": 0,
+  "sensor_rays": 0
+}

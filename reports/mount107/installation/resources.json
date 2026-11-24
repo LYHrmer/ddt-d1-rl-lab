@@ -1,0 +1,20 @@
+{
+  "startup_effective_bytes": 7518302208,
+  "minimum_effective_bytes": 6981525504,
+  "peak_group_bytes": 537939968,
+  "elapsed_s": 14.143517856980907,
+  "owned_cgroup_children_empty": true,
+  "cpu_affinity": [
+    0
+  ],
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "nice": 10,
+  "threads": 1,
+  "memory_high_bytes": 2147483648,
+  "memory_max_bytes": 3221225472,
+  "swap_max_bytes": 0,
+  "admission_bytes": 4294967296,
+  "reserve_bytes": 2147483648,
+  "unit": "d1-mount107-installation-01",
+  "guard_sha256": "046cd99b04fad15fc32bed3f36936074bc2e452aa2eceab15fd07ba5e4df09a8"
+}

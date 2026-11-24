@@ -1,0 +1,120 @@
+{
+  "status": "COMPLETE",
+  "passed": true,
+  "inputs": {
+    "native_traces": {
+      "89201": "af975a5469f0473e6f8937e49f4b1bcd887fa47eae71e18864e0a516296000c5",
+      "89202": "6e61637e2d8c24bb055dad38ca00442936a211d5f1e76424bae5119ba43e4193",
+      "89203": "c9192ba0c6b462bfed6dc248aeeecbed0c4ed0e33ef3fa9de02bbba79846c81c"
+    },
+    "native_prefix_qpos_sha256": {
+      "89201": "7cf36f333e1d346ad5d254c0bc6cf423af66c080734991763162f6c42114cdd7",
+      "89202": "0b5fcc2ee496ae3d2e5f8016b65e6740ae05b2871cd26a73b9e5add150e8e1ba",
+      "89203": "c00c87b2cc81053d0b0647ffb6afde3631c253547752ae735dbd647a421e036f"
+    },
+    "files": {
+      "tools107/capture107.py": "025a53f57ac4c3e97b9ffeb0bf82b4b54be930a2b929a68c437dfa10b1639a6c",
+      "tools107/mount107.py": "3df01a7f472ce642908ba41d0f28b829c5347024ab759d4b9cf698aa261bdb73",
+      "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+      "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+      "docs/experiments101/predictive_perception.json": "6499aedbc6e578a81fa95e3c51885a50f897f8ba00eab2010972df175803e20d",
+      "docs/experiments107/installation.json": "735e2926ee53a7bb155f17fa576c9995aa0d1a32da0292fa2c67034b7440aece"
+    }
+  },
+  "covered_poses_per_arm": 459,
+  "checked_arm_poses": 918,
+  "minimum_m": 0.062427151946024356,
+  "seed_roster": [
+    89201,
+    89202,
+    89203
+  ],
+  "prefix_ticks": [
+    0,
+    152
+  ],
+  "capture_ticks": [
+    59,
+    67,
+    75,
+    84,
+    92,
+    100,
+    109,
+    117,
+    125,
+    134,
+    142,
+    150
+  ],
+  "delay_ticks": 2,
+  "samples_file": "clearance_samples.npz",
+  "samples_sha256": "4fc170dffa0962dc1e0eccf6026d46ac4865858cdea8369db1cbfe0b1d86ccf0",
+  "wheel_leading_edge_x_m": 0.685,
+  "clearance_definition": "Minimum conservative separation to moving visual or collision geometry, after collision margins, across the fixed support and both housings.",
+  "optical_calls": 0,
+  "physics_steps": 0,
+  "arms": {
+    "original": {
+      "poses": 459,
+      "minimum_m": 0.062427151946024356,
+      "minimum_by_shape": {
+        "visual": {
+          "gap_m": 0.062427151946024356,
+          "seed": 89202,
+          "tick": 152,
+          "pair": [
+            "FR_thigh/mesh#32",
+            "mount107_housing_right"
+          ]
+        },
+        "collision": {
+          "gap_m": 0.08006319256786432,
+          "seed": 89202,
+          "tick": 152,
+          "pair": [
+            "FR_thigh/box#33",
+            "mount107_housing_right"
+          ]
+        }
+      },
+      "precontact_clearance_m": {
+        "89201": 0.03502457768127443,
+        "89202": 0.04450423558975003,
+        "89203": 0.027688896652383166
+      },
+      "passed": true
+    },
+    "forward": {
+      "poses": 459,
+      "minimum_m": 0.06875046651980424,
+      "minimum_by_shape": {
+        "visual": {
+          "gap_m": 0.06875046651980424,
+          "seed": 89202,
+          "tick": 152,
+          "pair": [
+            "FR_thigh/mesh#32",
+            "mount107_rail_right"
+          ]
+        },
+        "collision": {
+          "gap_m": 0.08431286682468919,
+          "seed": 89202,
+          "tick": 152,
+          "pair": [
+            "FR_thigh/box#33",
+            "mount107_rail_right"
+          ]
+        }
+      },
+      "precontact_clearance_m": {
+        "89201": 0.03502457768127443,
+        "89202": 0.04450423558975003,
+        "89203": 0.027688896652383166
+      },
+      "passed": true
+    }
+  },
+  "elapsed_s": 3.650793157023145
+}

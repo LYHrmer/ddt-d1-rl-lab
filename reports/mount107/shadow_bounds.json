@@ -1,0 +1,56 @@
+{
+  "interpretation": "Post-score analytic lower bounds, with the old source rotation and a fixed ground query. A tangent only touches the boundary. A usable sampled return also needs an available unobstructed sensor beam.",
+  "tested_slide_mm": 70.0,
+  "results": [
+    {
+      "row_id": 29,
+      "total_slide_mm": 96.025,
+      "extra_past_forward_mm": 26.025,
+      "capture": "current",
+      "mount": "left",
+      "limiting_edge": "top"
+    },
+    {
+      "row_id": 62,
+      "total_slide_mm": 127.646,
+      "extra_past_forward_mm": 57.646,
+      "capture": "current",
+      "mount": "left",
+      "limiting_edge": "top"
+    },
+    {
+      "row_id": 158,
+      "total_slide_mm": 111.978,
+      "extra_past_forward_mm": 41.978,
+      "capture": "current",
+      "mount": "left",
+      "limiting_edge": "top"
+    },
+    {
+      "row_id": 286,
+      "total_slide_mm": 88.731,
+      "extra_past_forward_mm": 18.731,
+      "capture": "current",
+      "mount": "left",
+      "limiting_edge": "top"
+    },
+    {
+      "row_id": 543,
+      "total_slide_mm": 100.879,
+      "extra_past_forward_mm": 30.879,
+      "capture": "current",
+      "mount": "right",
+      "limiting_edge": "top"
+    },
+    {
+      "row_id": 927,
+      "total_slide_mm": 96.709,
+      "extra_past_forward_mm": 26.709,
+      "capture": "current",
+      "mount": "left",
+      "limiting_edge": "top"
+    }
+  ],
+  "source_sha256": "5e30f04776c1ceb7554461d0dd946b91154a5d7752f95f14ae8d787a6820ba3a",
+  "new_sensor_rays": 0
+}

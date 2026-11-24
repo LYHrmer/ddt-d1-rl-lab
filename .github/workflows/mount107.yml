@@ -33,4 +33,5 @@ jobs:
         run: |
           if [[ -d reports/mount107 ]] || git cat-file -e 'HEAD^:reports/mount107/installation/seal.json' 2>/dev/null; then
             python -B -m tools107.run107 check
+            python -B -m tools107.shadow107 check
           fi
