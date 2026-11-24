@@ -1,0 +1,36 @@
+name: D1 flat cruise measurements
+on:
+  push:
+    paths: &cruise_paths
+      - 'tools109/**'
+      - 'tests/test_flat_speed109.py'
+      - 'reports/speed109/**'
+      - 'docs/speed109_proposal.md'
+      - 'docs/assets/speed109.mp4'
+      - 'tools87/terrain87.py'
+      - 'tools87/ppo87.py'
+      - 'tools89/train89.py'
+      - 'training/d1_rl/**'
+      - 'training/configs/pilot03d.json'
+      - '.github/workflows/flat-speed109.yml'
+  pull_request:
+    paths: *cruise_paths
+permissions:
+  contents: read
+jobs:
+  readback:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+      MUJOCO_GL: disable
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet gymnasium==1.2.0 mujoco==3.3.0 numpy==2.2.6
+      - run: python -B -m unittest discover -s tests -p test_flat_speed109.py
+      - run: python -B -m tools109.readback109

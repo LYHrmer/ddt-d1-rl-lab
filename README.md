@@ -9,6 +9,8 @@
 
 **D1 正逐步转向 SuperMimic 式的模型强化学习。** 全身策略每 20 ms（50 Hz）同时输出 12 个腿关节角目标和 4 个轮速目标。底层以 250 Hz 跟踪目标并限矩，腿部使用位置 PD，车轮使用速度反馈。MuJoCo 以 500 Hz 积分。[动作到力矩的映射](training/d1_rl/interface.py)
 
+**平地能持续跑 1.5 m/s 吗？** 三个独立开发起点上，扩大全身策略的轮速量程后，机身前向峰值达到 2.40～2.41 m/s，随后在加速期失稳。加入原量程与四轮速度参考对照后，9 段均提前终止，巡航通过 0/9。半速回放显示同一起点两种控制下机身降低的过程。[平地实测录像](docs/assets/speed109.mp4) · [逐起点速度与支撑分析](docs/speed109_results.md)
+
 **前轮碰到 3 厘米台阶后，多弯一点前膝有什么用？** 12 段闭环全部触阶。三个盲测起点上，两前膝实际多弯约 0.08 rad，机身额外下沉 8.39～8.66 mm，前轮中心的高度变化都不到 0.15 mm。三份世界模型共训练 300 次，预测的前轴位移差在九格中通过 0 格。全身策略保留原参数。[三对慢放视频](docs/assets/contact108.mp4) · [配对实测、模型与策略决定](docs/contact108_results.md)
 
 **轮子接触前能看清哪侧更高吗？** 三段存档姿态上，固定遮挡下的 30 mm 局部隆起场景，八束测距合格 35/72 包，稠密点云合格 69/72 包。对查询点确有高差的 25 包，八束判对并估准 0 包，点云 25 包。点云在台后缘仍出现 6 次误报。此次比较只测感知，训练与动力学积分均为 0。[八束与点云同帧视频](docs/assets/pointcloud100.mp4) · [逐种子结果及失败位置](docs/jeplo_d1_perception_results.md)
@@ -296,7 +298,7 @@ D1 的两个问题是轮子前方有什么，以及改变动作后机器人会�
 | [DDTRobot/ddt_ros2_control](https://github.com/DDTRobot/ddt_ros2_control) | 用厂方历史版本逐文件核对 D1 的 MJCF 和 11 份网格，再检查支架间隙。[资产与安装核验](docs/d1_sensor_mount107.md) |
 | [ANYmal D 描述](https://github.com/ANYbotics/anymal_d_simple_description) · [Unitree ROS](https://github.com/unitreerobotics/unitree_ros) | 核对前置传感器的固定关节和光学坐标系，D1 已逐姿态检查两侧光心相对机身的变换。[安装坐标系](docs/d1_sensor_mount107.md) |
 | [Spot SDK](https://github.com/boston-dynamics/spot-sdk) | 参考采集时刻的坐标快照，D1 分开处理采集时视线与送达时轮前查询。[时间与视线检查](docs/d1_sensor_mount107.md) |
-| [WMP-D1-loco](https://github.com/Rangens/WMP-D1-loco) · [DDTRobot/d1_mjlab](https://github.com/DDTRobot/d1_mjlab) | wheel 使用前者的 URDF/STL，并从后者交叉核对自由度、关节顺序、质量和控制量级。[wheel 模型卡][wheel-asset] |
+| [WMP-D1-loco](https://github.com/Rangens/WMP-D1-loco) · [DDTRobot/d1_mjlab](https://github.com/DDTRobot/d1_mjlab) | wheel 使用前者的 URDF/STL，并从后者交叉核对自由度、关节顺序、质量和控制量级。后者的 D1 平地课程从 ±1 m/s 起步，跟踪达标后每次扩 0.5 m/s，上限 ±3 m/s。其粗糙地形任务默认 ±1 m/s。[wheel 模型卡][wheel-asset] · [平地源码](https://github.com/DDTRobot/d1_mjlab/blob/1277e5ad30c41116dda53a70b5a93a24997d8c29/np3o/tasks/locomotion/config/d1/d1_flat_cfg.py#L721-L753) · [粗糙地形源码](https://github.com/DDTRobot/d1_mjlab/blob/1277e5ad30c41116dda53a70b5a93a24997d8c29/np3o/tasks/locomotion/config/d1/d1_rough_cfg.py#L684-L709) |
 
 </details>
 

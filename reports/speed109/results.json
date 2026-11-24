@@ -1,0 +1,478 @@
+{
+  "proposal_sha256": "2ccd7127e006b6db1b0a3c85120b690aee3bc39df00427ab41b4e4ded54d3066",
+  "checkpoint_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+  "sources": {
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/task03d.py": "1780b223ed141eecced07f69d01a6ae5802868093258ff76b0b47383ac8a9e5d",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "tools87/ppo87.py": "4eb677ace9651b11bfa8debaa36c6708599684d425beb408ee68edee00e9d054",
+    "tools89/train89.py": "bfed52711471f221700c41b03cbb8f1dc1f863d1fd22b2d3978f5a369390ef44",
+    "tools109/cruise109.py": "156320aca7b74dc8a41eb705d3e3d578af38606aed7d5645041b2ed5c33e7126",
+    "tools109/episodes109.py": "f3e9f4f2ec70143c7ecc4c9dd43ea00d9bf39efb58ed4a7bc259ebae9415cc92",
+    "tools109/score109.py": "8dba26febc95c912b7a670610219317ca7b3c87bb79409330d5f52714f137874",
+    "tools109/run109.py": "c3a8a0150e0b8e2ea6e05865070dd987cd4d758c8232713dbf6a0e4bf829b807"
+  },
+  "stages": {
+    "actors": {
+      "resources": {
+        "startup_effective_bytes": 5327249408,
+        "minimum_effective_bytes": 2881835008,
+        "peak_group_bytes": 1129603072,
+        "elapsed_s": 43.61195989200496,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+      },
+      "episodes": [
+        {
+          "status": "COMPLETE",
+          "arm": "actor5",
+          "seed": 109011,
+          "initial_state_sha256": "303f633c09ebda4cf7ae6fc206a30886a49f6b032f7105567e6d7dbd8d9a035b",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1450,
+            "pd_updates": 725,
+            "policy_transitions": 145,
+            "resets": 1,
+            "forward_calls": 148
+          },
+          "trace_sha256": "32db87040d66c280f4afb922b8b6cf80d435774f29bc8bffe8af11fc13277150",
+          "score": {
+            "ticks": 145,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.1220730723873724,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.03375739908474456,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4578156979097254,
+          "file": "trajectories/109011_actor5.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "actor24",
+          "seed": 109011,
+          "initial_state_sha256": "303f633c09ebda4cf7ae6fc206a30886a49f6b032f7105567e6d7dbd8d9a035b",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1420,
+            "pd_updates": 710,
+            "policy_transitions": 142,
+            "resets": 1,
+            "forward_calls": 145
+          },
+          "trace_sha256": "85400cf132012a2ccc85ec4f9813a6cfd00356ddc5013bd754312187dd2047ac",
+          "score": {
+            "ticks": 142,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "fall",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 2.429268600030244,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.1864733482892365,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4059784765854622,
+          "file": "trajectories/109011_actor24.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "actor5",
+          "seed": 109023,
+          "initial_state_sha256": "dc7c22420395cf39f9b6c3cb81f31d2cdb46bf2e5615f99175cf9fc4d84b02ad",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1460,
+            "pd_updates": 730,
+            "policy_transitions": 146,
+            "resets": 1,
+            "forward_calls": 149
+          },
+          "trace_sha256": "c5df238ec019a48223cde744a4a0326aec21ff2bd67fad2355e218f728c4594c",
+          "score": {
+            "ticks": 146,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.1351185414060436,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.03404178577073457,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.44064841963716317,
+          "file": "trajectories/109023_actor5.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "actor24",
+          "seed": 109023,
+          "initial_state_sha256": "dc7c22420395cf39f9b6c3cb81f31d2cdb46bf2e5615f99175cf9fc4d84b02ad",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1450,
+            "pd_updates": 725,
+            "policy_transitions": 145,
+            "resets": 1,
+            "forward_calls": 148
+          },
+          "trace_sha256": "1b595a2c371198edde6d0ee7e0058e70079ec8e32c1c470f5e45562c1aca1ded",
+          "score": {
+            "ticks": 145,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "fall"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 2.4389628957270824,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.19977589953296,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.38161976467518793,
+          "file": "trajectories/109023_actor24.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "actor5",
+          "seed": 109037,
+          "initial_state_sha256": "558dfdea2edae4d6d6b9ac5a218729a7f8f08f2233f39862b251230356485450",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1460,
+            "pd_updates": 730,
+            "policy_transitions": 146,
+            "resets": 1,
+            "forward_calls": 149
+          },
+          "trace_sha256": "2024dd344f7c389b4a4003598fa9e815f15d0e1ac60ef53d42eb9fd064937365",
+          "score": {
+            "ticks": 146,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.126358405810187,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.0319174522899041,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4606689345924582,
+          "file": "trajectories/109037_actor5.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "actor24",
+          "seed": 109037,
+          "initial_state_sha256": "558dfdea2edae4d6d6b9ac5a218729a7f8f08f2233f39862b251230356485450",
+          "control": "actor_all_16",
+          "counts": {
+            "native_steps": 1450,
+            "pd_updates": 725,
+            "policy_transitions": 145,
+            "resets": 1,
+            "forward_calls": 148
+          },
+          "trace_sha256": "1bde998716ae1bc22afc2e14d49abb2e125c4dfac592216c675eba549c8036f3",
+          "score": {
+            "ticks": 145,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "fall",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 2.434710587448961,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.20731696150308676,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.42155083324337517,
+          "file": "trajectories/109037_actor24.npz"
+        }
+      ]
+    },
+    "reference": {
+      "resources": {
+        "startup_effective_bytes": 8305635328,
+        "minimum_effective_bytes": 5438910464,
+        "peak_group_bytes": 951533568,
+        "elapsed_s": 17.930497742985608,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+      },
+      "episodes": [
+        {
+          "status": "COMPLETE",
+          "arm": "reference24",
+          "seed": 109011,
+          "initial_state_sha256": "303f633c09ebda4cf7ae6fc206a30886a49f6b032f7105567e6d7dbd8d9a035b",
+          "control": "actor_legs_referenced_wheels",
+          "counts": {
+            "native_steps": 1300,
+            "pd_updates": 650,
+            "policy_transitions": 130,
+            "resets": 1,
+            "forward_calls": 133
+          },
+          "trace_sha256": "beb2506302058cd611069ea542d590d960b0c3710b8127d4329300c1244a1401",
+          "score": {
+            "ticks": 130,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.7882388320099998,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.02740923610199176,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4215565540910309,
+          "file": "trajectories/109011_reference24.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "reference24",
+          "seed": 109023,
+          "initial_state_sha256": "dc7c22420395cf39f9b6c3cb81f31d2cdb46bf2e5615f99175cf9fc4d84b02ad",
+          "control": "actor_legs_referenced_wheels",
+          "counts": {
+            "native_steps": 1310,
+            "pd_updates": 655,
+            "policy_transitions": 131,
+            "resets": 1,
+            "forward_calls": 134
+          },
+          "trace_sha256": "81749e5ba878ec525941d8e91a352bff65ced4d519b4ab943b79e2dcd0b69417",
+          "score": {
+            "ticks": 131,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.7723881939285508,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.02648327629813237,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4295434570197243,
+          "file": "trajectories/109023_reference24.npz"
+        },
+        {
+          "status": "COMPLETE",
+          "arm": "reference24",
+          "seed": 109037,
+          "initial_state_sha256": "558dfdea2edae4d6d6b9ac5a218729a7f8f08f2233f39862b251230356485450",
+          "control": "actor_legs_referenced_wheels",
+          "counts": {
+            "native_steps": 1310,
+            "pd_updates": 655,
+            "policy_transitions": 131,
+            "resets": 1,
+            "forward_calls": 134
+          },
+          "trace_sha256": "79ff1feeeaf51c7230e11ee6ce223afe5a5e787d81fa50e8e51533cbfb1b379f",
+          "score": {
+            "ticks": 131,
+            "passed": false,
+            "failed": [
+              "incomplete_horizon",
+              "cruise_distance",
+              "stop_speed",
+              "illegal_contact"
+            ],
+            "cruise_distance_m": null,
+            "cruise_speed_m_s": null,
+            "cruise_half_second_means_m_s": [],
+            "peak_horizontal_speed_m_s": 1.7864752034300495,
+            "stop_tail_max_m_s": null,
+            "braking_path_m": null,
+            "max_abs_lateral_m": 0.03329939895824358,
+            "target_wheels_rad_s": null,
+            "actual_wheels_rad_s": null,
+            "wheel_saturated_ticks": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "peak_tilt_rad": 0.4560860563417405,
+          "file": "trajectories/109037_reference24.npz"
+        }
+      ]
+    }
+  },
+  "blind_candidate": null,
+  "policy_updates": 0,
+  "world_updates": 0,
+  "film_resources": {
+    "startup_effective_bytes": 7700410368,
+    "minimum_effective_bytes": 3850756096,
+    "peak_group_bytes": 1035137024,
+    "elapsed_s": 216.93047626700718,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "film": {
+    "filename": "D1_\u5e73\u57301.5m\u6bcf\u79d2_\u52a0\u901f\u4e0e\u7a33\u5b9a\u6027\u5bf9\u7167_109.mp4",
+    "sha256": "befb9bb6ca78a1d14bd2e6f24bea4d27080f150aca9b6737d2cd289ab146b210",
+    "bytes": 1115038,
+    "clips": [
+      {
+        "stage": "actors",
+        "seed": 109011,
+        "arm": "actor24",
+        "source_trace_sha256": "85400cf132012a2ccc85ec4f9813a6cfd00356ddc5013bd754312187dd2047ac",
+        "passed": false,
+        "end_tick": 142
+      },
+      {
+        "stage": "reference",
+        "seed": 109011,
+        "arm": "reference24",
+        "source_trace_sha256": "beb2506302058cd611069ea542d590d960b0c3710b8127d4329300c1244a1401",
+        "passed": false,
+        "end_tick": 130
+      }
+    ],
+    "frames": 372,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "14.880000",
+      "nb_read_frames": "372"
+    }
+  }
+}
