@@ -1,0 +1,58 @@
+{
+  "measured": {
+    "archive_sha256": "da28803d476eb5f57f03bc8e3f36f84ff4af9635997528fa50f9fbbd66d276b9",
+    "content_sha256": "39e3d77ce251b5726990a3fa6f708ced821bd987b474fe9811396a7ea954fd3f",
+    "episodes": 13,
+    "capture_intervals": 195,
+    "catalog_sha256": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "native_trace_sha256": [
+      "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+      "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+      "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22"
+    ]
+  },
+  "reference101": {
+    "archive_sha256": "8fb47c79356b1ef4e138c00258eab1996ca000323905bd57a98b6c98c89d5876",
+    "content_sha256": "839c150de48a0857e8e44e47ea59a76d07b0a8ff8de29db6641ab5d3ead32959",
+    "episodes": 13,
+    "capture_intervals": 195,
+    "catalog_sha256": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+    "native_trace_sha256": [
+      "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+      "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5",
+      "04b57acf17bd0564c6da6df6fe9aef633be0ebea9dc5a0e606bc0ac1454ffd22"
+    ]
+  },
+  "reference100": {
+    "archive_sha256": "b3ba31ffa4ae60b3796fdc4ec721948e7fde32973b43637611a2a07108bcb7f3",
+    "content_sha256": "4013bef656e9081257600332866ad45475aab797f25aff65645f82b7c4310430",
+    "protocol_sha256": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "source_seeds": [
+      87201,
+      87202,
+      87203
+    ],
+    "source_trace_sha256": [
+      "fab92fb3d872dbe26ff8d1471f9021d1e92a92c96a806709bb017596637983f1",
+      "a5266bafa270aa0bf59d415f37d9456ad33dcdd72f7aee280d7627b6fc8612cc",
+      "b2097134ee3af5ebc13be48d7d1bbc73ce2d2f4bb923036475ec712d6d8fb08e"
+    ],
+    "motion_windows": 36,
+    "capture_ticks": [
+      59,
+      67,
+      75,
+      84,
+      92,
+      100,
+      109,
+      117,
+      125,
+      134,
+      142,
+      150
+    ],
+    "capture_to_delivery_ticks": 2,
+    "observer": "native_reference_pose"
+  }
+}

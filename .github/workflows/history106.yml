@@ -31,4 +31,5 @@ jobs:
           sha256sum --check --status docs/experiments106/sources.sha256
           if [[ -d reports/history106 ]] || git cat-file -e 'HEAD^:reports/history106/report.json' 2>/dev/null; then
             python -B -m tools106.run106 check
+            python -B -m tools106.sightline106 check
           fi

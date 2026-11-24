@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "manifest_sha256": "30cf972326d46af1dd537101dbfe460b5e99feb0ce3d180c6b3c8348d8d4020d",
+  "files": {
+    "measured.npz": "da28803d476eb5f57f03bc8e3f36f84ff4af9635997528fa50f9fbbd66d276b9",
+    "reference101.npz": "8fb47c79356b1ef4e138c00258eab1996ca000323905bd57a98b6c98c89d5876",
+    "reference100.npz": "b3ba31ffa4ae60b3796fdc4ec721948e7fde32973b43637611a2a07108bcb7f3",
+    "input_audit.json": "05da27b962ad2b06c61b1c1190c8b73bb5bdd86bfb2dd4caff31ca1d121ce251",
+    "predictions.npz": "1777cd60f06e2bd398dcf055b6b839eb3bd01424663c59e21d1453d9ca6fb8b9",
+    "report.json": "7f5bde906693e110d179f61ec83a0cc6346ac515a7d0711ce300d7cdb470007e"
+  }
+}

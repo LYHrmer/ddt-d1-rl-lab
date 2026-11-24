@@ -1,0 +1,20 @@
+{
+  "startup_effective_bytes": 9398243328,
+  "minimum_effective_bytes": 9323204608,
+  "peak_group_bytes": 75882496,
+  "elapsed_s": 11.597899510990828,
+  "owned_cgroup_children_empty": true,
+  "cpu_affinity": [
+    0
+  ],
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "nice": 10,
+  "threads": 1,
+  "memory_high_bytes": 2147483648,
+  "memory_max_bytes": 3221225472,
+  "swap_max_bytes": 0,
+  "admission_bytes": 4294967296,
+  "reserve_bytes": 2147483648,
+  "unit": "d1-terrain-history106-02",
+  "guard_sha256": "377a2e12114fb71be4da887eb24a119b88da70c4058cc9a14fe02350d509286d"
+}
