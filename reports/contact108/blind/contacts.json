@@ -1,0 +1,188 @@
+{
+  "split": "blind",
+  "data_eligible": true,
+  "episodes": [
+    {
+      "seed": 108101,
+      "arm": "original",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 109,
+      "first_contact_s": 2.168,
+      "max_front_contact_force_n": 153.3098789892597,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": 0.7088977744001412,
+      "base_mm": -1.3125055731855462,
+      "changed_knee_ticks": 0,
+      "final_axle_x_m": 0.38402887135290914,
+      "final_base_x_m": 0.18694386576397864,
+      "sha256": "ddb65871764aed920f8199ead3b4238577f64afbb6848bb6e70e50c5add109e7"
+    },
+    {
+      "seed": 108101,
+      "arm": "flexion",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 109,
+      "first_contact_s": 2.168,
+      "max_front_contact_force_n": 153.3098789892597,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": 0.6604438773312737,
+      "base_mm": -2.53022805770256,
+      "changed_knee_ticks": 16,
+      "final_axle_x_m": 0.3840207312381444,
+      "final_base_x_m": 0.18713170288604197,
+      "sha256": "2156ebbc7fbb43fd3a2f49bcf16655b93a7ed47119cb72293595266cf0cb7fff"
+    },
+    {
+      "seed": 108102,
+      "arm": "original",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 108,
+      "first_contact_s": 2.144,
+      "max_front_contact_force_n": 130.1841723207744,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": 6.235579489496823,
+      "base_mm": 13.165347875219503,
+      "changed_knee_ticks": 0,
+      "final_axle_x_m": 0.38412005241114583,
+      "final_base_x_m": 0.18866452992854213,
+      "sha256": "4e957b0f46ede2de66a75e26c6ff84b730e8bdda460cd1935ee03ceead1233a8"
+    },
+    {
+      "seed": 108102,
+      "arm": "flexion",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 108,
+      "first_contact_s": 2.144,
+      "max_front_contact_force_n": 130.1841723207744,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": 6.2007285694733465,
+      "base_mm": 12.983026700188388,
+      "changed_knee_ticks": 16,
+      "final_axle_x_m": 0.38415605291254795,
+      "final_base_x_m": 0.1899378716875105,
+      "sha256": "e38187a4c0b4b573988fd3f6829ef549070208d45da28cc5d3cbd103dfa56e94"
+    },
+    {
+      "seed": 108103,
+      "arm": "original",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 107,
+      "first_contact_s": 2.128,
+      "max_front_contact_force_n": 138.56904189207185,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": -1.1791260537123982,
+      "base_mm": 1.6870232559551557,
+      "changed_knee_ticks": 0,
+      "final_axle_x_m": 0.3840701403878405,
+      "final_base_x_m": 0.18932558447440273,
+      "sha256": "55b96f01d96c6d135916e9c0a84d7471d5411c778b0537f9bd740e48adf85ea9"
+    },
+    {
+      "seed": 108103,
+      "arm": "flexion",
+      "status": "COMPLETE",
+      "ticks": 200,
+      "terminal_reason": "horizon",
+      "trigger_tick": 107,
+      "first_contact_s": 2.128,
+      "max_front_contact_force_n": 138.56904189207185,
+      "window_complete": true,
+      "top_by_wheel": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "fallen": false,
+      "illegal_contact": false,
+      "max_nonwheel_step_force_n": 0.0,
+      "axle_mm": -1.2191578235727918,
+      "base_mm": 2.324693986322346,
+      "changed_knee_ticks": 16,
+      "final_axle_x_m": 0.38407005988681275,
+      "final_base_x_m": 0.1904185222697369,
+      "sha256": "89c88e822d17307f3202cd3e228e05726362f205f60ccf451199d2abcbc5c0ec"
+    }
+  ],
+  "pairs": [
+    {
+      "seed": 108101,
+      "matched_prefix": true,
+      "qualified": true,
+      "axle_effect_mm": -0.04845389706886749,
+      "base_effect_mm": -1.217722484517014
+    },
+    {
+      "seed": 108102,
+      "matched_prefix": true,
+      "qualified": true,
+      "axle_effect_mm": -0.03485092002347656,
+      "base_effect_mm": -0.1823211750311149
+    },
+    {
+      "seed": 108103,
+      "matched_prefix": true,
+      "qualified": true,
+      "axle_effect_mm": -0.040031769860393585,
+      "base_effect_mm": 0.6376707303671902
+    }
+  ],
+  "native_decisions": 1200,
+  "physics_substeps": 12000,
+  "archival_index_sha256": "3d14bc13099c518aeae0bb31a82357d3f6b8fdf93e191c1b098f70d5da72ef7d"
+}

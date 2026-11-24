@@ -1,0 +1,145 @@
+{
+  "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+  "sources_sha256": {
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools108/contact108.py": "0bfb6385fbc464c097d56ecf5c3e939e2483dacf5c2ad56d75efda3259ae6eb5",
+    "tools108/diagnose108.py": "949f352052bf1ef13bf3c9aa7a55fec6095445133bf96e7a0531c223494b21f7",
+    "tools108/model108.py": "1e7da43055c3270e7d73f44287d08fa5ea8225ee38324d3d66ca472315948d58",
+    "tools108/preview108.py": "9281887bc3204fde928fc8d6d5281b2835585c2b821c29a2a8e814a7ca2c7bd9",
+    "tools108/publish108.py": "a4470638df95456aeca0fcd5b026292b7450b8331dfbeeb7769eb45274244556",
+    "tools108/readback108.py": "1b30e6455105b430b2fa364899f7d26f9cc54677b74e7f2a8aacd2bad253dabd",
+    "tools108/run108.py": "6503e63504f036eaa6498a89ee0001198aded3fae3514350f433759c8d0e255d",
+    "tools108/score108.py": "356ae2e4427b2da7230143cf6419424622580fdbe95b7430e0785b6de83123be",
+    "tools108/video108.py": "c40f7cb161949aa8c58c7f12c51f58ca297531d26e5a35d7713d906ebe92f428",
+    "tools77/geometry77.py": "be7edb2dfb745b4662309844d04f05723c98c51dd3ef59891249304c4e37a0ce",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "tools89/course89.py": "ab3b5fc207060bc0b2cb820a512b6c586e0c63d3c0a53b182fedd6774445e416",
+    "tools89/train89.py": "bfed52711471f221700c41b03cbb8f1dc1f863d1fd22b2d3978f5a369390ef44",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/task03d.py": "1780b223ed141eecced07f69d01a6ae5802868093258ff76b0b47383ac8a9e5d"
+  },
+  "stage_seal_sha256": {
+    "development": "6fa395115f2426a6e6e1ae9f1b5e54d065c97ef288f3a12061d4cb71f8429c52",
+    "fit": "0d40c996bbfa427b0a80d631f56a7096820935c0b9c5d82015ab9dd3812e3edf",
+    "blind": "14fdbfa7093ebed4ca3609fad7e37edc58358028ac8db86bd1fd9b31a23faeab",
+    "score": "ee0af815d3545b94d44c22076f974bc635599ea883ea043f4a36f6d35233b3d5",
+    "video": "f64120a1dfebfea9df2b81cadc21f38cd63c58e3e5f7e19e9d13af3c4bb05896"
+  },
+  "stage_seals": {
+    "development": {
+      "status": "COMPLETE",
+      "stage": "development",
+      "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+      "files": {
+        "contacts.json": "fb581c5dd275c7a81a0e6e3ba9ea9d9219cfef90099153bc7ca0f6e33d0dc55a",
+        "episodes/index.json": "9c22805738568d94103ad5d713bceb5d0b96fa6f3671f80de135ebb8ed717394",
+        "episodes/seed108011_flexion/report.json": "41bbb3f3c735001ac754c0d175d47d4045d1c16588ff1c44dde8d16a28fbd489",
+        "episodes/seed108011_flexion/trace.npz": "db86ea83c130a0ff1c3dd3bd09bc5d91377727f2db0019bd139ee239722d293c",
+        "episodes/seed108011_original/report.json": "86e039daaec7be4cbcb1ba36efb6618bdd36ea6db37fde51eeb0473682f95190",
+        "episodes/seed108011_original/trace.npz": "6590ec15110348da2478a91497e68737423a0aaa32b9200a393acfff1ae85934",
+        "episodes/seed108012_flexion/report.json": "89bdaed677a91ea0656270d2e6b879feb71fb62d6d318815fde60f195148a2af",
+        "episodes/seed108012_flexion/trace.npz": "5703908fc35343bc1f8696165f5d771b5d86bb90226f077a964d08eef59c74c4",
+        "episodes/seed108012_original/report.json": "c29db34deb7395b7a269abe605137f357b87c3b7985e410e0550a9aa5eefb857",
+        "episodes/seed108012_original/trace.npz": "f72ee5576b9d4e13b29a44eb9a3871a8847febc66c01a02c1df683f1d34b3596",
+        "episodes/seed108013_flexion/report.json": "8f5899d01c54785d66fb15a6fb9292732e0803fb09d8ceffbfed8f7967f08bf3",
+        "episodes/seed108013_flexion/trace.npz": "ed528620da5adb0d3f5da65367de60f87a19759b4b89be0d4dbcd8cb0679edab",
+        "episodes/seed108013_original/report.json": "c53aea23729c7522d3766c365fe93a66c50c57d6fa2f11048621d635b07c7429",
+        "episodes/seed108013_original/trace.npz": "b7f60215cc8696997b5622ad5f7551fee30979df9a640ab2a4bd7101778c8288",
+        "inputs.json": "dca7548227c522d9637aa64f1d73daa095b760d6182b571e5626e1275bfc187a",
+        "measurements.npz": "57404bb8d73298df81cc057507e808ac95e408706cea79f2a40be4275ebb5c29"
+      }
+    },
+    "fit": {
+      "status": "COMPLETE",
+      "stage": "fit",
+      "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+      "files": {
+        "fit/fit.json": "ec594c3768ae78ac240e7c92ad829e3c9b55a2635068cfe74cc343f11096e55c",
+        "fit/fit_started.json": "d01f03868de94c30f84a93817e7620e393a0a0fa508df790719c5f0cba6d2fb5",
+        "fit/models.npz": "35c0fec7ce6fdad60b2798504b64c7d0963fa109373beee10b631a21a9fcddd1",
+        "inputs.json": "c73b7405d021d9471530012ae3a601c6748e9d3ea3c64f4e58ed149bbd52055e"
+      }
+    },
+    "blind": {
+      "status": "COMPLETE",
+      "stage": "blind",
+      "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+      "files": {
+        "episodes/index.json": "3d14bc13099c518aeae0bb31a82357d3f6b8fdf93e191c1b098f70d5da72ef7d",
+        "episodes/seed108101_flexion/report.json": "90719a41702ff6a757e1b8916edde92d4393e9e34e2fcd32b38481c0ab7f2dfc",
+        "episodes/seed108101_flexion/trace.npz": "2156ebbc7fbb43fd3a2f49bcf16655b93a7ed47119cb72293595266cf0cb7fff",
+        "episodes/seed108101_original/report.json": "5b2f2b1d4028578f370cb1593742f0b21a3b09183fffec46c32fbc2423e5bf5d",
+        "episodes/seed108101_original/trace.npz": "ddb65871764aed920f8199ead3b4238577f64afbb6848bb6e70e50c5add109e7",
+        "episodes/seed108102_flexion/report.json": "0dd390d6c856a694caa971f129924d95f796effbfdf359a5b05b66a76d6da451",
+        "episodes/seed108102_flexion/trace.npz": "e38187a4c0b4b573988fd3f6829ef549070208d45da28cc5d3cbd103dfa56e94",
+        "episodes/seed108102_original/report.json": "bf8f9929e408d6a7c72ca0eccf56f5b8075248ac18b824645d3b3da41ee50173",
+        "episodes/seed108102_original/trace.npz": "4e957b0f46ede2de66a75e26c6ff84b730e8bdda460cd1935ee03ceead1233a8",
+        "episodes/seed108103_flexion/report.json": "de5d2041db2dabe02ca334e942df74ce4ca01b30ca70a8f353a68fe5efe01572",
+        "episodes/seed108103_flexion/trace.npz": "89c88e822d17307f3202cd3e228e05726362f205f60ccf451199d2abcbc5c0ec",
+        "episodes/seed108103_original/report.json": "c4390ffcaece2ffa3919f6ad134a74fdec1587f401d7041210cd49c6093476f0",
+        "episodes/seed108103_original/trace.npz": "55b96f01d96c6d135916e9c0a84d7471d5411c778b0537f9bd740e48adf85ea9",
+        "fit_binding.json": "5392c45e189198e75cb9277075cde88afcdeb8d708466fe41e3ca757cf3a6a70",
+        "inputs.json": "5a0c510f3a75a92ecfd072c59a15c7cf25642b77d87b6ef7bfebbd9dad1dfd2f"
+      }
+    },
+    "score": {
+      "status": "COMPLETE",
+      "stage": "score",
+      "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+      "files": {
+        "contacts.json": "e4cce14aca62701419ffeba1167b574e11b6d7e779ae9ca86a17bc2af711e5e7",
+        "forecast/forecast_seal.json": "27226a5ded8e9bc810b4691e9d38a2ce454d6bd2327c40fdc81f309b27622c49",
+        "forecast/predict_started.json": "c22022fd01c9c684ff67d096a3a33182537c6769f3f153367925033c470b3860",
+        "forecast/predictions.npz": "fea0d758da139db31bcf342c43eba37a68a30d697bdf6d328f4674dea1d90a38",
+        "inputs.json": "3c3486a4ecba06a8a5db8b03946e36c1f90bcbc38d6d4a626bcb2c1f6f0ae19b",
+        "measurements.npz": "7c60d619d2fc3ac764ccc0ed57b04f8dba28271a396c18f6b455016ae4790410",
+        "score.json": "fc5fef3f1ebd72ad8f8e5984cb6e271714e088c0f6985b002cc4caae9cab9885"
+      }
+    },
+    "video": {
+      "status": "COMPLETE",
+      "stage": "video",
+      "plan_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+      "files": {
+        "inputs.json": "03bbef100025f027540f6707fa69b43f14130da3eedeadc60c14e0cdf25580a8",
+        "step108.mp4": "a6155286ea515d84dc49f72bb5973e019cd1b434caf6645ac564ea743f78f9b1",
+        "video.json": "228dcb28f112562ab21f52392ae671eaa285fa4363a027be682f9fd37fd9402a"
+      }
+    }
+  },
+  "blind_fit_seal_sha256": "0d40c996bbfa427b0a80d631f56a7096820935c0b9c5d82015ab9dd3812e3edf",
+  "public_files_sha256": {
+    "blind/contacts.json": "e4cce14aca62701419ffeba1167b574e11b6d7e779ae9ca86a17bc2af711e5e7",
+    "blind/measurements.npz": "7c60d619d2fc3ac764ccc0ed57b04f8dba28271a396c18f6b455016ae4790410",
+    "blind/motion_observations.npz": "3aef766481157a3d1bbe11a8b61a4df9fe55e1e3fd5e6d653224be7413d4aa18",
+    "blind/onset.npz": "d47292af485e12526fdf9f5213a145decf7ef23bb4b44e58bc5c7848d665d0b4",
+    "blind/physical_readback.json": "8cad8332f6bc74b28c9e5a053ac905b08f7fe18d565809b0afe0e53c8519de19",
+    "blind/preview_readback.json": "c04f64b4b67a5889ed072b5117157edcb02c8e4cd66f8c6ee9724433a44d83ad",
+    "blind/step_contacts.npz": "b0400358fe66b66a578aafa420c2795d03cf472745690ed3b987f6b512a20fc0",
+    "development/contacts.json": "fb581c5dd275c7a81a0e6e3ba9ea9d9219cfef90099153bc7ca0f6e33d0dc55a",
+    "development/measurements.npz": "57404bb8d73298df81cc057507e808ac95e408706cea79f2a40be4275ebb5c29",
+    "development/motion_observations.npz": "b4d617d7814e102f41f7f2cab8f391bbef34cbcfe9acb85224fa30a5c0d54a13",
+    "development/onset.npz": "5727f03176f4599304b166a0aa730581189e9def590326611a576c1de5072de3",
+    "development/physical_readback.json": "346bb3e29175e9139a682d3e222dc0f7ba70bb9d5b2586ca1dabebc2ca6e255f",
+    "development/preview_readback.json": "e47a38f8226b7b27a21ac7654f004c444a911dd8c8bdae506063f10266e1bb87",
+    "development/step_contacts.npz": "b36f0fdff146409988c9e45129f4298973f1a9cf6a87d3da036c0a729e1d8956",
+    "failed_attempts/guard_video_01.json": "d801687f8e9973935cd73cd1d7861067017497c3d6406a2de0bcfd7b3730d70e",
+    "failed_attempts/guard_video_02.json": "a8a220d904acc9a8191405bce99a0a4b54eabe3ed07bd07c02dd0c9030c83881",
+    "failed_attempts/guard_video_03.json": "f0dadf58c324fc2de7206be9c90a9b938820d0bac69d75b77e413bb389482939",
+    "fit/fit.json": "ec594c3768ae78ac240e7c92ad829e3c9b55a2635068cfe74cc343f11096e55c",
+    "fit/models.npz": "35c0fec7ce6fdad60b2798504b64c7d0963fa109373beee10b631a21a9fcddd1",
+    "resources.json": "fc03086e295a3da70b3dcacea83f76da2c72a2c93e6238723d26b109bfffc128",
+    "score/forecast_seal.json": "27226a5ded8e9bc810b4691e9d38a2ce454d6bd2327c40fdc81f309b27622c49",
+    "score/predictions.npz": "fea0d758da139db31bcf342c43eba37a68a30d697bdf6d328f4674dea1d90a38",
+    "score/score.json": "fc5fef3f1ebd72ad8f8e5984cb6e271714e088c0f6985b002cc4caae9cab9885",
+    "video.json": "228dcb28f112562ab21f52392ae671eaa285fa4363a027be682f9fd37fd9402a"
+  },
+  "film": {
+    "path": "docs/assets/contact108.mp4",
+    "sha256": "a6155286ea515d84dc49f72bb5973e019cd1b434caf6645ac564ea743f78f9b1"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "status": "COMPLETE",
+  "file": "step108.mp4",
+  "split": "blind",
+  "seeds": [
+    108101,
+    108102,
+    108103
+  ],
+  "fps": 25,
+  "frames": 882,
+  "cover_frames": 0,
+  "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+  "native_decisions": 0,
+  "physics_substeps": 0,
+  "new_rays": 0,
+  "model_steps": 0,
+  "policy_updates": 0,
+  "index_sha256": "3d14bc13099c518aeae0bb31a82357d3f6b8fdf93e191c1b098f70d5da72ef7d",
+  "pairs": [
+    {
+      "seed": 108101,
+      "arms": [
+        {
+          "name": "original",
+          "trace": "seed108101_original/trace.npz",
+          "sha256": "ddb65871764aed920f8199ead3b4238577f64afbb6848bb6e70e50c5add109e7",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.168,
+          "first_visible_pose": 109
+        },
+        {
+          "name": "flexion",
+          "trace": "seed108101_flexion/trace.npz",
+          "sha256": "2156ebbc7fbb43fd3a2f49bcf16655b93a7ed47119cb72293595266cf0cb7fff",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.168,
+          "first_visible_pose": 109
+        }
+      ],
+      "first_frame": 0,
+      "last_frame": 293
+    },
+    {
+      "seed": 108102,
+      "arms": [
+        {
+          "name": "original",
+          "trace": "seed108102_original/trace.npz",
+          "sha256": "4e957b0f46ede2de66a75e26c6ff84b730e8bdda460cd1935ee03ceead1233a8",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.144,
+          "first_visible_pose": 108
+        },
+        {
+          "name": "flexion",
+          "trace": "seed108102_flexion/trace.npz",
+          "sha256": "e38187a4c0b4b573988fd3f6829ef549070208d45da28cc5d3cbd103dfa56e94",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.144,
+          "first_visible_pose": 108
+        }
+      ],
+      "first_frame": 294,
+      "last_frame": 587
+    },
+    {
+      "seed": 108103,
+      "arms": [
+        {
+          "name": "original",
+          "trace": "seed108103_original/trace.npz",
+          "sha256": "55b96f01d96c6d135916e9c0a84d7471d5411c778b0537f9bd740e48adf85ea9",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.128,
+          "first_visible_pose": 107
+        },
+        {
+          "name": "flexion",
+          "trace": "seed108103_flexion/trace.npz",
+          "sha256": "89c88e822d17307f3202cd3e228e05726362f205f60ccf451199d2abcbc5c0ec",
+          "status": "COMPLETE",
+          "terminal_reason": "horizon",
+          "ticks": 200,
+          "first_front_step_contact_s": 2.128,
+          "first_visible_pose": 107
+        }
+      ],
+      "first_frame": 588,
+      "last_frame": 881
+    }
+  ],
+  "software_egl": {
+    "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+    "vendor": "Mesa",
+    "egl_device_index": 2,
+    "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+    "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+    "frames": 0,
+    "physics_substeps": 0
+  },
+  "stream": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "25/1",
+    "duration": "35.280000",
+    "nb_read_frames": "882"
+  },
+  "sha256": "a6155286ea515d84dc49f72bb5973e019cd1b434caf6645ac564ea743f78f9b1",
+  "bytes": 3015279,
+  "all_episodes_complete": true
+}

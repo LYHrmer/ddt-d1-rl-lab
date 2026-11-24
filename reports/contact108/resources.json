@@ -1,0 +1,102 @@
+{
+  "development": {
+    "startup_effective_bytes": 7464685568,
+    "minimum_effective_bytes": 5019824128,
+    "peak_group_bytes": 1104355328,
+    "elapsed_s": 50.76629577600397,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_bytes": 4294967296,
+    "reserve_bytes": 2147483648,
+    "unit": "d1-contact108-development-01",
+    "guard_sha256": "1b6fd34a124cdbf26790b3add50627b15a7c60b956f44dc8c2df6583125511fd"
+  },
+  "fit": {
+    "startup_effective_bytes": 7679868928,
+    "minimum_effective_bytes": 7321485312,
+    "peak_group_bytes": 56041472,
+    "elapsed_s": 10.577128281001933,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_bytes": 4294967296,
+    "reserve_bytes": 2147483648,
+    "unit": "d1-contact108-fit-01",
+    "guard_sha256": "65e76bf8be3665969e8bd1ca0a1798101ab893edb6039f807b15841f6bc4cf3a"
+  },
+  "blind": {
+    "startup_effective_bytes": 7781085184,
+    "minimum_effective_bytes": 3545538560,
+    "peak_group_bytes": 1219944448,
+    "elapsed_s": 36.73259662100463,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_bytes": 4294967296,
+    "reserve_bytes": 2147483648,
+    "unit": "d1-contact108-blind-01",
+    "guard_sha256": "298479127e7b8a9243fc78fdf41782b6fc9d20bcdb4700f497024798fe85b47d"
+  },
+  "score": {
+    "startup_effective_bytes": 7633424384,
+    "minimum_effective_bytes": 7594553344,
+    "peak_group_bytes": 41910272,
+    "elapsed_s": 10.572793957020622,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_bytes": 4294967296,
+    "reserve_bytes": 2147483648,
+    "unit": "d1-contact108-score-01",
+    "guard_sha256": "60c34d1ecb549addeed52e1c8e0297ca26a99824560c0ce57bdd4e83a432d9d7"
+  },
+  "video": {
+    "startup_effective_bytes": 5849477120,
+    "minimum_effective_bytes": 2342862848,
+    "peak_group_bytes": 637534208,
+    "elapsed_s": 139.67994352499954,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+    "nice": 10,
+    "threads": 1,
+    "memory_high_bytes": 2147483648,
+    "memory_max_bytes": 3221225472,
+    "swap_max_bytes": 0,
+    "admission_bytes": 4294967296,
+    "reserve_bytes": 2147483648,
+    "unit": "d1-contact108-video-04",
+    "guard_sha256": "6fdfcff387bb2b0691acd0187de83b3389a33d20e688a08f420e25da615cf742"
+  }
+}

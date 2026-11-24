@@ -3,9 +3,13 @@
 [![static-checks](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml/badge.svg)](https://github.com/LYHrmer/ddt-d1-rl-lab/actions/workflows/static-checks.yml)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+[开源学习记录](#开源学习记录) · [运行 C++ 策略回放](docs/cpp_reference34_usage.md)
+
 > **求职向概览（机器人控制 / 部署方向）：[PORTFOLIO.md](PORTFOLIO.md)** — 30 秒定位、时序与安全约束、可核验结果、面试故事、简历条目与边界。
 
 **D1 正逐步转向 SuperMimic 式的模型强化学习。** 全身策略每 20 ms（50 Hz）同时输出 12 个腿关节角目标和 4 个轮速目标。底层以 250 Hz 跟踪目标并限矩，腿部使用位置 PD，车轮使用速度反馈。MuJoCo 以 500 Hz 积分。[动作到力矩的映射](training/d1_rl/interface.py)
+
+**前轮碰到 3 厘米台阶后，多弯一点前膝有什么用？** 12 段闭环全部触阶。三个盲测起点上，两前膝实际多弯约 0.08 rad，机身额外下沉 8.39～8.66 mm，前轮中心的高度变化都不到 0.15 mm。三份世界模型共训练 300 次，预测的前轴位移差在九格中通过 0 格。全身策略保留原参数。[三对慢放视频](docs/assets/contact108.mp4) · [配对实测、模型与策略决定](docs/contact108_results.md)
 
 **轮子接触前能看清哪侧更高吗？** 三段存档姿态上，固定遮挡下的 30 mm 局部隆起场景，八束测距合格 35/72 包，稠密点云合格 69/72 包。对查询点确有高差的 25 包，八束判对并估准 0 包，点云 25 包。点云在台后缘仍出现 6 次误报。此次比较只测感知，训练与动力学积分均为 0。[八束与点云同帧视频](docs/assets/pointcloud100.mp4) · [逐种子结果及失败位置](docs/jeplo_d1_perception_results.md)
 
@@ -251,6 +255,94 @@
 - **跨语言一致性**：64 例真实 C++ ORT 1.10.0 黄金比对最大误差 4.77e-7（容差 1e-5，0 物理步）；12 s 独立 C++ 回放与 Python 复现到 5e-9（04a）与 8 位小数（04b），结构检查各 24/24。
 - **修复导出比较口径与训练监督入口**：新增单样本导出入口匹配实际 batch 1 部署，保留原阈值并记录 batch 64 数值差异；合同 08 权重已通过 Python/C++ ORT 的 64 例检查。新监督器严格核对预检、退出码、完整账本与进程组收尾，资源采样单独留存。见[工程结果](reports/export_engineering10_summary.json)与[说明](docs/engineering_optimization_10.md)。
 - **预算如实记账**：合同 08 结束时累计 13,664,256 transitions / 137,162,750 native；合同 09 后为 18,504,192 / 185,562,110；合同 10 再加入 E0 与未完成训练的 3,912,192 / 39,121,920 后，**全项目累计 22,416,384 transitions / 224,684,030 native**（[05M](reports/contract05m_summary.json)、[08](reports/contract08_summary.json)、[09](reports/contract09_summary.json)、[10](reports/contract10_amended_summary.json)）。失败步同样计入；总账由最终回执重算，不采用较早的 live_status。历史中含一次工具缺陷造成的 ≤1,650 native 预算损失，按上限保守计入并写明原因。
+
+## 开源学习记录
+
+D1 的两个问题是轮子前方有什么，以及改变动作后机器人会怎样运动。这里汇集 D1 与关联仓 wheel 的 46 项源码、论文、接口或本地使用记录，另列 3 个尚待研读的仓库入口。本表核至 2026-11-24。后续研读沿用同一记录方式，给出作者仓库、借鉴点和 D1 验证进度。
+
+| 作者仓库 | 学到了什么 | 本地记录 |
+|---|---|---|
+| [SuperMimic](https://github.com/HybridRobotics/supermimic) | 从采样轨迹拟合可微动力学，在模型里展开短轨迹并向策略反传。 | D1 用原生仿真检验动作收益的方向和幅值。[驻坡盲测](docs/supermimic_late_response99_results.md) |
+| [JEPLO](https://github.com/ASIG-X/JEPLO) | 把激光回波投成深度图，用已发动作预测下一次本体和点云特征。 | D1 分别检验了特征预测和毫米级轮迹高差，改善特征预测后仍有台沿误读。[动作窗口对照](docs/jeplo_action_window103_results.md) |
+| [AME-2](https://github.com/leggedrobotics/ame2_minimal) | 用历史观测更新局部高程和不确定度，让学生策略查询地图。 | 已核对位姿来源、地图融合和训练特权信息。D1 的轮迹地图仍待验证。[代码与论文对读](docs/ame2_learning.md) |
+
+<details>
+<summary>轮足和四足的感知策略、世界模型与可微控制</summary>
+
+| 作者仓库 | 阅读和本地验证情况 |
+|---|---|
+| [XSoma](https://github.com/nico-bohlinger/xsoma) | 用预测关节姿态查足下地形，启发按四个实际轮缘计算间隙。D1 将其列为待测特征。[D1 地形模型笔记](docs/terrain_world91.md) |
+| [LocoWM](https://github.com/zhaozijie2022/locowm) | Go2-W 在第二阶段冻结世界模型，将预测送入残差 PPO。wheel 对读了动作条件与屏蔽预测的对照。[源码核对][wheel84-src] |
+| [FLORES](https://github.com/ZhichengSong6/FLORES) | 对照训练端特权高度点和部署 actor 实际读入的 57 项本体量，作为 D1 观测审计的参考。[观测切片][wheel84-src] |
+| [SRU](https://github.com/leggedrobotics/sru-navigation-sim) | 核对 5 Hz 深度导航与 50 Hz 低层控制如何分工，作为异步感知接口参考。[环境与频率][wheel84-src] |
+| [PROOF](https://github.com/syw-robotics/proof-loco) | 阅读深度学生按不确定度切换的双阈值。wheel 做过遮挡和过期包检查，学习式切换仍待验证。[源码核对][wheel84-src] |
+| [Terrain-Grounded Imagination（TGI）](https://github.com/leggedrobotics/terrain-grounded-imagination) | 阅读可微地形查询和差分检查。D1 在已测双轮迹上核验空间导数。[双轮迹验证](docs/terrain_gradient84_results_20261119.md) |
+| [Open-DiffLoco](https://github.com/MartinOpat/open-diffloco) | 阅读从 MJX 仿真器求梯度的训练和部署入口，作为仅用本体感知的参照。[四足方法对照][wheel84-src] |
+| [Uni-SuperMimic](https://github.com/Motphys/Uni-SuperMimic) | 阅读 G1 在 MuJoCo 与 Motrix 间切换的策略接口，D1 的跨引擎动作响应仍待测。[跨后端核对][wheel85-src] |
+| [DiffRL](https://github.com/NVlabs/DiffRL) | 对读 SHAC 的短时域回报、终端价值与目标 critic。D1 第 81 轮采用固定有限时域。[目标函数笔记](docs/objective81_literature_20261103.md) |
+| [DMO](https://github.com/machines-in-motion/DMO_code) | 核对解耦反传中前向状态和反向梯度的来源，复查 D1 固定轨迹试验可以检验哪一种误差。[反传机制对照](docs/project82_literature_20261103.md) |
+
+</details>
+
+<details>
+<summary>点云、安装位置与机器人描述</summary>
+
+| 作者仓库 | 阅读和本地验证情况 |
+|---|---|
+| [ANYbotics/elevation_mapping](https://github.com/ANYbotics/elevation_mapping) | 按采集时间找坐标变换。D1 用轮速和 IMU 对齐整包回波，回放检验 40 ms 送达延迟。[运动补偿](docs/jeplo_motion_compensation104.md) |
+| [FAST-LIO2](https://github.com/hku-mars/FAST_LIO) · [Livox ROS Driver 2](https://github.com/Livox-SDK/livox_ros_driver2) | 分别核对逐点去畸变和点时间字段。D1 存档里的射线同时采集，只覆盖整包延迟。[采样时钟核对](docs/jeplo_motion_compensation104.md) |
+| [elevation_mapping_cupy](https://github.com/leggedrobotics/elevation_mapping_cupy) · [Point Cloud Library](https://github.com/PointCloudLibrary/pcl) | 分别参考平面法向与拟合误差、深度跳变与遮挡边界。D1 的支撑面读法在两个来源中通过一个。[逐来源结果](docs/support_surface105_results.md) |
+| [OctoMap](https://github.com/OctoMap/octomap) | 阅读论文中的自由空间、首回波与未知区域。D1 按这个区别查后缘旧回波是否围住查询点。[八个离台样本](docs/terrain_history106.md) |
+| [DDTRobot/ddt_ros2_control](https://github.com/DDTRobot/ddt_ros2_control) | 用厂方历史版本逐文件核对 D1 的 MJCF 和 11 份网格，再检查支架间隙。[资产与安装核验](docs/d1_sensor_mount107.md) |
+| [ANYmal D 描述](https://github.com/ANYbotics/anymal_d_simple_description) · [Unitree ROS](https://github.com/unitreerobotics/unitree_ros) | 核对前置传感器的固定关节和光学坐标系，D1 已逐姿态检查两侧光心相对机身的变换。[安装坐标系](docs/d1_sensor_mount107.md) |
+| [Spot SDK](https://github.com/boston-dynamics/spot-sdk) | 参考采集时刻的坐标快照，D1 分开处理采集时视线与送达时轮前查询。[时间与视线检查](docs/d1_sensor_mount107.md) |
+| [WMP-D1-loco](https://github.com/Rangens/WMP-D1-loco) · [DDTRobot/d1_mjlab](https://github.com/DDTRobot/d1_mjlab) | wheel 使用前者的 URDF/STL，并从后者交叉核对自由度、关节顺序、质量和控制量级。[wheel 模型卡][wheel-asset] |
+
+</details>
+
+<details>
+<summary>早期轮腿训练与部署、课程、辨识和评测</summary>
+
+| 作者仓库 | 阅读和本地验证情况 |
+|---|---|
+| [quadruped_robot_lab](https://github.com/Taojunfeng123/quadruped_robot_lab) | 从启停事件和命令课程追到真实生效的配置。D1 按运动、制动、驻车重读已有日志。[阶段诊断](docs/phase_learning14.md) |
+| [XYEGA 轮腿部署](https://github.com/chushanxiaodaoshi/XYEGA_RM2026_WheelLeg_Infatry_RLdeploy) | 阅读低层周期里的最终力矩仲裁。D1 用虚拟时钟测试失效、陈旧状态和退出。[D1 故障测试](docs/watchdog_publisher14.md) |
+| [SCUT wheelbipe_ros2_sim2sim](https://github.com/scutrobotlab/wheelbipe_ros2_sim2sim) | 核对发布频率、动作关节顺序、无效输入及串口超时，作为部署接口参照。[训练与部署源码核对][d1-upstream] |
+| [SCUT wheeled-legged_RL](https://github.com/scutrobotlab/wheeled-legged_RL) | 查明训练端最终执行器配置与 critic 独有观测，和上一行的部署路径交叉核对。[配置与实效][d1-upstream] |
+| [Wheel-Legged-Gym](https://github.com/clearlab-sustech/Wheel-Legged-Gym) | 阅读历史编码器的速度监督、VMC 动作与导出路径。D1 已独立实现并数值检查速度监督候选。[本地实现](docs/velocity_candidate15.md) |
+| [robot_lab](https://github.com/fan-ziqi/robot_lab) | 追踪 Tita/Go2W 的奖励和课程覆盖，记录部署 actor 与训练 critic 各能看见什么。[六仓固定版本对照][d1-upstream] |
+| [legged_gym](https://github.com/leggedrobotics/legged_gym) · [ddt_rl_isaacgym](https://github.com/DDTRobot/ddt_rl_isaacgym) · [DDT_Lab](https://github.com/DDTRobot/DDT_Lab) | wheel 对照四足基线和两代 D1 训练配置的跟踪奖励、动作尺度与采样预算。[逐字段对照][wheel-b22] |
+| [PACE](https://github.com/leggedrobotics/pace-sim2real) | 借鉴按整条激励轨迹留出验证。wheel 用单轮编码器数据检验执行器辨识，数据来自仿真。[编码器实验][wheel-pace] |
+| [ATEC](https://github.com/LYHrmer/atec-robotics-projects) | 从作者另一个项目核对视觉导航到运动命令的接口、分地形课程和失败记录。wheel 接入了基础地形课程。[课程迁移][wheel-atec] |
+| [rliable](https://github.com/google-research/rliable) | 阅读多种子性能分布和分层重采样的方法。wheel 在 B22 方案中区分了三种子区间估计与双种子分离规则。[B22 评测设计][wheel-rliable] |
+
+</details>
+
+<details>
+<summary>仿真与部署工具、仅有论文或文章线索的项目</summary>
+
+| 作者仓库 | 本地使用或查阅范围 |
+|---|---|
+| [MuJoCo](https://github.com/google-deepmind/mujoco) | D1 闭环仿真后端。对照 3.3.0 源码并用合成轮验证了轮缘加速度坐标转换。[WBC 核验](docs/stand_wbc90.md) |
+| [MotrixSim](https://github.com/Motphys/motrixsim) | 阅读官方技术报告及 CPU 射线、接触接口。仓库提供文档与示例，运行时以二进制分发。D1 的独立引擎验证仍待执行。[验证设想][wheel85-src] · [官方 CPU 接口](https://motrixsim.readthedocs.io/en/latest/api_reference/core/motrixsim.html#motrixsim.SceneModel.raycast_closest) |
+| [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) | D1 的速度辅助 PPO 在 v2.7.0 更新函数上改编，增加训练期速度监督。[源码出处与许可](THIRD_PARTY_NOTICES.md#7-stable-baselines3-ppo-更新方法的改编) |
+| [ONNX Runtime](https://github.com/microsoft/onnxruntime) | D1 的 C++ actor 使用单线程 ORT。逐拍回放核对推理动作与 Python 存档。[C++34 回放](docs/cpp_reference34_usage.md) |
+| [mujoco_sim_ros2](https://github.com/rxdu/mujoco_sim_ros2) · [mujoco_ros2_control](https://github.com/rxdu/mujoco_ros2_control) | D1 随附桥接工作区使用这两个包，已在本地副本补上原生物理步和控制周期记录。[本仓复现补丁出处](tools/upstream_reproduction03.md) |
+| [JSON for Modern C++](https://github.com/nlohmann/json) | 对 D1 原生接口测试所需的 41 份模块化头文件逐一核对来源和哈希。[依赖回执](nlohmann/README.md) |
+| [Isaac Lab](https://github.com/isaac-sim/IsaacLab) · [Isaac Sim](https://github.com/isaac-sim/IsaacSim) | 查阅版本化安装文档，对照本机内存与显存要求。D1 本轮训练和评测走 CPU/MuJoCo。[版本与资源记录][d1-upstream] |
+
+另有三条网址线索。Go2-W 长距离行驶论文的作者公开了 [simple_fastlio_localization](https://github.com/kiyoshiiriemon/simple_fastlio_localization)，范围是定位。HYNova 文章另链 [RC_Legged_Training_Simulation](https://github.com/wusi321/RC_Legged_Training_Simulation) 和 [RC_Legged_Control](https://github.com/Dichen33/RC_Legged_Control)。这三项的阅读记录限于论文和文章。[Go2-W 论文的代码公开说明](https://arxiv.org/html/2606.21387v1#:~:text=Code%20availability) · [HYNova 阅读记录][d1-upstream]
+
+</details>
+
+[d1-upstream]: docs/upstream_reference_review_20261017.md
+[wheel84-src]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/perceptive_locomotion_sources84_20261119.md
+[wheel85-src]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/terrain_action85_results_20261120.md
+[wheel-asset]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/d1_model_card.md
+[wheel-b22]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/b22_open_source_review_20261020.md
+[wheel-pace]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/encoder_identification.md
+[wheel-atec]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/atec_rl_curriculum.md
+[wheel-rliable]: https://github.com/LYHrmer/wheel-legged-control-lab/blob/c2163ea05be4919e4ec06e8b7f8db6db0e31ef53/docs/b22_plan48_20261020.md
 
 ## 阅读入口
 

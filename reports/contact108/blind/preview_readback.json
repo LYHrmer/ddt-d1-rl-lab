@@ -1,0 +1,648 @@
+{
+  "split": "blind",
+  "audit": "post_score_physical_surface_preview",
+  "original_packet_counted_once_per_pair": true,
+  "provenance": "The two actors' delivered range channels and capture poses match before physical contact. Privileged world pose and step geometry label these returns retrospectively. The actor received normalized ranges and validity.",
+  "coordinate_clock": "For each acquisition the original environment refreshed its base kinematics at the policy boundary before measuring. De-normalize the archived packet and rotate its body endpoints at capture; delivery follows two policy ticks later.",
+  "packet_fields": [
+    "capture_tick",
+    "delivery_tick",
+    "lead_ms",
+    "top_bits_left",
+    "top_bits_right",
+    "floor_returns",
+    "riser_returns",
+    "unclassified_valid_returns",
+    "invalid_returns"
+  ],
+  "top_mask_bits_in_depression_deg": [
+    82,
+    56,
+    43,
+    33
+  ],
+  "surface_rule": "Classify face interiors only, within half a normalized float32 ULP mapped into metres plus double precision roundoff. Boundary or off-surface returns remain unclassified.",
+  "rows": [
+    {
+      "seed": 108101,
+      "paired_precontact": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "original_trace_sha256": "ddb65871764aed920f8199ead3b4238577f64afbb6848bb6e70e50c5add109e7",
+      "first_contact_ms": 2168,
+      "first_top_packet": {
+        "capture_tick": 0,
+        "delivery_tick": 2,
+        "delivery_s": 0.04,
+        "lead_ms": 2128,
+        "top_depressions_deg_left": [
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          222.6309832661471,
+          648.8856716151923
+        ]
+      },
+      "last_top_packet": {
+        "capture_tick": 100,
+        "delivery_tick": 102,
+        "delivery_s": 2.04,
+        "lead_ms": 128,
+        "top_depressions_deg_left": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          114.02065879095707,
+          783.0246297278736
+        ]
+      },
+      "precontact_packets": [
+        [
+          0,
+          2,
+          2128,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          11,
+          1948,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          19,
+          1788,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          27,
+          1628,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          36,
+          1448,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          42,
+          44,
+          1288,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          50,
+          52,
+          1128,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          59,
+          61,
+          948,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          67,
+          69,
+          788,
+          14,
+          14,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          75,
+          77,
+          628,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          84,
+          86,
+          448,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          92,
+          94,
+          288,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          102,
+          128,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "packets_with_top_both_sides": 13,
+      "counts": {
+        "top": 86,
+        "floor": 17,
+        "front_riser": 1,
+        "unclassified_valid": 0,
+        "invalid": 0
+      },
+      "max_capture_pose_labeled_surface_residual_um": 0.02827042286379644,
+      "max_delivery_pose_same_surface_residual_mm": 6.782496016300349
+    },
+    {
+      "seed": 108102,
+      "paired_precontact": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "original_trace_sha256": "4e957b0f46ede2de66a75e26c6ff84b730e8bdda460cd1935ee03ceead1233a8",
+      "first_contact_ms": 2144,
+      "first_top_packet": {
+        "capture_tick": 0,
+        "delivery_tick": 2,
+        "delivery_s": 0.04,
+        "lead_ms": 2104,
+        "top_depressions_deg_left": [
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          223.70549455539418,
+          650.8821071945698
+        ]
+      },
+      "last_top_packet": {
+        "capture_tick": 100,
+        "delivery_tick": 102,
+        "delivery_s": 2.04,
+        "lead_ms": 104,
+        "top_depressions_deg_left": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          107.67187173406006,
+          786.208464513613
+        ]
+      },
+      "precontact_packets": [
+        [
+          0,
+          2,
+          2104,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          11,
+          1924,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          19,
+          1764,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          27,
+          1604,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          36,
+          1424,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          42,
+          44,
+          1264,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          50,
+          52,
+          1104,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          59,
+          61,
+          924,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          67,
+          69,
+          764,
+          14,
+          14,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          75,
+          77,
+          604,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          84,
+          86,
+          424,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          92,
+          94,
+          264,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          102,
+          104,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "packets_with_top_both_sides": 13,
+      "counts": {
+        "top": 86,
+        "floor": 17,
+        "front_riser": 1,
+        "unclassified_valid": 0,
+        "invalid": 0
+      },
+      "max_capture_pose_labeled_surface_residual_um": 0.023828374468015667,
+      "max_delivery_pose_same_surface_residual_mm": 8.144775043367275
+    },
+    {
+      "seed": 108103,
+      "paired_precontact": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "original_trace_sha256": "55b96f01d96c6d135916e9c0a84d7471d5411c778b0537f9bd740e48adf85ea9",
+      "first_contact_ms": 2128,
+      "first_top_packet": {
+        "capture_tick": 0,
+        "delivery_tick": 2,
+        "delivery_s": 0.04,
+        "lead_ms": 2088,
+        "top_depressions_deg_left": [
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          229.5593085609448,
+          650.1138898384862
+        ]
+      },
+      "last_top_packet": {
+        "capture_tick": 100,
+        "delivery_tick": 102,
+        "delivery_s": 2.04,
+        "lead_ms": 88,
+        "top_depressions_deg_left": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_depressions_deg_right": [
+          82,
+          56,
+          43,
+          33
+        ],
+        "top_x_beyond_front_edge_mm": [
+          125.76283652640113,
+          796.6371804570817
+        ]
+      },
+      "precontact_packets": [
+        [
+          0,
+          2,
+          2088,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          9,
+          11,
+          1908,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          19,
+          1748,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          25,
+          27,
+          1588,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          34,
+          36,
+          1408,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          42,
+          44,
+          1248,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          50,
+          52,
+          1088,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          59,
+          61,
+          908,
+          14,
+          14,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          67,
+          69,
+          748,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          75,
+          77,
+          588,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          84,
+          86,
+          408,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          92,
+          94,
+          248,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          100,
+          102,
+          88,
+          15,
+          15,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "packets_with_top_both_sides": 13,
+      "counts": {
+        "top": 88,
+        "floor": 16,
+        "front_riser": 0,
+        "unclassified_valid": 0,
+        "invalid": 0
+      },
+      "max_capture_pose_labeled_surface_residual_um": 0.02602485874025895,
+      "max_delivery_pose_same_surface_residual_mm": 6.808182131854551
+    }
+  ]
+}

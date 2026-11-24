@@ -1,0 +1,493 @@
+{
+  "split": "development",
+  "analysis": "post_hoc_mechanics",
+  "window_ticks": 32,
+  "episode_index_sha256": "9c22805738568d94103ad5d713bceb5d0b96fa6f3671f80de135ebb8ed717394",
+  "named_qpos_addresses": {
+    "FL_calf_joint": 9,
+    "FR_calf_joint": 13
+  },
+  "definitions": {
+    "peak_signed": "Signed flexion minus original at the largest absolute difference from k through k+horizon, sampled at 50 Hz inclusive. Ties use the earliest boundary.",
+    "front_axle": "Mean world x of the FL and FR wheel centers. Positive points toward the step.",
+    "step_normal_force": "Sum of positive normal forces per wheel against step108 at each 500 Hz substep. Face and rim summaries use individual loaded contacts.",
+    "top_loaded": "Front-wheel contact with at least the trigger load, x at or past the front edge, z within 2 mm below the top or higher, and upward unit normal z at least 0.9 (score108).",
+    "other_loaded": "All other loaded front-wheel step contacts. Signed offsets and terrain-to-wheel normals distinguish an oblique rim reaction from horizontal top support."
+  },
+  "pairs": [
+    {
+      "seed": 108011,
+      "paired_window_available": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "trigger_tick": 107,
+      "first_native_contact_end_s": 2.14,
+      "window_s": [
+        2.139999999999986,
+        2.7799999999999154
+      ],
+      "flexion_minus_original": {
+        "mean_front_calf_angle_rad": {
+          "peak_signed": -0.07947570846571539,
+          "peak_tick": 121,
+          "peak_ticks_after_trigger": 14,
+          "peak_time_s": 2.419999999999955,
+          "at_horizon": 0.001703478737425268,
+          "horizon_abs_fraction_of_peak": 0.021433954730458588
+        },
+        "mean_front_wheel_center_height_mm": {
+          "peak_signed": 0.06912200898115373,
+          "peak_tick": 110,
+          "peak_ticks_after_trigger": 3,
+          "peak_time_s": 2.1999999999999793,
+          "at_horizon": -0.004650847654858126,
+          "horizon_abs_fraction_of_peak": 0.06728461344528036
+        },
+        "front_axle_forward_x_mm": {
+          "peak_signed": 0.14340859439118958,
+          "peak_tick": 126,
+          "peak_ticks_after_trigger": 19,
+          "peak_time_s": 2.519999999999944,
+          "at_horizon": -0.016738164182640958,
+          "horizon_abs_fraction_of_peak": 0.1167166044245761
+        },
+        "base_height_mm": {
+          "peak_signed": -8.55281014593129,
+          "peak_tick": 120,
+          "peak_ticks_after_trigger": 13,
+          "peak_time_s": 2.3999999999999573,
+          "at_horizon": 0.3142721426287949,
+          "horizon_abs_fraction_of_peak": 0.03674489872528028
+        },
+        "base_pitch_deg": {
+          "peak_signed": 1.8058997122313218,
+          "peak_tick": 122,
+          "peak_ticks_after_trigger": 15,
+          "peak_time_s": 2.439999999999953,
+          "at_horizon": 0.016297609092942533,
+          "horizon_abs_fraction_of_peak": 0.009024647926216035
+        }
+      },
+      "arms": {
+        "original": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 135.5528453095747,
+            "wheel": "FL",
+            "native_substep": 1099,
+            "substep_end_s": 2.2
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 135.5528453095747,
+            "wheel": "FL",
+            "native_substep": 1099,
+            "substep_end_s": 2.2
+          },
+          "window_front_wheel_loaded_contact_records": 614,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 614,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.37593819087394786,
+            0.062074149491275765
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.055281222621154924,
+            0.3277706764570551
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7572125365627764,
+            -0.7381424543005878
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6531685651286093,
+            0.674644882259626
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            263,
+            260
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -78.62778017724209,
+            -64.21752661748897
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.66106368998753,
+            -65.51240186176194
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.56852198145974,
+            -65.44645733194938
+          ]
+        },
+        "flexion": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 123.53517293641958,
+            "wheel": "FL",
+            "native_substep": 1104,
+            "substep_end_s": 2.21
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 123.53517293641958,
+            "wheel": "FL",
+            "native_substep": 1104,
+            "substep_end_s": 2.21
+          },
+          "window_front_wheel_loaded_contact_records": 613,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 613,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.35439364874639834,
+            0.07909642221731739
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.06995843802649893,
+            0.3100282728902837
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7571637561489509,
+            -0.7381244532887006
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6532251115614068,
+            0.6746645769990129
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            262,
+            258
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -78.62778017724209,
+            -64.21752661748897
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.6740126364384,
+            -65.53292924367632
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.56367520569434,
+            -65.47728901604482
+          ]
+        }
+      }
+    },
+    {
+      "seed": 108012,
+      "paired_window_available": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "trigger_tick": 108,
+      "first_native_contact_end_s": 2.142,
+      "window_s": [
+        2.1599999999999837,
+        2.7999999999999132
+      ],
+      "flexion_minus_original": {
+        "mean_front_calf_angle_rad": {
+          "peak_signed": -0.07746226035472747,
+          "peak_tick": 121,
+          "peak_ticks_after_trigger": 13,
+          "peak_time_s": 2.419999999999955,
+          "at_horizon": 0.003420098585666498,
+          "horizon_abs_fraction_of_peak": 0.04415180463369697
+        },
+        "mean_front_wheel_center_height_mm": {
+          "peak_signed": 0.17959769295680417,
+          "peak_tick": 137,
+          "peak_ticks_after_trigger": 29,
+          "peak_time_s": 2.73999999999992,
+          "at_horizon": -0.06862901275094657,
+          "horizon_abs_fraction_of_peak": 0.38212636042854314
+        },
+        "front_axle_forward_x_mm": {
+          "peak_signed": 0.14388441229533555,
+          "peak_tick": 123,
+          "peak_ticks_after_trigger": 15,
+          "peak_time_s": 2.4599999999999507,
+          "at_horizon": 0.0343531864385227,
+          "horizon_abs_fraction_of_peak": 0.23875544188907502
+        },
+        "base_height_mm": {
+          "peak_signed": -8.259010966128187,
+          "peak_tick": 120,
+          "peak_ticks_after_trigger": 12,
+          "peak_time_s": 2.3999999999999573,
+          "at_horizon": 0.6640068801503389,
+          "horizon_abs_fraction_of_peak": 0.08039786880942046
+        },
+        "base_pitch_deg": {
+          "peak_signed": 1.765033967131259,
+          "peak_tick": 124,
+          "peak_ticks_after_trigger": 16,
+          "peak_time_s": 2.4799999999999485,
+          "at_horizon": 0.039008192311691614,
+          "horizon_abs_fraction_of_peak": 0.02210053349573341
+        }
+      },
+      "arms": {
+        "original": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 136.5149423391483,
+            "wheel": "FL",
+            "native_substep": 1072,
+            "substep_end_s": 2.146
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 124.79430290401812,
+            "wheel": "FR",
+            "native_substep": 1084,
+            "substep_end_s": 2.17
+          },
+          "window_front_wheel_loaded_contact_records": 636,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 636,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.37418978867603814,
+            0.1185357099282025
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.10171128587339179,
+            0.3275486122954682
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7625456691181238,
+            -0.7424863514441795
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6469343881022195,
+            0.669861193023682
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            289,
+            249
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -67.12724205652515,
+            -64.54187555038688
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -65.95803110299542,
+            -66.26680142041397
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -65.89330287432504,
+            -66.00323530081737
+          ]
+        },
+        "flexion": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 136.5149423391483,
+            "wheel": "FL",
+            "native_substep": 1072,
+            "substep_end_s": 2.146
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 124.79430290401812,
+            "wheel": "FR",
+            "native_substep": 1084,
+            "substep_end_s": 2.17
+          },
+          "window_front_wheel_loaded_contact_records": 637,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 637,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.37591924921415165,
+            0.1185357099282025
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.10171128587339179,
+            0.3293211673719709
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7625526476950923,
+            -0.7425674405206123
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6469261623193212,
+            0.6697713014743667
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            289,
+            249
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -67.12724205652515,
+            -64.54187555038688
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.00521907819007,
+            -66.15090707234228
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -65.86657624980057,
+            -65.97699832306047
+          ]
+        }
+      }
+    },
+    {
+      "seed": 108013,
+      "paired_window_available": true,
+      "arm_status": {
+        "original": "COMPLETE",
+        "flexion": "COMPLETE"
+      },
+      "trigger_tick": 108,
+      "first_native_contact_end_s": 2.158,
+      "window_s": [
+        2.1599999999999837,
+        2.7999999999999132
+      ],
+      "flexion_minus_original": {
+        "mean_front_calf_angle_rad": {
+          "peak_signed": -0.07848201318344294,
+          "peak_tick": 121,
+          "peak_ticks_after_trigger": 13,
+          "peak_time_s": 2.419999999999955,
+          "at_horizon": 0.003352960344567668,
+          "horizon_abs_fraction_of_peak": 0.04272265973517394
+        },
+        "mean_front_wheel_center_height_mm": {
+          "peak_signed": 0.13802571373734907,
+          "peak_tick": 110,
+          "peak_ticks_after_trigger": 2,
+          "peak_time_s": 2.1999999999999793,
+          "at_horizon": 0.025596230634036488,
+          "horizon_abs_fraction_of_peak": 0.18544537782824938
+        },
+        "front_axle_forward_x_mm": {
+          "peak_signed": 0.09977658455511573,
+          "peak_tick": 120,
+          "peak_ticks_after_trigger": 12,
+          "peak_time_s": 2.3999999999999573,
+          "at_horizon": 0.07880776267410283,
+          "horizon_abs_fraction_of_peak": 0.7898422563318962
+        },
+        "base_height_mm": {
+          "peak_signed": -8.514052777426627,
+          "peak_tick": 121,
+          "peak_ticks_after_trigger": 13,
+          "peak_time_s": 2.419999999999955,
+          "at_horizon": 0.6918507629491728,
+          "horizon_abs_fraction_of_peak": 0.081259863079952
+        },
+        "base_pitch_deg": {
+          "peak_signed": 1.7720069106810301,
+          "peak_tick": 124,
+          "peak_ticks_after_trigger": 16,
+          "peak_time_s": 2.4799999999999485,
+          "at_horizon": 0.02284842719121727,
+          "horizon_abs_fraction_of_peak": 0.012894095984329994
+        }
+      },
+      "arms": {
+        "original": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 152.6478640618673,
+            "wheel": "FL",
+            "native_substep": 1095,
+            "substep_end_s": 2.192
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 152.6478640618673,
+            "wheel": "FL",
+            "native_substep": 1095,
+            "substep_end_s": 2.192
+          },
+          "window_front_wheel_loaded_contact_records": 624,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 624,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.3762738151782963,
+            0.2316921813264594
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.20685460615023354,
+            0.32898632150406626
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7565588942497732,
+            -0.7375993022845079
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6539255611547548,
+            0.6752386757802068
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            276,
+            253
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -73.10667993820257,
+            -63.66515252205185
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.58443997255308,
+            -65.57767988705831
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.43681962637466,
+            -65.50380004709572
+          ]
+        },
+        "flexion": {
+          "whole_episode_peak_front_wheel_step_normal": {
+            "force_n": 130.95264821571573,
+            "wheel": "FL",
+            "native_substep": 1096,
+            "substep_end_s": 2.194
+          },
+          "window_peak_front_wheel_step_normal": {
+            "force_n": 130.95264821571573,
+            "wheel": "FL",
+            "native_substep": 1096,
+            "substep_end_s": 2.194
+          },
+          "window_front_wheel_loaded_contact_records": 623,
+          "window_top_loaded_records": 0,
+          "window_top_loaded_native_substeps": 0,
+          "window_other_loaded_records": 623,
+          "window_other_contact_x_minus_edge_mm": [
+            -0.3750843963206685,
+            0.19019050267421456
+          ],
+          "window_other_contact_z_minus_top_mm": [
+            -0.16968543142652573,
+            0.32730354829115305
+          ],
+          "window_other_contact_unit_normal_x": [
+            -0.7565545445930298,
+            -0.7375773984181216
+          ],
+          "window_other_contact_unit_normal_z": [
+            0.6539305934544075,
+            0.6752626017652359
+          ],
+          "window_simultaneous_floor_and_step_loaded_substeps_FL_FR": [
+            275,
+            251
+          ],
+          "window_front_wheel_x_minus_edge_mm": [
+            -73.10667993820257,
+            -63.66515252205185
+          ],
+          "window_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.61613670564847,
+            -65.38836762861472
+          ],
+          "episode_end_wheel_x_minus_edge_mm_FL_FR": [
+            -66.41652990865616,
+            -65.55056048206393
+          ]
+        }
+      }
+    }
+  ]
+}

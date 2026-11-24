@@ -1,0 +1,67 @@
+{
+  "status": "COMPLETE",
+  "model_sha256": "35c0fec7ce6fdad60b2798504b64c7d0963fa109373beee10b631a21a9fcddd1",
+  "spec_sha256": "8781cedd4f3203adbbf42dbba094d9b9d780bb7eda373b37ad78b8859a7e5961",
+  "development": [
+    108011,
+    108012,
+    108013
+  ],
+  "initializations": [
+    108201,
+    108202,
+    108203
+  ],
+  "world_updates": 300,
+  "policy_updates": 0,
+  "source_sha256": {
+    "108011": [
+      "6590ec15110348da2478a91497e68737423a0aaa32b9200a393acfff1ae85934",
+      "db86ea83c130a0ff1c3dd3bd09bc5d91377727f2db0019bd139ee239722d293c"
+    ],
+    "108012": [
+      "f72ee5576b9d4e13b29a44eb9a3871a8847febc66c01a02c1df683f1d34b3596",
+      "5703908fc35343bc1f8696165f5d771b5d86bb90226f077a964d08eef59c74c4"
+    ],
+    "108013": [
+      "b7f60215cc8696997b5622ad5f7551fee30979df9a640ab2a4bd7101778c8288",
+      "ed528620da5adb0d3f5da65367de60f87a19759b4b89be0d4dbcd8cb0679edab"
+    ]
+  },
+  "source_safety": {
+    "108011": [
+      true,
+      true
+    ],
+    "108012": [
+      true,
+      true
+    ],
+    "108013": [
+      true,
+      true
+    ]
+  },
+  "development_response_mm": {
+    "108011": -0.01673816418262808,
+    "108012": 0.03435318643851826,
+    "108013": 0.07880776267410461
+  },
+  "baseline_endpoint_mm": 0.03214092830999826,
+  "empirical_weight_source": "development pairs only",
+  "weights_per_fit": 9,
+  "actuator_time_constant_s": 0.08,
+  "model_step_s": 0.02,
+  "optimizer": {
+    "name": "full-batch Adam",
+    "learning_rate": 0.05,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "epsilon": 1e-08,
+    "penalty": 0.001,
+    "updates_per_initialization": 100
+  },
+  "target": "World-x displacement of mean front-wheel axle from trigger to each endpoint, metres."
+}
