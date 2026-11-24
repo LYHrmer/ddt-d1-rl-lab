@@ -47,4 +47,6 @@
 
 本轮共 12 段、2,400 个决策、24,000 个物理子步、300 次世界模型更新。每个重任务由独立单 CPU 单元串行执行。公开包保留分轮载荷、接触点、每臂前轴与基座位移、两前膝指令偏置、触前观测、三份模型和逐次更新记录。可从仓库根目录运行 `python -B -m tools108.readback108` 重新判定接触、位移、盲测误差和策略结论。[资源回执](../reports/contact108/resources.json) · [来源与哈希](../reports/contact108/provenance.json)
 
+干净检出可使用 Python 3.10，执行 `python -m pip install numpy==2.2.6 gymnasium==1.2.0 mujoco==3.3.0` 后再运行上述复核。Gymnasium 和 MuJoCo 是现有 D1 关节接口包的导入依赖，公开数据复核的物理积分步数为零。[CI 配置](../.github/workflows/contact108.yml)
+
 视频导出遇到三次可用内存低于 2 GiB。第一次和第三次在启动前拦下，第二次中断了离屏渲染。三份记录和本地未完成文件均保留。第四次从六段完整盲测轨迹重新导出，以 Mesa 软件渲染完成 882 帧，运行期间最低有效可用内存为 2.18 GiB。影片编码为 1280 × 720、25 fps、H.264，文件大小 3,015,279 字节。[失败回执](../reports/contact108/failed_attempts) · [影片回执](../reports/contact108/video.json)
