@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "protocol_sha256": "f87c7ec31826f3feebff08971ba531f7618cc9045088df8cec4fc0d5558e6cb6",
+  "files": {
+    "input_audit.json": "004ea5d62c5413ee5e3cd2a64f8233dc1b397ee140fc4918c4172851918a0c9d",
+    "windows.npz": "005f87cd3c2f2bb0177d9063595adb1adf5f301c6c725b30b1506ea33b14b2eb",
+    "predictions.npz": "92d21d9be4aa757bf83d09fe228979fa6b719477571231641272a31fed126219",
+    "report.json": "487906718fe8472284967be2596ca1f39cac12385a30e45e8f43c8abc24590d8"
+  }
+}

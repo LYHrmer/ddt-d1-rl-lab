@@ -1,0 +1,66 @@
+{
+  "source_seeds": [
+    89011,
+    89023
+  ],
+  "episodes": 8,
+  "motion_windows": 128,
+  "observations_per_window": 3,
+  "capture_to_delivery_ticks": 2,
+  "packets_sha256": "a73f2838e37ae94f7ac23a63768710289998f688e4261f63beef09e754e82907",
+  "parent_manifest_sha256": "3e983f54715c33613bae2a13c7ed3723ab37d05781795ecd0b82b4aaf7e4724d",
+  "catalog_sha256": "31c21c14080749ce5eccfc6d08833bac38b2b311ae0535d69ba8492984ee6af9",
+  "windows_sha256": "005f87cd3c2f2bb0177d9063595adb1adf5f301c6c725b30b1506ea33b14b2eb",
+  "measurement_sha256": "e762959a46a5588840b96b4b10e05274c2af394e228ffb96f19f6bec720089c9",
+  "source_trace_sha256": {
+    "89011": "4d4e071ea55a2d9ef3b1d7008467afd68a03eee109f7ddb13b40973c1134706e",
+    "89023": "586d920a0e0c62a5b720e73e652f4eb2b2afd6e3b7c27d00d1a92098767b45c5"
+  },
+  "source_receipt_sha256": {
+    "89011": "0e6312f6716bfa3984d56bc7178bf39bb0c05e102622ce3538b6e14d2a6c1a73",
+    "89023": "7b39c58212d2d2afbc5364967454bb8208fb7c6e47ae17e2a24c545066546121"
+  },
+  "native_first_returns": {
+    "files_sha256": {
+      "train_89011_ep02_narrow_left.npz": "d60748f2f4f9effd93559919af9c922fc3821c594c172ca3a490ba6b46566570",
+      "train_89011_ep02_narrow_right.npz": "e1f6d5d151d4b9a6b8c349099d85c9e33300a59aa07cf0060f553a3f13b9bd2b",
+      "train_89011_ep02_long_left.npz": "39e715a3d87782c0d57ebf5df7ce7950768cf474f71265723e6246b6d0422fb1",
+      "train_89011_ep02_long_right.npz": "80412782ba40f9098883302a2713b5196e92462ff8f5b0ff62222f558d3767d3",
+      "train_89011_ep05_narrow_left.npz": "a28b9d7829038c47eb75ee6e78a81db6e727f4a9ecdbf29828dcd0226d4656ee",
+      "train_89011_ep05_narrow_right.npz": "34ddbd987e1812c0ab77583c05fb3e551ffb1631a9a6461b716c0d43ed193ed6",
+      "train_89011_ep05_long_left.npz": "526dc0db3d05858c61f251759b33ea28a6ef0c1d7603c9534994c645aadeedc5",
+      "train_89011_ep05_long_right.npz": "f6db9681c604545a30359c3f6fe3c67f1bf9f596903fcff280729bd4a847beee",
+      "train_89011_ep08_narrow_left.npz": "5513849501cb054fd5f7ac643b9a090073d0149ce7f3b2a890e7d35b34bb0014",
+      "train_89011_ep08_narrow_right.npz": "488dad8cc1e70cf94de206182373631592361291e1b1b682ee631ee0af59abc1",
+      "train_89011_ep08_long_left.npz": "addabf0dc0c16252a696a5f535e3b0cf916f415b1ee8e7e42ac5f050a755dada",
+      "train_89011_ep08_long_right.npz": "23ec1fdcc5878a4e1b2dd92ff3b1ecda5717821c744830269a0e2a78a7d67a4b",
+      "train_89011_ep11_narrow_left.npz": "25e97acd4722873e6afef6b37512ed5ea1d6a19c53612242c25a89a7de7b4f44",
+      "train_89011_ep11_narrow_right.npz": "675b6221960376b91d6dad03a4a9adf13358300fb43d8aaada0b6da1b4c49f8a",
+      "train_89011_ep11_long_left.npz": "f692f6e0d070fa6e78b8421bb60de03b8eae3044e04388a86c92902701a5f2c0",
+      "train_89011_ep11_long_right.npz": "3bd5cc5691608d8b0692874385f4164330f269ef86fc0f7696e94fabd15d3c10",
+      "train_89023_ep02_narrow_left.npz": "c88dfff676440650c5673008ba28b9989df96703f87850a46fc247749df5589b",
+      "train_89023_ep02_narrow_right.npz": "a49dee1476eb70a1e83a64e04d8da70d65c8858e0f6e12b89e1e9a36c74aa50b",
+      "train_89023_ep02_long_left.npz": "6be91ae09ef834a14375431b042dbfefafefabcc0c399437ce6e0b435f655355",
+      "train_89023_ep02_long_right.npz": "58476b8824ae12dacc294c41192b49f2fac226bdebbb08ec93a1e5f96057a2bd",
+      "train_89023_ep05_narrow_left.npz": "68a2b979c807401d5b921f3c3503fe4308eba5452a94b62c8037982e274b92b0",
+      "train_89023_ep05_narrow_right.npz": "cdf84411ebd47bdbba35604affcdd73a381ba2a4d21a208afd0d48df86163e66",
+      "train_89023_ep05_long_left.npz": "44df9800d5287c6a2875ef17191c4b1692f494dd7efbf3dc2a0f469d5f1a2340",
+      "train_89023_ep05_long_right.npz": "3359f63b6f444706229de46718fcd26721f199ad9ffcfe38fde376671bd73e87",
+      "train_89023_ep08_narrow_left.npz": "17ea4cc3af0152a8cf036ce75b9db5075ff093f9e1fb75cf7b3d3000b5e26b58",
+      "train_89023_ep08_narrow_right.npz": "e16f6b6a528142426b9792bc37fa55f2181b0ad00138af374d07701f0aacde0f",
+      "train_89023_ep08_long_left.npz": "2c1816057d01366c74c0fc3f2cb2907239573b1bd8f6d5551f8959703206ad47",
+      "train_89023_ep08_long_right.npz": "27f90c695a49aa2f9bfcca9c38d77c285741ae454448737891e258514f32a06a",
+      "train_89023_ep11_narrow_left.npz": "620ec2be0b514f455235aae8884ec22591892dd6a64541c94315a2f044cb5556",
+      "train_89023_ep11_narrow_right.npz": "b846f0df8456c9f5067bcf67024c12ed2ff5e5e262cc03c75d369194fbef9987",
+      "train_89023_ep11_long_left.npz": "fcb94c45ad6c10a6ee380c557de5878082b55e83ae671b72f267a14e5bd5d74a",
+      "train_89023_ep11_long_right.npz": "438eb5e53f00ef25b5bdb9d1f83d3bff0ebd637fd3e36992c915c9e29e1f65ac"
+    },
+    "file_count": 32,
+    "physical_clouds": 512,
+    "native_ray_bins_checked": 266240,
+    "public_view_bins_checked": 532480,
+    "public_float32_equals_rounded_native": true,
+    "max_valid_range_roundoff_m": 5.5564933765239743e-08,
+    "validity_and_mask_exact": true
+  }
+}

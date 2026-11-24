@@ -1,0 +1,17 @@
+{
+  "startup_effective_bytes": 9649811456,
+  "minimum_effective_bytes": 9301336064,
+  "peak_group_bytes": 74604544,
+  "elapsed_s": 11.351338641979964,
+  "owned_cgroup_children_empty": true,
+  "cpu_affinity": [
+    0
+  ],
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "unit": "d1-surface105-readback-01",
+  "nice": 10,
+  "memory_high_bytes": 2147483648,
+  "memory_max_bytes": 3221225472,
+  "swap_max_bytes": 0,
+  "guard_sha256": "02774c930faa572413f0142ae5e868abb89bcd04c17a2d40dd1d36fe9651b87c"
+}
