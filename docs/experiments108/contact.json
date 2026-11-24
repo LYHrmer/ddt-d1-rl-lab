@@ -1,0 +1,29 @@
+{
+  "base_commit": "5ed222a74ae1612e88a5fa4c3dcae3c118a00c06",
+  "checkpoint": "evidence/uphill89/training_01/mixed_89011/policy.zip",
+  "checkpoint_sha256": "9663c97d27ad307fb71ca2efbadf0fa3e1fa7c9e87b8b0e40d8a05f22ab8b4c0",
+  "geometry": {"front_x_m": 0.45, "length_m": 1.0, "half_width_m": 0.70, "height_m": 0.03},
+  "arms": ["original", "flexion"],
+  "development": [108011, 108012, 108013],
+  "blind": [108101, 108102, 108103],
+  "ticks": 200,
+  "pulse_ticks": 16,
+  "pulse_rad": -0.08,
+  "trigger_n": 1.0,
+  "horizon": 32,
+  "clock": "At the first native substep where either front wheel develops 1 N or more normal force against the named physical box, register the following 50 Hz boundary. For 16 issued actions from that boundary offset FL_calf and FR_calf equally. Keep the original one-tick motor FIFO. Report contact time at 500 Hz.",
+  "fixed": "Same archived deterministic actor, original eight delivered ranges, reset, PD, wheel servo, timestep, command profile and physical terrain in both arms. No privileged contact force, terrain labels or future state in actor or model features. The event times the experiment and supplies labels.",
+  "primary": "At boundary trigger+32 minus trigger, compare mean front-wheel axle world-x displacement, flexion minus original. Positive means more forward axle displacement in this window; also report base displacement and wheel loading. Start-paired observations and states must match through the trigger.",
+  "data_gate": "For all three development resets require two complete matched records, loaded step contact, a complete 32-decision window and a delivered front-knee intervention. Retain complete runs with poor or adverse motion. Flag endpoints smaller than 1 mm as unresolved for the action-direction claim. Keep failed and partial attempts separately.",
+  "model": {
+    "initializations": 3, "updates_per_model": 100,
+    "form": "Learn a differentiable local forced response under the frozen closed-loop policy. Initialize from onboard wheel speed and front knee angles available by intervention. Simulate one-tick actuation delay and the known pulse. Learn acceleration coefficients and integrate to predict forward front-axle displacement over the 32 decisions.",
+    "baseline": "Mean measured action response from the three development resets; also report zero-response error. All features, normalization and fits use development only. Seal the three weights before collecting blind outcomes. Seal predictions from start observations before scoring the results.",
+    "resolution_mm": 1.0, "relative_error_max": 0.25,
+    "gate": "All three physical held-out differences must resolve 1 mm. All three fits must predict the correct sign and lie within 25% of magnitude on each of the three resets. Each model must strictly beat the train-only mean response in held-out mean absolute error. Evaluate falls/contact safety separately for both arms.",
+    "policy_decision": "Only a qualifying, safe, uniformly positive local action effect supports a next policy experiment in this direction. The experiment identifies one finite action contrast. The full policy has 16 outputs and its parameter gradient requires independent validation."
+  },
+  "budget": {"development_episodes": 6, "blind_episodes": 6, "total_native_decisions_max": 2400, "total_physics_substeps_max": 24000, "world_updates_max": 300, "policy_updates": 0},
+  "video": "Show all three independent blind pairs in seed order, or the three development pairs if independent acquisition could not be completed. Replay recorded poses, slow real contacts, label arms, pauses and any early termination. No cover or additional dynamics.",
+  "resources": {"nice":10, "threads":1, "memory_high_bytes":2147483648, "memory_max_bytes":3221225472, "swap_max_bytes":0, "admission_bytes":4294967296, "reserve_bytes":2147483648, "supervisor_sha256":"236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"}
+}
