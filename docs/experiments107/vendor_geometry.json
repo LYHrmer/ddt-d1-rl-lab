@@ -1,0 +1,20 @@
+{
+  "repository":"https://github.com/DDTRobot/ddt_ros2_control",
+  "commit":"4f5d9621a90282ddf4865078bbfa9ca7669f0698",
+  "mesh_directory_upstream":"urdfs/d1h_description/meshes",
+  "robot_upstream":"urdfs/d1_description/mujoco/robot.xml",
+  "git_blobs_in_local_d1_description":{
+    "mujoco/robot.xml":"3df1db138aa83648bb2fec2c9bed57aaed41379e",
+    "meshes/L_calf.STL":"a10fc366aa15f80298e98564d7794c6ae2ec098e",
+    "meshes/L_foot.STL":"27d1b6d04567977105e6e6db6b62e6ce4daf1fd4",
+    "meshes/L_hip.STL":"df6b6f03614a29393a2fb08946f03a002049f12a",
+    "meshes/L_thigh.STL":"a3cd7d581dbd4356990b90b2abe19221cb961f0d",
+    "meshes/R_calf.STL":"b234eebda54fce8378b16d1ecb16f30e3339c0ab",
+    "meshes/R_foot.STL":"4b207c06fdf0f3eb404c48e593ef214a980d5a46",
+    "meshes/R_hip.STL":"513ab4b5d76536b6131f537a7a2d9a465490d9b3",
+    "meshes/R_thigh.STL":"faed8384ee961e55a8a549d5a2afc52d74fc0313",
+    "meshes/base_link.STL":"f3de2211da833cf6c44f0ad7f4b83fcd729f8ea1",
+    "meshes/docking_Link.STL":"958c2a2c4f2f21476f653333cf28e60bfd39f05f",
+    "meshes/funtion_Link.STL":"f7e77dd6d569c658ddb59d0f9df57551f0769091"
+  }
+}
