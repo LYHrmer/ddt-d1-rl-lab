@@ -1,3 +1,5 @@
+import subprocess
+import sys
 import unittest
 
 from tools112.run_surface import paths
@@ -6,6 +8,15 @@ from tools112.surface_results import verdict
 
 
 class SurfaceDiagnosis(unittest.TestCase):
+    def test_public_reader_works_without_native_simulation_packages(self):
+        script = """
+import sys
+for name in ("gymnasium", "mujoco", "onnxruntime"):
+    sys.modules[name] = None
+from tools112.surface_results import verify
+"""
+        subprocess.run([sys.executable, "-B", "-c", script], check=True)
+
     def test_separate_speed_and_stop_evidence(self):
         plane = dict(speed_m_s=1.55,stop_tail_max_m_s=.025)
         speed_only = paired_scores(plane,dict(speed_m_s=1.44,stop_tail_max_m_s=.030))

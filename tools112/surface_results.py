@@ -6,7 +6,6 @@ from tempfile import TemporaryDirectory
 
 import numpy as np
 
-from tools88.export88 import resources
 from tools91.launch91 import ROOT, digest, read, require, write
 from tools111.control import SPEED_GAIN
 from tools111.replay import check_episode
@@ -97,6 +96,7 @@ def install_json(target, content):
 
 
 def publish():
+    from tools88.export88 import resources
     _, survey_guard, s = recorded("survey")
     verify_survey(s["survey"])
     cases = []
@@ -173,6 +173,7 @@ def verify():
 
 def video(publish_video):
     if publish_video:
+        from tools88.export88 import resources
         from tools112.keyframe_video import INITIAL, completed
         out, guard, r = completed()
         f = r["film"]
