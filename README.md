@@ -13,6 +13,8 @@
 
 **轮前激光雷达怎样影响越障？** D1 在同一条路上驶过 4° 上下坡、25 mm 左右错相起伏和 30 mm 台阶。雷达调速与抬腿同时开启时，三个起点均在触阶前给出指令，四轮均在台面和出口承重。中央三米实测 1.389～1.399 m/s，速度和停车验收 0/3。停车末半秒，三次的四轮目标都持续向后，机身各倒退约 45 mm。[复合地形实测慢放](docs/assets/lidar111.mp4) · [逐起点对照与中断记录](docs/lidar_compound111.md#复合路线实测) · [轮速目标与实测力矩](docs/lidar_compound111.md#停车时四轮收到什么目标)
 
+**还没遇到坡，为什么已经慢了？** 在三个相同起点上，仅把解析平面换成完全平坦的高度场，中央三米均速各降低 0.176～0.185 m/s，停车末半秒的后退距离由 13 mm 左右增至约 45 mm。这个对照复现了复合路上的两种症状。[同一时钟的机器人慢放](docs/assets/surface112.mp4) · [三个起点与轮地接触记录](docs/surface112_results.md)
+
 在原生复合路台阶前，两个射线接口对同一帧给出了不同结果，282/520 束有距离偏差，最大 55.08 mm。切换到逐束首回波后，静止姿态下测得减速指令 0.045 m/s、左右前腿各抬高 12 mm 的目标。已用三条高速平地存档独立复算关节目标几何。[雷达与腿部运动学核验](docs/lidar_compound111.md#原生雷达与腿目标核验)
 
 **自训策略的平地加速卡在哪里？** 三个独立开发起点上，扩大全身策略的轮速量程后，机身前向峰值达到 2.40～2.41 m/s，随后在加速期失稳。加入原量程与四轮速度参考对照后，9 段均提前终止，巡航通过 0/9。半速回放显示同一起点两种控制下机身降低的过程。[平地实测录像](docs/assets/speed109.mp4) · [逐起点速度与支撑分析](docs/speed109_results.md)
@@ -331,7 +333,7 @@ D1 的两个问题是轮子前方有什么，以及改变动作后机器人会�
 
 | 作者仓库 | 本地使用或查阅范围 |
 |---|---|
-| [MuJoCo](https://github.com/google-deepmind/mujoco) | 核对 3.3.0 的轮缘加速度坐标转换与高度场接触表示，定位复合路线平坦段的速度偏差。[WBC 核验](docs/stand_wbc90.md) · [轮地响应和诊断边界](docs/lidar_compound111.md#为什么下一步先查轮地速度响应) |
+| [MuJoCo](https://github.com/google-deepmind/mujoco) | 核对 3.3.0 的轮缘加速度坐标转换和平面、高度场两条碰撞检测路径。三对等高地面闭环复现了巡航降速与停车后退。[WBC 核验](docs/stand_wbc90.md) · [同姿态接触点与闭环测量](docs/surface112_results.md) |
 | [MotrixSim](https://github.com/Motphys/motrixsim) | 阅读官方技术报告及 CPU 射线、接触接口。仓库提供文档与示例，运行时以二进制分发。D1 的独立引擎验证仍待执行。[验证设想][wheel85-src] · [官方 CPU 接口](https://motrixsim.readthedocs.io/en/latest/api_reference/core/motrixsim.html#motrixsim.SceneModel.raycast_closest) |
 | [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) | D1 的速度辅助 PPO 在 v2.7.0 更新函数上改编，增加训练期速度监督。[源码出处与许可](THIRD_PARTY_NOTICES.md#7-stable-baselines3-ppo-更新方法的改编) |
 | [ONNX Runtime](https://github.com/microsoft/onnxruntime) | D1 的 C++ actor 使用单线程 ORT。逐拍回放核对推理动作与 Python 存档。[C++34 回放](docs/cpp_reference34_usage.md) |

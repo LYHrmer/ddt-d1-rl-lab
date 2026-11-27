@@ -15,6 +15,20 @@ from tools112.surface import SEEDS, reference
 NAME = "D1_等高地面_巡航失速与停车后退_112.mp4"
 
 
+def frame_schedule(segment, gates):
+    """Keep both crossings and the final half second aligned on the original clock."""
+    start, end = (min(gates)-32,max(gates)+8) if segment == "cruise" else (520,600)
+    landmarks = gates if segment == "cruise" else [525,575]
+    ticks = sorted({*range(start,end+1,4),start,end,*landmarks})
+    frames = []
+    for index,tick in enumerate(ticks):
+        delta = ticks[index+1]-tick if index+1 < len(ticks) else 1
+        slow = 2 if segment == "braking" and tick >= 575 else 1
+        hold = FPS-1 if tick in (gates[0],575,600) else 0
+        frames.append((tick,slow*delta+hold))
+    return frames
+
+
 def ground_line(mj, view, xy, yaw, half_width):
     marker = view.geoms[view.ngeom]
     c, s = np.cos(yaw), np.sin(yaw)
@@ -37,8 +51,7 @@ def render(out):
     field = field_record["episode"]
     cases = ((plane_path,plane,"解析平面"),(field_folder/"trace.npz",field,"等高网格地面"))
     gates = [int(np.ceil(r["motion"]["gate_times_s"][-1]*50.)) for _,r,_ in cases]
-    cruise = range(min(gates)-32,max(gates)+9)
-    brake = range(520,601)
+    schedules = {s:frame_schedule(s,gates) for s in ("cruise","braking")}
     title, label, caption = chinese_font(35,True), chinese_font(28), chinese_font(24)
     frames = 0
     movie = out/NAME
@@ -52,6 +65,8 @@ def render(out):
             if side:
                 flatten(model)
             model.vis.global_.offwidth, model.vis.global_.offheight = 422, 326
+            model.vis.quality.offsamples = 0
+            model.vis.quality.shadowsize = 128
             renderer = stack.enter_context(mj.Renderer(model,width=422,height=326))
             with np.load(path,allow_pickle=False) as z:
                 pose = z["qpos"]
@@ -64,8 +79,8 @@ def render(out):
                            _wheel_cylinders(model,mj.mjtGeom.mjGEOM_CYLINDER),pose,axle,yaw[575],distance))
         proc = encoder(movie)
         try:
-            for segment, ticks in (("cruise",cruise),("braking",brake)):
-                for k in ticks:
+            for segment, schedule in schedules.items():
+                for k, repeat in schedule:
                     cruise_view = segment == "cruise"
                     frame = Image.new("RGB",(WIDTH,HEIGHT),"#16242d")
                     draw = ImageDraw.Draw(frame)
@@ -97,7 +112,6 @@ def render(out):
                     guide = "橙线固定在 6 米处" if cruise_view else "橙线标出本车 11.50 秒的前轴位置"
                     draw.text((18,673),f"起点 {seed}  ·  仿真 {k/50:.2f} 秒  ·  {guide}  ·  原生轨迹慢放",
                               font=caption,fill="#dce8ea")
-                    repeat = FPS if k in (gates[0],575,600) else 2 if k>575 else 1
                     pixels = frame.tobytes()
                     for _ in range(repeat):
                         proc.stdin.write(pixels)
@@ -110,5 +124,5 @@ def render(out):
                 proc.kill()
                 proc.wait()
     return dict(filename=NAME,seed=seed,bytes=movie.stat().st_size,sha256=digest(movie),frames=frames,
-                shown_ticks=[[cruise.start,cruise.stop-1],[brake.start,brake.stop-1]],driver=driver,
+                shown_ticks={s:[k for k,_ in schedule] for s,schedule in schedules.items()},driver=driver,
                 trace_sha256=[r["trace_sha256"] for _,r,_ in cases],stream=verify_video(movie,frames),physics=0)

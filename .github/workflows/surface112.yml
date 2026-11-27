@@ -1,0 +1,36 @@
+name: D1 equal-height surface diagnosis
+on:
+  push:
+    paths: &surface_paths
+      - 'tools112/**'
+      - 'tools111/**'
+      - 'tools110/**'
+      - 'tools100/sensor100.py'
+      - 'training/d1_rl/interface.py'
+      - 'tests/test_surface112.py'
+      - 'reports/surface112/**'
+      - 'reports/lidar_compound111/**'
+      - 'reports/speed110/results.json'
+      - 'docs/experiments100/pointcloud_density.json'
+      - 'docs/speed_response112_proposal.md'
+      - 'docs/assets/surface112.mp4'
+      - '.github/workflows/surface112.yml'
+  pull_request:
+    paths: *surface_paths
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet numpy==2.2.6
+      - run: python -B -m unittest discover -s tests -p test_surface112.py
+      - run: python -B -m tools112.surface_results --video

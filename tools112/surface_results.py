@@ -120,8 +120,10 @@ def publish():
                         unit=out.name,resources=resources(guard))
         cases.append(case)
     failed = {}
+    physical_guards = {"guard_survey"}
+    physical_guards.update(f"guard_{seed}" for seed in SEEDS)
     for f in sorted(BASE.glob("guard_*/report.json")):
-        if "video" not in f.parent.name and read(f)["status"] != "COMPLETE":
+        if f.parent.name.rsplit("_",1)[0] in physical_guards and read(f)["status"] != "COMPLETE":
             failed[f.parent.name] = digest(f)
             install(f,PUBLIC/"resources"/(f.parent.name+".json"),digest(f))
     install_json(PUBLIC/"results.json",dict(sources=bindings(),proposal_sha256=PLAN_SHA,reference_manifest_sha256=REFERENCE_SHA,
@@ -171,10 +173,19 @@ def verify():
 
 def video(publish_video):
     if publish_video:
-        out, guard, r = recorded("video")
+        from tools112.keyframe_video import INITIAL, completed
+        out, guard, r = completed()
         f = r["film"]
         install(out/f["filename"],MOVIE,f["sha256"])
-        install_json(PUBLIC/"video.json",dict(film=f,resources=resources(guard),renderer_sha256=r["renderer_sha256"]))
+        admission_stops = {}
+        for file in sorted(BASE.glob("guard_d1-surface112-keyframes-*/report.json")):
+            if file.parent != guard:
+                require(not read(file)["child_started"], "unaccounted started film")
+                admission_stops[file.parent.name] = digest(file)
+                install(file,PUBLIC/"resources"/(file.parent.name+".json"),digest(file))
+        install_json(PUBLIC/"video.json",dict(film=f,resources=resources(guard),renderer_sha256=r["renderer_sha256"],
+                     unit=r["unit"],first_render_guard_sha256=digest(INITIAL),
+                     first_render_reservation_sha256=digest(BASE/"video_01/reservation.json"),admission_stops=admission_stops))
     receipt = read(PUBLIC/"video.json")
     f = receipt["film"]
     _, ref = reference(SEEDS[0])
@@ -184,6 +195,13 @@ def video(publish_video):
             and 0 < f["bytes"] <= 5_000_000 and f["frames"] == int(f["stream"]["nb_read_frames"])
             and f["stream"]["codec_name"] == "h264" and "llvmpipe" in f["driver"]["renderer"].lower()
             and receipt["renderer_sha256"] == digest(ROOT/"tools112/surface_video.py"),"invalid paired video")
+    original = PUBLIC/"resources/video_01.json"
+    require(read(original)["status"] == "INCOMPLETE" and read(original)["child_started"]
+            and digest(original) == receipt["first_render_guard_sha256"]
+            and digest(PUBLIC/"reservations/video_01.json") == receipt["first_render_reservation_sha256"],
+            "missing interrupted full-frame export")
+    for unit, sha in receipt["admission_stops"].items():
+        require(digest(PUBLIC/"resources"/(unit+".json")) == sha,"missing render admission receipt")
 
 
 if __name__ == "__main__":

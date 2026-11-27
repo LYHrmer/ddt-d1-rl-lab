@@ -1,0 +1,97 @@
+{
+  "film": {
+    "filename": "D1_\u7b49\u9ad8\u5730\u9762_\u5de1\u822a\u5931\u901f\u4e0e\u505c\u8f66\u540e\u9000_112.mp4",
+    "seed": 111011,
+    "bytes": 421159,
+    "sha256": "42ff1f71055a0a2c87517d0124890603476dba922f6caa01c5f0d572999940c3",
+    "frames": 251,
+    "shown_ticks": {
+      "cruise": [
+        273,
+        277,
+        281,
+        285,
+        289,
+        293,
+        297,
+        301,
+        305,
+        309,
+        313,
+        317,
+        321,
+        325,
+        329,
+        333,
+        336,
+        337,
+        341,
+        344
+      ],
+      "braking": [
+        520,
+        524,
+        525,
+        528,
+        532,
+        536,
+        540,
+        544,
+        548,
+        552,
+        556,
+        560,
+        564,
+        568,
+        572,
+        575,
+        576,
+        580,
+        584,
+        588,
+        592,
+        596,
+        600
+      ]
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "trace_sha256": [
+      "86ba4c6b444df5aa5ac60ed2162bad32d8c014cd5e2cc75052371b788c2eda45",
+      "38b628c77a4745833384590fb77cf881e8219f0176cb78d807cd0562b9c8e4c3"
+    ],
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "10.040000",
+      "nb_read_frames": "251"
+    },
+    "physics": 0
+  },
+  "resources": {
+    "startup_effective_bytes": 6014873600,
+    "minimum_effective_bytes": 4775497728,
+    "peak_group_bytes": 857042944,
+    "elapsed_s": 28.458317257998715,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "renderer_sha256": "03630f02f9f1c1fc6387c4ee3039a3aa8888d6c33ba86e8e6070f369f910faed",
+  "unit": "d1-surface112-keyframes-01",
+  "first_render_guard_sha256": "74858b77dfc8cef82c6664b5e62fafbf3e511c6473759f87c3106e9a9e4cf561",
+  "first_render_reservation_sha256": "448605fcc8dfe4b2992766d7a9b3bae7f8faaba5b380390636221ef4ca231a8b",
+  "admission_stops": {}
+}
