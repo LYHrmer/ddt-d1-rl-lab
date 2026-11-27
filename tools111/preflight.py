@@ -59,7 +59,7 @@ def run():
             quat = data.sensor("trunk_quat").data.copy()
             wheel_xy = (wheel_centers @ body_to_level(quat))[:, :2]
             odom = WheelOdometry(yaw_from_quat(quat))
-            packet, distances, valid = lidar.capture(0, data, quat, odom)
+            packet, distances, valid, shadow = lidar.capture(0, data, quat, odom)
             rays += 1040
             # Compare batch raycasts to independent scalar first returns on both mounts.
             rot = data.xmat[lidar.base].reshape(3, 3)
@@ -77,7 +77,7 @@ def run():
             for k in range(2, 9):
                 speed, _, lift = c.targets(k, 1.5, 0., odom, wheel_xy)
             reduction = c.gain*1.5 - speed
-            result = dict(layout=layout, pitch_rad=pitch, valid=int(valid.sum()), bins=c.coverage.tolist(),
+            result = dict(layout=layout, pitch_rad=pitch, valid=int(valid.sum()), self_hits=int(shadow.sum()), bins=c.coverage.tolist(),
                           speed_reduction_m_s=reduction, demand_m=lift.tolist())
             if layout == "flat":
                 assert reduction == 0. and max(lift) == 0., result

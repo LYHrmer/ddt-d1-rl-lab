@@ -26,22 +26,23 @@ class Lidar:
         near, far = (self.geometry[k] for k in ("range_min_m", "range_max_m"))
         n = len(self.directions)
         geom = np.empty(n, np.int32)
-        points, ranges, validities = [], [], []
+        points, ranges, validities, shadows = [], [], [], []
         for mount in self.mounts:
             origin = data.xpos[self.base] + rotation @ mount
             all_hits, moving_hits = np.empty(n), np.empty(n)
             for include_static, distances in ((True, all_hits), (False, moving_hits)):
                 mj.mj_multiRay(self.model, data, origin, rays, None, include_static, -1, geom, distances, n, far)
                 self.ray_calls += n
-            valid = (all_hits >= near) & (all_hits <= far)
-            valid &= ~((moving_hits >= 0.) & (np.abs(moving_hits-all_hits) <= 1e-8))
+            self_hit = (moving_hits >= 0.) & (np.abs(moving_hits-all_hits) <= 1e-8)
+            valid = (all_hits >= near) & (all_hits <= far) & ~self_hit
             local = (mount + self.directions*all_hits[:, None]) @ level
             local[~valid] = np.nan
             points.append(local)
             ranges.append(all_hits)
             validities.append(valid)
+            shadows.append(self_hit)
         packet = Packet(tick, np.vstack(points), odom.xy.copy(), odom.yaw)
-        return packet, np.concatenate(ranges), np.concatenate(validities)
+        return packet, np.concatenate(ranges), np.concatenate(validities), np.concatenate(shadows)
 
 
 class LegGeometry:

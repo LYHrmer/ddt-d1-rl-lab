@@ -79,10 +79,10 @@ def drive(plant, session, rows, counts, layout, arm, gain):
         odom.update(yaw_from_quat(quat), dq[WHEEL_INDICES])
         wheel_xy = (geometry.centers(q) @ body_to_level(quat))[:, :2]
         if capture_due(k):
-            pending, distances, valid = lidar.capture(k, data, quat, odom)
+            pending, distances, valid, shadow = lidar.capture(k, data, quat, odom)
             counts["packets"] += 1
             counts["ray_queries"] = lidar.ray_calls
-            for key, value in (("capture_tick", k), ("range_m", distances), ("range_valid", valid)):
+            for key, value in (("capture_tick", k), ("range_m", distances), ("range_valid", valid), ("self_hit", shadow)):
                 rows[key].append(value)
         if pending is not None and k == pending.tick+2:
             preview.observe(k, pending, odom, wheel_xy)
@@ -107,6 +107,8 @@ def drive(plant, session, rows, counts, layout, arm, gain):
                 data.qfrc_applied[:] = 0.
                 data.qfrc_applied[plant.dof_ids] = tau
                 data.ctrl[:] = 0.
+                if sub == 0:
+                    first_torque = data.qfrc_applied[plant.dof_ids].copy()
                 counts["servo"] += 1
                 saturation |= sat[WHEEL_INDICES]
             mj.mj_step(model, data)
@@ -127,7 +129,7 @@ def drive(plant, session, rows, counts, layout, arm, gain):
                   or np.arccos(np.clip(1.-2.*(qx*qx+qy*qy), -1., 1.)) > .6)
         values = dict(base_cmd=gain*cmd, actor_vx=vx, actor_wz=wz, actor_frame_command=frame[6:9].copy(),
                       imu_yaw=odom.yaw, wheel_query_xy=wheel_xy,
-                      imu_quat=quat.copy(), encoder_wheel_rad_s=dq[WHEEL_INDICES].copy(),
+                      imu_quat=quat.copy(), encoder_wheel_rad_s=dq[WHEEL_INDICES].copy(), first_torque_nm=first_torque,
                       odom_travel=odom.travel, capture_used=preview.last_packet, coverage=preview.coverage.copy(),
                       lift_demand=lift, raw=raw, issued=issued, applied=previous_issued, issued_lift_fk=issued_fk,
                       applied_lift_fk=previous_lift, wheel_saturation=saturation, exit_contact=exit_load,
@@ -143,7 +145,7 @@ def episode(out, seed, layout, arm, gain, session):
     out.mkdir(exist_ok=False)
     settings = dict(seed=seed, layout=layout, arm=arm, gain=gain)
     write(out / "reservation.json", settings)
-    keys = ("time xy vxy qpos qvel wheels_xy measured_relative_z front_extent_x capture_tick range_m range_valid "
+    keys = ("time xy vxy qpos qvel wheels_xy measured_relative_z front_extent_x capture_tick range_m range_valid self_hit first_torque_nm "
             "base_cmd actor_vx actor_wz actor_frame_command imu_yaw wheel_query_xy imu_quat encoder_wheel_rad_s odom_travel capture_used coverage lift_demand raw issued applied "
             "issued_lift_fk applied_lift_fk wheel_saturation exit_contact top_contact front_platform_touch fallen illegal")
     rows = {k: [] for k in keys.split()}
