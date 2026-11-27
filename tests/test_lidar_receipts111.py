@@ -3,11 +3,20 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+import numpy as np
+
 from tools111 import individual
 from tools111.results import digest, install
+from tools111.wheel_response import sustained_from
 
 
 class NativeReceipts(unittest.TestCase):
+    def test_direction_must_persist_until_the_end_of_the_measured_window(self):
+        flags = np.array([True, True, False, True, True])
+        self.assertEqual(sustained_from(flags, 1), 3)
+        self.assertEqual(sustained_from(flags, 4), 4)
+        self.assertIsNone(sustained_from(~flags, 1))
+
     def test_reservation_keeps_an_interrupted_case_closed(self):
         with tempfile.TemporaryDirectory() as directory:
             base = Path(directory)

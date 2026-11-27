@@ -1,0 +1,657 @@
+{
+  "source_manifest_sha256": "f0c78571880588577622f6130225ebbb59230dbd25dea9faa71bc0c0cacd3ea3",
+  "cases": [
+    {
+      "seed": 111011,
+      "arm": "heading_off",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "3f97abba6fc37675696ef9a97d329cfab552d767a49ef9cdd78d9dcc5c9c0d54",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.867133,
+        "mean_wheel_encoder_m_s": 1.527281,
+        "body_forward_m_s": 1.52845,
+        "target_minus_encoder_m_s": 0.339853,
+        "encoder_minus_body_m_s": -0.001169,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -20.059994,
+        "peak_speed_m_s": 0.040391,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.245172,
+        "mean_zero_target_torque_nm": 0.230328,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 534,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111011,
+      "arm": "heading_on",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "86ba4c6b444df5aa5ac60ed2162bad32d8c014cd5e2cc75052371b788c2eda45",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.866594,
+        "mean_wheel_encoder_m_s": 1.526637,
+        "body_forward_m_s": 1.529429,
+        "target_minus_encoder_m_s": 0.339957,
+        "encoder_minus_body_m_s": -0.002792,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -13.00563,
+        "peak_speed_m_s": 0.026397,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.228156,
+        "mean_zero_target_torque_nm": 0.149881,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 540,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111023,
+      "arm": "heading_off",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "0c7426b8662490fdaaf45b59773757d6151b813d6c43bde34297298d92cdc216",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.863304,
+        "mean_wheel_encoder_m_s": 1.523908,
+        "body_forward_m_s": 1.525118,
+        "target_minus_encoder_m_s": 0.339396,
+        "encoder_minus_body_m_s": -0.001211,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -20.783522,
+        "peak_speed_m_s": 0.041889,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.247136,
+        "mean_zero_target_torque_nm": 0.238475,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 534,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111023,
+      "arm": "heading_on",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "0659c7d3370ea0221deaed58e016546c25d0012cdac617e9f8ab7775ffd455a8",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.866949,
+        "mean_wheel_encoder_m_s": 1.526868,
+        "body_forward_m_s": 1.529693,
+        "target_minus_encoder_m_s": 0.340081,
+        "encoder_minus_body_m_s": -0.002825,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -12.703641,
+        "peak_speed_m_s": 0.025699,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.228127,
+        "mean_zero_target_torque_nm": 0.14697,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 540,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111037,
+      "arm": "heading_off",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "9c00d0bff86366e3a09c1a580c05625316422ecd1615fefb650213dbff75fee6",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.866599,
+        "mean_wheel_encoder_m_s": 1.526829,
+        "body_forward_m_s": 1.528151,
+        "target_minus_encoder_m_s": 0.33977,
+        "encoder_minus_body_m_s": -0.001322,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -17.517608,
+        "peak_speed_m_s": 0.035643,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.236764,
+        "mean_zero_target_torque_nm": 0.199783,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 535,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111037,
+      "arm": "heading_on",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "c34449d830c84069870ac732150fb7597c2da72b6be311b077258442764ceca1",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.867449,
+        "mean_wheel_encoder_m_s": 1.527336,
+        "body_forward_m_s": 1.529758,
+        "target_minus_encoder_m_s": 0.340112,
+        "encoder_minus_body_m_s": -0.002422,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -13.278191,
+        "peak_speed_m_s": 0.026953,
+        "body_states_above_0p05": 0,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          0,
+          0
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 50,
+        "positive_first_wheel_power_samples": 50,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.22863,
+        "mean_zero_target_torque_nm": 0.152428,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 539,
+        "sustained_four_negative_targets_tick": null
+      }
+    },
+    {
+      "seed": 111101,
+      "arm": "neither",
+      "case_status": "COMPLETE",
+      "unit_status": "INCOMPLETE",
+      "trace_sha256": "9416242bec6093c26c0e05806bc168af9da2662960e83b828b8e624304f84e39",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.831687,
+        "mean_wheel_encoder_m_s": 1.379449,
+        "body_forward_m_s": 1.365294,
+        "target_minus_encoder_m_s": 0.452238,
+        "encoder_minus_body_m_s": 0.014155,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.338251,
+        "peak_speed_m_s": 0.091748,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 98,
+        "positive_first_wheel_power_samples": 98,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.442394,
+        "mean_zero_target_torque_nm": 0.461732,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 528,
+        "sustained_four_negative_targets_tick": 535
+      }
+    },
+    {
+      "seed": 111101,
+      "arm": "speed",
+      "case_status": "COMPLETE",
+      "unit_status": "INCOMPLETE",
+      "trace_sha256": "697240533767d6206e62069a4484739510ce01b340551c00818981c10a5548c3",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.791121,
+        "mean_wheel_encoder_m_s": 1.407038,
+        "body_forward_m_s": 1.383743,
+        "target_minus_encoder_m_s": 0.384083,
+        "encoder_minus_body_m_s": 0.023295,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -47.62579,
+        "peak_speed_m_s": 0.098333,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 96,
+        "positive_first_wheel_power_samples": 96,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.401685,
+        "mean_zero_target_torque_nm": 0.492683,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 526,
+        "sustained_four_negative_targets_tick": 529
+      }
+    },
+    {
+      "seed": 111101,
+      "arm": "legs",
+      "case_status": "COMPLETE",
+      "unit_status": "INCOMPLETE",
+      "trace_sha256": "79020ac24343db2d18a35a90aaae1170803de32f179e31b1b025fb54bba503e1",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.75428,
+        "mean_wheel_encoder_m_s": 1.377947,
+        "body_forward_m_s": 1.38702,
+        "target_minus_encoder_m_s": 0.376333,
+        "encoder_minus_body_m_s": -0.009073,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.893669,
+        "peak_speed_m_s": 0.091736,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 99,
+        "positive_first_wheel_power_samples": 99,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.436516,
+        "mean_zero_target_torque_nm": 0.477398,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 537
+      }
+    },
+    {
+      "seed": 111101,
+      "arm": "both",
+      "case_status": "COMPLETE",
+      "unit_status": "INCOMPLETE",
+      "trace_sha256": "2db15199f1eb06066b20b1ee10d1246e8f749b9e76c08b1ed21a2c2595e65020",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.778033,
+        "mean_wheel_encoder_m_s": 1.39794,
+        "body_forward_m_s": 1.384082,
+        "target_minus_encoder_m_s": 0.380093,
+        "encoder_minus_body_m_s": 0.013858,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.776643,
+        "peak_speed_m_s": 0.090084,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 99,
+        "positive_first_wheel_power_samples": 99,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.44455,
+        "mean_zero_target_torque_nm": 0.464121,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 535
+      }
+    },
+    {
+      "seed": 111103,
+      "arm": "neither",
+      "case_status": "PARTIAL",
+      "unit_status": "INCOMPLETE"
+    },
+    {
+      "seed": 111103,
+      "arm": "speed",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "53f350639f5462c08383342267379d6fd50c2ba85ae8fbb0510f9d4fb4288833",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.775984,
+        "mean_wheel_encoder_m_s": 1.396353,
+        "body_forward_m_s": 1.379218,
+        "target_minus_encoder_m_s": 0.379632,
+        "encoder_minus_body_m_s": 0.017135,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.393671,
+        "peak_speed_m_s": 0.092738,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 93,
+        "positive_first_wheel_power_samples": 93,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.442184,
+        "mean_zero_target_torque_nm": 0.469405,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 532
+      }
+    },
+    {
+      "seed": 111103,
+      "arm": "legs",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "9e3e6d81076a0e3022090c01a3116dfac0dc7f8938967bde5f0abbd7a61a3156",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.783681,
+        "mean_wheel_encoder_m_s": 1.395524,
+        "body_forward_m_s": 1.378562,
+        "target_minus_encoder_m_s": 0.388158,
+        "encoder_minus_body_m_s": 0.016962,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -45.326305,
+        "peak_speed_m_s": 0.093538,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 92,
+        "positive_first_wheel_power_samples": 92,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.416445,
+        "mean_zero_target_torque_nm": 0.487081,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 529
+      }
+    },
+    {
+      "seed": 111103,
+      "arm": "both",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "02a21757aaedf4ee4946c1448ec9bbd234258818334ca5f0f745ca5c44f2d975",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.782201,
+        "mean_wheel_encoder_m_s": 1.39198,
+        "body_forward_m_s": 1.37498,
+        "target_minus_encoder_m_s": 0.390221,
+        "encoder_minus_body_m_s": 0.017,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.59843,
+        "peak_speed_m_s": 0.090948,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 97,
+        "positive_first_wheel_power_samples": 97,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.44615,
+        "mean_zero_target_torque_nm": 0.467112,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 536
+      }
+    },
+    {
+      "seed": 111107,
+      "arm": "neither",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "b475cb707abd219adfe74e4ce320e803baf592bb9f309e84024fc9278ccec522",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.787941,
+        "mean_wheel_encoder_m_s": 1.395677,
+        "body_forward_m_s": 1.388297,
+        "target_minus_encoder_m_s": 0.392264,
+        "encoder_minus_body_m_s": 0.00738,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.877832,
+        "peak_speed_m_s": 0.091082,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 97,
+        "positive_first_wheel_power_samples": 97,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.431028,
+        "mean_zero_target_torque_nm": 0.477457,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 539
+      }
+    },
+    {
+      "seed": 111107,
+      "arm": "speed",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "94924aeea8cafe2ddddeae923a40e8a290a880d293ab60adfd7c50ce4f526583",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.786584,
+        "mean_wheel_encoder_m_s": 1.390034,
+        "body_forward_m_s": 1.382566,
+        "target_minus_encoder_m_s": 0.39655,
+        "encoder_minus_body_m_s": 0.007468,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.723078,
+        "peak_speed_m_s": 0.092095,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 95,
+        "positive_first_wheel_power_samples": 95,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.425684,
+        "mean_zero_target_torque_nm": 0.47173,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 540
+      }
+    },
+    {
+      "seed": 111107,
+      "arm": "legs",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "5d1d4793be8e3c785460960a7756c6efdbbdc5269a3f8cb07c7595f368130e2a",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.768407,
+        "mean_wheel_encoder_m_s": 1.392885,
+        "body_forward_m_s": 1.381858,
+        "target_minus_encoder_m_s": 0.375522,
+        "encoder_minus_body_m_s": 0.011027,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -46.309105,
+        "peak_speed_m_s": 0.094355,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 99,
+        "positive_first_wheel_power_samples": 99,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.423634,
+        "mean_zero_target_torque_nm": 0.475278,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 535
+      }
+    },
+    {
+      "seed": 111107,
+      "arm": "both",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE",
+      "trace_sha256": "3debee3ccd76dfe31d366f1b90060d4f561c1a59515660f98aee4a58c9331658",
+      "post_course": {
+        "actor_command_m_s": 1.466885,
+        "mean_wheel_target_m_s": 1.775826,
+        "mean_wheel_encoder_m_s": 1.39415,
+        "body_forward_m_s": 1.388825,
+        "target_minus_encoder_m_s": 0.381676,
+        "encoder_minus_body_m_s": 0.005325,
+        "saturated_wheel_ticks": 0
+      },
+      "stop": {
+        "signed_travel_mm": -44.82138,
+        "peak_speed_m_s": 0.092435,
+        "body_states_above_0p05": 26,
+        "wheel_samples": 100,
+        "negative_targets_per_wheel": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "negative_encoders": 100,
+        "negative_joint_displacements": 4,
+        "negative_first_torques": 98,
+        "positive_first_wheel_power_samples": 98,
+        "saturated_wheel_ticks": 0,
+        "mean_first_torque_nm": -0.434724,
+        "mean_zero_target_torque_nm": 0.469,
+        "positive_zero_target_torques": 100,
+        "sustained_body_below_minus_0p01_tick": 527,
+        "sustained_four_negative_targets_tick": 536
+      }
+    }
+  ]
+}
