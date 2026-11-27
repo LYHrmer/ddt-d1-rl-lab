@@ -1,0 +1,27 @@
+{
+  "task": "video",
+  "sources": {
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+    "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+    "tools111/sensing.py": "8dc0b4393d06b841a0f41699c4341ee301024067ac111b48258ad4b397c1fb82",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+    "tools111/preflight.py": "c32431b6011ae92bb12bca42d4a53a0c12ef9a24e8db15140e3340c04c462a4e",
+    "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "tools112/surface.py": "d90875e0f9f21bbaa251fe1b0e66862e53dc6a516c2d43251dbea96e01ffe458",
+    "tools112/surface_native.py": "5e1276bc2ac5552b7cb05a0ab5f8e045240d508d49eed1dc40b89c0eb7838031",
+    "tools112/run_surface.py": "b1b8c4dcca3a99831b368a0f96caa29ff8d57cca9f54d91667b10fb516733a3a"
+  },
+  "proposal_sha256": "b2e8b95fab1bf2c58aaa15c80ce90ed1c0e5e12c86c361bbc4113abc9b5ada92",
+  "reference_manifest_sha256": "f0c78571880588577622f6130225ebbb59230dbd25dea9faa71bc0c0cacd3ea3"
+}

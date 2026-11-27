@@ -1,0 +1,921 @@
+{
+  "sources": {
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+    "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+    "tools111/sensing.py": "8dc0b4393d06b841a0f41699c4341ee301024067ac111b48258ad4b397c1fb82",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+    "tools111/preflight.py": "c32431b6011ae92bb12bca42d4a53a0c12ef9a24e8db15140e3340c04c462a4e",
+    "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "tools112/surface.py": "d90875e0f9f21bbaa251fe1b0e66862e53dc6a516c2d43251dbea96e01ffe458",
+    "tools112/surface_native.py": "5e1276bc2ac5552b7cb05a0ab5f8e045240d508d49eed1dc40b89c0eb7838031",
+    "tools112/run_surface.py": "b1b8c4dcca3a99831b368a0f96caa29ff8d57cca9f54d91667b10fb516733a3a"
+  },
+  "proposal_sha256": "b2e8b95fab1bf2c58aaa15c80ce90ed1c0e5e12c86c361bbc4113abc9b5ada92",
+  "reference_manifest_sha256": "f0c78571880588577622f6130225ebbb59230dbd25dea9faa71bc0c0cacd3ea3",
+  "survey": {
+    "positions_m": [
+      [
+        -0.33,
+        -0.26
+      ],
+      [
+        -0.33,
+        0.26
+      ],
+      [
+        1.63,
+        -0.26
+      ],
+      [
+        1.63,
+        0.26
+      ],
+      [
+        2.71,
+        -0.26
+      ],
+      [
+        2.71,
+        0.26
+      ],
+      [
+        3.47,
+        -0.26
+      ],
+      [
+        3.47,
+        0.26
+      ],
+      [
+        4.61,
+        -0.26
+      ],
+      [
+        4.61,
+        0.26
+      ],
+      [
+        5.37,
+        -0.26
+      ],
+      [
+        5.37,
+        0.26
+      ],
+      [
+        7.23,
+        -0.26
+      ],
+      [
+        7.23,
+        0.26
+      ],
+      [
+        10.13,
+        -0.26
+      ],
+      [
+        10.13,
+        0.26
+      ]
+    ],
+    "heights_m": {
+      "plane": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "heightfield": [
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10,
+        3.725290076417309e-10
+      ]
+    },
+    "max_difference_m": 3.725290076417309e-10,
+    "rays": 32,
+    "physics": 0,
+    "equal_fields": [
+      "geom_friction",
+      "geom_priority",
+      "geom_condim",
+      "geom_solref",
+      "geom_solimp",
+      "geom_margin",
+      "geom_gap",
+      "geom_contype",
+      "geom_conaffinity",
+      "geom_matid",
+      "geom_bodyid",
+      "body_mass",
+      "body_inertia",
+      "body_pos",
+      "body_quat",
+      "jnt_range",
+      "dof_damping",
+      "dof_frictionloss",
+      "dof_armature",
+      "actuator_gear"
+    ],
+    "grid_shape": [
+      89,
+      551
+    ],
+    "heightfield_value": 0.10000000149011612,
+    "contact_pose": {
+      "seed": 111011,
+      "tick": 575,
+      "trace_sha256": "86ba4c6b444df5aa5ac60ed2162bad32d8c014cd5e2cc75052371b788c2eda45",
+      "contacts": {
+        "plane": [
+          [
+            {
+              "position_m": [
+                11.966735547793602,
+                0.19064911288858796,
+                6.520959644819475e-05
+              ],
+              "distance_m": 0.00013041919289638604,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.963406811545209,
+                -0.2536225796306233,
+                2.185062053571609e-05
+              ],
+              "distance_m": 4.3701241071433805e-05,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "position_m": [
+                11.963225907263944,
+                -0.29361713729759675,
+                0.000339116543760295
+              ],
+              "distance_m": 0.0006782330875205883,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.565982324797222,
+                0.1914037824318991,
+                0.00010197955937840089
+              ],
+              "distance_m": 0.00020395911875679962,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.567521894572657,
+                -0.24431634451124992,
+                0.0002666526154341398
+              ],
+              "distance_m": 0.0005333052308682806,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            },
+            {
+              "position_m": [
+                11.567348940412664,
+                -0.28431596994529607,
+                0.0002702579778402636
+              ],
+              "distance_m": 0.0005405159556805261,
+              "normal_floor_to_wheel": [
+                0.0,
+                0.0,
+                1.0
+              ]
+            }
+          ]
+        ],
+        "heightfield": [
+          [
+            {
+              "position_m": [
+                11.958504346725181,
+                0.19817058833559836,
+                0.0007894838194081946
+              ],
+              "distance_m": -0.0004240115826745923,
+              "normal_floor_to_wheel": [
+                0.09434094063337876,
+                -0.07389054295746866,
+                0.9927940242476582
+              ]
+            },
+            {
+              "position_m": [
+                11.959955699303022,
+                0.1906522882817508,
+                0.000448137768642623
+              ],
+              "distance_m": -0.0011072757295653632,
+              "normal_floor_to_wheel": [
+                0.08001746231190196,
+                4.3081868893941107e-10,
+                0.9967934619193505
+              ]
+            },
+            {
+              "position_m": [
+                11.966737669603098,
+                0.1906491714745025,
+                0.0003152125034721759
+              ],
+              "distance_m": -0.001369575738113943,
+              "normal_floor_to_wheel": [
+                5.873735071549028e-07,
+                -1.3280191956356337e-09,
+                0.9999999999998275
+              ]
+            },
+            {
+              "position_m": [
+                11.959983426484127,
+                0.200015317587829,
+                0.0007940570461554032
+              ],
+              "distance_m": -0.00041435233125034323,
+              "normal_floor_to_wheel": [
+                0.0774631226850956,
+                -0.0739413601298339,
+                0.9942495360250485
+              ]
+            },
+            {
+              "position_m": [
+                11.959984272137616,
+                0.20001531620407448,
+                0.0007940153346354603
+              ],
+              "distance_m": -0.0004143032106970212,
+              "normal_floor_to_wheel": [
+                0.07745345646959102,
+                -0.07394138313858069,
+                0.9942502873725845
+              ]
+            },
+            {
+              "position_m": [
+                11.966745451255692,
+                0.20002498465881496,
+                0.0006628513754148441
+              ],
+              "distance_m": -0.0006761469645903751,
+              "normal_floor_to_wheel": [
+                1.6262004212674853e-07,
+                -0.07390304176897942,
+                0.9972654312755789
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.957047652643931,
+                -0.2535973337658152,
+                0.0003897556304089181
+              ],
+              "distance_m": -0.0012260198341435787,
+              "normal_floor_to_wheel": [
+                0.07408499513891957,
+                -0.05926801891121602,
+                0.995489183984239
+              ]
+            },
+            {
+              "position_m": [
+                11.959968892971721,
+                -0.25360594588271135,
+                0.000306508699401558
+              ],
+              "distance_m": -0.0013883779723866984,
+              "normal_floor_to_wheel": [
+                0.04481060474426588,
+                3.663315867551776e-05,
+                0.9989954996697757
+              ]
+            },
+            {
+              "position_m": [
+                11.963399761378936,
+                -0.2536223779079514,
+                0.0002718547660917267
+              ],
+              "distance_m": -0.0014562912128762723,
+              "normal_floor_to_wheel": [
+                1.0778646555609955e-06,
+                -1.0651352843789025e-06,
+                0.999999999998852
+              ]
+            },
+            {
+              "position_m": [
+                11.965114784875794,
+                -0.29362622725592114,
+                0.0005996077600093977
+              ],
+              "distance_m": -0.0008011637094631402,
+              "normal_floor_to_wheel": [
+                -0.02399966289773373,
+                0.01919973091709989,
+                0.9995275816672126
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.558112460155192,
+                0.19768565335496208,
+                0.0007596672895728018
+              ],
+              "distance_m": -0.0004839544698236147,
+              "normal_floor_to_wheel": [
+                0.09018834772352756,
+                -0.0726996943056844,
+                0.9932677465732794
+              ]
+            },
+            {
+              "position_m": [
+                11.559963117739352,
+                0.1914091252173506,
+                0.00045695717314507556
+              ],
+              "distance_m": -0.00108858847734444,
+              "normal_floor_to_wheel": [
+                0.06776162234765473,
+                -4.875244191575396e-05,
+                0.9977015386176435
+              ]
+            },
+            {
+              "position_m": [
+                11.565983321539985,
+                0.19140376693250194,
+                0.00035197989522751244
+              ],
+              "distance_m": -0.0012960409546030381,
+              "normal_floor_to_wheel": [
+                3.4654311013769146e-08,
+                1.5997499856187184e-11,
+                0.9999999999999996
+              ]
+            },
+            {
+              "position_m": [
+                11.559984757152172,
+                0.20001682989275052,
+                0.0007697975312323246
+              ],
+              "distance_m": -0.0004626399802910551,
+              "normal_floor_to_wheel": [
+                0.06881345579542752,
+                -0.0727514288854845,
+                0.9949733352691473
+              ]
+            },
+            {
+              "position_m": [
+                11.559983148155625,
+                0.2000168077991648,
+                0.0007700642991912768
+              ],
+              "distance_m": -0.0004623292532104223,
+              "normal_floor_to_wheel": [
+                0.06883201604677405,
+                -0.07275139849623859,
+                0.9949720536697392
+              ]
+            },
+            {
+              "position_m": [
+                11.565958140273361,
+                0.20002431419835032,
+                0.0006663999739380359
+              ],
+              "distance_m": -0.0006689705709842367,
+              "normal_floor_to_wheel": [
+                0.0003664345675619125,
+                -0.07269256219011853,
+                0.9973543287758586
+              ]
+            }
+          ],
+          [
+            {
+              "position_m": [
+                11.55997264169628,
+                -0.24999993929045533,
+                0.0006805639623737314
+              ],
+              "distance_m": -0.0006412116673953696,
+              "normal_floor_to_wheel": [
+                0.08631201390357976,
+                -0.000193606975322979,
+                0.9962681359815977
+              ]
+            },
+            {
+              "position_m": [
+                11.559972825396828,
+                -0.2842840890297727,
+                0.0006773301011490859
+              ],
+              "distance_m": -0.0006476250863094817,
+              "normal_floor_to_wheel": [
+                0.08392078609932448,
+                -1.1741448855818368e-05,
+                0.9964724288823099
+              ]
+            },
+            {
+              "position_m": [
+                11.567506701083538,
+                -0.25000008701484816,
+                0.0005171655232143017
+              ],
+              "distance_m": -0.000965669714310981,
+              "normal_floor_to_wheel": [
+                -0.00010704109454545681,
+                0.00018073263880140852,
+                0.9999999779389585
+              ]
+            },
+            {
+              "position_m": [
+                11.572559570130082,
+                -0.2843448890247614,
+                0.0005989271028831906
+              ],
+              "distance_m": -0.0008040582206411825,
+              "normal_floor_to_wheel": [
+                -0.053814434841678485,
+                0.04305154829990543,
+                0.9976224590453304
+              ]
+            },
+            {
+              "position_m": [
+                11.55997218540506,
+                -0.24999993728514236,
+                0.0006807406872884406
+              ],
+              "distance_m": -0.0006409380695345358,
+              "normal_floor_to_wheel": [
+                0.08631738318420158,
+                -0.0001936302753853098,
+                0.99626767079312
+              ]
+            },
+            {
+              "position_m": [
+                11.564532288540615,
+                -0.24430282574994794,
+                0.0005427008437543374
+              ],
+              "distance_m": -0.0009154623449202255,
+              "normal_floor_to_wheel": [
+                0.033905436805465566,
+                -0.027120951871380163,
+                0.999056993031239
+              ]
+            },
+            {
+              "position_m": [
+                11.567821756167266,
+                -0.24431752482235425,
+                0.0005169802006687284
+              ],
+              "distance_m": -0.0009660403439102841,
+              "normal_floor_to_wheel": [
+                -1.981576614725401e-05,
+                -2.5349849689899544e-07,
+                0.9999999998036356
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "survey_resources": {
+    "startup_effective_bytes": 12828540928,
+    "minimum_effective_bytes": 12213342208,
+    "peak_group_bytes": 667004928,
+    "elapsed_s": 13.627197216999775,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "cases": [
+    {
+      "seed": 111011,
+      "case_status": "COMPLETE",
+      "file": "trajectories/heightfield_111011.npz",
+      "episode": {
+        "seed": 111011,
+        "layout": "flat",
+        "arm": "heading_on",
+        "gain": 0.97792348,
+        "surface": "level_heightfield",
+        "status": "COMPLETE",
+        "counts": {
+          "decisions": 600,
+          "servo": 3000,
+          "physics": 6000,
+          "packets": 72,
+          "ray_queries": 74880
+        },
+        "motion": {
+          "passed": false,
+          "failed": [
+            "forward_speed",
+            "one_metre_speeds",
+            "stopped"
+          ],
+          "ticks": 600,
+          "gate_times_s": [
+            4.5032112655142935,
+            5.242311911212269,
+            5.970728683164608,
+            6.706216190658993
+          ],
+          "speed_m_s": 1.3617763472784572,
+          "sections_m_s": [
+            1.3529957060931017,
+            1.3728404376518548,
+            1.3596424001907799
+          ],
+          "max_lane_y_m": 0.22679315727667648,
+          "exit_contact": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "step_top_contact": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "stop_tail_max_m_s": 0.09065082857105958
+        },
+        "effects": {},
+        "trace_sha256": "38b628c77a4745833384590fb77cf881e8219f0176cb78d807cd0562b9c8e4c3",
+        "reference_sha256": "86ba4c6b444df5aa5ac60ed2162bad32d8c014cd5e2cc75052371b788c2eda45",
+        "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+        "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+        "mujoco_version": "3.3.0"
+      },
+      "comparison": {
+        "cruise_loss_m_s": 0.1851345482959792,
+        "stop_increase_m_s": 0.06425368740523901,
+        "cruise_supported": true,
+        "stop_supported": true,
+        "ticks": 600,
+        "plane_speed_m_s": 1.5469108955744364,
+        "field_speed_m_s": 1.3617763472784572,
+        "plane_stop_peak_m_s": 0.026397141165820565,
+        "field_stop_peak_m_s": 0.09065082857105958,
+        "plane_stop": {
+          "forward_displacement_mm": -13.005630468327281,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            0,
+            0
+          ],
+          "negative_first_torques": 50
+        },
+        "field_stop": {
+          "forward_displacement_mm": -44.562518254133906,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_first_torques": 92
+        },
+        "first_change_tick": {
+          "qpos": 1,
+          "qvel": 1,
+          "raw": 1,
+          "applied": 2
+        },
+        "minimum_wheel_center_to_grid_boundary_m": 1.9234043015923212
+      },
+      "unit": "111011_01",
+      "resources": {
+        "startup_effective_bytes": 12851830784,
+        "minimum_effective_bytes": 12525326336,
+        "peak_group_bytes": 364605440,
+        "elapsed_s": 14.90066964899961,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+      }
+    },
+    {
+      "seed": 111023,
+      "case_status": "COMPLETE",
+      "file": "trajectories/heightfield_111023.npz",
+      "episode": {
+        "seed": 111023,
+        "layout": "flat",
+        "arm": "heading_on",
+        "gain": 0.97792348,
+        "surface": "level_heightfield",
+        "status": "COMPLETE",
+        "counts": {
+          "decisions": 600,
+          "servo": 3000,
+          "physics": 6000,
+          "packets": 72,
+          "ray_queries": 74880
+        },
+        "motion": {
+          "passed": false,
+          "failed": [
+            "forward_speed",
+            "one_metre_speeds",
+            "stopped"
+          ],
+          "ticks": 600,
+          "gate_times_s": [
+            4.484831811141591,
+            5.2120090188642125,
+            5.944458494890645,
+            6.676836805251821
+          ],
+          "speed_m_s": 1.368610020534076,
+          "sections_m_s": [
+            1.3751806153713297,
+            1.3652818832297346,
+            1.365414548536868
+          ],
+          "max_lane_y_m": 0.5969595550106447,
+          "exit_contact": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "step_top_contact": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "stop_tail_max_m_s": 0.09401291852229557
+        },
+        "effects": {},
+        "trace_sha256": "19137ab9aac008281d57e904eaea2133f57b1f9a2aba6334edf7c28c7ef6fabb",
+        "reference_sha256": "0659c7d3370ea0221deaed58e016546c25d0012cdac617e9f8ab7775ffd455a8",
+        "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+        "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+        "mujoco_version": "3.3.0"
+      },
+      "comparison": {
+        "cruise_loss_m_s": 0.17576248612956014,
+        "stop_increase_m_s": 0.06831376301565371,
+        "cruise_supported": true,
+        "stop_supported": true,
+        "ticks": 600,
+        "plane_speed_m_s": 1.5443725066636362,
+        "field_speed_m_s": 1.368610020534076,
+        "plane_stop_peak_m_s": 0.02569915550664185,
+        "field_stop_peak_m_s": 0.09401291852229557,
+        "plane_stop": {
+          "forward_displacement_mm": -12.703641118838318,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            0,
+            0
+          ],
+          "negative_first_torques": 50
+        },
+        "field_stop": {
+          "forward_displacement_mm": -45.36041914530057,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_first_torques": 97
+        },
+        "first_change_tick": {
+          "qpos": 1,
+          "qvel": 1,
+          "raw": 1,
+          "applied": 2
+        },
+        "minimum_wheel_center_to_grid_boundary_m": 1.322614480738432
+      },
+      "unit": "111023_01",
+      "resources": {
+        "startup_effective_bytes": 12920770560,
+        "minimum_effective_bytes": 12566085632,
+        "peak_group_bytes": 348766208,
+        "elapsed_s": 14.64252361599938,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+      }
+    },
+    {
+      "seed": 111037,
+      "case_status": "COMPLETE",
+      "file": "trajectories/heightfield_111037.npz",
+      "episode": {
+        "seed": 111037,
+        "layout": "flat",
+        "arm": "heading_on",
+        "gain": 0.97792348,
+        "surface": "level_heightfield",
+        "status": "COMPLETE",
+        "counts": {
+          "decisions": 600,
+          "servo": 3000,
+          "physics": 6000,
+          "packets": 72,
+          "ray_queries": 74880
+        },
+        "motion": {
+          "passed": false,
+          "failed": [
+            "forward_speed",
+            "one_metre_speeds",
+            "stopped"
+          ],
+          "ticks": 600,
+          "gate_times_s": [
+            4.4969802341274985,
+            5.232186753426975,
+            5.9662783101225125,
+            6.699751536788035
+          ],
+          "speed_m_s": 1.3619207751510833,
+          "sections_m_s": [
+            1.3601620412082662,
+            1.3622279004289743,
+            1.3633762810213905
+          ],
+          "max_lane_y_m": 0.34539798648604303,
+          "exit_contact": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "step_top_contact": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "stop_tail_max_m_s": 0.09399666993134666
+        },
+        "effects": {},
+        "trace_sha256": "b1c5177ff3711963a3ead7fe7b56f3859984c3f8b01568a6c0cd5ad234be01af",
+        "reference_sha256": "c34449d830c84069870ac732150fb7597c2da72b6be311b077258442764ceca1",
+        "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+        "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+        "mujoco_version": "3.3.0"
+      },
+      "comparison": {
+        "cruise_loss_m_s": 0.1849087375801306,
+        "stop_increase_m_s": 0.06704410311455516,
+        "cruise_supported": true,
+        "stop_supported": true,
+        "ticks": 600,
+        "plane_speed_m_s": 1.546829512731214,
+        "field_speed_m_s": 1.3619207751510833,
+        "plane_stop_peak_m_s": 0.0269525668167915,
+        "field_stop_peak_m_s": 0.09399666993134666,
+        "plane_stop": {
+          "forward_displacement_mm": -13.278190964415854,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            0,
+            0
+          ],
+          "negative_first_torques": 50
+        },
+        "field_stop": {
+          "forward_displacement_mm": -44.74837433136126,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_first_torques": 97
+        },
+        "first_change_tick": {
+          "qpos": 1,
+          "qvel": 1,
+          "raw": 1,
+          "applied": 2
+        },
+        "minimum_wheel_center_to_grid_boundary_m": 1.6750569756029026
+      },
+      "unit": "111037_01",
+      "resources": {
+        "startup_effective_bytes": 12843732992,
+        "minimum_effective_bytes": 12365062144,
+        "peak_group_bytes": 350945280,
+        "elapsed_s": 14.644367541000975,
+        "owned_cgroup_children_empty": true,
+        "cpu_affinity": [
+          0
+        ],
+        "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+      }
+    }
+  ],
+  "verdict": {
+    "complete_pairs": 3,
+    "cruise_supported": true,
+    "stop_supported": true
+  },
+  "failed_units": {},
+  "policy_updates": 0,
+  "world_updates": 0,
+  "blind_trials": 0
+}

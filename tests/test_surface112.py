@@ -2,6 +2,7 @@ import unittest
 
 from tools112.run_surface import paths
 from tools112.surface import SEEDS, paired_scores, reference
+from tools112.surface_results import verdict
 
 
 class SurfaceDiagnosis(unittest.TestCase):
@@ -22,3 +23,12 @@ class SurfaceDiagnosis(unittest.TestCase):
         for task in ("blind","trim","112201"):
             with self.assertRaises(ValueError):
                 paths(task,1)
+
+    def test_incomplete_pairs_cannot_confirm_either_cause(self):
+        score = dict(ticks=600, cruise_supported=True, stop_supported=True)
+        completed = dict(case_status="COMPLETE", comparison=score)
+        for missing in (dict(case_status="PARTIAL"), dict(case_status="NOT_STARTED"),
+                        dict(case_status="COMPLETE", comparison=dict(score,ticks=599))):
+            result = verdict([completed,completed,missing])
+            self.assertFalse(result["cruise_supported"])
+            self.assertFalse(result["stop_supported"])
