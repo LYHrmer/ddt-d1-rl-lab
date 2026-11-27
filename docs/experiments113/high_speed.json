@@ -1,0 +1,118 @@
+{
+  "parent_d1_commit": "9e347bbbd20266af94351bf2748710691819f5b4",
+  "seeds": [
+    111011,
+    111023,
+    111037
+  ],
+  "sources_sha256": {
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca",
+    "docs/high_speed_world113_proposal.md": "aa47c4acf0122348ac7e8e14b51d9591bb212e3bba73318219513289c9d029ee",
+    "reports/lidar_compound111/native.json": "f0c78571880588577622f6130225ebbb59230dbd25dea9faa71bc0c0cacd3ea3",
+    "reports/speed110/results.json": "23ade2785ad3492e6cc0abb65509a9f85bc33b03c4684b1fa25b68c625468117",
+    "reports/surface112/results.json": "8ac726da49377bfb3a67b88ddeb0e5791ac00001f05adb1b5c58ccc4160ba798",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+    "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools111/kinematics.py": "511fb592712d58a4762f8430a5fb68877249cb562eefe0ea62b1aed7f8d878cf",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+    "tools111/preflight.py": "c32431b6011ae92bb12bca42d4a53a0c12ef9a24e8db15140e3340c04c462a4e",
+    "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+    "tools111/sensing.py": "8dc0b4393d06b841a0f41699c4341ee301024067ac111b48258ad4b397c1fb82",
+    "tools112/run_surface.py": "b1b8c4dcca3a99831b368a0f96caa29ff8d57cca9f54d91667b10fb516733a3a",
+    "tools112/surface.py": "d90875e0f9f21bbaa251fe1b0e66862e53dc6a516c2d43251dbea96e01ffe458",
+    "tools112/surface_native.py": "5e1276bc2ac5552b7cb05a0ab5f8e045240d508d49eed1dc40b89c0eb7838031",
+    "tools112/velocity.py": "7cd3596ec3102a059c4a30474c4cab4912f5c08bf76c2950aab080e4d8f94d35",
+    "tools113/common.py": "0185193382be188a7917b36600ee8c6fce3ce48a52bf29f78461a5f674307a10",
+    "tools113/control.py": "64f2be7fcd94969ebc460e27c256511e3bc5a0c6cd06d135b3c7ff53c2fc9f96",
+    "tools113/forecast.py": "605dd7ff7c8ab88b8c37580ec734ad8299d1d2ec7e5ce8a257cebf005e040e0b",
+    "tools113/model.py": "8d77c3b36c9c269da2b152dbad4e9edf7554339f2c28027ff38337951b35b5ad",
+    "tools113/native.py": "d324cc0683de59b868136e9e060ab3e9be8b34c9491667e7700805ed34115bb0",
+    "tools113/run.py": "e2eb989813c0b13591fa7424d5ebcadf403fa698a28720531c17afa332fe9f88",
+    "tools113/video.py": "1789ac2ab7013ba800e8d74aa13eab52ffac04df1c563a44333423c1cf808a23",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "tools94/common94.py": "cb95b2c27edd8519c33749f25904506a1af891aaf3f08d9604c3e54afdfe59ab",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232"
+  },
+  "references": [
+    {
+      "seed": 111103,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111103_speed.npz",
+      "sha256": "53f350639f5462c08383342267379d6fd50c2ba85ae8fbb0510f9d4fb4288833"
+    },
+    {
+      "seed": 111103,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111103_legs.npz",
+      "sha256": "9e3e6d81076a0e3022090c01a3116dfac0dc7f8938967bde5f0abbd7a61a3156"
+    },
+    {
+      "seed": 111103,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111103_both.npz",
+      "sha256": "02a21757aaedf4ee4946c1448ec9bbd234258818334ca5f0f745ca5c44f2d975"
+    },
+    {
+      "seed": 111107,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111107_neither.npz",
+      "sha256": "b475cb707abd219adfe74e4ce320e803baf592bb9f309e84024fc9278ccec522"
+    },
+    {
+      "seed": 111107,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111107_speed.npz",
+      "sha256": "94924aeea8cafe2ddddeae923a40e8a290a880d293ab60adfd7c50ce4f526583"
+    },
+    {
+      "seed": 111107,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111107_legs.npz",
+      "sha256": "5d1d4793be8e3c785460960a7756c6efdbbdc5269a3f8cb07c7595f368130e2a"
+    },
+    {
+      "seed": 111107,
+      "domain": "compound",
+      "file": "reports/lidar_compound111/trajectories/111107_both.npz",
+      "sha256": "3debee3ccd76dfe31d366f1b90060d4f561c1a59515660f98aee4a58c9331658"
+    },
+    {
+      "seed": 111011,
+      "domain": "grid",
+      "file": "reports/surface112/trajectories/heightfield_111011.npz",
+      "sha256": "38b628c77a4745833384590fb77cf881e8219f0176cb78d807cd0562b9c8e4c3"
+    },
+    {
+      "seed": 111023,
+      "domain": "grid",
+      "file": "reports/surface112/trajectories/heightfield_111023.npz",
+      "sha256": "19137ab9aac008281d57e904eaea2133f57b1f9a2aba6334edf7c28c7ef6fabb"
+    },
+    {
+      "seed": 111037,
+      "domain": "grid",
+      "file": "reports/surface112/trajectories/heightfield_111037.npz",
+      "sha256": "b1c5177ff3711963a3ead7fe7b56f3859984c3f8b01568a6c0cd5ad234be01af"
+    }
+  ],
+  "folds": 3,
+  "updates_per_fold_and_arm": 50,
+  "total_world_updates": 300,
+  "total_policy_updates": 0,
+  "new_episodes": 3,
+  "episode_ticks": 600,
+  "physics_substeps_max": 18000,
+  "imagined_policy_forwards": 3600,
+  "archive_policy_audit": 600,
+  "prediction_min_observed_m_s": 0.001,
+  "prediction_max_relative_error": 0.25,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+}

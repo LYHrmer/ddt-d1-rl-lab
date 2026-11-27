@@ -1,0 +1,50 @@
+name: D1 high-speed wheel-ground world model
+on:
+  push:
+    paths: &source_paths
+      - 'tools113/**'
+      - 'tests/test_*113.py'
+      - 'reports/speed_world113/**'
+      - 'docs/experiments113/high_speed.json'
+      - 'docs/experiments113/forecast_seal.json'
+      - 'docs/high_speed_world113_proposal.md'
+      - 'docs/assets/speed_world113.mp4'
+      - 'tools112/**'
+      - 'tools111/**'
+      - 'tools110/**'
+      - 'tools100/sensor100.py'
+      - 'training/d1_rl/interface.py'
+      - 'reports/lidar_compound111/**'
+      - 'reports/surface112/**'
+      - 'reports/speed110/results.json'
+      - '.github/workflows/speed-world113.yml'
+  pull_request:
+    paths: *source_paths
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet numpy==2.2.6
+      - name: Verify the registered source hashes
+        run: python -B -c 'from tools113.common import registration; print(registration())'
+      - name: Check the numerical model, controller and scoring rules
+        run: python -B -m unittest discover -s tests -p 'test_*113.py'
+      - name: Replay the published measurement and prediction archives
+        run: |
+          if [[ -d reports/speed_world113 || -f docs/assets/speed_world113.mp4 ]] || git cat-file -e HEAD^:reports/speed_world113/results.json 2>/dev/null; then
+            python -B -m tools113.results
+          else
+            echo 'Registration is present. Native measurement archive has not been published.'
+          fi
