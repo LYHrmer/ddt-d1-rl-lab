@@ -9,9 +9,9 @@
 
 **D1 正逐步转向 SuperMimic 式的模型强化学习。** 全身策略每 20 ms（50 Hz）同时输出 12 个腿关节角目标和 4 个轮速目标。底层以 250 Hz 跟踪目标并限矩，腿部使用位置 PD，车轮使用速度反馈。MuJoCo 以 500 Hz 积分。[动作到力矩的映射](training/d1_rl/interface.py)
 
-**原厂全身策略能以 1.5 m/s 在车道内行驶吗？** 三个起点均完整行驶 12 秒并安全停车，中央三米均速分别为 1.564、1.569、1.584 m/s。前两次左轮出界，第三次超速，平地综合验收 0/3，复杂地形尚待验证。[原厂策略平地回放](docs/assets/speed110.mp4) · [逐起点成绩与车道诊断](docs/speed110_results.md)
+**原厂全身策略能以 1.5 m/s 在车道内行驶吗？** 第 110 轮有两次出界、一次超速，平地综合验收 0/3。第 111 轮给同一策略校准速度指令并加入 IMU 航向反馈，三个新起点都守住车道并停车，中央三米均速 1.544～1.547 m/s，平地通过 3/3。[第 110 轮录像与失败项](docs/speed110_results.md) · [第 111 轮同起点航向开关对照](docs/lidar_compound111.md#平地实测)
 
-**轮前激光雷达能同时调速和调腿高吗？** 在 108 包历史点云的逐包回放中，有高差的 25 包在清晰、遮挡两种视图下都触发减速和正确侧的抬腿目标。整条平地上的 36 包在两种视图下都没有误触发。复合路线的实际速度、抬轮和台面承重单独验收。[逐包结果与控制链](docs/lidar_compound111.md) · [复合路线和盲测方案](docs/lidar_compound111_proposal.md)
+**轮前激光雷达怎样影响越障？** D1 在同一条路上驶过 4° 上下坡、25 mm 左右错相起伏和 30 mm 台阶。雷达调速与抬腿同时开启时，三个起点均在触阶前给出指令，四轮均在台面和出口承重。中央三米实测 1.389～1.399 m/s，速度和停车验收 0/3。视频并排显示雷达仅记录和两项开启时的机器人。[复合地形实测慢放](docs/assets/lidar111.mp4) · [逐起点对照、轮高和中断记录](docs/lidar_compound111.md#复合路线实测)
 
 在原生复合路台阶前，两个射线接口对同一帧给出了不同结果，282/520 束有距离偏差，最大 55.08 mm。切换到逐束首回波后，静止姿态下测得减速指令 0.045 m/s、左右前腿各抬高 12 mm 的目标。已用三条高速平地存档独立复算关节目标几何。[雷达与腿部运动学核验](docs/lidar_compound111.md#原生雷达与腿目标核验)
 
@@ -331,7 +331,7 @@ D1 的两个问题是轮子前方有什么，以及改变动作后机器人会�
 
 | 作者仓库 | 本地使用或查阅范围 |
 |---|---|
-| [MuJoCo](https://github.com/google-deepmind/mujoco) | D1 闭环仿真后端。对照 3.3.0 源码并用合成轮验证了轮缘加速度坐标转换。[WBC 核验](docs/stand_wbc90.md) |
+| [MuJoCo](https://github.com/google-deepmind/mujoco) | 核对 3.3.0 的轮缘加速度坐标转换与高度场接触表示，定位复合路线平坦段的速度偏差。[WBC 核验](docs/stand_wbc90.md) · [轮地响应和诊断边界](docs/lidar_compound111.md#为什么下一步先查轮地速度响应) |
 | [MotrixSim](https://github.com/Motphys/motrixsim) | 阅读官方技术报告及 CPU 射线、接触接口。仓库提供文档与示例，运行时以二进制分发。D1 的独立引擎验证仍待执行。[验证设想][wheel85-src] · [官方 CPU 接口](https://motrixsim.readthedocs.io/en/latest/api_reference/core/motrixsim.html#motrixsim.SceneModel.raycast_closest) |
 | [Stable-Baselines3](https://github.com/DLR-RM/stable-baselines3) | D1 的速度辅助 PPO 在 v2.7.0 更新函数上改编，增加训练期速度监督。[源码出处与许可](THIRD_PARTY_NOTICES.md#7-stable-baselines3-ppo-更新方法的改编) |
 | [ONNX Runtime](https://github.com/microsoft/onnxruntime) | D1 的 C++ actor 使用单线程 ORT。逐拍回放核对推理动作与 Python 存档。[C++34 回放](docs/cpp_reference34_usage.md) |

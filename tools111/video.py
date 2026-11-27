@@ -8,7 +8,8 @@ from tools91.launch91 import ROOT, digest, read
 from tools100.sensor100 import _grid, _wheel_cylinders
 from tools109.video109 import FPS, HEIGHT, WIDTH, chinese_font, encoder, rim_marks, verify_video
 from tools111.course import SEEDS, ground, install_heightfield, make_scene
-from tools111.run import BASE, complete
+from tools111.results import audit_for_video
+from tools111.run import BASE
 
 
 def dots(mj, scene, points):
@@ -34,55 +35,67 @@ def world_returns(mj, z):
     return table
 
 
+def segment(x):
+    for end, name in ((2.5,"坡前"),(3.25,"上坡"),(4.,"下坡"),(5.,"错相起伏"),(5.12,"台阶前"),(5.88,"台面")):
+        if x < end:
+            return name
+    return "驶出台阶"
+
+
 def render(out):
     import mujoco as mj
     from PIL import Image, ImageDraw
     from tools102.mesa_video102 import probe_cpu_egl
     driver = probe_cpu_egl(out)
-    compound = any(BASE.glob("development_??/report.json"))
-    stage = "development" if compound else "flat"
-    folder, result, _ = complete(stage)
-    seed = SEEDS[stage][0]
-    arms = ("neither", "both") if compound else ("heading_off", "heading_on")
-    names = ("雷达仅记录", "雷达调速和腿高") if compound else ("原厂角速度指令", "IMU 航向反馈")
-    layout = stage if compound else "flat"
-    name = "D1_1.5m每秒_复合地形_激光雷达调速与腿高_111.mp4" if compound else "D1_1.5m每秒_航向反馈平地对照_111.mp4"
+    validated_sha = audit_for_video(out)
+    cases = read(out/"validated.json")["cases"]
+    layout = "development"
+    seed = SEEDS[layout][0]
+    arms = ("neither", "both")
+    names = ("左 · 雷达仅记录", "右 · 雷达调速和腿高")
+    name = "D1_1.5m每秒_复合地形_激光雷达调速与腿高_111.mp4"
     movie = out/name
     clips, frames = [], 0
+    first_shown, last_crossing = 170, None
     title, label, small = chinese_font(35, True), chinese_font(28), chinese_font(23)
     with ExitStack() as stack:
         directory = stack.enter_context(TemporaryDirectory(prefix="d1-111-movie-"))
         model = mj.MjModel.from_xml_path(str(make_scene(directory, layout)))
         install_heightfield(model, layout)
-        model.vis.global_.offwidth, model.vis.global_.offheight = 512, 416
-        renderer = stack.enter_context(mj.Renderer(model, width=512, height=416))
+        model.vis.global_.offwidth, model.vis.global_.offheight = 432, 352
+        renderer = stack.enter_context(mj.Renderer(model, width=432, height=352))
         data, cam = mj.MjData(model), mj.MjvCamera()
         cam.azimuth, cam.elevation, cam.distance = 103., -14., 2.45
         wheels = _wheel_cylinders(model, mj.mjtGeom.mjGEOM_CYLINDER)
         traces, clouds, ends = [], [], []
         for arm in arms:
-            row, = (r for r in result["episodes"] if r["seed"] == seed and r["arm"] == arm)
-            trace = stack.enter_context(np.load(folder/f"{seed}_{arm}"/"trace.npz", allow_pickle=False))
+            case, = (r for r in cases if r["seed"] == seed and r["arm"] == arm and r["case_status"] == "COMPLETE")
+            row = case["episode"]
+            trace = stack.enter_context(np.load(BASE/case["unit"]/f"{seed}_{arm}"/"trace.npz", allow_pickle=False))
             z = {key: trace[key] for key in ("qpos", "capture_tick", "range_m", "range_valid", "capture_used",
                                               "actor_vx", "base_cmd", "applied_lift_fk", "actor_wz")}
             traces.append(z)
             ends.append(len(z["qpos"])-1)
-            clouds.append(world_returns(mj, z) if compound else {})
-            clips.append(dict(stage=stage, seed=seed, arm=arm, trace_sha256=row["trace_sha256"],
-                              end_tick=ends[-1], motion_passed=row["motion"]["passed"]))
-        first_edge = row["effects"].get("first_front_edge_tick") if compound else None
-        freeze = first_edge if first_edge is not None else min(ends[-1], 290)
+            clouds.append(world_returns(mj, z))
+            clips.append(dict(stage=layout, seed=seed, arm=arm, trace_sha256=row["trace_sha256"],
+                              unit_status=case["unit_status"], end_tick=ends[-1],
+                              speed_m_s=row["motion"]["speed_m_s"], stop_tail_max_m_s=row["motion"]["stop_tail_max_m_s"],
+                              motion_passed=row["motion"]["passed"], front_edge_tick=row["effects"]["first_front_edge_tick"]))
+        freeze = clips[1]["front_edge_tick"]
         proc = encoder(movie)
         try:
             for k in range(max(ends)+1):
                 x = traces[1]["qpos"][min(k, ends[1]), 0]
-                slow = (2.5 <= x <= 6.35) or k >= max(ends)-30
+                if k < first_shown or (x > 6.6 and k < max(ends)-25):
+                    continue
+                slow = 2.5 <= x <= 6.35 or k >= max(ends)-25
                 if not slow and k%2 and k not in (freeze, max(ends)):
                     continue
+                if x <= 6.6:
+                    last_crossing = k
                 frame = Image.new("RGB", (WIDTH, HEIGHT), "#16242d")
                 draw = ImageDraw.Draw(frame)
-                road = "上下坡、交错起伏、台阶" if compound else "平地"
-                draw.text((18, 9), f"D1  ·  {road}  ·  目标 1.5 m/s", font=title, fill="white")
+                draw.text((18, 9), "D1  ·  上下坡、交错起伏、台阶  ·  目标 1.5 m/s", font=title, fill="white")
                 for side, z in enumerate(traces):
                     index = min(k, ends[side])
                     tick = min(max(index-1, 0), ends[side]-1)
@@ -94,25 +107,25 @@ def render(out):
                     renderer.scene.flags[mj.mjtRndFlag.mjRND_SHADOW] = 0
                     renderer.scene.flags[mj.mjtRndFlag.mjRND_REFLECTION] = 0
                     rim_marks(mj, renderer.scene, model, data, wheels)
-                    if compound:
-                        dots(mj, renderer.scene, clouds[side].get(int(z["capture_used"][tick]), ()))
+                    dots(mj, renderer.scene, clouds[side].get(int(z["capture_used"][tick]), ()))
                     view = Image.fromarray(renderer.render()).resize((WIDTH//2-2, 516), Image.Resampling.BILINEAR)
                     left = side*(WIDTH//2)
                     frame.paste(view, (left, 97))
-                    draw.text((left+16, 57), names[side], font=label, fill="#e5edef")
-                    if compound:
+                    terrain = "停车" if k >= max(ends)-25 else segment(pose[0])
+                    draw.text((left+16, 57), names[side]+"  ·  "+terrain, font=label, fill="#e5edef")
+                    if k == max(ends):
+                        message = f"中央实测 {clips[side]['speed_m_s']:.3f} m/s　停车峰值 {clips[side]['stop_tail_max_m_s']:.3f} m/s"
+                    else:
                         drop = z["base_cmd"][tick]-z["actor_vx"][tick]
                         lift = max(z["applied_lift_fk"][tick, :2])*1000
-                        message = f"雷达减速指令 {drop:.3f} m/s　前腿抬高目标 {lift:.0f} mm"
-                    else:
-                        message = f"指令 {z['actor_vx'][tick]:.2f} m/s　转向指令 {z['actor_wz'][tick]:+.2f} rad/s"
+                        message = f"雷达减速 {drop:.3f} m/s　前轮抬高目标 {lift:.0f} mm"
                     draw.text((left+14, 626), message, font=small, fill="#f0e4c5")
-                phase = "前轮到达台沿 · 定格" if first_edge is not None and k == freeze else ("半速" if slow else "原速")
-                source = f"同一起点 {seed}  ·  原生闭环轨迹回放  ·  {phase}"
-                if compound:
-                    source += "  ·  金点是最近送达的地面回波"
+                phase = "右车前轮到台沿 · 定格" if k == freeze else ("半速" if slow else "原速")
+                source = f"起点 {seed}  ·  仿真 {k/50:.2f} 秒  ·  {phase}  ·  金点是最近送达的回波"
+                if k == max(ends):
+                    source = "两车均驶过台阶。中央三米均速和停车余速均未达标。"
                 draw.text((18, 676), source, font=small, fill="#d8e5eb")
-                repeat = FPS if k in (freeze, max(ends)) else 1
+                repeat = 2*FPS if k == max(ends) else FPS if k == freeze else 1
                 pixels = frame.tobytes()
                 for _ in range(repeat):
                     proc.stdin.write(pixels)
@@ -125,4 +138,5 @@ def render(out):
                 proc.kill()
                 proc.wait()
     return dict(filename=name, bytes=movie.stat().st_size, sha256=digest(movie), frames=frames, clips=clips,
-                stream=verify_video(movie, frames), driver=driver, physical_substeps=0)
+                shown_tick_ranges=[[first_shown,last_crossing],[max(ends)-25,max(ends)]],
+                stream=verify_video(movie, frames), driver=driver, physical_substeps=0, validated_sha256=validated_sha)

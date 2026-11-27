@@ -1,0 +1,59 @@
+{
+  "schema": "pressure-supervisor83-v1",
+  "status": "INCOMPLETE",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "tools111.run",
+    "worker",
+    "development",
+    "--attempt",
+    "1"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-lidar111-development-01.service",
+  "timeout_s": 1200.0,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "pressure_policy_sha256": "29f14e68cc6df4ab79765f842bfe53030a36e9a36f16379e59b53563671d1a56",
+  "child_started": true,
+  "returncode": null,
+  "error": "RuntimeError: effective memory below original2GiB reserve",
+  "signals": [
+    {
+      "pid": 33201,
+      "signal": "SIGTERM",
+      "scope": "verified_owned_cgroup_pidfd"
+    }
+  ],
+  "minimum_effective_bytes": 1644249088,
+  "peak_group_bytes": 598228992,
+  "retry_permitted": false,
+  "startup_full_avg10_strictly_below": 1.0,
+  "runtime_full_avg10_strictly_below": 10.0,
+  "maximum_full_avg10": {
+    "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-lidar111-development-01.service": 0.0,
+    "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.72,
+    "/user.slice/user-1000.slice/user@1000.service": 0.9,
+    "/user.slice/user-1000.slice": 0.9,
+    "/user.slice": 0.77,
+    "/": 0.9
+  },
+  "new_physics_steps_in_supervisor": 0,
+  "cpu_affinity": [
+    0
+  ],
+  "final_memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "child_pid": 33201,
+  "owned_cgroup_children_empty": true,
+  "remaining_owned_pids": [],
+  "child_reaped": true,
+  "elapsed_s": 29.95104186200024,
+  "returncode_after_cleanup": -15
+}
