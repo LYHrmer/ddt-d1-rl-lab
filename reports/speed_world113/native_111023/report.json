@@ -1,0 +1,68 @@
+{
+  "stage": "native_111023",
+  "registration_sha256": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+  "reserved_at_unix_ns": 1795792874798142394,
+  "inputs": {
+    "forecast": "c748295eebeff729e76afb33d1f314de14d22af8f0cd71cbbae07f219603c140"
+  },
+  "status": "COMPLETE",
+  "files": {
+    "trace.npz": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db"
+  },
+  "result": {
+    "status": "COMPLETE",
+    "seed": 111023,
+    "layout": "flat",
+    "surface": "level_heightfield",
+    "arm": "heading_on",
+    "gain": 0.97792348,
+    "trim": "brake_aware",
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": false,
+      "failed": [
+        "stopped"
+      ],
+      "ticks": 600,
+      "gate_times_s": [
+        4.385977591687794,
+        5.041834597613015,
+        5.7018089103335265,
+        6.362492425554058
+      ],
+      "speed_m_s": 1.5178231645910267,
+      "sections_m_s": [
+        1.5247226010634674,
+        1.515210487326169,
+        1.5135840034788923
+      ],
+      "max_lane_y_m": 0.6322094409112786,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "stop_tail_max_m_s": 0.05659143286008022
+    },
+    "effects": {},
+    "trace_sha256": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db",
+    "reference_sha256": "19137ab9aac008281d57e904eaea2133f57b1f9a2aba6334edf7c28c7ef6fabb",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0"
+  },
+  "completed_at_unix_ns": 1795792880576960989
+}

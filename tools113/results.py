@@ -183,7 +183,8 @@ def verify_inputs(stages):
     for stage in STAGES:
         if stages[stage]["status"] in ("NOT_STARTED", "INTERRUPTED_BEFORE_RESERVATION"):
             continue
-        inputs = read(_item(stage, "reservation.json"))["inputs"]
+        reservation = read(_item(stage, "reservation.json"))
+        inputs = reservation["inputs"]
         if stage == "forecast":
             required = {f"fit_{seed}" for seed in SEEDS}
         elif stage.startswith("native_"):
@@ -206,8 +207,8 @@ def verify_inputs(stages):
                     seal["registration_sha256"] == registration() and seal["rows"] == forecast["result"]["rows"] and
                     seal["forecast_inputs"] == forecast["inputs"] and seal["actor_sha256"] == forecast["result"]["actor_sha256"],
                     "public forecasts differ from the prospective seal")
-            require(seal["sealed_at_unix_ns"] == forecast["completed_at_unix_ns"] <
-                    read(_item(stage, "reservation.json"))["reserved_at_unix_ns"], "late native forecast seal")
+            require(seal["sealed_at_unix_ns"] == forecast["completed_at_unix_ns"] < reservation["reserved_at_unix_ns"],
+                    "native measurement did not follow the sealed forecast")
 
 
 def verify_fit(seed, stage, fit, cases):

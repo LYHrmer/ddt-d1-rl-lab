@@ -1,0 +1,28 @@
+{
+  "schema": "pressure-supervisor83-v1",
+  "status": "INCOMPLETE",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "tools113.results",
+    "--publish"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-speed113-public-audit-01.service",
+  "timeout_s": 180.0,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "pressure_policy_sha256": "29f14e68cc6df4ab79765f842bfe53030a36e9a36f16379e59b53563671d1a56",
+  "child_started": false,
+  "returncode": null,
+  "error": "RuntimeError: LP_NUM_THREADS must be1",
+  "signals": [],
+  "minimum_effective_bytes": null,
+  "peak_group_bytes": 0,
+  "retry_permitted": false,
+  "startup_full_avg10_strictly_below": 1.0,
+  "runtime_full_avg10_strictly_below": 10.0,
+  "maximum_full_avg10": {},
+  "new_physics_steps_in_supervisor": 0,
+  "elapsed_s": 0.00014930600082152523,
+  "child_reaped": true
+}

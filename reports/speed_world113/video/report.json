@@ -1,0 +1,99 @@
+{
+  "stage": "video",
+  "registration_sha256": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+  "reserved_at_unix_ns": 1795793009531381431,
+  "inputs": {
+    "native_111011": "9e2056b09f2f1e487f18675e21937cedf138f275e969191c792e703972a005e1"
+  },
+  "status": "COMPLETE",
+  "files": {
+    "D1_\u9ad8\u901f\u4e16\u754c\u6a21\u578b_\u7b49\u9ad8\u7f51\u683c\u5de1\u822a\u4e0e\u505c\u8f66_113.mp4": "adbeda5d51538219989a424832ba6e4de98a99fbe129c1861f2ea34594910d7d",
+    "driver.json": "f41c107944e92a24834b40503e62959caf6a21c65e660de4ceaa46df97f4f46b"
+  },
+  "result": {
+    "filename": "D1_\u9ad8\u901f\u4e16\u754c\u6a21\u578b_\u7b49\u9ad8\u7f51\u683c\u5de1\u822a\u4e0e\u505c\u8f66_113.mp4",
+    "seed": 111011,
+    "bytes": 492772,
+    "sha256": "adbeda5d51538219989a424832ba6e4de98a99fbe129c1861f2ea34594910d7d",
+    "frames": 268,
+    "trace_sha256": [
+      "38b628c77a4745833384590fb77cf881e8219f0176cb78d807cd0562b9c8e4c3",
+      "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82"
+    ],
+    "last_ticks": [
+      600,
+      600
+    ],
+    "gate_ticks": [
+      336,
+      318
+    ],
+    "shown_ticks": {
+      "cruise": [
+        288,
+        292,
+        296,
+        300,
+        304,
+        308,
+        312,
+        316,
+        318,
+        320,
+        324,
+        328,
+        332,
+        336,
+        340,
+        344,
+        348
+      ],
+      "braking": [
+        520,
+        524,
+        525,
+        528,
+        532,
+        536,
+        540,
+        544,
+        548,
+        552,
+        556,
+        560,
+        564,
+        568,
+        572,
+        575,
+        576,
+        580,
+        584,
+        588,
+        592,
+        596,
+        600
+      ]
+    },
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "10.720000",
+      "nb_read_frames": "268"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "physics": 0,
+    "cover_frames": 0
+  },
+  "completed_at_unix_ns": 1795793024317461112
+}

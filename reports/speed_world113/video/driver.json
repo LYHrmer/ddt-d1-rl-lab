@@ -1,0 +1,9 @@
+{
+  "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+  "vendor": "Mesa",
+  "egl_device_index": 1,
+  "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+  "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+  "frames": 0,
+  "physics_substeps": 0
+}

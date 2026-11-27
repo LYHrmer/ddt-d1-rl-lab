@@ -5,7 +5,7 @@ on:
       - 'tools113/**'
       - 'tests/test_*113.py'
       - 'reports/speed_world113/**'
-      - 'docs/experiments113/high_speed.json'
+      - 'docs/experiments113/**'
       - 'docs/experiments113/forecast_seal.json'
       - 'docs/high_speed_world113_proposal.md'
       - 'docs/assets/speed_world113.mp4'

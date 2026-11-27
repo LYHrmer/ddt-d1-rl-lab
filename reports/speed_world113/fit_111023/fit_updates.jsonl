@@ -1,0 +1,200 @@
+{"arm": "action", "update": 1, "event": "attempt"}
+{"arm": "action", "update": 1, "event": "complete", "loss": 0.7723915365365583, "gradient_norm": 1.8866626192535283}
+{"arm": "action", "update": 2, "event": "attempt"}
+{"arm": "action", "update": 2, "event": "complete", "loss": 0.6069643521466211, "gradient_norm": 1.110358952564832}
+{"arm": "action", "update": 3, "event": "attempt"}
+{"arm": "action", "update": 3, "event": "complete", "loss": 0.5243682592747114, "gradient_norm": 0.8053195971309411}
+{"arm": "action", "update": 4, "event": "attempt"}
+{"arm": "action", "update": 4, "event": "complete", "loss": 0.4804807311170084, "gradient_norm": 0.6224573860038661}
+{"arm": "action", "update": 5, "event": "attempt"}
+{"arm": "action", "update": 5, "event": "complete", "loss": 0.275575684861072, "gradient_norm": 0.7467174677111984}
+{"arm": "action", "update": 6, "event": "attempt"}
+{"arm": "action", "update": 6, "event": "complete", "loss": 0.4896869526641231, "gradient_norm": 0.6860606594661681}
+{"arm": "action", "update": 7, "event": "attempt"}
+{"arm": "action", "update": 7, "event": "complete", "loss": 0.5503611944080966, "gradient_norm": 0.6363306378450225}
+{"arm": "action", "update": 8, "event": "attempt"}
+{"arm": "action", "update": 8, "event": "complete", "loss": 0.5294707713505579, "gradient_norm": 0.7080845641937578}
+{"arm": "action", "update": 9, "event": "attempt"}
+{"arm": "action", "update": 9, "event": "complete", "loss": 0.37561025617734034, "gradient_norm": 0.2716269278407861}
+{"arm": "action", "update": 10, "event": "attempt"}
+{"arm": "action", "update": 10, "event": "complete", "loss": 0.5095676641560701, "gradient_norm": 0.9288842035338785}
+{"arm": "action", "update": 11, "event": "attempt"}
+{"arm": "action", "update": 11, "event": "complete", "loss": 0.25238384664983016, "gradient_norm": 0.8337022396275439}
+{"arm": "action", "update": 12, "event": "attempt"}
+{"arm": "action", "update": 12, "event": "complete", "loss": 0.2478472588777056, "gradient_norm": 0.38044764292956285}
+{"arm": "action", "update": 13, "event": "attempt"}
+{"arm": "action", "update": 13, "event": "complete", "loss": 0.37581464593287056, "gradient_norm": 0.7832359316450027}
+{"arm": "action", "update": 14, "event": "attempt"}
+{"arm": "action", "update": 14, "event": "complete", "loss": 0.4114956977048991, "gradient_norm": 0.6653172851190399}
+{"arm": "action", "update": 15, "event": "attempt"}
+{"arm": "action", "update": 15, "event": "complete", "loss": 0.32789623129285445, "gradient_norm": 0.3639775375681396}
+{"arm": "action", "update": 16, "event": "attempt"}
+{"arm": "action", "update": 16, "event": "complete", "loss": 0.28444965708069747, "gradient_norm": 0.4860849779003028}
+{"arm": "action", "update": 17, "event": "attempt"}
+{"arm": "action", "update": 17, "event": "complete", "loss": 0.5122955956459836, "gradient_norm": 0.35766017046291015}
+{"arm": "action", "update": 18, "event": "attempt"}
+{"arm": "action", "update": 18, "event": "complete", "loss": 0.36468371861165483, "gradient_norm": 0.36395726004438467}
+{"arm": "action", "update": 19, "event": "attempt"}
+{"arm": "action", "update": 19, "event": "complete", "loss": 0.27605112759015327, "gradient_norm": 0.4322333891315509}
+{"arm": "action", "update": 20, "event": "attempt"}
+{"arm": "action", "update": 20, "event": "complete", "loss": 0.4295007866372137, "gradient_norm": 0.7031146935187713}
+{"arm": "action", "update": 21, "event": "attempt"}
+{"arm": "action", "update": 21, "event": "complete", "loss": 0.2959296536216169, "gradient_norm": 0.48912835514756936}
+{"arm": "action", "update": 22, "event": "attempt"}
+{"arm": "action", "update": 22, "event": "complete", "loss": 0.2998735072407023, "gradient_norm": 0.5524065461439885}
+{"arm": "action", "update": 23, "event": "attempt"}
+{"arm": "action", "update": 23, "event": "complete", "loss": 0.2720492339356946, "gradient_norm": 0.5376786989033873}
+{"arm": "action", "update": 24, "event": "attempt"}
+{"arm": "action", "update": 24, "event": "complete", "loss": 0.3590850175565854, "gradient_norm": 0.5059116727078034}
+{"arm": "action", "update": 25, "event": "attempt"}
+{"arm": "action", "update": 25, "event": "complete", "loss": 0.37511828898881255, "gradient_norm": 0.6924235908935155}
+{"arm": "action", "update": 26, "event": "attempt"}
+{"arm": "action", "update": 26, "event": "complete", "loss": 0.4318637058784254, "gradient_norm": 0.5594566533342197}
+{"arm": "action", "update": 27, "event": "attempt"}
+{"arm": "action", "update": 27, "event": "complete", "loss": 0.3797724808413496, "gradient_norm": 0.4989452510885225}
+{"arm": "action", "update": 28, "event": "attempt"}
+{"arm": "action", "update": 28, "event": "complete", "loss": 0.25169580747484355, "gradient_norm": 0.37485834243083577}
+{"arm": "action", "update": 29, "event": "attempt"}
+{"arm": "action", "update": 29, "event": "complete", "loss": 0.26450209223194654, "gradient_norm": 0.47262580966749185}
+{"arm": "action", "update": 30, "event": "attempt"}
+{"arm": "action", "update": 30, "event": "complete", "loss": 0.3142132947250478, "gradient_norm": 0.2654287083984363}
+{"arm": "action", "update": 31, "event": "attempt"}
+{"arm": "action", "update": 31, "event": "complete", "loss": 0.3808692969444857, "gradient_norm": 0.32205218401481756}
+{"arm": "action", "update": 32, "event": "attempt"}
+{"arm": "action", "update": 32, "event": "complete", "loss": 0.25000616501924433, "gradient_norm": 0.7993434176170424}
+{"arm": "action", "update": 33, "event": "attempt"}
+{"arm": "action", "update": 33, "event": "complete", "loss": 0.2682023648166347, "gradient_norm": 0.3143158383870629}
+{"arm": "action", "update": 34, "event": "attempt"}
+{"arm": "action", "update": 34, "event": "complete", "loss": 0.2272785731248038, "gradient_norm": 0.4895456195224297}
+{"arm": "action", "update": 35, "event": "attempt"}
+{"arm": "action", "update": 35, "event": "complete", "loss": 0.46247042445027586, "gradient_norm": 0.41824606716376056}
+{"arm": "action", "update": 36, "event": "attempt"}
+{"arm": "action", "update": 36, "event": "complete", "loss": 0.2672019840379801, "gradient_norm": 0.5149962737640155}
+{"arm": "action", "update": 37, "event": "attempt"}
+{"arm": "action", "update": 37, "event": "complete", "loss": 0.2835400786213804, "gradient_norm": 0.48322846988853224}
+{"arm": "action", "update": 38, "event": "attempt"}
+{"arm": "action", "update": 38, "event": "complete", "loss": 0.2840374428219986, "gradient_norm": 0.4063261953091324}
+{"arm": "action", "update": 39, "event": "attempt"}
+{"arm": "action", "update": 39, "event": "complete", "loss": 0.3494492219754861, "gradient_norm": 0.2564275776578618}
+{"arm": "action", "update": 40, "event": "attempt"}
+{"arm": "action", "update": 40, "event": "complete", "loss": 0.19154375942473875, "gradient_norm": 0.4582624150711057}
+{"arm": "action", "update": 41, "event": "attempt"}
+{"arm": "action", "update": 41, "event": "complete", "loss": 0.29520173792845805, "gradient_norm": 0.33164448792074275}
+{"arm": "action", "update": 42, "event": "attempt"}
+{"arm": "action", "update": 42, "event": "complete", "loss": 0.3152467600754434, "gradient_norm": 0.4363173939728035}
+{"arm": "action", "update": 43, "event": "attempt"}
+{"arm": "action", "update": 43, "event": "complete", "loss": 0.3309641447512007, "gradient_norm": 0.8452010041211018}
+{"arm": "action", "update": 44, "event": "attempt"}
+{"arm": "action", "update": 44, "event": "complete", "loss": 0.3212845917073475, "gradient_norm": 0.5328763076178121}
+{"arm": "action", "update": 45, "event": "attempt"}
+{"arm": "action", "update": 45, "event": "complete", "loss": 0.31893891963794446, "gradient_norm": 0.2978170451052476}
+{"arm": "action", "update": 46, "event": "attempt"}
+{"arm": "action", "update": 46, "event": "complete", "loss": 0.30611498219535266, "gradient_norm": 0.6990979272991232}
+{"arm": "action", "update": 47, "event": "attempt"}
+{"arm": "action", "update": 47, "event": "complete", "loss": 0.44375827030028875, "gradient_norm": 0.6748657270807377}
+{"arm": "action", "update": 48, "event": "attempt"}
+{"arm": "action", "update": 48, "event": "complete", "loss": 0.3408537805136781, "gradient_norm": 0.322510567109325}
+{"arm": "action", "update": 49, "event": "attempt"}
+{"arm": "action", "update": 49, "event": "complete", "loss": 0.47307440451462124, "gradient_norm": 0.7145125289986723}
+{"arm": "action", "update": 50, "event": "attempt"}
+{"arm": "action", "update": 50, "event": "complete", "loss": 0.24840758598601959, "gradient_norm": 0.6248303904069077}
+{"arm": "masked", "update": 1, "event": "attempt"}
+{"arm": "masked", "update": 1, "event": "complete", "loss": 0.7723915365365583, "gradient_norm": 0.8406402753932392}
+{"arm": "masked", "update": 2, "event": "attempt"}
+{"arm": "masked", "update": 2, "event": "complete", "loss": 0.6634984139635431, "gradient_norm": 0.3780730454527202}
+{"arm": "masked", "update": 3, "event": "attempt"}
+{"arm": "masked", "update": 3, "event": "complete", "loss": 0.6175050266552691, "gradient_norm": 0.6605825253417341}
+{"arm": "masked", "update": 4, "event": "attempt"}
+{"arm": "masked", "update": 4, "event": "complete", "loss": 0.5424133745347076, "gradient_norm": 0.2575919371318696}
+{"arm": "masked", "update": 5, "event": "attempt"}
+{"arm": "masked", "update": 5, "event": "complete", "loss": 0.3379610504543945, "gradient_norm": 0.2896757577846466}
+{"arm": "masked", "update": 6, "event": "attempt"}
+{"arm": "masked", "update": 6, "event": "complete", "loss": 0.5857052137235333, "gradient_norm": 0.46025594619771876}
+{"arm": "masked", "update": 7, "event": "attempt"}
+{"arm": "masked", "update": 7, "event": "complete", "loss": 0.6303695215013861, "gradient_norm": 0.3877953572817501}
+{"arm": "masked", "update": 8, "event": "attempt"}
+{"arm": "masked", "update": 8, "event": "complete", "loss": 0.6265956979704168, "gradient_norm": 0.45161327222607467}
+{"arm": "masked", "update": 9, "event": "attempt"}
+{"arm": "masked", "update": 9, "event": "complete", "loss": 0.45611714312402074, "gradient_norm": 0.42505482837378306}
+{"arm": "masked", "update": 10, "event": "attempt"}
+{"arm": "masked", "update": 10, "event": "complete", "loss": 0.6224659147369455, "gradient_norm": 0.6172035756051935}
+{"arm": "masked", "update": 11, "event": "attempt"}
+{"arm": "masked", "update": 11, "event": "complete", "loss": 0.2910929587543227, "gradient_norm": 0.6005770722032463}
+{"arm": "masked", "update": 12, "event": "attempt"}
+{"arm": "masked", "update": 12, "event": "complete", "loss": 0.3089853437228181, "gradient_norm": 0.3017699104759227}
+{"arm": "masked", "update": 13, "event": "attempt"}
+{"arm": "masked", "update": 13, "event": "complete", "loss": 0.4631162302831266, "gradient_norm": 0.7606628139885107}
+{"arm": "masked", "update": 14, "event": "attempt"}
+{"arm": "masked", "update": 14, "event": "complete", "loss": 0.4987618826368127, "gradient_norm": 0.3041742100373191}
+{"arm": "masked", "update": 15, "event": "attempt"}
+{"arm": "masked", "update": 15, "event": "complete", "loss": 0.40561643979621503, "gradient_norm": 0.3871642568002933}
+{"arm": "masked", "update": 16, "event": "attempt"}
+{"arm": "masked", "update": 16, "event": "complete", "loss": 0.33573213019247017, "gradient_norm": 0.2499538627233812}
+{"arm": "masked", "update": 17, "event": "attempt"}
+{"arm": "masked", "update": 17, "event": "complete", "loss": 0.6093132674941865, "gradient_norm": 0.3265217857802292}
+{"arm": "masked", "update": 18, "event": "attempt"}
+{"arm": "masked", "update": 18, "event": "complete", "loss": 0.44433359370190895, "gradient_norm": 0.28043443631763465}
+{"arm": "masked", "update": 19, "event": "attempt"}
+{"arm": "masked", "update": 19, "event": "complete", "loss": 0.3244443530917548, "gradient_norm": 0.35283101266639644}
+{"arm": "masked", "update": 20, "event": "attempt"}
+{"arm": "masked", "update": 20, "event": "complete", "loss": 0.5228101607022809, "gradient_norm": 0.2825299780150016}
+{"arm": "masked", "update": 21, "event": "attempt"}
+{"arm": "masked", "update": 21, "event": "complete", "loss": 0.3754284167271474, "gradient_norm": 0.39406221622489523}
+{"arm": "masked", "update": 22, "event": "attempt"}
+{"arm": "masked", "update": 22, "event": "complete", "loss": 0.37524731199542627, "gradient_norm": 0.7675095023556588}
+{"arm": "masked", "update": 23, "event": "attempt"}
+{"arm": "masked", "update": 23, "event": "complete", "loss": 0.32811317225410297, "gradient_norm": 0.3316546178410711}
+{"arm": "masked", "update": 24, "event": "attempt"}
+{"arm": "masked", "update": 24, "event": "complete", "loss": 0.45142130770175665, "gradient_norm": 0.5001674683676286}
+{"arm": "masked", "update": 25, "event": "attempt"}
+{"arm": "masked", "update": 25, "event": "complete", "loss": 0.4905828598471218, "gradient_norm": 0.7866147080658672}
+{"arm": "masked", "update": 26, "event": "attempt"}
+{"arm": "masked", "update": 26, "event": "complete", "loss": 0.5356280231542823, "gradient_norm": 0.5046914527530099}
+{"arm": "masked", "update": 27, "event": "attempt"}
+{"arm": "masked", "update": 27, "event": "complete", "loss": 0.4627478711369368, "gradient_norm": 0.34243175218964034}
+{"arm": "masked", "update": 28, "event": "attempt"}
+{"arm": "masked", "update": 28, "event": "complete", "loss": 0.30094059489823444, "gradient_norm": 0.25192505186220815}
+{"arm": "masked", "update": 29, "event": "attempt"}
+{"arm": "masked", "update": 29, "event": "complete", "loss": 0.3139851325557558, "gradient_norm": 0.21286316138787562}
+{"arm": "masked", "update": 30, "event": "attempt"}
+{"arm": "masked", "update": 30, "event": "complete", "loss": 0.38145848507453156, "gradient_norm": 0.2812053493048024}
+{"arm": "masked", "update": 31, "event": "attempt"}
+{"arm": "masked", "update": 31, "event": "complete", "loss": 0.46235294021853607, "gradient_norm": 0.24827220155457314}
+{"arm": "masked", "update": 32, "event": "attempt"}
+{"arm": "masked", "update": 32, "event": "complete", "loss": 0.29321336004401455, "gradient_norm": 0.5629046895947324}
+{"arm": "masked", "update": 33, "event": "attempt"}
+{"arm": "masked", "update": 33, "event": "complete", "loss": 0.3434787202346422, "gradient_norm": 0.42963899924768756}
+{"arm": "masked", "update": 34, "event": "attempt"}
+{"arm": "masked", "update": 34, "event": "complete", "loss": 0.2810046242962968, "gradient_norm": 0.37943449746219354}
+{"arm": "masked", "update": 35, "event": "attempt"}
+{"arm": "masked", "update": 35, "event": "complete", "loss": 0.61144867956539, "gradient_norm": 0.9793650097793227}
+{"arm": "masked", "update": 36, "event": "attempt"}
+{"arm": "masked", "update": 36, "event": "complete", "loss": 0.36700659917472445, "gradient_norm": 0.8429505780237957}
+{"arm": "masked", "update": 37, "event": "attempt"}
+{"arm": "masked", "update": 37, "event": "complete", "loss": 0.32950719560506775, "gradient_norm": 0.30379161469499244}
+{"arm": "masked", "update": 38, "event": "attempt"}
+{"arm": "masked", "update": 38, "event": "complete", "loss": 0.3519370701368607, "gradient_norm": 0.19996576816434614}
+{"arm": "masked", "update": 39, "event": "attempt"}
+{"arm": "masked", "update": 39, "event": "complete", "loss": 0.4605515279205785, "gradient_norm": 0.45391604821208564}
+{"arm": "masked", "update": 40, "event": "attempt"}
+{"arm": "masked", "update": 40, "event": "complete", "loss": 0.26307174019366764, "gradient_norm": 0.6922476374677047}
+{"arm": "masked", "update": 41, "event": "attempt"}
+{"arm": "masked", "update": 41, "event": "complete", "loss": 0.4082595246180126, "gradient_norm": 0.6647355022722334}
+{"arm": "masked", "update": 42, "event": "attempt"}
+{"arm": "masked", "update": 42, "event": "complete", "loss": 0.3913780753683509, "gradient_norm": 0.7736316862319447}
+{"arm": "masked", "update": 43, "event": "attempt"}
+{"arm": "masked", "update": 43, "event": "complete", "loss": 0.4228196993816726, "gradient_norm": 0.7714619524467494}
+{"arm": "masked", "update": 44, "event": "attempt"}
+{"arm": "masked", "update": 44, "event": "complete", "loss": 0.3982423350354677, "gradient_norm": 0.6751021996449815}
+{"arm": "masked", "update": 45, "event": "attempt"}
+{"arm": "masked", "update": 45, "event": "complete", "loss": 0.4512038686444981, "gradient_norm": 0.8339151406278626}
+{"arm": "masked", "update": 46, "event": "attempt"}
+{"arm": "masked", "update": 46, "event": "complete", "loss": 0.361217912115985, "gradient_norm": 0.2163198649546941}
+{"arm": "masked", "update": 47, "event": "attempt"}
+{"arm": "masked", "update": 47, "event": "complete", "loss": 0.5643821444002561, "gradient_norm": 0.6615245905347173}
+{"arm": "masked", "update": 48, "event": "attempt"}
+{"arm": "masked", "update": 48, "event": "complete", "loss": 0.41387294999179947, "gradient_norm": 0.3171841841537722}
+{"arm": "masked", "update": 49, "event": "attempt"}
+{"arm": "masked", "update": 49, "event": "complete", "loss": 0.5576215990673034, "gradient_norm": 0.36431135934131187}
+{"arm": "masked", "update": 50, "event": "attempt"}
+{"arm": "masked", "update": 50, "event": "complete", "loss": 0.30256273244137033, "gradient_norm": 0.36180690065646853}

@@ -1,0 +1,120 @@
+{
+  "stage": "fit_111023",
+  "registration_sha256": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+  "reserved_at_unix_ns": 1795792427151255122,
+  "inputs": {},
+  "status": "COMPLETE",
+  "files": {
+    "action.npz": "21c8378296b4d2faeb297566760fece11c710dd12843c5c4a898126dac2dd04b",
+    "fit_updates.jsonl": "9afcc9a8c78181f21ccc942204228c7809538af246888fd73f121d50f53481bd",
+    "heldout_h16.npz": "aa35ab7befc1fdaf4a505fc5656a7b5232ec8bf1132ac98812f718aeaf206dea",
+    "masked.npz": "efc536fe844cdb6ba6f79aeebaff41f5ed96249cdd4acb17fcc1a78c8a3d355b"
+  },
+  "result": {
+    "heldout_seed": 111023,
+    "heldout_sha256": "19137ab9aac008281d57e904eaea2133f57b1f9a2aba6334edf7c28c7ef6fabb",
+    "arms": {
+      "action": {
+        "updates": 50,
+        "first_batch_loss": 0.7723915365365583,
+        "last_batch_loss": 0.24840758598601959,
+        "checkpoint_sha256": "21c8378296b4d2faeb297566760fece11c710dd12843c5c4a898126dac2dd04b",
+        "holdout": {
+          "cruise": {
+            "windows": 93,
+            "mae_m_s": 0.007126632186897306
+          },
+          "braking": {
+            "windows": 135,
+            "mae_m_s": 0.006987464383984645
+          }
+        }
+      },
+      "masked": {
+        "updates": 50,
+        "first_batch_loss": 0.7723915365365583,
+        "last_batch_loss": 0.30256273244137033,
+        "checkpoint_sha256": "efc536fe844cdb6ba6f79aeebaff41f5ed96249cdd4acb17fcc1a78c8a3d355b",
+        "holdout": {
+          "cruise": {
+            "windows": 93,
+            "mae_m_s": 0.015383625118368608
+          },
+          "braking": {
+            "windows": 135,
+            "mae_m_s": 0.0081420537465029
+          }
+        }
+      }
+    },
+    "training": [
+      {
+        "seed": 111103,
+        "domain": "compound",
+        "file": "111103_both.npz",
+        "sha256": "02a21757aaedf4ee4946c1448ec9bbd234258818334ca5f0f745ca5c44f2d975"
+      },
+      {
+        "seed": 111103,
+        "domain": "compound",
+        "file": "111103_legs.npz",
+        "sha256": "9e3e6d81076a0e3022090c01a3116dfac0dc7f8938967bde5f0abbd7a61a3156"
+      },
+      {
+        "seed": 111103,
+        "domain": "compound",
+        "file": "111103_speed.npz",
+        "sha256": "53f350639f5462c08383342267379d6fd50c2ba85ae8fbb0510f9d4fb4288833"
+      },
+      {
+        "seed": 111107,
+        "domain": "compound",
+        "file": "111107_both.npz",
+        "sha256": "3debee3ccd76dfe31d366f1b90060d4f561c1a59515660f98aee4a58c9331658"
+      },
+      {
+        "seed": 111107,
+        "domain": "compound",
+        "file": "111107_legs.npz",
+        "sha256": "5d1d4793be8e3c785460960a7756c6efdbbdc5269a3f8cb07c7595f368130e2a"
+      },
+      {
+        "seed": 111107,
+        "domain": "compound",
+        "file": "111107_neither.npz",
+        "sha256": "b475cb707abd219adfe74e4ce320e803baf592bb9f309e84024fc9278ccec522"
+      },
+      {
+        "seed": 111107,
+        "domain": "compound",
+        "file": "111107_speed.npz",
+        "sha256": "94924aeea8cafe2ddddeae923a40e8a290a880d293ab60adfd7c50ce4f526583"
+      },
+      {
+        "seed": 111011,
+        "domain": "grid",
+        "file": "heightfield_111011.npz",
+        "sha256": "38b628c77a4745833384590fb77cf881e8219f0176cb78d807cd0562b9c8e4c3"
+      },
+      {
+        "seed": 111037,
+        "domain": "grid",
+        "file": "heightfield_111037.npz",
+        "sha256": "b1c5177ff3711963a3ead7fe7b56f3859984c3f8b01568a6c0cd5ad234be01af"
+      }
+    ],
+    "sample_seed": 1241023,
+    "sample_schedule_sha256": "afbd8e2c78988cfb0d33483f6347044f09073af4d05cd61f933d18d3ca5420c4",
+    "world_updates": 100,
+    "policy_updates": 0,
+    "physics_steps": 0,
+    "holdout_scores_sha256": "aa35ab7befc1fdaf4a505fc5656a7b5232ec8bf1132ac98812f718aeaf206dea",
+    "updates_sha256": "9afcc9a8c78181f21ccc942204228c7809538af246888fd73f121d50f53481bd",
+    "passed": {
+      "cruise": true,
+      "braking": true
+    },
+    "both_phases_passed": true
+  },
+  "completed_at_unix_ns": 1795792427423602848
+}

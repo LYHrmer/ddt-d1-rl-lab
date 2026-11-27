@@ -1,0 +1,532 @@
+{
+  "registration_sha256": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+  "stages": {
+    "fit_111011": {
+      "status": "COMPLETE",
+      "unit": "fit_111011_01",
+      "files": {
+        "action.npz": "af438cf14a5c000ca96c12d5272fba6e2b59a2603b512d3b56df95032bbf3569",
+        "fit_updates.jsonl": "8af6b6325dfe59f882ef2e4e6251421aa9eee2299682134ae7a7bc98df728cfd",
+        "heldout_h16.npz": "2710e1d5b7902ef6bd1477f423b0c9df01e146114ca0d5e4bb987087d4419210",
+        "masked.npz": "37d77f77735260561280dee0697dac3d32f2653926f91a1db3e77d9d6cf9a7f1",
+        "report.json": "8c95446737073997241b0edc8667253f8f1e750a240bd315e266c6a5722a78d0",
+        "reservation.json": "bd3c3fd4ee127aee12697a2b2aae30b1ec7254a49da6b9c712e072309e2e6c84"
+      },
+      "guard": "guard_fit_111011_01"
+    },
+    "fit_111023": {
+      "status": "COMPLETE",
+      "unit": "fit_111023_01",
+      "files": {
+        "action.npz": "21c8378296b4d2faeb297566760fece11c710dd12843c5c4a898126dac2dd04b",
+        "fit_updates.jsonl": "9afcc9a8c78181f21ccc942204228c7809538af246888fd73f121d50f53481bd",
+        "heldout_h16.npz": "aa35ab7befc1fdaf4a505fc5656a7b5232ec8bf1132ac98812f718aeaf206dea",
+        "masked.npz": "efc536fe844cdb6ba6f79aeebaff41f5ed96249cdd4acb17fcc1a78c8a3d355b",
+        "report.json": "7dc811a4b99eeaf2f6a18cdb8bbabe06f6fdf8c8dcc7d62fc19be0f8699a65a2",
+        "reservation.json": "cb53998be14176609793db8f17f440a336e863000fe42186dbc58ef9f4185381"
+      },
+      "guard": "guard_fit_111023_01"
+    },
+    "fit_111037": {
+      "status": "COMPLETE",
+      "unit": "fit_111037_01",
+      "files": {
+        "action.npz": "3d1241fd715666711f5e37e4f79c73c4b544f9f8f4f00e93919041e152709cb9",
+        "fit_updates.jsonl": "d133351469663a58d6ddd6c6ebaffa3a00ee380e398c72c97669f41f29af0607",
+        "heldout_h16.npz": "9007954dfd02578c50edb570ea62d519058c3eedc6d0f9626c98801aa61d99db",
+        "masked.npz": "d7b1faab577839e3d48df45af442a003969c353ac8a64a3de4c63e201ff15e7b",
+        "report.json": "8c1124e4dca81330345598596d4474b4b0841d7070e147fb297fbdd36f123579",
+        "reservation.json": "df8d121eff9395978df0dcd551281375bc1c8f67100d533c9f1f0f85d8ae6013"
+      },
+      "guard": "guard_fit_111037_01"
+    },
+    "forecast": {
+      "status": "COMPLETE",
+      "unit": "forecast_01",
+      "files": {
+        "pred_111011.npz": "49990113eb174b9958947c2c84e69ccab67429995451d14a8b4992844db8f2c2",
+        "pred_111023.npz": "ef8e8c506e43deaa363d28ae53d15cbb9cd23f111b56e7408eec2f516b1222a4",
+        "pred_111037.npz": "80a9f3a2e8b7e565ed9c5f62dd31ecfa3d8a67e1f5695b0f455466312338e48b",
+        "report.json": "c748295eebeff729e76afb33d1f314de14d22af8f0cd71cbbae07f219603c140",
+        "reservation.json": "92f12d88432fc6758f2d7704c364ba99e7727a1160f62b1986057f4df8979507"
+      },
+      "guard": "guard_forecast_01"
+    },
+    "native_111011": {
+      "status": "COMPLETE",
+      "unit": "native_111011_01",
+      "files": {
+        "report.json": "9e2056b09f2f1e487f18675e21937cedf138f275e969191c792e703972a005e1",
+        "reservation.json": "398c27aeddfe39a336b80c8793bc94de5b8512a3b65e205d51936660b79cec00",
+        "trace.npz": "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82"
+      },
+      "guard": "guard_native_111011_01"
+    },
+    "native_111023": {
+      "status": "COMPLETE",
+      "unit": "native_111023_01",
+      "files": {
+        "report.json": "1f44985410da7519213e382874ec14fff67f3322307b19197a7c28bc62994099",
+        "reservation.json": "cf3bcfa0ed02385f434a3ff46ff57e0212296a7de0393e30cd1f81ac616314b8",
+        "trace.npz": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db"
+      },
+      "guard": "guard_native_111023_01"
+    },
+    "native_111037": {
+      "status": "COMPLETE",
+      "unit": "native_111037_01",
+      "files": {
+        "report.json": "26728a46beace2366d54c6a661426cac5bf5b9da96996d02f7655058e673574a",
+        "reservation.json": "82320e802ef03d0af2e814c08f045a7959498a05715b3729bf68acc8633ad0a7",
+        "trace.npz": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b"
+      },
+      "guard": "guard_native_111037_01"
+    },
+    "video": {
+      "status": "COMPLETE",
+      "unit": "video_01",
+      "files": {
+        "D1_\u9ad8\u901f\u4e16\u754c\u6a21\u578b_\u7b49\u9ad8\u7f51\u683c\u5de1\u822a\u4e0e\u505c\u8f66_113.mp4": "adbeda5d51538219989a424832ba6e4de98a99fbe129c1861f2ea34594910d7d",
+        "driver.json": "f41c107944e92a24834b40503e62959caf6a21c65e660de4ceaa46df97f4f46b",
+        "report.json": "d3cc70e5f8442311ef9617a5fbddae9646eea6e5541bbf4875c2311f83ddf8bf",
+        "reservation.json": "6a9500b7882f1d87911fa1e5661a0ea8571f44ab62a9bb0b6c5a74b0965ca0bd"
+      },
+      "guard": "guard_video_01"
+    }
+  },
+  "guards": {
+    "guard_fit_111011_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "8e4c26e7b1224f44c5013eee0be5988a498af1d6833c75387a16b3706c2e75bf",
+        "resources.jsonl": "d53c74c4aee827c8dc6e69d6d044fee03ba91e2469c20343096cc9a9de5089a5"
+      }
+    },
+    "guard_fit_111023_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "6f5b27f47f8e4b4447ba3f980365914ac81728e40c5ca54d4cf7b2ad82875f16",
+        "resources.jsonl": "7a2cb7864396491f493ef5ec201999fc96c8a6e594199b65e2866ae6ed65b37d"
+      }
+    },
+    "guard_fit_111037_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "edca683cbfe8107529b124419df9f8490220924eb3a0a9b14c74f3547f5c6875",
+        "resources.jsonl": "2f5129813ce6eca911315393f86cdcb2a95215839dd685f99d3ac9a7b27f7f13"
+      }
+    },
+    "guard_forecast_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "7a863c66bd6010faabb3d0424b2601182fec6d095b7b04f4f511ab5613a90f19",
+        "resources.jsonl": "1b6e74a20a77b623d05f4bd6d00d70a61a03a101aabceb83c5b9c0fcfc9ee0b3"
+      }
+    },
+    "guard_native_111011_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "4545985e7c34d83cec88eec2e6cd8bc1c359d6ea994e6a51f2dc8a2dd1a9b4a3",
+        "resources.jsonl": "f91682c7b29802a9a06fc4c3dd9292832a70d04e7360cb98a3e34d46be0e0043"
+      }
+    },
+    "guard_native_111023_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "e2867c14ccd4c4ed78437de1f03171f4b7a014069fa48c93654b96e550609485",
+        "resources.jsonl": "8ff4079ed7fff79ce3d4127c41519d24bfd321145fa363cc828bd164a8080824"
+      }
+    },
+    "guard_native_111037_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "9047fec7d77be844bc74e1450897289729a19acbed6ed972c4c8b7f3213608f6",
+        "resources.jsonl": "28718a58205bccd6a8fb0e39d278b3902522a6d3e4a76e309f34f1e3d2454b31"
+      }
+    },
+    "guard_video_01": {
+      "status": "COMPLETE",
+      "child_started": true,
+      "error": null,
+      "files": {
+        "report.json": "b666f04cfbbc49fc61c9c3c1acdbcbae2bfac64c4379aea80660c27c8a4c0a41",
+        "resources.jsonl": "b196ad4251183d13415009ba7af717bdf673a808eb4e3ba79b5c98c2c314743e"
+      }
+    }
+  },
+  "fits": {
+    "111011": {
+      "windows": {
+        "cruise": 94,
+        "braking": 135
+      },
+      "errors_m_s": {
+        "action": {
+          "cruise": 0.011440184924898327,
+          "braking": 0.004591830834642055
+        },
+        "masked": {
+          "cruise": 0.010282476380909776,
+          "braking": 0.007440413736044473
+        }
+      },
+      "passed": {
+        "cruise": false,
+        "braking": true
+      },
+      "both_passed": false
+    },
+    "111023": {
+      "windows": {
+        "cruise": 93,
+        "braking": 135
+      },
+      "errors_m_s": {
+        "action": {
+          "cruise": 0.007126632186897306,
+          "braking": 0.006987464383984645
+        },
+        "masked": {
+          "cruise": 0.015383625118368608,
+          "braking": 0.0081420537465029
+        }
+      },
+      "passed": {
+        "cruise": true,
+        "braking": true
+      },
+      "both_passed": true
+    },
+    "111037": {
+      "windows": {
+        "cruise": 94,
+        "braking": 135
+      },
+      "errors_m_s": {
+        "action": {
+          "cruise": 0.010083334067667976,
+          "braking": 0.005126049521471473
+        },
+        "masked": {
+          "cruise": 0.009044100655928332,
+          "braking": 0.007059229568506996
+        }
+      },
+      "passed": {
+        "cruise": false,
+        "braking": true
+      },
+      "both_passed": false
+    }
+  },
+  "cases": [
+    {
+      "seed": 111011,
+      "baseline": {
+        "cruise_m_s": 1.3617763472784572,
+        "stop_peak_m_s": 0.09065082857105958
+      },
+      "actual": {
+        "cruise_m_s": 1.5270366892260525,
+        "stop_peak_m_s": 0.06654109595627443,
+        "stop_mean_forward_m_s": -0.057577452398753975,
+        "stop_forward_displacement_mm": -28.706235843030193,
+        "first_trim_tick": 15
+      },
+      "observed_delta": {
+        "cruise_m_s": 0.1652603419475953,
+        "stop_peak_m_s": -0.024109732614785148
+      },
+      "predicted_off": {
+        "cruise_m_s": 1.3606450083542359,
+        "stop_peak_m_s": 0.10055059205876575
+      },
+      "predicted_on": {
+        "cruise_m_s": 1.472811309812489,
+        "stop_peak_m_s": 0.02519150825223598
+      },
+      "predicted_delta": {
+        "cruise_m_s": 0.11216630145825324,
+        "stop_peak_m_s": -0.07535908380652977
+      },
+      "scores": {
+        "cruise_m_s": {
+          "predicted_m_s": 0.11216630145825324,
+          "observed_m_s": 0.1652603419475953,
+          "sign_correct": true,
+          "relative_error": 0.321275146012819,
+          "passed": false,
+          "status": "FAIL"
+        },
+        "stop_peak_m_s": {
+          "predicted_m_s": -0.07535908380652977,
+          "observed_m_s": -0.024109732614785148,
+          "sign_correct": true,
+          "relative_error": 0.6800686606450479,
+          "passed": false,
+          "status": "FAIL"
+        }
+      },
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.394930264162501,
+          5.04974423611391,
+          5.7092506971986925,
+          6.3595196032179295
+        ],
+        "speed_m_s": 1.5270366892260525,
+        "sections_m_s": [
+          1.5271512869829322,
+          1.5162853724816592,
+          1.537825337707931
+        ],
+        "max_lane_y_m": 0.23430161808710592,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.06654109595627443
+      },
+      "control_passed": false,
+      "model_passed": false,
+      "stage_status": "COMPLETE"
+    },
+    {
+      "seed": 111023,
+      "baseline": {
+        "cruise_m_s": 1.368610020534076,
+        "stop_peak_m_s": 0.09401291852229557
+      },
+      "actual": {
+        "cruise_m_s": 1.5178231645910267,
+        "stop_peak_m_s": 0.05659143286008022,
+        "stop_mean_forward_m_s": -0.05222878230191838,
+        "stop_forward_displacement_mm": -26.080193358665742,
+        "first_trim_tick": 13
+      },
+      "observed_delta": {
+        "cruise_m_s": 0.14921314405695063,
+        "stop_peak_m_s": -0.03742148566221535
+      },
+      "predicted_off": {
+        "cruise_m_s": 1.3445757575626986,
+        "stop_peak_m_s": 0.08772785376061965
+      },
+      "predicted_on": {
+        "cruise_m_s": 1.4915570790980832,
+        "stop_peak_m_s": 0.01769533650234036
+      },
+      "predicted_delta": {
+        "cruise_m_s": 0.14698132153538457,
+        "stop_peak_m_s": -0.07003251725827929
+      },
+      "scores": {
+        "cruise_m_s": {
+          "predicted_m_s": 0.14698132153538457,
+          "observed_m_s": 0.14921314405695063,
+          "sign_correct": true,
+          "relative_error": 0.014957278299251144,
+          "passed": true,
+          "status": "PASS"
+        },
+        "stop_peak_m_s": {
+          "predicted_m_s": -0.07003251725827929,
+          "observed_m_s": -0.03742148566221535,
+          "sign_correct": true,
+          "relative_error": 0.46565556790990037,
+          "passed": false,
+          "status": "FAIL"
+        }
+      },
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.385977591687794,
+          5.041834597613015,
+          5.7018089103335265,
+          6.362492425554058
+        ],
+        "speed_m_s": 1.5178231645910267,
+        "sections_m_s": [
+          1.5247226010634674,
+          1.515210487326169,
+          1.5135840034788923
+        ],
+        "max_lane_y_m": 0.6322094409112786,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.05659143286008022
+      },
+      "control_passed": false,
+      "model_passed": false,
+      "stage_status": "COMPLETE"
+    },
+    {
+      "seed": 111037,
+      "baseline": {
+        "cruise_m_s": 1.3619207751510833,
+        "stop_peak_m_s": 0.09399666993134666
+      },
+      "actual": {
+        "cruise_m_s": 1.5205842206915967,
+        "stop_peak_m_s": 0.05486643146930204,
+        "stop_mean_forward_m_s": -0.049627940651934335,
+        "stop_forward_displacement_mm": -24.783210487502334,
+        "first_trim_tick": 10
+      },
+      "observed_delta": {
+        "cruise_m_s": 0.15866344554051337,
+        "stop_peak_m_s": -0.039130238462044616
+      },
+      "predicted_off": {
+        "cruise_m_s": 1.403666883187139,
+        "stop_peak_m_s": 0.025716643932284084
+      },
+      "predicted_on": {
+        "cruise_m_s": 1.4730308170633637,
+        "stop_peak_m_s": 0.01695961950332416
+      },
+      "predicted_delta": {
+        "cruise_m_s": 0.06936393387622464,
+        "stop_peak_m_s": -0.008757024428959925
+      },
+      "scores": {
+        "cruise_m_s": {
+          "predicted_m_s": 0.06936393387622464,
+          "observed_m_s": 0.15866344554051337,
+          "sign_correct": true,
+          "relative_error": 0.5628234743048415,
+          "passed": false,
+          "status": "FAIL"
+        },
+        "stop_peak_m_s": {
+          "predicted_m_s": -0.008757024428959925,
+          "observed_m_s": -0.039130238462044616,
+          "sign_correct": true,
+          "relative_error": 0.7762082529230169,
+          "passed": false,
+          "status": "FAIL"
+        }
+      },
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.394580261562579,
+          5.050970573396419,
+          5.708977528764984,
+          6.367506166735744
+        ],
+        "speed_m_s": 1.5205842206915967,
+        "sections_m_s": [
+          1.5234837900123404,
+          1.5197407745331153,
+          1.5185368446260368
+        ],
+        "max_lane_y_m": 0.35415872071367177,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.05486643146930204
+      },
+      "control_passed": false,
+      "model_passed": false,
+      "stage_status": "COMPLETE"
+    }
+  ],
+  "summary": {
+    "fit_folds": 3,
+    "fit_both_passed": 1,
+    "forecast_seeds": 3,
+    "complete_12s_pairs": 3,
+    "control_passed": 0,
+    "model_passed": 0,
+    "predicted_sign_correct": {
+      "cruise_m_s": 3,
+      "stop_peak_m_s": 3
+    },
+    "prediction_passed": {
+      "cruise_m_s": 1,
+      "stop_peak_m_s": 0
+    },
+    "complete_native_stages": 3,
+    "unidentifiable": {
+      "cruise_m_s": 0,
+      "stop_peak_m_s": 0
+    },
+    "partial_stages": [],
+    "interrupted_before_reservation": [],
+    "unstarted_stages": [],
+    "confirmed_counts": {
+      "world_updates": 300,
+      "policy_updates": 0,
+      "decisions": 1800,
+      "servo": 9000,
+      "physics": 18000,
+      "packets": 216,
+      "ray_queries": 224640
+    },
+    "including_partial_upper_bounds": {
+      "world_updates": 300,
+      "policy_updates": 0,
+      "decisions": 1800,
+      "servo": 9000,
+      "physics": 18000,
+      "packets": 216,
+      "ray_queries": 224640
+    }
+  }
+}
