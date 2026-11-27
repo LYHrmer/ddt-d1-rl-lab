@@ -9,6 +9,7 @@ from tools100.sensor100 import _grid
 from tools110.course import command
 from tools111.control import Packet, Preview, WheelOdometry, axes, body_to_level, yaw_from_quat
 from tools111.course import score
+from tools111.kinematics import mechanism, vendor_targets
 
 
 def check_episode(z, row):
@@ -30,6 +31,10 @@ def check_episode(z, row):
     np.testing.assert_array_equal(z["applied"], np.vstack((np.zeros(16), z["issued"][:-1])))
     np.testing.assert_array_equal(z["applied_lift_fk"], np.vstack((np.zeros(4), z["issued_lift_fk"][:-1])))
     np.testing.assert_array_equal(z["raw"][:, 3::4], z["issued"][:, 3::4])
+    offsets = (z["issued"]-z["raw"]).reshape(n,4,4)[:,:,:3]
+    np.testing.assert_array_equal(offsets[z["lift_demand"]==0], 0.)
+    if np.any((np.abs(z["issued_lift_fk"]) > 1e-6) & (np.max(np.abs(offsets), axis=2) == 0.)):
+        raise ValueError("wheel height changed without a leg command")
     np.testing.assert_array_equal(z["encoder_wheel_rad_s"], z["qvel"][:-1, 9::4])
     np.testing.assert_allclose(abs(np.sum(z["imu_quat"]*z["qpos"][:-1, 3:7],axis=1)), 1., rtol=0, atol=1e-9)
     # This uses ground truth only to independently check the logged encoder-derived query location.
@@ -37,10 +42,9 @@ def check_episode(z, row):
         actual = (z["wheels_xy"][k]-z["xy"][k]) @ axes(yaw)
         np.testing.assert_allclose(z["wheel_query_xy"][k], actual, atol=1e-8, rtol=0.)
     # Compare to the manufacturer force law independently of the simulator or the live adapter.
-    pose = np.array([.1,.8,-1.5,0., -.1,.8,-1.5,0., .1,1.,-1.5,0., -.1,1.,-1.5,0.])
     actual_q = z["qpos"][:-1, 7:].copy()
     actual_q[:, 3::4] = 0.
-    torque = np.tile([100.,60.,60.,10.],4)*(pose+np.tile([.125,.25,.25,.25],4)*z["applied"]-actual_q)
+    torque = np.tile([100.,60.,60.,10.],4)*(vendor_targets(z["applied"])-actual_q)
     torque -= np.tile([4.,1.5,1.5,.5],4)*z["qvel"][:-1, 6:]
     limits = np.tile([80.,80.,80.,12.],4)
     np.testing.assert_allclose(np.clip(torque,-limits,limits), z["first_torque_nm"], atol=2e-9, rtol=0.)
@@ -81,10 +85,19 @@ def check_episode(z, row):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory", type=Path, help="native episode directory containing trace.npz and report.json")
-    directory = parser.parse_args().directory
+    parser.add_argument("--kinematics", action="store_true", help="independently evaluate D1 joint geometry from the local robot XML")
+    args = parser.parse_args()
+    directory = args.directory
     record = read(directory/"report.json")
     from tools91.launch91 import digest
     assert record["status"] == "COMPLETE" and record["trace_sha256"] == digest(directory/"trace.npz")
     with np.load(directory/"trace.npz", allow_pickle=False) as trace:
         _, effects = check_episode(trace, record)
+        if args.kinematics:
+            model, _ = mechanism()
+            nominal, _ = model.forward(vendor_targets(trace["raw"]))
+            issued, _ = model.forward(vendor_targets(trace["issued"]))
+            measured, _ = model.forward(trace["qpos"][:,7:])
+            np.testing.assert_allclose((issued-nominal)[:,:,2], trace["issued_lift_fk"], atol=1e-9, rtol=0.)
+            np.testing.assert_allclose(measured[:,:,2], trace["measured_relative_z"], atol=1e-9, rtol=0.)
     print(record["seed"], record["arm"], record["motion"]["passed"], effects)

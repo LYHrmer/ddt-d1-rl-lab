@@ -33,3 +33,4 @@ jobs:
       - run: python -m pip install --quiet numpy==2.2.6
       - run: python -B -m unittest discover -s tests -p test_lidar_compound111.py
       - run: python -B -m tools111.archive
+      - run: python -B -m tools111.receipts

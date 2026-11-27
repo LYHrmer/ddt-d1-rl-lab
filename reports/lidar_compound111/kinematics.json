@@ -1,0 +1,37 @@
+{
+  "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+  "groups": [
+    {
+      "seed": 110011,
+      "trace_sha256": "f250f9901bb717ff1e2fb6b37cf2d4be3df3a1286a2da7052239c34fe2829d70",
+      "wheel_targets": 2400,
+      "max_recorded_center_xy_error_m": 3.614624287906422e-15,
+      "minimum_lift_mm": 12.00063271755708,
+      "maximum_lift_mm": 12.004277416903575,
+      "maximum_horizontal_change_mm": 0.0009662200399613662,
+      "within_0p4mm": 2400
+    },
+    {
+      "seed": 110023,
+      "trace_sha256": "35565bc7c8ae04aa45e733f2826597f0fb41b48a003ebfbaf854284c9ad4b989",
+      "wheel_targets": 2400,
+      "max_recorded_center_xy_error_m": 3.614624287906422e-15,
+      "minimum_lift_mm": 12.00072404822372,
+      "maximum_lift_mm": 12.004314300999464,
+      "maximum_horizontal_change_mm": 0.0009942526363561123,
+      "within_0p4mm": 2400
+    },
+    {
+      "seed": 110037,
+      "trace_sha256": "4adb8371cbf89aedccc2bf3722116816caf83eff0c2697f79ec25d8f502399b1",
+      "wheel_targets": 2400,
+      "max_recorded_center_xy_error_m": 3.58766985720938e-15,
+      "minimum_lift_mm": 12.000634289481727,
+      "maximum_lift_mm": 12.003592517841222,
+      "maximum_horizontal_change_mm": 0.0011390212014935467,
+      "within_0p4mm": 2400
+    }
+  ],
+  "physical_substeps": 0,
+  "policy_updates": 0
+}

@@ -72,6 +72,12 @@ class LidarCompound(unittest.TestCase):
         z["first_torque_nm"][1,3] += .1
         with self.assertRaises(AssertionError):
             check_episode(z,row)
+        z["first_torque_nm"][1,3] -= .1
+        z["issued_lift_fk"] = z["issued_lift_fk"].copy()
+        z["issued_lift_fk"][10,0] = .012
+        z["applied_lift_fk"] = np.vstack((np.zeros(4),z["issued_lift_fk"][:-1]))
+        with self.assertRaisesRegex(ValueError, "without a leg command"):
+            check_episode(z,row)
 
     def test_wheel_queries_and_returns_share_the_gravity_frame(self):
         pitch = .12

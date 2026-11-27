@@ -1,0 +1,705 @@
+{
+  "attempt": "preflight_03",
+  "stage": {
+    "status": "COMPLETE",
+    "stage": "preflight",
+    "plan_sha256": "cf67f221a834e487f96e8f0ff583ad15fdb1143925ddb61d70d928ab5727f9e0",
+    "sources": {
+      "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+      "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+      "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+      "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+      "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+      "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+      "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+      "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+      "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+      "tools111/sensing.py": "8dc0b4393d06b841a0f41699c4341ee301024067ac111b48258ad4b397c1fb82",
+      "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+      "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+      "tools111/preflight.py": "c32431b6011ae92bb12bca42d4a53a0c12ef9a24e8db15140e3340c04c462a4e",
+      "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+      "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+      "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+      "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca"
+    },
+    "terrain_probes": [
+      [
+        "flat",
+        2.68,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        2.68,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        3.24,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        3.24,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        3.72,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        3.72,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.2,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.2,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.48,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.48,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.72,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        4.72,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        6.2,
+        -0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "flat",
+        6.2,
+        0.25,
+        0.0,
+        0.0
+      ],
+      [
+        "development",
+        2.68,
+        -0.25,
+        0.01258682683110246,
+        0.012586826149831885
+      ],
+      [
+        "development",
+        2.68,
+        0.25,
+        0.01258682683110246,
+        0.012586826149831885
+      ],
+      [
+        "development",
+        3.24,
+        -0.25,
+        0.051745837926864824,
+        0.05174584083819772
+      ],
+      [
+        "development",
+        3.24,
+        0.25,
+        0.051745837926864824,
+        0.05174584083819772
+      ],
+      [
+        "development",
+        3.72,
+        -0.25,
+        0.019579505920410245,
+        0.019579507344182904
+      ],
+      [
+        "development",
+        3.72,
+        0.25,
+        0.019579505920410245,
+        0.019579507344182904
+      ],
+      [
+        "development",
+        4.2,
+        -0.25,
+        0.01874999925494203,
+        0.018750000000000024
+      ],
+      [
+        "development",
+        4.2,
+        0.25,
+        0.006250000000000311,
+        0.006249999999999978
+      ],
+      [
+        "development",
+        4.48,
+        -0.25,
+        0.008637288957834444,
+        0.008637287570313108
+      ],
+      [
+        "development",
+        4.48,
+        0.25,
+        0.016362714022398084,
+        0.016362712429686895
+      ],
+      [
+        "development",
+        4.72,
+        -0.25,
+        0.008637288957834444,
+        0.008637287570313122
+      ],
+      [
+        "development",
+        4.72,
+        0.25,
+        0.016362714022397973,
+        0.016362712429686878
+      ],
+      [
+        "development",
+        6.2,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "development",
+        6.2,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "development",
+        5.113,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "development",
+        5.113,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "development",
+        5.127,
+        -0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "development",
+        5.127,
+        0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "development",
+        5.873,
+        -0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "development",
+        5.873,
+        0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "development",
+        5.887,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "development",
+        5.887,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        2.68,
+        -0.25,
+        0.01258682683110246,
+        0.012586826149831885
+      ],
+      [
+        "blind",
+        2.68,
+        0.25,
+        0.01258682683110246,
+        0.012586826149831885
+      ],
+      [
+        "blind",
+        3.24,
+        -0.25,
+        0.051745837926864824,
+        0.05174584083819772
+      ],
+      [
+        "blind",
+        3.24,
+        0.25,
+        0.051745837926864824,
+        0.05174584083819772
+      ],
+      [
+        "blind",
+        3.72,
+        -0.25,
+        0.019579505920410245,
+        0.019579507344182904
+      ],
+      [
+        "blind",
+        3.72,
+        0.25,
+        0.019579505920410245,
+        0.019579507344182904
+      ],
+      [
+        "blind",
+        4.2,
+        -0.25,
+        0.023325318843126497,
+        0.023325317547305473
+      ],
+      [
+        "blind",
+        4.2,
+        0.25,
+        0.0016746822744609924,
+        0.0016746824526945288
+      ],
+      [
+        "blind",
+        4.48,
+        -0.25,
+        0.0006117936223746234,
+        0.0006117935463105962
+      ],
+      [
+        "blind",
+        4.48,
+        0.25,
+        0.024388207495212644,
+        0.024388206453689405
+      ],
+      [
+        "blind",
+        4.72,
+        -0.25,
+        0.024388207495212644,
+        0.02438820645368941
+      ],
+      [
+        "blind",
+        4.72,
+        0.25,
+        0.0006117936223746234,
+        0.0006117935463105892
+      ],
+      [
+        "blind",
+        6.2,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        6.2,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        5.1930000000000005,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        5.1930000000000005,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        5.207,
+        -0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "blind",
+        5.207,
+        0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "blind",
+        5.953,
+        -0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "blind",
+        5.953,
+        0.25,
+        0.030000000000000027,
+        0.03
+      ],
+      [
+        "blind",
+        5.967,
+        -0.25,
+        3.725290076417309e-10,
+        0.0
+      ],
+      [
+        "blind",
+        5.967,
+        0.25,
+        3.725290076417309e-10,
+        0.0
+      ]
+    ],
+    "live_sensor": [
+      {
+        "layout": "flat",
+        "pitch_rad": 0.0,
+        "valid": 520,
+        "self_hits": 0,
+        "bins": [
+          8,
+          8
+        ],
+        "speed_reduction_m_s": 0.0,
+        "demand_m": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rejected_batch_disagreements": 0,
+        "batch_wrong_validity": 0,
+        "batch_common_max_error_m": 0.0,
+        "examples": []
+      },
+      {
+        "layout": "flat",
+        "pitch_rad": 0.06,
+        "valid": 520,
+        "self_hits": 0,
+        "bins": [
+          7,
+          7
+        ],
+        "speed_reduction_m_s": 0.0,
+        "demand_m": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rejected_batch_disagreements": 0,
+        "batch_wrong_validity": 0,
+        "batch_common_max_error_m": 0.0,
+        "examples": []
+      },
+      {
+        "layout": "development",
+        "pitch_rad": 0.0,
+        "valid": 520,
+        "self_hits": 0,
+        "bins": [
+          8,
+          8
+        ],
+        "speed_reduction_m_s": 0.04499999932944787,
+        "demand_m": [
+          0.011999999821186115,
+          0.011999999821186063,
+          0.0,
+          0.0
+        ],
+        "rejected_batch_disagreements": 282,
+        "batch_wrong_validity": 0,
+        "batch_common_max_error_m": 0.05508235307930753,
+        "examples": [
+          {
+            "index": 0,
+            "first_m": 0.8537764833311483,
+            "batch_m": 0.9088588364104558,
+            "first_valid": true,
+            "batch_valid": true
+          },
+          {
+            "index": 1,
+            "first_m": 0.8537764833311483,
+            "batch_m": 0.9088588364104558,
+            "first_valid": true,
+            "batch_valid": true
+          },
+          {
+            "index": 2,
+            "first_m": 0.8537764833311483,
+            "batch_m": 0.9088588364104557,
+            "first_valid": true,
+            "batch_valid": true
+          },
+          {
+            "index": 3,
+            "first_m": 0.8537764833311483,
+            "batch_m": 0.9088588364104558,
+            "first_valid": true,
+            "batch_valid": true
+          }
+        ]
+      }
+    ],
+    "kinematic_checks": [
+      {
+        "input_scale": -0.5,
+        "lift": [
+          0.005,
+          0.008,
+          0.011,
+          0.012
+        ],
+        "measured": [
+          0.005000028696821368,
+          0.008000083415189652,
+          0.011000180143040605,
+          0.012000226109374124
+        ],
+        "max_vertical_error_m": 2.2610937412334553e-07,
+        "max_horizontal_m": 8.672404688179208e-08
+      },
+      {
+        "input_scale": -0.5,
+        "lift": [
+          0.012,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measured": [
+          0.012000220016771979,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_vertical_error_m": 2.2001677197833192e-07,
+        "max_horizontal_m": 9.118820294267585e-08
+      },
+      {
+        "input_scale": 0.0,
+        "lift": [
+          0.005,
+          0.008,
+          0.011,
+          0.012
+        ],
+        "measured": [
+          0.005000033741806464,
+          0.008000098592603033,
+          0.01100021061463341,
+          0.012000264468238986
+        ],
+        "max_vertical_error_m": 2.64468238985599e-07,
+        "max_horizontal_m": 9.735732878151253e-08
+      },
+      {
+        "input_scale": 0.0,
+        "lift": [
+          0.012,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measured": [
+          0.012000261176132399,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_vertical_error_m": 2.611761323982609e-07,
+        "max_horizontal_m": 1.0445089627864125e-07
+      },
+      {
+        "input_scale": 0.5,
+        "lift": [
+          0.005,
+          0.008,
+          0.011,
+          0.012
+        ],
+        "measured": [
+          0.005000039877154305,
+          0.008000117697962494,
+          0.011000248737306761,
+          0.012000313915964012
+        ],
+        "max_vertical_error_m": 3.139159640112854e-07,
+        "max_horizontal_m": 1.1093070190321408e-07
+      },
+      {
+        "input_scale": 0.5,
+        "lift": [
+          0.012,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measured": [
+          0.012000312552096437,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_vertical_error_m": 3.125520964368522e-07,
+        "max_horizontal_m": 1.2106532313593414e-07
+      }
+    ],
+    "static_ray_queries": 6484,
+    "physical_substeps": 0
+  },
+  "resource": {
+    "startup_effective_bytes": 8872976384,
+    "minimum_effective_bytes": 5873303552,
+    "peak_group_bytes": 705196032,
+    "elapsed_s": 16.154998684999555,
+    "owned_cgroup_children_empty": true,
+    "cpu_affinity": [
+      0
+    ],
+    "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d"
+  },
+  "failures": [
+    {
+      "attempt": "preflight_01",
+      "status": "INCOMPLETE",
+      "child_started": false,
+      "minimum_effective_bytes": 840400896,
+      "error": "RuntimeError: effective memory below original2GiB reserve",
+      "guard_sha256": "5c983e448484ab6f6338f2a286d3de93887ef8ed9c36151b0886026e8ac7e5ba",
+      "log_sha256": "967595984dfd4660b4552e1fe281b7d8d4bbaee07ff9b87c0529b5a934832167"
+    },
+    {
+      "attempt": "preflight_02",
+      "status": "INCOMPLETE",
+      "child_started": true,
+      "minimum_effective_bytes": 5225369600,
+      "error": "RuntimeError: child exit 1",
+      "guard_sha256": "783f7f8871f02f8e74c5cdf67a32b40da86c24e042f3c789451ca0b2d5996b77",
+      "log_sha256": "e86bbda0b064aac2e5e54a037418d10c8b9d3efc84202c73a88d80f95dff1c8c",
+      "partial": {
+        "status": "PARTIAL",
+        "error": "AssertionError()",
+        "stage": "preflight",
+        "plan_sha256": "cf67f221a834e487f96e8f0ff583ad15fdb1143925ddb61d70d928ab5727f9e0",
+        "sources": {
+          "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+          "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+          "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+          "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+          "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+          "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+          "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+          "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+          "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+          "tools111/sensing.py": "ca28051edf5f881787a39a86a5a51a77789b642f11b628ea4c27d01b4e114f45",
+          "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+          "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+          "tools111/preflight.py": "0ebee8f7328f9bf05a400200c5c33629dde6235894dcf2375a340347d63d7479",
+          "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+          "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+          "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+          "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca"
+        }
+      },
+      "stderr": [
+        "  File \"/home/lyh/ddt_ros2_ws/tools111/run.py\", line 108, in worker",
+        "    result = run()",
+        "  File \"/home/lyh/ddt_ros2_ws/tools111/preflight.py\", line 73, in run",
+        "    assert good == valid[i] and (not good or abs(distances[i]-scalar) < 1e-7)",
+        "AssertionError"
+      ]
+    }
+  ],
+  "guard_sha256": "ee2f123e187cffbd2b052e186b6f772c1c1233babde6571989b20221cf4a54d5",
+  "resource_log_sha256": "51f309e36d8dcd0bb3301e3a99a85a2d1bff25ca1c5ff85ef5a2e4dd08af38f4",
+  "archive_export_failure": {
+    "reason": "JSON encoder rejected numpy.int64 while publishing the static archive audit. No native simulation, acquisition or training started.",
+    "fragment_sha256": "5f2bd083cb21b9a4c32668450655e95c1042b31ceee07093aa26fbcb065e627a",
+    "bytes": 54188
+  }
+}

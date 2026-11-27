@@ -3,7 +3,7 @@ import numpy as np
 import mujoco as mj
 
 from tools91.launch91 import ROOT, read
-from tools100.sensor100 import _grid, _wheel_cylinders
+from tools100.sensor100 import _grid, _rays, _wheel_cylinders
 from tools110.native import POSE, SCALE
 from tools111.control import Packet, body_to_level
 from training.d1_rl.interface import JOINT_NAMES
@@ -21,18 +21,16 @@ class Lidar:
     def capture(self, tick, data, quat_imu, odom):
         # World pose is used only by the simulator to generate what the sensor sees.
         rotation = data.xmat[self.base].reshape(3, 3)
-        rays = np.ascontiguousarray(self.directions @ rotation.T).ravel()
+        rays = np.ascontiguousarray(self.directions @ rotation.T)
         level = body_to_level(quat_imu)
         near, far = (self.geometry[k] for k in ("range_min_m", "range_max_m"))
         n = len(self.directions)
-        geom = np.empty(n, np.int32)
         points, ranges, validities, shadows = [], [], [], []
         for mount in self.mounts:
             origin = data.xpos[self.base] + rotation @ mount
-            all_hits, moving_hits = np.empty(n), np.empty(n)
-            for include_static, distances in ((True, all_hits), (False, moving_hits)):
-                mj.mj_multiRay(self.model, data, origin, rays, None, include_static, -1, geom, distances, n, far)
-                self.ray_calls += n
+            all_hits = _rays(mj, self.model, data, origin, rays, True)
+            moving_hits = _rays(mj, self.model, data, origin, rays, False)
+            self.ray_calls += 2*n
             self_hit = (moving_hits >= 0.) & (np.abs(moving_hits-all_hits) <= 1e-8)
             valid = (all_hits >= near) & (all_hits <= far) & ~self_hit
             local = (mount + self.directions*all_hits[:, None]) @ level

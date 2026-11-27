@@ -61,16 +61,32 @@ def run():
             odom = WheelOdometry(yaw_from_quat(quat))
             packet, distances, valid, shadow = lidar.capture(0, data, quat, odom)
             rays += 1040
-            # Compare batch raycasts to independent scalar first returns on both mounts.
+            # Check the production reader beam by beam. Also measure the previously failing batch backend.
             rot = data.xmat[lidar.base].reshape(3, 3)
+            n = len(lidar.directions)
+            directions = np.ascontiguousarray(lidar.directions @ rot.T).ravel()
+            fast_ranges, fast_valid = [], []
+            fast_ids = np.empty(n, np.int32)
+            for mount in lidar.mounts:
+                origin = data.xpos[lidar.base] + rot @ mount
+                combined, moving = np.empty(n), np.empty(n)
+                for static, buf in ((True, combined), (False, moving)):
+                    mj.mj_multiRay(model, data, origin, directions, None, static, -1, fast_ids, buf, n, 1.45)
+                    rays += n
+                fast_ranges.extend(combined)
+                fast_valid.extend((combined >= .14) & (combined <= 1.45)
+                                  & ~((moving >= 0.) & (np.abs(moving-combined) <= 1e-8)))
+            fast_ranges, fast_valid = np.asarray(fast_ranges), np.asarray(fast_valid)
+            delta = np.abs(distances-fast_ranges)
+            wrong = (valid != fast_valid) | (valid & fast_valid & (delta >= 1e-7))
+            mismatches = np.flatnonzero(wrong)
             for i in np.arange(0, len(distances), 17):
-                n = len(lidar.directions)
                 origin = data.xpos[lidar.base] + rot @ lidar.mounts[i//n]
                 direction = rot @ lidar.directions[i % n]
                 scalar, robot = (mj.mj_ray(model, data, origin, direction, None, static, -1, ids)
                                  for static in (True, False))
                 good = .14 <= scalar <= 1.45 and not (robot >= 0. and abs(robot-scalar) <= 1e-8)
-                assert good == valid[i] and (not good or abs(distances[i]-scalar) < 1e-7)
+                assert good == valid[i] and (not good or abs(distances[i]-scalar) < 1e-7), (layout, pitch, i)
                 rays += 2
             c = Preview("both")
             c.observe(2, packet, odom, wheel_xy)
@@ -78,7 +94,13 @@ def run():
                 speed, _, lift = c.targets(k, 1.5, 0., odom, wheel_xy)
             reduction = c.gain*1.5 - speed
             result = dict(layout=layout, pitch_rad=pitch, valid=int(valid.sum()), self_hits=int(shadow.sum()), bins=c.coverage.tolist(),
-                          speed_reduction_m_s=reduction, demand_m=lift.tolist())
+                          speed_reduction_m_s=reduction, demand_m=lift.tolist(),
+                          rejected_batch_disagreements=len(mismatches),
+                          batch_wrong_validity=int(np.sum(valid != fast_valid)),
+                          batch_common_max_error_m=float(delta[valid & fast_valid].max(initial=0.)),
+                          examples=[dict(index=int(i), first_m=float(distances[i]), batch_m=float(fast_ranges[i]),
+                                         first_valid=bool(valid[i]), batch_valid=bool(fast_valid[i]))
+                                    for i in mismatches[:4]])
             if layout == "flat":
                 assert reduction == 0. and max(lift) == 0., result
             else:
