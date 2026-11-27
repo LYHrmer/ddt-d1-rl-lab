@@ -4,9 +4,6 @@ from dataclasses import dataclass
 
 import numpy as np
 
-from training.d1_rl.interface import inverse_rotate
-
-
 SPEED_GAIN = 0.97792348
 ARMS = {"heading_off": (False, False, False), "heading_on": (True, False, False),
         "neither": (True, False, False), "speed": (True, True, False),
@@ -25,7 +22,13 @@ def axes(yaw):
 
 def body_to_level(quat):
     """Columns are the gravity-level front, left and up directions in the IMU/body frame."""
-    up = inverse_rotate(quat, np.array([0., 0., 1.]))
+    quat = np.asarray(quat, dtype=float)
+    norm = np.linalg.norm(quat)
+    if quat.shape != (4,) or not np.isfinite(norm) or norm < 1e-12:
+        raise ValueError("invalid IMU orientation")
+    w, x, y, z = quat/norm
+    # Row three of body-to-world rotation expresses world vertical in body coordinates.
+    up = np.array([2.*(x*z-w*y), 2.*(y*z+w*x), 1.-2.*(x*x+y*y)])
     forward = np.array([1., 0., 0.]) - up[0]*up
     length = np.linalg.norm(forward)
     if length < 1e-8:
