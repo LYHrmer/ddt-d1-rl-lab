@@ -1,0 +1,18 @@
+{
+  "figure": "docs/assets/parking114_replay.png",
+  "sha256": "ba0bd124d7c729c7f45d90084cdd1ec0e43886cf40c4128d5f0aa82afae86e33",
+  "bytes": 181086,
+  "source_sha256": "8f7c17ecfb99cf6c37ae91572833014a47669b544667965c60bdd7a7f9d69710",
+  "bundle_sha256": "bd3be6bdcbe2de20d638c4ef68442a65290634ae2db661bbe36c4f82922cbb7b",
+  "completed_guard": "guard_archive_02",
+  "guards": {
+    "guard_archive_01": {
+      "report.json": "54d415075bd2525794aac9475f85ff33bab135d0fa74294909a3052682639039",
+      "resources.jsonl": "e8dde9442d3f95bd206a84ed13a1b3cf542111bfce95ba44cb6484c9faebbaf1"
+    },
+    "guard_archive_02": {
+      "report.json": "240133fe50fdf05a9b5542ec2a3cd44b3ae05dec6cb3f58f58b5d8a4ad56d253",
+      "resources.jsonl": "b4b1396b27c5b93be622211dbe3570c5b347d8676156407d3b836dea55dfb30e"
+    }
+  }
+}

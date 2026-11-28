@@ -5,8 +5,10 @@ on:
       - 'tools114/**'
       - 'tests/test_*114.py'
       - 'docs/experiments114/**'
+      - 'docs/experiments113/**'
       - 'docs/parking114_proposal.md'
-      - 'docs/assets/parking114.mp4'
+      - 'docs/parking114_results.md'
+      - 'docs/assets/parking114_replay.png'
       - 'reports/parking114/**'
       - 'reports/speed_world113/**'
       - 'reports/surface112/**'
@@ -17,6 +19,11 @@ on:
       - 'tools112/**'
       - 'tools111/**'
       - 'tools110/**'
+      - 'tools109/run109.py'
+      - 'tools94/common94.py'
+      - 'tools92/launch92.py'
+      - 'tools91/launch91.py'
+      - 'tools27/resource_guard27.py'
       - 'tools100/sensor100.py'
       - 'training/d1_rl/interface.py'
       - '.github/workflows/stop114.yml'
@@ -33,9 +40,19 @@ jobs:
       OMP_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
       - run: python -m pip install --quiet numpy==2.2.6
       - run: python -B -m unittest discover -s tests -p 'test_*114.py'
-      - run: python -B -m tools114.results
+      - name: Verify registration and public replay evidence
+        run: |
+          if git cat-file -e HEAD^:reports/parking114/replay.json 2>/dev/null; then
+            test -f reports/parking114/replay.json
+          fi
+          if [[ -f reports/parking114/replay.json ]]; then
+            test -f reports/parking114/figure.json
+          fi
+          python -B -m tools114.results

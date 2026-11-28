@@ -3,16 +3,34 @@ import argparse
 import json
 from pathlib import Path
 
+import numpy as np
+
 from tools91.launch91 import digest, read, require
 from tools109.run109 import GUARD_SHA
 from tools111.results import install
+from tools111.wheel_response import WHEEL_GAIN, wheel_signals
 from tools112.surface_results import install_json
 from tools113.results import compare_tree
-from tools114.common import BASE, PUBLIC, registration
-from tools114.replay import BUNDLE, verify as verify_replay
+from tools114.common import BASE, DEV, PUBLIC, ROOT, baseline, registration
+from tools114.replay import BUNDLE, TAIL, verify as verify_replay
 
 
 INDEX = PUBLIC / 'replay.json'
+
+
+def torque_at_recorded_speed():
+    """Read the measured first servo torque and evaluate the new target at the same old encoder reading."""
+    rows = []
+    for seed in DEV:
+        path, _ = baseline(seed)
+        with np.load(path, allow_pickle=False) as trace:
+            targets, encoders, original = wheel_signals(trace)
+        wheels = targets[TAIL:] / 5.
+        projected = (wheels - wheels.mean(axis=1, keepdims=True)).astype(np.float32)
+        corrected = np.clip(WHEEL_GAIN * (5. * projected.astype(float) - encoders[TAIL:]), -12., 12.)
+        rows.append(dict(seed=seed, original_mean_nm=float(original[TAIL:].mean()),
+                         projected_mean_nm=float(corrected.mean()), projected_peak_abs_nm=float(abs(corrected).max())))
+    return rows
 
 
 def copy_files(source, target, names):
@@ -38,7 +56,8 @@ def publish():
     for folder in sorted(BASE.glob('guard_replay_??')):
         available = [n for n in ('report.json', 'resources.jsonl') if (folder / n).is_file()]
         guards[folder.name] = copy_files(folder, PUBLIC / 'resources' / folder.name, available)
-    index = dict(registration_sha256=registration(), files=files, guard=selected_guard, guards=guards)
+    index = dict(registration_sha256=registration(), files=files, guard=selected_guard, guards=guards,
+                 first_servo_torque_at_recorded_speed=torque_at_recorded_speed())
     verify(index)
     install_json(INDEX, index)
 
@@ -61,6 +80,26 @@ def resource_summary(folder, receipt):
                 not own['events']['oom_kill'] and not sample['errors'], 'resource limits or reserve violated')
     return dict(startup_effective_bytes=startup[-1], minimum_effective_bytes=receipt['minimum_effective_bytes'],
                 peak_group_bytes=receipt['peak_group_bytes'])
+
+
+def verify_figure():
+    proof = read(PUBLIC / 'figure.json')
+    require(proof['figure'] == 'docs/assets/parking114_replay.png', 'unexpected plot')
+    figure = ROOT / proof['figure']
+    require(figure.stat().st_size == proof['bytes'] and digest(figure) == proof['sha256'] and
+            digest(ROOT / 'tools114/plot.py') == proof['source_sha256'] and
+            digest(PUBLIC / 'replay' / BUNDLE) == proof['bundle_sha256'], 'changed plot or plot source')
+    require(proof['completed_guard'] in proof['guards'], 'missing plotting supervisor')
+    for name, files in proof['guards'].items():
+        require(Path(name).name == name and name.startswith('guard_archive_'), 'invalid plotting guard')
+        directory = PUBLIC / 'publication' / name
+        check_files(directory, files)
+        guard = read(directory / 'report.json')
+        require(guard['supervisor_sha256'] == GUARD_SHA, 'unexpected plotting supervisor')
+        if name == proof['completed_guard']:
+            resource_summary(directory, guard)
+        else:
+            require(not guard['child_started'] and guard['status'] != 'COMPLETE', 'unaccounted plotting worker')
 
 
 def verify(index):
@@ -93,6 +132,7 @@ def verify(index):
             require(not guard['child_started'] and guard['status'] != 'COMPLETE', 'unaccounted replay worker')
     checks = verify_replay(folder, report['model_replay'])
     compare_tree(audit_archives(), report['archived_projection'])
+    compare_tree(torque_at_recorded_speed(), index['first_servo_torque_at_recorded_speed'])
     return dict(**checks, model_steps=report['model_replay']['model_steps'], new_native_episodes=0,
                 policy_updates=0, world_updates=0, resources=usage)
 
@@ -104,6 +144,8 @@ if __name__ == '__main__':
         publish()
     if INDEX.exists():
         print(json.dumps(verify(read(INDEX)), sort_keys=True))
+        if (PUBLIC / 'figure.json').is_file():
+            verify_figure()
     else:
         require(not PUBLIC.exists(), 'incomplete public parking archive')
         print('Parking protocol registered:', registration())

@@ -1,0 +1,451 @@
+{
+  "registration_sha256": "dd25d4cd7bd30cf2916953652744f1782b6338c36b5de8eb0758bf91600fbd83",
+  "unit": "d1-parking114-replay-04",
+  "reserved_at_unix_ns": 1795839609263133920,
+  "status": "COMPLETE",
+  "model_replay": {
+    "parent_sha256": "409a86c9f06fe9fce8df10cda0f0abf0c17b53574c41fae64abc4ef12d59b1dc",
+    "forecast_seal_sha256": "2007f11e93469dfd95d17c24b3fda8079e4cc63455435cab6a84936bcdce2eee",
+    "bundle_sha256": "bd3be6bdcbe2de20d638c4ef68442a65290634ae2db661bbe36c4f82922cbb7b",
+    "start_tick": 525,
+    "tail_first_tick": 575,
+    "end_tick": 600,
+    "stop_limit_m_s": 0.05,
+    "model_steps": 900,
+    "actor_forwards": 0,
+    "world_updates": 0,
+    "policy_updates": 0,
+    "physics": 0,
+    "rows": [
+      {
+        "seed": 111011,
+        "source_sha256": {
+          "model": "af438cf14a5c000ca96c12d5272fba6e2b59a2603b512d3b56df95032bbf3569",
+          "forecast": "49990113eb174b9958947c2c84e69ccab67429995451d14a8b4992844db8f2c2",
+          "native": "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82"
+        },
+        "native_stop": {
+          "peak_m_s": 0.06654109595627442,
+          "peak_tick": 587,
+          "passes_stop": false,
+          "endpoints_above_limit": 21,
+          "mean_forward_m_s": -0.057577452398753975
+        },
+        "sealed_stop": {
+          "peak_m_s": 0.02519150825223598,
+          "peak_tick": 575,
+          "passes_stop": true,
+          "endpoints_above_limit": 0,
+          "mean_forward_m_s": -0.014334544574922331
+        },
+        "arms": {
+          "sealed_sealed": {
+            "peak_m_s": 0.02519150825223598,
+            "peak_tick": 575,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.014334544574922331,
+            "peak_error_m_s": -0.04134958770403843,
+            "abs_peak_error_m_s": 0.04134958770403843,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "sealed_native": {
+            "peak_m_s": 0.06746506772746445,
+            "peak_tick": 589,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.06181615578715098,
+            "peak_error_m_s": 0.000923971771190038,
+            "abs_peak_error_m_s": 0.000923971771190038,
+            "classification_matches_native": true,
+            "false_pass": false
+          },
+          "native_sealed": {
+            "peak_m_s": 0.025939945118555647,
+            "peak_tick": 575,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.014684565867831807,
+            "peak_error_m_s": -0.04060115083771877,
+            "abs_peak_error_m_s": 0.04060115083771877,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "native_native": {
+            "peak_m_s": 0.06811593736806766,
+            "peak_tick": 588,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.06252812190863073,
+            "peak_error_m_s": 0.0015748414117932458,
+            "abs_peak_error_m_s": 0.0015748414117932458,
+            "classification_matches_native": true,
+            "false_pass": false
+          }
+        },
+        "delta_peak_m_s": {
+          "state_with_sealed_targets": 0.0007484368663196669,
+          "state_with_native_targets": 0.0006508696406032077,
+          "targets_with_sealed_state": 0.04227355947522847,
+          "targets_with_native_state": 0.04217599224951202,
+          "interaction": -9.756722571645574e-05
+        },
+        "signals": {
+          "first_stop_request_tick": 525,
+          "stop_request_m_s": 0.0,
+          "actor_vx_at_stop_request_m_s": 0.0,
+          "tail_actor_vx_range_m_s": [
+            0.02006100156381518,
+            0.06505847638537003
+          ],
+          "wheel_samples": 100,
+          "mean_target_rad_s": -1.354111929330975,
+          "mean_encoder_rad_s": -0.5044822850406397,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_encoders_per_wheel": [
+            23,
+            25,
+            25,
+            25
+          ],
+          "negative_first_torques_per_wheel": [
+            18,
+            25,
+            25,
+            25
+          ],
+          "mean_first_torque_nm": -0.42481482214516747,
+          "maximum_abs_first_torque_nm": 1.1639737820329696,
+          "saturated_wheel_intervals_per_wheel": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "seed": 111023,
+        "source_sha256": {
+          "model": "21c8378296b4d2faeb297566760fece11c710dd12843c5c4a898126dac2dd04b",
+          "forecast": "ef8e8c506e43deaa363d28ae53d15cbb9cd23f111b56e7408eec2f516b1222a4",
+          "native": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db"
+        },
+        "native_stop": {
+          "peak_m_s": 0.05659143286008022,
+          "peak_tick": 594,
+          "passes_stop": false,
+          "endpoints_above_limit": 20,
+          "mean_forward_m_s": -0.05222878230191838
+        },
+        "sealed_stop": {
+          "peak_m_s": 0.01769533650234036,
+          "peak_tick": 589,
+          "passes_stop": true,
+          "endpoints_above_limit": 0,
+          "mean_forward_m_s": -0.006420591381292625
+        },
+        "arms": {
+          "sealed_sealed": {
+            "peak_m_s": 0.01769533650234036,
+            "peak_tick": 589,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.006420591381292625,
+            "peak_error_m_s": -0.03889609635773986,
+            "abs_peak_error_m_s": 0.03889609635773986,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "sealed_native": {
+            "peak_m_s": 0.06367760530654032,
+            "peak_tick": 597,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.05912202299278646,
+            "peak_error_m_s": 0.0070861724464601,
+            "abs_peak_error_m_s": 0.0070861724464601,
+            "classification_matches_native": true,
+            "false_pass": false
+          },
+          "native_sealed": {
+            "peak_m_s": 0.01772673628393476,
+            "peak_tick": 589,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.006738203090292261,
+            "peak_error_m_s": -0.038864696576145455,
+            "abs_peak_error_m_s": 0.038864696576145455,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "native_native": {
+            "peak_m_s": 0.06564316297243447,
+            "peak_tick": 597,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.06174045679233786,
+            "peak_error_m_s": 0.009051730112354252,
+            "abs_peak_error_m_s": 0.009051730112354252,
+            "classification_matches_native": true,
+            "false_pass": false
+          }
+        },
+        "delta_peak_m_s": {
+          "state_with_sealed_targets": 3.139978159440171e-05,
+          "state_with_native_targets": 0.001965557665894152,
+          "targets_with_sealed_state": 0.04598226880419996,
+          "targets_with_native_state": 0.047916426688499714,
+          "interaction": 0.0019341578842997538
+        },
+        "signals": {
+          "first_stop_request_tick": 525,
+          "stop_request_m_s": 0.0,
+          "actor_vx_at_stop_request_m_s": 0.0,
+          "tail_actor_vx_range_m_s": [
+            0.03124659449850608,
+            0.05472424206095598
+          ],
+          "wheel_samples": 100,
+          "mean_target_rad_s": -1.288482004404068,
+          "mean_encoder_rad_s": -0.48819383921313686,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_encoders_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_first_torques_per_wheel": [
+            23,
+            25,
+            25,
+            25
+          ],
+          "mean_first_torque_nm": -0.40014408259546547,
+          "maximum_abs_first_torque_nm": 1.1237412795986619,
+          "saturated_wheel_intervals_per_wheel": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "seed": 111037,
+        "source_sha256": {
+          "model": "3d1241fd715666711f5e37e4f79c73c4b544f9f8f4f00e93919041e152709cb9",
+          "forecast": "80a9f3a2e8b7e565ed9c5f62dd31ecfa3d8a67e1f5695b0f455466312338e48b",
+          "native": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b"
+        },
+        "native_stop": {
+          "peak_m_s": 0.054866431469302035,
+          "peak_tick": 590,
+          "passes_stop": false,
+          "endpoints_above_limit": 10,
+          "mean_forward_m_s": -0.049627940651934335
+        },
+        "sealed_stop": {
+          "peak_m_s": 0.01695961950332416,
+          "peak_tick": 575,
+          "passes_stop": true,
+          "endpoints_above_limit": 0,
+          "mean_forward_m_s": -0.006060018975858336
+        },
+        "arms": {
+          "sealed_sealed": {
+            "peak_m_s": 0.01695961950332416,
+            "peak_tick": 575,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.006060018975858336,
+            "peak_error_m_s": -0.03790681196597788,
+            "abs_peak_error_m_s": 0.03790681196597788,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "sealed_native": {
+            "peak_m_s": 0.07675510771630673,
+            "peak_tick": 575,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.07032649935074599,
+            "peak_error_m_s": 0.02188867624700469,
+            "abs_peak_error_m_s": 0.02188867624700469,
+            "classification_matches_native": true,
+            "false_pass": false
+          },
+          "native_sealed": {
+            "peak_m_s": 0.014179224473472142,
+            "peak_tick": 575,
+            "passes_stop": true,
+            "endpoints_above_limit": 0,
+            "mean_forward_m_s": -0.0042568178921060145,
+            "peak_error_m_s": -0.040687206995829894,
+            "abs_peak_error_m_s": 0.040687206995829894,
+            "classification_matches_native": false,
+            "false_pass": true
+          },
+          "native_native": {
+            "peak_m_s": 0.06570450699063089,
+            "peak_tick": 575,
+            "passes_stop": false,
+            "endpoints_above_limit": 26,
+            "mean_forward_m_s": -0.06112336555541664,
+            "peak_error_m_s": 0.010838075521328858,
+            "abs_peak_error_m_s": 0.010838075521328858,
+            "classification_matches_native": true,
+            "false_pass": false
+          }
+        },
+        "delta_peak_m_s": {
+          "state_with_sealed_targets": -0.0027803950298520164,
+          "state_with_native_targets": -0.011050600725675833,
+          "targets_with_sealed_state": 0.05979548821298257,
+          "targets_with_native_state": 0.05152528251715875,
+          "interaction": -0.008270205695823814
+        },
+        "signals": {
+          "first_stop_request_tick": 525,
+          "stop_request_m_s": 0.0,
+          "actor_vx_at_stop_request_m_s": 0.0,
+          "tail_actor_vx_range_m_s": [
+            0.028898657445307868,
+            0.0630838453985121
+          ],
+          "wheel_samples": 100,
+          "mean_target_rad_s": -1.2223222207278013,
+          "mean_encoder_rad_s": -0.43325898780662586,
+          "negative_targets_per_wheel": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "negative_encoders_per_wheel": [
+            25,
+            20,
+            25,
+            25
+          ],
+          "negative_first_torques_per_wheel": [
+            19,
+            25,
+            25,
+            25
+          ],
+          "mean_first_torque_nm": -0.39453161646058765,
+          "maximum_abs_first_torque_nm": 1.1341402836551804,
+          "saturated_wheel_intervals_per_wheel": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    ]
+  },
+  "archived_projection": {
+    "source_round": 113,
+    "evidence": "fixed_archived_actor_outputs",
+    "action_history": "reconstructed_last_action_columns_only",
+    "actor_forwards": 0,
+    "physics": 0,
+    "policy_updates": 0,
+    "world_updates": 0,
+    "rows": [
+      {
+        "seed": 111011,
+        "trace_sha256": "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82",
+        "replayed_decisions": 600,
+        "active_tick_range_inclusive": [
+          525,
+          599
+        ],
+        "active_intervals": 75,
+        "unchanged_pre_stop_intervals": 525,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "changed_issued_intervals": 75,
+        "changed_applied_intervals": 74,
+        "delay_ticks": 1,
+        "active_mean_wheel_target_before_rad_s": -1.3749817402412494,
+        "active_mean_wheel_target_after_rad_s": 1.893689235051473e-09,
+        "active_peak_absolute_wheel_mean_before_rad_s": 1.9018177967518568,
+        "active_peak_absolute_wheel_mean_after_rad_s": 4.6566128730773926e-08,
+        "max_leg_target_error_rad": 0.0,
+        "max_pairwise_wheel_difference_error_rad_s": 1.4901161193847656e-07,
+        "reconstructed_action_history_windows": 600,
+        "history_width": 10,
+        "policy_feedback_exact": true,
+        "delayed_targets_exact": true
+      },
+      {
+        "seed": 111023,
+        "trace_sha256": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db",
+        "replayed_decisions": 600,
+        "active_tick_range_inclusive": [
+          525,
+          599
+        ],
+        "active_intervals": 75,
+        "unchanged_pre_stop_intervals": 525,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "changed_issued_intervals": 75,
+        "changed_applied_intervals": 74,
+        "delay_ticks": 1,
+        "active_mean_wheel_target_before_rad_s": -1.3875146262037257,
+        "active_mean_wheel_target_after_rad_s": 5.199884374936422e-10,
+        "active_peak_absolute_wheel_mean_before_rad_s": 2.0680214557796717,
+        "active_peak_absolute_wheel_mean_after_rad_s": 5.005858838558197e-08,
+        "max_leg_target_error_rad": 0.0,
+        "max_pairwise_wheel_difference_error_rad_s": 1.4901161193847656e-07,
+        "reconstructed_action_history_windows": 600,
+        "history_width": 10,
+        "policy_feedback_exact": true,
+        "delayed_targets_exact": true
+      },
+      {
+        "seed": 111037,
+        "trace_sha256": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b",
+        "replayed_decisions": 600,
+        "active_tick_range_inclusive": [
+          525,
+          599
+        ],
+        "active_intervals": 75,
+        "unchanged_pre_stop_intervals": 525,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "changed_issued_intervals": 75,
+        "changed_applied_intervals": 74,
+        "delay_ticks": 1,
+        "active_mean_wheel_target_before_rad_s": -1.341874687621991,
+        "active_mean_wheel_target_after_rad_s": 5.66554566224416e-10,
+        "active_peak_absolute_wheel_mean_before_rad_s": 2.0376734994351864,
+        "active_peak_absolute_wheel_mean_after_rad_s": 4.6566128730773926e-08,
+        "max_leg_target_error_rad": 0.0,
+        "max_pairwise_wheel_difference_error_rad_s": 1.862645149230957e-07,
+        "reconstructed_action_history_windows": 600,
+        "history_width": 10,
+        "policy_feedback_exact": true,
+        "delayed_targets_exact": true
+      }
+    ]
+  },
+  "completed_at_unix_ns": 1795839609521691172
+}

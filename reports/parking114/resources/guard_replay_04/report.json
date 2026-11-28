@@ -1,0 +1,52 @@
+{
+  "schema": "pressure-supervisor83-v1",
+  "status": "COMPLETE",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "tools114.run",
+    "worker",
+    "--attempt",
+    "4"
+  ],
+  "scope": "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-parking114-replay-04.service",
+  "timeout_s": 300.0,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "pressure_policy_sha256": "29f14e68cc6df4ab79765f842bfe53030a36e9a36f16379e59b53563671d1a56",
+  "child_started": true,
+  "returncode": 0,
+  "error": null,
+  "signals": [],
+  "minimum_effective_bytes": 6015578112,
+  "peak_group_bytes": 48439296,
+  "retry_permitted": false,
+  "startup_full_avg10_strictly_below": 1.0,
+  "runtime_full_avg10_strictly_below": 10.0,
+  "maximum_full_avg10": {
+    "/user.slice/user-1000.slice/user@1000.service/app.slice/d1-parking114-replay-04.service": 0.0,
+    "/user.slice/user-1000.slice/user@1000.service/app.slice": 0.19,
+    "/user.slice/user-1000.slice/user@1000.service": 0.21,
+    "/user.slice/user-1000.slice": 0.19,
+    "/user.slice": 0.2,
+    "/": 0.35
+  },
+  "new_physics_steps_in_supervisor": 0,
+  "cpu_affinity": [
+    0
+  ],
+  "final_memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "child_pid": 409281,
+  "owned_cgroup_children_empty": true,
+  "remaining_owned_pids": [],
+  "child_reaped": true,
+  "elapsed_s": 10.574030107003637,
+  "returncode_after_cleanup": 0
+}
