@@ -1,0 +1,886 @@
+{
+  "stage": "video",
+  "attempt": 1,
+  "unit": "d1-compound116-video-01",
+  "registration_sha256": "0144ab4a601e211984be6d4ee3d1f2ad939f1b09835d089307ae297582af1bfa",
+  "reserved_at_unix_ns": 1795848914506758410,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "filename": "compound116.mp4",
+    "desktop_filename": "D1_\u590d\u5408\u5730\u5f62_\u96f7\u8fbe\u8c03\u901f\u4e0e\u7f16\u7801\u5668\u8865\u507f_116.mp4",
+    "seed": 111101,
+    "trace_sha256": [
+      "2db15199f1eb06066b20b1ee10d1246e8f749b9e76c08b1ed21a2c2595e65020",
+      "9eeb8c36c91883ec29a49eabdcb8fd34d73871a27a0e28ac104f5dd1200e9b4d"
+    ],
+    "native_report_sha256": "2cbfea47bd38dc68e87a4deeb22db8453a8b1adc57674df340c3e12a54de4404",
+    "last_ticks": [
+      600,
+      600
+    ],
+    "end_reasons": [
+      "\u8bb0\u5f55\u7ed3\u675f",
+      "\u8bb0\u5f55\u7ed3\u675f"
+    ],
+    "events": [
+      {
+        "crest": 234,
+        "ripple": 273,
+        "front_contact": 294,
+        "rear_clear": 339
+      },
+      {
+        "crest": 228,
+        "ripple": 266,
+        "front_contact": 284,
+        "rear_clear": 324
+      }
+    ],
+    "renderer_sha256": "2893a969d66313d5df79489e713ecf2123c0836a58b9a69f2cdea952faa442fc",
+    "sha256": "e17b1a892cd61884a77da19e7f12dca62f2d6565fbb3ef412e79b49489ba727c",
+    "frames": 514,
+    "fps": 25,
+    "bytes": 930194,
+    "duration_s": 20.56,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "20.560000",
+      "nb_read_frames": "514"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "shots": [
+      {
+        "tick": 202,
+        "phase": "slope",
+        "first_frame": 0,
+        "frames": 3
+      },
+      {
+        "tick": 205,
+        "phase": "slope",
+        "first_frame": 3,
+        "frames": 3
+      },
+      {
+        "tick": 208,
+        "phase": "slope",
+        "first_frame": 6,
+        "frames": 3
+      },
+      {
+        "tick": 211,
+        "phase": "slope",
+        "first_frame": 9,
+        "frames": 3
+      },
+      {
+        "tick": 214,
+        "phase": "slope",
+        "first_frame": 12,
+        "frames": 3
+      },
+      {
+        "tick": 217,
+        "phase": "slope",
+        "first_frame": 15,
+        "frames": 3
+      },
+      {
+        "tick": 220,
+        "phase": "slope",
+        "first_frame": 18,
+        "frames": 3
+      },
+      {
+        "tick": 223,
+        "phase": "slope",
+        "first_frame": 21,
+        "frames": 3
+      },
+      {
+        "tick": 226,
+        "phase": "slope",
+        "first_frame": 24,
+        "frames": 2
+      },
+      {
+        "tick": 228,
+        "phase": "slope",
+        "first_frame": 26,
+        "frames": 1
+      },
+      {
+        "tick": 229,
+        "phase": "slope",
+        "first_frame": 27,
+        "frames": 3
+      },
+      {
+        "tick": 232,
+        "phase": "slope",
+        "first_frame": 30,
+        "frames": 2
+      },
+      {
+        "tick": 234,
+        "phase": "slope",
+        "first_frame": 32,
+        "frames": 1
+      },
+      {
+        "tick": 235,
+        "phase": "slope",
+        "first_frame": 33,
+        "frames": 3
+      },
+      {
+        "tick": 238,
+        "phase": "slope",
+        "first_frame": 36,
+        "frames": 3
+      },
+      {
+        "tick": 241,
+        "phase": "slope",
+        "first_frame": 39,
+        "frames": 3
+      },
+      {
+        "tick": 244,
+        "phase": "slope",
+        "first_frame": 42,
+        "frames": 3
+      },
+      {
+        "tick": 247,
+        "phase": "slope",
+        "first_frame": 45,
+        "frames": 3
+      },
+      {
+        "tick": 250,
+        "phase": "slope",
+        "first_frame": 48,
+        "frames": 3
+      },
+      {
+        "tick": 253,
+        "phase": "slope",
+        "first_frame": 51,
+        "frames": 2
+      },
+      {
+        "tick": 255,
+        "phase": "slope",
+        "first_frame": 53,
+        "frames": 1
+      },
+      {
+        "tick": 256,
+        "phase": "slope",
+        "first_frame": 54,
+        "frames": 1
+      },
+      {
+        "tick": 257,
+        "phase": "slope",
+        "first_frame": 55,
+        "frames": 2
+      },
+      {
+        "tick": 259,
+        "phase": "slope",
+        "first_frame": 57,
+        "frames": 1
+      },
+      {
+        "tick": 260,
+        "phase": "slope",
+        "first_frame": 58,
+        "frames": 1
+      },
+      {
+        "tick": 261,
+        "phase": "slope",
+        "first_frame": 59,
+        "frames": 2
+      },
+      {
+        "tick": 263,
+        "phase": "slope",
+        "first_frame": 61,
+        "frames": 1
+      },
+      {
+        "tick": 264,
+        "phase": "slope",
+        "first_frame": 62,
+        "frames": 2
+      },
+      {
+        "tick": 266,
+        "phase": "slope",
+        "first_frame": 64,
+        "frames": 1
+      },
+      {
+        "tick": 267,
+        "phase": "step",
+        "first_frame": 65,
+        "frames": 4
+      },
+      {
+        "tick": 269,
+        "phase": "step",
+        "first_frame": 69,
+        "frames": 2
+      },
+      {
+        "tick": 270,
+        "phase": "step",
+        "first_frame": 71,
+        "frames": 4
+      },
+      {
+        "tick": 272,
+        "phase": "step",
+        "first_frame": 75,
+        "frames": 2
+      },
+      {
+        "tick": 273,
+        "phase": "step",
+        "first_frame": 77,
+        "frames": 2
+      },
+      {
+        "tick": 274,
+        "phase": "step",
+        "first_frame": 79,
+        "frames": 4
+      },
+      {
+        "tick": 276,
+        "phase": "step",
+        "first_frame": 83,
+        "frames": 2
+      },
+      {
+        "tick": 277,
+        "phase": "step",
+        "first_frame": 85,
+        "frames": 4
+      },
+      {
+        "tick": 279,
+        "phase": "step",
+        "first_frame": 89,
+        "frames": 2
+      },
+      {
+        "tick": 280,
+        "phase": "step",
+        "first_frame": 91,
+        "frames": 2
+      },
+      {
+        "tick": 281,
+        "phase": "step",
+        "first_frame": 93,
+        "frames": 2
+      },
+      {
+        "tick": 282,
+        "phase": "step",
+        "first_frame": 95,
+        "frames": 2
+      },
+      {
+        "tick": 283,
+        "phase": "step",
+        "first_frame": 97,
+        "frames": 2
+      },
+      {
+        "tick": 284,
+        "phase": "step",
+        "first_frame": 99,
+        "frames": 27
+      },
+      {
+        "tick": 285,
+        "phase": "step",
+        "first_frame": 126,
+        "frames": 2
+      },
+      {
+        "tick": 286,
+        "phase": "step",
+        "first_frame": 128,
+        "frames": 4
+      },
+      {
+        "tick": 288,
+        "phase": "step",
+        "first_frame": 132,
+        "frames": 2
+      },
+      {
+        "tick": 289,
+        "phase": "step",
+        "first_frame": 134,
+        "frames": 4
+      },
+      {
+        "tick": 291,
+        "phase": "step",
+        "first_frame": 138,
+        "frames": 2
+      },
+      {
+        "tick": 292,
+        "phase": "step",
+        "first_frame": 140,
+        "frames": 4
+      },
+      {
+        "tick": 294,
+        "phase": "step",
+        "first_frame": 144,
+        "frames": 27
+      },
+      {
+        "tick": 295,
+        "phase": "step",
+        "first_frame": 171,
+        "frames": 4
+      },
+      {
+        "tick": 297,
+        "phase": "step",
+        "first_frame": 175,
+        "frames": 2
+      },
+      {
+        "tick": 298,
+        "phase": "step",
+        "first_frame": 177,
+        "frames": 4
+      },
+      {
+        "tick": 300,
+        "phase": "step",
+        "first_frame": 181,
+        "frames": 2
+      },
+      {
+        "tick": 301,
+        "phase": "step",
+        "first_frame": 183,
+        "frames": 4
+      },
+      {
+        "tick": 303,
+        "phase": "step",
+        "first_frame": 187,
+        "frames": 2
+      },
+      {
+        "tick": 304,
+        "phase": "step",
+        "first_frame": 189,
+        "frames": 6
+      },
+      {
+        "tick": 307,
+        "phase": "step",
+        "first_frame": 195,
+        "frames": 6
+      },
+      {
+        "tick": 310,
+        "phase": "step",
+        "first_frame": 201,
+        "frames": 6
+      },
+      {
+        "tick": 313,
+        "phase": "step",
+        "first_frame": 207,
+        "frames": 6
+      },
+      {
+        "tick": 316,
+        "phase": "step",
+        "first_frame": 213,
+        "frames": 6
+      },
+      {
+        "tick": 319,
+        "phase": "step",
+        "first_frame": 219,
+        "frames": 6
+      },
+      {
+        "tick": 322,
+        "phase": "step",
+        "first_frame": 225,
+        "frames": 4
+      },
+      {
+        "tick": 324,
+        "phase": "step",
+        "first_frame": 229,
+        "frames": 2
+      },
+      {
+        "tick": 325,
+        "phase": "step",
+        "first_frame": 231,
+        "frames": 6
+      },
+      {
+        "tick": 328,
+        "phase": "step",
+        "first_frame": 237,
+        "frames": 6
+      },
+      {
+        "tick": 331,
+        "phase": "step",
+        "first_frame": 243,
+        "frames": 6
+      },
+      {
+        "tick": 334,
+        "phase": "step",
+        "first_frame": 249,
+        "frames": 2
+      },
+      {
+        "tick": 335,
+        "phase": "step",
+        "first_frame": 251,
+        "frames": 4
+      },
+      {
+        "tick": 337,
+        "phase": "step",
+        "first_frame": 255,
+        "frames": 4
+      },
+      {
+        "tick": 339,
+        "phase": "step",
+        "first_frame": 259,
+        "frames": 2
+      },
+      {
+        "tick": 340,
+        "phase": "step",
+        "first_frame": 261,
+        "frames": 6
+      },
+      {
+        "tick": 343,
+        "phase": "step",
+        "first_frame": 267,
+        "frames": 6
+      },
+      {
+        "tick": 346,
+        "phase": "step",
+        "first_frame": 273,
+        "frames": 6
+      },
+      {
+        "tick": 349,
+        "phase": "step",
+        "first_frame": 279,
+        "frames": 2
+      },
+      {
+        "tick": 350,
+        "phase": "step",
+        "first_frame": 281,
+        "frames": 6
+      },
+      {
+        "tick": 500,
+        "phase": "braking",
+        "first_frame": 287,
+        "frames": 3
+      },
+      {
+        "tick": 503,
+        "phase": "braking",
+        "first_frame": 290,
+        "frames": 3
+      },
+      {
+        "tick": 506,
+        "phase": "braking",
+        "first_frame": 293,
+        "frames": 3
+      },
+      {
+        "tick": 509,
+        "phase": "braking",
+        "first_frame": 296,
+        "frames": 3
+      },
+      {
+        "tick": 512,
+        "phase": "braking",
+        "first_frame": 299,
+        "frames": 3
+      },
+      {
+        "tick": 515,
+        "phase": "braking",
+        "first_frame": 302,
+        "frames": 3
+      },
+      {
+        "tick": 518,
+        "phase": "braking",
+        "first_frame": 305,
+        "frames": 3
+      },
+      {
+        "tick": 521,
+        "phase": "braking",
+        "first_frame": 308,
+        "frames": 3
+      },
+      {
+        "tick": 524,
+        "phase": "braking",
+        "first_frame": 311,
+        "frames": 1
+      },
+      {
+        "tick": 525,
+        "phase": "braking",
+        "first_frame": 312,
+        "frames": 27
+      },
+      {
+        "tick": 527,
+        "phase": "braking",
+        "first_frame": 339,
+        "frames": 3
+      },
+      {
+        "tick": 530,
+        "phase": "braking",
+        "first_frame": 342,
+        "frames": 3
+      },
+      {
+        "tick": 533,
+        "phase": "braking",
+        "first_frame": 345,
+        "frames": 3
+      },
+      {
+        "tick": 536,
+        "phase": "braking",
+        "first_frame": 348,
+        "frames": 3
+      },
+      {
+        "tick": 539,
+        "phase": "braking",
+        "first_frame": 351,
+        "frames": 3
+      },
+      {
+        "tick": 542,
+        "phase": "braking",
+        "first_frame": 354,
+        "frames": 3
+      },
+      {
+        "tick": 545,
+        "phase": "braking",
+        "first_frame": 357,
+        "frames": 3
+      },
+      {
+        "tick": 548,
+        "phase": "braking",
+        "first_frame": 360,
+        "frames": 3
+      },
+      {
+        "tick": 551,
+        "phase": "braking",
+        "first_frame": 363,
+        "frames": 3
+      },
+      {
+        "tick": 554,
+        "phase": "braking",
+        "first_frame": 366,
+        "frames": 3
+      },
+      {
+        "tick": 557,
+        "phase": "braking",
+        "first_frame": 369,
+        "frames": 3
+      },
+      {
+        "tick": 560,
+        "phase": "braking",
+        "first_frame": 372,
+        "frames": 3
+      },
+      {
+        "tick": 563,
+        "phase": "braking",
+        "first_frame": 375,
+        "frames": 3
+      },
+      {
+        "tick": 566,
+        "phase": "braking",
+        "first_frame": 378,
+        "frames": 3
+      },
+      {
+        "tick": 569,
+        "phase": "braking",
+        "first_frame": 381,
+        "frames": 3
+      },
+      {
+        "tick": 572,
+        "phase": "braking",
+        "first_frame": 384,
+        "frames": 2
+      },
+      {
+        "tick": 574,
+        "phase": "braking",
+        "first_frame": 386,
+        "frames": 1
+      },
+      {
+        "tick": 575,
+        "phase": "tail",
+        "first_frame": 387,
+        "frames": 29
+      },
+      {
+        "tick": 577,
+        "phase": "tail",
+        "first_frame": 416,
+        "frames": 4
+      },
+      {
+        "tick": 579,
+        "phase": "tail",
+        "first_frame": 420,
+        "frames": 4
+      },
+      {
+        "tick": 581,
+        "phase": "tail",
+        "first_frame": 424,
+        "frames": 4
+      },
+      {
+        "tick": 583,
+        "phase": "tail",
+        "first_frame": 428,
+        "frames": 4
+      },
+      {
+        "tick": 585,
+        "phase": "tail",
+        "first_frame": 432,
+        "frames": 4
+      },
+      {
+        "tick": 587,
+        "phase": "tail",
+        "first_frame": 436,
+        "frames": 4
+      },
+      {
+        "tick": 589,
+        "phase": "tail",
+        "first_frame": 440,
+        "frames": 4
+      },
+      {
+        "tick": 591,
+        "phase": "tail",
+        "first_frame": 444,
+        "frames": 4
+      },
+      {
+        "tick": 593,
+        "phase": "tail",
+        "first_frame": 448,
+        "frames": 4
+      },
+      {
+        "tick": 595,
+        "phase": "tail",
+        "first_frame": 452,
+        "frames": 4
+      },
+      {
+        "tick": 597,
+        "phase": "tail",
+        "first_frame": 456,
+        "frames": 4
+      },
+      {
+        "tick": 599,
+        "phase": "tail",
+        "first_frame": 460,
+        "frames": 2
+      },
+      {
+        "tick": 600,
+        "phase": "tail",
+        "first_frame": 462,
+        "frames": 52
+      }
+    ],
+    "cameras": {
+      "slope": [
+        {
+          "lookat_m": [
+            3.3744074093906313,
+            -0.03730333681934586,
+            0.26
+          ],
+          "distance_m": 3.5026390060995714,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        },
+        {
+          "lookat_m": [
+            3.3744074093906313,
+            -0.03730333681934586,
+            0.26
+          ],
+          "distance_m": 3.5026390060995714,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        }
+      ],
+      "step": [
+        {
+          "lookat_m": [
+            5.5590118096003565,
+            -0.03288822973369966,
+            0.26
+          ],
+          "distance_m": 4.23364113473062,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        },
+        {
+          "lookat_m": [
+            5.5590118096003565,
+            -0.03288822973369966,
+            0.26
+          ],
+          "distance_m": 4.23364113473062,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        }
+      ],
+      "braking": [
+        {
+          "lookat_m": [
+            10.765932479885464,
+            0.04258361581276936,
+            0.26
+          ],
+          "distance_m": 2.579189656400063,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        },
+        {
+          "lookat_m": [
+            10.765932479885464,
+            0.04258361581276936,
+            0.26
+          ],
+          "distance_m": 2.579189656400063,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        }
+      ],
+      "tail": [
+        {
+          "lookat_m": [
+            10.382588412150053,
+            0.07669213013450353,
+            0.13
+          ],
+          "distance_m": 1.05,
+          "azimuth_deg": 98.0,
+          "elevation_deg": -16.0
+        },
+        {
+          "lookat_m": [
+            11.36339398010982,
+            0.08015274853573517,
+            0.13
+          ],
+          "distance_m": 1.05,
+          "azimuth_deg": 98.0,
+          "elevation_deg": -16.0
+        }
+      ]
+    },
+    "ground_markers": [
+      {
+        "xy_m": [
+          10.422588412150052,
+          0.07669213013450353
+        ],
+        "yaw_rad": 0.053222697846474286
+      },
+      {
+        "xy_m": [
+          11.403393980109819,
+          0.08015274853573517
+        ],
+        "yaw_rad": 0.05953300550706619
+      }
+    ],
+    "panels": [
+      "\u5de6 \u00b7 \u96f7\u8fbe\u8c03\u901f\u4e0e\u62ac\u817f",
+      "\u53f3 \u00b7 \u76f8\u540c\u96f7\u8fbe\u63a7\u5236\uff0c\u52a0\u8f6e\u901f\u7f16\u7801\u5668\u8865\u507f"
+    ],
+    "physics": 0,
+    "cover_frames": 0
+  },
+  "files": {
+    "compound116.mp4": "e17b1a892cd61884a77da19e7f12dca62f2d6565fbb3ef412e79b49489ba727c"
+  },
+  "completed_at_unix_ns": 1795848939520839398,
+  "elapsed_s": 25.01399092801148
+}

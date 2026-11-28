@@ -1,0 +1,88 @@
+{
+  "stage": "native_111103",
+  "attempt": 1,
+  "unit": "d1-compound116-native-111103-01",
+  "registration_sha256": "1a0c90c21efd0525e373cbde6c6a218331a8ae111ecf3ef6e64402b60acf045b",
+  "reserved_at_unix_ns": 1795848819841694676,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 111103,
+    "layout": "development",
+    "arm": "both",
+    "gain": 0.97792348,
+    "trim": "brake_aware_after_lidar",
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": false,
+      "failed": [
+        "stopped"
+      ],
+      "ticks": 600,
+      "gate_times_s": [
+        4.404974980994707,
+        5.065922191830697,
+        5.738903730156989,
+        6.397294931564914
+      ],
+      "speed_m_s": 1.5057822410207722,
+      "sections_m_s": [
+        1.5129801345786211,
+        1.4859248627934196,
+        1.5188538331945625
+      ],
+      "max_lane_y_m": 0.5504133317243903,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "stop_tail_max_m_s": 0.05796100603607707
+    },
+    "effects": {
+      "first_front_edge_tick": 283,
+      "speed_reduction_m_s": 0.04499999932944787,
+      "front_lift_m": 0.012003011231260241,
+      "speed_active": true,
+      "lift_active": true
+    },
+    "net_actor_effects": {
+      "first_front_edge_tick": 283,
+      "speed_reduction_m_s": -0.04418874964706876,
+      "front_lift_m": 0.012003011231260241,
+      "speed_active": false,
+      "lift_active": true
+    },
+    "paired_prefix": {
+      "first_changed_actor_frame_tick": 10,
+      "equal_issued_ticks": 10,
+      "equal_applied_ticks": 11,
+      "equal_state_endpoints": 12,
+      "equal_lidar_packets": 2
+    },
+    "nominal_base_height_m": 0.437849968809778,
+    "reference_sha256": "02a21757aaedf4ee4946c1448ec9bbd234258818334ca5f0f745ca5c44f2d975",
+    "trace_sha256": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0"
+  },
+  "files": {
+    "trace.npz": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2"
+  },
+  "completed_at_unix_ns": 1795848824304209004,
+  "elapsed_s": 4.462426851998316
+}
