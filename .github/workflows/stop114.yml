@@ -1,0 +1,41 @@
+name: D1 high-speed parking verification
+on:
+  push:
+    paths: &parking_paths
+      - 'tools114/**'
+      - 'tests/test_*114.py'
+      - 'docs/experiments114/**'
+      - 'docs/parking114_proposal.md'
+      - 'docs/assets/parking114.mp4'
+      - 'reports/parking114/**'
+      - 'reports/speed_world113/**'
+      - 'reports/surface112/**'
+      - 'reports/lidar_compound111/**'
+      - 'reports/speed110/results.json'
+      - 'docs/experiments100/pointcloud_density.json'
+      - 'tools113/**'
+      - 'tools112/**'
+      - 'tools111/**'
+      - 'tools110/**'
+      - 'tools100/sensor100.py'
+      - 'training/d1_rl/interface.py'
+      - '.github/workflows/stop114.yml'
+  pull_request:
+    paths: *parking_paths
+permissions:
+  contents: read
+jobs:
+  replay:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet numpy==2.2.6
+      - run: python -B -m unittest discover -s tests -p 'test_*114.py'
+      - run: python -B -m tools114.results

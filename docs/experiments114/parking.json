@@ -1,0 +1,49 @@
+{
+  "parent_commit": "4dc3e7571b3db6139a9ef9a17462d856499a4aa7",
+  "round113_registration_sha256": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+  "development": [
+    111011,
+    111023,
+    111037
+  ],
+  "conditional_blind": [
+    114211,
+    114227,
+    114239
+  ],
+  "current_scope": "archived_replay_and_parking_adapter",
+  "current_new_native_episodes": 0,
+  "archive_model_steps": 900,
+  "start_tick": 525,
+  "stop_window": [
+    575,
+    600
+  ],
+  "stop_peak_limit_m_s": 0.05,
+  "policy_updates": 0,
+  "world_updates": 0,
+  "conditional_episodes_max": 6,
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "sources_sha256": {
+    "docs/experiments113/forecast_seal.json": "2007f11e93469dfd95d17c24b3fda8079e4cc63455435cab6a84936bcdce2eee",
+    "docs/experiments113/high_speed.json": "63dd93ab82e848372e3d662bd031d25e20655587e86c5bb5411d2b5bfe827d67",
+    "docs/parking114_proposal.md": "77963784032a2dc5826c523fd0c875e15d0a3fb9f1b64e98e51e7dd9390b2a98",
+    "reports/speed_world113/results.json": "409a86c9f06fe9fce8df10cda0f0abf0c17b53574c41fae64abc4ef12d59b1dc",
+    "tools109/run109.py": "c3a8a0150e0b8e2ea6e05865070dd987cd4d758c8232713dbf6a0e4bf829b807",
+    "tools111/remaining.py": "d48186cfda8659acee4f03ba1f84b79bb8e1f517a19566cd69b33b290d6a7808",
+    "tools111/wheel_response.py": "c428092686b74a98fbe3a20f617f661e878bfac928d534a0191ae26a868ae28d",
+    "tools113/model.py": "8d77c3b36c9c269da2b152dbad4e9edf7554339f2c28027ff38337951b35b5ad",
+    "tools113/native.py": "d324cc0683de59b868136e9e060ab3e9be8b34c9491667e7700805ed34115bb0",
+    "tools113/results.py": "21c67c12dbc49548f4604654b7280f3cb43f0976ebb3c6c3edd80cc24c952cba",
+    "tools114/audit.py": "40f424dcc9309164d31cff085ab0adcdc324e3c141789756008a724dd33f3273",
+    "tools114/common.py": "894ed3e0edaf6ff3452b899e45372236715fd974bc9fd0b078dba6305082b001",
+    "tools114/control.py": "dfe4d1365fec94f3809479418861d2cdfe80dc1e2629db5cad6b25b08f1890ef",
+    "tools114/native.py": "08ee60bc637bcd493f2a81dc92c9eae0eaf84f6b6fd9b675ebb7cd5f762f33ba",
+    "tools114/replay.py": "5fcfee204f6e6789219a334074ea4fe0e6adccee545c42f6b36ea19aa366aa5c",
+    "tools114/run.py": "d70f80de226209945775c1a1c023bf0a23a86e0d1333c696ca01950f9b00c70f",
+    "tools27/resource_guard27.py": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2",
+    "tools91/launch91.py": "4aebd051f3bea83b71b1ef04b2ee426b88748066a7a0239d1aa510b750822c47",
+    "tools92/launch92.py": "dfa3c9cd106f1407f27b19ff36e7cd46d2ece3404232fc69c38210743077eab2",
+    "tools94/common94.py": "cb95b2c27edd8519c33749f25904506a1af891aaf3f08d9604c3e54afdfe59ab"
+  }
+}
