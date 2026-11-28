@@ -17,7 +17,7 @@
 
 **世界模型能算准 1.5 m/s 附近的调速效果吗？** 经 300 次离线更新，模型在仿真前猜对了三个起点的提速方向和停车改善方向，六项变化中只有一项达到 25% 幅值容差。原厂策略开启编码器补偿后，水平网格上中央三米实测 1.518～1.527 m/s，停车末半秒仍后退 25～29 mm，综合通过 0/3。全身策略更新 0 次。[开关补偿慢放](docs/assets/speed_world113.mp4) · [封存预测与三段实测](docs/high_speed_world113_results.md)
 
-**世界模型为什么把三次停车都判错？** 从驾驶请求归零的同一拍回放，只换成实测起点仍误判 3/3，换成伺服实际执行的动作便能识别三次超限。驻车候选已接到轮速目标出口，在三条存档上消除了四轮共同的倒车指令。修复后的机身停车速度待闭环验证。[离线回放曲线](docs/assets/parking114_replay.png) · [修复代码与三组数据](docs/parking114_results.md)
+**世界模型为什么把三次停车都判错？** 从驾驶请求归零的同一拍回放，只换成实测起点仍误判 3/3，换成伺服实际执行的动作便能识别三次超限。驻车候选已接到轮速目标出口，在三条存档上消除了四轮共同的倒车指令。修复后的机身停车速度待闭环验证。[离线回放曲线](docs/assets/parking114_replay.png) · [修复代码与三组数据](docs/parking114_results.md) · [三次后溜的方向与下一步模型验证](docs/parking114_research_next.md)
 
 在原生复合路台阶前，两个射线接口对同一帧给出了不同结果，282/520 束有距离偏差，最大 55.08 mm。切换到逐束首回波后，静止姿态下测得减速指令 0.045 m/s、左右前腿各抬高 12 mm 的目标。已用三条高速平地存档独立复算关节目标几何。[雷达与腿部运动学核验](docs/lidar_compound111.md#原生雷达与腿目标核验)
 
@@ -272,13 +272,14 @@
 
 ## 开源学习记录
 
-D1 的两个问题是轮子前方有什么，以及改变动作后机器人会怎样运动。这里汇集 D1 与关联仓 wheel 的 46 项源码、论文、接口或本地使用记录，另列 3 个尚待研读的仓库入口。本表核至 2026-11-24。后续研读沿用同一记录方式，给出作者仓库、借鉴点和 D1 验证进度。
+D1 的两个问题是轮子前方有什么，以及改变动作后机器人会怎样运动。这里汇集 D1 与关联仓 wheel 的 47 项源码、论文、接口或本地使用记录，另列 3 个尚待研读的仓库入口。本表核至 2026-11-28。后续研读沿用同一记录方式，给出作者仓库、借鉴点和 D1 验证进度。
 
 | 作者仓库 | 学到了什么 | 本地记录 |
 |---|---|---|
-| [SuperMimic](https://github.com/HybridRobotics/supermimic) | 从采样轨迹拟合可微动力学，在模型里展开短轨迹并向策略反传。 | D1 用原生仿真检验动作收益的方向和幅值。[驻坡盲测](docs/supermimic_late_response99_results.md) |
+| [SuperMimic](https://github.com/HybridRobotics/supermimic) | 用采样轨迹拟合可微动力学，从回放池取起点，在模型里展开短轨迹并向策略反传。 | D1 用原生仿真检验动作收益的方向和幅值。停车时还要核对策略记住的原始动作和伺服实际执行的动作。[驻坡盲测](docs/supermimic_late_response99_results.md) · [停车动作接口](docs/parking114_research_next.md) |
 | [JEPLO](https://github.com/ASIG-X/JEPLO) | 把激光回波投成深度图，用已发动作预测下一次本体和点云特征。 | D1 分别检验了特征预测和毫米级轮迹高差，改善特征预测后仍有台沿误读。[动作窗口对照](docs/jeplo_action_window103_results.md) |
 | [AME-2](https://github.com/leggedrobotics/ame2_minimal) | 用历史观测更新局部高程和不确定度，让学生策略查询地图。 | 已核对位姿来源、地图融合和训练特权信息。D1 的轮迹地图仍待验证。[代码与论文对读](docs/ame2_learning.md) |
+| [MBPO](https://github.com/jannerm/mbpo) | 从实测观测开始短时预测，每一步让策略按当下预测的观测选动作。[作者实现](https://github.com/jannerm/mbpo/blob/ac694ff9f1ebb789cc5b3f164d9d67f93ed8f129/mbpo/algorithms/mbpo.py#L381-L402) | D1 拟从实测制动状态对照固定动作和策略自主动作，第 16 拍检查车身响应。[短窗验证方案](docs/parking114_research_next.md) |
 
 <details>
 <summary>轮足和四足的感知策略、世界模型与可微控制</summary>
@@ -324,7 +325,7 @@ D1 的两个问题是轮子前方有什么，以及改变动作后机器人会�
 | [SCUT wheelbipe_ros2_sim2sim](https://github.com/scutrobotlab/wheelbipe_ros2_sim2sim) | 核对发布频率、动作关节顺序、无效输入及串口超时，作为部署接口参照。[训练与部署源码核对][d1-upstream] |
 | [SCUT wheeled-legged_RL](https://github.com/scutrobotlab/wheeled-legged_RL) | 查明训练端最终执行器配置与 critic 独有观测，和上一行的部署路径交叉核对。[配置与实效][d1-upstream] |
 | [Wheel-Legged-Gym](https://github.com/clearlab-sustech/Wheel-Legged-Gym) | 阅读历史编码器的速度监督、VMC 动作与导出路径。D1 已独立实现并数值检查速度监督候选。[本地实现](docs/velocity_candidate15.md) |
-| [robot_lab](https://github.com/fan-ziqi/robot_lab) | 追踪 Tita/Go2W 的奖励和课程覆盖，记录部署 actor 与训练 critic 各能看见什么。[六仓固定版本对照][d1-upstream] |
+| [robot_lab](https://github.com/fan-ziqi/robot_lab) | 追踪 Tita/Go2W 的奖励和课程覆盖，记录部署 actor 与训练 critic 各能看见什么。Go2-W 粗糙地形启用了静止腿姿项，该配置的轮速惩罚权重为零。[六仓固定版本对照][d1-upstream] · [驻车配置与生效权重](docs/parking114_research_next.md) |
 | [legged_gym](https://github.com/leggedrobotics/legged_gym) · [ddt_rl_isaacgym](https://github.com/DDTRobot/ddt_rl_isaacgym) · [DDT_Lab](https://github.com/DDTRobot/DDT_Lab) | wheel 对照四足基线和两代 D1 训练配置的跟踪奖励、动作尺度与采样预算。[逐字段对照][wheel-b22] |
 | [PACE](https://github.com/leggedrobotics/pace-sim2real) | 借鉴按整条激励轨迹留出验证。wheel 用单轮编码器数据检验执行器辨识，数据来自仿真。[编码器实验][wheel-pace] |
 | [ATEC](https://github.com/LYHrmer/atec-robotics-projects) | 从作者另一个项目核对视觉导航到运动命令的接口、分地形课程和失败记录。wheel 接入了基础地形课程。[课程迁移][wheel-atec] |
