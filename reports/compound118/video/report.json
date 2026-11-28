@@ -1,0 +1,726 @@
+{
+  "stage": "video",
+  "attempt": 1,
+  "unit": "d1-compound118-video-01",
+  "registration_sha256": "c24c3ed1e6b9eb57e0f8707b491252c800037766f5a113abb69e87807a964207",
+  "reserved_at_unix_ns": 1795853517866972419,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "filename": "compound118.mp4",
+    "desktop_filename": "D1_\u590d\u5408\u8def\u72ec\u7acb\u8d77\u70b9\u76f2\u6d4b_118.mp4",
+    "seed": 2087901246,
+    "layout": "development",
+    "trace_sha256": "1517b10b087b9108fdcba3e05f6743f5ea5f9ff65f1a8a9678a9f96f693703a3",
+    "source_report_sha256": "9c0246b02f0a78b69a9d20616f4e54e98401715126635164aedb614941f52bb0",
+    "renderer_sha256": "bb345425ab9e100b6206f7dcf0c7ffb0ab18ac339ab9bdcf2b08bf9d9cf6b3e1",
+    "last_tick": 600,
+    "end_reason": "\u8bb0\u5f55\u7ed3\u675f",
+    "gate_times_s": [
+      4.405680108217159,
+      5.065350153242715,
+      5.730913677190139,
+      6.376564170094061
+    ],
+    "speed_m_s": 1.522159551659805,
+    "sections_m_s": [
+      1.5159093664185699,
+      1.502486185043691,
+      1.5488255813177365
+    ],
+    "contact_tick": 284,
+    "stop": {
+      "peak_m_s": 0.012954918592726005,
+      "peak_tick": 577,
+      "peak_world_vxy_m_s": [
+        -0.012857181819931854,
+        -0.0015883297495708378
+      ],
+      "peak_forward_m_s": -0.012950988522951025,
+      "mean_forward_m_s": -0.011888522403448424,
+      "forward_displacement_mm": -5.94340505717992,
+      "endpoints_above_limit": 0
+    },
+    "ground_marker": {
+      "xy_m": [
+        11.384944846756415,
+        0.49609548788240987
+      ],
+      "yaw_rad": 0.09821410971986413
+    },
+    "sha256": "73094c5be294d75cea07d6ce516a952a5c52934ab569b3bf43c0c376ba443b0b",
+    "frames": 465,
+    "fps": 25,
+    "bytes": 768287,
+    "duration_s": 18.6,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "18.600000",
+      "nb_read_frames": "465"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "shots": [
+      {
+        "phase": "cruise",
+        "tick": 203,
+        "frames": 2,
+        "first_frame": 0
+      },
+      {
+        "phase": "cruise",
+        "tick": 205,
+        "frames": 2,
+        "first_frame": 2
+      },
+      {
+        "phase": "cruise",
+        "tick": 207,
+        "frames": 2,
+        "first_frame": 4
+      },
+      {
+        "phase": "cruise",
+        "tick": 209,
+        "frames": 2,
+        "first_frame": 6
+      },
+      {
+        "phase": "cruise",
+        "tick": 211,
+        "frames": 2,
+        "first_frame": 8
+      },
+      {
+        "phase": "cruise",
+        "tick": 213,
+        "frames": 2,
+        "first_frame": 10
+      },
+      {
+        "phase": "cruise",
+        "tick": 215,
+        "frames": 2,
+        "first_frame": 12
+      },
+      {
+        "phase": "cruise",
+        "tick": 217,
+        "frames": 2,
+        "first_frame": 14
+      },
+      {
+        "phase": "cruise",
+        "tick": 219,
+        "frames": 2,
+        "first_frame": 16
+      },
+      {
+        "phase": "cruise",
+        "tick": 221,
+        "frames": 2,
+        "first_frame": 18
+      },
+      {
+        "phase": "cruise",
+        "tick": 223,
+        "frames": 2,
+        "first_frame": 20
+      },
+      {
+        "phase": "cruise",
+        "tick": 225,
+        "frames": 2,
+        "first_frame": 22
+      },
+      {
+        "phase": "cruise",
+        "tick": 227,
+        "frames": 2,
+        "first_frame": 24
+      },
+      {
+        "phase": "cruise",
+        "tick": 229,
+        "frames": 2,
+        "first_frame": 26
+      },
+      {
+        "phase": "cruise",
+        "tick": 231,
+        "frames": 2,
+        "first_frame": 28
+      },
+      {
+        "phase": "cruise",
+        "tick": 233,
+        "frames": 2,
+        "first_frame": 30
+      },
+      {
+        "phase": "cruise",
+        "tick": 235,
+        "frames": 2,
+        "first_frame": 32
+      },
+      {
+        "phase": "cruise",
+        "tick": 237,
+        "frames": 2,
+        "first_frame": 34
+      },
+      {
+        "phase": "cruise",
+        "tick": 239,
+        "frames": 2,
+        "first_frame": 36
+      },
+      {
+        "phase": "cruise",
+        "tick": 241,
+        "frames": 2,
+        "first_frame": 38
+      },
+      {
+        "phase": "cruise",
+        "tick": 243,
+        "frames": 2,
+        "first_frame": 40
+      },
+      {
+        "phase": "cruise",
+        "tick": 245,
+        "frames": 2,
+        "first_frame": 42
+      },
+      {
+        "phase": "cruise",
+        "tick": 247,
+        "frames": 2,
+        "first_frame": 44
+      },
+      {
+        "phase": "cruise",
+        "tick": 249,
+        "frames": 2,
+        "first_frame": 46
+      },
+      {
+        "phase": "cruise",
+        "tick": 251,
+        "frames": 2,
+        "first_frame": 48
+      },
+      {
+        "phase": "cruise",
+        "tick": 253,
+        "frames": 1,
+        "first_frame": 50
+      },
+      {
+        "phase": "cruise",
+        "tick": 254,
+        "frames": 1,
+        "first_frame": 51
+      },
+      {
+        "phase": "cruise",
+        "tick": 255,
+        "frames": 2,
+        "first_frame": 52
+      },
+      {
+        "phase": "cruise",
+        "tick": 257,
+        "frames": 2,
+        "first_frame": 54
+      },
+      {
+        "phase": "cruise",
+        "tick": 259,
+        "frames": 2,
+        "first_frame": 56
+      },
+      {
+        "phase": "cruise",
+        "tick": 261,
+        "frames": 2,
+        "first_frame": 58
+      },
+      {
+        "phase": "cruise",
+        "tick": 263,
+        "frames": 2,
+        "first_frame": 60
+      },
+      {
+        "phase": "cruise",
+        "tick": 265,
+        "frames": 2,
+        "first_frame": 62
+      },
+      {
+        "phase": "cruise",
+        "tick": 267,
+        "frames": 2,
+        "first_frame": 64
+      },
+      {
+        "phase": "cruise",
+        "tick": 269,
+        "frames": 2,
+        "first_frame": 66
+      },
+      {
+        "phase": "cruise",
+        "tick": 271,
+        "frames": 2,
+        "first_frame": 68
+      },
+      {
+        "phase": "cruise",
+        "tick": 273,
+        "frames": 2,
+        "first_frame": 70
+      },
+      {
+        "phase": "cruise",
+        "tick": 275,
+        "frames": 2,
+        "first_frame": 72
+      },
+      {
+        "phase": "step",
+        "tick": 277,
+        "frames": 4,
+        "first_frame": 74
+      },
+      {
+        "phase": "step",
+        "tick": 279,
+        "frames": 4,
+        "first_frame": 78
+      },
+      {
+        "phase": "step",
+        "tick": 281,
+        "frames": 4,
+        "first_frame": 82
+      },
+      {
+        "phase": "step",
+        "tick": 283,
+        "frames": 2,
+        "first_frame": 86
+      },
+      {
+        "phase": "step",
+        "tick": 284,
+        "frames": 27,
+        "first_frame": 88
+      },
+      {
+        "phase": "step",
+        "tick": 285,
+        "frames": 4,
+        "first_frame": 115
+      },
+      {
+        "phase": "step",
+        "tick": 287,
+        "frames": 4,
+        "first_frame": 119
+      },
+      {
+        "phase": "step",
+        "tick": 289,
+        "frames": 4,
+        "first_frame": 123
+      },
+      {
+        "phase": "step",
+        "tick": 291,
+        "frames": 4,
+        "first_frame": 127
+      },
+      {
+        "phase": "step",
+        "tick": 293,
+        "frames": 4,
+        "first_frame": 131
+      },
+      {
+        "phase": "step",
+        "tick": 295,
+        "frames": 4,
+        "first_frame": 135
+      },
+      {
+        "phase": "step",
+        "tick": 297,
+        "frames": 4,
+        "first_frame": 139
+      },
+      {
+        "phase": "step",
+        "tick": 299,
+        "frames": 4,
+        "first_frame": 143
+      },
+      {
+        "phase": "step",
+        "tick": 301,
+        "frames": 4,
+        "first_frame": 147
+      },
+      {
+        "phase": "step",
+        "tick": 303,
+        "frames": 4,
+        "first_frame": 151
+      },
+      {
+        "phase": "step",
+        "tick": 305,
+        "frames": 4,
+        "first_frame": 155
+      },
+      {
+        "phase": "step",
+        "tick": 307,
+        "frames": 4,
+        "first_frame": 159
+      },
+      {
+        "phase": "step",
+        "tick": 309,
+        "frames": 4,
+        "first_frame": 163
+      },
+      {
+        "phase": "step",
+        "tick": 311,
+        "frames": 4,
+        "first_frame": 167
+      },
+      {
+        "phase": "step",
+        "tick": 313,
+        "frames": 4,
+        "first_frame": 171
+      },
+      {
+        "phase": "step",
+        "tick": 315,
+        "frames": 4,
+        "first_frame": 175
+      },
+      {
+        "phase": "step",
+        "tick": 317,
+        "frames": 4,
+        "first_frame": 179
+      },
+      {
+        "phase": "step",
+        "tick": 319,
+        "frames": 29,
+        "first_frame": 183
+      },
+      {
+        "phase": "step",
+        "tick": 321,
+        "frames": 4,
+        "first_frame": 212
+      },
+      {
+        "phase": "step",
+        "tick": 323,
+        "frames": 4,
+        "first_frame": 216
+      },
+      {
+        "phase": "step",
+        "tick": 325,
+        "frames": 4,
+        "first_frame": 220
+      },
+      {
+        "phase": "step",
+        "tick": 327,
+        "frames": 4,
+        "first_frame": 224
+      },
+      {
+        "phase": "step",
+        "tick": 329,
+        "frames": 4,
+        "first_frame": 228
+      },
+      {
+        "phase": "step",
+        "tick": 331,
+        "frames": 6,
+        "first_frame": 232
+      },
+      {
+        "phase": "braking",
+        "tick": 500,
+        "frames": 3,
+        "first_frame": 238
+      },
+      {
+        "phase": "braking",
+        "tick": 503,
+        "frames": 3,
+        "first_frame": 241
+      },
+      {
+        "phase": "braking",
+        "tick": 506,
+        "frames": 3,
+        "first_frame": 244
+      },
+      {
+        "phase": "braking",
+        "tick": 509,
+        "frames": 3,
+        "first_frame": 247
+      },
+      {
+        "phase": "braking",
+        "tick": 512,
+        "frames": 3,
+        "first_frame": 250
+      },
+      {
+        "phase": "braking",
+        "tick": 515,
+        "frames": 3,
+        "first_frame": 253
+      },
+      {
+        "phase": "braking",
+        "tick": 518,
+        "frames": 3,
+        "first_frame": 256
+      },
+      {
+        "phase": "braking",
+        "tick": 521,
+        "frames": 3,
+        "first_frame": 259
+      },
+      {
+        "phase": "braking",
+        "tick": 524,
+        "frames": 1,
+        "first_frame": 262
+      },
+      {
+        "phase": "braking",
+        "tick": 525,
+        "frames": 27,
+        "first_frame": 263
+      },
+      {
+        "phase": "braking",
+        "tick": 527,
+        "frames": 3,
+        "first_frame": 290
+      },
+      {
+        "phase": "braking",
+        "tick": 530,
+        "frames": 3,
+        "first_frame": 293
+      },
+      {
+        "phase": "braking",
+        "tick": 533,
+        "frames": 3,
+        "first_frame": 296
+      },
+      {
+        "phase": "braking",
+        "tick": 536,
+        "frames": 3,
+        "first_frame": 299
+      },
+      {
+        "phase": "braking",
+        "tick": 539,
+        "frames": 3,
+        "first_frame": 302
+      },
+      {
+        "phase": "braking",
+        "tick": 542,
+        "frames": 3,
+        "first_frame": 305
+      },
+      {
+        "phase": "braking",
+        "tick": 545,
+        "frames": 3,
+        "first_frame": 308
+      },
+      {
+        "phase": "braking",
+        "tick": 548,
+        "frames": 3,
+        "first_frame": 311
+      },
+      {
+        "phase": "braking",
+        "tick": 551,
+        "frames": 3,
+        "first_frame": 314
+      },
+      {
+        "phase": "braking",
+        "tick": 554,
+        "frames": 3,
+        "first_frame": 317
+      },
+      {
+        "phase": "braking",
+        "tick": 557,
+        "frames": 3,
+        "first_frame": 320
+      },
+      {
+        "phase": "braking",
+        "tick": 560,
+        "frames": 3,
+        "first_frame": 323
+      },
+      {
+        "phase": "braking",
+        "tick": 563,
+        "frames": 3,
+        "first_frame": 326
+      },
+      {
+        "phase": "braking",
+        "tick": 566,
+        "frames": 3,
+        "first_frame": 329
+      },
+      {
+        "phase": "braking",
+        "tick": 569,
+        "frames": 3,
+        "first_frame": 332
+      },
+      {
+        "phase": "braking",
+        "tick": 572,
+        "frames": 3,
+        "first_frame": 335
+      },
+      {
+        "phase": "tail",
+        "tick": 575,
+        "frames": 29,
+        "first_frame": 338
+      },
+      {
+        "phase": "tail",
+        "tick": 577,
+        "frames": 4,
+        "first_frame": 367
+      },
+      {
+        "phase": "tail",
+        "tick": 579,
+        "frames": 4,
+        "first_frame": 371
+      },
+      {
+        "phase": "tail",
+        "tick": 581,
+        "frames": 4,
+        "first_frame": 375
+      },
+      {
+        "phase": "tail",
+        "tick": 583,
+        "frames": 4,
+        "first_frame": 379
+      },
+      {
+        "phase": "tail",
+        "tick": 585,
+        "frames": 4,
+        "first_frame": 383
+      },
+      {
+        "phase": "tail",
+        "tick": 587,
+        "frames": 4,
+        "first_frame": 387
+      },
+      {
+        "phase": "tail",
+        "tick": 589,
+        "frames": 4,
+        "first_frame": 391
+      },
+      {
+        "phase": "tail",
+        "tick": 591,
+        "frames": 4,
+        "first_frame": 395
+      },
+      {
+        "phase": "tail",
+        "tick": 593,
+        "frames": 4,
+        "first_frame": 399
+      },
+      {
+        "phase": "tail",
+        "tick": 595,
+        "frames": 4,
+        "first_frame": 403
+      },
+      {
+        "phase": "tail",
+        "tick": 597,
+        "frames": 4,
+        "first_frame": 407
+      },
+      {
+        "phase": "tail",
+        "tick": 599,
+        "frames": 2,
+        "first_frame": 411
+      },
+      {
+        "phase": "tail",
+        "tick": 600,
+        "frames": 52,
+        "first_frame": 413
+      }
+    ],
+    "physics": 0,
+    "cover_frames": 0
+  },
+  "files": {
+    "compound118.mp4": "73094c5be294d75cea07d6ce516a952a5c52934ab569b3bf43c0c376ba443b0b"
+  },
+  "elapsed_s": 15.30156818901014,
+  "completed_at_unix_ns": 1795853533168638248
+}

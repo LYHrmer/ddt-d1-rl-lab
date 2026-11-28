@@ -1,0 +1,502 @@
+{
+  "registration_sha256": "c24c3ed1e6b9eb57e0f8707b491252c800037766f5a113abb69e87807a964207",
+  "attempts": {
+    "blind_1309793742_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "75f9307226bcf4695072c79dcb5ff8a027ba9bfbf7d72f4ca490d7ac76bba231",
+        "report.json": "9aa644cb15a134e761a318bc31baf1c21956a0deb37743afb71181f45d97499a",
+        "reservation.json": "2a099e12e4354cc8c2550e271cea3e6a01a681919d854b00421b3175b4d40bd1",
+        "resources.jsonl": "489b0b709193ad769e08d66a426d1ac1e52487ea8f6b5c2182e6b4b8bd6f6a2c",
+        "trace.npz": "015178b965255369818d9b8e24017e4701c37b4a24d9e6f2f4ea3a974b1255e7"
+      },
+      "local_partial_sha256": {}
+    },
+    "blind_1423741533_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "621b6e172ab39c1393a7b70709ff16a691ac3f290b420df7c75961610fef0609",
+        "report.json": "b1d3f5dea31c6bd0e9a7e7c01f42d42ebd78980de3eaa1ca62e26c0e9fd0d4b3",
+        "reservation.json": "493c0c6a2d544bb649ea04f0c2b35171655c4373f676ac638bce88ad6623f72a",
+        "resources.jsonl": "b26b7e813e6ef3379932826975eded0a4d032e252b355881d734b766de1561c8",
+        "trace.npz": "d2edb28d96ac23cfcf54c336a15a62785e46d343e513d4eb19316b4bd36105e7"
+      },
+      "local_partial_sha256": {}
+    },
+    "blind_2087901246_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "f1e6a93b81e865fbbac09482f69ab382ae80ef6d85f4546e80a59a877d351dab",
+        "report.json": "9c0246b02f0a78b69a9d20616f4e54e98401715126635164aedb614941f52bb0",
+        "reservation.json": "ff9d4990163c632dac8ad09ade27bc08f6d5edff783f6ffefa9106746cf01db6",
+        "resources.jsonl": "2529dc069ad27ff4d172945d4108a8213d23fffdff2b9798f6d67cc4f96bc5b6",
+        "trace.npz": "1517b10b087b9108fdcba3e05f6743f5ea5f9ff65f1a8a9678a9f96f693703a3"
+      },
+      "local_partial_sha256": {}
+    },
+    "video_01": {
+      "status": "COMPLETE",
+      "files": {
+        "compound118.mp4": "73094c5be294d75cea07d6ce516a952a5c52934ab569b3bf43c0c376ba443b0b",
+        "guard.json": "37ca2f45a0c53b059d94c0150f73cc67c6068361f1c7f80319059c7783fa4df9",
+        "report.json": "ec5461dcba345f170050f5a0712e78c538a7e23a145b640e6560e70a83666ba2",
+        "reservation.json": "62cb10601efe95689a60098a78222cebe11fd3f816b5e5ca6b7f3d5c96ed0f31",
+        "resources.jsonl": "4fde863888cb18ea86bb4d8411e254979ec0d7ba5814c8a5ba934f32364fa052"
+      },
+      "local_partial_sha256": {}
+    }
+  },
+  "attempt_results": {
+    "blind_1309793742_01": {
+      "stage": "blind_1309793742",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "start_ns": 1795853402155329091,
+      "end_ns": 1795853406656375007,
+      "resources": {
+        "startup_effective_bytes": 10237956096,
+        "minimum_effective_bytes": 9685708800,
+        "peak_group_bytes": 350355456
+      },
+      "error": null
+    },
+    "blind_1423741533_01": {
+      "stage": "blind_1423741533",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "start_ns": 1795853427152411616,
+      "end_ns": 1795853431621605019,
+      "resources": {
+        "startup_effective_bytes": 10073399296,
+        "minimum_effective_bytes": 9785389056,
+        "peak_group_bytes": 351514624
+      },
+      "error": null
+    },
+    "blind_2087901246_01": {
+      "stage": "blind_2087901246",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "start_ns": 1795853376660891999,
+      "end_ns": 1795853381602093775,
+      "resources": {
+        "startup_effective_bytes": 5545390080,
+        "minimum_effective_bytes": 5180534784,
+        "peak_group_bytes": 382124032
+      },
+      "error": null
+    },
+    "video_01": {
+      "stage": "video",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "start_ns": 1795853517866972419,
+      "end_ns": 1795853533168638248,
+      "resources": {
+        "startup_effective_bytes": 4454502400,
+        "minimum_effective_bytes": 3636756480,
+        "peak_group_bytes": 742076416
+      },
+      "error": null
+    }
+  },
+  "stages": {
+    "blind_2087901246": {
+      "status": "COMPLETE",
+      "attempt": "blind_2087901246_01",
+      "admission_failures": []
+    },
+    "blind_1309793742": {
+      "status": "COMPLETE",
+      "attempt": "blind_1309793742_01",
+      "admission_failures": []
+    },
+    "blind_1423741533": {
+      "status": "COMPLETE",
+      "attempt": "blind_1423741533_01",
+      "admission_failures": []
+    },
+    "video": {
+      "status": "COMPLETE",
+      "attempt": "video_01",
+      "admission_failures": []
+    }
+  },
+  "cases": [
+    {
+      "seed": 2087901246,
+      "trace_sha256": "1517b10b087b9108fdcba3e05f6743f5ea5f9ff65f1a8a9678a9f96f693703a3",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.405680108217159,
+          5.065350153242715,
+          5.730913677190139,
+          6.376564170094061
+        ],
+        "speed_m_s": 1.522159551659805,
+        "sections_m_s": [
+          1.5159093664185699,
+          1.502486185043691,
+          1.5488255813177365
+        ],
+        "max_lane_y_m": 0.4390006728651444,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.012954918592726005
+      },
+      "effects": {
+        "first_front_edge_tick": 282,
+        "speed_reduction_m_s": 0.04499999932944809,
+        "front_lift_m": 0.01200376274931314,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 282,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 257,
+        "end_tick_exclusive": 282,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 279,
+        "speed_capture_tick": 275,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 279,
+        "lift_issue_tick": 278,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.01200376274931314,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.012578764308270818,
+          -0.0017163996142925408
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.012954918592726005,
+        "peak_tick": 577,
+        "peak_world_vxy_m_s": [
+          -0.012857181819931854,
+          -0.0015883297495708378
+        ],
+        "peak_forward_m_s": -0.012950988522951025,
+        "mean_forward_m_s": -0.011888522403448424,
+        "forward_displacement_mm": -5.94340505717992,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "geometry": {
+        "active_lift_intervals": 134,
+        "maximum_requested_lift_m": 0.011999999821186142,
+        "max_error_fk_from_requested_lift_m": 4.440892098500626e-16,
+        "max_error_logged_fk_m": 4.440892098500626e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7763568394002505e-15
+      },
+      "reset": {
+        "seed": 2087901246,
+        "rank": 0,
+        "episode": 0,
+        "stream": 0,
+        "sampled_yaw_rad": 0.008022282751726964,
+        "initial_base_height_m": 0.4423233176263929,
+        "height_reconstruction_error_m": 1.6653345369377348e-16,
+        "fingerprint_sha256": "43e057463273caeb853c81c4063cb968411447e6e8b373a23736fa11ed4bf707"
+      },
+      "first_release_input_tick": null,
+      "first_projected_issue_tick": 525,
+      "stage_status": "COMPLETE"
+    },
+    {
+      "seed": 1309793742,
+      "trace_sha256": "015178b965255369818d9b8e24017e4701c37b4a24d9e6f2f4ea3a974b1255e7",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.415207441075183,
+          5.074714611867698,
+          5.743867407872245,
+          6.383163580788392
+        ],
+        "speed_m_s": 1.5244242183350647,
+        "sections_m_s": [
+          1.5162837407792285,
+          1.4944269918184794,
+          1.5642202196182464
+        ],
+        "max_lane_y_m": 0.3514262049455068,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.010103901455894265
+      },
+      "effects": {
+        "first_front_edge_tick": 283,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012003140738791607,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 283,
+        "first_loaded_platform_touch_tick": 284,
+        "window_start_tick": 258,
+        "end_tick_exclusive": 283,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 261,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 274,
+        "lift_issue_tick": 273,
+        "lift_capture_tick": 267,
+        "front_wheel": "FR",
+        "front_lift_m": 0.012003140738791607,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.009585525326600786,
+          -0.008886931781358187
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.010103901455894265,
+        "peak_tick": 575,
+        "peak_world_vxy_m_s": [
+          -0.010103835350550568,
+          -3.6549136610163806e-05
+        ],
+        "peak_forward_m_s": -0.010070859836892097,
+        "mean_forward_m_s": -0.0086824390347703,
+        "forward_displacement_mm": -4.319828839824046,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "geometry": {
+        "active_lift_intervals": 135,
+        "maximum_requested_lift_m": 0.011999999821186115,
+        "max_error_fk_from_requested_lift_m": 3.885780586188048e-16,
+        "max_error_logged_fk_m": 4.996003610813204e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.6653345369377348e-15
+      },
+      "reset": {
+        "seed": 1309793742,
+        "rank": 0,
+        "episode": 0,
+        "stream": 0,
+        "sampled_yaw_rad": 0.002861335492247888,
+        "initial_base_height_m": 0.4404883784335085,
+        "height_reconstruction_error_m": 1.6653345369377348e-16,
+        "fingerprint_sha256": "299882d6b2befda1a96dec346697766f23199696ea431309407eaa66cd0bbf89"
+      },
+      "first_release_input_tick": 291,
+      "first_projected_issue_tick": 525,
+      "stage_status": "COMPLETE"
+    },
+    {
+      "seed": 1423741533,
+      "trace_sha256": "d2edb28d96ac23cfcf54c336a15a62785e46d343e513d4eb19316b4bd36105e7",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.404619565760039,
+          5.062572472941976,
+          5.732464692220312,
+          6.382945690103898
+        ],
+        "speed_m_s": 1.5164334955112593,
+        "sections_m_s": [
+          1.5198656151290184,
+          1.4927774516880978,
+          1.5373239237635146
+        ],
+        "max_lane_y_m": 0.4251704359815509,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.009345644292230457
+      },
+      "effects": {
+        "first_front_edge_tick": 283,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012002979055974472,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 283,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 258,
+        "end_tick_exclusive": 283,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 262,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 280,
+        "lift_issue_tick": 279,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.012002979055974472,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.010987879881794338,
+          -0.004958353027635476
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.009345644292230457,
+        "peak_tick": 596,
+        "peak_world_vxy_m_s": [
+          -0.008720100637973599,
+          -0.0033616829268258114
+        ],
+        "peak_forward_m_s": -0.008980121478615521,
+        "mean_forward_m_s": -0.007045713873341391,
+        "forward_displacement_mm": -3.534905203375165,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "geometry": {
+        "active_lift_intervals": 134,
+        "maximum_requested_lift_m": 0.011999999821186089,
+        "max_error_fk_from_requested_lift_m": 3.885780586188048e-16,
+        "max_error_logged_fk_m": 3.885780586188048e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7763568394002505e-15
+      },
+      "reset": {
+        "seed": 1423741533,
+        "rank": 0,
+        "episode": 0,
+        "stream": 0,
+        "sampled_yaw_rad": 0.016954640147313488,
+        "initial_base_height_m": 0.44470366347958773,
+        "height_reconstruction_error_m": 2.220446049250313e-16,
+        "fingerprint_sha256": "0bd9f99b21557142d0fda80346708940191ed3769f74c34ca48761312fdd52b1"
+      },
+      "first_release_input_tick": null,
+      "first_projected_issue_tick": 525,
+      "stage_status": "COMPLETE"
+    }
+  ],
+  "summary": {
+    "complete_stages": 3,
+    "full_horizons": 3,
+    "driving_passes": 3,
+    "joint_passes": 3,
+    "confirmed_counts": {
+      "decisions": 1800,
+      "servo": 9000,
+      "physics": 18000,
+      "packets": 216,
+      "ray_queries": 224640
+    },
+    "unknown_partial_seeds": [],
+    "counts_upper_bound": {
+      "decisions": 1800,
+      "servo": 9000,
+      "physics": 18000,
+      "packets": 216,
+      "ray_queries": 224640
+    },
+    "registered_blind_starts": 3,
+    "distinct_completed_resets": 3,
+    "early_terminated_seeds": [],
+    "failures": [],
+    "stop_passes": 3,
+    "lidar_passes": 3,
+    "all_three_blind_passed": true,
+    "world_updates": 0,
+    "policy_updates": 0,
+    "admission_failures": [],
+    "partial_stages": [],
+    "not_started": []
+  },
+  "video": {
+    "file": "docs/assets/compound118.mp4",
+    "seed": 2087901246,
+    "trace_sha256": "1517b10b087b9108fdcba3e05f6743f5ea5f9ff65f1a8a9678a9f96f693703a3",
+    "source_report_sha256": "9c0246b02f0a78b69a9d20616f4e54e98401715126635164aedb614941f52bb0",
+    "desktop_filename": "D1_\u590d\u5408\u8def\u72ec\u7acb\u8d77\u70b9\u76f2\u6d4b_118.mp4",
+    "frames": 465,
+    "fps": 25,
+    "duration_s": 18.6,
+    "bytes": 768287,
+    "sha256": "73094c5be294d75cea07d6ce516a952a5c52934ab569b3bf43c0c376ba443b0b"
+  }
+}

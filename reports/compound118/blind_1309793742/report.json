@@ -1,0 +1,102 @@
+{
+  "stage": "blind_1309793742",
+  "attempt": 1,
+  "unit": "d1-compound118-blind-1309793742-01",
+  "registration_sha256": "c24c3ed1e6b9eb57e0f8707b491252c800037766f5a113abb69e87807a964207",
+  "reserved_at_unix_ns": 1795853402155329091,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 1309793742,
+    "layout": "development",
+    "arm": "both",
+    "gain": 0.97792348,
+    "parking": true,
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0",
+    "trace_sha256": "015178b965255369818d9b8e24017e4701c37b4a24d9e6f2f4ea3a974b1255e7",
+    "nominal_base_height_m": 0.437849968809778,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": true,
+      "failed": [],
+      "ticks": 600,
+      "gate_times_s": [
+        4.415207441075183,
+        5.074714611867698,
+        5.743867407872245,
+        6.383163580788392
+      ],
+      "speed_m_s": 1.5244242183350647,
+      "sections_m_s": [
+        1.5162837407792285,
+        1.4944269918184794,
+        1.5642202196182464
+      ],
+      "max_lane_y_m": 0.3514262049455068,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "stop_tail_max_m_s": 0.010103901455894265
+    },
+    "lidar": {
+      "first_front_extent_tick": 283,
+      "first_loaded_platform_touch_tick": 284,
+      "window_start_tick": 258,
+      "end_tick_exclusive": 283,
+      "speed_valid_ticks": 25,
+      "lift_valid_ticks": 25,
+      "speed_tick": 261,
+      "speed_capture_tick": 259,
+      "speed_reduction_m_s": 0.04500007629394531,
+      "speed_active": true,
+      "lift_servo_tick": 274,
+      "lift_issue_tick": 273,
+      "lift_capture_tick": 267,
+      "front_wheel": "FR",
+      "front_lift_m": 0.012003140738791607,
+      "lift_active": true,
+      "measured_front_relative_z_change_m": [
+        0.009585525326600786,
+        -0.008886931781358187
+      ],
+      "passed": true
+    },
+    "stop": {
+      "peak_m_s": 0.010103901455894265,
+      "peak_tick": 575,
+      "peak_world_vxy_m_s": [
+        -0.010103835350550568,
+        -3.6549136610163806e-05
+      ],
+      "peak_forward_m_s": -0.010070859836892097,
+      "mean_forward_m_s": -0.0086824390347703,
+      "forward_displacement_mm": -4.319828839824046,
+      "endpoints_above_limit": 0
+    },
+    "driving_pass": true,
+    "gate_pass": true,
+    "first_failed_section": null
+  },
+  "files": {
+    "trace.npz": "015178b965255369818d9b8e24017e4701c37b4a24d9e6f2f4ea3a974b1255e7"
+  },
+  "elapsed_s": 4.500936506010476,
+  "completed_at_unix_ns": 1795853406656375007
+}
