@@ -1,0 +1,82 @@
+{
+  "controller_commit": "621ba6dcc7cd633ffb11485708efb6b1202d9c28",
+  "parent_results_sha256": "c81d66268f81c0e0decb8db1fe567be228f70d189b97c242edab2b51c94b3703",
+  "parent_registration_sha256": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "seeds": [
+    2087901246,
+    1309793742,
+    1423741533
+  ],
+  "seed_derivation": "First four SHA-256 bytes (big endian) of ASCII D1-compound118:<controller_commit>:<i>, i=1,2,3.",
+  "variable": "Only change the reset seed. All final round-117 perception, whole-body control, parking, terrain and timings are locked.",
+  "layout": "development",
+  "lidar_arm": "both",
+  "parking": true,
+  "thresholds": {
+    "three_metre_m_s": [
+      1.5,
+      1.575
+    ],
+    "each_metre_m_s": [
+      1.425,
+      1.575
+    ],
+    "stop_tail_peak_m_s": 0.05,
+    "stop_endpoints_inclusive": [
+      575,
+      600
+    ],
+    "all_course_gates_required": true,
+    "pre_edge_delivered_lidar_speed_drop_m_s": 0.02,
+    "pre_edge_applied_front_lift_m": 0.005,
+    "edge_window_decision_intervals": 25,
+    "all_development": 3
+  },
+  "bounds": {
+    "nice": 10,
+    "single_cpu": true,
+    "environment_count": 1,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_gib": 0,
+    "startup_gib": 4,
+    "reserve_gib": 2
+  },
+  "budget": {
+    "episodes": 3,
+    "episode_ticks": 600,
+    "episode_seconds": 12,
+    "decisions": 1800,
+    "servo": 9000,
+    "physics": 18000,
+    "packets": 216,
+    "ray_queries": 224640,
+    "world_updates": 0,
+    "policy_updates": 0
+  },
+  "preselected_video_seed": 2087901246,
+  "video_max_bytes": 5000000,
+  "sources_sha256": {
+    "docs/compound118_blind_proposal.md": "e4bdc64604ffab0a4f0c00f0b30b3abe4d1fa4150011f38d785e8482086380cd",
+    "tools118/run.py": "726f0549c904895d4b34f06f12db5307e70b0f69f2bbfbebfc54c41d89be0a9b",
+    "tools118/native.py": "ec8baa81431a203672ee555877513401d97b7821a9beb9665487886ff79c63f0",
+    "tools118/score.py": "8a712f4a2fe88953b9b516cd4cb77aaa4ef7bb7bc3115cba3fc967fcf7e52ab5",
+    "tools118/video.py": "bb345425ab9e100b6206f7dcf0c7ffb0ab18ac339ab9bdcf2b08bf9d9cf6b3e1",
+    "docs/experiments117/registration.json": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "tools117/native.py": "42b4f54fdb384e5ef3a23e2139b226124c0f38fff470b0e66220f23f11e95c44",
+    "tools117/score.py": "2a9fffd325925119dac8049d485417b44fd838bbfcb8f1c974fdeea9ec4f581c",
+    "tools117/run.py": "cc6e3c725cda6ae1279158deb10fcefd384f5b477ef3796294ba2a152271063f",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools116/score.py": "8d03f4c0deae4001b89fcf8ed51751dfde0433dc4d58468b98e8f214be374756",
+    "tools116/wiring.py": "9c2cf8393a1ae0b6b49a4ff7a30697a034b3a5f7055f34a81a10e743a8e32ff4",
+    "tools116/response_replay.py": "5a3dd90f235de9d06ccf8aee799df79322e09998b11f666db4e9722efae3c16a",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools111/kinematics.py": "511fb592712d58a4762f8430a5fb68877249cb562eefe0ea62b1aed7f8d878cf",
+    "training/configs/interface03b.json": "dee7aaaea980fbfbfb438c85be9e97fc605bb5a375f62f366fccc7edbaa7bff8",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494"
+  }
+}
