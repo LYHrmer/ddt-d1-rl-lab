@@ -1,0 +1,450 @@
+{
+  "stage": "video",
+  "attempt": 1,
+  "unit": "d1-compound117-video-01",
+  "registration_sha256": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+  "reserved_at_unix_ns": 1795851959033504988,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "filename": "compound117.mp4",
+    "desktop_filename": "D1_\u53f0\u9636\u6bb5\u8d85\u901f_\u8865\u507f\u56de\u843d\u524d\u540e\u5bf9\u7167_117.mp4",
+    "seed": 111101,
+    "trace_sha256": [
+      "9eeb8c36c91883ec29a49eabdcb8fd34d73871a27a0e28ac104f5dd1200e9b4d",
+      "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927"
+    ],
+    "report_sha256": [
+      "2cbfea47bd38dc68e87a4deeb22db8453a8b1adc57674df340c3e12a54de4404",
+      "d27f7ff3aa4fbeb74812351e599e6ce74b668e8151f3c83c8865927a5a6cf5fd"
+    ],
+    "native_report_sha256": "d27f7ff3aa4fbeb74812351e599e6ce74b668e8151f3c83c8865927a5a6cf5fd",
+    "last_ticks": [
+      600,
+      600
+    ],
+    "end_reasons": [
+      "\u8bb0\u5f55\u7ed3\u675f",
+      "\u8bb0\u5f55\u7ed3\u675f"
+    ],
+    "measurements": [
+      {
+        "entry_s": 5.7256236285481386,
+        "exit_s": 6.3581321139547,
+        "section_m_s": 1.5810064577350664,
+        "contact_tick": 284
+      },
+      {
+        "entry_s": 5.7256236285481386,
+        "exit_s": 6.363955436134566,
+        "section_m_s": 1.5665833789186587,
+        "contact_tick": 284
+      }
+    ],
+    "renderer_sha256": "b34cd39535fe0de6ba51902db4f5d71abe8177820b2b7550e08eea53e5e957b3",
+    "sha256": "0160e528f1c8fa2205883985a223b363fa0efe6d5e67aa657db522b8d112fa9d",
+    "frames": 287,
+    "fps": 25,
+    "duration_s": 11.48,
+    "bytes": 457793,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "11.480000",
+      "nb_read_frames": "287"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "shots": [
+      {
+        "tick": 266,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 0
+      },
+      {
+        "tick": 268,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 4
+      },
+      {
+        "tick": 270,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 8
+      },
+      {
+        "tick": 272,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 12
+      },
+      {
+        "tick": 274,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 16
+      },
+      {
+        "tick": 276,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 20
+      },
+      {
+        "tick": 278,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 24
+      },
+      {
+        "tick": 280,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 28
+      },
+      {
+        "tick": 282,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 32
+      },
+      {
+        "tick": 284,
+        "phase": "step",
+        "frames": 29,
+        "first_frame": 36
+      },
+      {
+        "tick": 286,
+        "phase": "step",
+        "frames": 2,
+        "first_frame": 65
+      },
+      {
+        "tick": 287,
+        "phase": "step",
+        "frames": 2,
+        "first_frame": 67
+      },
+      {
+        "tick": 288,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 69
+      },
+      {
+        "tick": 290,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 73
+      },
+      {
+        "tick": 292,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 77
+      },
+      {
+        "tick": 294,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 81
+      },
+      {
+        "tick": 296,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 85
+      },
+      {
+        "tick": 298,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 89
+      },
+      {
+        "tick": 300,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 93
+      },
+      {
+        "tick": 302,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 97
+      },
+      {
+        "tick": 304,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 101
+      },
+      {
+        "tick": 306,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 105
+      },
+      {
+        "tick": 308,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 109
+      },
+      {
+        "tick": 310,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 113
+      },
+      {
+        "tick": 312,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 117
+      },
+      {
+        "tick": 314,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 121
+      },
+      {
+        "tick": 316,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 125
+      },
+      {
+        "tick": 318,
+        "phase": "step",
+        "frames": 2,
+        "first_frame": 129
+      },
+      {
+        "tick": 319,
+        "phase": "step",
+        "frames": 52,
+        "first_frame": 131
+      },
+      {
+        "tick": 320,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 183
+      },
+      {
+        "tick": 322,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 187
+      },
+      {
+        "tick": 324,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 191
+      },
+      {
+        "tick": 326,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 195
+      },
+      {
+        "tick": 328,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 199
+      },
+      {
+        "tick": 330,
+        "phase": "step",
+        "frames": 4,
+        "first_frame": 203
+      },
+      {
+        "tick": 332,
+        "phase": "step",
+        "frames": 2,
+        "first_frame": 207
+      },
+      {
+        "tick": 333,
+        "phase": "step",
+        "frames": 2,
+        "first_frame": 209
+      },
+      {
+        "tick": 575,
+        "phase": "tail",
+        "frames": 27,
+        "first_frame": 211
+      },
+      {
+        "tick": 577,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 238
+      },
+      {
+        "tick": 579,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 240
+      },
+      {
+        "tick": 581,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 242
+      },
+      {
+        "tick": 583,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 244
+      },
+      {
+        "tick": 585,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 246
+      },
+      {
+        "tick": 587,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 248
+      },
+      {
+        "tick": 589,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 250
+      },
+      {
+        "tick": 591,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 252
+      },
+      {
+        "tick": 593,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 254
+      },
+      {
+        "tick": 595,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 256
+      },
+      {
+        "tick": 597,
+        "phase": "tail",
+        "frames": 2,
+        "first_frame": 258
+      },
+      {
+        "tick": 599,
+        "phase": "tail",
+        "frames": 1,
+        "first_frame": 260
+      },
+      {
+        "tick": 600,
+        "phase": "tail",
+        "frames": 26,
+        "first_frame": 261
+      }
+    ],
+    "cameras": {
+      "step": [
+        {
+          "lookat_m": [
+            5.403717272049986,
+            -0.03742723071651929,
+            0.26
+          ],
+          "distance_m": 3.55625757011104,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        },
+        {
+          "lookat_m": [
+            5.403717272049986,
+            -0.03742723071651929,
+            0.26
+          ],
+          "distance_m": 3.55625757011104,
+          "azimuth_deg": 97.0,
+          "elevation_deg": -17.0
+        }
+      ],
+      "tail": [
+        {
+          "lookat_m": [
+            11.36339398010982,
+            0.08015274853573517,
+            0.13
+          ],
+          "distance_m": 1.05,
+          "azimuth_deg": 98.0,
+          "elevation_deg": -16.0
+        },
+        {
+          "lookat_m": [
+            11.350406259565283,
+            0.08849193482719156,
+            0.13
+          ],
+          "distance_m": 1.05,
+          "azimuth_deg": 98.0,
+          "elevation_deg": -16.0
+        }
+      ]
+    },
+    "ground_markers": [
+      {
+        "xy_m": [
+          11.403393980109819,
+          0.08015274853573517
+        ],
+        "yaw_rad": 0.05953300550706619
+      },
+      {
+        "xy_m": [
+          11.390406259565282,
+          0.08849193482719156
+        ],
+        "yaw_rad": 0.03513475477309581
+      }
+    ],
+    "panels": [
+      "\u5de6 \u00b7 \u539f\u7f16\u7801\u5668\u8865\u507f",
+      "\u53f3 \u00b7 \u8865\u507f\u89e6\u9876\u540e\u52a0\u5feb\u56de\u843d"
+    ],
+    "physics": 0,
+    "cover_frames": 0
+  },
+  "files": {
+    "compound117.mp4": "0160e528f1c8fa2205883985a223b363fa0efe6d5e67aa657db522b8d112fa9d"
+  },
+  "elapsed_s": 13.362276887986809,
+  "completed_at_unix_ns": 1795851972395931805
+}

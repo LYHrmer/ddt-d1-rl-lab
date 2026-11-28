@@ -1,0 +1,88 @@
+{
+  "parent_commit": "6abdd65ced91788ea8dedcd1302112f3de32b945",
+  "seeds": [
+    111101,
+    111103,
+    111107
+  ],
+  "layout": "development",
+  "lidar_arm": "both",
+  "parent_results_sha256": "b47f1f3bf7c0da97c427f7871d1f103ba32e76070d0369fc1d284994d5115b6a",
+  "parent_native_registration_sha256": "1a0c90c21efd0525e373cbde6c6a218331a8ae111ecf3ef6e64402b60acf045b",
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "references": {
+    "111101": "9eeb8c36c91883ec29a49eabdcb8fd34d73871a27a0e28ac104f5dd1200e9b4d",
+    "111103": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2",
+    "111107": "a43475c4eb2289fef8ca57b098f0d0e03a7986005db70a3dfbd2f7c251b36770"
+  },
+  "phase_1": "Only change the registered downward trim slew from 0.0036 to 0.0072 per decision during release from the upper limit under lidar slowdown.",
+  "phase_2": "Only if all three driving and lidar gates pass and at least one stop fails, add zero-common-wheel targets on a zero driver request after forward travel.",
+  "thresholds": {
+    "three_metre_m_s": [
+      1.5,
+      1.575
+    ],
+    "each_metre_m_s": [
+      1.425,
+      1.575
+    ],
+    "stop_tail_peak_m_s": 0.05,
+    "stop_endpoints_inclusive": [
+      575,
+      600
+    ],
+    "all_course_gates_required": true,
+    "pre_edge_delivered_lidar_speed_drop_m_s": 0.02,
+    "pre_edge_applied_front_lift_m": 0.005,
+    "edge_window_decision_intervals": 25,
+    "all_development": 3
+  },
+  "bounds": {
+    "nice": 10,
+    "single_cpu": true,
+    "environment_count": 1,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_gib": 0,
+    "startup_gib": 4,
+    "reserve_gib": 2
+  },
+  "budget": {
+    "max_episodes_per_stage": 3,
+    "ticks_per_episode": 600,
+    "duration_s": 12,
+    "max_native_episodes": 6,
+    "decisions": 3600,
+    "servo": 18000,
+    "physics": 36000,
+    "packets": 432,
+    "ray_queries": 449280,
+    "world_updates": 0,
+    "policy_updates": 0,
+    "blind": 0
+  },
+  "preselected_video_seed": 111101,
+  "video_max_bytes": 5000000,
+  "sources_sha256": {
+    "docs/lidar_encoder116_next.md": "42cd41668e3f5526639854b4bd34463a1f29cb91e7675d3a8ed4470b75316354",
+    "docs/experiments116/design.json": "4d398f83f866ffdc2a4ccae15eebc95403ee0a6eb60172debc4d5a8e3f61b7fc",
+    "docs/experiments116/native.json": "1a0c90c21efd0525e373cbde6c6a218331a8ae111ecf3ef6e64402b60acf045b",
+    "tools117/run.py": "cc6e3c725cda6ae1279158deb10fcefd384f5b477ef3796294ba2a152271063f",
+    "tools117/native.py": "42b4f54fdb384e5ef3a23e2139b226124c0f38fff470b0e66220f23f11e95c44",
+    "tools117/score.py": "2a9fffd325925119dac8049d485417b44fd838bbfcb8f1c974fdeea9ec4f581c",
+    "tools117/video.py": "b34cd39535fe0de6ba51902db4f5d71abe8177820b2b7550e08eea53e5e957b3",
+    "tools116/response_replay.py": "5a3dd90f235de9d06ccf8aee799df79322e09998b11f666db4e9722efae3c16a",
+    "tools116/native.py": "a1b36e2c054d0f191062a469c07243b7c0d3340811258f31477d22a354aa0cc4",
+    "tools116/control.py": "00e940bff4337418f26a61d1c9c14f59182b42f18213be9c62cdb5ab4987068a",
+    "tools116/score.py": "8d03f4c0deae4001b89fcf8ed51751dfde0433dc4d58468b98e8f214be374756",
+    "tools116/wiring.py": "9c2cf8393a1ae0b6b49a4ff7a30697a034b3a5f7055f34a81a10e743a8e32ff4",
+    "tools116/video.py": "2893a969d66313d5df79489e713ecf2123c0836a58b9a69f2cdea952faa442fc",
+    "tools114/control.py": "dfe4d1365fec94f3809479418861d2cdfe80dc1e2629db5cad6b25b08f1890ef",
+    "tools114/closed_results.py": "66570e9f54e96fbf5ed72a5c1e43ae88a9be63a86acb4ded03cb82bf6e8b18b9",
+    "tools114/parking_video.py": "69ca6822a55e50837df2500b1fbd48c83625393aeeda7a1592d2f3d42202c8ce",
+    "tools113/video.py": "1789ac2ab7013ba800e8d74aa13eab52ffac04df1c563a44333423c1cf808a23",
+    "tools112/surface_video.py": "03630f02f9f1c1fc6387c4ee3039a3aa8888d6c33ba86e8e6070f369f910faed",
+    "tools108/video108.py": "c40f7cb161949aa8c58c7f12c51f58ca297531d26e5a35d7713d906ebe92f428",
+    "tools102/mesa_video102.py": "8cbe19d2e8e803479db709d30299df902b77bded6018211504bcc837dd6b237d"
+  }
+}

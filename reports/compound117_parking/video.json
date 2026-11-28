@@ -1,0 +1,367 @@
+{
+  "status": "COMPLETE",
+  "filename": "compound117_parking.mp4",
+  "desktop_filename": "D1_\u590d\u5408\u8def\u505c\u8f66_\u56db\u8f6e\u5171\u540c\u76ee\u6807\u5f52\u96f6\u524d\u540e_117.mp4",
+  "seed": 111101,
+  "trace_sha256": [
+    "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927",
+    "4104d5c1d163c050a93f5d5c98dd801cb35b42cc44ed7aa1707d6871cab48b7b"
+  ],
+  "report_sha256": [
+    "d27f7ff3aa4fbeb74812351e599e6ce74b668e8151f3c83c8865927a5a6cf5fd",
+    "8fb1cdec5ae573dbc7bb1b1ac7582fd97580b4ec314807fe92dab326f9fdddbd"
+  ],
+  "native_report_sha256": "8fb1cdec5ae573dbc7bb1b1ac7582fd97580b4ec314807fe92dab326f9fdddbd",
+  "renderer_sha256": "0f39f03db4b2407b9ed4a4a4665049db435b09b7a3eb8728e379304ff2c1ff0e",
+  "last_ticks": [
+    600,
+    600
+  ],
+  "driver_zero_tick": 525,
+  "first_changed_applied_tick": 526,
+  "tail_endpoints": [
+    575,
+    600
+  ],
+  "stop": [
+    {
+      "peak_m_s": 0.06292955393840587,
+      "peak_tick": 583,
+      "peak_world_vxy_m_s": [
+        -0.06277703111074776,
+        -0.004378712574141219
+      ],
+      "peak_forward_m_s": -0.06289917583858445,
+      "mean_forward_m_s": -0.052143100398192574,
+      "forward_displacement_mm": -25.907939395346943,
+      "endpoints_above_limit": 16
+    },
+    {
+      "peak_m_s": 0.014398014878143163,
+      "peak_tick": 600,
+      "peak_world_vxy_m_s": [
+        -0.013726325620307064,
+        -0.004346356795815753
+      ],
+      "peak_forward_m_s": -0.01384396418173086,
+      "mean_forward_m_s": -0.0058779488791102915,
+      "forward_displacement_mm": -3.064051072822548,
+      "endpoints_above_limit": 0
+    }
+  ],
+  "ground_markers": [
+    {
+      "xy_m": [
+        11.390406259565282,
+        0.08849193482719156
+      ],
+      "yaw_rad": 0.03513475477309581
+    },
+    {
+      "xy_m": [
+        11.442471157227962,
+        0.09043627868223869
+      ],
+      "yaw_rad": 0.03207332546405404
+    }
+  ],
+  "shots": [
+    {
+      "phase": "overview",
+      "tick": 500,
+      "frames": 28,
+      "first_frame": 0
+    },
+    {
+      "phase": "overview",
+      "tick": 503,
+      "frames": 3,
+      "first_frame": 28
+    },
+    {
+      "phase": "overview",
+      "tick": 506,
+      "frames": 3,
+      "first_frame": 31
+    },
+    {
+      "phase": "overview",
+      "tick": 509,
+      "frames": 3,
+      "first_frame": 34
+    },
+    {
+      "phase": "overview",
+      "tick": 512,
+      "frames": 3,
+      "first_frame": 37
+    },
+    {
+      "phase": "overview",
+      "tick": 515,
+      "frames": 3,
+      "first_frame": 40
+    },
+    {
+      "phase": "overview",
+      "tick": 518,
+      "frames": 3,
+      "first_frame": 43
+    },
+    {
+      "phase": "overview",
+      "tick": 521,
+      "frames": 3,
+      "first_frame": 46
+    },
+    {
+      "phase": "overview",
+      "tick": 524,
+      "frames": 1,
+      "first_frame": 49
+    },
+    {
+      "phase": "overview",
+      "tick": 525,
+      "frames": 27,
+      "first_frame": 50
+    },
+    {
+      "phase": "overview",
+      "tick": 527,
+      "frames": 3,
+      "first_frame": 77
+    },
+    {
+      "phase": "overview",
+      "tick": 530,
+      "frames": 3,
+      "first_frame": 80
+    },
+    {
+      "phase": "overview",
+      "tick": 533,
+      "frames": 3,
+      "first_frame": 83
+    },
+    {
+      "phase": "overview",
+      "tick": 536,
+      "frames": 3,
+      "first_frame": 86
+    },
+    {
+      "phase": "overview",
+      "tick": 539,
+      "frames": 3,
+      "first_frame": 89
+    },
+    {
+      "phase": "overview",
+      "tick": 542,
+      "frames": 3,
+      "first_frame": 92
+    },
+    {
+      "phase": "overview",
+      "tick": 545,
+      "frames": 3,
+      "first_frame": 95
+    },
+    {
+      "phase": "overview",
+      "tick": 548,
+      "frames": 3,
+      "first_frame": 98
+    },
+    {
+      "phase": "overview",
+      "tick": 551,
+      "frames": 3,
+      "first_frame": 101
+    },
+    {
+      "phase": "overview",
+      "tick": 554,
+      "frames": 3,
+      "first_frame": 104
+    },
+    {
+      "phase": "overview",
+      "tick": 557,
+      "frames": 3,
+      "first_frame": 107
+    },
+    {
+      "phase": "overview",
+      "tick": 560,
+      "frames": 3,
+      "first_frame": 110
+    },
+    {
+      "phase": "overview",
+      "tick": 563,
+      "frames": 3,
+      "first_frame": 113
+    },
+    {
+      "phase": "overview",
+      "tick": 566,
+      "frames": 3,
+      "first_frame": 116
+    },
+    {
+      "phase": "overview",
+      "tick": 569,
+      "frames": 3,
+      "first_frame": 119
+    },
+    {
+      "phase": "overview",
+      "tick": 572,
+      "frames": 3,
+      "first_frame": 122
+    },
+    {
+      "phase": "overview",
+      "tick": 575,
+      "frames": 1,
+      "first_frame": 125
+    },
+    {
+      "phase": "front_axle",
+      "tick": 575,
+      "frames": 29,
+      "first_frame": 126
+    },
+    {
+      "phase": "front_axle",
+      "tick": 577,
+      "frames": 4,
+      "first_frame": 155
+    },
+    {
+      "phase": "front_axle",
+      "tick": 579,
+      "frames": 4,
+      "first_frame": 159
+    },
+    {
+      "phase": "front_axle",
+      "tick": 581,
+      "frames": 4,
+      "first_frame": 163
+    },
+    {
+      "phase": "front_axle",
+      "tick": 583,
+      "frames": 4,
+      "first_frame": 167
+    },
+    {
+      "phase": "front_axle",
+      "tick": 585,
+      "frames": 4,
+      "first_frame": 171
+    },
+    {
+      "phase": "front_axle",
+      "tick": 587,
+      "frames": 4,
+      "first_frame": 175
+    },
+    {
+      "phase": "front_axle",
+      "tick": 589,
+      "frames": 4,
+      "first_frame": 179
+    },
+    {
+      "phase": "front_axle",
+      "tick": 591,
+      "frames": 4,
+      "first_frame": 183
+    },
+    {
+      "phase": "front_axle",
+      "tick": 593,
+      "frames": 4,
+      "first_frame": 187
+    },
+    {
+      "phase": "front_axle",
+      "tick": 595,
+      "frames": 4,
+      "first_frame": 191
+    },
+    {
+      "phase": "front_axle",
+      "tick": 597,
+      "frames": 4,
+      "first_frame": 195
+    },
+    {
+      "phase": "front_axle",
+      "tick": 599,
+      "frames": 2,
+      "first_frame": 199
+    },
+    {
+      "phase": "front_axle",
+      "tick": 600,
+      "frames": 52,
+      "first_frame": 201
+    }
+  ],
+  "cameras": {
+    "overview": {
+      "lookat_m": [
+        11.237136283850619,
+        0.09016749339318553,
+        0.24
+      ],
+      "distance_m": 1.8589073728824583,
+      "azimuth_deg": 98.0,
+      "elevation_deg": -17.0
+    },
+    "front_axle": {
+      "lookat_m": [
+        11.366619688233584,
+        0.08843596820694825,
+        0.13
+      ],
+      "distance_m": 0.9727012381720981,
+      "azimuth_deg": 98.0,
+      "elevation_deg": -17.0
+    }
+  },
+  "fps": 25,
+  "frames": 253,
+  "duration_s": 10.12,
+  "panels": [
+    "\u5de6 \u00b7 \u539f\u8f6e\u901f\u76ee\u6807",
+    "\u53f3 \u00b7 \u9a7e\u9a76\u6307\u4ee4\u5f52\u96f6\u540e\uff0c\u53bb\u6389\u56db\u8f6e\u7684\u5171\u540c\u76ee\u6807"
+  ],
+  "physics": 0,
+  "cover_frames": 0,
+  "driver": {
+    "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+    "vendor": "Mesa",
+    "egl_device_index": 1,
+    "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+    "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+    "frames": 0,
+    "physics_substeps": 0
+  },
+  "stream": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 720,
+    "pix_fmt": "yuv420p",
+    "r_frame_rate": "25/1",
+    "duration": "10.120000",
+    "nb_read_frames": "253"
+  },
+  "sha256": "771c24ff1766be5c98e5f793f59f84a5b8fd953a82f833e2635a662842d5abc5",
+  "bytes": 520268
+}

@@ -1,0 +1,55 @@
+name: D1 step speed and conditional parking verification
+on:
+  push:
+    paths: &study_paths
+      - 'tools117/**'
+      - 'tests/test_*117.py'
+      - 'tools116/**'
+      - 'tools115/archive.py'
+      - 'tools114/**'
+      - 'tools113/**'
+      - 'tools112/**'
+      - 'tools111/**'
+      - 'tools110/**'
+      - 'tools109/run109.py'
+      - 'tools108/video108.py'
+      - 'tools102/mesa_video102.py'
+      - 'tools100/sensor100.py'
+      - 'tools92/launch92.py'
+      - 'tools91/launch91.py'
+      - 'tools87/terrain87.py'
+      - 'tools27/resource_guard27.py'
+      - 'reports/compound117/**'
+      - 'reports/compound117_parking/**'
+      - 'reports/compound116/**'
+      - 'reports/lidar_compound111/**'
+      - 'reports/speed110/results.json'
+      - 'docs/experiments117/**'
+      - 'docs/experiments116/**'
+      - 'docs/lidar_encoder116_next.md'
+      - 'docs/*117*.md'
+      - 'docs/assets/compound117.mp4'
+      - 'docs/assets/compound117_parking.mp4'
+      - '.github/workflows/compound117.yml'
+  pull_request:
+    paths: *study_paths
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: python -m pip install --quiet numpy==2.2.6
+      - run: python -B -m unittest discover -s tests -p 'test_*117.py'
+      - name: Recompute paired route speeds, perception, parking and stage eligibility
+        run: python -B -m tools117.archive
+      - name: Verify the parking replay and its rendering supervisor when published
+        run: python -B -m tools117.parking_video_check

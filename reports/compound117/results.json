@@ -1,0 +1,1247 @@
+{
+  "registrations": {
+    "speed_111101": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "speed_111103": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "speed_111107": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "parking_111101": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "parking_111103": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "parking_111107": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+    "video": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc"
+  },
+  "reference_index_sha256": "b47f1f3bf7c0da97c427f7871d1f103ba32e76070d0369fc1d284994d5115b6a",
+  "attempts": {
+    "parking_111101_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "eff7f08d787101925f4b3bbef912073556d1a580ec7d501e4a48fda619628568",
+        "report.json": "8fb1cdec5ae573dbc7bb1b1ac7582fd97580b4ec314807fe92dab326f9fdddbd",
+        "reservation.json": "4b2e5f1b402cbe9425d714be7c1da0c1d05718aa839e59401c08a6f80bb33ed7",
+        "resources.jsonl": "3115300499b48d6e9c97ddc8bcb8cb1deb693f850a8120bd71efcf22c6edbbea",
+        "trace.npz": "4104d5c1d163c050a93f5d5c98dd801cb35b42cc44ed7aa1707d6871cab48b7b"
+      },
+      "local_partial_sha256": {}
+    },
+    "parking_111103_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "eaed7be77f6901257477caa8aac1d6acb170533056f5fb362984404a6f21ed69",
+        "report.json": "f1d1ece3ea1e32839fb73c2cf063a278bb700280ac25b02e1e1026c52a213b10",
+        "reservation.json": "658bca4ca0da10a1e3d434946bf8528488feb5616391cc7abfb3209908d1dbf2",
+        "resources.jsonl": "fc3eb82daa4bed1c8a56507f68169e3dc38e17e56edc4a1d9b8ebe951784d53a",
+        "trace.npz": "6d2f943115c1ebc6f6942ffc6731ee00cf366575e7839dbb56ee054f0b20067a"
+      },
+      "local_partial_sha256": {}
+    },
+    "parking_111107_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "f0a09fbcf1e7e365e42ebf280e629f16505d4c5b0689173c8e49ed97e4e7b390",
+        "report.json": "0fb787770465c8f57aa5eab3f9791c4126188f0cc14f6d4d1d39ea8f8df12f4d",
+        "reservation.json": "ae281c0e98ed973839f34fab7a9684ad150f9dd6fdcfb7d29b97f2c78649c82f",
+        "resources.jsonl": "46fcbee54d22727548d9f00c5a03054d551bf4af4af14a5393694ae5f8fa82c4",
+        "trace.npz": "fd8e6f1432ee8ac187949738ee5bf35420ae21e2033dc1bb78678ce972cdc96b"
+      },
+      "local_partial_sha256": {}
+    },
+    "speed_111101_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "4368db25ca2f5a8175d71c0f2db9d762d6ac5da9e36993029c70e71f1c35ca3c",
+        "report.json": "d27f7ff3aa4fbeb74812351e599e6ce74b668e8151f3c83c8865927a5a6cf5fd",
+        "reservation.json": "3ed5f28dd25e52b9da69fcf6f6057c050286beddc1d49bd9f29a0343fc782162",
+        "resources.jsonl": "d3b8df71df6b11f69758362b825a32098c2d6bb7872512dfe385e8aca2c4306f",
+        "trace.npz": "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927"
+      },
+      "local_partial_sha256": {}
+    },
+    "speed_111103_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "5b031f235e13c541da9a32bb042745ba71943981dabe8cc4e021d82f35faafa3",
+        "report.json": "187050d7f992db00ab874e5af76712b49fe6fa99f9d7bd3bb09d2adc56ff8010",
+        "reservation.json": "1297d3f12f66164801843b67aaa0fe67ee054984f7602506024cc6f224684a29",
+        "resources.jsonl": "4cf50f38293bbd151bbb860a16070d4807c010bcf6022c560f29abde4800d85f",
+        "trace.npz": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2"
+      },
+      "local_partial_sha256": {}
+    },
+    "speed_111107_01": {
+      "status": "COMPLETE",
+      "files": {
+        "guard.json": "1c5e2446822c93dbb182d5e7862b4d9fbc3f409f7eb77e2abbac5e1b40d42a07",
+        "report.json": "ad2da1156004aad77e6d69eb9bc014dcf77c8969b01e733a15403fa4ae0bf533",
+        "reservation.json": "42d89d2e1393b092f980ec7512096facb9532005c54757f2a18b317abba0c8f7",
+        "resources.jsonl": "7175fb9def9f3a54dab42ec2cafca1fb168bdba0a01b5e003b576a78219f8a4b",
+        "trace.npz": "28a767885dc5bcb8d843bfd440ea3dd7afce248cde42aec9995df636176f4d56"
+      },
+      "local_partial_sha256": {}
+    },
+    "video_01": {
+      "status": "COMPLETE",
+      "files": {
+        "compound117.mp4": "0160e528f1c8fa2205883985a223b363fa0efe6d5e67aa657db522b8d112fa9d",
+        "guard.json": "0eb81e296461e25acbcb414d3e06827ec565bb0a564a438dbf376b14c1b10726",
+        "report.json": "a85320eb5b1212df701bc6b4558087cf7cd340cabb7cbfc219a9dbb7eacde785",
+        "reservation.json": "049ed628612e6c9656555cde4bc0a267a81c3c67bcfc5fb64cc490f3f112a9f8",
+        "resources.jsonl": "a4b3011f2baac50df4a6bc6999784665e2b2684e71c201e83d5f095bc2e0e240"
+      },
+      "local_partial_sha256": {}
+    }
+  },
+  "attempt_results": {
+    "parking_111101_01": {
+      "stage": "parking_111101",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851814741491264,
+      "completed_at_unix_ns": 1795851819589887466,
+      "resources": {
+        "startup_effective_bytes": 4380499968,
+        "minimum_effective_bytes": 4006285312,
+        "peak_group_bytes": 375279616
+      },
+      "error": null
+    },
+    "parking_111103_01": {
+      "stage": "parking_111103",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851839968858592,
+      "completed_at_unix_ns": 1795851844336657132,
+      "resources": {
+        "startup_effective_bytes": 9836417024,
+        "minimum_effective_bytes": 6537224192,
+        "peak_group_bytes": 350453760
+      },
+      "error": null
+    },
+    "parking_111107_01": {
+      "stage": "parking_111107",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851864666242391,
+      "completed_at_unix_ns": 1795851869039561340,
+      "resources": {
+        "startup_effective_bytes": 10115395584,
+        "minimum_effective_bytes": 9492090880,
+        "peak_group_bytes": 350597120
+      },
+      "error": null
+    },
+    "speed_111101_01": {
+      "stage": "speed_111101",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851656348905696,
+      "completed_at_unix_ns": 1795851661888787565,
+      "resources": {
+        "startup_effective_bytes": 8460435456,
+        "minimum_effective_bytes": 8079376384,
+        "peak_group_bytes": 382337024
+      },
+      "error": null
+    },
+    "speed_111103_01": {
+      "stage": "speed_111103",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851682339128685,
+      "completed_at_unix_ns": 1795851687319152711,
+      "resources": {
+        "startup_effective_bytes": 8244613120,
+        "minimum_effective_bytes": 7877869568,
+        "peak_group_bytes": 351117312
+      },
+      "error": null
+    },
+    "speed_111107_01": {
+      "stage": "speed_111107",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851707815523379,
+      "completed_at_unix_ns": 1795851712763787441,
+      "resources": {
+        "startup_effective_bytes": 8813920256,
+        "minimum_effective_bytes": 8410075136,
+        "peak_group_bytes": 350748672
+      },
+      "error": null
+    },
+    "video_01": {
+      "stage": "video",
+      "attempt": 1,
+      "status": "COMPLETE",
+      "reserved_at_unix_ns": 1795851959033504988,
+      "completed_at_unix_ns": 1795851972395931805,
+      "resources": {
+        "startup_effective_bytes": 10226528256,
+        "minimum_effective_bytes": 9410560000,
+        "peak_group_bytes": 718086144
+      },
+      "error": null
+    }
+  },
+  "stages": {
+    "speed_111101": {
+      "status": "COMPLETE",
+      "attempt": "speed_111101_01",
+      "admission_failures": []
+    },
+    "speed_111103": {
+      "status": "COMPLETE",
+      "attempt": "speed_111103_01",
+      "admission_failures": []
+    },
+    "speed_111107": {
+      "status": "COMPLETE",
+      "attempt": "speed_111107_01",
+      "admission_failures": []
+    },
+    "parking_111101": {
+      "status": "COMPLETE",
+      "attempt": "parking_111101_01",
+      "admission_failures": []
+    },
+    "parking_111103": {
+      "status": "COMPLETE",
+      "attempt": "parking_111103_01",
+      "admission_failures": []
+    },
+    "parking_111107": {
+      "status": "COMPLETE",
+      "attempt": "parking_111107_01",
+      "admission_failures": []
+    },
+    "video": {
+      "status": "COMPLETE",
+      "attempt": "video_01",
+      "admission_failures": []
+    }
+  },
+  "speed_cases": [
+    {
+      "seed": 111101,
+      "trace_sha256": "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927",
+      "reference_sha256": "9eeb8c36c91883ec29a49eabdcb8fd34d73871a27a0e28ac104f5dd1200e9b4d",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": false,
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.3978085215653255,
+          5.05849150796261,
+          5.7256236285481386,
+          6.363955436134566
+        ],
+        "speed_m_s": 1.525826975476685,
+        "sections_m_s": [
+          1.5135852149803604,
+          1.4989534593572256,
+          1.5665833789186587
+        ],
+        "max_lane_y_m": 0.24882339372618748,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.06292955393840587
+      },
+      "effects": {
+        "first_front_edge_tick": 282,
+        "speed_reduction_m_s": 0.04499999932944809,
+        "front_lift_m": 0.012004368325077341,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 282,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 257,
+        "end_tick_exclusive": 282,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 264,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 272,
+        "lift_issue_tick": 271,
+        "lift_capture_tick": 267,
+        "front_wheel": "FR",
+        "front_lift_m": 0.012004368325077341,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.009990617609758223,
+          -0.012098865175049656
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.06292955393840587,
+        "peak_tick": 583,
+        "peak_world_vxy_m_s": [
+          -0.06277703111074776,
+          -0.004378712574141219
+        ],
+        "peak_forward_m_s": -0.06289917583858445,
+        "mean_forward_m_s": -0.052143100398192574,
+        "forward_displacement_mm": -25.907939395346943,
+        "endpoints_above_limit": 16
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": 291,
+        "first_changed_issue_tick": 291,
+        "first_changed_applied_tick": 292,
+        "equal_state_endpoints": 293,
+        "equal_issued_ticks": 291,
+        "equal_applied_ticks": 292,
+        "equal_raw_actor_outputs": 291,
+        "equal_lidar_packets": 36
+      },
+      "geometry": {
+        "active_lift_intervals": 136,
+        "maximum_requested_lift_m": 0.011999999821186142,
+        "max_error_fk_from_requested_lift_m": 5.551115123125783e-16,
+        "max_error_logged_fk_m": 3.885780586188048e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7763568394002505e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "one_metre_speeds",
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.3978085215653255,
+          5.05849150796261,
+          5.7256236285481386,
+          6.3581321139547
+        ],
+        "speed_m_s": 1.5303595853495786,
+        "sections_m_s": [
+          1.5135852149803604,
+          1.4989534593572256,
+          1.5810064577350664
+        ],
+        "max_lane_y_m": 0.24882339372618748,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.05255757374032144
+      },
+      "reference_stop": {
+        "peak_m_s": 0.05255757374032144,
+        "peak_tick": 600,
+        "peak_world_vxy_m_s": [
+          -0.05255726313285277,
+          0.00018069159748269174
+        ],
+        "peak_forward_m_s": -0.05245340941953778,
+        "mean_forward_m_s": -0.04824790509255863,
+        "forward_displacement_mm": -24.145965122200387,
+        "endpoints_above_limit": 9
+      },
+      "stage_status": "COMPLETE",
+      "parking": false
+    },
+    {
+      "seed": 111103,
+      "trace_sha256": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2",
+      "reference_sha256": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": false,
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.404974980994707,
+          5.065922191830697,
+          5.738903730156989,
+          6.397294931564914
+        ],
+        "speed_m_s": 1.5057822410207722,
+        "sections_m_s": [
+          1.5129801345786211,
+          1.4859248627934196,
+          1.5188538331945625
+        ],
+        "max_lane_y_m": 0.5504133317243903,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.05796100603607707
+      },
+      "effects": {
+        "first_front_edge_tick": 283,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012003011231260241,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 283,
+        "first_loaded_platform_touch_tick": 284,
+        "window_start_tick": 258,
+        "end_tick_exclusive": 283,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 262,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 279,
+        "lift_issue_tick": 278,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.012003011231260241,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.01660704978309735,
+          0.006958955333455086
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.05796100603607707,
+        "peak_tick": 589,
+        "peak_world_vxy_m_s": [
+          -0.057620948825040826,
+          -0.006269328290669484
+        ],
+        "peak_forward_m_s": -0.057960464004102236,
+        "mean_forward_m_s": -0.05113209047586027,
+        "forward_displacement_mm": -25.6237555793049,
+        "endpoints_above_limit": 16
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": null,
+        "first_changed_issue_tick": null,
+        "first_changed_applied_tick": null,
+        "equal_state_endpoints": 601,
+        "equal_issued_ticks": 600,
+        "equal_applied_ticks": 600,
+        "equal_raw_actor_outputs": 600,
+        "equal_lidar_packets": 72
+      },
+      "geometry": {
+        "active_lift_intervals": 134,
+        "maximum_requested_lift_m": 0.011999999821186115,
+        "max_error_fk_from_requested_lift_m": 4.440892098500626e-16,
+        "max_error_logged_fk_m": 3.885780586188048e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7208456881689926e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.404974980994707,
+          5.065922191830697,
+          5.738903730156989,
+          6.397294931564914
+        ],
+        "speed_m_s": 1.5057822410207722,
+        "sections_m_s": [
+          1.5129801345786211,
+          1.4859248627934196,
+          1.5188538331945625
+        ],
+        "max_lane_y_m": 0.5504133317243903,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.05796100603607707
+      },
+      "reference_stop": {
+        "peak_m_s": 0.05796100603607707,
+        "peak_tick": 589,
+        "peak_world_vxy_m_s": [
+          -0.057620948825040826,
+          -0.006269328290669484
+        ],
+        "peak_forward_m_s": -0.057960464004102236,
+        "mean_forward_m_s": -0.05113209047586027,
+        "forward_displacement_mm": -25.6237555793049,
+        "endpoints_above_limit": 16
+      },
+      "stage_status": "COMPLETE",
+      "parking": false
+    },
+    {
+      "seed": 111107,
+      "trace_sha256": "28a767885dc5bcb8d843bfd440ea3dd7afce248cde42aec9995df636176f4d56",
+      "reference_sha256": "a43475c4eb2289fef8ca57b098f0d0e03a7986005db70a3dfbd2f7c251b36770",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": false,
+      "motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.400732594544014,
+          5.0575023015665925,
+          5.726297313694447,
+          6.362495824533808
+        ],
+        "speed_m_s": 1.5292365327978985,
+        "sections_m_s": [
+          1.5226037213766033,
+          1.4952264623182157,
+          1.5718364362102346
+        ],
+        "max_lane_y_m": 0.2538815222610639,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.06344832494468337
+      },
+      "effects": {
+        "first_front_edge_tick": 282,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012003699854376493,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 282,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 257,
+        "end_tick_exclusive": 282,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 262,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 279,
+        "lift_issue_tick": 278,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.012003699854376493,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.007258368282436645,
+          -0.01178147012815517
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.06344832494468337,
+        "peak_tick": 595,
+        "peak_world_vxy_m_s": [
+          -0.06340341232761292,
+          -0.002386889922227838
+        ],
+        "peak_forward_m_s": -0.06342751114537355,
+        "mean_forward_m_s": -0.055179058170933167,
+        "forward_displacement_mm": -27.662717148887502,
+        "endpoints_above_limit": 23
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": 291,
+        "first_changed_issue_tick": 291,
+        "first_changed_applied_tick": 292,
+        "equal_state_endpoints": 293,
+        "equal_issued_ticks": 291,
+        "equal_applied_ticks": 292,
+        "equal_raw_actor_outputs": 291,
+        "equal_lidar_packets": 36
+      },
+      "geometry": {
+        "active_lift_intervals": 136,
+        "maximum_requested_lift_m": 0.011999999821186089,
+        "max_error_fk_from_requested_lift_m": 5.551115123125783e-16,
+        "max_error_logged_fk_m": 4.996003610813204e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7208456881689926e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "one_metre_speeds",
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.400732594544014,
+          5.0575023015665925,
+          5.726297313694447,
+          6.356175479079892
+        ],
+        "speed_m_s": 1.5341793021543795,
+        "sections_m_s": [
+          1.5226037213766033,
+          1.4952264623182157,
+          1.5876086121957647
+        ],
+        "max_lane_y_m": 0.2555913695977754,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.06239221606855916
+      },
+      "reference_stop": {
+        "peak_m_s": 0.06239221606855916,
+        "peak_tick": 592,
+        "peak_world_vxy_m_s": [
+          -0.062318237751484734,
+          -0.0030374116440144705
+        ],
+        "peak_forward_m_s": -0.06239157478801919,
+        "mean_forward_m_s": -0.05212409236564046,
+        "forward_displacement_mm": -26.113443876454212,
+        "endpoints_above_limit": 15
+      },
+      "stage_status": "COMPLETE",
+      "parking": false
+    }
+  ],
+  "parking_cases": [
+    {
+      "seed": 111101,
+      "trace_sha256": "4104d5c1d163c050a93f5d5c98dd801cb35b42cc44ed7aa1707d6871cab48b7b",
+      "reference_sha256": "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.3978085215653255,
+          5.05849150796261,
+          5.7256236285481386,
+          6.363955436134566
+        ],
+        "speed_m_s": 1.525826975476685,
+        "sections_m_s": [
+          1.5135852149803604,
+          1.4989534593572256,
+          1.5665833789186587
+        ],
+        "max_lane_y_m": 0.24882339372618748,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.014398014878143163
+      },
+      "effects": {
+        "first_front_edge_tick": 282,
+        "speed_reduction_m_s": 0.04499999932944809,
+        "front_lift_m": 0.012004368325077341,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 282,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 257,
+        "end_tick_exclusive": 282,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 264,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 272,
+        "lift_issue_tick": 271,
+        "lift_capture_tick": 267,
+        "front_wheel": "FR",
+        "front_lift_m": 0.012004368325077341,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.009990617609758223,
+          -0.012098865175049656
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.014398014878143163,
+        "peak_tick": 600,
+        "peak_world_vxy_m_s": [
+          -0.013726325620307064,
+          -0.004346356795815753
+        ],
+        "peak_forward_m_s": -0.01384396418173086,
+        "mean_forward_m_s": -0.0058779488791102915,
+        "forward_displacement_mm": -3.064051072822548,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": 530,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "equal_state_endpoints": 527,
+        "equal_issued_ticks": 525,
+        "equal_applied_ticks": 526,
+        "equal_raw_actor_outputs": 527,
+        "equal_lidar_packets": 64
+      },
+      "geometry": {
+        "active_lift_intervals": 136,
+        "maximum_requested_lift_m": 0.011999999821186142,
+        "max_error_fk_from_requested_lift_m": 5.551115123125783e-16,
+        "max_error_logged_fk_m": 3.885780586188048e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7763568394002505e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.3978085215653255,
+          5.05849150796261,
+          5.7256236285481386,
+          6.363955436134566
+        ],
+        "speed_m_s": 1.525826975476685,
+        "sections_m_s": [
+          1.5135852149803604,
+          1.4989534593572256,
+          1.5665833789186587
+        ],
+        "max_lane_y_m": 0.24882339372618748,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.06292955393840587
+      },
+      "reference_stop": {
+        "peak_m_s": 0.06292955393840587,
+        "peak_tick": 583,
+        "peak_world_vxy_m_s": [
+          -0.06277703111074776,
+          -0.004378712574141219
+        ],
+        "peak_forward_m_s": -0.06289917583858445,
+        "mean_forward_m_s": -0.052143100398192574,
+        "forward_displacement_mm": -25.907939395346943,
+        "endpoints_above_limit": 16
+      },
+      "stage_status": "COMPLETE",
+      "parking": true
+    },
+    {
+      "seed": 111103,
+      "trace_sha256": "6d2f943115c1ebc6f6942ffc6731ee00cf366575e7839dbb56ee054f0b20067a",
+      "reference_sha256": "25e06efa96121250a8f5543dbc732ffa0c3a3c0c59ee6619cc3795aac73eebf2",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.404974980994707,
+          5.065922191830697,
+          5.738903730156989,
+          6.397294931564914
+        ],
+        "speed_m_s": 1.5057822410207722,
+        "sections_m_s": [
+          1.5129801345786211,
+          1.4859248627934196,
+          1.5188538331945625
+        ],
+        "max_lane_y_m": 0.5504133317243903,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.01306715844910707
+      },
+      "effects": {
+        "first_front_edge_tick": 283,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012003011231260241,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 283,
+        "first_loaded_platform_touch_tick": 284,
+        "window_start_tick": 258,
+        "end_tick_exclusive": 283,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 262,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 279,
+        "lift_issue_tick": 278,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.012003011231260241,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.01660704978309735,
+          0.006958955333455086
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.01306715844910707,
+        "peak_tick": 589,
+        "peak_world_vxy_m_s": [
+          -0.01306031563346404,
+          0.00042283033046966836
+        ],
+        "peak_forward_m_s": -0.012947552840839038,
+        "mean_forward_m_s": -0.01098068528558056,
+        "forward_displacement_mm": -5.485655549453614,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": 530,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "equal_state_endpoints": 527,
+        "equal_issued_ticks": 525,
+        "equal_applied_ticks": 526,
+        "equal_raw_actor_outputs": 527,
+        "equal_lidar_packets": 64
+      },
+      "geometry": {
+        "active_lift_intervals": 134,
+        "maximum_requested_lift_m": 0.011999999821186115,
+        "max_error_fk_from_requested_lift_m": 4.440892098500626e-16,
+        "max_error_logged_fk_m": 3.885780586188048e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.7208456881689926e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.404974980994707,
+          5.065922191830697,
+          5.738903730156989,
+          6.397294931564914
+        ],
+        "speed_m_s": 1.5057822410207722,
+        "sections_m_s": [
+          1.5129801345786211,
+          1.4859248627934196,
+          1.5188538331945625
+        ],
+        "max_lane_y_m": 0.5504133317243903,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.05796100603607707
+      },
+      "reference_stop": {
+        "peak_m_s": 0.05796100603607707,
+        "peak_tick": 589,
+        "peak_world_vxy_m_s": [
+          -0.057620948825040826,
+          -0.006269328290669484
+        ],
+        "peak_forward_m_s": -0.057960464004102236,
+        "mean_forward_m_s": -0.05113209047586027,
+        "forward_displacement_mm": -25.6237555793049,
+        "endpoints_above_limit": 16
+      },
+      "stage_status": "COMPLETE",
+      "parking": true
+    },
+    {
+      "seed": 111107,
+      "trace_sha256": "fd8e6f1432ee8ac187949738ee5bf35420ae21e2033dc1bb78678ce972cdc96b",
+      "reference_sha256": "28a767885dc5bcb8d843bfd440ea3dd7afce248cde42aec9995df636176f4d56",
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "complete_horizon": true,
+      "driving_pass": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.400732594544014,
+          5.0575023015665925,
+          5.726297313694447,
+          6.362495824533808
+        ],
+        "speed_m_s": 1.5292365327978985,
+        "sections_m_s": [
+          1.5226037213766033,
+          1.4952264623182157,
+          1.5718364362102346
+        ],
+        "max_lane_y_m": 0.2538815222610639,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.006045271077831929
+      },
+      "effects": {
+        "first_front_edge_tick": 282,
+        "speed_reduction_m_s": 0.04499999932944787,
+        "front_lift_m": 0.012003699854376493,
+        "speed_active": true,
+        "lift_active": true
+      },
+      "lidar": {
+        "first_front_extent_tick": 282,
+        "first_loaded_platform_touch_tick": 283,
+        "window_start_tick": 257,
+        "end_tick_exclusive": 282,
+        "speed_valid_ticks": 25,
+        "lift_valid_ticks": 25,
+        "speed_tick": 262,
+        "speed_capture_tick": 259,
+        "speed_reduction_m_s": 0.04500007629394531,
+        "speed_active": true,
+        "lift_servo_tick": 279,
+        "lift_issue_tick": 278,
+        "lift_capture_tick": 275,
+        "front_wheel": "FL",
+        "front_lift_m": 0.012003699854376493,
+        "lift_active": true,
+        "measured_front_relative_z_change_m": [
+          0.007258368282436645,
+          -0.01178147012815517
+        ],
+        "passed": true
+      },
+      "stop": {
+        "peak_m_s": 0.006045271077831929,
+        "peak_tick": 575,
+        "peak_world_vxy_m_s": [
+          -0.0059671054134797005,
+          -0.000968997104687349
+        ],
+        "peak_forward_m_s": -0.006014466141655855,
+        "mean_forward_m_s": -0.0003386964442013324,
+        "forward_displacement_mm": -0.09364984628969703,
+        "endpoints_above_limit": 0
+      },
+      "stop_endpoints": 26,
+      "first_failed_section": null,
+      "prefix": {
+        "first_changed_input_tick": 530,
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "equal_state_endpoints": 527,
+        "equal_issued_ticks": 525,
+        "equal_applied_ticks": 526,
+        "equal_raw_actor_outputs": 527,
+        "equal_lidar_packets": 64
+      },
+      "geometry": {
+        "active_lift_intervals": 136,
+        "maximum_requested_lift_m": 0.011999999821186089,
+        "max_error_fk_from_requested_lift_m": 5.551115123125783e-16,
+        "max_error_logged_fk_m": 4.996003610813204e-16,
+        "max_error_native_wheel_xy_m": 3.552713678800501e-15,
+        "max_error_native_relative_z_m": 1.609823385706477e-15
+      },
+      "reference_motion": {
+        "passed": false,
+        "failed": [
+          "stopped"
+        ],
+        "ticks": 600,
+        "gate_times_s": [
+          4.400732594544014,
+          5.0575023015665925,
+          5.726297313694447,
+          6.362495824533808
+        ],
+        "speed_m_s": 1.5292365327978985,
+        "sections_m_s": [
+          1.5226037213766033,
+          1.4952264623182157,
+          1.5718364362102346
+        ],
+        "max_lane_y_m": 0.2538815222610639,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "stop_tail_max_m_s": 0.06344832494468337
+      },
+      "reference_stop": {
+        "peak_m_s": 0.06344832494468337,
+        "peak_tick": 595,
+        "peak_world_vxy_m_s": [
+          -0.06340341232761292,
+          -0.002386889922227838
+        ],
+        "peak_forward_m_s": -0.06342751114537355,
+        "mean_forward_m_s": -0.055179058170933167,
+        "forward_displacement_mm": -27.662717148887502,
+        "endpoints_above_limit": 23
+      },
+      "stage_status": "COMPLETE",
+      "parking": true
+    }
+  ],
+  "video": {
+    "file": "docs/assets/compound117.mp4",
+    "seed": 111101,
+    "desktop_filename": "D1_\u53f0\u9636\u6bb5\u8d85\u901f_\u8865\u507f\u56de\u843d\u524d\u540e\u5bf9\u7167_117.mp4",
+    "trace_sha256": [
+      "9eeb8c36c91883ec29a49eabdcb8fd34d73871a27a0e28ac104f5dd1200e9b4d",
+      "4ac31e27ab75f640a8a50fedab665568906f9817f27b1da16a68b3a54a2e5927"
+    ],
+    "native_report_sha256": "d27f7ff3aa4fbeb74812351e599e6ce74b668e8151f3c83c8865927a5a6cf5fd",
+    "last_ticks": [
+      600,
+      600
+    ],
+    "frames": 287,
+    "fps": 25,
+    "duration_s": 11.48,
+    "bytes": 457793,
+    "sha256": "0160e528f1c8fa2205883985a223b363fa0efe6d5e67aa657db522b8d112fa9d"
+  },
+  "summary": {
+    "speed": {
+      "complete_stages": 3,
+      "full_horizons": 3,
+      "driving_passes": 3,
+      "joint_passes": 0,
+      "confirmed_counts": {
+        "decisions": 1800,
+        "servo": 9000,
+        "physics": 18000,
+        "packets": 216,
+        "ray_queries": 224640
+      },
+      "unknown_partial_seeds": [],
+      "counts_upper_bound": {
+        "decisions": 1800,
+        "servo": 9000,
+        "physics": 18000,
+        "packets": 216,
+        "ray_queries": 224640
+      }
+    },
+    "parking": {
+      "complete_stages": 3,
+      "full_horizons": 3,
+      "driving_passes": 3,
+      "joint_passes": 3,
+      "confirmed_counts": {
+        "decisions": 1800,
+        "servo": 9000,
+        "physics": 18000,
+        "packets": 216,
+        "ray_queries": 224640
+      },
+      "unknown_partial_seeds": [],
+      "counts_upper_bound": {
+        "decisions": 1800,
+        "servo": 9000,
+        "physics": 18000,
+        "packets": 216,
+        "ray_queries": 224640
+      }
+    },
+    "parking_gate_open": true,
+    "confirmed_counts": {
+      "decisions": 3600,
+      "servo": 18000,
+      "physics": 36000,
+      "packets": 432,
+      "ray_queries": 449280
+    },
+    "counts_upper_bound": {
+      "decisions": 3600,
+      "servo": 18000,
+      "physics": 36000,
+      "packets": 432,
+      "ray_queries": 449280
+    },
+    "admission_failures": [],
+    "partial_stages": [],
+    "not_started": [],
+    "blind_episodes": 0,
+    "world_updates": 0,
+    "policy_updates": 0
+  }
+}

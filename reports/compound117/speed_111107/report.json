@@ -1,0 +1,105 @@
+{
+  "stage": "speed_111107",
+  "attempt": 1,
+  "unit": "d1-compound117-speed-111107-01",
+  "registration_sha256": "49e80340c5f8fba7328728ed42a7d084cc09fd4d51ecc885dd26a6c16ccafccc",
+  "reserved_at_unix_ns": 1795851707815523379,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 111107,
+    "parking": false,
+    "layout": "development",
+    "arm": "both",
+    "gain": 0.97792348,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": false,
+      "failed": [
+        "stopped"
+      ],
+      "ticks": 600,
+      "gate_times_s": [
+        4.400732594544014,
+        5.0575023015665925,
+        5.726297313694447,
+        6.362495824533808
+      ],
+      "speed_m_s": 1.5292365327978985,
+      "sections_m_s": [
+        1.5226037213766033,
+        1.4952264623182157,
+        1.5718364362102346
+      ],
+      "max_lane_y_m": 0.2538815222610639,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "stop_tail_max_m_s": 0.06344832494468337
+    },
+    "lidar": {
+      "first_front_extent_tick": 282,
+      "first_loaded_platform_touch_tick": 283,
+      "window_start_tick": 257,
+      "end_tick_exclusive": 282,
+      "speed_valid_ticks": 25,
+      "lift_valid_ticks": 25,
+      "speed_tick": 262,
+      "speed_capture_tick": 259,
+      "speed_reduction_m_s": 0.04500007629394531,
+      "speed_active": true,
+      "lift_servo_tick": 279,
+      "lift_issue_tick": 278,
+      "lift_capture_tick": 275,
+      "front_wheel": "FL",
+      "front_lift_m": 0.012003699854376493,
+      "lift_active": true,
+      "measured_front_relative_z_change_m": [
+        0.007258368282436645,
+        -0.01178147012815517
+      ],
+      "passed": true
+    },
+    "driving_pass": true,
+    "gate_pass": false,
+    "first_failed_section": null,
+    "stop": {
+      "peak_m_s": 0.06344832494468337,
+      "peak_tick": 595,
+      "peak_world_vxy_m_s": [
+        -0.06340341232761292,
+        -0.002386889922227838
+      ],
+      "peak_forward_m_s": -0.06342751114537355,
+      "mean_forward_m_s": -0.055179058170933167,
+      "forward_displacement_mm": -27.662717148887502,
+      "endpoints_above_limit": 23
+    },
+    "nominal_base_height_m": 0.437849968809778,
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0",
+    "trace_sha256": "28a767885dc5bcb8d843bfd440ea3dd7afce248cde42aec9995df636176f4d56",
+    "reference_sha256": "a43475c4eb2289fef8ca57b098f0d0e03a7986005db70a3dfbd2f7c251b36770"
+  },
+  "files": {
+    "trace.npz": "28a767885dc5bcb8d843bfd440ea3dd7afce248cde42aec9995df636176f4d56"
+  },
+  "elapsed_s": 4.948117088002618,
+  "completed_at_unix_ns": 1795851712763787441
+}
