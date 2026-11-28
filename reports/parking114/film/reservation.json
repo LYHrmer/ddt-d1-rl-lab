@@ -1,0 +1,8 @@
+{
+  "stage": "film",
+  "attempt": 1,
+  "unit": "d1-parking114-film-01",
+  "registration_sha256": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+  "reserved_at_unix_ns": 1795844275910876292,
+  "input_report_sha256": "0cda4a5cb53314e90259945c0fb5b2dc3c020c63dbf1a6f3cd50a227ca8ae0b0"
+}

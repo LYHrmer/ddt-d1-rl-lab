@@ -1,0 +1,68 @@
+{
+  "stage": "native_114227",
+  "attempt": 2,
+  "unit": "d1-parking114-native-114227-02",
+  "registration_sha256": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+  "reserved_at_unix_ns": 1795844194402365552,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 114227,
+    "cohort": "blind",
+    "layout": "flat",
+    "surface": "level_heightfield",
+    "arm": "heading_on",
+    "gain": 0.97792348,
+    "trim": "brake_aware",
+    "projection": "parked_wheel_common_zero",
+    "nominal_base_height_m": 0.437849968809778,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": true,
+      "failed": [],
+      "ticks": 600,
+      "gate_times_s": [
+        4.383442183568811,
+        5.034669760259216,
+        5.6877192535551355,
+        6.342736798011745
+      ],
+      "speed_m_s": 1.5311632961605213,
+      "sections_m_s": [
+        1.5355615084393197,
+        1.5312775069360087,
+        1.5266766645610714
+      ],
+      "max_lane_y_m": 0.23822122311964966,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "stop_tail_max_m_s": 0.011753446957461458
+    },
+    "effects": {},
+    "trace_sha256": "9e2acc2db0efac921676e671daa4b00df59efcdbd9e950ab8ee6551b367ebafe",
+    "reference_sha256": null,
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0"
+  },
+  "files": {
+    "trace.npz": "9e2acc2db0efac921676e671daa4b00df59efcdbd9e950ab8ee6551b367ebafe"
+  },
+  "completed_at_unix_ns": 1795844199134903138
+}

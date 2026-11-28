@@ -1,0 +1,69 @@
+{
+  "stage": "native_111023",
+  "attempt": 1,
+  "unit": "d1-parking114-native-111023-01",
+  "registration_sha256": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+  "reserved_at_unix_ns": 1795843356097238727,
+  "baseline_sha256": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db",
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 111023,
+    "cohort": "development",
+    "layout": "flat",
+    "surface": "level_heightfield",
+    "arm": "heading_on",
+    "gain": 0.97792348,
+    "trim": "brake_aware",
+    "projection": "parked_wheel_common_zero",
+    "nominal_base_height_m": 0.437849968809778,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": true,
+      "failed": [],
+      "ticks": 600,
+      "gate_times_s": [
+        4.385977591687794,
+        5.041834597613015,
+        5.7018089103335265,
+        6.362492425554058
+      ],
+      "speed_m_s": 1.5178231645910267,
+      "sections_m_s": [
+        1.5247226010634674,
+        1.515210487326169,
+        1.5135840034788923
+      ],
+      "max_lane_y_m": 0.6322094409112786,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "stop_tail_max_m_s": 0.004137821429058548
+    },
+    "effects": {},
+    "trace_sha256": "c79abfb8ac598604d312002700cc9f9cd832554c811fd6ee443b27963b56af7b",
+    "reference_sha256": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0"
+  },
+  "files": {
+    "trace.npz": "c79abfb8ac598604d312002700cc9f9cd832554c811fd6ee443b27963b56af7b"
+  },
+  "completed_at_unix_ns": 1795843360462246345
+}

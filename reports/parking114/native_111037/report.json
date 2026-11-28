@@ -1,0 +1,69 @@
+{
+  "stage": "native_111037",
+  "attempt": 1,
+  "unit": "d1-parking114-native-111037-01",
+  "registration_sha256": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+  "reserved_at_unix_ns": 1795843380966983376,
+  "baseline_sha256": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b",
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 111037,
+    "cohort": "development",
+    "layout": "flat",
+    "surface": "level_heightfield",
+    "arm": "heading_on",
+    "gain": 0.97792348,
+    "trim": "brake_aware",
+    "projection": "parked_wheel_common_zero",
+    "nominal_base_height_m": 0.437849968809778,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": true,
+      "failed": [],
+      "ticks": 600,
+      "gate_times_s": [
+        4.394580261562579,
+        5.050970573396419,
+        5.708977528764984,
+        6.367506166735744
+      ],
+      "speed_m_s": 1.5205842206915967,
+      "sections_m_s": [
+        1.5234837900123404,
+        1.5197407745331153,
+        1.5185368446260368
+      ],
+      "max_lane_y_m": 0.35415872071367177,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "stop_tail_max_m_s": 0.010784176441000768
+    },
+    "effects": {},
+    "trace_sha256": "40e5890811ab3931bc6c3eb99c042f2024f20c49c117ec1ac16095fc8927e6aa",
+    "reference_sha256": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0"
+  },
+  "files": {
+    "trace.npz": "40e5890811ab3931bc6c3eb99c042f2024f20c49c117ec1ac16095fc8927e6aa"
+  },
+  "completed_at_unix_ns": 1795843385411314462
+}

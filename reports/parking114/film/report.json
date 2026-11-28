@@ -1,0 +1,352 @@
+{
+  "stage": "film",
+  "attempt": 1,
+  "unit": "d1-parking114-film-01",
+  "registration_sha256": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+  "reserved_at_unix_ns": 1795844275910876292,
+  "input_report_sha256": "0cda4a5cb53314e90259945c0fb5b2dc3c020c63dbf1a6f3cd50a227ca8ae0b0",
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "filename": "parking114.mp4",
+    "desktop_filename": "D1_\u505c\u8f66\u4fee\u590d_\u7b49\u9ad8\u7f51\u683c_114.mp4",
+    "seed": 111011,
+    "trace_sha256": [
+      "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82",
+      "cf70e2c8834fba6f4f682b7ab939303e1680d3ba2afa398fcc841f35cb5ae160"
+    ],
+    "native_report_sha256": "0cda4a5cb53314e90259945c0fb5b2dc3c020c63dbf1a6f3cd50a227ca8ae0b0",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "last_ticks": [
+      600,
+      600
+    ],
+    "renderer_sha256": "69ca6822a55e50837df2500b1fbd48c83625393aeeda7a1592d2f3d42202c8ce",
+    "sha256": "93cbda7a106441f285ef1a23af54407f388d6e948f6e44aa81a3e6dc8fc03487",
+    "bytes": 554627,
+    "fps": 25,
+    "frames": 253,
+    "duration_s": 10.12,
+    "stream": {
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 720,
+      "pix_fmt": "yuv420p",
+      "r_frame_rate": "25/1",
+      "duration": "10.120000",
+      "nb_read_frames": "253"
+    },
+    "driver": {
+      "renderer": "llvmpipe (LLVM 15.0.7, 256 bits)",
+      "vendor": "Mesa",
+      "egl_device_index": 1,
+      "vendor_library_file": "/usr/share/glvnd/egl_vendor.d/50_mesa.json",
+      "vendor_file_sha256": "cd3881df4227c13ca7f9cfe6c78820f21d5f7a00a41b299214f6f827e63be369",
+      "frames": 0,
+      "physics_substeps": 0
+    },
+    "panels": [
+      "\u5de6 \u00b7 \u7b2c 113 \u8f6e\u4fdd\u7559\u56db\u8f6e\u5e73\u5747\u8f6e\u901f\u76ee\u6807",
+      "\u53f3 \u00b7 \u7b2c 114 \u8f6e\u505c\u8f66\u65f6\u6e05\u96f6\u56db\u8f6e\u5e73\u5747\u76ee\u6807"
+    ],
+    "marker_tick": 575,
+    "driver_zero_tick": 525,
+    "ground_markers": [
+      {
+        "xy_m": [
+          11.431933090994594,
+          0.13750809774399164
+        ],
+        "yaw_rad": 0.05329783583647295
+      },
+      {
+        "xy_m": [
+          11.4759562947788,
+          0.1387110885868388
+        ],
+        "yaw_rad": 0.05208651066014137
+      }
+    ],
+    "cameras": {
+      "overview": {
+        "lookat_m": [
+          11.284450387389773,
+          0.13847830653903176,
+          0.24
+        ],
+        "distance_m": 1.8504388068270732,
+        "azimuth_deg": 98.0,
+        "elevation_deg": -17.0
+      },
+      "front_axle": {
+        "lookat_m": [
+          11.405612930377911,
+          0.13699290909593143,
+          0.13
+        ],
+        "distance_m": 0.9561553104250236,
+        "azimuth_deg": 98.0,
+        "elevation_deg": -17.0
+      }
+    },
+    "shots": [
+      {
+        "phase": "overview",
+        "tick": 500,
+        "frames": 28,
+        "first_frame": 0
+      },
+      {
+        "phase": "overview",
+        "tick": 503,
+        "frames": 3,
+        "first_frame": 28
+      },
+      {
+        "phase": "overview",
+        "tick": 506,
+        "frames": 3,
+        "first_frame": 31
+      },
+      {
+        "phase": "overview",
+        "tick": 509,
+        "frames": 3,
+        "first_frame": 34
+      },
+      {
+        "phase": "overview",
+        "tick": 512,
+        "frames": 3,
+        "first_frame": 37
+      },
+      {
+        "phase": "overview",
+        "tick": 515,
+        "frames": 3,
+        "first_frame": 40
+      },
+      {
+        "phase": "overview",
+        "tick": 518,
+        "frames": 3,
+        "first_frame": 43
+      },
+      {
+        "phase": "overview",
+        "tick": 521,
+        "frames": 3,
+        "first_frame": 46
+      },
+      {
+        "phase": "overview",
+        "tick": 524,
+        "frames": 1,
+        "first_frame": 49
+      },
+      {
+        "phase": "overview",
+        "tick": 525,
+        "frames": 27,
+        "first_frame": 50
+      },
+      {
+        "phase": "overview",
+        "tick": 527,
+        "frames": 3,
+        "first_frame": 77
+      },
+      {
+        "phase": "overview",
+        "tick": 530,
+        "frames": 3,
+        "first_frame": 80
+      },
+      {
+        "phase": "overview",
+        "tick": 533,
+        "frames": 3,
+        "first_frame": 83
+      },
+      {
+        "phase": "overview",
+        "tick": 536,
+        "frames": 3,
+        "first_frame": 86
+      },
+      {
+        "phase": "overview",
+        "tick": 539,
+        "frames": 3,
+        "first_frame": 89
+      },
+      {
+        "phase": "overview",
+        "tick": 542,
+        "frames": 3,
+        "first_frame": 92
+      },
+      {
+        "phase": "overview",
+        "tick": 545,
+        "frames": 3,
+        "first_frame": 95
+      },
+      {
+        "phase": "overview",
+        "tick": 548,
+        "frames": 3,
+        "first_frame": 98
+      },
+      {
+        "phase": "overview",
+        "tick": 551,
+        "frames": 3,
+        "first_frame": 101
+      },
+      {
+        "phase": "overview",
+        "tick": 554,
+        "frames": 3,
+        "first_frame": 104
+      },
+      {
+        "phase": "overview",
+        "tick": 557,
+        "frames": 3,
+        "first_frame": 107
+      },
+      {
+        "phase": "overview",
+        "tick": 560,
+        "frames": 3,
+        "first_frame": 110
+      },
+      {
+        "phase": "overview",
+        "tick": 563,
+        "frames": 3,
+        "first_frame": 113
+      },
+      {
+        "phase": "overview",
+        "tick": 566,
+        "frames": 3,
+        "first_frame": 116
+      },
+      {
+        "phase": "overview",
+        "tick": 569,
+        "frames": 3,
+        "first_frame": 119
+      },
+      {
+        "phase": "overview",
+        "tick": 572,
+        "frames": 3,
+        "first_frame": 122
+      },
+      {
+        "phase": "overview",
+        "tick": 575,
+        "frames": 1,
+        "first_frame": 125
+      },
+      {
+        "phase": "front_axle",
+        "tick": 575,
+        "frames": 29,
+        "first_frame": 126
+      },
+      {
+        "phase": "front_axle",
+        "tick": 577,
+        "frames": 4,
+        "first_frame": 155
+      },
+      {
+        "phase": "front_axle",
+        "tick": 579,
+        "frames": 4,
+        "first_frame": 159
+      },
+      {
+        "phase": "front_axle",
+        "tick": 581,
+        "frames": 4,
+        "first_frame": 163
+      },
+      {
+        "phase": "front_axle",
+        "tick": 583,
+        "frames": 4,
+        "first_frame": 167
+      },
+      {
+        "phase": "front_axle",
+        "tick": 585,
+        "frames": 4,
+        "first_frame": 171
+      },
+      {
+        "phase": "front_axle",
+        "tick": 587,
+        "frames": 4,
+        "first_frame": 175
+      },
+      {
+        "phase": "front_axle",
+        "tick": 589,
+        "frames": 4,
+        "first_frame": 179
+      },
+      {
+        "phase": "front_axle",
+        "tick": 591,
+        "frames": 4,
+        "first_frame": 183
+      },
+      {
+        "phase": "front_axle",
+        "tick": 593,
+        "frames": 4,
+        "first_frame": 187
+      },
+      {
+        "phase": "front_axle",
+        "tick": 595,
+        "frames": 4,
+        "first_frame": 191
+      },
+      {
+        "phase": "front_axle",
+        "tick": 597,
+        "frames": 4,
+        "first_frame": 195
+      },
+      {
+        "phase": "front_axle",
+        "tick": 599,
+        "frames": 2,
+        "first_frame": 199
+      },
+      {
+        "phase": "front_axle",
+        "tick": 600,
+        "frames": 52,
+        "first_frame": 201
+      }
+    ],
+    "final_front_axle_offset_mm": [
+      -26.74464032712966,
+      -4.671581320135993
+    ],
+    "cover_frames": 0,
+    "physics": 0
+  },
+  "files": {
+    "video.json": "349cd548a33b792d736341f5f1b51fe3f046c423e3872a0f268d5badb2c0fea1",
+    "parking114.mp4": "93cbda7a106441f285ef1a23af54407f388d6e948f6e44aa81a3e6dc8fc03487"
+  },
+  "completed_at_unix_ns": 1795844287742296697
+}

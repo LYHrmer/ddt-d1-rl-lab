@@ -9,6 +9,7 @@ on:
       - 'docs/parking114_proposal.md'
       - 'docs/parking114_results.md'
       - 'docs/assets/parking114_replay.png'
+      - 'docs/assets/parking114.mp4'
       - 'reports/parking114/**'
       - 'reports/speed_world113/**'
       - 'reports/surface112/**'
@@ -56,3 +57,11 @@ jobs:
             test -f reports/parking114/figure.json
           fi
           python -B -m tools114.results
+      - name: Re-score the native parking traces and verify the comparison movie
+        run: |
+          if git cat-file -e HEAD^:reports/parking114/closed_loop.json 2>/dev/null; then
+            test -f reports/parking114/closed_loop.json
+          fi
+          if [[ -f reports/parking114/closed_loop.json ]]; then
+            python -B -m tools114.closed_archive
+          fi
