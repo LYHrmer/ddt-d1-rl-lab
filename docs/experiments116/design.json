@@ -1,0 +1,101 @@
+{
+  "parent_commit": "b1d8e188d284dfd64761237efd10acd82929f072",
+  "seeds": [
+    111101,
+    111103,
+    111107
+  ],
+  "layout": "development",
+  "arm": "both",
+  "variable": "R113 BrakeTrim after the R111 lidar speed preview; R111 driver, both lidar actuations and parking unchanged.",
+  "references": {
+    "111101": {
+      "trace_sha256": "2db15199f1eb06066b20b1ee10d1246e8f749b9e76c08b1ed21a2c2595e65020",
+      "case_status": "COMPLETE",
+      "unit_status": "INCOMPLETE"
+    },
+    "111103": {
+      "trace_sha256": "02a21757aaedf4ee4946c1448ec9bbd234258818334ca5f0f745ca5c44f2d975",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE"
+    },
+    "111107": {
+      "trace_sha256": "3debee3ccd76dfe31d366f1b90060d4f561c1a59515660f98aee4a58c9331658",
+      "case_status": "COMPLETE",
+      "unit_status": "COMPLETE"
+    }
+  },
+  "thresholds": {
+    "three_metre_m_s": [
+      1.5,
+      1.575
+    ],
+    "each_metre_m_s": [
+      1.425,
+      1.575
+    ],
+    "stop_tail_peak_m_s": 0.05,
+    "stop_endpoints_inclusive": [
+      575,
+      600
+    ],
+    "all_course_gates_required": true,
+    "pre_edge_delivered_lidar_speed_drop_m_s": 0.02,
+    "pre_edge_applied_front_lift_m": 0.005,
+    "edge_window_decision_intervals": 25,
+    "all_development": 3
+  },
+  "budget": {
+    "episodes": 3,
+    "decisions": 1800,
+    "servo": 9000,
+    "physics": 18000,
+    "packets": 216,
+    "ray_queries": 224640,
+    "world_updates": 0,
+    "policy_updates": 0,
+    "blind": 0
+  },
+  "wiring_archive_decisions": 1800,
+  "preselected_video_seed": 111101,
+  "video_max_bytes": 5000000,
+  "bounds": {
+    "nice": 10,
+    "single_cpu": true,
+    "environment_count": 1,
+    "memory_high_gib": 2,
+    "memory_max_gib": 3,
+    "swap_gib": 0,
+    "startup_gib": 4,
+    "reserve_gib": 2
+  },
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "sources_sha256": {
+    "docs/lidar_encoder116_proposal.md": "87299a68e8cfc770a9d9f575350bc2557c84e10c17f063fa1ed676b580149daa",
+    "docs/lidar_compound111_proposal.md": "cf67f221a834e487f96e8f0ff583ad15fdb1143925ddb61d70d928ab5727f9e0",
+    "reports/lidar_compound111/native.json": "f0c78571880588577622f6130225ebbb59230dbd25dea9faa71bc0c0cacd3ea3",
+    "tools116/run.py": "381cb05569a25a26f77a134f756014895ba8ff80818363c557123132aa270ad5",
+    "tools27/resource_guard27.py": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2",
+    "tools91/launch91.py": "4aebd051f3bea83b71b1ef04b2ee426b88748066a7a0239d1aa510b750822c47",
+    "tools92/launch92.py": "dfa3c9cd106f1407f27b19ff36e7cd46d2ece3404232fc69c38210743077eab2",
+    "tools109/run109.py": "c3a8a0150e0b8e2ea6e05865070dd987cd4d758c8232713dbf6a0e4bf829b807",
+    "tools111/remaining.py": "d48186cfda8659acee4f03ba1f84b79bb8e1f517a19566cd69b33b290d6a7808",
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools110/run.py": "54f3873d7c786d5a4604a4d8601101901b8c36a46e9a99422856e966328a7449",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/d1_rl/env.py": "f9f7c96b5f91548239578253de25dee5a3e7fee30a9e882502b205cf082e2c2b",
+    "training/d1_rl/delay_env18.py": "ad890e12692b1334617aad43f17221adadaebe381f9aff4b34708d2cc64df494",
+    "training/d1_rl/fast_checks.py": "ee97af7a67a6d964ce4611524475db2a6249d8cd1fcef8f5a09211beec3280cd",
+    "tools111/control.py": "b59d47d451ad0d26a26222db0dba6cd4a3882d5775bfb18d674faf4f2b45cddd",
+    "tools111/sensing.py": "8dc0b4393d06b841a0f41699c4341ee301024067ac111b48258ad4b397c1fb82",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2",
+    "tools111/preflight.py": "c32431b6011ae92bb12bca42d4a53a0c12ef9a24e8db15140e3340c04c462a4e",
+    "tools111/run.py": "fe319a2dbf4a6d812aa2f4b17b380aeee7f22c1545c1f26bd95e4a37585dce1e",
+    "tools100/sensor100.py": "556dbc347f379876487c4fd32a8b1181656dde9a9f481745ec01aa9e5ac9f8a0",
+    "tools87/terrain87.py": "d537dda06c2e79a60fd6ced2db3364abc5d77dfe35ae8a619b20064601981dd3",
+    "docs/experiments100/pointcloud_density.json": "d7a65f1184c5f205d1e87c50b9f91d51f272548d9aa41ba7b498f2d0589cf5ca"
+  }
+}

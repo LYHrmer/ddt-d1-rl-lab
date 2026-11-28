@@ -1,0 +1,13 @@
+{
+  "family": "video",
+  "design_sha256": "4d398f83f866ffdc2a4ccae15eebc95403ee0a6eb60172debc4d5a8e3f61b7fc",
+  "sources_sha256": {
+    "tools116/video.py": "2893a969d66313d5df79489e713ecf2123c0836a58b9a69f2cdea952faa442fc",
+    "tools116/score.py": "8d03f4c0deae4001b89fcf8ed51751dfde0433dc4d58468b98e8f214be374756",
+    "tools111/video.py": "abeee3a4b4bda38ba0b6d729d1355b6630449ac11fe13c1cbb3a34a0ff978c2a",
+    "tools113/video.py": "1789ac2ab7013ba800e8d74aa13eab52ffac04df1c563a44333423c1cf808a23",
+    "tools114/parking_video.py": "69ca6822a55e50837df2500b1fbd48c83625393aeeda7a1592d2f3d42202c8ce",
+    "tools108/video108.py": "c40f7cb161949aa8c58c7f12c51f58ca297531d26e5a35d7713d906ebe92f428",
+    "tools102/mesa_video102.py": "8cbe19d2e8e803479db709d30299df902b77bded6018211504bcc837dd6b237d"
+  }
+}
