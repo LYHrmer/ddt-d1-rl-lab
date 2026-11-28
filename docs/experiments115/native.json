@@ -1,0 +1,27 @@
+{
+  "family": "native",
+  "design_sha256": "89f71718db18db8da98998fcac30c44168a81ecc17110bc50011d9d88363a9a9",
+  "reference_trace_sha256": {
+    "111011": "cf70e2c8834fba6f4f682b7ab939303e1680d3ba2afa398fcc841f35cb5ae160",
+    "111023": "c79abfb8ac598604d312002700cc9f9cd832554c811fd6ee443b27963b56af7b",
+    "111037": "40e5890811ab3931bc6c3eb99c042f2024f20c49c117ec1ac16095fc8927e6aa",
+    "114211": "741ad0ef7f556ce5ad9b0fbfd2b36b216e26336ebd91f517906f9054c857f86e",
+    "114227": "9e2acc2db0efac921676e671daa4b00df59efcdbd9e950ab8ee6551b367ebafe",
+    "114239": "11f60d836c7a8e3ff45cc9beb86538ef15ba59ec57cd929bf7bd151465a971b2"
+  },
+  "sources_sha256": {
+    "tools115/native.py": "ee3adc9a8a4a48a096fa17ec912668b640861e2aa30b76ea0f7896a3d8975aef",
+    "tools115/native_compare.py": "fe9cc4455cd5a254a5696c8a0f9ebb50571cc2423c080840f43066c6e374cb0a",
+    "tools114/closed_results.py": "66570e9f54e96fbf5ed72a5c1e43ae88a9be63a86acb4ded03cb82bf6e8b18b9",
+    "tools113/native.py": "d324cc0683de59b868136e9e060ab3e9be8b34c9491667e7700805ed34115bb0",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "tools114/closed_run.py": "aa793c1bf6ff9cb324f7204453cd4d55ce06b15301505d459edcdeff82ebe475",
+    "tools114/control.py": "dfe4d1365fec94f3809479418861d2cdfe80dc1e2629db5cad6b25b08f1890ef",
+    "tools114/native.py": "08ee60bc637bcd493f2a81dc92c9eae0eaf84f6b6fd9b675ebb7cd5f762f33ba",
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2"
+  }
+}

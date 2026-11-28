@@ -1,0 +1,232 @@
+{
+  "stage": "policy",
+  "attempt": 1,
+  "unit": "d1-parking115-policy-01",
+  "registration_sha256": "0a770f6f3f62b98a2f8f2df17e1a0452c8d7a41bbb834cf7859850249b8828f7",
+  "reserved_at_unix_ns": 1795846643436293231,
+  "status": "COMPLETE",
+  "result": {
+    "tick": 525,
+    "source_index_sha256": "8c7be8254f8ac3e6631e1cab39fa9c6140f3968f402f5697ba1c82d9c55d04b5",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "robot_xml_sha256": "64b7ba2887d011cfaefe22fe589c71596c0fa2ba0c0d64c5533c26fbe7e64757",
+    "arms": [
+      "original",
+      "equal_encoders",
+      "equal_previous_actions"
+    ],
+    "rows": [
+      {
+        "seed": 111011,
+        "trace_sha256": "cf70e2c8834fba6f4f682b7ab939303e1680d3ba2afa398fcc841f35cb5ae160",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.8927895128726959,
+          -5.234177112579346,
+          -0.8710881322622299,
+          0.7951443642377853
+        ],
+        "original_gap_rad_s": -5.506459027528763,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -5.447184666991234,
+            "delta_gap_rad_s": 0.05927436053752899,
+            "absolute_gap_reduction_fraction": 0.010764514952566695,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.6214354087909064,
+            "delta_gap_rad_s": 3.8850236187378564,
+            "absolute_gap_reduction_fraction": 0.7055393673711601,
+            "reaches_reduction": true
+          }
+        }
+      },
+      {
+        "seed": 111023,
+        "trace_sha256": "c79abfb8ac598604d312002700cc9f9cd832554c811fd6ee443b27963b56af7b",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.7621189951896667,
+          -4.813713729381561,
+          -1.023724153637886,
+          0.5906245112419128
+        ],
+        "original_gap_rad_s": -4.923386846979459,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -4.994417602817218,
+            "delta_gap_rad_s": -0.07103075583775897,
+            "absolute_gap_reduction_fraction": -0.014427214038916558,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.5003585256636143,
+            "delta_gap_rad_s": 3.4230283213158446,
+            "absolute_gap_reduction_fraction": 0.6952588589328305,
+            "reaches_reduction": true
+          }
+        }
+      },
+      {
+        "seed": 111037,
+        "trace_sha256": "40e5890811ab3931bc6c3eb99c042f2024f20c49c117ec1ac16095fc8927e6aa",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.780443400144577,
+          -5.252212882041931,
+          -0.6852038204669952,
+          0.872940719127655
+        ],
+        "original_gap_rad_s": -5.574939648310344,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -5.672312304377556,
+            "delta_gap_rad_s": -0.09737265606721213,
+            "absolute_gap_reduction_fraction": -0.01746613635480765,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.7547650511066117,
+            "delta_gap_rad_s": 3.820174597203732,
+            "absolute_gap_reduction_fraction": 0.6852405296192853,
+            "reaches_reduction": true
+          }
+        }
+      },
+      {
+        "seed": 114211,
+        "trace_sha256": "741ad0ef7f556ce5ad9b0fbfd2b36b216e26336ebd91f517906f9054c857f86e",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.7714934647083282,
+          -5.032636523246765,
+          -1.1261586099863052,
+          0.8434253931045532
+        ],
+        "original_gap_rad_s": -5.195556605855624,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -5.140539035201073,
+            "delta_gap_rad_s": 0.055017570654551484,
+            "absolute_gap_reduction_fraction": 0.010589350637147166,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.619936109830936,
+            "delta_gap_rad_s": 3.5756204960246882,
+            "absolute_gap_reduction_fraction": 0.6882073986057249,
+            "reaches_reduction": true
+          }
+        }
+      },
+      {
+        "seed": 114227,
+        "trace_sha256": "9e2acc2db0efac921676e671daa4b00df59efcdbd9e950ab8ee6551b367ebafe",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.8973874151706696,
+          -4.972086846828461,
+          -0.8297401666641235,
+          0.8339139819145203
+        ],
+        "original_gap_rad_s": -5.272607256968816,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -5.362004016836484,
+            "delta_gap_rad_s": -0.08939675986766815,
+            "absolute_gap_reduction_fraction": -0.016954943827745206,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.6010542213916779,
+            "delta_gap_rad_s": 3.671553035577138,
+            "absolute_gap_reduction_fraction": 0.6963448739187692,
+            "reaches_reduction": true
+          }
+        }
+      },
+      {
+        "seed": 114239,
+        "trace_sha256": "11f60d836c7a8e3ff45cc9beb86538ef15ba59ec57cd929bf7bd151465a971b2",
+        "parity": {
+          "max_raw_error": 0.0,
+          "max_leg_target_error_rad": 0.0,
+          "max_wheel_target_error_rad_s": 0.0,
+          "all_outputs_match": true
+        },
+        "reference_wheels_rad_s": [
+          0.44334933161735535,
+          -5.063832998275757,
+          -1.013038530945778,
+          0.7086247950792313
+        ],
+        "original_gap_rad_s": -5.110144863526027,
+        "variants": {
+          "equal_encoders": {
+            "right_front_gap_rad_s": -5.115239359438419,
+            "delta_gap_rad_s": -0.005094495912392638,
+            "absolute_gap_reduction_fraction": -0.0009969376697624988,
+            "reaches_reduction": false
+          },
+          "equal_previous_actions": {
+            "right_front_gap_rad_s": -1.4888093930979571,
+            "delta_gap_rad_s": 3.6213354704280696,
+            "absolute_gap_reduction_fraction": 0.7086561275934806,
+            "reaches_reduction": true
+          }
+        }
+      }
+    ],
+    "baseline_parity": true,
+    "reduction_fraction": 0.25,
+    "minimum_baseline_gap_rad_s": 0.05,
+    "counts_reaching_reduction": {
+      "equal_encoders": 0,
+      "equal_previous_actions": 6
+    },
+    "all_six_reach_reduction": {
+      "equal_encoders": false,
+      "equal_previous_actions": true
+    },
+    "actor_forwards": 18,
+    "simulation_steps": 0,
+    "world_updates": 0,
+    "policy_updates": 0,
+    "bundle_sha256": "e249737c3394f6f452ca3a28c866b1ded38e4c814b4ad369cb894cb336525fcd",
+    "journal_sha256": "bf774519e42d43a5d18d59b17d3e530bfbc9ed84b6180eb5552a88d4d4d5743b",
+    "imu_contract_sha256": "e277b4d7b6bd9f3784aa36f08fb878cc7cb57e14f9dd544d19757345279e91ae"
+  },
+  "files": {
+    "policy_probe.npz": "e249737c3394f6f452ca3a28c866b1ded38e4c814b4ad369cb894cb336525fcd",
+    "imu_contract.json": "e277b4d7b6bd9f3784aa36f08fb878cc7cb57e14f9dd544d19757345279e91ae",
+    "policy_calls.jsonl": "bf774519e42d43a5d18d59b17d3e530bfbc9ed84b6180eb5552a88d4d4d5743b"
+  },
+  "completed_at_unix_ns": 1795846643603770219,
+  "elapsed_s": 0.1673648549913196
+}

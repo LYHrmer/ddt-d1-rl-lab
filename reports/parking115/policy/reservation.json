@@ -1,0 +1,7 @@
+{
+  "stage": "policy",
+  "attempt": 1,
+  "unit": "d1-parking115-policy-01",
+  "registration_sha256": "0a770f6f3f62b98a2f8f2df17e1a0452c8d7a41bbb834cf7859850249b8828f7",
+  "reserved_at_unix_ns": 1795846643436293231
+}

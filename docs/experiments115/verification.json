@@ -1,0 +1,87 @@
+{
+  "study": "D1 stop edge, input sensitivity and single-tick right-front wheel contrast",
+  "paired_starts": [
+    111011,
+    111023,
+    111037,
+    114211,
+    114227,
+    114239
+  ],
+  "command_tick": 525,
+  "applied_tick": 526,
+  "response_state_ticks_inclusive": [
+    527,
+    536
+  ],
+  "wheel_order": [
+    "FL",
+    "FR",
+    "RL",
+    "RR"
+  ],
+  "archive_role": "Six known starts from round 114, no blind confirmation.",
+  "hypotheses": {
+    "inputs": "Either family of wheel differences may influence the frozen output contrast.",
+    "balance": "The original right-front contrast may reduce peak body tilt at the stop edge."
+  },
+  "policy": {
+    "arms": [
+      "original",
+      "equal_encoders",
+      "equal_previous_actions"
+    ],
+    "history": 10,
+    "units": "wheel rad/s, leg rad",
+    "maximum_raw_and_scaled_error": 1e-05,
+    "minimum_original_gap_rad_s": 0.05,
+    "minimum_fractional_reduction": 0.25,
+    "required_pairs": 6,
+    "max_forward_calls": 18
+  },
+  "native": {
+    "modified_command_ticks": [
+      525
+    ],
+    "component": "FR versus mean(FL,RL,RR)",
+    "duration_limit_s": 12,
+    "max_episodes": 6,
+    "max_actor_decisions": 3600,
+    "max_servo_ticks": 18000,
+    "max_physics_steps": 36000,
+    "max_ray_queries": 449280,
+    "tilt_metric": "peak vertical tilt over state endpoints, candidate minus baseline",
+    "minimum_relevant_degrees": 0.1,
+    "required_pairs": 6,
+    "unchanged_physical_gates": true
+  },
+  "world_model_steps": 0,
+  "world_model_updates": 0,
+  "policy_updates": 0,
+  "resource_limits": {
+    "cpu_environment_count": 1,
+    "nice": 10,
+    "single_cpu_affinity": true,
+    "high_gib": 2,
+    "max_gib": 3,
+    "swap_gib": 0,
+    "startup_effective_gib": 4,
+    "running_reserve_gib": 2,
+    "shared_lock": "evidence/uphill89/serial.lock"
+  },
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "sources_sha256": {
+    "docs/parking_rf115_proposal.md": "ef5a526f73d36d1189361c72e7e7aa9b7857bf42b5b95763e61bf786d62485ec",
+    "docs/experiments114/closed_loop.json": "cd9945235191ad424cb72c71fb3ce69106aefbe4c75df346f41905e38a48b528",
+    "reports/parking114/closed_loop.json": "8c7be8254f8ac3e6631e1cab39fa9c6140f3968f402f5697ba1c82d9c55d04b5",
+    "reports/speed_world113/results.json": "409a86c9f06fe9fce8df10cda0f0abf0c17b53574c41fae64abc4ef12d59b1dc",
+    "tools115/run.py": "655759f01cb03092bb12e53ae018b60f38d0182db4db6ba4552f77b83d90819a",
+    "tools115/signals.py": "5ce56573758ed55484d08b28c183ba859639eaff9e3dd352de8a22ac60f22555",
+    "tools91/launch91.py": "4aebd051f3bea83b71b1ef04b2ee426b88748066a7a0239d1aa510b750822c47",
+    "tools92/launch92.py": "dfa3c9cd106f1407f27b19ff36e7cd46d2ece3404232fc69c38210743077eab2",
+    "tools27/resource_guard27.py": "2fd0cbed467f36185a8fc442fe88f628a0566354404ea865260a6a76fb1f8fa2",
+    "tools109/run109.py": "c3a8a0150e0b8e2ea6e05865070dd987cd4d758c8232713dbf6a0e4bf829b807",
+    "tools111/remaining.py": "d48186cfda8659acee4f03ba1f84b79bb8e1f517a19566cd69b33b290d6a7808",
+    "tools114/common.py": "894ed3e0edaf6ff3452b899e45372236715fd974bc9fd0b078dba6305082b001"
+  }
+}

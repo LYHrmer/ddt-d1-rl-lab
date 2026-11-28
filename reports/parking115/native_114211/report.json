@@ -1,0 +1,224 @@
+{
+  "stage": "native_114211",
+  "attempt": 1,
+  "unit": "d1-parking115-native-114211-01",
+  "registration_sha256": "425ad9574601d873588eea349bdcd2700b506624efbcdd7a7a8bc70598232a01",
+  "reserved_at_unix_ns": 1795846836746347825,
+  "status": "COMPLETE",
+  "result": {
+    "status": "COMPLETE",
+    "seed": 114211,
+    "cohort": "paired_reused_round114",
+    "layout": "flat",
+    "surface": "level_heightfield",
+    "arm": "heading_on",
+    "gain": 0.97792348,
+    "trim": "brake_aware",
+    "projection": "parked_wheel_common_zero",
+    "nominal_base_height_m": 0.437849968809778,
+    "counts": {
+      "decisions": 600,
+      "servo": 3000,
+      "physics": 6000,
+      "packets": 72,
+      "ray_queries": 74880
+    },
+    "motion": {
+      "passed": true,
+      "failed": [],
+      "ticks": 600,
+      "gate_times_s": [
+        4.411233626273097,
+        5.06567841256814,
+        5.71999888922709,
+        6.3757868501870005
+      ],
+      "speed_m_s": 1.5270647613319508,
+      "sections_m_s": [
+        1.5280127841818734,
+        1.528303080328675,
+        1.5248831322494059
+      ],
+      "max_lane_y_m": 0.3646989626677082,
+      "exit_contact": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "step_top_contact": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "stop_tail_max_m_s": 0.011975081127227817
+    },
+    "effects": {},
+    "trace_sha256": "29c230e2886984f2e73e4ab0ee9f019908887104a1b755ab553f0f43e785cee1",
+    "reference_sha256": "741ad0ef7f556ce5ad9b0fbfd2b36b216e26336ebd91f517906f9054c857f86e",
+    "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+    "actuator_config_sha256": "cedf96cedd405b61c7933d0128cdb6954668501115fbce48c2ae2d65f448c6fe",
+    "mujoco_version": "3.3.0",
+    "intervention": "release_rf_contrast_once",
+    "legacy_reference113_sha256": null,
+    "assessment": {
+      "seed": 114211,
+      "reference_sha256": "741ad0ef7f556ce5ad9b0fbfd2b36b216e26336ebd91f517906f9054c857f86e",
+      "trace_sha256": "29c230e2886984f2e73e4ab0ee9f019908887104a1b755ab553f0f43e785cee1",
+      "complete_horizon": true,
+      "gate_pass": true,
+      "motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.411233626273097,
+          5.06567841256814,
+          5.71999888922709,
+          6.3757868501870005
+        ],
+        "speed_m_s": 1.5270647613319508,
+        "sections_m_s": [
+          1.5280127841818734,
+          1.528303080328675,
+          1.5248831322494059
+        ],
+        "max_lane_y_m": 0.3646989626677082,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.011975081127227817
+      },
+      "stop": {
+        "peak_m_s": 0.011975081127227817,
+        "peak_tick": 575,
+        "peak_world_vxy_m_s": [
+          -0.01196903849823087,
+          0.00038037538242532043
+        ],
+        "peak_forward_m_s": -0.01192092796256179,
+        "mean_forward_m_s": -0.00987793119276689,
+        "forward_displacement_mm": -4.923167182719981,
+        "endpoints_above_limit": 0
+      },
+      "reference_motion": {
+        "passed": true,
+        "failed": [],
+        "ticks": 600,
+        "gate_times_s": [
+          4.411233626273097,
+          5.06567841256814,
+          5.71999888922709,
+          6.3757868501870005
+        ],
+        "speed_m_s": 1.5270647613319508,
+        "sections_m_s": [
+          1.5280127841818734,
+          1.528303080328675,
+          1.5248831322494059
+        ],
+        "max_lane_y_m": 0.3646989626677082,
+        "exit_contact": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "step_top_contact": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "stop_tail_max_m_s": 0.012531451162263747
+      },
+      "reference_stop": {
+        "peak_m_s": 0.012531451162263747,
+        "peak_tick": 600,
+        "peak_world_vxy_m_s": [
+          -0.012504594510469072,
+          0.0008199904639373099
+        ],
+        "peak_forward_m_s": -0.012430497751140324,
+        "mean_forward_m_s": -0.010605287697558523,
+        "forward_displacement_mm": -5.327499810200826,
+        "endpoints_above_limit": 0
+      },
+      "counts": {
+        "decisions": 600,
+        "servo": 3000,
+        "physics": 6000,
+        "packets": 72,
+        "ray_queries": 74880
+      },
+      "wiring": {
+        "first_changed_issue_tick": 525,
+        "first_changed_applied_tick": 526,
+        "interventions": 1,
+        "fifo_intervals_checked": 600,
+        "policy_history_windows_checked": 600,
+        "wheel_order": [
+          "FL",
+          "FR",
+          "RL",
+          "RR"
+        ],
+        "reference_mapping_at_pulse_rad_s": [
+          1.907462477684021,
+          -3.8966673612594604,
+          0.00981045886874199,
+          1.979394406080246
+        ],
+        "delivered_at_pulse_rad_s": [
+          0.6085733696818352,
+          -4.6566128730773926e-09,
+          -1.2890785932540894,
+          0.6805052608251572
+        ],
+        "paired_prefix": {
+          "equal_state_endpoints": 527,
+          "equal_raw_actor_outputs": 527,
+          "equal_issued_intervals": 525,
+          "equal_applied_intervals": 526
+        },
+        "reference_first_wheel_torque_nm": [
+          0.5684771059914664,
+          -1.989185746474074,
+          -0.2714097869078879,
+          0.666094299829021
+        ],
+        "candidate_first_wheel_torque_nm": [
+          -0.08096744800962646,
+          -0.04085206817265035,
+          -0.9208543129693036,
+          0.016649727201476616
+        ]
+      },
+      "tilt": {
+        "first_state_index": 527,
+        "last_state_index": 536,
+        "window_complete": true,
+        "reference_peak_deg": 1.6207068675894514,
+        "reference_peak_tick": 532,
+        "candidate_peak_deg": 1.6432576190884003,
+        "candidate_peak_tick": 532,
+        "delta_peak_deg": 0.022550751498948918
+      }
+    }
+  },
+  "files": {
+    "trace.npz": "29c230e2886984f2e73e4ab0ee9f019908887104a1b755ab553f0f43e785cee1"
+  },
+  "completed_at_unix_ns": 1795846841227932191,
+  "elapsed_s": 4.481480657996144
+}

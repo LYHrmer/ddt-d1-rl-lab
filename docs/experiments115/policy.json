@@ -1,0 +1,13 @@
+{
+  "family": "policy",
+  "design_sha256": "89f71718db18db8da98998fcac30c44168a81ecc17110bc50011d9d88363a9a9",
+  "actor_sha256": "698ca9339eb1eda8812d552bbace2977959a7f3f4f41c58c9dd84f3fce5d9850",
+  "sources_sha256": {
+    "tools115/policy_probe.py": "56a829c1a8fda3214f4da818e0c1495d536c7a692127ecadfc35be6c956de68e",
+    "training/d1_rl/interface.py": "69f8020b5cd16d6625fcbd681e975760d04e7a5ff21830589fbb432c57866232",
+    "training/configs/pilot03d.json": "9cd6546e8a8df50c7d578a664003681fc79ddca7fa0a27b80158f0f5b6842bea",
+    "tools111/kinematics.py": "511fb592712d58a4762f8430a5fb68877249cb562eefe0ea62b1aed7f8d878cf",
+    "tools94/common94.py": "cb95b2c27edd8519c33749f25904506a1af891aaf3f08d9604c3e54afdfe59ab",
+    "tools113/results.py": "21c67c12dbc49548f4604654b7280f3cb43f0976ebb3c6c3edd80cc24c952cba"
+  }
+}
