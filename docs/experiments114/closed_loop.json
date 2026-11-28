@@ -1,0 +1,61 @@
+{
+  "parent_commit": "550a0bee777bb9ead5aa7ebfe8ce5d69b102ca8d",
+  "authorization": "Parking development on three paired level-grid starts. Only if all three fully pass, evaluate the same controller on the three registered independent starts.",
+  "parking_registration_sha256": "dd25d4cd7bd30cf2916953652744f1782b6338c36b5de8eb0758bf91600fbd83",
+  "supervisor_sha256": "236ef8f29a315435d4960cb95bc121851901e31e2a12475ee78035681628267d",
+  "development": [
+    111011,
+    111023,
+    111037
+  ],
+  "conditional_blind": [
+    114211,
+    114227,
+    114239
+  ],
+  "baseline_trace_sha256": {
+    "111011": "9bc6b6c8d9dec6ea0b9fc081f8c66621159960591903725cc82d952b54814f82",
+    "111023": "fb5f5248a17bd4398c50b8d3e2648aee4501ecd19a16336276b2e3db8182c2db",
+    "111037": "3e9d75b6b592c333aac08c2cf15b6fb0665ee799a251196c1b4588e94f4e914b"
+  },
+  "only_variable": "Remove the four wheel targets\u2019 common component after forward travel when the three driver requests reach zero.",
+  "course": "level_heightfield",
+  "seconds_per_episode": 12,
+  "decision_hz": 50,
+  "servo_hz": 250,
+  "physics_hz": 500,
+  "stop_state_indices_inclusive": [
+    575,
+    600
+  ],
+  "maximum_stop_peak_m_s": 0.05,
+  "central_three_m_speed_m_s": [
+    1.5,
+    1.575
+  ],
+  "each_metre_speed_m_s": [
+    1.425,
+    1.575
+  ],
+  "blind_gate": "3/3 complete development episodes with every original motion gate passed and matched pre-intervention traces.",
+  "maximum_totals": {
+    "episodes": 6,
+    "decisions": 3600,
+    "servo": 18000,
+    "physics": 36000,
+    "ray_queries": 449280,
+    "world_model_steps": 0,
+    "world_updates": 0,
+    "policy_updates": 0
+  },
+  "film_seed": 111011,
+  "sources_sha256": {
+    "tools114/closed_run.py": "aa793c1bf6ff9cb324f7204453cd4d55ce06b15301505d459edcdeff82ebe475",
+    "tools114/control.py": "dfe4d1365fec94f3809479418861d2cdfe80dc1e2629db5cad6b25b08f1890ef",
+    "tools114/native.py": "08ee60bc637bcd493f2a81dc92c9eae0eaf84f6b6fd9b675ebb7cd5f762f33ba",
+    "tools110/course.py": "bbbbe960f1290b14f610a8c150794f56bad01a4a33069aa889fc89471042dfe1",
+    "tools111/course.py": "0674eb89ee8fba9f254aadb7eaf48255801405eef5461a9bddc350b849e60991",
+    "tools110/native.py": "455eb9db7abc1f20f1fc14ba4e6f408515cdeb3b6ca3d456e4ae8b93de850a51",
+    "tools111/native.py": "8766311dfccb50e4587015dbec4a40c0d98057cd9b96dc796eaf79e39443f1b2"
+  }
+}
